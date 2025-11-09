@@ -1,0 +1,18 @@
+{
+  "name": "claude-skills-marketplace",
+  "version": "1.0.0",
+  "description": "Personal marketplace for developing and sharing custom Claude skills",
+  "author": {
+    "name": "Julien",
+    "email": "your.email@example.com"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/theflysurfer/claude-skills-marketplace",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theflysurfer/claude-skills-marketplace"
+  },
+  "keywords": ["claude", "skills", "marketplace", "ai", "automation"],
+  "tags": ["productivity", "development", "automation"],
+  "category": "skills"
+}
