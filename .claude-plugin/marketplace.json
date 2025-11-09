@@ -9,5 +9,15 @@
     "version": "1.0.0",
     "pluginRoot": "./skills"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "sync-personal-skills",
+      "source": "./sync-personal-skills",
+      "description": "Synchronizes skills from this marketplace repository to ~/.claude/skills/ for global availability across all projects. Also commits and pushes changes to GitHub.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "development",
+      "keywords": ["sync", "deployment", "automation", "git"]
+    }
+  ]
 }
