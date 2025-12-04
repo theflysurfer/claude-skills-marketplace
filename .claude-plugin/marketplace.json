@@ -18,6 +18,51 @@
       "license": "Apache-2.0",
       "category": "development",
       "keywords": ["sync", "deployment", "automation", "git"]
+    },
+    {
+      "name": "hostinger-ssh",
+      "source": "./hostinger-ssh",
+      "description": "SSH connection and server management for Hostinger VPS srv759970 (automation@69.62.108.82)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "infrastructure",
+      "keywords": ["ssh", "server", "hostinger", "vps", "connection"]
+    },
+    {
+      "name": "hostinger-docker",
+      "source": "./hostinger-docker",
+      "description": "Docker container management on Hostinger VPS - optimize images, deploy services, troubleshoot errors",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "infrastructure",
+      "keywords": ["docker", "containers", "optimization", "hostinger"]
+    },
+    {
+      "name": "hostinger-nginx",
+      "source": "./hostinger-nginx",
+      "description": "Nginx reverse proxy and SSL management on Hostinger VPS srv759970",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "infrastructure",
+      "keywords": ["nginx", "reverse-proxy", "ssl", "certbot", "hostinger"]
+    },
+    {
+      "name": "hostinger-database",
+      "source": "./hostinger-database",
+      "description": "Manage shared database instances (PostgreSQL, Redis, MongoDB) on Hostinger VPS",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "infrastructure",
+      "keywords": ["database", "postgresql", "redis", "mongodb", "postgres"]
+    },
+    {
+      "name": "hostinger-maintenance",
+      "source": "./hostinger-maintenance",
+      "description": "Recurring maintenance tasks and runbooks for Hostinger VPS - cleanup, monitoring, health checks",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "operations",
+      "keywords": ["maintenance", "runbooks", "cleanup", "monitoring", "disk-space"]
     }
   ]
 }
