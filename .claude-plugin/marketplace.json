@@ -63,6 +63,182 @@
       "license": "Apache-2.0",
       "category": "operations",
       "keywords": ["maintenance", "runbooks", "cleanup", "monitoring", "disk-space"]
+    },
+    {
+      "name": "hostinger-space-reclaim",
+      "source": "./hostinger-space-reclaim",
+      "description": "Reclaim disk space on Hostinger VPS (srv759970) through automated analysis and cleanup of Docker images, volumes, logs, and application data. Use when disk space is critical (>90% usage) or for regular maintenance to prevent space issues.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "operations",
+      "keywords": ["disk-space", "cleanup", "docker", "maintenance", "automation"]
+    },
+    {
+      "name": "frontend-design",
+      "source": "./frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use when building web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "development",
+      "keywords": ["frontend", "design", "ui", "web", "react", "html", "css", "anthropic"],
+      "metadata": {
+        "upstream": "https://github.com/anthropics/skills",
+        "source": "anthropic",
+        "integrated": "2025-12-05",
+        "forked": true
+      }
+    },
+    {
+      "name": "pdf",
+      "source": "./pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. Use when processing, generating, or analyzing PDF documents.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "productivity",
+      "keywords": ["pdf", "documents", "forms", "extraction", "merge", "split", "anthropic"],
+      "metadata": {
+        "upstream": "https://github.com/anthropics/skills",
+        "source": "anthropic",
+        "integrated": "2025-12-05",
+        "forked": true
+      }
+    },
+    {
+      "name": "xlsx",
+      "source": "./xlsx",
+      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. Use when working with Excel spreadsheets (.xlsx, .xlsm, .csv, .tsv).",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "productivity",
+      "keywords": ["excel", "spreadsheet", "xlsx", "formulas", "data-analysis", "csv", "anthropic"],
+      "metadata": {
+        "upstream": "https://github.com/anthropics/skills",
+        "source": "anthropic",
+        "integrated": "2025-12-05",
+        "forked": true
+      }
+    },
+    {
+      "name": "docx",
+      "source": "./docx",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. Use when working with Word documents (.docx files).",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "productivity",
+      "keywords": ["word", "docx", "documents", "editing", "tracked-changes", "comments", "anthropic"],
+      "metadata": {
+        "upstream": "https://github.com/anthropics/skills",
+        "source": "anthropic",
+        "integrated": "2025-12-05",
+        "forked": true
+      }
+    },
+    {
+      "name": "pptx",
+      "source": "./pptx",
+      "description": "Presentation creation, editing, and analysis with support for layouts, speaker notes, and comments. Use when working with PowerPoint presentations (.pptx files).",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "productivity",
+      "keywords": ["powerpoint", "pptx", "presentations", "slides", "layouts", "speaker-notes", "anthropic"],
+      "metadata": {
+        "upstream": "https://github.com/anthropics/skills",
+        "source": "anthropic",
+        "integrated": "2025-12-05",
+        "forked": true
+      }
+    },
+    {
+      "name": "mcp-builder",
+      "source": "./mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers to integrate external APIs and services with Claude. Use when building MCP servers in Python (FastMCP) or TypeScript.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "development",
+      "keywords": ["mcp", "model-context-protocol", "api", "integration", "fastmcp", "typescript", "anthropic"],
+      "metadata": {
+        "upstream": "https://github.com/anthropics/skills",
+        "source": "anthropic",
+        "integrated": "2025-12-05",
+        "forked": true
+      }
+    },
+    {
+      "name": "webapp-testing",
+      "source": "./webapp-testing",
+      "description": "Toolkit for testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing screenshots, and viewing browser logs.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "development",
+      "keywords": ["testing", "playwright", "webapp", "qa", "browser", "screenshots", "debugging", "anthropic"],
+      "metadata": {
+        "upstream": "https://github.com/anthropics/skills",
+        "source": "anthropic",
+        "integrated": "2025-12-05",
+        "forked": true
+      }
+    },
+    {
+      "name": "canvas-design",
+      "source": "./canvas-design",
+      "description": "Design beautiful visual art in .png and .pdf formats using advanced design philosophies. Create posters, infographics, and publication-ready designs.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "design",
+      "keywords": ["design", "visual", "art", "posters", "infographics", "png", "pdf", "anthropic"],
+      "metadata": {
+        "upstream": "https://github.com/anthropics/skills",
+        "source": "anthropic",
+        "integrated": "2025-12-05",
+        "forked": true
+      }
+    },
+    {
+      "name": "web-artifacts-builder",
+      "source": "./web-artifacts-builder",
+      "description": "Build interactive web artifacts quickly. Create prototypes, demos, and web-based tools with streamlined workflows for rapid development.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "development",
+      "keywords": ["web", "artifacts", "prototyping", "rapid-development", "demos", "anthropic"],
+      "metadata": {
+        "upstream": "https://github.com/anthropics/skills",
+        "source": "anthropic",
+        "integrated": "2025-12-05",
+        "forked": true
+      }
+    },
+    {
+      "name": "skill-creator",
+      "source": "./skill-creator",
+      "description": "Official Anthropic guide for creating effective Claude skills. Step-by-step workflow including bundled resources, progressive disclosure, and quality assessment rubric.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "development",
+      "keywords": ["skill-creation", "meta", "development", "guide", "anthropic"],
+      "metadata": {
+        "upstream": "https://github.com/anthropics/skills",
+        "source": "anthropic",
+        "integrated": "2025-12-05",
+        "forked": true
+      }
+    },
+    {
+      "name": "skill-creator-pro",
+      "source": "./skill-creator-pro",
+      "description": "Enhanced skill-creator with comprehensive Skill Chaining documentation. Includes standardized Input/Output specs, visual workflows (ASCII), bidirectional skill relationships, and Git hooks integration. Use for creating skills that are part of larger workflows.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "development",
+      "keywords": ["skill-creation", "meta", "development", "workflows", "skill-chaining", "enhanced"],
+      "metadata": {
+        "upstream": "https://github.com/anthropics/skills",
+        "source": "enhanced",
+        "basedOn": "anthropic skill-creator",
+        "enhancements": ["skill-chaining", "input-output-specs", "visual-workflows"],
+        "integrated": "2025-12-05",
+        "forked": true
+      }
     }
   ]
 }
