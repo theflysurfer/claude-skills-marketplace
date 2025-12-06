@@ -239,6 +239,22 @@
         "integrated": "2025-12-05",
         "forked": true
       }
+    },
+    {
+      "name": "skill-reviewer",
+      "source": "./skill-reviewer",
+      "description": "Auto-évaluation et amélioration itérative des skills Claude. Reviews skills against 9-dimension quality rubric, detects DRY violations, enforces progressive disclosure, and provides automated refactoring suggestions. Use when you need to review, score, and improve existing skills for production quality.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "development",
+      "keywords": ["skill-review", "quality-assurance", "meta", "DRY", "scoring", "improvement", "refactoring", "progressive-disclosure"],
+      "metadata": {
+        "source": "original",
+        "author": "Julien",
+        "basedOn": "skill-creator quality rubric",
+        "created": "2025-12-06",
+        "features": ["9-dimension-scoring", "dry-detection", "iterative-improvement", "automated-refactoring", "python-automation"]
+      }
     }
   ]
 }
