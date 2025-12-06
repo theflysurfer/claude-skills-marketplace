@@ -1,5 +1,5 @@
 ---
-name: hostinger-deployment
+name: julien-infra-hostinger-deployment
 description: Complete deployment workflow for INCLUZ'HACT on Hostinger VPS srv759970. Orchestrates Git sync, build, PM2 restart, and verification for production and preview environments.
 license: Apache-2.0
 allowed-tools:
@@ -24,10 +24,10 @@ Complete automated deployment workflow for INCLUZ'HACT website on Hostinger VPS 
 
 This skill orchestrates the full deployment pipeline:
 1. **Pre-deployment checks** (disk space, Git status, PM2 health)
-2. **Git sync** (using `git-vps-sync` skill)
+2. **Git sync** (using `julien-infra-git-vps-sync` skill)
 3. **Build** (npm install + npm run build)
 4. **PM2 restart** (graceful restart)
-5. **Verification** (using `deployment-verifier` skill)
+5. **Verification** (using `julien-infra-deployment-verifier` skill)
 6. **Rollback** (if deployment fails)
 
 ## Server Info
@@ -127,13 +127,13 @@ EOF
 ```
 
 **Decision Points**:
-- ❌ Disk space < 5 GB → Run `hostinger-space-reclaim` first
+- ❌ Disk space < 5 GB → Run `julien-infra-hostinger-space-reclaim` first
 - ⚠️ Uncommitted changes → Ask user if safe to discard
 - ❌ PM2 apps not running → Start them before deploying
 
 ### 2. Git Sync
 
-Use `git-vps-sync` skill to synchronize VPS with GitHub:
+Use `julien-infra-git-vps-sync` skill to synchronize VPS with GitHub:
 
 ```bash
 # Invoke git-vps-sync skill
@@ -273,7 +273,7 @@ EOF
 
 ### 6. Post-Deployment Verification
 
-Use `deployment-verifier` skill to confirm deployment success:
+Use `julien-infra-deployment-verifier` skill to confirm deployment success:
 
 ```bash
 # Invoke deployment-verifier skill
@@ -597,7 +597,7 @@ ssh automation@69.62.108.82 'cd /var/www/incluzhact && npm run build && pm2 rest
 3. **Monitor logs during deployment**: `pm2 logs --follow`
 4. **Keep deployment history**: Log every deployment
 5. **Have rollback plan ready**: Know previous stable commit
-6. **Verify after deployment**: Use `deployment-verifier` skill
+6. **Verify after deployment**: Use `julien-infra-deployment-verifier` skill
 7. **Deploy during low traffic**: Minimize user impact
 8. **Backup before major changes**: Copy `/var/www/incluzhact` if risky
 
@@ -649,10 +649,10 @@ After deploying:
 
 ## Related Skills
 
-- **git-vps-sync**: Pre-deployment Git synchronization
-- **deployment-verifier**: Post-deployment verification
-- **hostinger-ssh**: SSH connection management
-- **hostinger-space-reclaim**: Disk space management
+- **julien-infra-git-vps-sync**: Pre-deployment Git synchronization
+- **julien-infra-deployment-verifier**: Post-deployment verification
+- **julien-infra-hostinger-ssh**: SSH connection management
+- **julien-infra-hostinger-space-reclaim**: Disk space management
 
 ## Quick Reference
 

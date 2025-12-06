@@ -1,5 +1,5 @@
 ---
-name: skill-reviewer
+name: julien-dev-tools-skill-reviewer
 description: Auto-évaluation et amélioration itérative des skills Claude. Use this skill when you need to review, score, and improve existing skills for quality, clarity, DRY principle compliance, and proper resource organization. Detects duplication, suggests refactoring into references/, and iterates until quality threshold is met.
 license: Apache-2.0
 metadata:
@@ -841,7 +841,7 @@ mkdir -p output/
 
 ### Skills Required Before
 
-- **skill-creator** or **skill-creator-pro** (obligatoire): This skill reviews skills created by skill-creator
+- **julien-dev-tools-skill-creator-pro** or **julien-dev-tools-skill-creator-pro** (obligatoire): This skill reviews skills created by skill-creator
 - None if reviewing an existing skill not just created
 
 ### Input Expected
@@ -866,11 +866,11 @@ mkdir -p output/
 ### Compatible Skills After
 
 **Obligatoires** (if score <3.5/5):
-- **skill-reviewer** (this skill): Re-run after manual fixes
+- **julien-dev-tools-skill-reviewer** (this skill): Re-run after manual fixes
 
 **Recommandés** (if score ≥3.5/5):
-- **skill-creator** package_skill.py: Package the improved skill
-- **sync-personal-skills**: Deploy to ~/.claude/skills/
+- **julien-dev-tools-skill-creator-pro** package_skill.py: Package the improved skill
+- **julien-workflow-sync-personal-skills**: Deploy to ~/.claude/skills/
 
 **Optionnels**:
 - **git-workflow**: Commit improved skill
@@ -878,7 +878,7 @@ mkdir -p output/
 
 ### Called By
 
-- **skill-creator-pro**: After Step 4 (Edit), before Step 5 (Package)
+- **julien-dev-tools-skill-creator-pro**: After Step 4 (Edit), before Step 5 (Package)
 - Direct user invocation: "Review my skill X"
 - CI/CD pipeline: Automated quality checks
 

@@ -1,5 +1,5 @@
 ---
-name: sync-personal-skills
+name: julien-workflow-sync-personal-skills
 description: Synchronizes skills from this marketplace repository to ~/.claude/skills/ for global availability across all projects. Also commits and pushes changes to GitHub.
 license: Apache-2.0
 allowed-tools:
@@ -78,7 +78,7 @@ cp -r skills/skill-name ~/.claude/skills/
 - Remove old directory first, then copy fresh version
 - This ensures clean sync without leftover files
 - Preserve directory structure
-- Skip the `sync-personal-skills` skill itself (avoid recursion)
+- Skip the `julien-workflow-sync-personal-skills` skill itself (avoid recursion)
 
 ### Step 4: Update marketplace.json
 
@@ -181,7 +181,7 @@ Before syncing:
 
 Do NOT sync:
 - `skills/README.md` (documentation file, not a skill)
-- `sync-personal-skills` itself (avoid recursion)
+- `julien-workflow-sync-personal-skills` itself (avoid recursion)
 - Any hidden files or directories starting with `.`
 - Any `node_modules/` or `__pycache__/` directories
 

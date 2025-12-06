@@ -1,5 +1,5 @@
 ---
-name: hostinger-space-reclaim
+name: julien-infra-hostinger-space-reclaim
 description: Reclaim disk space on Hostinger VPS (srv759970) through automated analysis and cleanup of Docker images, volumes, logs, and application data. Use when disk space is critical (>90% usage) or for regular maintenance to prevent space issues.
 ---
 
@@ -206,9 +206,9 @@ Based on srv759970 analysis (2025-12-04):
 
 ## Related Skills
 
-- `hostinger-docker` - Docker operations and management
+- `julien-infra-hostinger-docker` - Docker operations and management
 - `hostinger-docker-optimizer` - Rebuild and optimize Docker images
-- `hostinger-maintenance` - General maintenance procedures
+- `julien-infra-hostinger-maintenance` - General maintenance procedures
 
 ## Monitoring
 

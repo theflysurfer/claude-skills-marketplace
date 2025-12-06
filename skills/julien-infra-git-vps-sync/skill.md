@@ -1,5 +1,5 @@
 ---
-name: git-vps-sync
+name: julien-infra-git-vps-sync
 description: Manage Git sync between VPS and GitHub for Hostinger srv759970. Handles unrelated histories, untracked files, diverged branches, and sync conflicts automatically.
 license: Apache-2.0
 allowed-tools:
@@ -400,9 +400,9 @@ ssh automation@69.62.108.82 'pm2 restart incluzhact'
 
 ## Related Skills
 
-- **hostinger-ssh**: SSH connection management
-- **hostinger-deployment**: Full deployment workflow
-- **deployment-verifier**: Post-deployment verification
+- **julien-infra-hostinger-ssh**: SSH connection management
+- **julien-infra-hostinger-deployment**: Full deployment workflow
+- **julien-infra-deployment-verifier**: Post-deployment verification
 
 ## Quick Reference
 

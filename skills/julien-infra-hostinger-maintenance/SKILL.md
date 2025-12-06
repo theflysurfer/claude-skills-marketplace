@@ -1,5 +1,5 @@
 ---
-name: hostinger-maintenance
+name: julien-infra-hostinger-maintenance
 description: Recurring maintenance tasks for Hostinger VPS srv759970 - clean Docker resources, clear system cache, check disk space, verify SSL certificates, update services. Use when performing scheduled maintenance, cleanup operations, or proactive system health checks.
 license: Apache-2.0
 allowed-tools:

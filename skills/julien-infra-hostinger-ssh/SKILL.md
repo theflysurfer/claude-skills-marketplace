@@ -1,5 +1,5 @@
 ---
-name: hostinger-ssh
+name: julien-infra-hostinger-ssh
 description: SSH connection and server management for Hostinger VPS srv759970 (automation@69.62.108.82). Use for connecting to server, checking system status, managing users, troubleshooting SSH connection issues, or when Permission denied errors occur.
 license: Apache-2.0
 allowed-tools:

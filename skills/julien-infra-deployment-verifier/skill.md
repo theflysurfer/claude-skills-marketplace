@@ -1,5 +1,5 @@
 ---
-name: deployment-verifier
+name: julien-infra-deployment-verifier
 description: Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports.
 license: Apache-2.0
 allowed-tools:
@@ -438,9 +438,9 @@ Deployment is successful if **ALL** checks pass:
 
 ## Related Skills
 
-- **git-vps-sync**: Pre-deployment Git sync
-- **hostinger-deployment**: Full deployment workflow
-- **hostinger-ssh**: SSH connection management
+- **julien-infra-git-vps-sync**: Pre-deployment Git sync
+- **julien-infra-hostinger-deployment**: Full deployment workflow
+- **julien-infra-hostinger-ssh**: SSH connection management
 
 ## Quick Reference
 

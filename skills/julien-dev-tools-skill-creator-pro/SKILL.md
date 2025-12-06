@@ -1,5 +1,5 @@
 ---
-name: skill-creator-pro
+name: julien-dev-tools-skill-creator-pro
 description: Enhanced guide for creating effective skills with comprehensive Skill Chaining documentation. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations. Includes standardized format for documenting skill relationships, Input/Output specs, and visual workflows.
 license: Apache-2.0
 metadata:

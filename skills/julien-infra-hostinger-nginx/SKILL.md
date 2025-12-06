@@ -1,5 +1,5 @@
 ---
-name: hostinger-nginx
+name: julien-infra-hostinger-nginx
 description: Manage Nginx reverse proxy on Hostinger VPS srv759970 (automation@69.62.108.82). Use for site configuration, SSL/Let's Encrypt setup, reverse proxy configuration, troubleshooting 502/504 errors, certbot operations, or nginx reload/restart.
 license: Apache-2.0
 allowed-tools:

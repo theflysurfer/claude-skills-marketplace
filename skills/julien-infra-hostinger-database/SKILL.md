@@ -1,5 +1,5 @@
 ---
-name: hostinger-database
+name: julien-infra-hostinger-database
 description: Manage shared database instances on Hostinger VPS srv759970 - PostgreSQL, Redis, MongoDB operations. Use for database connections, backups, user management, performance checks, or troubleshooting database issues.
 license: Apache-2.0
 allowed-tools:

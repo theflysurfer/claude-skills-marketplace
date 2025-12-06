@@ -1,6 +1,6 @@
 # Skill Creator Pro
 
-**Enhanced version** of Anthropic's official `skill-creator` with comprehensive Skill Chaining documentation.
+**Enhanced version** of Anthropic's official `julien-dev-tools-skill-creator-pro` with comprehensive Skill Chaining documentation.
 
 ## 🆕 What's New in Pro Version
 
@@ -160,6 +160,6 @@ Apache-2.0 (based on Anthropic's skill-creator)
 
 ## 🙏 Attribution
 
-Based on the official `skill-creator` from [Anthropic Skills Repository](https://github.com/anthropics/skills).
+Based on the official `julien-dev-tools-skill-creator-pro` from [Anthropic Skills Repository](https://github.com/anthropics/skills).
 
 Enhanced with Skill Chaining documentation framework by Julien.
