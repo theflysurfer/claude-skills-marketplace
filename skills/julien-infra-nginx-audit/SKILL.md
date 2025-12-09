@@ -10,9 +10,9 @@ allowed-tools:
   - Grep
 metadata:
   author: "Julien"
-  version: "1.0.0"
+  version: "1.1.0"
   category: "infrastructure"
-  keywords: ["nginx", "audit", "ipv6", "ssl", "automation", "hostinger"]
+  keywords: ["nginx", "audit", "ipv6", "ssl", "automation", "hostinger", "validation"]
 ---
 
 # Nginx Configuration Audit & Auto-Fix
@@ -685,7 +685,96 @@ julien-infra-deployment-verifier (OBLIGATOIRE if auto-fix applied)
 - Duration: ~20 seconds
 - **Alert**: If critical issues > 0, send notification (can integrate with monitoring)
 
+## Validation Script
+
+### validate-nginx-config.sh
+
+Located at `scripts/validate-nginx-config.sh` (286 LOC)
+
+Quick validation script that checks 11 common configuration issues across all Nginx sites.
+
+**Usage:**
+```bash
+# Validate all enabled sites
+./scripts/validate-nginx-config.sh
+
+# Validate single site
+./scripts/validate-nginx-config.sh mysite.srv759970.hstgr.cloud
+```
+
+**11 Validation Checks:**
+
+| # | Check | Severity | Description |
+|---|-------|----------|-------------|
+| 1 | IPv4 HTTPS | CRITICAL | `listen 443 ssl` present |
+| 2 | IPv6 HTTPS | CRITICAL | `listen [::]:443 ssl` present (prevents SNI issues) |
+| 3 | IPv4 HTTP | WARNING | `listen 80` for HTTP redirect |
+| 4 | IPv6 HTTP | WARNING | `listen [::]:80` for HTTP redirect |
+| 5 | server_name | CRITICAL | server_name directive defined |
+| 6 | SSL Certificate | CRITICAL | ssl_certificate path configured |
+| 7 | SSL Key | CRITICAL | ssl_certificate_key path configured |
+| 8 | HTTP/2 | WARNING | http2 enabled in listen directive |
+| 9 | HTTPS Redirect | WARNING | HTTP→HTTPS redirect (return 301) |
+| 10 | Proxy Headers | CRITICAL/WARNING | Host, X-Real-IP, X-Forwarded-For, X-Forwarded-Proto |
+| 11 | Security Headers | WARNING | X-Frame-Options present |
+
+**Sample Output:**
+```
+========================================
+  Nginx Configuration Validator
+========================================
+
+[i] Validating all enabled sites...
+[i] Found 65 enabled site(s)
+
+[i] Validating: clemencefouquet.srv759970.hstgr.cloud
+
+[✓] clemencefouquet.srv759970.hstgr.cloud: Has IPv4 HTTPS listen directive
+[✓] clemencefouquet.srv759970.hstgr.cloud: Has IPv6 HTTPS listen directive
+[✓] clemencefouquet.srv759970.hstgr.cloud: Has IPv4 HTTP listen directive
+[✓] clemencefouquet.srv759970.hstgr.cloud: Has IPv6 HTTP listen directive
+[✓] clemencefouquet.srv759970.hstgr.cloud: Has server_name defined
+[✓] clemencefouquet.srv759970.hstgr.cloud: SSL certificate configured
+[✓] clemencefouquet.srv759970.hstgr.cloud: SSL key configured
+[✓] clemencefouquet.srv759970.hstgr.cloud: HTTP/2 enabled
+[✓] clemencefouquet.srv759970.hstgr.cloud: HTTP→HTTPS redirect configured
+...
+
+========================================
+  Validation Summary
+========================================
+
+Total checks:    650
+Passed:          643
+Failed:          3
+Warnings:        4
+
+Critical Issues Found:
+  ✗ newsite: Missing 'listen [::]:443 ssl' (IPv6 HTTPS)
+  ✗ testapp: Missing 'proxy_set_header X-Forwarded-Proto'
+  ✗ oldsite: Missing 'ssl_certificate' directive
+
+Warnings:
+  ! site1: HTTP/2 not enabled
+  ! site2: No HTTP→HTTPS redirect found
+  ...
+
+Validation FAILED - Please fix critical issues
+```
+
+**Exit Codes:**
+- `0`: All critical checks passed
+- `1`: One or more critical failures
+
 ## Changelog
+
+### v1.1.0 (2025-12-09)
+- Added validate-nginx-config.sh script (286 LOC)
+- 11 validation checks documented
+- Critical vs warning severity levels
+- Single site validation support
+- Colored console output
+- Exit codes for CI/CD integration
 
 ### v1.0.0 (2025-12-09)
 - Initial release

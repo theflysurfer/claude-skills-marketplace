@@ -73,8 +73,8 @@
     {
       "name": "hostinger-nginx",
       "source": "./julien-infra-hostinger-nginx",
-      "description": "Nginx reverse proxy and SSL management on Hostinger VPS srv759970",
-      "version": "1.0.0",
+      "description": "Nginx reverse proxy and SSL management on Hostinger VPS srv759970 - includes 8 operational scripts, 4 templates, and security snippets",
+      "version": "2.0.0",
       "license": "Apache-2.0",
       "category": "infrastructure",
       "keywords": [
@@ -82,7 +82,9 @@
         "reverse-proxy",
         "ssl",
         "certbot",
-        "hostinger"
+        "hostinger",
+        "scripts",
+        "templates"
       ]
     },
     {
@@ -401,8 +403,8 @@
     {
       "name": "nginx-audit",
       "source": "./julien-infra-nginx-audit",
-      "description": "Audit and auto-fix Nginx configurations on Hostinger VPS srv759970 for IPv6 support, SSL issues, and best practices. Detects missing IPv6 listeners, validates SSL certificates, and applies fixes automatically or generates reports.",
-      "version": "1.0.0",
+      "description": "Audit and auto-fix Nginx configurations on Hostinger VPS srv759970 for IPv6 support, SSL issues, and best practices. Includes validate-nginx-config.sh with 11 checks.",
+      "version": "1.1.0",
       "license": "Apache-2.0",
       "category": "infrastructure",
       "keywords": [
@@ -411,6 +413,39 @@
         "ipv6",
         "ssl",
         "configuration",
+        "hostinger",
+        "validation"
+      ]
+    },
+    {
+      "name": "wordpress-security",
+      "source": "./julien-infra-wordpress-security",
+      "description": "WordPress security audit with 25+ checks and 0-100% scoring. Checks Nginx, files, WP config, users, plugins, database, and Fail2ban protection.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "security",
+      "keywords": [
+        "wordpress",
+        "security",
+        "audit",
+        "hardening",
+        "fail2ban",
+        "hostinger"
+      ]
+    },
+    {
+      "name": "hostinger-fail2ban",
+      "source": "./julien-infra-hostinger-fail2ban",
+      "description": "Manage Fail2ban jails and IP bans on Hostinger VPS srv759970. WordPress security hardening with 3 jails (auth, hard, xmlrpc) and brute-force protection.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "security",
+      "keywords": [
+        "fail2ban",
+        "security",
+        "wordpress",
+        "brute-force",
+        "ip-ban",
         "hostinger"
       ]
     }

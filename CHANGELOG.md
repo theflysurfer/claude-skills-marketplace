@@ -7,6 +7,52 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Skills (Nginx Manager Migration)
+- **julien-infra-wordpress-security** v1.0.0 - WordPress security audit with 25+ checks
+  - 7 audit categories: Nginx, Files, WP Config, Users, Plugins, Database, Fail2ban
+  - 0-100% scoring system with CRITICAL/WARNING/GOOD/EXCELLENT levels
+  - security-audit.sh script (355 LOC)
+  - WORDPRESS_SECURITY.md comprehensive reference guide
+  - Skill chaining with hostinger-nginx and hostinger-fail2ban
+
+- **julien-infra-hostinger-fail2ban** v1.0.0 - Fail2ban jail management for WordPress
+  - 3 WordPress jails: wordpress-auth, wordpress-hard, wordpress-xmlrpc
+  - 3 detection filters with regex patterns
+  - Ban/unban operations and monitoring
+  - FAIL2BAN_GUIDE.md reference guide
+  - Skill chaining with wordpress-security
+
+### Updated - Skills (Nginx Manager Migration)
+- **julien-infra-hostinger-nginx** v1.1.0 → v2.0.0 - Major enrichment
+  - Added `scripts/` directory with 8 operational scripts:
+    - nginx-deploy.sh - Safe 6-step deployment workflow
+    - nginx-backup.sh - Configuration backup
+    - nginx-rollback.sh - Restore from backup
+    - health-check.sh - Service health verification
+    - sync-from-server.sh - Download configs from VPS
+    - sync-to-server.sh - Upload configs to VPS
+    - create-new-site.sh - Interactive site creation wizard
+    - wp-cli.sh - WordPress CLI wrapper
+  - Added `templates/` directory with 4 production templates:
+    - site-wordpress.conf - WordPress Docker template
+    - site-reverse-proxy.conf - Generic reverse proxy
+    - site-wordpress-phpfpm.conf - WordPress PHP-FPM template
+    - rate-limiting-zones.conf - Rate limiting configuration
+  - Added `references/snippets/` with 5 security snippets:
+    - ssl-hardening.conf
+    - bot-protection-wordpress.conf
+    - bot-protection-generic.conf
+    - http-method-restriction.conf
+    - basic-auth.conf
+  - Added NGINX_STANDARDS.md comprehensive reference
+
+- **julien-infra-nginx-audit** v1.0.0 → v1.1.0 - Enhanced validation
+  - Added validate-nginx-config.sh script (286 LOC)
+  - 11 validation checks with CRITICAL/WARNING severity
+  - Exit codes for CI/CD integration
+  - Single site validation support
+  - Colored console output
+
 ### Added - Skills
 - **julien-workflow-check-loaded-skills** - New workflow skill to check which skills are loaded globally and project-level
   - Displays skills by category (Hostinger, Anthropic, custom)

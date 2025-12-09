@@ -10,7 +10,7 @@ allowed-tools:
   - Grep
 metadata:
   author: "Julien"
-  version: "1.1.0"
+  version: "2.0.0"
   category: "infrastructure"
   keywords: ["nginx", "reverse-proxy", "ssl", "certbot", "hostinger", "ipv6"]
 ---
@@ -384,14 +384,120 @@ server {
 
 See `references/auto-start-integration.md` for details.
 
+## Operational Scripts (v2.0.0)
+
+Located in `scripts/` directory. All scripts use SSH to connect to the VPS.
+
+### Deployment Workflow
+
+```bash
+# Safe 6-step deployment (backup → upload → test → enable → reload → health check)
+./scripts/nginx-deploy.sh configs/sites/mysite mysite
+
+# Backup current config before changes
+./scripts/nginx-backup.sh mysite           # Single site backup
+./scripts/nginx-backup.sh                  # Full backup (all sites)
+
+# Rollback to previous version
+./scripts/nginx-rollback.sh --list mysite  # List available backups
+./scripts/nginx-rollback.sh mysite 20251209-143500  # Restore specific backup
+
+# Health check after deployment
+./scripts/health-check.sh --verbose
+```
+
+### Synchronization
+
+```bash
+# Download configs from VPS to local Git repo
+./scripts/sync-from-server.sh             # Sync priority sites
+./scripts/sync-from-server.sh --commit    # Sync and auto-commit
+
+# Upload local config to VPS (uses nginx-deploy.sh for sites)
+./scripts/sync-to-server.sh mysite
+./scripts/sync-to-server.sh snippets/bot-protection.conf
+```
+
+### Site Creation
+
+```bash
+# Interactive wizard to create new Nginx site
+./scripts/create-new-site.sh
+# Prompts for: site type (WordPress/Reverse Proxy), domain, port, options
+```
+
+### WordPress Management
+
+```bash
+# WP-CLI commands on remote WordPress containers
+./scripts/wp-cli.sh clemence "plugin list"
+./scripts/wp-cli.sh clemence "user list --role=administrator"
+./scripts/wp-cli.sh clemence "core version"
+```
+
+## Templates (v2.0.0)
+
+Located in `templates/` directory. Use as base for new site configurations.
+
+| Template | Use Case | Key Features |
+|----------|----------|--------------|
+| `site-reverse-proxy.conf` | Generic apps (Streamlit, Node.js, etc.) | Proxy headers, WebSocket support |
+| `site-wordpress.conf` | WordPress Docker | Rate limiting zones, WP-specific headers |
+| `site-wordpress-phpfpm.conf` | WordPress PHP-FPM | PHP-FPM fastcgi config, upload limits |
+| `rate-limiting-zones.conf` | Rate limiting | Global zones for wp-login, xmlrpc |
+
+**Template Variables**:
+- `{{DOMAIN_NAME}}` - Full domain (e.g., `myapp.srv759970.hstgr.cloud`)
+- `{{SITE_NAME}}` - Short name for logs/files (e.g., `myapp`)
+- `{{BACKEND_PORT}}` - Backend port (e.g., `8501`)
+
+## Security Snippets (v2.0.0)
+
+Located in `references/snippets/`. Include in Nginx configs with `include snippets/filename.conf;`
+
+| Snippet | Purpose | Include Location |
+|---------|---------|------------------|
+| `ssl-hardening.conf` | TLS 1.2/1.3, OCSP stapling, strong ciphers | http block |
+| `bot-protection-wordpress.conf` | Block bad bots, protect WP-specific paths | server block |
+| `bot-protection-generic.conf` | Generic bot protection (non-WordPress) | server block |
+| `http-method-restriction.conf` | Allow only GET/HEAD/POST | location block |
+| `basic-auth.conf` | HTTP basic authentication | location block |
+
+**Example usage in site config**:
+```nginx
+server {
+    # ... other directives ...
+
+    # Include bot protection
+    include snippets/bot-protection-wordpress.conf;
+
+    # Protect wp-admin
+    location /wp-admin/ {
+        include snippets/basic-auth.conf;
+        proxy_pass http://localhost:9000;
+    }
+}
+```
+
 ## Reference Files
 
-- **templates/reverse-proxy.conf** - Basic reverse proxy template
-- **templates/wordpress.conf** - WordPress-specific config
-- **references/ssl-certbot.md** - Complete SSL/Certbot guide
-- **references/ipv6-ssl-certificate-issues.md** - IPv6 configuration and SSL certificate mismatch troubleshooting (NEW v1.1.0)
-- **references/troubleshooting-502-504.md** - Detailed error debugging
-- **references/auto-start-integration.md** - Docker auto-start config
+**Documentation**:
+- **references/NGINX_STANDARDS.md** - Complete Nginx standards and conventions (NEW v2.0.0)
+- **references/ssl-certbot.md** - SSL/Certbot guide
+- **references/ipv6-ssl-certificate-issues.md** - IPv6 and SSL troubleshooting (v1.1.0)
+
+**Templates** (see Templates section above):
+- **templates/site-reverse-proxy.conf** - Generic reverse proxy
+- **templates/site-wordpress.conf** - WordPress Docker
+- **templates/site-wordpress-phpfpm.conf** - WordPress PHP-FPM
+- **templates/rate-limiting-zones.conf** - Rate limiting zones
+
+**Security Snippets** (see Security Snippets section above):
+- **references/snippets/ssl-hardening.conf**
+- **references/snippets/bot-protection-wordpress.conf**
+- **references/snippets/bot-protection-generic.conf**
+- **references/snippets/http-method-restriction.conf**
+- **references/snippets/basic-auth.conf**
 
 ## Important Notes
 
@@ -466,9 +572,11 @@ curl -6 https://yoursite.srv759970.hstgr.cloud  # Force IPv6
 - **julien-infra-deployment-verifier**: Verify HTTP/SSL working correctly after Nginx config
 
 **Recommandés:**
+- **julien-infra-wordpress-security**: For WordPress sites, run security audit (25+ checks, scoring 0-100%) (NEW v2.0.0)
 - **julien-infra-hostinger-maintenance**: Schedule SSL certificate renewal checks
 
 **Optionnels:**
+- **julien-infra-hostinger-fail2ban**: Install WordPress Fail2ban jails if security audit recommends (NEW v2.0.0)
 - Performance testing: Verify reverse proxy performance with load testing
 
 ### Called By
@@ -585,6 +693,31 @@ julien-infra-deployment-verifier
 - **Next**: Run `julien-infra-nginx-audit` to ensure no other sites have same issue
 
 ## Changelog
+
+### v2.0.0 (2025-12-09)
+- **MAJOR**: Migrated operational scripts from Nginx Manager repository
+- Added 8 operational scripts in `scripts/`:
+  - `nginx-deploy.sh` - Safe 6-step deployment workflow
+  - `nginx-backup.sh` - Backup configurations (single or full)
+  - `nginx-rollback.sh` - Restore from backup with safety checks
+  - `health-check.sh` - Verify services are accessible
+  - `sync-from-server.sh` - Download configs from VPS to local Git
+  - `sync-to-server.sh` - Upload configs to VPS with deploy
+  - `create-new-site.sh` - Interactive wizard to create new site
+  - `wp-cli.sh` - WP-CLI wrapper for WordPress sites
+- Added 4 production templates in `templates/`:
+  - `site-wordpress.conf` - WordPress Docker template
+  - `site-reverse-proxy.conf` - Generic reverse proxy template
+  - `site-wordpress-phpfpm.conf` - WordPress PHP-FPM template
+  - `rate-limiting-zones.conf` - Rate limiting zones
+- Added 5 security snippets in `references/snippets/`:
+  - `ssl-hardening.conf` - TLS 1.2/1.3, OCSP stapling
+  - `bot-protection-wordpress.conf` - WordPress-aware bot protection
+  - `bot-protection-generic.conf` - Generic bot protection
+  - `http-method-restriction.conf` - Allow only GET/HEAD/POST
+  - `basic-auth.conf` - HTTP basic authentication
+- Added `references/NGINX_STANDARDS.md` - Complete Nginx standards documentation
+- Updated Skill Chaining section with wordpress-security and fail2ban references
 
 ### v1.1.0 (2025-12-09)
 - **CRITICAL FIX**: Added IPv6 support documentation to prevent SSL certificate mismatch errors
