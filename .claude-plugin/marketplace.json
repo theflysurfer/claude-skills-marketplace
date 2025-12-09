@@ -25,6 +25,23 @@
       ]
     },
     {
+      "name": "check-loaded-skills",
+      "source": "./julien-workflow-check-loaded-skills",
+      "description": "Check which Claude skills are loaded globally and project-level - displays Hostinger, Anthropic, and custom skills with counts and troubleshooting",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "workflow",
+      "keywords": [
+        "skills",
+        "debugging",
+        "workflow",
+        "discovery",
+        "loaded-skills",
+        "troubleshoot",
+        "verify"
+      ]
+    },
+    {
       "name": "hostinger-ssh",
       "source": "./julien-infra-hostinger-ssh",
       "description": "SSH connection and server management for Hostinger VPS srv759970 (automation@69.62.108.82)",

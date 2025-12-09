@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added - Skills
+- **julien-workflow-check-loaded-skills** - New workflow skill to check which skills are loaded globally and project-level
+  - Displays skills by category (Hostinger, Anthropic, custom)
+  - Shows counts for each category
+  - Identifies project-level overrides
+  - Includes troubleshooting guide for missing skills
+  - Accessible via `/check-loaded-skills` slash command
+  - Comprehensive skill resolution reference guide
+
 ### Added - Discovery & Listing Tools
 - Enhanced list-resources-v2.py script with advanced features:
   - Schema validation for marketplace.json
