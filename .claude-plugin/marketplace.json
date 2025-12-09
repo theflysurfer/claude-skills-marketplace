@@ -17,7 +17,12 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "development",
-      "keywords": ["sync", "deployment", "automation", "git"]
+      "keywords": [
+        "sync",
+        "deployment",
+        "automation",
+        "git"
+      ]
     },
     {
       "name": "hostinger-ssh",
@@ -26,7 +31,13 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "infrastructure",
-      "keywords": ["ssh", "server", "hostinger", "vps", "connection"]
+      "keywords": [
+        "ssh",
+        "server",
+        "hostinger",
+        "vps",
+        "connection"
+      ]
     },
     {
       "name": "hostinger-docker",
@@ -35,7 +46,12 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "infrastructure",
-      "keywords": ["docker", "containers", "optimization", "hostinger"]
+      "keywords": [
+        "docker",
+        "containers",
+        "optimization",
+        "hostinger"
+      ]
     },
     {
       "name": "hostinger-nginx",
@@ -44,7 +60,13 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "infrastructure",
-      "keywords": ["nginx", "reverse-proxy", "ssl", "certbot", "hostinger"]
+      "keywords": [
+        "nginx",
+        "reverse-proxy",
+        "ssl",
+        "certbot",
+        "hostinger"
+      ]
     },
     {
       "name": "hostinger-database",
@@ -53,7 +75,13 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "infrastructure",
-      "keywords": ["database", "postgresql", "redis", "mongodb", "postgres"]
+      "keywords": [
+        "database",
+        "postgresql",
+        "redis",
+        "mongodb",
+        "postgres"
+      ]
     },
     {
       "name": "hostinger-maintenance",
@@ -62,7 +90,13 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "operations",
-      "keywords": ["maintenance", "runbooks", "cleanup", "monitoring", "disk-space"]
+      "keywords": [
+        "maintenance",
+        "runbooks",
+        "cleanup",
+        "monitoring",
+        "disk-space"
+      ]
     },
     {
       "name": "hostinger-space-reclaim",
@@ -71,7 +105,13 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "operations",
-      "keywords": ["disk-space", "cleanup", "docker", "maintenance", "automation"]
+      "keywords": [
+        "disk-space",
+        "cleanup",
+        "docker",
+        "maintenance",
+        "automation"
+      ]
     },
     {
       "name": "frontend-design",
@@ -80,13 +120,16 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "development",
-      "keywords": ["frontend", "design", "ui", "web", "react", "html", "css", "anthropic"],
-      "metadata": {
-        "upstream": "https://github.com/anthropics/skills",
-        "source": "anthropic",
-        "integrated": "2025-12-05",
-        "forked": true
-      }
+      "keywords": [
+        "frontend",
+        "design",
+        "ui",
+        "web",
+        "react",
+        "html",
+        "css",
+        "anthropic"
+      ]
     },
     {
       "name": "pdf",
@@ -95,13 +138,15 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "productivity",
-      "keywords": ["pdf", "documents", "forms", "extraction", "merge", "split", "anthropic"],
-      "metadata": {
-        "upstream": "https://github.com/anthropics/skills",
-        "source": "anthropic",
-        "integrated": "2025-12-05",
-        "forked": true
-      }
+      "keywords": [
+        "pdf",
+        "documents",
+        "forms",
+        "extraction",
+        "merge",
+        "split",
+        "anthropic"
+      ]
     },
     {
       "name": "xlsx",
@@ -110,13 +155,15 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "productivity",
-      "keywords": ["excel", "spreadsheet", "xlsx", "formulas", "data-analysis", "csv", "anthropic"],
-      "metadata": {
-        "upstream": "https://github.com/anthropics/skills",
-        "source": "anthropic",
-        "integrated": "2025-12-05",
-        "forked": true
-      }
+      "keywords": [
+        "excel",
+        "spreadsheet",
+        "xlsx",
+        "formulas",
+        "data-analysis",
+        "csv",
+        "anthropic"
+      ]
     },
     {
       "name": "docx",
@@ -125,13 +172,15 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "productivity",
-      "keywords": ["word", "docx", "documents", "editing", "tracked-changes", "comments", "anthropic"],
-      "metadata": {
-        "upstream": "https://github.com/anthropics/skills",
-        "source": "anthropic",
-        "integrated": "2025-12-05",
-        "forked": true
-      }
+      "keywords": [
+        "word",
+        "docx",
+        "documents",
+        "editing",
+        "tracked-changes",
+        "comments",
+        "anthropic"
+      ]
     },
     {
       "name": "pptx",
@@ -140,13 +189,15 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "productivity",
-      "keywords": ["powerpoint", "pptx", "presentations", "slides", "layouts", "speaker-notes", "anthropic"],
-      "metadata": {
-        "upstream": "https://github.com/anthropics/skills",
-        "source": "anthropic",
-        "integrated": "2025-12-05",
-        "forked": true
-      }
+      "keywords": [
+        "powerpoint",
+        "pptx",
+        "presentations",
+        "slides",
+        "layouts",
+        "speaker-notes",
+        "anthropic"
+      ]
     },
     {
       "name": "mcp-builder",
@@ -155,13 +206,15 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "development",
-      "keywords": ["mcp", "model-context-protocol", "api", "integration", "fastmcp", "typescript", "anthropic"],
-      "metadata": {
-        "upstream": "https://github.com/anthropics/skills",
-        "source": "anthropic",
-        "integrated": "2025-12-05",
-        "forked": true
-      }
+      "keywords": [
+        "mcp",
+        "model-context-protocol",
+        "api",
+        "integration",
+        "fastmcp",
+        "typescript",
+        "anthropic"
+      ]
     },
     {
       "name": "webapp-testing",
@@ -170,13 +223,16 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "development",
-      "keywords": ["testing", "playwright", "webapp", "qa", "browser", "screenshots", "debugging", "anthropic"],
-      "metadata": {
-        "upstream": "https://github.com/anthropics/skills",
-        "source": "anthropic",
-        "integrated": "2025-12-05",
-        "forked": true
-      }
+      "keywords": [
+        "testing",
+        "playwright",
+        "webapp",
+        "qa",
+        "browser",
+        "screenshots",
+        "debugging",
+        "anthropic"
+      ]
     },
     {
       "name": "canvas-design",
@@ -185,13 +241,16 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "design",
-      "keywords": ["design", "visual", "art", "posters", "infographics", "png", "pdf", "anthropic"],
-      "metadata": {
-        "upstream": "https://github.com/anthropics/skills",
-        "source": "anthropic",
-        "integrated": "2025-12-05",
-        "forked": true
-      }
+      "keywords": [
+        "design",
+        "visual",
+        "art",
+        "posters",
+        "infographics",
+        "png",
+        "pdf",
+        "anthropic"
+      ]
     },
     {
       "name": "web-artifacts-builder",
@@ -200,13 +259,14 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "development",
-      "keywords": ["web", "artifacts", "prototyping", "rapid-development", "demos", "anthropic"],
-      "metadata": {
-        "upstream": "https://github.com/anthropics/skills",
-        "source": "anthropic",
-        "integrated": "2025-12-05",
-        "forked": true
-      }
+      "keywords": [
+        "web",
+        "artifacts",
+        "prototyping",
+        "rapid-development",
+        "demos",
+        "anthropic"
+      ]
     },
     {
       "name": "skill-creator",
@@ -215,13 +275,13 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "development",
-      "keywords": ["skill-creation", "meta", "development", "guide", "anthropic"],
-      "metadata": {
-        "upstream": "https://github.com/anthropics/skills",
-        "source": "anthropic",
-        "integrated": "2025-12-05",
-        "forked": true
-      }
+      "keywords": [
+        "skill-creation",
+        "meta",
+        "development",
+        "guide",
+        "anthropic"
+      ]
     },
     {
       "name": "skill-creator-pro",
@@ -230,15 +290,14 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "development",
-      "keywords": ["skill-creation", "meta", "development", "workflows", "skill-chaining", "enhanced"],
-      "metadata": {
-        "upstream": "https://github.com/anthropics/skills",
-        "source": "enhanced",
-        "basedOn": "anthropic skill-creator",
-        "enhancements": ["skill-chaining", "input-output-specs", "visual-workflows"],
-        "integrated": "2025-12-05",
-        "forked": true
-      }
+      "keywords": [
+        "skill-creation",
+        "meta",
+        "development",
+        "workflows",
+        "skill-chaining",
+        "enhanced"
+      ]
     },
     {
       "name": "skill-reviewer",
@@ -247,14 +306,16 @@
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "development",
-      "keywords": ["skill-review", "quality-assurance", "meta", "DRY", "scoring", "improvement", "refactoring", "progressive-disclosure"],
-      "metadata": {
-        "source": "original",
-        "author": "Julien",
-        "basedOn": "skill-creator quality rubric",
-        "created": "2025-12-06",
-        "features": ["9-dimension-scoring", "dry-detection", "iterative-improvement", "automated-refactoring", "python-automation"]
-      }
+      "keywords": [
+        "skill-review",
+        "quality-assurance",
+        "meta",
+        "DRY",
+        "scoring",
+        "improvement",
+        "refactoring",
+        "progressive-disclosure"
+      ]
     }
   ]
 }
