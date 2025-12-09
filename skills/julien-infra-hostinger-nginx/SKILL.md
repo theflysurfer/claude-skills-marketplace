@@ -437,6 +437,153 @@ curl -4 https://yoursite.srv759970.hstgr.cloud  # Force IPv4
 curl -6 https://yoursite.srv759970.hstgr.cloud  # Force IPv6
 ```
 
+## 🔗 Skill Chaining
+
+### Skills Required Before
+- **julien-infra-hostinger-ssh** (recommandé): Ensures SSH access to VPS before Nginx configuration
+- **julien-infra-hostinger-deployment** (optionnel): If configuring Nginx for newly deployed app
+
+### Input Expected
+- SSH access to VPS: `automation@69.62.108.82`
+- Application running on backend port (e.g., 5173 for production, 5174 for preview)
+- Domain name configured: `*.srv759970.hstgr.cloud` or custom domain
+- Backend service accessible: `http://localhost:[PORT]`
+
+### Output Produced
+- **Format**: Nginx reverse proxy configured and running
+- **Side effects**:
+  - New site config created in `/etc/nginx/sites-available/`
+  - Symlink created in `/etc/nginx/sites-enabled/`
+  - Nginx configuration reloaded
+  - SSL certificate requested and installed (Let's Encrypt)
+  - IPv6 listeners configured (`listen [::]:80;` and `listen [::]:443 ssl http2;`)
+- **Duration**: 1-3 minutes (config 30s + SSL certificate request 60-120s + nginx reload 5s)
+
+### Compatible Skills After
+
+**Obligatoires:**
+- **julien-infra-nginx-audit**: Audit Nginx security configuration after any Nginx changes (CRITICAL)
+- **julien-infra-deployment-verifier**: Verify HTTP/SSL working correctly after Nginx config
+
+**Recommandés:**
+- **julien-infra-hostinger-maintenance**: Schedule SSL certificate renewal checks
+
+**Optionnels:**
+- Performance testing: Verify reverse proxy performance with load testing
+
+### Called By
+- **julien-infra-hostinger-deployment**: After PM2 restart, verify/configure Nginx proxy (OBLIGATOIRE in deployment workflow)
+- **julien-infra-hostinger-docker**: When deploying Docker services that need reverse proxy
+- Direct user invocation: "Configure Nginx for new site" or "Fix SSL certificate mismatch"
+- Manual configuration: When setting up new domains or troubleshooting 502/SSL errors
+
+### Tools Used
+- `Bash` (usage: SSH commands, nginx config edit, certbot SSL, systemctl reload/restart)
+- `Read` (usage: verify existing nginx configs before modification)
+- `Edit` (usage: modify nginx site configurations)
+- `Grep` (usage: search for IPv6 listener configurations, find SSL certificate issues)
+
+### Visual Workflow
+
+```
+[New application deployed OR SSL issue detected]
+    ↓
+julien-infra-hostinger-nginx (THIS SKILL)
+    ├─► Step 1: Create site config
+    │   ├─► Create /etc/nginx/sites-available/mysite
+    │   ├─► Add server block with IPv4/IPv6 listeners
+    │   │   ├─► listen 80;
+    │   │   ├─► listen [::]:80;  ← CRITICAL for IPv6
+    │   │   ├─► proxy_pass http://localhost:[PORT]
+    │   │   └─► Set proxy headers
+    │   └─► Symlink to sites-enabled/
+    ├─► Step 2: Test and reload Nginx
+    │   ├─► sudo nginx -t
+    │   └─► sudo systemctl reload nginx
+    ├─► Step 3: Request SSL certificate
+    │   ├─► sudo certbot --nginx -d mysite.srv759970.hstgr.cloud
+    │   └─► Certbot auto-adds:
+    │       ├─► listen 443 ssl http2;
+    │       ├─► listen [::]:443 ssl http2;  ← CRITICAL for IPv6
+    │       ├─► ssl_certificate paths
+    │       └─► HTTP→HTTPS redirect
+    ├─► Step 4: Verify IPv6 configuration
+    │   ├─► sudo nginx -T | grep -E "listen.*\[::\]"
+    │   ├─► Verify: [::]:80 and [::]:443 present
+    │   └─► If missing, manually add IPv6 listeners
+    └─► Step 5: Test SSL from both IPv4 and IPv6
+        ├─► curl -4 https://mysite.srv759970.hstgr.cloud
+        ├─► curl -6 https://mysite.srv759970.hstgr.cloud
+        └─► openssl s_client -servername mysite... -connect mysite:443
+    ↓
+Nginx configured with IPv6 support ✅
+    ↓
+julien-infra-nginx-audit (OBLIGATOIRE)
+    ├─► Audit security headers
+    ├─► Check for IPv6 listener coverage
+    ├─► Verify SSL certificate matches
+    └─► Scan for common misconfigurations
+    ↓
+julien-infra-deployment-verifier
+    ├─► Verify HTTP 200 status
+    ├─► Verify SSL certificate validity
+    └─► Take screenshots
+```
+
+### Usage Example 1: Configure Nginx for new deployment
+
+**Scenario**: After deploying new Express app on port 5174, configure Nginx reverse proxy
+
+**Command**:
+```bash
+# Invoked automatically by deployment skill, or manually:
+# "Configure Nginx reverse proxy for preview.incluzhact.fr on port 5174"
+```
+
+**Result**:
+- Site config created: `/etc/nginx/sites-available/preview-incluzhact`
+- IPv6 listeners added: `listen [::]:80;` and `listen [::]:443 ssl http2;`
+- SSL certificate installed: Let's Encrypt for preview.incluzhact.fr
+- Nginx reloaded successfully
+- HTTP→HTTPS redirect configured
+- IPv6 verification: Both `curl -4` and `curl -6` return correct SSL certificate
+- Duration: ~2 minutes
+- **Next**: Run `julien-infra-nginx-audit` to verify security
+
+### Usage Example 2: Fix SSL certificate mismatch (IPv6 issue)
+
+**Scenario**: Users report "Certificate doesn't match hostname" error (IPv6 clients getting wrong cert)
+
+**Command**:
+```bash
+# Diagnosed via browser error or nginx audit
+# "Fix SSL certificate mismatch for mysite.srv759970.hstgr.cloud"
+```
+
+**Result**:
+- Root cause identified: Missing `listen [::]:443 ssl http2;` in server block
+- Fix applied:
+  ```nginx
+  server {
+      listen 443 ssl http2;
+      listen [::]:443 ssl http2;  # ← ADDED
+      server_name mysite.srv759970.hstgr.cloud;
+      # ... rest of config
+  }
+  server {
+      listen 80;
+      listen [::]:80;  # ← ADDED
+      server_name mysite.srv759970.hstgr.cloud;
+      # ... rest of config
+  }
+  ```
+- Nginx reloaded: `sudo systemctl reload nginx`
+- Verification:
+  - `curl -6 https://mysite.srv759970.hstgr.cloud` now returns correct certificate ✅
+  - SNI working properly for IPv6 clients ✅
+- Duration: ~30 seconds
+- **Next**: Run `julien-infra-nginx-audit` to ensure no other sites have same issue
+
 ## Changelog
 
 ### v1.1.0 (2025-12-09)

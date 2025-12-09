@@ -527,6 +527,164 @@ diff audit-before.txt audit-after.txt
 /opt/scripts/nginx-restore.sh /opt/backups/nginx-20251209-103000
 ```
 
+## 🔗 Skill Chaining
+
+### Skills Required Before
+- **julien-infra-hostinger-nginx** (obligatoire): Must have Nginx configs to audit
+- **julien-infra-hostinger-ssh** (recommandé): Ensures SSH access configured
+
+### Input Expected
+- SSH access to VPS: `automation@69.62.108.82`
+- Nginx installed and configured: `/etc/nginx/`
+- At least one site configured in `/etc/nginx/sites-available/`
+- Write permissions for backup directory: `/opt/backups/`
+
+### Output Produced
+- **Format**: Audit report (console, JSON, or markdown file)
+- **Side effects**:
+  - Backup created in `/opt/backups/nginx-[timestamp]/` (if auto-fix enabled)
+  - Nginx configs modified (if auto-fix enabled):
+    - IPv6 listeners added (`listen [::]:80;` and `listen [::]:443 ssl http2;`)
+    - Security headers added (X-Frame-Options, HSTS, etc.)
+    - Best practice directives added (server_tokens off, etc.)
+  - Nginx reloaded (if auto-fix applied successfully)
+- **Duration**: 10-30 seconds (audit-only) or 1-2 minutes (with auto-fix)
+
+### Compatible Skills After
+
+**Obligatoires:**
+- **julien-infra-deployment-verifier**: Verify HTTP/SSL still working after auto-fix changes
+
+**Recommandés:**
+- **julien-infra-hostinger-maintenance**: If multiple issues found, schedule cleanup
+
+**Optionnels:**
+- Manual review: For complex issues that require human judgment
+- Security scan: External tools (Qualys SSL Labs, Mozilla Observatory)
+
+### Called By
+- **julien-infra-hostinger-nginx**: Immediately after creating/modifying Nginx configs (OBLIGATOIRE in workflow)
+- **julien-infra-hostinger-deployment**: After deployment completes (recommandé)
+- **julien-infra-hostinger-docker**: After Docker service with reverse proxy deployed
+- Direct user invocation: "Audit all Nginx configs" or "Fix SSL certificate issues"
+- Cron job: Weekly automated audits (`0 3 * * 1 /opt/scripts/nginx-audit.sh --report-only`)
+
+### Tools Used
+- `Bash` (usage: SSH commands, nginx -t, systemctl reload, sed for auto-fix, grep for pattern matching)
+- `Read` (usage: read Nginx config files to analyze)
+- `Write` (usage: generate audit reports in markdown/JSON format)
+- `Edit` (usage: apply auto-fixes to Nginx config files)
+- `Grep` (usage: search for missing IPv6 listeners, SSL directives, security headers)
+
+### Visual Workflow
+
+```
+[Trigger: After Nginx config change OR scheduled audit]
+    ↓
+julien-infra-nginx-audit (THIS SKILL)
+    ├─► Step 1: Scan all sites
+    │   ├─► Find all configs in /etc/nginx/sites-available/
+    │   ├─► Parse server blocks
+    │   └─► Extract domains, ports, SSL status
+    ├─► Step 2: IPv6 Audit (CRITICAL)
+    │   ├─► Check for "listen [::]:80;" in HTTP blocks
+    │   ├─► Check for "listen [::]:443 ssl http2;" in HTTPS blocks
+    │   └─► Flag missing IPv6 listeners (prevents SSL mismatch)
+    ├─► Step 3: SSL Audit
+    │   ├─► Check certificate expiration dates
+    │   ├─► Verify SSL protocols (TLSv1.2+)
+    │   └─► Check for weak ciphers
+    ├─► Step 4: Security Headers Audit
+    │   ├─► Check for X-Frame-Options
+    │   ├─► Check for HSTS
+    │   ├─► Check for X-Content-Type-Options
+    │   └─► Check for CSP (optional)
+    ├─► Step 5: Best Practices Audit
+    │   ├─► server_tokens off
+    │   ├─► client_max_body_size set
+    │   └─► Proper proxy headers
+    ├─► Step 6: Generate Report
+    │   ├─► Summary: X critical, Y warnings, Z passed
+    │   ├─► Detailed issues per site
+    │   └─► Recommendations
+    └─► Step 7: Auto-fix (if enabled)
+        ├─► Backup configs to /opt/backups/nginx-[timestamp]/
+        ├─► Apply fixes via sed/Edit
+        ├─► Test config: sudo nginx -t
+        ├─► If OK: sudo systemctl reload nginx
+        └─► If FAIL: Restore from backup
+    ↓
+Audit complete: Report generated or fixes applied ✅
+    ↓
+julien-infra-deployment-verifier (OBLIGATOIRE if auto-fix applied)
+    ├─► Check HTTP status (verify sites still accessible)
+    ├─► Check SSL certificates (verify IPv6 fix worked)
+    └─► Take screenshots (visual regression check)
+    ↓
+[Optional] Report to user or log to monitoring system
+```
+
+### Usage Example 1: Audit all sites after adding new site
+
+**Scenario**: After creating new Nginx config for `myapp.srv759970.hstgr.cloud`, audit all configs to ensure consistency
+
+**Command**:
+```bash
+# Automatically invoked after nginx config creation, or manually:
+# "Audit all Nginx configurations"
+```
+
+**Result**:
+- **Audit report**:
+  - Total sites: 66
+  - Critical issues: 1 (myapp missing IPv6 listeners)
+  - Warnings: 0
+  - Passed: 65
+- **Issue detected**:
+  - `myapp.srv759970.hstgr.cloud`: Missing `listen [::]:443 ssl http2;` and `listen [::]:80;`
+- **Recommendation**: Run audit with `--auto-fix` to add IPv6 listeners
+- Duration: ~15 seconds
+
+### Usage Example 2: Auto-fix IPv6 issues across all sites
+
+**Scenario**: After discovering 3 sites missing IPv6 listeners (causing SSL certificate mismatch for IPv6 clients)
+
+**Command**:
+```bash
+# "Fix all Nginx IPv6 issues automatically"
+```
+
+**Result**:
+- **Backup created**: `/opt/backups/nginx-20251209-143500/`
+- **Sites fixed**: 3
+  - `audioguides.srv759970.hstgr.cloud`: Added `listen [::]:80;` and `listen [::]:443 ssl http2;`
+  - `myapp.srv759970.hstgr.cloud`: Added `listen [::]:80;` and `listen [::]:443 ssl http2;`
+  - `test-site.srv759970.hstgr.cloud`: Added `listen [::]:80;`
+- **Nginx config test**: PASSED ✅
+- **Nginx reload**: SUCCESS ✅
+- **Verification**: All 3 sites now return correct SSL certificates for both IPv4 and IPv6
+- Duration: ~45 seconds
+- **Next**: `julien-infra-deployment-verifier` automatically invoked to confirm all sites still accessible
+
+### Usage Example 3: Scheduled weekly audit (cron)
+
+**Scenario**: Automated weekly audit to catch configuration drift or expiring SSL certificates
+
+**Cron job**:
+```bash
+0 3 * * 1 /opt/scripts/nginx-audit.sh --report-only --json > /opt/reports/nginx-audit-$(date +\%Y\%m\%d).json
+```
+
+**Result**:
+- Runs every Monday at 3:00 AM
+- Generates JSON report: `/opt/reports/nginx-audit-20251209.json`
+- Report includes:
+  - SSL certificates expiring in < 30 days
+  - New sites missing IPv6 listeners
+  - Missing security headers
+- Duration: ~20 seconds
+- **Alert**: If critical issues > 0, send notification (can integrate with monitoring)
+
 ## Changelog
 
 ### v1.0.0 (2025-12-09)

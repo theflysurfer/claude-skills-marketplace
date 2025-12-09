@@ -436,11 +436,127 @@ Deployment is successful if **ALL** checks pass:
 - ✅ Screenshots show correct UI
 - ✅ All routes accessible
 
+## 🔗 Skill Chaining
+
+### Skills Required Before
+- **julien-infra-hostinger-deployment** (obligatoire): Must complete deployment before verification
+- **julien-infra-hostinger-nginx** (obligatoire): Nginx must be configured with IPv6 for correct SSL verification
+
+### Input Expected
+- Deployment completed: PM2 process restarted within last 2 minutes
+- URLs accessible:
+  - Production: https://incluzhact.fr (PM2: incluzhact, port 5173)
+  - Preview: https://preview.incluzhact.fr (PM2: incluzhact-preview, port 5174)
+- SSH access to VPS: `automation@69.62.108.82`
+- Nginx reverse proxy configured and running
+- SSL certificates valid
+
+### Output Produced
+- **Format**: Deployment verification report (markdown file)
+- **File**: `deployment-report-[YYYYMMDD-HHMMSS].md` (saved locally)
+- **Side effects**:
+  - Screenshots saved to local directory (PNG files)
+  - PM2 logs analyzed for errors
+  - HTTP status codes logged
+- **Duration**: 30-60 seconds (PM2 check 5s + HTTP check 10s + logs 10s + screenshots 20s)
+
+### Compatible Skills After
+
+**Recommandés:**
+- **julien-infra-nginx-audit**: If verification detects SSL or Nginx issues, run security audit
+- **julien-infra-hostinger-maintenance**: Schedule post-deployment cleanup if warnings detected
+
+**Optionnels:**
+- Rollback workflow: If verification fails, invoke rollback procedure from deployment skill
+- Monitoring setup: Configure long-term monitoring after successful verification
+
+### Called By
+- **julien-infra-hostinger-deployment**: As step 7/7 in complete deployment pipeline (obligatoire)
+- Direct user invocation: "Verify deployment status" or "Check if deployment succeeded"
+- Scheduled checks: Cron jobs for periodic health monitoring
+
+### Tools Used
+- `Bash` (usage: SSH commands, pm2 list/logs, curl HTTP checks, openssl SSL verification)
+- `mcp__playwright__browser_navigate` (usage: load deployed pages)
+- `mcp__playwright__browser_take_screenshot` (usage: capture visual state of deployed UI)
+- `mcp__playwright__browser_snapshot` (usage: get DOM state for debugging)
+- `mcp__playwright__browser_close` (usage: cleanup browser after screenshots)
+- `Write` (usage: generate deployment verification report markdown file)
+
+### Visual Workflow
+
+```
+julien-infra-hostinger-deployment completes
+    ├─► npm run build ✅
+    ├─► pm2 reload incluzhact-preview ✅
+    └─► Wait 10s for stabilization
+    ↓
+julien-infra-deployment-verifier (THIS SKILL)
+    ├─► Step 1: Check PM2 status
+    │   ├─► ssh pm2 list
+    │   ├─► Verify status: online
+    │   ├─► Check uptime: >10s
+    │   └─► Check restarts: <5
+    ├─► Step 2: HTTP status check
+    │   ├─► curl -I https://incluzhact.fr
+    │   ├─► curl -I https://preview.incluzhact.fr
+    │   └─► Verify: HTTP 200
+    ├─► Step 3: SSL certificate check
+    │   ├─► openssl s_client (production)
+    │   ├─► openssl s_client (preview)
+    │   └─► Verify: notAfter >30 days
+    ├─► Step 4: Error log analysis
+    │   ├─► ssh pm2 logs --lines 50
+    │   ├─► grep -i "error|fatal|crash"
+    │   └─► Verify: 0 critical errors
+    ├─► Step 5: Visual verification (Playwright)
+    │   ├─► Navigate to deployed URLs
+    │   ├─► Take screenshots
+    │   └─► Save: production-home.png, preview-*.png
+    └─► Step 6: Generate report
+        └─► Write deployment-report-[timestamp].md
+    ↓
+Verification Result:
+    ├─► ✅ ALL CHECKS PASS → Deployment successful
+    ├─► ⚠️  WARNINGS → Deployment OK but investigate
+    └─► ❌ FAILURES → Rollback recommended
+    ↓
+[If issues detected]
+    ├─► julien-infra-nginx-audit (check Nginx security)
+    └─► Rollback procedure (from deployment skill)
+```
+
+### Usage Example
+
+**Scenario**: After deploying to preview, verify deployment succeeded and capture screenshots for client
+
+**Command**:
+```bash
+# Automatically invoked by deployment skill, or manually:
+# "Verify deployment on preview environment"
+```
+
+**Result**:
+- PM2 status: `incluzhact-preview` online, uptime 1m, 0 restarts ✅
+- HTTP status: https://preview.incluzhact.fr returns 200 ✅
+- SSL certificate: Valid until 2025-03-01 (60 days remaining) ✅
+- Error logs: 0 critical errors found ✅
+- Screenshots saved:
+  - `preview-home.png`
+  - `preview-a-propos.png`
+  - `preview-services.png`
+  - `preview-contact.png`
+- Report generated: `deployment-report-20251209-143022.md`
+- Duration: ~45 seconds
+- **Conclusion**: Deployment verified successfully ✅
+
 ## Related Skills
 
 - **julien-infra-git-vps-sync**: Pre-deployment Git sync
 - **julien-infra-hostinger-deployment**: Full deployment workflow
+- **julien-infra-hostinger-nginx**: Nginx reverse proxy configuration
 - **julien-infra-hostinger-ssh**: SSH connection management
+- **julien-infra-nginx-audit**: Nginx security audit
 
 ## Quick Reference
 

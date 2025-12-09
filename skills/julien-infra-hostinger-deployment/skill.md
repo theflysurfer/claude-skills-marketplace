@@ -647,12 +647,122 @@ After deploying:
 - [ ] All routes accessible
 - [ ] Deployment logged
 
+## 🔗 Skill Chaining
+
+### Skills Required Before
+- **julien-infra-git-vps-sync** (obligatoire): Synchronizes VPS Git repository with GitHub before building
+- **julien-infra-hostinger-ssh** (recommandé): Ensures SSH access is configured
+- **julien-infra-hostinger-space-reclaim** (optionnel): If disk space < 5 GB, reclaim space first
+
+### Input Expected
+- Code pushed to GitHub: `main` (production) or `staging` (preview) branch
+- SSH access to VPS configured: `automation@69.62.108.82`
+- VPS Git repository synchronized (via git-vps-sync skill)
+- File: `ecosystem.config.cjs` exists on VPS at `/var/www/incluzhact/`
+- Sufficient disk space: >5 GB available
+
+### Output Produced
+- **Format**: Application deployed and running on VPS
+- **URLs**:
+  - Production: https://incluzhact.fr (port 5173, PM2: incluzhact)
+  - Preview: https://preview.incluzhact.fr (port 5174, PM2: incluzhact-preview)
+- **Side effects**:
+  - PM2 process restarted (`incluzhact` or `incluzhact-preview`)
+  - New Git commit checked out on VPS
+  - npm dependencies installed/updated
+  - Production build generated in `/var/www/incluzhact/dist/`
+  - Deployment logged to `/var/www/incluzhact/logs/deployments.log`
+- **Duration**: 2-4 minutes (npm install 60s + build 60-90s + restart 5s + verification 30s)
+
+### Compatible Skills After
+
+**Obligatoires:**
+- **julien-infra-deployment-verifier**: Verifies deployment success (PM2 status, HTTP, SSL, logs, screenshots)
+- **julien-infra-hostinger-nginx** (obligatoire): Configure/verify Nginx reverse proxy with IPv6 support for proper SSL/SNI
+
+**Recommandés:**
+- **julien-infra-nginx-audit**: Audit Nginx security configuration after deployment changes
+
+**Optionnels:**
+- **julien-infra-hostinger-maintenance**: Schedule regular maintenance after deployment
+- Accessibility audit: Check WCAG compliance (important for INCLUZ'HACT)
+- Performance monitoring: Lighthouse scores post-deployment
+
+### Called By
+- Direct user invocation: "Deploy to production/preview"
+- Git hooks: `post-push.sh` hook after `git push origin staging|main` (if configured)
+- Manual deployment: When troubleshooting or deploying specific commits
+
+### Tools Used
+- `Bash` (usage: SSH commands, npm install/build, pm2 restart, git operations)
+- `Read` (usage: verify ecosystem.config.cjs exists before deployment)
+- `Write` (usage: create deployment logs, backup configs)
+- `AskUserQuestion` (usage: confirm production deployment if risky changes detected)
+- `Skill` (usage: invoke git-vps-sync and deployment-verifier skills)
+
+### Visual Workflow
+
+```
+User: git push origin staging
+    ↓
+Pre-deployment checks (disk space, Git status, PM2 health)
+    ↓
+julien-infra-git-vps-sync (step 2/7)
+    ├─► git clean -fd
+    ├─► git fetch origin staging
+    └─► git reset --hard origin/staging
+    ↓
+julien-infra-hostinger-deployment (THIS SKILL)
+    ├─► npm install (step 3/7)
+    ├─► npm run build (step 4/7)
+    ├─► pm2 reload incluzhact-preview --update-env (step 5/7)
+    ├─► Wait 10s for stabilization (step 6/7)
+    └─► Log deployment to deployments.log
+    ↓
+julien-infra-hostinger-nginx (OBLIGATOIRE)
+    ├─► Verify reverse proxy config
+    ├─► Check IPv6 listeners ([::]:80, [::]:443)
+    └─► Ensure correct SSL certificate for domain
+    ↓
+julien-infra-deployment-verifier (step 7/7, OBLIGATOIRE)
+    ├─► Check PM2 status (online, uptime >10s)
+    ├─► HTTP status code (200)
+    ├─► SSL certificate validity
+    ├─► Error logs check
+    └─► Screenshots of deployed UI
+    ↓
+[Optional next steps]
+    ├─► julien-infra-nginx-audit (security check)
+    ├─► Accessibility audit (WCAG compliance)
+    └─► Performance monitoring (Lighthouse)
+```
+
+### Usage Example
+
+**Scenario**: Deploy new feature to preview environment for client testing
+
+**Command**:
+```bash
+git push origin staging
+# Or manually: "Deploy to preview environment"
+```
+
+**Result**:
+- Site updated on https://preview.incluzhact.fr
+- Deployment completes in ~2-4 minutes
+- PM2 logs confirm successful restart: `pm2 logs incluzhact-preview --lines 20`
+- Changes visible immediately (hard refresh: Ctrl+Shift+R)
+- Nginx proxy verified with IPv6 support
+- Deployment logged with timestamp and commit hash
+
 ## Related Skills
 
 - **julien-infra-git-vps-sync**: Pre-deployment Git synchronization
 - **julien-infra-deployment-verifier**: Post-deployment verification
+- **julien-infra-hostinger-nginx**: Nginx reverse proxy configuration (OBLIGATOIRE)
 - **julien-infra-hostinger-ssh**: SSH connection management
 - **julien-infra-hostinger-space-reclaim**: Disk space management
+- **julien-infra-nginx-audit**: Nginx security audit
 
 ## Quick Reference
 

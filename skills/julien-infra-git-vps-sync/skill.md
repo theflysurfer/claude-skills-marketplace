@@ -398,6 +398,84 @@ ssh automation@69.62.108.82 'pm2 restart incluzhact'
 5. **Use hard reset for deployments**: VPS should match GitHub exactly
 6. **Ask user for diverged commits**: Don't lose work without confirmation
 
+## 🔗 Skill Chaining
+
+### Skills Required Before
+- **julien-infra-hostinger-ssh** (recommandé): Ensures SSH access is configured before attempting Git operations
+
+### Input Expected
+- SSH access to VPS configured: `automation@69.62.108.82`
+- Git repository exists at: `/var/www/incluzhact`
+- GitHub remote configured: `origin` pointing to `https://github.com/theflysurfer/Site-web-Clem-2.git`
+- Target branch known: `main` (production) or `staging` (preview)
+
+### Output Produced
+- **Format**: VPS Git repository synchronized with GitHub
+- **Side effects**:
+  - Untracked files removed (`git clean -fd`)
+  - VPS branch reset to match `origin/[branch]` exactly
+  - Working tree clean (no uncommitted changes)
+- **Duration**: 5-15 seconds (fetch + reset operations)
+
+### Compatible Skills After
+
+**Obligatoires:**
+- **julien-infra-hostinger-deployment**: Deploys the synchronized code (npm install + build + PM2 restart)
+
+**Optionnels:**
+- Direct build/restart: If you manually want to build without full deployment workflow
+
+### Called By
+- **julien-infra-hostinger-deployment**: As step 2/7 in complete deployment pipeline
+- Direct user invocation: When Git sync issues detected (unrelated histories, diverged branches)
+- Git hooks: When pre-deployment validation detects sync needed
+
+### Tools Used
+- `Bash` (usage: SSH commands, git fetch/reset/clean operations, git status verification)
+- `Read` (usage: verify ecosystem.config.cjs or deployment config exists)
+- `AskUserQuestion` (usage: confirm hard reset if VPS has diverged commits that may need preservation)
+
+### Visual Workflow
+
+```
+User: git push origin staging (on local machine)
+    ↓
+[Optional] julien-infra-hostinger-ssh (verify SSH access)
+    ↓
+julien-infra-git-vps-sync (THIS SKILL)
+    ├─► SSH to VPS
+    ├─► cd /var/www/incluzhact
+    ├─► git clean -fd (remove untracked files)
+    ├─► git fetch origin [branch]
+    ├─► git reset --hard origin/[branch]
+    └─► Verify sync: git log --oneline -3
+    ↓
+VPS Git repository now matches GitHub
+    ↓
+[Next: julien-infra-hostinger-deployment]
+    ├─► npm install
+    ├─► npm run build
+    ├─► pm2 restart incluzhact-preview
+    └─► (continues deployment workflow)
+```
+
+### Usage Example
+
+**Scenario**: After pushing code to GitHub staging, VPS has unrelated histories error during deployment
+
+**Command**:
+```bash
+# Invoked automatically by deployment skill, or manually:
+# "Sync VPS Git repository with GitHub staging branch"
+```
+
+**Result**:
+- VPS `/var/www/incluzhact` reset to match `origin/staging`
+- Untracked files (CLAUDE.md, nul) removed
+- Git status shows clean working tree
+- Duration: ~10 seconds
+- Ready for npm install + build
+
 ## Related Skills
 
 - **julien-infra-hostinger-ssh**: SSH connection management
