@@ -1,0 +1,51 @@
+name: Validate Marketplace
+
+on:
+  push:
+    branches: [ master, main, develop ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  validate:
+    name: Validate marketplace.json
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run marketplace validation
+        run: |
+          python scripts/validate-marketplace.py
+
+      - name: Validate JSON syntax
+        run: |
+          python -m json.tool .claude-plugin/marketplace.json > /dev/null
+          echo "✓ marketplace.json is valid JSON"
+
+      - name: Check for required files
+        run: |
+          if [ ! -f ".claude-plugin/marketplace.json" ]; then
+            echo "✗ Missing .claude-plugin/marketplace.json"
+            exit 1
+          fi
+          if [ ! -f "README.md" ]; then
+            echo "✗ Missing README.md"
+            exit 1
+          fi
+          echo "✓ Required files present"
+
+      - name: Summary
+        if: success()
+        run: |
+          echo "✅ Marketplace validation passed!"
+          echo ""
+          echo "📊 Statistics:"
+          python scripts/list-resources-v2.py --stats | head -20

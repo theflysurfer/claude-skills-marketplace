@@ -1,0 +1,8 @@
+{
+  "extraKnownMarketplaces": [
+    {
+      "name": "claude-skills-marketplace",
+      "url": "https://github.com/theflysurfer/claude-skills-marketplace"
+    }
+  ]
+}

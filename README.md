@@ -33,6 +33,38 @@ marketplace/
 
 ## Quick Start
 
+### Listing Available Resources
+
+Discover all available skills and resources in this marketplace:
+
+```bash
+# Basic listing
+python scripts/list-resources-v2.py
+
+# Advanced features
+python scripts/list-resources-v2.py --stats                    # Show statistics
+python scripts/list-resources-v2.py --category infrastructure  # Filter by category
+python scripts/list-resources-v2.py --keyword docker           # Filter by keyword
+python scripts/list-resources-v2.py --search nginx             # Search query
+python scripts/list-resources-v2.py --verbose                  # Detailed view
+
+# Team distribution
+python scripts/list-resources-v2.py --export-team-config .claude/settings.json
+
+# Or use the slash command in Claude Code
+/list-resources
+```
+
+**Features:**
+- Schema validation for marketplace.json
+- Filter by category, keyword, or source type
+- Search functionality
+- Statistics and analytics
+- Team configuration export
+- Keywords/tags display
+
+See [docs/LIST_RESOURCES_GUIDE.md](./docs/LIST_RESOURCES_GUIDE.md) for detailed usage and [docs/BEST_PRACTICES.md](./docs/BEST_PRACTICES.md) for marketplace best practices.
+
 ### Creating a New Skill
 
 ```bash
@@ -86,7 +118,7 @@ Place your detailed instructions here in Markdown.
 
 ## Installing the Marketplace
 
-### Add This Marketplace to Claude Code
+### Method 1: Add to Claude Code (Recommended)
 
 ```bash
 # Add the marketplace from GitHub
@@ -95,6 +127,35 @@ Place your detailed instructions here in Markdown.
 # Or add from local path during development
 /plugin marketplace add /path/to/this/repo
 ```
+
+### Method 2: Team Distribution (extraKnownMarketplaces)
+
+For automatic marketplace installation across your team:
+
+1. **Generate the team config:**
+   ```bash
+   python scripts/list-resources-v2.py --export-team-config .claude/settings.json
+   ```
+
+2. **Add to your project's `.claude/settings.json`:**
+   ```json
+   {
+     "extraKnownMarketplaces": [
+       {
+         "name": "claude-skills-marketplace",
+         "url": "https://github.com/theflysurfer/claude-skills-marketplace"
+       }
+     ]
+   }
+   ```
+
+3. **Commit to version control:**
+   ```bash
+   git add .claude/settings.json
+   git commit -m "Add Claude Code marketplace configuration"
+   ```
+
+When team members clone the repository and trust it in Claude Code, the marketplace will be automatically available.
 
 ### Installing Skills from the Marketplace
 
@@ -114,11 +175,22 @@ claude skill list
 /skill-name
 ```
 
-### With Claude.ai
+### Alternative Methods
+
+#### With Claude.ai
 Skills can be uploaded directly to Claude.ai (paid plans).
 
-### With Claude API
+#### With Claude API
 Deploy via Skills API for production applications.
+
+#### Direct Installation (Without Marketplace)
+```bash
+# Clone the repository
+git clone https://github.com/theflysurfer/claude-skills-marketplace.git
+
+# Install a specific skill
+claude skill install ./claude-skills-marketplace/skills/<skill-name>
+```
 
 ## Available Skills
 
