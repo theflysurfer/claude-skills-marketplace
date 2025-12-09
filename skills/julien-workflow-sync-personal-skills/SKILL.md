@@ -48,7 +48,27 @@ First, determine the marketplace repository root:
 - Look for `.claude-plugin/marketplace.json`
 - This is the source of truth for skills
 
-### Step 2: Scan Skills Directory
+### Step 2: Check Sync Configuration (NEW)
+
+**IMPORTANT**: Check if `sync-config.json` exists in this skill's directory:
+
+```bash
+cat ~/.claude/skills/julien-workflow-sync-personal-skills/sync-config.json
+```
+
+OR from marketplace:
+```bash
+cat skills/julien-workflow-sync-personal-skills/sync-config.json
+```
+
+If the file exists AND `sync_enabled: true`:
+- **Only sync skills listed in `skills_to_sync` array**
+- Skip all other skills
+
+If the file doesn't exist OR `sync_enabled: false`:
+- Sync ALL skills (original behavior)
+
+### Step 3: Scan Skills Directory
 
 List all skill directories in `skills/`:
 ```bash
@@ -56,12 +76,14 @@ ls -d skills/*/
 ```
 
 For each skill directory found:
+- **If using sync-config.json**: Check if skill name is in `skills_to_sync` array
+- **Skip if NOT in config list** (when selective sync is enabled)
 - Verify it contains a `SKILL.md` file
 - Read the YAML frontmatter to get skill metadata (name, description, version)
 
-### Step 3: Copy Skills to Personal Directory
+### Step 4: Copy Skills to Personal Directory
 
-For each valid skill:
+For each valid skill (filtered by config if applicable):
 
 ```bash
 # Create personal skills directory if it doesn't exist
@@ -80,7 +102,7 @@ cp -r skills/skill-name ~/.claude/skills/
 - Preserve directory structure
 - Skip the `julien-workflow-sync-personal-skills` skill itself (avoid recursion)
 
-### Step 4: Update marketplace.json
+### Step 5: Update marketplace.json
 
 Read `.claude-plugin/marketplace.json` and check the `plugins` array.
 
@@ -101,7 +123,7 @@ For each skill found in `skills/` directory:
 
 Write the updated marketplace.json back to disk.
 
-### Step 5: Commit to Git
+### Step 6: Commit to Git
 
 Stage all changes and create a commit:
 
@@ -121,7 +143,7 @@ EOF
 )"
 ```
 
-### Step 6: Push to GitHub
+### Step 7: Push to GitHub
 
 ```bash
 git push origin master

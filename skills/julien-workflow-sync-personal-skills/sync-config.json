@@ -1,0 +1,19 @@
+{
+  "description": "Configuration for selective skill synchronization",
+  "sync_enabled": true,
+  "skills_to_sync": [
+    "julien-dev-tools-skill-creator-pro",
+    "julien-dev-tools-skill-reviewer",
+    "julien-workflow-check-loaded-skills",
+    "julien-dev-tools-claude-md-documenter",
+    "anthropic-office-pdf",
+    "anthropic-office-xlsx",
+    "anthropic-office-docx",
+    "anthropic-office-pptx"
+  ],
+  "notes": [
+    "Only skills listed in 'skills_to_sync' will be synchronized to ~/.claude/skills/",
+    "To sync all skills, set 'sync_enabled' to false or remove this file",
+    "Skills are listed by their directory name in marketplace/skills/"
+  ]
+}
