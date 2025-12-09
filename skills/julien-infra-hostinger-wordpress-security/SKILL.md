@@ -1,5 +1,5 @@
 ---
-name: julien-infra-wordpress-security
+name: julien-infra-hostinger-wordpress-security
 description: Audit sécurité WordPress (25+ checks, scoring 0-100%). Use for WordPress security audits, after WordPress deployment, or when security hardening needed. Checks Nginx, files, WP config, users, plugins, database, and Fail2ban.
 license: Apache-2.0
 allowed-tools:

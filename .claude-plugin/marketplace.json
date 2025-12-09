@@ -401,8 +401,8 @@
       ]
     },
     {
-      "name": "nginx-audit",
-      "source": "./julien-infra-nginx-audit",
+      "name": "hostinger-nginx-audit",
+      "source": "./julien-infra-hostinger-nginx-audit",
       "description": "Audit and auto-fix Nginx configurations on Hostinger VPS srv759970 for IPv6 support, SSL issues, and best practices. Includes validate-nginx-config.sh with 11 checks.",
       "version": "1.1.0",
       "license": "Apache-2.0",
@@ -418,8 +418,8 @@
       ]
     },
     {
-      "name": "wordpress-security",
-      "source": "./julien-infra-wordpress-security",
+      "name": "hostinger-wordpress-security",
+      "source": "./julien-infra-hostinger-wordpress-security",
       "description": "WordPress security audit with 25+ checks and 0-100% scoring. Checks Nginx, files, WP config, users, plugins, database, and Fail2ban protection.",
       "version": "1.0.0",
       "license": "Apache-2.0",

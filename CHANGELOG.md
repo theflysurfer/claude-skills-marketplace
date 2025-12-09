@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added - Skills (Nginx Manager Migration)
-- **julien-infra-wordpress-security** v1.0.0 - WordPress security audit with 25+ checks
+- **julien-infra-hostinger-wordpress-security** v1.0.0 - WordPress security audit with 25+ checks
   - 7 audit categories: Nginx, Files, WP Config, Users, Plugins, Database, Fail2ban
   - 0-100% scoring system with CRITICAL/WARNING/GOOD/EXCELLENT levels
   - security-audit.sh script (355 LOC)
@@ -46,7 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - basic-auth.conf
   - Added NGINX_STANDARDS.md comprehensive reference
 
-- **julien-infra-nginx-audit** v1.0.0 → v1.1.0 - Enhanced validation
+- **julien-infra-hostinger-nginx-audit** v1.0.0 → v1.1.0 - Enhanced validation
   - Added validate-nginx-config.sh script (286 LOC)
   - 11 validation checks with CRITICAL/WARNING severity
   - Exit codes for CI/CD integration

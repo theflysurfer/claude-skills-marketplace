@@ -1,5 +1,5 @@
 ---
-name: julien-infra-nginx-audit
+name: julien-infra-hostinger-nginx-audit
 description: Audit and auto-fix Nginx configurations on Hostinger VPS srv759970 for IPv6 support, SSL issues, and best practices. Detects missing IPv6 listeners, validates SSL certificates, and applies fixes automatically or generates reports.
 license: Apache-2.0
 allowed-tools:
