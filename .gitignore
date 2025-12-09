@@ -44,3 +44,10 @@ build/
 *.key
 secrets.json
 credentials.json
+
+# Git merge artifacts
+*.orig
+*.rej
+
+# Auto-generated files
+RESOURCES.md

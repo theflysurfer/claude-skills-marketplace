@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "sync-personal-skills",
-      "source": "./sync-personal-skills",
+      "source": "./julien-workflow-sync-personal-skills",
       "description": "Synchronizes skills from this marketplace repository to ~/.claude/skills/ for global availability across all projects. Also commits and pushes changes to GitHub.",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -26,7 +26,7 @@
     },
     {
       "name": "hostinger-ssh",
-      "source": "./hostinger-ssh",
+      "source": "./julien-infra-hostinger-ssh",
       "description": "SSH connection and server management for Hostinger VPS srv759970 (automation@69.62.108.82)",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -41,7 +41,7 @@
     },
     {
       "name": "hostinger-docker",
-      "source": "./hostinger-docker",
+      "source": "./julien-infra-hostinger-docker",
       "description": "Docker container management on Hostinger VPS - optimize images, deploy services, troubleshoot errors",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -55,7 +55,7 @@
     },
     {
       "name": "hostinger-nginx",
-      "source": "./hostinger-nginx",
+      "source": "./julien-infra-hostinger-nginx",
       "description": "Nginx reverse proxy and SSL management on Hostinger VPS srv759970",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -70,7 +70,7 @@
     },
     {
       "name": "hostinger-database",
-      "source": "./hostinger-database",
+      "source": "./julien-infra-hostinger-database",
       "description": "Manage shared database instances (PostgreSQL, Redis, MongoDB) on Hostinger VPS",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -85,7 +85,7 @@
     },
     {
       "name": "hostinger-maintenance",
-      "source": "./hostinger-maintenance",
+      "source": "./julien-infra-hostinger-maintenance",
       "description": "Recurring maintenance tasks and runbooks for Hostinger VPS - cleanup, monitoring, health checks",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -100,7 +100,7 @@
     },
     {
       "name": "hostinger-space-reclaim",
-      "source": "./hostinger-space-reclaim",
+      "source": "./julien-infra-hostinger-space-reclaim",
       "description": "Reclaim disk space on Hostinger VPS (srv759970) through automated analysis and cleanup of Docker images, volumes, logs, and application data. Use when disk space is critical (>90% usage) or for regular maintenance to prevent space issues.",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -115,7 +115,7 @@
     },
     {
       "name": "frontend-design",
-      "source": "./frontend-design",
+      "source": "./anthropic-web-frontend-design",
       "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use when building web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -133,7 +133,7 @@
     },
     {
       "name": "pdf",
-      "source": "./pdf",
+      "source": "./anthropic-office-pdf",
       "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. Use when processing, generating, or analyzing PDF documents.",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -150,7 +150,7 @@
     },
     {
       "name": "xlsx",
-      "source": "./xlsx",
+      "source": "./anthropic-office-xlsx",
       "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. Use when working with Excel spreadsheets (.xlsx, .xlsm, .csv, .tsv).",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -167,7 +167,7 @@
     },
     {
       "name": "docx",
-      "source": "./docx",
+      "source": "./anthropic-office-docx",
       "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. Use when working with Word documents (.docx files).",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -184,7 +184,7 @@
     },
     {
       "name": "pptx",
-      "source": "./pptx",
+      "source": "./anthropic-office-pptx",
       "description": "Presentation creation, editing, and analysis with support for layouts, speaker notes, and comments. Use when working with PowerPoint presentations (.pptx files).",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -201,7 +201,7 @@
     },
     {
       "name": "mcp-builder",
-      "source": "./mcp-builder",
+      "source": "./anthropic-dev-tools-mcp-builder",
       "description": "Guide for creating high-quality MCP (Model Context Protocol) servers to integrate external APIs and services with Claude. Use when building MCP servers in Python (FastMCP) or TypeScript.",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -218,7 +218,7 @@
     },
     {
       "name": "webapp-testing",
-      "source": "./webapp-testing",
+      "source": "./anthropic-web-testing",
       "description": "Toolkit for testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing screenshots, and viewing browser logs.",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -236,7 +236,7 @@
     },
     {
       "name": "canvas-design",
-      "source": "./canvas-design",
+      "source": "./anthropic-design-canvas",
       "description": "Design beautiful visual art in .png and .pdf formats using advanced design philosophies. Create posters, infographics, and publication-ready designs.",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -254,7 +254,7 @@
     },
     {
       "name": "web-artifacts-builder",
-      "source": "./web-artifacts-builder",
+      "source": "./anthropic-web-artifacts-builder",
       "description": "Build interactive web artifacts quickly. Create prototypes, demos, and web-based tools with streamlined workflows for rapid development.",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -270,7 +270,7 @@
     },
     {
       "name": "skill-creator",
-      "source": "./skill-creator",
+      "source": "./julien-dev-tools-skill-creator-pro",
       "description": "Official Anthropic guide for creating effective Claude skills. Step-by-step workflow including bundled resources, progressive disclosure, and quality assessment rubric.",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -285,7 +285,7 @@
     },
     {
       "name": "skill-creator-pro",
-      "source": "./skill-creator-pro",
+      "source": "./julien-dev-tools-skill-creator-pro",
       "description": "Enhanced skill-creator with comprehensive Skill Chaining documentation. Includes standardized Input/Output specs, visual workflows (ASCII), bidirectional skill relationships, and Git hooks integration. Use for creating skills that are part of larger workflows.",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -301,7 +301,7 @@
     },
     {
       "name": "skill-reviewer",
-      "source": "./skill-reviewer",
+      "source": "./julien-dev-tools-skill-reviewer",
       "description": "Auto-évaluation et amélioration itérative des skills Claude. Reviews skills against 9-dimension quality rubric, detects DRY violations, enforces progressive disclosure, and provides automated refactoring suggestions. Use when you need to review, score, and improve existing skills for production quality.",
       "version": "1.0.0",
       "license": "Apache-2.0",
@@ -315,6 +315,69 @@
         "improvement",
         "refactoring",
         "progressive-disclosure"
+      ]
+    },
+    {
+      "name": "deployment-verifier",
+      "source": "./julien-infra-deployment-verifier",
+      "description": "Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "deployment",
+      "keywords": [
+        "deployment",
+        "verification",
+        "testing",
+        "hostinger",
+        "pm2"
+      ]
+    },
+    {
+      "name": "git-vps-sync",
+      "source": "./julien-infra-git-vps-sync",
+      "description": "Manage Git sync between VPS and GitHub for Hostinger srv759970. Handles unrelated histories, untracked files, diverged branches, and sync conflicts automatically.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "git-operations",
+      "keywords": [
+        "git",
+        "sync",
+        "vps",
+        "github",
+        "conflicts",
+        "hostinger"
+      ]
+    },
+    {
+      "name": "hostinger-deployment",
+      "source": "./julien-infra-hostinger-deployment",
+      "description": "Complete deployment workflow for INCLUZ'HACT on Hostinger VPS srv759970. Orchestrates Git sync, build, PM2 restart, and verification for production and preview environments.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "deployment",
+      "keywords": [
+        "deployment",
+        "automation",
+        "hostinger",
+        "workflow",
+        "pm2",
+        "git"
+      ]
+    },
+    {
+      "name": "nginx-audit",
+      "source": "./julien-infra-nginx-audit",
+      "description": "Audit and auto-fix Nginx configurations on Hostinger VPS srv759970 for IPv6 support, SSL issues, and best practices. Detects missing IPv6 listeners, validates SSL certificates, and applies fixes automatically or generates reports.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "infrastructure",
+      "keywords": [
+        "nginx",
+        "audit",
+        "ipv6",
+        "ssl",
+        "configuration",
+        "hostinger"
       ]
     }
   ]
