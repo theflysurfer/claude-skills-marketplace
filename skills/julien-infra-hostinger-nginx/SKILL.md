@@ -10,9 +10,9 @@ allowed-tools:
   - Grep
 metadata:
   author: "Julien"
-  version: "1.0.0"
+  version: "1.1.0"
   category: "infrastructure"
-  keywords: ["nginx", "reverse-proxy", "ssl", "certbot", "hostinger"]
+  keywords: ["nginx", "reverse-proxy", "ssl", "certbot", "hostinger", "ipv6"]
 ---
 
 # Nginx Management on Hostinger VPS
@@ -54,6 +54,7 @@ sudo nano /etc/nginx/sites-available/mysite
 # Basic reverse proxy template (see templates/reverse-proxy.conf)
 server {
     listen 80;
+    listen [::]:80;  # IPv6 support (REQUIRED)
     server_name mysite.srv759970.hstgr.cloud;
 
     location / {
@@ -74,6 +75,8 @@ sudo ln -s /etc/nginx/sites-available/mysite /etc/nginx/sites-enabled/
 # Reload Nginx
 sudo systemctl reload nginx
 ```
+
+**IMPORTANT**: Always include `listen [::]:80;` and `listen [::]:443 ssl http2;` for IPv6 support. Without IPv6 listeners, clients connecting via IPv6 may get the wrong SSL certificate (SNI won't work properly).
 
 ### 2. SSL Setup with Let's Encrypt
 
@@ -148,6 +151,46 @@ sudo systemctl status nginx
 
 ## Troubleshooting
 
+### Wrong SSL Certificate / Certificate Mismatch
+
+**Error**: `Hostname does not match certificate's altnames`
+
+**Cause**: IPv6 clients connecting to a server that doesn't have IPv6 listeners configured. The first available server block (lexicographically) will serve its certificate.
+
+**Symptoms**:
+- Site A shows certificate for Site B
+- Error only occurs for some users (those with IPv6)
+- `openssl s_client` shows correct cert, but browsers show wrong cert
+
+**Fix**:
+```bash
+# Add IPv6 listeners to BOTH HTTP and HTTPS blocks
+sudo nano /etc/nginx/sites-available/yoursite
+
+# Add these lines:
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;  # ← ADD THIS
+    server_name yoursite.srv759970.hstgr.cloud;
+    ...
+}
+
+server {
+    listen 80;
+    listen [::]:80;  # ← ADD THIS
+    server_name yoursite.srv759970.hstgr.cloud;
+    ...
+}
+
+# Test and reload
+sudo nginx -t
+sudo systemctl reload nginx
+
+# Verify both IPv4 and IPv6 work
+curl -4 https://yoursite.srv759970.hstgr.cloud
+curl -6 https://yoursite.srv759970.hstgr.cloud
+```
+
 ### 502 Bad Gateway
 
 **Cause**: Backend service is down or not responding.
@@ -214,6 +257,7 @@ proxy_set_header X-Forwarded-Host $host;
 ```nginx
 server {
     listen 80;
+    listen [::]:80;
     server_name app.srv759970.hstgr.cloud;
 
     location / {
@@ -247,6 +291,7 @@ location / {
 ```nginx
 server {
     listen 80;
+    listen [::]:80;
     server_name app.srv759970.hstgr.cloud;
 
     # Static files
@@ -267,6 +312,7 @@ server {
 ```nginx
 server {
     listen 80;
+    listen [::]:80;
     server_name wordpress.srv759970.hstgr.cloud;
 
     client_max_body_size 100M;
@@ -321,6 +367,7 @@ Many services use the Docker Auto-Start system. When configuring nginx for these
 ```nginx
 server {
     listen 80;
+    listen [::]:80;
     server_name myapp.srv759970.hstgr.cloud;
 
     location / {
@@ -342,6 +389,7 @@ See `references/auto-start-integration.md` for details.
 - **templates/reverse-proxy.conf** - Basic reverse proxy template
 - **templates/wordpress.conf** - WordPress-specific config
 - **references/ssl-certbot.md** - Complete SSL/Certbot guide
+- **references/ipv6-ssl-certificate-issues.md** - IPv6 configuration and SSL certificate mismatch troubleshooting (NEW v1.1.0)
 - **references/troubleshooting-502-504.md** - Detailed error debugging
 - **references/auto-start-integration.md** - Docker auto-start config
 
@@ -352,6 +400,7 @@ See `references/auto-start-integration.md` for details.
 - **Check backend first** when debugging 502/504
 - **SSL certificates auto-renew** via certbot timer
 - **Logs are your friend** - check error.log first
+- **CRITICAL: Always add IPv6 listeners** (`listen [::]:80;` and `listen [::]:443 ssl http2;`) to prevent SSL certificate mismatch errors for IPv6 clients
 
 ## Quick Commands Reference
 
@@ -376,4 +425,31 @@ sudo certbot certificates
 
 # Renew SSL
 sudo certbot renew
+
+# Verify IPv6 support (check for [::]:443 and [::]:80)
+sudo nginx -T | grep -E "listen.*\[::\]"
+
+# Test SSL cert from command line
+openssl s_client -connect yoursite.srv759970.hstgr.cloud:443 -servername yoursite.srv759970.hstgr.cloud </dev/null 2>&1 | grep subject
+
+# Test IPv4 vs IPv6 responses
+curl -4 https://yoursite.srv759970.hstgr.cloud  # Force IPv4
+curl -6 https://yoursite.srv759970.hstgr.cloud  # Force IPv6
 ```
+
+## Changelog
+
+### v1.1.0 (2025-12-09)
+- **CRITICAL FIX**: Added IPv6 support documentation to prevent SSL certificate mismatch errors
+- Added new troubleshooting section: "Wrong SSL Certificate / Certificate Mismatch"
+- Updated all configuration templates to include `listen [::]:80;` and `listen [::]:443 ssl http2;`
+- Added IPv6 verification commands to Quick Commands Reference
+- Added warning in "Important Notes" about mandatory IPv6 listeners
+- Root cause: SNI (Server Name Indication) doesn't work properly without IPv6 listeners configured
+
+### v1.0.0 (2025-12-06)
+- Initial release
+- Basic Nginx management operations
+- SSL/Let's Encrypt integration
+- Troubleshooting guides for 502/504 errors
+- Configuration templates
