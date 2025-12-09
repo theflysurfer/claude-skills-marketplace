@@ -318,6 +318,23 @@
       ]
     },
     {
+      "name": "claude-md-documenter",
+      "source": "./julien-dev-tools-claude-md-documenter",
+      "description": "Guide for creating effective CLAUDE.md files following DRY principles. Points to official best practices and references without duplication. Includes minimal templates, file location strategies, and anti-patterns to avoid.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "development",
+      "keywords": [
+        "claude-md",
+        "documentation",
+        "project-context",
+        "DRY",
+        "best-practices",
+        "configuration",
+        "templates"
+      ]
+    },
+    {
       "name": "deployment-verifier",
       "source": "./julien-infra-deployment-verifier",
       "description": "Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports.",
