@@ -33,6 +33,7 @@ Hooks provide **deterministic control** over Claude's behavior. Unlike skills (w
 | `SessionEnd` | Session ends | Cleanup, save state, push changes |
 | `PreToolUse` | Before tool execution | Validate, block, modify tool input |
 | `PostToolUse` | After tool completes | Format output, log, trigger actions |
+| `PermissionRequest` | Permission dialog shown | Auto-approve or deny permissions |
 | `UserPromptSubmit` | User submits prompt | Add context, validate requests |
 | `Notification` | Claude sends notification | Custom alerts |
 | `Stop` | Claude finishes responding | Decide if Claude should continue |
@@ -335,6 +336,8 @@ echo '{"tool_name":"Write","tool_input":{"file_path":"/test/file.txt"}}' | bash 
 # Look for "hook error" messages in the UI
 ```
 
+For detailed troubleshooting of common errors (timeout, CRLF, jq not found, etc.), see `references/troubleshooting.md`.
+
 ## Environment Variables
 
 Available in hooks:
@@ -369,3 +372,75 @@ Matcher:
 "Notebook.*"   = regex
 "*" or omit    = all tools
 ```
+
+## 🔗 Skill Chaining
+
+### Skills Required Before
+- Aucun (skill autonome)
+- Optionnel: Connaissance de base de bash/shell scripting
+
+### Input Expected
+- **Use case description**: Quel événement déclencher, quelle action effectuer
+- **Scope decision**: Global (`~/.claude/settings.json`) ou project (`.claude/settings.json`)
+- **Prerequisites**: `jq` installé pour parsing JSON
+
+### Output Produced
+- **Format**:
+  - Script bash dans `~/.claude/scripts/` ou `.claude/scripts/`
+  - Configuration JSON dans `settings.json`
+- **Side effects**:
+  - Création/modification de fichiers scripts
+  - Modification de settings.json
+  - Hooks actifs au prochain événement
+- **Duration**: 2-5 minutes pour un hook simple
+
+### Compatible Skills After
+**Recommandés**:
+- **sync-personal-skills**: Si le hook modifie des fichiers du marketplace
+- **skill-creator-pro**: Si création d'un skill qui intègre des hooks
+
+**Optionnels**:
+- Git workflow: Committer les scripts et settings
+
+### Called By
+- Direct user invocation: "Crée un hook pour...", "Je veux automatiser..."
+- Part of skill/workflow development
+
+### Tools Used
+- `Read` (lecture settings.json existant)
+- `Write` (création scripts bash)
+- `Edit` (modification settings.json)
+- `Bash` (test du hook, chmod +x)
+
+### Visual Workflow
+
+```
+User: "Je veux protéger les fichiers .env"
+    ↓
+hook-creator (this skill)
+    ├─► Step 1: Identify event (PreToolUse)
+    ├─► Step 2: Write script (protect-files.sh)
+    ├─► Step 3: chmod +x script
+    ├─► Step 4: Configure settings.json
+    └─► Step 5: Test with sample input
+    ↓
+Hook active ✅
+    ↓
+[Next: Test in real session]
+```
+
+### Usage Example
+
+**Scenario**: Créer un hook de logging des commandes bash
+
+**Input**: "Log toutes les commandes bash exécutées"
+
+**Process**:
+1. Event identifié: `PostToolUse` avec matcher `Bash`
+2. Script créé: `~/.claude/scripts/log-bash.sh`
+3. Settings.json mis à jour avec hook config
+4. Test avec sample JSON input
+
+**Result**:
+- Script logging actif
+- Commandes loguées dans `~/.claude/logs/bash-commands.log`
