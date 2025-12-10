@@ -290,22 +290,7 @@
     {
       "name": "skill-creator",
       "source": "./julien-dev-tools-skill-creator-pro",
-      "description": "Official Anthropic guide for creating effective Claude skills. Step-by-step workflow including bundled resources, progressive disclosure, and quality assessment rubric.",
-      "version": "1.0.0",
-      "license": "Apache-2.0",
-      "category": "development",
-      "keywords": [
-        "skill-creation",
-        "meta",
-        "development",
-        "guide",
-        "anthropic"
-      ]
-    },
-    {
-      "name": "skill-creator-pro",
-      "source": "./julien-dev-tools-skill-creator-pro",
-      "description": "Enhanced skill-creator with comprehensive Skill Chaining documentation. Includes standardized Input/Output specs, visual workflows (ASCII), bidirectional skill relationships, and Git hooks integration. Use for creating skills that are part of larger workflows.",
+      "description": "Enhanced guide for creating effective skills with comprehensive Skill Chaining documentation. Includes standardized Input/Output specs, visual workflows (ASCII), bidirectional skill relationships, and Git hooks integration.",
       "version": "1.0.0",
       "license": "Apache-2.0",
       "category": "development",
@@ -315,7 +300,7 @@
         "development",
         "workflows",
         "skill-chaining",
-        "enhanced"
+        "guide"
       ]
     },
     {
