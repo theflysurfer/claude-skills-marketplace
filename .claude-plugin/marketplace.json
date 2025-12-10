@@ -11,6 +11,21 @@
   },
   "plugins": [
     {
+      "name": "hook-creator",
+      "source": "./julien-dev-tools-hook-creator",
+      "description": "Guide for creating Claude Code hooks - shell commands that execute at lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse). Includes templates for file protection, auto-formatting, logging, and sync automation.",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "development",
+      "keywords": [
+        "hooks",
+        "automation",
+        "lifecycle",
+        "validation",
+        "scripts"
+      ]
+    },
+    {
       "name": "sync-personal-skills",
       "source": "./julien-workflow-sync-personal-skills",
       "description": "Synchronizes skills from this marketplace repository to ~/.claude/skills/ for global availability across all projects. Also commits and pushes changes to GitHub.",
