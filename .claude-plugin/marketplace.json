@@ -1,11 +1,11 @@
 {
-  "name": "claude-skills-marketplace",
+  "name": "julien-skills-marketplace",
   "owner": {
     "name": "Julien",
-    "email": "your.email@example.com"
+    "email": "julien@theflysurfer.com"
   },
   "metadata": {
-    "description": "Personal marketplace for developing and sharing custom Claude skills",
+    "description": "Personal marketplace for Hostinger infrastructure, deployment workflows, and development tools",
     "version": "1.0.0",
     "pluginRoot": "./skills"
   },
@@ -22,23 +22,6 @@
         "deployment",
         "automation",
         "git"
-      ]
-    },
-    {
-      "name": "check-loaded-skills",
-      "source": "./julien-workflow-check-loaded-skills",
-      "description": "Check which Claude skills are loaded globally and project-level - displays Hostinger, Anthropic, and custom skills with counts and troubleshooting",
-      "version": "1.0.0",
-      "license": "Apache-2.0",
-      "category": "workflow",
-      "keywords": [
-        "skills",
-        "debugging",
-        "workflow",
-        "discovery",
-        "loaded-skills",
-        "troubleshoot",
-        "verify"
       ]
     },
     {
@@ -151,74 +134,6 @@
       ]
     },
     {
-      "name": "pdf",
-      "source": "./anthropic-office-pdf",
-      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. Use when processing, generating, or analyzing PDF documents.",
-      "version": "1.0.0",
-      "license": "Apache-2.0",
-      "category": "productivity",
-      "keywords": [
-        "pdf",
-        "documents",
-        "forms",
-        "extraction",
-        "merge",
-        "split",
-        "anthropic"
-      ]
-    },
-    {
-      "name": "xlsx",
-      "source": "./anthropic-office-xlsx",
-      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. Use when working with Excel spreadsheets (.xlsx, .xlsm, .csv, .tsv).",
-      "version": "1.0.0",
-      "license": "Apache-2.0",
-      "category": "productivity",
-      "keywords": [
-        "excel",
-        "spreadsheet",
-        "xlsx",
-        "formulas",
-        "data-analysis",
-        "csv",
-        "anthropic"
-      ]
-    },
-    {
-      "name": "docx",
-      "source": "./anthropic-office-docx",
-      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. Use when working with Word documents (.docx files).",
-      "version": "1.0.0",
-      "license": "Apache-2.0",
-      "category": "productivity",
-      "keywords": [
-        "word",
-        "docx",
-        "documents",
-        "editing",
-        "tracked-changes",
-        "comments",
-        "anthropic"
-      ]
-    },
-    {
-      "name": "pptx",
-      "source": "./anthropic-office-pptx",
-      "description": "Presentation creation, editing, and analysis with support for layouts, speaker notes, and comments. Use when working with PowerPoint presentations (.pptx files).",
-      "version": "1.0.0",
-      "license": "Apache-2.0",
-      "category": "productivity",
-      "keywords": [
-        "powerpoint",
-        "pptx",
-        "presentations",
-        "slides",
-        "layouts",
-        "speaker-notes",
-        "anthropic"
-      ]
-    },
-    {
       "name": "mcp-builder",
       "source": "./anthropic-dev-tools-mcp-builder",
       "description": "Guide for creating high-quality MCP (Model Context Protocol) servers to integrate external APIs and services with Claude. Use when building MCP servers in Python (FastMCP) or TypeScript.",
@@ -285,57 +200,6 @@
         "rapid-development",
         "demos",
         "anthropic"
-      ]
-    },
-    {
-      "name": "skill-creator",
-      "source": "./julien-dev-tools-skill-creator-pro",
-      "description": "Enhanced guide for creating effective skills with comprehensive Skill Chaining documentation. Includes standardized Input/Output specs, visual workflows (ASCII), bidirectional skill relationships, and Git hooks integration.",
-      "version": "1.0.0",
-      "license": "Apache-2.0",
-      "category": "development",
-      "keywords": [
-        "skill-creation",
-        "meta",
-        "development",
-        "workflows",
-        "skill-chaining",
-        "guide"
-      ]
-    },
-    {
-      "name": "skill-reviewer",
-      "source": "./julien-dev-tools-skill-reviewer",
-      "description": "Auto-évaluation et amélioration itérative des skills Claude. Reviews skills against 9-dimension quality rubric, detects DRY violations, enforces progressive disclosure, and provides automated refactoring suggestions. Use when you need to review, score, and improve existing skills for production quality.",
-      "version": "1.0.0",
-      "license": "Apache-2.0",
-      "category": "development",
-      "keywords": [
-        "skill-review",
-        "quality-assurance",
-        "meta",
-        "DRY",
-        "scoring",
-        "improvement",
-        "refactoring",
-        "progressive-disclosure"
-      ]
-    },
-    {
-      "name": "claude-md-documenter",
-      "source": "./julien-dev-tools-claude-md-documenter",
-      "description": "Guide for creating effective CLAUDE.md files following DRY principles. Points to official best practices and references without duplication. Includes minimal templates, file location strategies, and anti-patterns to avoid.",
-      "version": "1.0.0",
-      "license": "Apache-2.0",
-      "category": "development",
-      "keywords": [
-        "claude-md",
-        "documentation",
-        "project-context",
-        "DRY",
-        "best-practices",
-        "configuration",
-        "templates"
       ]
     },
     {

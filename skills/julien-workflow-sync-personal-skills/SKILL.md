@@ -1,6 +1,6 @@
 ---
 name: julien-workflow-sync-personal-skills
-description: Synchronizes skills from this marketplace repository to ~/.claude/skills/ for global availability across all projects. Also commits and pushes changes to GitHub.
+description: Manual sync of core skills and marketplace. Use when automatic SessionStart/SessionEnd hooks need to be triggered manually, or to manage which skills are in the core set.
 license: Apache-2.0
 allowed-tools:
   - Read
@@ -9,207 +9,135 @@ allowed-tools:
   - Glob
 metadata:
   author: "Julien"
-  version: "1.0.0"
-  category: "development"
+  version: "2.0.0"
+  category: "workflow"
 ---
 
-# Sync Personal Skills
+# Sync Personal Skills (Manual)
 
-This skill synchronizes skills from the marketplace repository to your personal `~/.claude/skills/` directory, making them globally available across all your Claude Code projects.
+Manual synchronization of core skills and marketplace cache. Complements the automatic hooks that run on SessionStart/SessionEnd.
 
-## Purpose
+## Architecture
 
-- **Push skills** from marketplace repo to `~/.claude/skills/` for personal use
-- **Update marketplace.json** with new skills automatically
-- **Commit and push** changes to GitHub repository
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    AUTOMATIC (via Hooks)                        │
+├─────────────────────────────────────────────────────────────────┤
+│  SessionStart: git pull + sync 8 core skills                    │
+│  SessionEnd:   git commit + push if changes                     │
+└─────────────────────────────────────────────────────────────────┘
 
-## Workflow
+┌─────────────────────────────────────────────────────────────────┐
+│                    MANUAL (via this Skill)                      │
+├─────────────────────────────────────────────────────────────────┤
+│  - Force sync when hooks didn't run                             │
+│  - Add/remove skills from core set                              │
+│  - Debug sync issues                                            │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-When you activate this skill, Claude will:
+## Core Skills (8 total)
 
-1. **Scan** the `skills/` directory in the marketplace repository
-2. **Copy** each skill folder to `~/.claude/skills/`
-3. **Update** `.claude-plugin/marketplace.json` with any new skills
-4. **Commit** changes to the local git repository
-5. **Push** changes to GitHub remote
+These skills are synced to `~/.claude/skills/` and available globally:
+
+| Category | Skills |
+|----------|--------|
+| **Dev Tools** | `julien-dev-tools-skill-creator-pro`, `julien-dev-tools-skill-reviewer`, `julien-dev-tools-claude-md-documenter` |
+| **Workflow** | `julien-workflow-check-loaded-skills` |
+| **Office** | `anthropic-office-pdf`, `anthropic-office-xlsx`, `anthropic-office-docx`, `anthropic-office-pptx` |
 
 ## Usage Examples
 
-- "Sync my skills to personal directory"
-- "Push all marketplace skills to ~/.claude"
-- "Update my personal skills and commit to GitHub"
-- "Deploy skills globally and push to remote"
+- "Sync my core skills manually"
+- "Force pull the marketplace"
+- "Add hostinger-nginx to my core skills"
+- "Remove pdf from core skills"
+- "Show sync status"
 
-## Instructions
+## Commands
 
-### Step 1: Identify Marketplace Repository
-
-First, determine the marketplace repository root:
-- Look for `.claude-plugin/marketplace.json`
-- This is the source of truth for skills
-
-### Step 2: Check Sync Configuration (NEW)
-
-**IMPORTANT**: Check if `sync-config.json` exists in this skill's directory:
+### 1. Force Sync (run hooks manually)
 
 ```bash
-cat ~/.claude/skills/julien-workflow-sync-personal-skills/sync-config.json
+# Pull marketplace + sync core skills
+bash ~/.claude/scripts/sync-marketplace.sh
+
+# Push changes if any
+bash ~/.claude/scripts/push-marketplace.sh
 ```
 
-OR from marketplace:
+### 2. Show Current Core Skills
+
 ```bash
-cat skills/julien-workflow-sync-personal-skills/sync-config.json
+cat ~/.claude/plugins/marketplaces/claude-skills-marketplace/skills/julien-workflow-sync-personal-skills/sync-config.json | jq -r '.skills_to_sync[]'
 ```
 
-If the file exists AND `sync_enabled: true`:
-- **Only sync skills listed in `skills_to_sync` array**
-- Skip all other skills
+### 3. Add a Skill to Core Set
 
-If the file doesn't exist OR `sync_enabled: false`:
-- Sync ALL skills (original behavior)
+Edit `sync-config.json` and add the skill name to `skills_to_sync` array:
 
-### Step 3: Scan Skills Directory
-
-List all skill directories in `skills/`:
 ```bash
-ls -d skills/*/
+# Location in marketplace cache
+~/.claude/plugins/marketplaces/claude-skills-marketplace/skills/julien-workflow-sync-personal-skills/sync-config.json
 ```
 
-For each skill directory found:
-- **If using sync-config.json**: Check if skill name is in `skills_to_sync` array
-- **Skip if NOT in config list** (when selective sync is enabled)
-- Verify it contains a `SKILL.md` file
-- Read the YAML frontmatter to get skill metadata (name, description, version)
-
-### Step 4: Copy Skills to Personal Directory
-
-For each valid skill (filtered by config if applicable):
-
+Then run sync:
 ```bash
-# Create personal skills directory if it doesn't exist
-mkdir -p ~/.claude/skills/
+bash ~/.claude/scripts/sync-marketplace.sh
+```
 
-# Remove existing skill directory if it exists
+### 4. Remove a Skill from Core Set
+
+1. Remove from `sync-config.json`
+2. Optionally delete from `~/.claude/skills/`:
+```bash
 rm -rf ~/.claude/skills/skill-name
-
-# Copy the skill
-cp -r skills/skill-name ~/.claude/skills/
 ```
 
-**Important**:
-- Remove old directory first, then copy fresh version
-- This ensures clean sync without leftover files
-- Preserve directory structure
-- Skip the `julien-workflow-sync-personal-skills` skill itself (avoid recursion)
+### 5. Debug Sync Issues
 
-### Step 5: Update marketplace.json
+```bash
+# Check marketplace cache status
+cd ~/.claude/plugins/marketplaces/claude-skills-marketplace && git status
 
-Read `.claude-plugin/marketplace.json` and check the `plugins` array.
+# Check core skills directory
+ls -la ~/.claude/skills/
 
-For each skill found in `skills/` directory:
-- Check if it already exists in the `plugins` array
-- If NOT found, add a new entry:
+# Run sync with debug
+bash -x ~/.claude/scripts/sync-marketplace.sh
+```
+
+## File Locations
+
+| File | Purpose |
+|------|---------|
+| `~/.claude/scripts/sync-marketplace.sh` | Pull + sync core skills |
+| `~/.claude/scripts/push-marketplace.sh` | Commit + push changes |
+| `~/.claude/settings.json` | Hook configuration |
+| `~/.claude/skills/` | Core skills (global) |
+| `~/.claude/plugins/marketplaces/claude-skills-marketplace/` | Marketplace cache |
+
+## sync-config.json Format
 
 ```json
 {
-  "name": "skill-name",
-  "source": "./skill-name",
-  "description": "Description from SKILL.md frontmatter",
-  "version": "Version from SKILL.md metadata or 1.0.0",
-  "license": "License from SKILL.md or Apache-2.0",
-  "category": "Category from SKILL.md metadata or general"
+  "description": "Configuration for selective skill synchronization",
+  "sync_enabled": true,
+  "skills_to_sync": [
+    "julien-dev-tools-skill-creator-pro",
+    "julien-dev-tools-skill-reviewer",
+    "julien-workflow-check-loaded-skills",
+    "julien-dev-tools-claude-md-documenter",
+    "anthropic-office-pdf",
+    "anthropic-office-xlsx",
+    "anthropic-office-docx",
+    "anthropic-office-pptx"
+  ]
 }
 ```
 
-Write the updated marketplace.json back to disk.
-
-### Step 6: Commit to Git
-
-Stage all changes and create a commit:
-
-```bash
-git add .
-git commit -m "$(cat <<'EOF'
-Sync skills to personal directory and update marketplace
-
-- Updated marketplace.json with latest skills
-- Synced skills to ~/.claude/skills/
-- Skills are now globally available
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
-EOF
-)"
-```
-
-### Step 7: Push to GitHub
-
-```bash
-git push origin master
-```
-
-Or use the current branch if not on master:
-```bash
-git push origin $(git branch --show-current)
-```
-
-## Output Format
-
-Provide a summary after completion:
-
-```
-✅ Sync Complete!
-
-Skills synchronized to ~/.claude/skills/:
-- docker-optimizer (v1.0.0)
-- sync-personal-skills (v1.0.0)
-- [other skills...]
-
-📝 marketplace.json updated with X skills
-
-📦 Git commit created: [commit hash]
-🚀 Pushed to GitHub: theflysurfer/claude-skills-marketplace
-
-Your skills are now globally available in all Claude Code projects!
-```
-
-## Error Handling
-
-### If marketplace.json is invalid:
-- Show clear error message
-- Do not proceed with sync
-- Suggest fixing the JSON syntax
-
-### If git push fails:
-- Show the error message
-- Confirm if local commit succeeded
-- Suggest manual push or checking remote configuration
-
-### If ~/.claude/skills/ cannot be created:
-- Check permissions
-- Suggest creating it manually
-- Provide the exact command to run
-
-## Safety Checks
-
-Before syncing:
-1. Verify we're in a git repository
-2. Verify `.claude-plugin/marketplace.json` exists
-3. Verify `skills/` directory exists
-4. Check for uncommitted changes (warn user)
-
-## Exclusions
-
-Do NOT sync:
-- `skills/README.md` (documentation file, not a skill)
-- `julien-workflow-sync-personal-skills` itself (avoid recursion)
-- Any hidden files or directories starting with `.`
-- Any `node_modules/` or `__pycache__/` directories
-
 ## Notes
 
-- This skill only pushes FROM marketplace TO personal directory
-- It does not pull changes back from ~/.claude/skills/
-- The marketplace repository is the single source of truth
-- Always develop/edit skills in the marketplace repo, then sync
+- Core skills are NOT in the marketplace `/plugin` list (no duplication)
+- Marketplace contains only optional/project-specific plugins
+- Hooks run automatically - this skill is for manual intervention only
