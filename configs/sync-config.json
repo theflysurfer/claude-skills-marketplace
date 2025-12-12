@@ -1,0 +1,19 @@
+{
+  "description": "Configuration for syncing skills and commands to ~/.claude/",
+  "skills_to_sync": [
+    "julien-dev-tools-skill-creator",
+    "julien-dev-tools-skill-reviewer",
+    "julien-dev-tools-claude-md-documenter",
+    "julien-dev-tools-powershell-profile",
+    "julien-workflow-check-loaded-skills",
+    "julien-workflow-queuing-background-tasks",
+    "anthropic-office-pdf",
+    "anthropic-office-xlsx",
+    "anthropic-office-docx",
+    "anthropic-office-pptx"
+  ],
+  "commands_to_sync": [
+    "sync.md",
+    "list-resources.md"
+  ]
+}
