@@ -1,0 +1,29 @@
+{
+  "skills": [
+    {
+      "name": "julien-dev-tools-claude-md-documenter",
+      "triggers": ["CLAUDE.md", "claude.md", "document project", "project instructions", "documenter le projet"],
+      "description": "Créer/améliorer CLAUDE.md"
+    },
+    {
+      "name": "julien-dev-tools-skill-creator-pro",
+      "triggers": ["create skill", "new skill", "SKILL.md", "skill template", "créer skill", "nouvelle skill"],
+      "description": "Créer/modifier une skill"
+    },
+    {
+      "name": "julien-dev-tools-skill-reviewer",
+      "triggers": ["review skill", "check skill", "improve skill", "skill quality", "évaluer skill", "qualité skill"],
+      "description": "Évaluer qualité d'une skill"
+    },
+    {
+      "name": "julien-dev-tools-hook-creator",
+      "triggers": ["create hook", "new hook", "hook template", "créer hook", "nouveau hook"],
+      "description": "Créer un hook Claude Code"
+    },
+    {
+      "name": "julien-workflow-check-loaded-skills",
+      "triggers": ["loaded skills", "check skills", "list skills", "skills chargées", "quelles skills"],
+      "description": "Vérifier les skills chargées"
+    }
+  ]
+}
