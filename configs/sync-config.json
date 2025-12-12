@@ -23,5 +23,8 @@
     "semantic-skill-router.py",
     "track-skill-invocation.py",
     "benchmark-semantic-router.py"
+  ],
+  "configs_to_sync": [
+    "skill-triggers.json"
   ]
 }

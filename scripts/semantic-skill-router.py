@@ -14,9 +14,15 @@ import sys
 from pathlib import Path
 
 # Configuration
-SCRIPT_DIR = Path(__file__).parent.parent  # Marketplace root
-TRIGGERS_FILE = SCRIPT_DIR / "configs" / "skill-triggers.json"
-TRACKING_DIR = Path.home() / ".claude" / "routing-tracking"
+CLAUDE_HOME = Path.home() / ".claude"
+SCRIPT_DIR = Path(__file__).parent.parent  # Marketplace root (fallback)
+
+# Try ~/.claude/configs first, then marketplace
+TRIGGERS_FILE = CLAUDE_HOME / "configs" / "skill-triggers.json"
+if not TRIGGERS_FILE.exists():
+    TRIGGERS_FILE = SCRIPT_DIR / "configs" / "skill-triggers.json"
+
+TRACKING_DIR = CLAUDE_HOME / "routing-tracking"
 
 # Thresholds and settings
 SIMILARITY_THRESHOLD = 0.4  # Minimum similarity score to suggest

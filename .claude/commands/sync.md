@@ -12,6 +12,7 @@ Read `configs/sync-config.json` for the list of:
 - `skills_to_sync`: Skills to copy to `~/.claude/skills/`
 - `commands_to_sync`: Commands to copy to `~/.claude/commands/`
 - `scripts_to_sync`: Scripts to copy to `~/.claude/scripts/`
+- `configs_to_sync`: Configs to copy to `~/.claude/configs/`
 
 ## Execute
 
