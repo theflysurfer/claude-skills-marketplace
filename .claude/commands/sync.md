@@ -1,41 +1,37 @@
 ---
-description: Sync core skills and commands from marketplace to ~/.claude/
+description: Sync core skills, commands, and scripts from marketplace to ~/.claude/
 ---
 
 # Sync Marketplace to Global
 
-Synchronize skills and commands from the marketplace to your global `~/.claude/` folder.
+Synchronize skills, commands, and scripts from the marketplace to your global `~/.claude/` folder.
 
 ## What to sync
 
 Read `configs/sync-config.json` for the list of:
 - `skills_to_sync`: Skills to copy to `~/.claude/skills/`
 - `commands_to_sync`: Commands to copy to `~/.claude/commands/`
+- `scripts_to_sync`: Scripts to copy to `~/.claude/scripts/`
 
 ## Execute
 
 ```bash
-# 1. Create directories if needed
-mkdir -p ~/.claude/skills ~/.claude/commands
+# 1. Create directories
+mkdir -p ~/.claude/skills ~/.claude/commands ~/.claude/scripts
 
-# 2. Read config and sync skills
-# For each skill in skills_to_sync:
-cp -r skills/<skill-name> ~/.claude/skills/
+# 2. Sync skills
+for skill in $(cat configs/sync-config.json | jq -r '.skills_to_sync[]'); do
+  cp -r "skills/$skill" ~/.claude/skills/ 2>/dev/null && echo "✓ skill: $skill"
+done
 
 # 3. Sync commands
-cp .claude/commands/sync.md ~/.claude/commands/
-cp .claude/commands/list-resources.md ~/.claude/commands/
-```
-
-## Quick command
-
-```bash
-cd "<marketplace-path>"
-for skill in $(cat configs/sync-config.json | jq -r '.skills_to_sync[]'); do
-  cp -r "skills/$skill" ~/.claude/skills/ 2>/dev/null && echo "✓ $skill"
-done
 for cmd in $(cat configs/sync-config.json | jq -r '.commands_to_sync[]'); do
-  cp ".claude/commands/$cmd" ~/.claude/commands/ 2>/dev/null && echo "✓ $cmd"
+  cp ".claude/commands/$cmd" ~/.claude/commands/ 2>/dev/null && echo "✓ cmd: $cmd"
+done
+
+# 4. Sync scripts
+for script in $(cat configs/sync-config.json | jq -r '.scripts_to_sync[]'); do
+  cp "scripts/$script" ~/.claude/scripts/ 2>/dev/null && echo "✓ script: $script"
 done
 ```
 
@@ -43,3 +39,4 @@ done
 
 - Skills available globally in all projects
 - Commands available with `/sync` and `/list-resources`
+- Scripts available for hooks (semantic-router, tracking)

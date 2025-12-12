@@ -19,6 +19,9 @@
     "list-resources.md"
   ],
   "scripts_to_sync": [
-    "list-resources.py"
+    "list-resources.py",
+    "semantic-skill-router.py",
+    "track-skill-invocation.py",
+    "benchmark-semantic-router.py"
   ]
 }
