@@ -16,7 +16,7 @@ from pathlib import Path
 # Configuration
 SCRIPT_DIR = Path(__file__).parent.parent  # Marketplace root
 TRIGGERS_FILE = SCRIPT_DIR / "configs" / "skill-triggers.json"
-CACHE_FILE = Path.home() / ".claude" / "semantic-router-cache.json"
+TRACKING_DIR = Path.home() / ".claude" / "routing-tracking"
 
 # Thresholds and settings
 SIMILARITY_THRESHOLD = 0.4  # Minimum similarity score to suggest
@@ -32,6 +32,72 @@ def load_triggers() -> dict:
         return {"skills": []}
     with open(TRIGGERS_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
+
+def get_tracking_files():
+    """Get paths to tracking files."""
+    TRACKING_DIR.mkdir(parents=True, exist_ok=True)
+    return {
+        "suggestion": TRACKING_DIR / "last-suggestion.json",
+        "invocation": TRACKING_DIR / "last-invocation.json"
+    }
+
+def save_suggestion(skills: list):
+    """Save current suggestion for later comparison."""
+    files = get_tracking_files()
+    data = {
+        "suggested_skills": [s["name"] for s in skills],
+        "timestamp": __import__("time").time()
+    }
+    files["suggestion"].write_text(json.dumps(data), encoding="utf-8")
+
+def load_and_clear_tracking() -> dict:
+    """Load tracking data and clear files."""
+    files = get_tracking_files()
+    result = {"suggestion": None, "invocation": None}
+
+    # Load suggestion
+    if files["suggestion"].exists():
+        try:
+            result["suggestion"] = json.loads(files["suggestion"].read_text(encoding="utf-8"))
+            files["suggestion"].unlink()
+        except:
+            pass
+
+    # Load invocation
+    if files["invocation"].exists():
+        try:
+            result["invocation"] = json.loads(files["invocation"].read_text(encoding="utf-8"))
+            files["invocation"].unlink()
+        except:
+            pass
+
+    return result
+
+def show_previous_routing_result():
+    """Show result of previous suggestion (was skill invoked or not)."""
+    tracking = load_and_clear_tracking()
+
+    if not tracking["suggestion"]:
+        return  # No previous suggestion
+
+    suggested = tracking["suggestion"].get("suggested_skills", [])
+    invoked = tracking["invocation"].get("skill_name") if tracking["invocation"] else None
+
+    if not suggested:
+        return
+
+    print("---")
+    if invoked and invoked in suggested:
+        print(f"📍 Routing précédent: **{invoked}** ✅ (suggéré → invoqué)")
+    elif invoked:
+        print(f"📍 Routing précédent: **{invoked}** ↗️ (autre skill invoquée)")
+        print(f"   Suggestion était: {', '.join(suggested[:2])}")
+    else:
+        print(f"📍 Routing précédent: ❌ (suggestion ignorée)")
+        print(f"   Suggestion était: {', '.join(suggested[:2])}")
+        print(f"   💡 Tip: Utilise Skill(\"{suggested[0]}\") pour invoquer")
+    print("---")
+    print()
 
 def keyword_fallback(prompt: str, skills: list) -> list:
     """Fallback to word-boundary keyword matching."""
@@ -169,6 +235,9 @@ def main():
 
     user_prompt = input_data.get("user_prompt", "")
 
+    # Show previous routing result first
+    show_previous_routing_result()
+
     # Skip if prompt is too short
     if len(user_prompt) < 10:
         sys.exit(0)
@@ -183,8 +252,10 @@ def main():
     # Route the prompt
     matches = semantic_route(user_prompt, skills)
 
-    # Output suggestions
+    # Output suggestions and save for tracking
     if matches:
+        save_suggestion(matches)
+
         print("---")
         print("SKILL SUGGESTION: Based on your request, consider using:")
         for match in matches[:TOP_K]:
