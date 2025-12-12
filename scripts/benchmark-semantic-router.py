@@ -134,6 +134,40 @@ BENCHMARK_PHRASES = [
     ("design web moderne", "anthropic-web-frontend-design"),
     ("frontend interface", "anthropic-web-frontend-design"),
     ("ui design for app", "anthropic-web-frontend-design"),
+
+    # === COMPLEX/AMBIGUOUS PHRASES (15 phrases) ===
+    # Multi-step requests
+    ("I need to deploy my dockerized app to the server and configure nginx as reverse proxy", "julien-infra-hostinger-deployment"),
+    ("créer une skill qui génère des fichiers PDF automatiquement", "julien-dev-tools-skill-creator"),
+    ("after connecting via SSH, I want to restart all docker containers", "julien-infra-hostinger-ssh"),
+    ("build a react dashboard and export the data to excel", "anthropic-web-frontend-design"),
+    ("je veux documenter mon projet et créer une skill pour l'automatiser", "julien-dev-tools-claude-md-documenter"),
+
+    # Conversational/indirect requests
+    ("my website is showing 502 errors and I don't know what's wrong", "julien-infra-hostinger-nginx"),
+    ("le certificat SSL a expiré hier et les utilisateurs voient des warnings", "julien-infra-hostinger-nginx"),
+    ("I made changes to my code and want them live on the production server", "julien-infra-hostinger-deployment"),
+    ("les conteneurs ne démarrent plus depuis la mise à jour", "julien-infra-hostinger-docker"),
+    ("can you help me understand how to make my skill better?", "julien-dev-tools-skill-reviewer"),
+
+    # Mixed language
+    ("setup nginx pour mon site web avec SSL certificate", "julien-infra-hostinger-nginx"),
+    ("créer un excel file avec des formulas pour le budget", "anthropic-office-xlsx"),
+    ("deploy mon application sur le VPS hostinger", "julien-infra-hostinger-deployment"),
+    ("fill the PDF form avec les données du client", "anthropic-office-pdf"),
+    ("je veux review my skill quality score", "julien-dev-tools-skill-reviewer"),
+
+    # === NEGATIVE TEST CASES (10 phrases) - Should return None ===
+    ("what's the weather like today?", None),
+    ("can you tell me a joke?", None),
+    ("how do I cook pasta?", None),
+    ("quelle heure est-il?", None),
+    ("explain quantum physics to me", None),
+    ("write a poem about love", None),
+    ("what's 2 + 2?", None),
+    ("recommend a good movie", None),
+    ("translate hello to spanish", None),
+    ("who won the world cup?", None),
 ]
 
 def load_triggers() -> dict:
