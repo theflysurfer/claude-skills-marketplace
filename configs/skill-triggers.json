@@ -23,6 +23,14 @@
       "description": "Create/modify skills | Créer/modifier une skill"
     },
     {
+      "name": "julien-dev-tools-skill-renamer",
+      "triggers": [
+        "rename skill", "change skill name", "refactor skill",
+        "renommer skill", "changer nom skill"
+      ],
+      "description": "Rename a skill | Renommer une skill"
+    },
+    {
       "name": "julien-dev-tools-skill-reviewer",
       "triggers": [
         "review skill", "check skill", "improve skill", "skill quality", "audit skill", "score skill",
