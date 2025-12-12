@@ -112,7 +112,28 @@ scripts/package_skill.py <path/to/skill-folder>
 
 Validates then creates `.skill` file.
 
-### Step 6: Iterate with Self-Assessment
+### Step 6: Add Semantic Routing Triggers
+
+Add triggers to `configs/skill-triggers.json` for automatic skill suggestion:
+
+```json
+{
+  "name": "your-skill-name",
+  "triggers": [
+    "keyword1", "keyword2",
+    "full phrase that triggers this skill",
+    "phrase en français aussi"
+  ],
+  "description": "Short description | Description courte"
+}
+```
+
+**Tips:**
+- Include both keywords AND full phrases
+- Add French and English variants
+- Test with `python scripts/benchmark-semantic-router.py`
+
+### Step 7: Iterate with Self-Assessment
 
 **Never fix everything at once.** Each iteration focuses on ONE improvement.
 
@@ -188,7 +209,8 @@ User: "Create skill for X"
     ├─► Step 3: Initialize structure
     ├─► Step 4: Write SKILL.md + refs
     ├─► Step 5: Package
-    └─► Step 6: Iterate
+    ├─► Step 6: Add semantic triggers
+    └─► Step 7: Iterate
     ↓
 skill-name.skill created
     ↓

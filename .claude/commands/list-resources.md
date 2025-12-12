@@ -9,11 +9,12 @@ Run the list-resources script to display all available skills and resources.
 Please execute the following command:
 
 ```bash
-python scripts/list-resources.py
+python ~/.claude/scripts/list-resources.py
 ```
 
 This will display:
-- Marketplace information (if this is a marketplace repository)
-- All available skills organized by category
-- Local skills in the skills/ directory
+- All available skills organized by category (global + project)
+- Slash commands available
 - Installation and usage instructions
+
+Note: If script not found, run `/sync` from the marketplace repo first.
