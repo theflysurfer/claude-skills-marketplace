@@ -228,14 +228,27 @@ def main():
     correct = 0
     total_time = 0
 
+    TOP_K = 3
     print("Running benchmark...")
     for i, (phrase, expected_skill) in enumerate(BENCHMARK_PHRASES, 1):
         start = time.time()
-        result = router(phrase)
+        result = router(phrase, limit=TOP_K)
         elapsed = time.time() - start
 
-        matched_skill = result.name if result and result.name else None
-        is_correct = matched_skill == expected_skill
+        # Normalize to list
+        if not isinstance(result, list):
+            result = [result] if result else []
+
+        matched_skills = [r.name for r in result if r and r.name]
+        top_match = matched_skills[0] if matched_skills else None
+
+        # For negative tests (expected=None), check no match returned
+        # For positive tests, check if expected is in top-k results
+        if expected_skill is None:
+            is_correct = len(matched_skills) == 0
+        else:
+            is_correct = expected_skill in matched_skills
+
         if is_correct:
             correct += 1
         total_time += elapsed
@@ -243,7 +256,7 @@ def main():
         results.append({
             "phrase": phrase,
             "expected": expected_skill,
-            "got": matched_skill,
+            "got": matched_skills,  # Now a list of top-k matches
             "correct": is_correct,
             "time_ms": elapsed * 1000
         })

@@ -122,34 +122,37 @@ def get_router(skills: list):
         return None
 
 def semantic_route(prompt: str, skills: list) -> list:
-    """Route prompt using semantic similarity with threshold filtering."""
+    """Route prompt using semantic similarity with threshold filtering and top-k results."""
     router = get_router(skills)
 
     if router is None:
         return keyword_fallback(prompt, skills)
 
     try:
-        # Get multiple results if available
-        # Note: semantic_router's __call__ returns single result
-        # We use it and check the score
-        result = router(prompt)
+        # Get multiple results using limit parameter
+        results = router(prompt, limit=TOP_K)
 
-        if result and result.name:
-            score = getattr(result, "similarity_score", None) or getattr(result, "score", 0.5)
+        # Normalize to list (single result when limit=1)
+        if not isinstance(results, list):
+            results = [results] if results else []
 
-            # Apply threshold filter
-            if score < SIMILARITY_THRESHOLD:
-                # Below threshold, try keyword fallback
-                return keyword_fallback(prompt, skills)
+        matches = []
+        for result in results:
+            if result and result.name:
+                score = getattr(result, "similarity_score", None) or getattr(result, "score", 0.5)
 
-            # Find the skill details
-            skill = next((s for s in skills if s["name"] == result.name), None)
-            if skill:
-                return [{
-                    "name": result.name,
-                    "description": skill.get("description", ""),
-                    "score": score
-                }]
+                # Apply threshold filter
+                if score >= SIMILARITY_THRESHOLD:
+                    skill = next((s for s in skills if s["name"] == result.name), None)
+                    if skill:
+                        matches.append({
+                            "name": result.name,
+                            "description": skill.get("description", ""),
+                            "score": score
+                        })
+
+        if matches:
+            return matches
 
     except Exception as e:
         sys.stderr.write(f"Semantic router error: {e}\n")
