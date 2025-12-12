@@ -19,7 +19,7 @@ Consulte cette skill au début de chaque tâche pour identifier si une skill exi
 | Skill | Triggers | Description |
 |-------|----------|-------------|
 | `julien-dev-tools-claude-md-documenter` | CLAUDE.md, document project, project instructions | Créer/améliorer CLAUDE.md |
-| `julien-dev-tools-skill-creator-pro` | create skill, new skill, SKILL.md, skill template | Créer/modifier une skill |
+| `julien-dev-tools-skill-creator` | create skill, new skill, SKILL.md, skill template | Créer/modifier une skill |
 | `julien-dev-tools-skill-reviewer` | review skill, check skill, improve skill, skill quality | Évaluer qualité d'une skill |
 | `julien-dev-tools-hook-creator` | create hook, new hook, hook template | Créer un hook Claude Code |
 
@@ -72,7 +72,7 @@ User: "crée moi un CLAUDE.md"
 → Match: "CLAUDE.md" → Skill("julien-dev-tools-claude-md-documenter")
 
 User: "je veux créer une nouvelle skill"
-→ Match: "create skill" → Skill("julien-dev-tools-skill-creator-pro")
+→ Match: "create skill" → Skill("julien-dev-tools-skill-creator")
 
 User: "déploie sur le serveur"
 → Match: "deploy" → Skill("julien-infra-hostinger-deployment")
