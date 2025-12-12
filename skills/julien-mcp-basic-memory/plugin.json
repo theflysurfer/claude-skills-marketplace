@@ -1,0 +1,5 @@
+{
+  "name": "julien-mcp-basic-memory",
+  "version": "1.0.0",
+  "description": "MCP server for persistent memory between Claude sessions"
+}

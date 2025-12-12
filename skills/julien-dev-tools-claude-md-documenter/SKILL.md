@@ -144,6 +144,63 @@ When user asks to create/improve a CLAUDE.md:
 5. Keep it under 200 lines
 6. Remind: iterate based on usage
 
+## Skill Chaining
+
+### Skills Required Before
+- None (entry point skill)
+
+### Input Expected
+- User request to create/improve CLAUDE.md
+- Project context (tech stack, structure, workflows)
+- Optional: existing CLAUDE.md to improve
+
+### Output Produced
+- **Format**: CLAUDE.md file in project root
+- **Side effects**: Creates or modifies CLAUDE.md
+- **Duration**: 5-10 minutes
+
+### Compatible Skills After
+**Recommandés:**
+- **julien-dev-tools-skill-creator-pro**: If creating project-specific skills
+- Git workflow: Commit the new CLAUDE.md
+
+### Called By
+- Direct user invocation: "Create a CLAUDE.md", "Improve my CLAUDE.md"
+- New project setup workflows
+
+### Tools Used
+- `Read` (usage: read existing CLAUDE.md, README, package.json)
+- `Write` (usage: create/update CLAUDE.md)
+- `Glob` (usage: discover project structure)
+
+### Visual Workflow
+
+```
+User: "Create CLAUDE.md for this project"
+    ↓
+[THIS SKILL]
+    ├─► Ask about project (tech, structure)
+    ├─► Use minimal template
+    ├─► Fill project-specific details
+    ├─► Link to existing docs
+    └─► Keep under 200 lines
+    ↓
+CLAUDE.md created
+    ↓
+[Optional] Git commit
+```
+
+### Usage Example
+
+**Scenario**: Create CLAUDE.md for a React project
+
+**Command**: "Create a CLAUDE.md for this project"
+
+**Result**:
+- CLAUDE.md created with ~100 lines
+- Tech stack, structure, commands documented
+- Links to README, CONTRIBUTING for details
+
 ---
 
 **Remember:** The best CLAUDE.md is concise, specific, and links to details instead of duplicating them.

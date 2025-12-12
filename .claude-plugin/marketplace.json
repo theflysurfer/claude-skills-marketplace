@@ -312,6 +312,259 @@
         "ip-ban",
         "hostinger"
       ]
+    },
+    {
+      "name": "mcp-basic-memory",
+      "source": "./julien-mcp-basic-memory",
+      "description": "MCP server for persistent memory between Claude sessions (UVX)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "memory", "persistence"]
+    },
+    {
+      "name": "mcp-brave",
+      "source": "./julien-mcp-brave",
+      "description": "MCP server for Brave Search API",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "search", "brave", "web"]
+    },
+    {
+      "name": "mcp-chrome-devtools",
+      "source": "./julien-mcp-chrome-devtools",
+      "description": "MCP server for Chrome DevTools Protocol",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "chrome", "devtools", "browser"]
+    },
+    {
+      "name": "mcp-codex-cli",
+      "source": "./julien-mcp-codex-cli",
+      "description": "MCP server for Codex CLI assistant",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "codex", "cli"]
+    },
+    {
+      "name": "mcp-context7",
+      "source": "./julien-mcp-context7",
+      "description": "MCP server for Context7 contextual search",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "context7", "search"]
+    },
+    {
+      "name": "mcp-desktop-commander",
+      "source": "./julien-mcp-desktop-commander",
+      "description": "MCP server for desktop control (files, apps, commands)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "desktop", "files", "commands"]
+    },
+    {
+      "name": "mcp-excel",
+      "source": "./julien-mcp-excel",
+      "description": "MCP server for Excel (public UVX package)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "excel", "office"]
+    },
+    {
+      "name": "mcp-excel-win32com",
+      "source": "./julien-mcp-excel-win32com",
+      "description": "MCP server for Excel via win32com (local Python)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "excel", "win32com", "local"]
+    },
+    {
+      "name": "mcp-github-docker",
+      "source": "./julien-mcp-github-docker",
+      "description": "MCP server for GitHub via Docker",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "github", "docker"]
+    },
+    {
+      "name": "mcp-github-http",
+      "source": "./julien-mcp-github-http",
+      "description": "MCP server for GitHub via HTTP endpoint (Copilot)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "github", "http", "copilot"]
+    },
+    {
+      "name": "mcp-gmail",
+      "source": "./julien-mcp-gmail",
+      "description": "MCP server for Gmail with auto-auth (local Node)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "gmail", "email", "local"]
+    },
+    {
+      "name": "mcp-jina",
+      "source": "./julien-mcp-jina",
+      "description": "MCP server for Jina AI Reader (web scraping)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "jina", "scraping", "web"]
+    },
+    {
+      "name": "mcp-notion",
+      "source": "./julien-mcp-notion",
+      "description": "MCP server for Notion API (NPX)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "notion", "api"]
+    },
+    {
+      "name": "mcp-notion-internal",
+      "source": "./julien-mcp-notion-internal",
+      "description": "MCP server for Notion internal API (local Python)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "notion", "internal", "local"]
+    },
+    {
+      "name": "mcp-notion-pro",
+      "source": "./julien-mcp-notion-pro",
+      "description": "MCP server for Notion Pro workspace (NPX)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "notion", "pro"]
+    },
+    {
+      "name": "mcp-outlook",
+      "source": "./julien-mcp-outlook",
+      "description": "MCP server for Outlook via win32com (local Python)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "outlook", "email", "win32com"]
+    },
+    {
+      "name": "mcp-pdf-reader",
+      "source": "./julien-mcp-pdf-reader",
+      "description": "MCP server for reading PDF files",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "pdf", "reader"]
+    },
+    {
+      "name": "mcp-playwright",
+      "source": "./julien-mcp-playwright",
+      "description": "MCP server for browser automation with Playwright",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "playwright", "browser", "automation"]
+    },
+    {
+      "name": "mcp-powerpoint",
+      "source": "./julien-mcp-powerpoint",
+      "description": "MCP server for PowerPoint via win32com (local Python)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "powerpoint", "win32com", "local"]
+    },
+    {
+      "name": "mcp-powerpoint-uvx",
+      "source": "./julien-mcp-powerpoint-uvx",
+      "description": "MCP server for PowerPoint (public UVX package)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "powerpoint", "office"]
+    },
+    {
+      "name": "mcp-puremd",
+      "source": "./julien-mcp-puremd",
+      "description": "MCP server for PureMD (web to markdown)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "puremd", "markdown", "web"]
+    },
+    {
+      "name": "mcp-taskmaster",
+      "source": "./julien-mcp-taskmaster",
+      "description": "MCP server for AI-powered task management",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "taskmaster", "tasks", "ai"]
+    },
+    {
+      "name": "mcp-veyrax",
+      "source": "./julien-mcp-veyrax",
+      "description": "MCP server for VeyraX",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "veyrax"]
+    },
+    {
+      "name": "mcp-webmind",
+      "source": "./julien-mcp-webmind",
+      "description": "MCP server for WebMind DOM assistant (Ragic)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "webmind", "dom", "ragic"]
+    },
+    {
+      "name": "mcp-word",
+      "source": "./julien-mcp-word",
+      "description": "MCP server for Word via win32com (local UV)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "word", "win32com", "local"]
+    },
+    {
+      "name": "mcp-word-uvx",
+      "source": "./julien-mcp-word-uvx",
+      "description": "MCP server for Word (public UVX package)",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "word", "office"]
+    },
+    {
+      "name": "mcp-youtube-info",
+      "source": "./julien-mcp-youtube-info",
+      "description": "MCP server for YouTube video information and transcripts",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "youtube", "video", "transcript"]
+    }
+  ,
+    {
+      "name": "mcp-serena",
+      "source": "./julien-mcp-serena",
+      "description": "MCP server for Serena - Semantic code retrieval and editing toolkit with IDE-like capabilities",
+      "version": "1.0.0",
+      "license": "Apache-2.0",
+      "category": "mcp",
+      "keywords": ["mcp", "serena", "code", "semantic", "lsp", "ide"]
     }
   ]
 }

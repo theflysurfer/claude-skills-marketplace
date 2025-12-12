@@ -1,0 +1,1 @@
+{"mcpServers": {"powerpoint": {"command": "${ONEDRIVE_MCP_PATH}/Office-PowerPoint-MCP-Server/.venv/Scripts/python.exe", "args": ["${ONEDRIVE_MCP_PATH}/Office-PowerPoint-MCP-Server/ppt_mcp_server.py"], "env": {"PYTHONPATH": "${PYTHONPATH_PPT}"}}}}

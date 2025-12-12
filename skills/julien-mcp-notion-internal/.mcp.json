@@ -1,0 +1,1 @@
+{"mcpServers": {"notion-internal": {"command": "${ONEDRIVE_MCP_PATH}/mcp-notion-internal-api/.venv/Scripts/python.exe", "args": ["${ONEDRIVE_MCP_PATH}/mcp-notion-internal-api/main_server.py"]}}}

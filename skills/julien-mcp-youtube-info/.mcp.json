@@ -1,0 +1,1 @@
+{"mcpServers": {"youtube-info": {"command": "cmd", "args": ["/c", "npx", "-y", "@limecooler/yt-info-mcp"]}}}

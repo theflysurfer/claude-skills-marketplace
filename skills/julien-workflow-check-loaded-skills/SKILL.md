@@ -116,11 +116,64 @@ If a skill exists in both locations, the project-level version takes precedence.
 
 **Solution**: Check skill SKILL.md file for correct format
 
-## Related Skills
+## Skill Chaining
 
-- **julien-workflow-sync-personal-skills** - Sync skills from marketplace to global
-- **julien-dev-tools-skill-creator-pro** - Create new skills
-- **julien-dev-tools-skill-reviewer** - Review and improve skills
+### Skills Required Before
+- None (diagnostic skill, entry point)
+
+### Input Expected
+- None required
+- Optional: specific skill name to search for
+
+### Output Produced
+- **Format**: Console output with categorized skill list
+- **Side effects**: None (read-only)
+- **Duration**: < 5 seconds
+
+### Compatible Skills After
+**Recommandés:**
+- **julien-workflow-sync-personal-skills**: If skills are missing, sync from marketplace
+- **julien-dev-tools-skill-creator-pro**: If need to create new skill
+
+**Optionnels:**
+- **julien-dev-tools-skill-reviewer**: Review quality of loaded skills
+
+### Called By
+- Direct user invocation: "Check loaded skills", "List my skills"
+- Debugging workflows when skills aren't triggering
+- Pre-deployment verification
+
+### Tools Used
+- `Bash` (usage: run check-loaded-skills.sh script)
+- `Read` (usage: read skill directories)
+
+### Visual Workflow
+
+```
+User: "Check which skills are loaded"
+    ↓
+[THIS SKILL]
+    ├─► List ~/.claude/skills/
+    ├─► List .claude/skills/ (if exists)
+    ├─► Categorize by author
+    └─► Show counts + conflicts
+    ↓
+Skills report displayed
+    ↓
+[If missing skills]
+    └─► sync-personal-skills
+```
+
+### Usage Example
+
+**Scenario**: Verify Hostinger skills are loaded before deployment
+
+**Command**: "Are my Hostinger skills loaded?"
+
+**Result**:
+- Lists 7 Hostinger infrastructure skills
+- Confirms all loaded from ~/.claude/skills/
+- No project-level overrides
 
 ## Technical Details
 

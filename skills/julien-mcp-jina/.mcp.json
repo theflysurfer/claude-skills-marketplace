@@ -1,0 +1,1 @@
+{"mcpServers": {"jina": {"command": "cmd", "args": ["/c", "npx", "-y", "@smithery/cli@latest", "run", "jina-ai-mcp-server", "--key", "${JINA_API_KEY}"], "env": {"JINA_API_KEY": "${JINA_API_KEY}"}}}}

@@ -1,0 +1,1 @@
+{"mcpServers": {"codex-cli": {"command": "cmd", "args": ["/c", "npx", "-y", "codex-mcp-server"]}}}

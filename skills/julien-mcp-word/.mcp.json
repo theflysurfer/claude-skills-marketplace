@@ -1,0 +1,1 @@
+{"mcpServers": {"word": {"command": "uv", "args": ["run", "--with", "pywin32", "--with", "fastmcp", "fastmcp", "run", "${ONEDRIVE_MCP_PATH}/word-mcp-server-win32com-2/main.py"]}}}

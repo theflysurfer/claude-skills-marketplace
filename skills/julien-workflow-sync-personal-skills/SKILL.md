@@ -136,6 +136,73 @@ bash -x ~/.claude/scripts/sync-marketplace.sh
 }
 ```
 
+## Skill Chaining
+
+### Skills Required Before
+- None (can be entry point)
+- **julien-workflow-check-loaded-skills** (optionnel): To identify missing skills first
+
+### Input Expected
+- None for basic sync
+- Optional: skill name to add/remove from core set
+
+### Output Produced
+- **Format**: Console output confirming sync status
+- **Side effects**:
+  - Git pull on marketplace cache
+  - Copy skills to ~/.claude/skills/
+  - Git commit/push if changes
+- **Duration**: 10-30 seconds
+
+### Compatible Skills After
+**Recommandés:**
+- **julien-workflow-check-loaded-skills**: Verify skills synced correctly
+
+**Optionnels:**
+- **julien-dev-tools-skill-reviewer**: Review synced skills quality
+
+### Called By
+- Direct user invocation: "Sync my skills", "Force pull marketplace"
+- SessionStart hook (automatic)
+- SessionEnd hook (automatic push)
+- When check-loaded-skills shows missing skills
+
+### Tools Used
+- `Bash` (usage: run sync-marketplace.sh, push-marketplace.sh)
+- `Read` (usage: read sync-config.json)
+- `Edit` (usage: modify sync-config.json)
+
+### Visual Workflow
+
+```
+User: "Sync my core skills"
+    ↓
+[THIS SKILL]
+    ├─► git pull marketplace
+    ├─► Read sync-config.json
+    ├─► Copy 8 core skills to ~/.claude/skills/
+    └─► Report status
+    ↓
+Skills synced ✅
+    ↓
+[Optional] check-loaded-skills to verify
+```
+
+### Usage Example
+
+**Scenario**: Add a new skill to core set
+
+**Command**: "Add hostinger-nginx to my core skills"
+
+**Process**:
+1. Edit sync-config.json to add skill name
+2. Run sync-marketplace.sh
+3. Skill copied to ~/.claude/skills/
+
+**Result**:
+- Skill now available globally
+- Will sync automatically on future sessions
+
 ## Notes
 
 - Core skills are NOT in the marketplace `/plugin` list (no duplication)
