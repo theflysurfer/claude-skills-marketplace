@@ -178,7 +178,7 @@
       "description": "Nginx/SSL config | Config Nginx/SSL"
     },
     {
-      "name": "julien-workflow-ask-gemini",
+      "name": "julien-workflow-advice-gemini",
       "triggers": [
         "ask gemini", "gemini opinion", "gemini review", "what does gemini think",
         "demande à gemini", "avis de gemini", "gemini pense quoi",
@@ -187,7 +187,7 @@
       "description": "Get Gemini CLI feedback | Avis de Gemini CLI"
     },
     {
-      "name": "julien-workflow-ask-codex",
+      "name": "julien-workflow-advice-codex",
       "triggers": [
         "ask codex", "codex opinion", "codex review", "what does codex think",
         "demande à codex", "avis de codex", "codex pense quoi",

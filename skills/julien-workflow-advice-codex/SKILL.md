@@ -1,5 +1,5 @@
 ---
-name: julien-workflow-ask-codex
+name: julien-workflow-advice-codex
 description: Get OpenAI Codex CLI's opinion on code, bugs, or implementation. Use when you want a second AI perspective during coding sessions.
 ---
 
@@ -93,7 +93,7 @@ codex exec "Analyze scripts/semantic-skill-router.py for potential bugs, edge ca
 - **Side effects**: None (read-only)
 
 ### Compatible Skills
-- Can be used alongside `julien-workflow-ask-gemini` for multiple AI opinions
+- Can be used alongside `julien-workflow-advice-gemini` for multiple AI opinions
 - Use after writing code, before commit
 
 ### Tools Used

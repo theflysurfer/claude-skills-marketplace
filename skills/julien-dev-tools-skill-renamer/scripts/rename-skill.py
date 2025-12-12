@@ -41,10 +41,18 @@ def rename_skill(old_name: str, new_name: str, dry_run: bool = False):
         print(f"Error: Could not find skill folder matching '{old_name}'")
         sys.exit(1)
 
-    # Determine new folder name (preserve prefix structure)
+    # Determine new folder name
     old_folder_name = old_folder.name
-    if "-" in old_folder_name and old_name in old_folder_name:
-        # Has prefix like julien-dev-tools-skill-creator-pro
+
+    # Check if new_name is already a full name (contains common prefixes)
+    full_name_prefixes = ['julien-', 'anthropic-']
+    new_is_full_name = any(new_name.startswith(prefix) for prefix in full_name_prefixes)
+
+    if new_is_full_name:
+        # User provided complete new name, use it directly
+        new_folder_name = new_name
+    elif "-" in old_folder_name and old_name in old_folder_name:
+        # Has prefix like julien-dev-tools-skill-creator-pro, preserve it
         new_folder_name = old_folder_name.replace(old_name, new_name)
     else:
         new_folder_name = new_name

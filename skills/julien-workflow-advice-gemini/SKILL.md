@@ -1,5 +1,5 @@
 ---
-name: julien-workflow-ask-gemini
+name: julien-workflow-advice-gemini
 description: Get Gemini CLI's opinion on code, architecture, or implementation. Use when you want a second AI perspective during coding sessions.
 ---
 
@@ -91,7 +91,7 @@ gemini "Compare Redis vs in-memory caching for a CLI tool that routes user promp
 - **Side effects**: None (read-only)
 
 ### Compatible Skills
-- Can be used alongside `julien-workflow-ask-codex` for multiple AI opinions
+- Can be used alongside `julien-workflow-advice-codex` for multiple AI opinions
 - Use after writing code, before commit
 
 ### Tools Used
