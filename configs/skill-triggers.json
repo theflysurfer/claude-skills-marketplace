@@ -1,14 +1,16 @@
 {
-  "version": "1.1.0",
-  "description": "Triggers bilingues (FR/EN) pour activation intelligente des skills",
+  "version": "2.0.0",
+  "description": "Triggers enrichis pour semantic routing (FR/EN)",
   "skills": [
     {
       "name": "julien-dev-tools-claude-md-documenter",
       "triggers": [
         "CLAUDE.md", "claude.md",
+        "create CLAUDE.md file", "créer un CLAUDE.md",
         "document project", "project documentation", "project context", "project instructions",
         "documenter projet", "documentation projet", "contexte projet", "instructions projet",
-        "create claude", "créer claude"
+        "create claude", "créer claude", "setup project documentation",
+        "fichier claude.md", "add project context"
       ],
       "description": "Create/improve CLAUDE.md | Créer/améliorer CLAUDE.md"
     },
@@ -18,7 +20,8 @@
         "SKILL.md", "skill.md",
         "create skill", "new skill", "add skill", "build skill", "skill template", "write skill",
         "créer skill", "nouvelle skill", "ajouter skill", "construire skill", "écrire skill",
-        "créer une skill", "faire une skill"
+        "créer une skill", "faire une skill", "développer une skill",
+        "create a new skill", "build custom skill", "skill development"
       ],
       "description": "Create/modify skills | Créer/modifier une skill"
     },
@@ -26,7 +29,7 @@
       "name": "julien-dev-tools-skill-renamer",
       "triggers": [
         "rename skill", "change skill name", "refactor skill",
-        "renommer skill", "changer nom skill"
+        "renommer skill", "changer nom skill", "renommer une skill"
       ],
       "description": "Rename a skill | Renommer une skill"
     },
@@ -35,7 +38,8 @@
       "triggers": [
         "review skill", "check skill", "improve skill", "skill quality", "audit skill", "score skill",
         "évaluer skill", "vérifier skill", "améliorer skill", "qualité skill", "auditer skill",
-        "revoir skill", "relire skill"
+        "revoir skill", "relire skill", "review my skill quality", "check skill score",
+        "évaluer la qualité de la skill", "améliorer ma skill"
       ],
       "description": "Review skill quality | Évaluer qualité d'une skill"
     },
@@ -44,7 +48,8 @@
       "triggers": [
         "create hook", "new hook", "add hook", "hook template", "write hook", "build hook",
         "créer hook", "nouveau hook", "ajouter hook", "écrire hook",
-        "SessionStart", "SessionEnd", "PreToolUse", "PostToolUse", "UserPromptSubmit"
+        "SessionStart", "SessionEnd", "PreToolUse", "PostToolUse", "UserPromptSubmit",
+        "claude code hook", "automation hook"
       ],
       "description": "Create Claude Code hooks | Créer un hook Claude Code"
     },
@@ -52,7 +57,8 @@
       "name": "julien-workflow-check-loaded-skills",
       "triggers": [
         "loaded skills", "check skills", "list skills", "available skills", "what skills",
-        "skills chargées", "vérifier skills", "lister skills", "skills disponibles", "quelles skills"
+        "skills chargées", "vérifier skills", "lister skills", "skills disponibles", "quelles skills",
+        "which skills are loaded", "show my skills"
       ],
       "description": "Check loaded skills | Vérifier skills chargées"
     },
@@ -60,40 +66,48 @@
       "name": "julien-workflow-skill-router",
       "triggers": [
         "which skill", "find skill", "skill for", "right skill",
-        "quelle skill", "trouver skill", "skill pour", "bonne skill"
+        "quelle skill", "trouver skill", "skill pour", "bonne skill",
+        "what skill should I use", "recommend a skill"
       ],
       "description": "Find the right skill | Trouver la bonne skill"
     },
     {
       "name": "anthropic-office-pdf",
       "triggers": [
-        "pdf", "PDF",
-        "fill form", "pdf form", "merge pdf", "split pdf", "extract pdf",
-        "remplir formulaire", "formulaire pdf", "fusionner pdf", "diviser pdf"
+        "pdf", "PDF", "fill form", "pdf form", "merge pdf", "split pdf", "extract pdf",
+        "remplir formulaire", "formulaire pdf", "fusionner pdf", "diviser pdf",
+        "extract text from pdf", "extraire le texte du pdf", "merge pdf files",
+        "fusionner des fichiers pdf", "fill pdf form", "remplir formulaire pdf",
+        "split pdf document", "diviser le pdf en pages", "pdf manipulation", "convert to pdf"
       ],
       "description": "PDF manipulation | Manipulation PDF"
     },
     {
       "name": "anthropic-office-xlsx",
       "triggers": [
-        "excel", "xlsx", "spreadsheet", "xls",
-        "tableur", "feuille de calcul", "classeur"
+        "excel", "xlsx", "spreadsheet", "xls", "tableur", "feuille de calcul", "classeur",
+        "create excel spreadsheet", "créer un fichier excel", "add formulas to spreadsheet",
+        "formules excel", "analyze data in xlsx", "analyser les données excel",
+        "pivot table creation", "tableau croisé dynamique", "excel chart creation",
+        "graphique dans excel", "excel formulas"
       ],
       "description": "Excel/spreadsheet | Excel/tableur"
     },
     {
       "name": "anthropic-office-docx",
       "triggers": [
-        "word", "docx", "document word",
-        "word document", "doc file"
+        "word", "docx", "document word", "word document", "doc file",
+        "create word document", "créer un document word", "edit docx file",
+        "modifier fichier word"
       ],
       "description": "Word documents | Documents Word"
     },
     {
       "name": "anthropic-office-pptx",
       "triggers": [
-        "powerpoint", "pptx", "presentation", "slides",
-        "présentation", "diaporama"
+        "powerpoint", "pptx", "presentation", "slides", "présentation", "diaporama",
+        "create presentation", "créer une présentation", "add slides",
+        "ajouter des slides", "powerpoint slides"
       ],
       "description": "PowerPoint | Présentations"
     },
@@ -101,7 +115,10 @@
       "name": "anthropic-web-frontend-design",
       "triggers": [
         "frontend", "ui design", "web design", "interface", "react component", "html css",
-        "design web", "interface utilisateur", "composant react"
+        "design web", "interface utilisateur", "composant react",
+        "create landing page", "créer une page d'accueil", "design dashboard ui",
+        "react component design", "html css website", "design web moderne",
+        "frontend interface", "ui design for app", "build webpage"
       ],
       "description": "Frontend/UI design | Design web/interface"
     },
@@ -109,7 +126,8 @@
       "name": "anthropic-design-canvas",
       "triggers": [
         "poster", "art", "visual", "infographic", "design image", "create image",
-        "affiche", "visuel", "infographie", "créer image"
+        "affiche", "visuel", "infographie", "créer image",
+        "create poster", "design infographic", "visual art"
       ],
       "description": "Visual art/posters | Art visuel/affiches"
     },
@@ -117,7 +135,10 @@
       "name": "julien-infra-hostinger-ssh",
       "triggers": [
         "ssh", "server", "vps", "connect server", "hostinger",
-        "serveur", "connexion serveur", "se connecter au serveur"
+        "serveur", "connexion serveur", "se connecter au serveur",
+        "connect to server via ssh", "connexion ssh au serveur", "hostinger vps access",
+        "server connection", "accéder au vps", "ssh key authentication",
+        "remote server access", "terminal connection to vps", "clé ssh"
       ],
       "description": "SSH to Hostinger VPS | Connexion SSH au VPS"
     },
@@ -125,14 +146,22 @@
       "name": "julien-infra-hostinger-deployment",
       "triggers": [
         "deploy", "deployment", "push production", "mise en prod",
-        "déployer", "déploiement", "mettre en production", "mettre en ligne"
+        "déployer", "déploiement", "mettre en production", "mettre en ligne",
+        "deploy to production", "mise en production", "déployer l'application",
+        "push to live server", "mettre en ligne le site", "production deployment",
+        "déploiement automatique", "release to production", "publier les modifications",
+        "sync code to server"
       ],
       "description": "Deploy to VPS | Déployer sur VPS"
     },
     {
       "name": "julien-infra-hostinger-docker",
       "triggers": [
-        "docker", "container", "conteneur", "image docker"
+        "docker", "container", "conteneur", "image docker",
+        "start docker container", "docker compose up", "lancer les conteneurs",
+        "optimize docker images", "nettoyer les images docker", "container keeps crashing",
+        "build docker image", "docker logs command", "restart all containers",
+        "dockerfile optimization", "docker compose", "container management"
       ],
       "description": "Docker management | Gestion Docker"
     },
@@ -140,7 +169,11 @@
       "name": "julien-infra-hostinger-nginx",
       "triggers": [
         "nginx", "reverse proxy", "ssl", "https", "certbot", "let's encrypt",
-        "certificat ssl"
+        "certificat ssl", "configure nginx for my website", "setup reverse proxy",
+        "je veux configurer nginx", "SSL certificate renewal", "certificat ssl expiré",
+        "configure https for domain", "nginx 502 bad gateway error",
+        "proxy pass configuration", "ajouter un nouveau site nginx",
+        "nginx configuration", "ssl certificate", "web server config"
       ],
       "description": "Nginx/SSL config | Config Nginx/SSL"
     }
