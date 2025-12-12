@@ -6,6 +6,24 @@ metadata:
   author: "Julien"
   version: "2.0.0"
   category: "development"
+triggers:
+  - "review skill"
+  - "check skill"
+  - "improve skill"
+  - "skill quality"
+  - "audit skill"
+  - "score skill"
+  - "évaluer skill"
+  - "vérifier skill"
+  - "améliorer skill"
+  - "qualité skill"
+  - "auditer skill"
+  - "revoir skill"
+  - "relire skill"
+  - "review my skill quality"
+  - "check skill score"
+  - "évaluer la qualité de la skill"
+  - "améliorer ma skill"
 allowed-tools:
   - Read
   - Edit

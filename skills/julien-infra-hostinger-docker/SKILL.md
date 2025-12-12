@@ -1,6 +1,23 @@
 ---
 name: julien-infra-hostinger-docker
 description: This skill should be used when managing Docker services on the Hostinger VPS (srv759970, automation@69.62.108.82). It provides workflows for optimizing images, deploying services, troubleshooting errors, and maintaining the Docker infrastructure for Python/FastAPI, Streamlit, Next.js, and ML applications.
+triggers:
+  - "docker"
+  - "container"
+  - "conteneur"
+  - "image docker"
+  - "start docker container"
+  - "docker compose up"
+  - "lancer les conteneurs"
+  - "optimize docker images"
+  - "nettoyer les images docker"
+  - "container keeps crashing"
+  - "build docker image"
+  - "docker logs command"
+  - "restart all containers"
+  - "dockerfile optimization"
+  - "docker compose"
+  - "container management"
 ---
 
 # Docker Hostinger VPS Management

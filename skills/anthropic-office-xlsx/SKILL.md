@@ -2,6 +2,25 @@
 name: anthropic-office-xlsx
 description: "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas"
 license: Proprietary. LICENSE.txt has complete terms
+triggers:
+  - "excel"
+  - "xlsx"
+  - "spreadsheet"
+  - "xls"
+  - "tableur"
+  - "feuille de calcul"
+  - "classeur"
+  - "create excel spreadsheet"
+  - "créer un fichier excel"
+  - "add formulas to spreadsheet"
+  - "formules excel"
+  - "analyze data in xlsx"
+  - "analyser les données excel"
+  - "pivot table creation"
+  - "tableau croisé dynamique"
+  - "excel chart creation"
+  - "graphique dans excel"
+  - "excel formulas"
 ---
 
 # Requirements for Outputs

@@ -2,6 +2,28 @@
 name: anthropic-office-pdf
 description: Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.
 license: Proprietary. LICENSE.txt has complete terms
+triggers:
+  - "pdf"
+  - "PDF"
+  - "fill form"
+  - "pdf form"
+  - "merge pdf"
+  - "split pdf"
+  - "extract pdf"
+  - "remplir formulaire"
+  - "formulaire pdf"
+  - "fusionner pdf"
+  - "diviser pdf"
+  - "extract text from pdf"
+  - "extraire le texte du pdf"
+  - "merge pdf files"
+  - "fusionner des fichiers pdf"
+  - "fill pdf form"
+  - "remplir formulaire pdf"
+  - "split pdf document"
+  - "diviser le pdf en pages"
+  - "pdf manipulation"
+  - "convert to pdf"
 ---
 
 # PDF Processing Guide

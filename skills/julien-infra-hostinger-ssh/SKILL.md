@@ -10,6 +10,24 @@ metadata:
   version: "1.0.0"
   category: "infrastructure"
   keywords: ["ssh", "server", "hostinger", "vps", "connection"]
+triggers:
+  - "ssh"
+  - "server"
+  - "vps"
+  - "connect server"
+  - "hostinger"
+  - "serveur"
+  - "connexion serveur"
+  - "se connecter au serveur"
+  - "connect to server via ssh"
+  - "connexion ssh au serveur"
+  - "hostinger vps access"
+  - "server connection"
+  - "accéder au vps"
+  - "ssh key authentication"
+  - "remote server access"
+  - "terminal connection to vps"
+  - "clé ssh"
 ---
 
 # SSH & Server Management - Hostinger VPS

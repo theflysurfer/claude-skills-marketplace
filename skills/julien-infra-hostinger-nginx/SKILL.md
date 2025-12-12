@@ -13,6 +13,26 @@ metadata:
   version: "2.0.0"
   category: "infrastructure"
   keywords: ["nginx", "reverse-proxy", "ssl", "certbot", "hostinger", "ipv6"]
+triggers:
+  - "nginx"
+  - "reverse proxy"
+  - "ssl"
+  - "https"
+  - "certbot"
+  - "let's encrypt"
+  - "certificat ssl"
+  - "configure nginx for my website"
+  - "setup reverse proxy"
+  - "je veux configurer nginx"
+  - "SSL certificate renewal"
+  - "certificat ssl expiré"
+  - "configure https for domain"
+  - "nginx 502 bad gateway error"
+  - "proxy pass configuration"
+  - "ajouter un nouveau site nginx"
+  - "nginx configuration"
+  - "ssl certificate"
+  - "web server config"
 ---
 
 # Nginx Management on Hostinger VPS

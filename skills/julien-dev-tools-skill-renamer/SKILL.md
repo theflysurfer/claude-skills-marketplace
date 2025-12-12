@@ -6,6 +6,13 @@ metadata:
   author: "Julien"
   version: "1.0.0"
   category: "development"
+triggers:
+  - "rename skill"
+  - "change skill name"
+  - "refactor skill"
+  - "renommer skill"
+  - "changer nom skill"
+  - "renommer une skill"
 ---
 
 # Skill Renamer

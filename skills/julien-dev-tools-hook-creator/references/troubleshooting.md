@@ -45,6 +45,26 @@ sed -i 's/\r$//' ~/.claude/scripts/my-hook.sh
 SKILLS=$(jq -r '.skills[]' config.json | tr -d '\r')
 ```
 
+#### 4. Windows Path Expansion (~, $HOME, %USERPROFILE%)
+
+On Windows, Claude Code doesn't expand `~`, `$HOME`, or `%USERPROFILE%` in hook commands.
+
+**Symptom**:
+```
+python: can't open file 'C:\Users\julien\~\.claude\scripts\...'
+```
+
+**Solution**: Use inline Python with `Path.home()` for 100% portable paths:
+```json
+{
+  "type": "command",
+  "command": "python -c \"import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/'.claude/scripts/my-hook.py'),run_name='__main__')\"",
+  "timeout": 10
+}
+```
+
+This works on Windows, macOS, and Linux without any hardcoded paths.
+
 ---
 
 ## Error: "jq: command not found"

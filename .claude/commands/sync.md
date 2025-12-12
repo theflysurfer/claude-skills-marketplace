@@ -17,8 +17,11 @@ Read `configs/sync-config.json` for the list of:
 ## Execute
 
 ```bash
+# 0. Generate skill-triggers.json from SKILL.md YAML frontmatter
+python scripts/generate-triggers.py && echo "✓ triggers regenerated"
+
 # 1. Create directories
-mkdir -p ~/.claude/skills ~/.claude/commands ~/.claude/scripts
+mkdir -p ~/.claude/skills ~/.claude/commands ~/.claude/scripts ~/.claude/configs
 
 # 2. Sync skills
 for skill in $(cat configs/sync-config.json | jq -r '.skills_to_sync[]'); do
@@ -33,6 +36,11 @@ done
 # 4. Sync scripts
 for script in $(cat configs/sync-config.json | jq -r '.scripts_to_sync[]'); do
   cp "scripts/$script" ~/.claude/scripts/ 2>/dev/null && echo "✓ script: $script"
+done
+
+# 5. Sync configs
+for cfg in $(cat configs/sync-config.json | jq -r '.configs_to_sync[]'); do
+  cp "configs/$cfg" ~/.claude/configs/ 2>/dev/null && echo "✓ config: $cfg"
 done
 ```
 

@@ -8,6 +8,17 @@ metadata:
   version: "1.0.0"
   category: "workflow"
   keywords: ["router", "skills", "index", "triggers", "auto-activation"]
+triggers:
+  - "which skill"
+  - "find skill"
+  - "skill for"
+  - "right skill"
+  - "quelle skill"
+  - "trouver skill"
+  - "skill pour"
+  - "bonne skill"
+  - "what skill should I use"
+  - "recommend a skill"
 ---
 
 # Skill Router - Index des Skills Disponibles

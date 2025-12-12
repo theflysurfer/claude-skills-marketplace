@@ -244,8 +244,9 @@ def main():
     # Show previous routing result first
     show_previous_routing_result()
 
-    # Skip if prompt is too short
-    if len(user_prompt) < 10:
+    # Skip if prompt is too short (avoid "ok", "y", "n")
+    if len(user_prompt) < 3:
+        print("[routing: prompt too short]")
         sys.exit(0)
 
     # Load triggers
@@ -275,6 +276,9 @@ def main():
         else:
             print(f"\nInvoke the most relevant with: Skill(\"<skill-name>\")")
         print("---")
+    else:
+        # Option A+B: Show discrete indicator that routing ran but found no match
+        print("[routing: no skill match]")
 
 if __name__ == "__main__":
     main()

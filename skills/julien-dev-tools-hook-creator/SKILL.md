@@ -6,6 +6,24 @@ metadata:
   author: "Julien"
   version: "1.0.0"
   category: "development"
+triggers:
+  - "create hook"
+  - "new hook"
+  - "add hook"
+  - "hook template"
+  - "write hook"
+  - "build hook"
+  - "créer hook"
+  - "nouveau hook"
+  - "ajouter hook"
+  - "écrire hook"
+  - "SessionStart"
+  - "SessionEnd"
+  - "PreToolUse"
+  - "PostToolUse"
+  - "UserPromptSubmit"
+  - "claude code hook"
+  - "automation hook"
 ---
 
 # Hook Creator

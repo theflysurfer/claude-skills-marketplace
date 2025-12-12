@@ -10,6 +10,19 @@ metadata:
   version: "1.0.0"
   category: "workflow"
   keywords: ["skills", "debug", "workflow", "loaded", "discovery", "troubleshoot"]
+triggers:
+  - "loaded skills"
+  - "check skills"
+  - "list skills"
+  - "available skills"
+  - "what skills"
+  - "skills chargées"
+  - "vérifier skills"
+  - "lister skills"
+  - "skills disponibles"
+  - "quelles skills"
+  - "which skills are loaded"
+  - "show my skills"
 ---
 
 # Check Loaded Skills

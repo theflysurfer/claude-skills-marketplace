@@ -6,6 +6,26 @@ metadata:
   author: "Julien (based on Anthropic skill-creator)"
   version: "2.0.0"
   category: "development"
+triggers:
+  - "SKILL.md"
+  - "skill.md"
+  - "create skill"
+  - "new skill"
+  - "add skill"
+  - "build skill"
+  - "skill template"
+  - "write skill"
+  - "créer skill"
+  - "nouvelle skill"
+  - "ajouter skill"
+  - "construire skill"
+  - "écrire skill"
+  - "créer une skill"
+  - "faire une skill"
+  - "développer une skill"
+  - "create a new skill"
+  - "build custom skill"
+  - "skill development"
 ---
 
 # Skill Creator

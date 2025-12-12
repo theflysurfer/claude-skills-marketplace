@@ -1,6 +1,17 @@
 ---
 name: julien-workflow-advice-gemini
 description: Get Gemini CLI's opinion on code, architecture, or implementation. Use when you want a second AI perspective during coding sessions.
+triggers:
+  - "ask gemini"
+  - "gemini opinion"
+  - "gemini review"
+  - "what does gemini think"
+  - "demande à gemini"
+  - "avis de gemini"
+  - "gemini pense quoi"
+  - "get gemini feedback"
+  - "gemini second opinion"
+  - "google gemini review"
 ---
 
 # Ask Gemini

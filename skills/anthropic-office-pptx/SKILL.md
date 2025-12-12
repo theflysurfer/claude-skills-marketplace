@@ -2,6 +2,18 @@
 name: anthropic-office-pptx
 description: "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks"
 license: Proprietary. LICENSE.txt has complete terms
+triggers:
+  - "powerpoint"
+  - "pptx"
+  - "presentation"
+  - "slides"
+  - "présentation"
+  - "diaporama"
+  - "create presentation"
+  - "créer une présentation"
+  - "add slides"
+  - "ajouter des slides"
+  - "powerpoint slides"
 ---
 
 # PPTX creation, editing, and analysis

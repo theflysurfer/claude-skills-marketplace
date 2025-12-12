@@ -1,9 +1,27 @@
 ---
-name: claude-md-documenter
+name: julien-dev-tools-claude-md-documenter
 version: 1.0.0
 description: "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md."
 category: development
 license: Apache-2.0
+triggers:
+  - "CLAUDE.md"
+  - "claude.md"
+  - "create CLAUDE.md file"
+  - "créer un CLAUDE.md"
+  - "document project"
+  - "project documentation"
+  - "project context"
+  - "project instructions"
+  - "documenter projet"
+  - "documentation projet"
+  - "contexte projet"
+  - "instructions projet"
+  - "create claude"
+  - "créer claude"
+  - "setup project documentation"
+  - "fichier claude.md"
+  - "add project context"
 ---
 
 # CLAUDE.md Documenter

@@ -1,199 +1,375 @@
 {
-  "version": "2.0.0",
-  "description": "Triggers enrichis pour semantic routing (FR/EN)",
+  "generated": true,
+  "version": "3.0.0",
+  "description": "Auto-generated from SKILL.md frontmatter. DO NOT EDIT MANUALLY.",
   "skills": [
     {
-      "name": "julien-dev-tools-claude-md-documenter",
+      "name": "anthropic-design-canvas",
       "triggers": [
-        "CLAUDE.md", "claude.md",
-        "create CLAUDE.md file", "créer un CLAUDE.md",
-        "document project", "project documentation", "project context", "project instructions",
-        "documenter projet", "documentation projet", "contexte projet", "instructions projet",
-        "create claude", "créer claude", "setup project documentation",
-        "fichier claude.md", "add project context"
+        "poster",
+        "art",
+        "visual",
+        "infographic",
+        "design image",
+        "create image",
+        "affiche",
+        "visuel",
+        "infographie",
+        "créer image",
+        "create poster",
+        "design infographic",
+        "visual art"
       ],
-      "description": "Create/improve CLAUDE.md | Créer/améliorer CLAUDE.md"
-    },
-    {
-      "name": "julien-dev-tools-skill-creator",
-      "triggers": [
-        "SKILL.md", "skill.md",
-        "create skill", "new skill", "add skill", "build skill", "skill template", "write skill",
-        "créer skill", "nouvelle skill", "ajouter skill", "construire skill", "écrire skill",
-        "créer une skill", "faire une skill", "développer une skill",
-        "create a new skill", "build custom skill", "skill development"
-      ],
-      "description": "Create/modify skills | Créer/modifier une skill"
-    },
-    {
-      "name": "julien-dev-tools-skill-renamer",
-      "triggers": [
-        "rename skill", "change skill name", "refactor skill",
-        "renommer skill", "changer nom skill", "renommer une skill"
-      ],
-      "description": "Rename a skill | Renommer une skill"
-    },
-    {
-      "name": "julien-dev-tools-skill-reviewer",
-      "triggers": [
-        "review skill", "check skill", "improve skill", "skill quality", "audit skill", "score skill",
-        "évaluer skill", "vérifier skill", "améliorer skill", "qualité skill", "auditer skill",
-        "revoir skill", "relire skill", "review my skill quality", "check skill score",
-        "évaluer la qualité de la skill", "améliorer ma skill"
-      ],
-      "description": "Review skill quality | Évaluer qualité d'une skill"
-    },
-    {
-      "name": "julien-dev-tools-hook-creator",
-      "triggers": [
-        "create hook", "new hook", "add hook", "hook template", "write hook", "build hook",
-        "créer hook", "nouveau hook", "ajouter hook", "écrire hook",
-        "SessionStart", "SessionEnd", "PreToolUse", "PostToolUse", "UserPromptSubmit",
-        "claude code hook", "automation hook"
-      ],
-      "description": "Create Claude Code hooks | Créer un hook Claude Code"
-    },
-    {
-      "name": "julien-workflow-check-loaded-skills",
-      "triggers": [
-        "loaded skills", "check skills", "list skills", "available skills", "what skills",
-        "skills chargées", "vérifier skills", "lister skills", "skills disponibles", "quelles skills",
-        "which skills are loaded", "show my skills"
-      ],
-      "description": "Check loaded skills | Vérifier skills chargées"
-    },
-    {
-      "name": "julien-workflow-skill-router",
-      "triggers": [
-        "which skill", "find skill", "skill for", "right skill",
-        "quelle skill", "trouver skill", "skill pour", "bonne skill",
-        "what skill should I use", "recommend a skill"
-      ],
-      "description": "Find the right skill | Trouver la bonne skill"
-    },
-    {
-      "name": "anthropic-office-pdf",
-      "triggers": [
-        "pdf", "PDF", "fill form", "pdf form", "merge pdf", "split pdf", "extract pdf",
-        "remplir formulaire", "formulaire pdf", "fusionner pdf", "diviser pdf",
-        "extract text from pdf", "extraire le texte du pdf", "merge pdf files",
-        "fusionner des fichiers pdf", "fill pdf form", "remplir formulaire pdf",
-        "split pdf document", "diviser le pdf en pages", "pdf manipulation", "convert to pdf"
-      ],
-      "description": "PDF manipulation | Manipulation PDF"
-    },
-    {
-      "name": "anthropic-office-xlsx",
-      "triggers": [
-        "excel", "xlsx", "spreadsheet", "xls", "tableur", "feuille de calcul", "classeur",
-        "create excel spreadsheet", "créer un fichier excel", "add formulas to spreadsheet",
-        "formules excel", "analyze data in xlsx", "analyser les données excel",
-        "pivot table creation", "tableau croisé dynamique", "excel chart creation",
-        "graphique dans excel", "excel formulas"
-      ],
-      "description": "Excel/spreadsheet | Excel/tableur"
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations."
     },
     {
       "name": "anthropic-office-docx",
       "triggers": [
-        "word", "docx", "document word", "word document", "doc file",
-        "create word document", "créer un document word", "edit docx file",
+        "word",
+        "docx",
+        "document word",
+        "word document",
+        "doc file",
+        "create word document",
+        "créer un document word",
+        "edit docx file",
         "modifier fichier word"
       ],
-      "description": "Word documents | Documents Word"
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks"
+    },
+    {
+      "name": "anthropic-office-pdf",
+      "triggers": [
+        "pdf",
+        "PDF",
+        "fill form",
+        "pdf form",
+        "merge pdf",
+        "split pdf",
+        "extract pdf",
+        "remplir formulaire",
+        "formulaire pdf",
+        "fusionner pdf",
+        "diviser pdf",
+        "extract text from pdf",
+        "extraire le texte du pdf",
+        "merge pdf files",
+        "fusionner des fichiers pdf",
+        "fill pdf form",
+        "remplir formulaire pdf",
+        "split pdf document",
+        "diviser le pdf en pages",
+        "pdf manipulation",
+        "convert to pdf"
+      ],
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale."
     },
     {
       "name": "anthropic-office-pptx",
       "triggers": [
-        "powerpoint", "pptx", "presentation", "slides", "présentation", "diaporama",
-        "create presentation", "créer une présentation", "add slides",
-        "ajouter des slides", "powerpoint slides"
+        "powerpoint",
+        "pptx",
+        "presentation",
+        "slides",
+        "présentation",
+        "diaporama",
+        "create presentation",
+        "créer une présentation",
+        "add slides",
+        "ajouter des slides",
+        "powerpoint slides"
       ],
-      "description": "PowerPoint | Présentations"
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks"
+    },
+    {
+      "name": "anthropic-office-xlsx",
+      "triggers": [
+        "excel",
+        "xlsx",
+        "spreadsheet",
+        "xls",
+        "tableur",
+        "feuille de calcul",
+        "classeur",
+        "create excel spreadsheet",
+        "créer un fichier excel",
+        "add formulas to spreadsheet",
+        "formules excel",
+        "analyze data in xlsx",
+        "analyser les données excel",
+        "pivot table creation",
+        "tableau croisé dynamique",
+        "excel chart creation",
+        "graphique dans excel",
+        "excel formulas"
+      ],
+      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas"
     },
     {
       "name": "anthropic-web-frontend-design",
       "triggers": [
-        "frontend", "ui design", "web design", "interface", "react component", "html css",
-        "design web", "interface utilisateur", "composant react",
-        "create landing page", "créer une page d'accueil", "design dashboard ui",
-        "react component design", "html css website", "design web moderne",
-        "frontend interface", "ui design for app", "build webpage"
+        "frontend",
+        "ui design",
+        "web design",
+        "interface",
+        "react component",
+        "html css",
+        "design web",
+        "interface utilisateur",
+        "composant react",
+        "create landing page",
+        "créer une page d'accueil",
+        "design dashboard ui",
+        "react component design",
+        "html css website",
+        "design web moderne",
+        "frontend interface",
+        "ui design for app",
+        "build webpage"
       ],
-      "description": "Frontend/UI design | Design web/interface"
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics."
     },
     {
-      "name": "anthropic-design-canvas",
+      "name": "julien-dev-tools-claude-md-documenter",
       "triggers": [
-        "poster", "art", "visual", "infographic", "design image", "create image",
-        "affiche", "visuel", "infographie", "créer image",
-        "create poster", "design infographic", "visual art"
+        "CLAUDE.md",
+        "claude.md",
+        "create CLAUDE.md file",
+        "créer un CLAUDE.md",
+        "document project",
+        "project documentation",
+        "project context",
+        "project instructions",
+        "documenter projet",
+        "documentation projet",
+        "contexte projet",
+        "instructions projet",
+        "create claude",
+        "créer claude",
+        "setup project documentation",
+        "fichier claude.md",
+        "add project context"
       ],
-      "description": "Visual art/posters | Art visuel/affiches"
+      "description": "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md."
     },
     {
-      "name": "julien-infra-hostinger-ssh",
+      "name": "julien-dev-tools-hook-creator",
       "triggers": [
-        "ssh", "server", "vps", "connect server", "hostinger",
-        "serveur", "connexion serveur", "se connecter au serveur",
-        "connect to server via ssh", "connexion ssh au serveur", "hostinger vps access",
-        "server connection", "accéder au vps", "ssh key authentication",
-        "remote server access", "terminal connection to vps", "clé ssh"
+        "create hook",
+        "new hook",
+        "add hook",
+        "hook template",
+        "write hook",
+        "build hook",
+        "créer hook",
+        "nouveau hook",
+        "ajouter hook",
+        "écrire hook",
+        "SessionStart",
+        "SessionEnd",
+        "PreToolUse",
+        "PostToolUse",
+        "UserPromptSubmit",
+        "claude code hook",
+        "automation hook"
       ],
-      "description": "SSH to Hostinger VPS | Connexion SSH au VPS"
+      "description": "Guide for creating Claude Code hooks - shell commands that execute at specific lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse, etc.). Use when users want to automate actions, add validation, logging, or integrate external tools into Claude Code workflows."
     },
     {
-      "name": "julien-infra-hostinger-deployment",
+      "name": "julien-dev-tools-skill-creator",
       "triggers": [
-        "deploy", "deployment", "push production", "mise en prod",
-        "déployer", "déploiement", "mettre en production", "mettre en ligne",
-        "deploy to production", "mise en production", "déployer l'application",
-        "push to live server", "mettre en ligne le site", "production deployment",
-        "déploiement automatique", "release to production", "publier les modifications",
-        "sync code to server"
+        "SKILL.md",
+        "skill.md",
+        "create skill",
+        "new skill",
+        "add skill",
+        "build skill",
+        "skill template",
+        "write skill",
+        "créer skill",
+        "nouvelle skill",
+        "ajouter skill",
+        "construire skill",
+        "écrire skill",
+        "créer une skill",
+        "faire une skill",
+        "développer une skill",
+        "create a new skill",
+        "build custom skill",
+        "skill development"
       ],
-      "description": "Deploy to VPS | Déployer sur VPS"
+      "description": "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation."
+    },
+    {
+      "name": "julien-dev-tools-skill-renamer",
+      "triggers": [
+        "rename skill",
+        "change skill name",
+        "refactor skill",
+        "renommer skill",
+        "changer nom skill",
+        "renommer une skill"
+      ],
+      "description": "Rename a skill across the marketplace. Use when: user wants to rename a skill, change skill name, or refactor skill naming."
+    },
+    {
+      "name": "julien-dev-tools-skill-reviewer",
+      "triggers": [
+        "review skill",
+        "check skill",
+        "improve skill",
+        "skill quality",
+        "audit skill",
+        "score skill",
+        "évaluer skill",
+        "vérifier skill",
+        "améliorer skill",
+        "qualité skill",
+        "auditer skill",
+        "revoir skill",
+        "relire skill",
+        "review my skill quality",
+        "check skill score",
+        "évaluer la qualité de la skill",
+        "améliorer ma skill"
+      ],
+      "description": "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro."
     },
     {
       "name": "julien-infra-hostinger-docker",
       "triggers": [
-        "docker", "container", "conteneur", "image docker",
-        "start docker container", "docker compose up", "lancer les conteneurs",
-        "optimize docker images", "nettoyer les images docker", "container keeps crashing",
-        "build docker image", "docker logs command", "restart all containers",
-        "dockerfile optimization", "docker compose", "container management"
+        "docker",
+        "container",
+        "conteneur",
+        "image docker",
+        "start docker container",
+        "docker compose up",
+        "lancer les conteneurs",
+        "optimize docker images",
+        "nettoyer les images docker",
+        "container keeps crashing",
+        "build docker image",
+        "docker logs command",
+        "restart all containers",
+        "dockerfile optimization",
+        "docker compose",
+        "container management"
       ],
-      "description": "Docker management | Gestion Docker"
+      "description": "This skill should be used when managing Docker services on the Hostinger VPS (srv759970, automation@69.62.108.82). It provides workflows for optimizing images, deploying services, troubleshooting errors, and maintaining the Docker infrastructure for Python/FastAPI, Streamlit, Next.js, and ML applications."
     },
     {
       "name": "julien-infra-hostinger-nginx",
       "triggers": [
-        "nginx", "reverse proxy", "ssl", "https", "certbot", "let's encrypt",
-        "certificat ssl", "configure nginx for my website", "setup reverse proxy",
-        "je veux configurer nginx", "SSL certificate renewal", "certificat ssl expiré",
-        "configure https for domain", "nginx 502 bad gateway error",
-        "proxy pass configuration", "ajouter un nouveau site nginx",
-        "nginx configuration", "ssl certificate", "web server config"
+        "nginx",
+        "reverse proxy",
+        "ssl",
+        "https",
+        "certbot",
+        "let's encrypt",
+        "certificat ssl",
+        "configure nginx for my website",
+        "setup reverse proxy",
+        "je veux configurer nginx",
+        "SSL certificate renewal",
+        "certificat ssl expiré",
+        "configure https for domain",
+        "nginx 502 bad gateway error",
+        "proxy pass configuration",
+        "ajouter un nouveau site nginx",
+        "nginx configuration",
+        "ssl certificate",
+        "web server config"
       ],
-      "description": "Nginx/SSL config | Config Nginx/SSL"
+      "description": "Manage Nginx reverse proxy on Hostinger VPS srv759970 (automation@69.62.108.82). Use for site configuration, SSL/Let's Encrypt setup, reverse proxy configuration, troubleshooting 502/504 errors, certbot operations, or nginx reload/restart."
     },
     {
-      "name": "julien-workflow-advice-gemini",
+      "name": "julien-infra-hostinger-ssh",
       "triggers": [
-        "ask gemini", "gemini opinion", "gemini review", "what does gemini think",
-        "demande à gemini", "avis de gemini", "gemini pense quoi",
-        "get gemini feedback", "gemini second opinion", "google gemini review"
+        "ssh",
+        "server",
+        "vps",
+        "connect server",
+        "hostinger",
+        "serveur",
+        "connexion serveur",
+        "se connecter au serveur",
+        "connect to server via ssh",
+        "connexion ssh au serveur",
+        "hostinger vps access",
+        "server connection",
+        "accéder au vps",
+        "ssh key authentication",
+        "remote server access",
+        "terminal connection to vps",
+        "clé ssh"
       ],
-      "description": "Get Gemini CLI feedback | Avis de Gemini CLI"
+      "description": "SSH connection and server management for Hostinger VPS srv759970 (automation@69.62.108.82). Use for connecting to server, checking system status, managing users, troubleshooting SSH connection issues, or when Permission denied errors occur."
     },
     {
       "name": "julien-workflow-advice-codex",
       "triggers": [
-        "ask codex", "codex opinion", "codex review", "what does codex think",
-        "demande à codex", "avis de codex", "codex pense quoi",
-        "get codex feedback", "codex second opinion", "openai codex review"
+        "ask codex",
+        "codex opinion",
+        "codex review",
+        "what does codex think",
+        "demande à codex",
+        "avis de codex",
+        "codex pense quoi",
+        "get codex feedback",
+        "codex second opinion",
+        "openai codex review"
       ],
-      "description": "Get Codex CLI feedback | Avis de Codex CLI"
+      "description": "Get OpenAI Codex CLI's opinion on code, bugs, or implementation. Use when you want a second AI perspective during coding sessions."
+    },
+    {
+      "name": "julien-workflow-advice-gemini",
+      "triggers": [
+        "ask gemini",
+        "gemini opinion",
+        "gemini review",
+        "what does gemini think",
+        "demande à gemini",
+        "avis de gemini",
+        "gemini pense quoi",
+        "get gemini feedback",
+        "gemini second opinion",
+        "google gemini review"
+      ],
+      "description": "Get Gemini CLI's opinion on code, architecture, or implementation. Use when you want a second AI perspective during coding sessions."
+    },
+    {
+      "name": "julien-workflow-check-loaded-skills",
+      "triggers": [
+        "loaded skills",
+        "check skills",
+        "list skills",
+        "available skills",
+        "what skills",
+        "skills chargées",
+        "vérifier skills",
+        "lister skills",
+        "skills disponibles",
+        "quelles skills",
+        "which skills are loaded",
+        "show my skills"
+      ],
+      "description": "Check which Claude skills are loaded globally and project-level. Displays loaded skills by category (Hostinger, Anthropic, custom), counts, and helps troubleshoot missing skills."
+    },
+    {
+      "name": "julien-workflow-skill-router",
+      "triggers": [
+        "which skill",
+        "find skill",
+        "skill for",
+        "right skill",
+        "quelle skill",
+        "trouver skill",
+        "skill pour",
+        "bonne skill",
+        "what skill should I use",
+        "recommend a skill"
+      ],
+      "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help."
     }
   ]
 }

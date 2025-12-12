@@ -19,6 +19,7 @@
     "list-resources.md"
   ],
   "scripts_to_sync": [
+    "generate-triggers.py",
     "list-resources.py",
     "semantic-skill-router.py",
     "track-skill-invocation.py",

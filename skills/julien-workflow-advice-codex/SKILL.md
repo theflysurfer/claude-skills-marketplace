@@ -1,6 +1,17 @@
 ---
 name: julien-workflow-advice-codex
 description: Get OpenAI Codex CLI's opinion on code, bugs, or implementation. Use when you want a second AI perspective during coding sessions.
+triggers:
+  - "ask codex"
+  - "codex opinion"
+  - "codex review"
+  - "what does codex think"
+  - "demande à codex"
+  - "avis de codex"
+  - "codex pense quoi"
+  - "get codex feedback"
+  - "codex second opinion"
+  - "openai codex review"
 ---
 
 # Ask Codex
