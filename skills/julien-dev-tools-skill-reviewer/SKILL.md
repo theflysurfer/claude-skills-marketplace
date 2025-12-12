@@ -1,6 +1,6 @@
 ---
 name: julien-dev-tools-skill-reviewer
-description: Auto-évaluation et amélioration itérative des skills Claude. Use this skill when you need to review, score, and improve existing skills for quality, clarity, DRY principle compliance, and proper resource organization. Detects duplication, suggests refactoring into references/, and iterates until quality threshold is met.
+description: "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro."
 license: Apache-2.0
 metadata:
   author: "Julien"

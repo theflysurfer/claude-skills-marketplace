@@ -1,7 +1,7 @@
 ---
 name: claude-md-documenter
 version: 1.0.0
-description: Guide for creating effective CLAUDE.md files following DRY and KISS principles
+description: "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md."
 category: development
 license: Apache-2.0
 ---
