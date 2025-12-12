@@ -176,6 +176,24 @@
         "nginx configuration", "ssl certificate", "web server config"
       ],
       "description": "Nginx/SSL config | Config Nginx/SSL"
+    },
+    {
+      "name": "julien-workflow-ask-gemini",
+      "triggers": [
+        "ask gemini", "gemini opinion", "gemini review", "what does gemini think",
+        "demande à gemini", "avis de gemini", "gemini pense quoi",
+        "get gemini feedback", "gemini second opinion", "google gemini review"
+      ],
+      "description": "Get Gemini CLI feedback | Avis de Gemini CLI"
+    },
+    {
+      "name": "julien-workflow-ask-codex",
+      "triggers": [
+        "ask codex", "codex opinion", "codex review", "what does codex think",
+        "demande à codex", "avis de codex", "codex pense quoi",
+        "get codex feedback", "codex second opinion", "openai codex review"
+      ],
+      "description": "Get Codex CLI feedback | Avis de Codex CLI"
     }
   ]
 }
