@@ -10,7 +10,8 @@ Get feedback from OpenAI's Codex CLI on code, bugs, or implementation approaches
 ## Prerequisites
 
 - Codex CLI installed: `npm install -g @openai/codex`
-- Authenticated: run `codex login` or sign in with ChatGPT account
+- Authenticated: `codex login` or sign in with ChatGPT account
+- Verify: `codex --version`
 
 ## When to Use
 
@@ -48,16 +49,30 @@ Note: `codex review` opens an interactive review session - use `codex exec` for 
 
 Present Codex's response clearly to the user. If Codex suggests improvements, summarize them as actionable items.
 
-## Example Usage
+## Examples
 
+### File review
 **User**: "demande à codex de reviewer le benchmark"
 
-**Action**:
 ```bash
 codex exec "Review scripts/benchmark-semantic-router.py for improvements and potential issues"
 ```
 
-**Response**: Present Codex's feedback, then ask if user wants to implement any suggestions.
+### Bug analysis
+**User**: "ask codex to find bugs in this file"
+
+```bash
+codex exec "Analyze scripts/semantic-skill-router.py for potential bugs, edge cases, and error handling gaps"
+```
+
+## Troubleshooting
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| `codex: command not found` | CLI not installed | `npm install -g @openai/codex` |
+| `Not authenticated` | Not logged in | Run `codex login` |
+| `Model not available` | Account tier issue | Check ChatGPT subscription |
+| Response timeout | Large codebase | Use specific file path, not whole repo |
 
 ## Notes
 
@@ -67,6 +82,19 @@ codex exec "Review scripts/benchmark-semantic-router.py for improvements and pot
 - `codex review` for interactive review session
 - Timeout: allow up to 60s for response
 
-## Tools Used
+## Skill Chaining
 
-- `Bash` (usage: run codex CLI command)
+### Input Expected
+- File path to review, OR
+- Bug analysis request from user
+
+### Output Produced
+- **Format**: Markdown feedback from Codex
+- **Side effects**: None (read-only)
+
+### Compatible Skills
+- Can be used alongside `julien-workflow-ask-gemini` for multiple AI opinions
+- Use after writing code, before commit
+
+### Tools Used
+- `Bash` (usage: run codex CLI command, timeout 60s)

@@ -11,6 +11,7 @@ Get feedback from Google's Gemini CLI on code, architecture decisions, or implem
 
 - Gemini CLI installed: `npm install -g @google/gemini-cli`
 - Authenticated: run `gemini` once to login with Google account
+- Verify: `gemini --version`
 
 ## When to Use
 
@@ -47,16 +48,30 @@ gemini "Compare these two approaches and recommend which is better: Approach A: 
 
 Present Gemini's response clearly to the user. If Gemini suggests improvements, summarize them as actionable items.
 
-## Example Usage
+## Examples
 
+### File review
 **User**: "demande à gemini ce qu'il pense du semantic-skill-router.py"
 
-**Action**:
 ```bash
 gemini "Review this Python script for a semantic routing system. List 3 improvements for production use: $(cat scripts/semantic-skill-router.py)"
 ```
 
-**Response**: Present Gemini's feedback, then ask if user wants to implement any suggestions.
+### Architecture question
+**User**: "ask gemini if I should use Redis or in-memory cache"
+
+```bash
+gemini "Compare Redis vs in-memory caching for a CLI tool that routes user prompts. Consider: startup time, complexity, persistence needs."
+```
+
+## Troubleshooting
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| `gemini: command not found` | CLI not installed | `npm install -g @google/gemini-cli` |
+| `Authentication required` | Not logged in | Run `gemini` interactively, login with Google |
+| Response timeout | Large file or slow network | Reduce file size or retry |
+| `Rate limit exceeded` | Too many requests | Wait 1 minute, retry |
 
 ## Notes
 
@@ -65,6 +80,19 @@ gemini "Review this Python script for a semantic routing system. List 3 improvem
 - Timeout: allow up to 60s for response
 - If response is cut off, Gemini may still be processing
 
-## Tools Used
+## Skill Chaining
 
-- `Bash` (usage: run gemini CLI command)
+### Input Expected
+- File path to review, OR
+- Architecture/design question from user
+
+### Output Produced
+- **Format**: Markdown feedback from Gemini
+- **Side effects**: None (read-only)
+
+### Compatible Skills
+- Can be used alongside `julien-workflow-ask-codex` for multiple AI opinions
+- Use after writing code, before commit
+
+### Tools Used
+- `Bash` (usage: run gemini CLI command, timeout 60s)
