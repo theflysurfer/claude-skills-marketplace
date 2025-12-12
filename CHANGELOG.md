@@ -129,7 +129,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive documentation
 
 ### Skills Included
-- Development: 8 skills (skill-creator-pro, frontend-design, mcp-builder, webapp-testing, web-artifacts-builder, skill-creator, skill-reviewer, sync-personal-skills)
+- Development: 8 skills (skill-creator, frontend-design, mcp-builder, webapp-testing, web-artifacts-builder, skill-creator, skill-reviewer, sync-personal-skills)
 - Infrastructure: 4 skills (hostinger-ssh, hostinger-docker, hostinger-nginx, hostinger-database)
 - Operations: 2 skills (hostinger-maintenance, hostinger-space-reclaim)
 - Productivity: 4 skills (pdf, xlsx, docx, pptx)

@@ -21,7 +21,7 @@ Based on the quality rubric from Anthropic's skill-creator, extended with:
 ## Dependencies
 
 - Follows quality dimensions from skill-creator (Step 6: Iterate with Self-Assessment)
-- Complements skill-creator-pro's Skill Chaining framework
+- Complements skill-creator's Skill Chaining framework
 - Uses same 9-dimension scoring rubric for consistency
 
 ## Innovation

@@ -1,6 +1,6 @@
 # Skill Creator Pro
 
-**Enhanced version** of Anthropic's official `julien-dev-tools-skill-creator-pro` with comprehensive Skill Chaining documentation.
+**Enhanced version** of Anthropic's official `julien-dev-tools-skill-creator` with comprehensive Skill Chaining documentation.
 
 ## 🆕 What's New in Pro Version
 
@@ -36,7 +36,7 @@ The Pro version adds a **complete documentation framework** for describing how s
 
 ## 📊 Comparison
 
-| Feature | skill-creator (Anthropic) | skill-creator-pro | Difference |
+| Feature | skill-creator (Anthropic) | skill-creator | Difference |
 |---------|--------------------------|-------------------|------------|
 | Basic skill structure | ✓ | ✓ | Same |
 | Progressive disclosure | ✓ | ✓ | Same |
@@ -105,9 +105,9 @@ Site deployed
 **Result**: Site updated on https://preview.example.com in ~2-3 min
 ```
 
-## 🎯 When to Use skill-creator-pro vs skill-creator
+## 🎯 When to Use skill-creator vs skill-creator
 
-### Use skill-creator-pro when:
+### Use skill-creator when:
 - ✅ Creating skills that are part of larger workflows
 - ✅ Skills that interact with other skills
 - ✅ Skills triggered by Git hooks or automation
@@ -160,6 +160,6 @@ Apache-2.0 (based on Anthropic's skill-creator)
 
 ## 🙏 Attribution
 
-Based on the official `julien-dev-tools-skill-creator-pro` from [Anthropic Skills Repository](https://github.com/anthropics/skills).
+Based on the official `julien-dev-tools-skill-creator` from [Anthropic Skills Repository](https://github.com/anthropics/skills).
 
 Enhanced with Skill Chaining documentation framework by Julien.

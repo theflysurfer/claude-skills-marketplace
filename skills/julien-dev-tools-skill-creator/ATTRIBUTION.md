@@ -57,7 +57,7 @@ This enhancement fills that gap, making skills work better as part of larger wor
 - Workflow understanding requires reading all skills
 - Debugging issues between skills is difficult
 
-**After (skill-creator-pro)**:
+**After (skill-creator)**:
 - Skills documented with their workflow context
 - Standardized Input/Output specifications
 - Visual diagrams show skill relationships
@@ -93,7 +93,7 @@ This enhanced skill maintains the Apache-2.0 license from the original work.
 ## Files Structure
 
 ```
-skill-creator-pro/
+skill-creator/
 ├── SKILL.md              # Enhanced skill with Skill Chaining
 ├── README.md             # What's new in Pro version
 ├── ATTRIBUTION.md        # This file

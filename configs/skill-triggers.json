@@ -1,29 +1,140 @@
 {
+  "version": "1.1.0",
+  "description": "Triggers bilingues (FR/EN) pour activation intelligente des skills",
   "skills": [
     {
       "name": "julien-dev-tools-claude-md-documenter",
-      "triggers": ["CLAUDE.md", "claude.md", "document project", "project instructions", "documenter le projet"],
-      "description": "Créer/améliorer CLAUDE.md"
+      "triggers": [
+        "CLAUDE.md", "claude.md",
+        "document project", "project documentation", "project context", "project instructions",
+        "documenter projet", "documentation projet", "contexte projet", "instructions projet",
+        "create claude", "créer claude"
+      ],
+      "description": "Create/improve CLAUDE.md | Créer/améliorer CLAUDE.md"
     },
     {
-      "name": "julien-dev-tools-skill-creator-pro",
-      "triggers": ["create skill", "new skill", "SKILL.md", "skill template", "créer skill", "nouvelle skill"],
-      "description": "Créer/modifier une skill"
+      "name": "julien-dev-tools-skill-creator",
+      "triggers": [
+        "SKILL.md", "skill.md",
+        "create skill", "new skill", "add skill", "build skill", "skill template", "write skill",
+        "créer skill", "nouvelle skill", "ajouter skill", "construire skill", "écrire skill",
+        "créer une skill", "faire une skill"
+      ],
+      "description": "Create/modify skills | Créer/modifier une skill"
     },
     {
       "name": "julien-dev-tools-skill-reviewer",
-      "triggers": ["review skill", "check skill", "improve skill", "skill quality", "évaluer skill", "qualité skill"],
-      "description": "Évaluer qualité d'une skill"
+      "triggers": [
+        "review skill", "check skill", "improve skill", "skill quality", "audit skill", "score skill",
+        "évaluer skill", "vérifier skill", "améliorer skill", "qualité skill", "auditer skill",
+        "revoir skill", "relire skill"
+      ],
+      "description": "Review skill quality | Évaluer qualité d'une skill"
     },
     {
       "name": "julien-dev-tools-hook-creator",
-      "triggers": ["create hook", "new hook", "hook template", "créer hook", "nouveau hook"],
-      "description": "Créer un hook Claude Code"
+      "triggers": [
+        "create hook", "new hook", "add hook", "hook template", "write hook", "build hook",
+        "créer hook", "nouveau hook", "ajouter hook", "écrire hook",
+        "SessionStart", "SessionEnd", "PreToolUse", "PostToolUse", "UserPromptSubmit"
+      ],
+      "description": "Create Claude Code hooks | Créer un hook Claude Code"
     },
     {
       "name": "julien-workflow-check-loaded-skills",
-      "triggers": ["loaded skills", "check skills", "list skills", "skills chargées", "quelles skills"],
-      "description": "Vérifier les skills chargées"
+      "triggers": [
+        "loaded skills", "check skills", "list skills", "available skills", "what skills",
+        "skills chargées", "vérifier skills", "lister skills", "skills disponibles", "quelles skills"
+      ],
+      "description": "Check loaded skills | Vérifier skills chargées"
+    },
+    {
+      "name": "julien-workflow-skill-router",
+      "triggers": [
+        "which skill", "find skill", "skill for", "right skill",
+        "quelle skill", "trouver skill", "skill pour", "bonne skill"
+      ],
+      "description": "Find the right skill | Trouver la bonne skill"
+    },
+    {
+      "name": "anthropic-office-pdf",
+      "triggers": [
+        "pdf", "PDF",
+        "fill form", "pdf form", "merge pdf", "split pdf", "extract pdf",
+        "remplir formulaire", "formulaire pdf", "fusionner pdf", "diviser pdf"
+      ],
+      "description": "PDF manipulation | Manipulation PDF"
+    },
+    {
+      "name": "anthropic-office-xlsx",
+      "triggers": [
+        "excel", "xlsx", "spreadsheet", "xls",
+        "tableur", "feuille de calcul", "classeur"
+      ],
+      "description": "Excel/spreadsheet | Excel/tableur"
+    },
+    {
+      "name": "anthropic-office-docx",
+      "triggers": [
+        "word", "docx", "document word",
+        "word document", "doc file"
+      ],
+      "description": "Word documents | Documents Word"
+    },
+    {
+      "name": "anthropic-office-pptx",
+      "triggers": [
+        "powerpoint", "pptx", "presentation", "slides",
+        "présentation", "diaporama"
+      ],
+      "description": "PowerPoint | Présentations"
+    },
+    {
+      "name": "anthropic-web-frontend-design",
+      "triggers": [
+        "frontend", "ui design", "web design", "interface", "react component", "html css",
+        "design web", "interface utilisateur", "composant react"
+      ],
+      "description": "Frontend/UI design | Design web/interface"
+    },
+    {
+      "name": "anthropic-design-canvas",
+      "triggers": [
+        "poster", "art", "visual", "infographic", "design image", "create image",
+        "affiche", "visuel", "infographie", "créer image"
+      ],
+      "description": "Visual art/posters | Art visuel/affiches"
+    },
+    {
+      "name": "julien-infra-hostinger-ssh",
+      "triggers": [
+        "ssh", "server", "vps", "connect server", "hostinger",
+        "serveur", "connexion serveur", "se connecter au serveur"
+      ],
+      "description": "SSH to Hostinger VPS | Connexion SSH au VPS"
+    },
+    {
+      "name": "julien-infra-hostinger-deployment",
+      "triggers": [
+        "deploy", "deployment", "push production", "mise en prod",
+        "déployer", "déploiement", "mettre en production", "mettre en ligne"
+      ],
+      "description": "Deploy to VPS | Déployer sur VPS"
+    },
+    {
+      "name": "julien-infra-hostinger-docker",
+      "triggers": [
+        "docker", "container", "conteneur", "image docker"
+      ],
+      "description": "Docker management | Gestion Docker"
+    },
+    {
+      "name": "julien-infra-hostinger-nginx",
+      "triggers": [
+        "nginx", "reverse proxy", "ssl", "https", "certbot", "let's encrypt",
+        "certificat ssl"
+      ],
+      "description": "Nginx/SSL config | Config Nginx/SSL"
     }
   ]
 }

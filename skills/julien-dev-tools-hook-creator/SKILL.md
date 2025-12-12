@@ -397,7 +397,7 @@ Matcher:
 ### Compatible Skills After
 **Recommandés**:
 - **sync-personal-skills**: Si le hook modifie des fichiers du marketplace
-- **skill-creator-pro**: Si création d'un skill qui intègre des hooks
+- **skill-creator**: Si création d'un skill qui intègre des hooks
 
 **Optionnels**:
 - Git workflow: Committer les scripts et settings

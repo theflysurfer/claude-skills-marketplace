@@ -1,6 +1,6 @@
 # Scripts for Skill Creation
 
-The Anthropic skills repository includes helper scripts for skill creation that work with skill-creator-pro:
+The Anthropic skills repository includes helper scripts for skill creation that work with skill-creator:
 
 ## Available Scripts
 
@@ -83,8 +83,8 @@ curl -o package_skill.py https://raw.githubusercontent.com/anthropics/skills/mai
 You can copy the scripts here for convenience:
 ```bash
 # From within anthropics/skills repo
-cp scripts/init_skill.py ../my-marketplace/skills/skill-creator-pro/scripts/
-cp scripts/package_skill.py ../my-marketplace/skills/skill-creator-pro/scripts/
+cp scripts/init_skill.py ../my-marketplace/skills/skill-creator/scripts/
+cp scripts/package_skill.py ../my-marketplace/skills/skill-creator/scripts/
 ```
 
 ## Recommended Workflow
@@ -108,20 +108,20 @@ cp scripts/package_skill.py ../my-marketplace/skills/skill-creator-pro/scripts/
    skill-package ./skills/my-new-skill
    ```
 
-## Integration with skill-creator-pro
+## Integration with skill-creator
 
-When using skill-creator-pro, follow the complete workflow:
+When using skill-creator, follow the complete workflow:
 
 1. **Step 3**: Use `init_skill.py` to initialize
 2. **Step 4**: Edit SKILL.md, add Skill Chaining section
 3. **Step 5**: Use `package_skill.py` to validate & package
 4. **Step 6**: Iterate based on quality rubric
 
-The scripts work seamlessly with the enhanced Skill Chaining documentation format added in skill-creator-pro.
+The scripts work seamlessly with the enhanced Skill Chaining documentation format added in skill-creator.
 
 ## Notes
 
 - Scripts are maintained by Anthropic in the official skills repository
 - They may be updated over time (check the repo for latest version)
 - Validation includes all standard skill requirements
-- The Skill Chaining section added by skill-creator-pro is optional from a validation perspective, but highly recommended for workflow skills
+- The Skill Chaining section added by skill-creator is optional from a validation perspective, but highly recommended for workflow skills

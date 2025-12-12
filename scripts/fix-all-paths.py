@@ -25,8 +25,8 @@ PATH_MAPPING = {
     "./webapp-testing": "./anthropic-web-testing",
     "./canvas-design": "./anthropic-design-canvas",
     "./web-artifacts-builder": "./anthropic-web-artifacts-builder",
-    "./skill-creator": "./julien-dev-tools-skill-creator-pro",
-    "./skill-creator-pro": "./julien-dev-tools-skill-creator-pro",
+    "./skill-creator": "./julien-dev-tools-skill-creator",
+    "./skill-creator-pro": "./julien-dev-tools-skill-creator",
     "./skill-reviewer": "./julien-dev-tools-skill-reviewer",
 }
 

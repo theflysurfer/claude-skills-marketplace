@@ -42,7 +42,7 @@ These skills are synced to `~/.claude/skills/` and available globally:
 
 | Category | Skills |
 |----------|--------|
-| **Dev Tools** | `julien-dev-tools-skill-creator-pro`, `julien-dev-tools-skill-reviewer`, `julien-dev-tools-claude-md-documenter` |
+| **Dev Tools** | `julien-dev-tools-skill-creator`, `julien-dev-tools-skill-reviewer`, `julien-dev-tools-claude-md-documenter` |
 | **Workflow** | `julien-workflow-check-loaded-skills` |
 | **Office** | `anthropic-office-pdf`, `anthropic-office-xlsx`, `anthropic-office-docx`, `anthropic-office-pptx` |
 
@@ -124,7 +124,7 @@ bash -x ~/.claude/scripts/sync-marketplace.sh
   "description": "Configuration for selective skill synchronization",
   "sync_enabled": true,
   "skills_to_sync": [
-    "julien-dev-tools-skill-creator-pro",
+    "julien-dev-tools-skill-creator",
     "julien-dev-tools-skill-reviewer",
     "julien-workflow-check-loaded-skills",
     "julien-dev-tools-claude-md-documenter",
