@@ -2,6 +2,10 @@
 name: julien-mcp-pdf-reader
 description: Install PDF Reader MCP for document extraction. Use when user needs to read PDF content.
 category: mcp
+triggers:
+  - install pdf reader mcp
+  - pdf mcp
+  - read pdf mcp
 ---
 
 # MCP PDF Reader Installer

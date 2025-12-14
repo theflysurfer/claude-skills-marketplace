@@ -2,6 +2,10 @@
 name: julien-mcp-serena
 description: Install Serena MCP for semantic code analysis. Use when user needs IDE-like code retrieval and editing.
 category: mcp
+triggers:
+  - install serena mcp
+  - serena code
+  - semantic code mcp
 ---
 
 # MCP Serena Installer

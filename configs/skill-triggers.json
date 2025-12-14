@@ -23,6 +23,19 @@
       "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations."
     },
     {
+      "name": "anthropic-dev-tools-mcp-builder",
+      "triggers": [
+        "create mcp server",
+        "build mcp",
+        "mcp development",
+        "fastmcp",
+        "model context protocol",
+        "create tool server",
+        "mcp integration"
+      ],
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK)."
+    },
+    {
       "name": "anthropic-office-docx",
       "triggers": [
         "word",
@@ -106,6 +119,19 @@
       "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas"
     },
     {
+      "name": "anthropic-web-artifacts-builder",
+      "triggers": [
+        "create artifact",
+        "build artifact",
+        "web artifact",
+        "react artifact",
+        "complex artifact",
+        "shadcn artifact",
+        "bundle html"
+      ],
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts."
+    },
+    {
       "name": "anthropic-web-frontend-design",
       "triggers": [
         "frontend",
@@ -128,6 +154,19 @@
         "build webpage"
       ],
       "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics."
+    },
+    {
+      "name": "anthropic-web-testing",
+      "triggers": [
+        "test web app",
+        "playwright test",
+        "browser testing",
+        "ui testing",
+        "web testing",
+        "test frontend",
+        "screenshot web"
+      ],
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs."
     },
     {
       "name": "julien-dev-tools-claude-md-documenter",
@@ -174,6 +213,18 @@
         "automation hook"
       ],
       "description": "Guide for creating Claude Code hooks - shell commands that execute at specific lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse, etc.). Use when users want to automate actions, add validation, logging, or integrate external tools into Claude Code workflows."
+    },
+    {
+      "name": "julien-dev-tools-powershell-profile",
+      "triggers": [
+        "powershell profile",
+        "add alias",
+        "update profile",
+        "modify claude command",
+        "powershell alias",
+        "ps1 profile"
+      ],
+      "description": "Manage PowerShell profile, aliases, functions. Triggers: add alias, update profile, modify claude command, Microsoft.PowerShell_profile.ps1"
     },
     {
       "name": "julien-dev-tools-skill-creator",
@@ -236,6 +287,63 @@
       "description": "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro."
     },
     {
+      "name": "julien-infra-deployment-verifier",
+      "triggers": [
+        "verify deployment",
+        "check deployment",
+        "deployment status",
+        "pm2 status",
+        "site working"
+      ],
+      "description": "Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports."
+    },
+    {
+      "name": "julien-infra-git-vps-sync",
+      "triggers": [
+        "sync vps git",
+        "git pull vps",
+        "update server code",
+        "git sync hostinger",
+        "vps github sync"
+      ],
+      "description": "Manage Git sync between VPS and GitHub for Hostinger srv759970. Handles unrelated histories, untracked files, diverged branches, and sync conflicts automatically."
+    },
+    {
+      "name": "julien-infra-hostinger-audit",
+      "triggers": [
+        "audit vps",
+        "what's running",
+        "inventory hostinger",
+        "server audit",
+        "discover services",
+        "list containers"
+      ],
+      "description": "Infrastructure audit and discovery for Hostinger VPS srv759970. Inventories all Docker containers, images, scripts, cron jobs, systemd services, portals. Compares actual state vs registry.yml, identifies orphans, duplicates, and undocumented resources. Generates YAML inventory files and HTML dashboard."
+    },
+    {
+      "name": "julien-infra-hostinger-database",
+      "triggers": [
+        "database hostinger",
+        "postgresql vps",
+        "redis server",
+        "mongodb hostinger",
+        "db backup",
+        "database connection"
+      ],
+      "description": "Manage shared database instances on Hostinger VPS srv759970 - PostgreSQL, Redis, MongoDB operations. Use for database connections, backups, user management, performance checks, or troubleshooting database issues."
+    },
+    {
+      "name": "julien-infra-hostinger-deployment",
+      "triggers": [
+        "deploy hostinger",
+        "deploy incluzact",
+        "deploy vps",
+        "mise en prod",
+        "production deployment"
+      ],
+      "description": "Complete deployment workflow for INCLUZ'HACT on Hostinger VPS srv759970. Orchestrates Git sync, build, PM2 restart, and verification for production and preview environments."
+    },
+    {
       "name": "julien-infra-hostinger-docker",
       "triggers": [
         "docker",
@@ -256,6 +364,28 @@
         "container management"
       ],
       "description": "This skill should be used when managing Docker services on the Hostinger VPS (srv759970, automation@69.62.108.82). It provides workflows for optimizing images, deploying services, troubleshooting errors, and maintaining the Docker infrastructure for Python/FastAPI, Streamlit, Next.js, and ML applications."
+    },
+    {
+      "name": "julien-infra-hostinger-fail2ban",
+      "triggers": [
+        "fail2ban",
+        "ban ip",
+        "unban ip",
+        "brute force protection",
+        "wordpress security"
+      ],
+      "description": "Manage Fail2ban jails and IP bans on Hostinger VPS srv759970. Use for WordPress security hardening, IP ban/unban operations, monitoring brute-force attacks, or when security audit shows missing Fail2ban protection."
+    },
+    {
+      "name": "julien-infra-hostinger-maintenance",
+      "triggers": [
+        "maintenance vps",
+        "clean cache",
+        "server cleanup",
+        "check ssl",
+        "system health"
+      ],
+      "description": "Recurring maintenance tasks for Hostinger VPS srv759970 - clean Docker resources, clear system cache, check disk space, verify SSL certificates, update services. Use when performing scheduled maintenance, cleanup operations, or proactive system health checks."
     },
     {
       "name": "julien-infra-hostinger-nginx",
@@ -283,6 +413,29 @@
       "description": "Manage Nginx reverse proxy on Hostinger VPS srv759970 (automation@69.62.108.82). Use for site configuration, SSL/Let's Encrypt setup, reverse proxy configuration, troubleshooting 502/504 errors, certbot operations, or nginx reload/restart."
     },
     {
+      "name": "julien-infra-hostinger-nginx-audit",
+      "triggers": [
+        "nginx audit",
+        "check nginx",
+        "ipv6 nginx",
+        "ssl certificate check",
+        "nginx config"
+      ],
+      "description": "Audit and auto-fix Nginx configurations on Hostinger VPS srv759970 for IPv6 support, SSL issues, and best practices. Detects missing IPv6 listeners, validates SSL certificates, and applies fixes automatically or generates reports."
+    },
+    {
+      "name": "julien-infra-hostinger-space-reclaim",
+      "triggers": [
+        "disk space",
+        "free space",
+        "reclaim space",
+        "disk full",
+        "cleanup docker",
+        "disk usage"
+      ],
+      "description": "Reclaim disk space on Hostinger VPS (srv759970) through automated analysis and cleanup of Docker images, volumes, logs, and application data. Use when disk space is critical (>90% usage) or for regular maintenance to prevent space issues."
+    },
+    {
       "name": "julien-infra-hostinger-ssh",
       "triggers": [
         "ssh",
@@ -304,6 +457,269 @@
         "clé ssh"
       ],
       "description": "SSH connection and server management for Hostinger VPS srv759970 (automation@69.62.108.82). Use for connecting to server, checking system status, managing users, troubleshooting SSH connection issues, or when Permission denied errors occur."
+    },
+    {
+      "name": "julien-infra-hostinger-wordpress-security",
+      "triggers": [
+        "wordpress security",
+        "audit wordpress",
+        "wp security",
+        "wordpress hardening",
+        "securiser wordpress"
+      ],
+      "description": "Audit sécurité WordPress (25+ checks, scoring 0-100%). Use for WordPress security audits, after WordPress deployment, or when security hardening needed. Checks Nginx, files, WP config, users, plugins, database, and Fail2ban."
+    },
+    {
+      "name": "julien-mcp-basic-memory",
+      "triggers": [
+        "install basic memory mcp",
+        "persistent memory",
+        "memory mcp"
+      ],
+      "description": "Install Basic Memory MCP for persistent memory between Claude sessions. Use when user needs memory/context persistence via uvx."
+    },
+    {
+      "name": "julien-mcp-brave",
+      "triggers": [
+        "install brave mcp",
+        "brave search",
+        "web search mcp"
+      ],
+      "description": "Install Brave Search MCP for web search capabilities. Use when user needs to add Brave Search API to their project."
+    },
+    {
+      "name": "julien-mcp-chrome-devtools",
+      "triggers": [
+        "install chrome devtools mcp",
+        "chrome debugging",
+        "devtools mcp"
+      ],
+      "description": "Install Chrome DevTools MCP for browser debugging. Use when user needs Chrome DevTools Protocol integration."
+    },
+    {
+      "name": "julien-mcp-codex-cli",
+      "triggers": [
+        "install codex cli mcp",
+        "codex mcp",
+        "codex cli"
+      ],
+      "description": "Install Codex CLI MCP assistant. Use when user needs Codex CLI capabilities in their project."
+    },
+    {
+      "name": "julien-mcp-context7",
+      "triggers": [
+        "install context7 mcp",
+        "context7",
+        "upstash context"
+      ],
+      "description": "Install Context7 MCP for contextual search. Use when user needs Upstash Context7 integration."
+    },
+    {
+      "name": "julien-mcp-desktop-commander",
+      "triggers": [
+        "install desktop commander",
+        "desktop automation mcp",
+        "file control mcp"
+      ],
+      "description": "Install Desktop Commander MCP for desktop automation. Use when user needs file/app/command control."
+    },
+    {
+      "name": "julien-mcp-excel",
+      "triggers": [
+        "install excel mcp",
+        "excel automation",
+        "xlsx mcp"
+      ],
+      "description": "Install Excel MCP server via uvx. Use when user needs Excel file manipulation capabilities."
+    },
+    {
+      "name": "julien-mcp-excel-win32com",
+      "triggers": [
+        "install excel win32com mcp",
+        "excel native mcp",
+        "excel windows mcp"
+      ],
+      "description": "Install Excel MCP via win32com (Windows). Use when user needs native Excel automation on Windows."
+    },
+    {
+      "name": "julien-mcp-github-docker",
+      "triggers": [
+        "install github docker mcp",
+        "github mcp docker",
+        "github integration docker"
+      ],
+      "description": "Install GitHub MCP via Docker. Use when user needs GitHub integration through Docker container."
+    },
+    {
+      "name": "julien-mcp-github-http",
+      "triggers": [
+        "install github http mcp",
+        "github copilot mcp",
+        "copilot api"
+      ],
+      "description": "Install GitHub MCP via HTTP/Copilot API. Use when user needs GitHub Copilot MCP endpoint."
+    },
+    {
+      "name": "julien-mcp-gmail",
+      "triggers": [
+        "install gmail mcp",
+        "gmail integration",
+        "email mcp gmail"
+      ],
+      "description": "Install Gmail MCP for email operations. Use when user needs Gmail read/send capabilities."
+    },
+    {
+      "name": "julien-mcp-jina",
+      "triggers": [
+        "install jina mcp",
+        "jina reader",
+        "web scraping mcp"
+      ],
+      "description": "Install Jina AI MCP for web scraping. Use when user needs Jina Reader for URL content extraction."
+    },
+    {
+      "name": "julien-mcp-notion",
+      "triggers": [
+        "install notion mcp",
+        "notion integration",
+        "notion api mcp"
+      ],
+      "description": "Install Notion MCP for workspace integration. Use when user needs Notion API access."
+    },
+    {
+      "name": "julien-mcp-notion-internal",
+      "triggers": [
+        "install notion internal mcp",
+        "notion internal api",
+        "advanced notion"
+      ],
+      "description": "Install Notion Internal API MCP. Use when user needs advanced Notion features via internal API."
+    },
+    {
+      "name": "julien-mcp-notion-pro",
+      "triggers": [
+        "install notion pro mcp",
+        "notion secondary",
+        "multiple notion"
+      ],
+      "description": "Install Notion Pro MCP for secondary workspace. Use when user has multiple Notion workspaces."
+    },
+    {
+      "name": "julien-mcp-outlook",
+      "triggers": [
+        "install outlook mcp",
+        "outlook automation",
+        "email mcp"
+      ],
+      "description": "Install Outlook MCP via win32com. Use when user needs Outlook email automation on Windows."
+    },
+    {
+      "name": "julien-mcp-pdf-reader",
+      "triggers": [
+        "install pdf reader mcp",
+        "pdf mcp",
+        "read pdf mcp"
+      ],
+      "description": "Install PDF Reader MCP for document extraction. Use when user needs to read PDF content."
+    },
+    {
+      "name": "julien-mcp-playwright",
+      "triggers": [
+        "install playwright mcp",
+        "browser automation mcp",
+        "playwright"
+      ],
+      "description": "Install Playwright MCP for browser automation. Use when user needs web testing/scraping capabilities."
+    },
+    {
+      "name": "julien-mcp-powerpoint",
+      "triggers": [
+        "install powerpoint mcp",
+        "powerpoint automation",
+        "pptx mcp"
+      ],
+      "description": "Install PowerPoint MCP via win32com. Use when user needs PowerPoint automation on Windows."
+    },
+    {
+      "name": "julien-mcp-powerpoint-uvx",
+      "triggers": [
+        "install powerpoint uvx",
+        "pptx mcp uvx",
+        "powerpoint uvx"
+      ],
+      "description": "Install PowerPoint MCP via uvx. Use when user needs cross-platform PowerPoint capabilities."
+    },
+    {
+      "name": "julien-mcp-puremd",
+      "triggers": [
+        "install puremd mcp",
+        "web to markdown",
+        "puremd"
+      ],
+      "description": "Install PureMD MCP for web-to-markdown. Use when user needs to convert web pages to markdown."
+    },
+    {
+      "name": "julien-mcp-serena",
+      "triggers": [
+        "install serena mcp",
+        "serena code",
+        "semantic code mcp"
+      ],
+      "description": "Install Serena MCP for semantic code analysis. Use when user needs IDE-like code retrieval and editing."
+    },
+    {
+      "name": "julien-mcp-taskmaster",
+      "triggers": [
+        "install taskmaster mcp",
+        "taskmaster ai",
+        "task management mcp"
+      ],
+      "description": "Install TaskMaster AI MCP for task management. Use when user needs AI-powered project task breakdown."
+    },
+    {
+      "name": "julien-mcp-veyrax",
+      "triggers": [
+        "install veyrax mcp",
+        "veyrax",
+        "smithery mcp"
+      ],
+      "description": "Install VeyraX MCP server. Use when user needs VeyraX integration via Smithery."
+    },
+    {
+      "name": "julien-mcp-webmind",
+      "triggers": [
+        "install webmind mcp",
+        "dom analysis mcp",
+        "ragic dom"
+      ],
+      "description": "Install WebMind MCP for DOM analysis. Use when user needs Ragic DOM assistant capabilities."
+    },
+    {
+      "name": "julien-mcp-word",
+      "triggers": [
+        "install word mcp",
+        "word automation",
+        "docx mcp"
+      ],
+      "description": "Install Word MCP via win32com/uv. Use when user needs Word document automation on Windows."
+    },
+    {
+      "name": "julien-mcp-word-uvx",
+      "triggers": [
+        "install word uvx mcp",
+        "word uvx",
+        "docx mcp uvx"
+      ],
+      "description": "Install Word MCP via uvx. Use when user needs cross-platform Word capabilities."
+    },
+    {
+      "name": "julien-mcp-youtube-info",
+      "triggers": [
+        "install youtube mcp",
+        "youtube info",
+        "video info mcp"
+      ],
+      "description": "Install YouTube Info MCP for video data. Use when user needs YouTube video information extraction."
     },
     {
       "name": "julien-workflow-advice-codex",
@@ -356,6 +772,17 @@
       "description": "Check which Claude skills are loaded globally and project-level. Displays loaded skills by category (Hostinger, Anthropic, custom), counts, and helps troubleshoot missing skills."
     },
     {
+      "name": "julien-workflow-queuing-background-tasks",
+      "triggers": [
+        "queue task",
+        "background job",
+        "idle queue",
+        "low priority task",
+        "run when idle"
+      ],
+      "description": "Queue long-running tasks (transcoding, API calls, batch processing) to run in background at low priority when user is active, normal priority when idle. Use when scripts take minutes/hours and shouldn't impact PC performance during active use."
+    },
+    {
       "name": "julien-workflow-skill-router",
       "triggers": [
         "which skill",
@@ -370,6 +797,21 @@
         "recommend a skill"
       ],
       "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help."
+    },
+    {
+      "name": "subtitle-translation",
+      "triggers": [
+        "translate subtitles",
+        "translate srt",
+        "subtitle translation",
+        "traduire sous-titres",
+        "batch translate subtitles",
+        "srt file translation",
+        "movie subtitles",
+        "series subtitles",
+        "translate episodes"
+      ],
+      "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation."
     }
   ]
 }

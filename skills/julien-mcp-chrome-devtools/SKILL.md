@@ -2,6 +2,10 @@
 name: julien-mcp-chrome-devtools
 description: Install Chrome DevTools MCP for browser debugging. Use when user needs Chrome DevTools Protocol integration.
 category: mcp
+triggers:
+  - install chrome devtools mcp
+  - chrome debugging
+  - devtools mcp
 ---
 
 # MCP Chrome DevTools Installer

@@ -2,6 +2,10 @@
 name: julien-mcp-outlook
 description: Install Outlook MCP via win32com. Use when user needs Outlook email automation on Windows.
 category: mcp
+triggers:
+  - install outlook mcp
+  - outlook automation
+  - email mcp
 ---
 
 # MCP Outlook Installer

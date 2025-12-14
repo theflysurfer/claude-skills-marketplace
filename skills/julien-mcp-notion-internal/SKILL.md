@@ -2,6 +2,10 @@
 name: julien-mcp-notion-internal
 description: Install Notion Internal API MCP. Use when user needs advanced Notion features via internal API.
 category: mcp
+triggers:
+  - install notion internal mcp
+  - notion internal api
+  - advanced notion
 ---
 
 # MCP Notion Internal API Installer

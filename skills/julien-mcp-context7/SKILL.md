@@ -2,6 +2,10 @@
 name: julien-mcp-context7
 description: Install Context7 MCP for contextual search. Use when user needs Upstash Context7 integration.
 category: mcp
+triggers:
+  - install context7 mcp
+  - context7
+  - upstash context
 ---
 
 # MCP Context7 Installer

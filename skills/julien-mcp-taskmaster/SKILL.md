@@ -2,6 +2,10 @@
 name: julien-mcp-taskmaster
 description: Install TaskMaster AI MCP for task management. Use when user needs AI-powered project task breakdown.
 category: mcp
+triggers:
+  - install taskmaster mcp
+  - taskmaster ai
+  - task management mcp
 ---
 
 # MCP TaskMaster AI Installer

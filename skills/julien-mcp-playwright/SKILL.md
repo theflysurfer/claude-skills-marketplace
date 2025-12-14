@@ -2,6 +2,10 @@
 name: julien-mcp-playwright
 description: Install Playwright MCP for browser automation. Use when user needs web testing/scraping capabilities.
 category: mcp
+triggers:
+  - install playwright mcp
+  - browser automation mcp
+  - playwright
 ---
 
 # MCP Playwright Installer

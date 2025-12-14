@@ -2,6 +2,12 @@
 name: julien-infra-git-vps-sync
 description: Manage Git sync between VPS and GitHub for Hostinger srv759970. Handles unrelated histories, untracked files, diverged branches, and sync conflicts automatically.
 license: Apache-2.0
+triggers:
+  - sync vps git
+  - git pull vps
+  - update server code
+  - git sync hostinger
+  - vps github sync
 allowed-tools:
   - Bash
   - Read

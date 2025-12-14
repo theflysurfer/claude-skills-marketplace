@@ -2,6 +2,10 @@
 name: julien-mcp-puremd
 description: Install PureMD MCP for web-to-markdown. Use when user needs to convert web pages to markdown.
 category: mcp
+triggers:
+  - install puremd mcp
+  - web to markdown
+  - puremd
 ---
 
 # MCP Pure.md Installer

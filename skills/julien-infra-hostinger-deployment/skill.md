@@ -2,6 +2,12 @@
 name: julien-infra-hostinger-deployment
 description: Complete deployment workflow for INCLUZ'HACT on Hostinger VPS srv759970. Orchestrates Git sync, build, PM2 restart, and verification for production and preview environments.
 license: Apache-2.0
+triggers:
+  - deploy hostinger
+  - deploy incluzact
+  - deploy vps
+  - mise en prod
+  - production deployment
 allowed-tools:
   - Bash
   - Read

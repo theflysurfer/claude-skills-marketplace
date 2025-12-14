@@ -2,6 +2,10 @@
 name: julien-mcp-webmind
 description: Install WebMind MCP for DOM analysis. Use when user needs Ragic DOM assistant capabilities.
 category: mcp
+triggers:
+  - install webmind mcp
+  - dom analysis mcp
+  - ragic dom
 ---
 
 # MCP WebMind Installer

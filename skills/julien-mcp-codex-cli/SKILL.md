@@ -2,6 +2,10 @@
 name: julien-mcp-codex-cli
 description: Install Codex CLI MCP assistant. Use when user needs Codex CLI capabilities in their project.
 category: mcp
+triggers:
+  - install codex cli mcp
+  - codex mcp
+  - codex cli
 ---
 
 # MCP Codex CLI Installer

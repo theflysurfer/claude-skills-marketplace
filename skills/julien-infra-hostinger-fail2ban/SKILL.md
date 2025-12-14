@@ -2,6 +2,12 @@
 name: julien-infra-hostinger-fail2ban
 description: Manage Fail2ban jails and IP bans on Hostinger VPS srv759970. Use for WordPress security hardening, IP ban/unban operations, monitoring brute-force attacks, or when security audit shows missing Fail2ban protection.
 license: Apache-2.0
+triggers:
+  - fail2ban
+  - ban ip
+  - unban ip
+  - brute force protection
+  - wordpress security
 allowed-tools:
   - Bash
   - Read

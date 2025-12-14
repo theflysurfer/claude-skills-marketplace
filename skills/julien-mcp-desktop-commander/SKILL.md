@@ -2,6 +2,10 @@
 name: julien-mcp-desktop-commander
 description: Install Desktop Commander MCP for desktop automation. Use when user needs file/app/command control.
 category: mcp
+triggers:
+  - install desktop commander
+  - desktop automation mcp
+  - file control mcp
 ---
 
 # MCP Desktop Commander Installer

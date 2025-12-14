@@ -2,6 +2,10 @@
 name: julien-mcp-notion-pro
 description: Install Notion Pro MCP for secondary workspace. Use when user has multiple Notion workspaces.
 category: mcp
+triggers:
+  - install notion pro mcp
+  - notion secondary
+  - multiple notion
 ---
 
 # MCP Notion Pro Installer

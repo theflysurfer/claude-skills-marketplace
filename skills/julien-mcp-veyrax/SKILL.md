@@ -2,6 +2,10 @@
 name: julien-mcp-veyrax
 description: Install VeyraX MCP server. Use when user needs VeyraX integration via Smithery.
 category: mcp
+triggers:
+  - install veyrax mcp
+  - veyrax
+  - smithery mcp
 ---
 
 # MCP VeyraX Installer

@@ -2,6 +2,10 @@
 name: julien-mcp-powerpoint
 description: Install PowerPoint MCP via win32com. Use when user needs PowerPoint automation on Windows.
 category: mcp
+triggers:
+  - install powerpoint mcp
+  - powerpoint automation
+  - pptx mcp
 ---
 
 # MCP PowerPoint Installer

@@ -2,6 +2,13 @@
 name: julien-infra-hostinger-audit
 description: Infrastructure audit and discovery for Hostinger VPS srv759970. Inventories all Docker containers, images, scripts, cron jobs, systemd services, portals. Compares actual state vs registry.yml, identifies orphans, duplicates, and undocumented resources. Generates YAML inventory files and HTML dashboard.
 license: Apache-2.0
+triggers:
+  - audit vps
+  - what's running
+  - inventory hostinger
+  - server audit
+  - discover services
+  - list containers
 allowed-tools:
   - Bash
   - Read

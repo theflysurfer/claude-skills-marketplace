@@ -2,6 +2,10 @@
 name: julien-mcp-youtube-info
 description: Install YouTube Info MCP for video data. Use when user needs YouTube video information extraction.
 category: mcp
+triggers:
+  - install youtube mcp
+  - youtube info
+  - video info mcp
 ---
 
 # MCP YouTube Info Installer

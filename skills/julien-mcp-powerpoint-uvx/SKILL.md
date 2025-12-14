@@ -2,6 +2,10 @@
 name: julien-mcp-powerpoint-uvx
 description: Install PowerPoint MCP via uvx. Use when user needs cross-platform PowerPoint capabilities.
 category: mcp
+triggers:
+  - install powerpoint uvx
+  - pptx mcp uvx
+  - powerpoint uvx
 ---
 
 # MCP PowerPoint UVX Installer

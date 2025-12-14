@@ -2,6 +2,10 @@
 name: julien-mcp-brave
 description: Install Brave Search MCP for web search capabilities. Use when user needs to add Brave Search API to their project.
 category: mcp
+triggers:
+  - install brave mcp
+  - brave search
+  - web search mcp
 ---
 
 # MCP Brave Search Installer

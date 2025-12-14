@@ -2,6 +2,10 @@
 name: julien-mcp-excel
 description: Install Excel MCP server via uvx. Use when user needs Excel file manipulation capabilities.
 category: mcp
+triggers:
+  - install excel mcp
+  - excel automation
+  - xlsx mcp
 ---
 
 # MCP Excel Installer

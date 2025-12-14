@@ -2,6 +2,10 @@
 name: julien-mcp-notion
 description: Install Notion MCP for workspace integration. Use when user needs Notion API access.
 category: mcp
+triggers:
+  - install notion mcp
+  - notion integration
+  - notion api mcp
 ---
 
 # MCP Notion Installer

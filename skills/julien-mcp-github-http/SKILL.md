@@ -2,6 +2,10 @@
 name: julien-mcp-github-http
 description: Install GitHub MCP via HTTP/Copilot API. Use when user needs GitHub Copilot MCP endpoint.
 category: mcp
+triggers:
+  - install github http mcp
+  - github copilot mcp
+  - copilot api
 ---
 
 # MCP GitHub HTTP Installer

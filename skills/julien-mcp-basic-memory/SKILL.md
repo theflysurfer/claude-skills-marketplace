@@ -2,6 +2,10 @@
 name: julien-mcp-basic-memory
 description: Install Basic Memory MCP for persistent memory between Claude sessions. Use when user needs memory/context persistence via uvx.
 category: mcp
+triggers:
+  - install basic memory mcp
+  - persistent memory
+  - memory mcp
 ---
 
 # MCP Basic Memory Installer

@@ -2,6 +2,10 @@
 name: julien-mcp-github-docker
 description: Install GitHub MCP via Docker. Use when user needs GitHub integration through Docker container.
 category: mcp
+triggers:
+  - install github docker mcp
+  - github mcp docker
+  - github integration docker
 ---
 
 # MCP GitHub (Docker) Installer

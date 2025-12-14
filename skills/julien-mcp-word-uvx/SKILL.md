@@ -2,6 +2,10 @@
 name: julien-mcp-word-uvx
 description: Install Word MCP via uvx. Use when user needs cross-platform Word capabilities.
 category: mcp
+triggers:
+  - install word uvx mcp
+  - word uvx
+  - docx mcp uvx
 ---
 
 # MCP Word UVX Installer

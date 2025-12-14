@@ -2,6 +2,10 @@
 name: julien-mcp-jina
 description: Install Jina AI MCP for web scraping. Use when user needs Jina Reader for URL content extraction.
 category: mcp
+triggers:
+  - install jina mcp
+  - jina reader
+  - web scraping mcp
 ---
 
 # MCP Jina AI Installer

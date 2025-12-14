@@ -2,6 +2,10 @@
 name: julien-mcp-excel-win32com
 description: Install Excel MCP via win32com (Windows). Use when user needs native Excel automation on Windows.
 category: mcp
+triggers:
+  - install excel win32com mcp
+  - excel native mcp
+  - excel windows mcp
 ---
 
 # MCP Excel Win32COM Installer

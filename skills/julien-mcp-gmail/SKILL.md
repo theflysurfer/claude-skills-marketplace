@@ -2,6 +2,10 @@
 name: julien-mcp-gmail
 description: Install Gmail MCP for email operations. Use when user needs Gmail read/send capabilities.
 category: mcp
+triggers:
+  - install gmail mcp
+  - gmail integration
+  - email mcp gmail
 ---
 
 # MCP Gmail Installer

@@ -2,6 +2,10 @@
 name: julien-mcp-word
 description: Install Word MCP via win32com/uv. Use when user needs Word document automation on Windows.
 category: mcp
+triggers:
+  - install word mcp
+  - word automation
+  - docx mcp
 ---
 
 # MCP Word Installer

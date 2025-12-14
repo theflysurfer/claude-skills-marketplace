@@ -2,6 +2,12 @@
 name: julien-infra-deployment-verifier
 description: Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports.
 license: Apache-2.0
+triggers:
+  - verify deployment
+  - check deployment
+  - deployment status
+  - pm2 status
+  - site working
 allowed-tools:
   - Bash
   - mcp__playwright__browser_navigate
