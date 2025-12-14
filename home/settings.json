@@ -1,6 +1,17 @@
 {
   "spinnerTipsEnabled": false,
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -c 'import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/\".claude/scripts/session-start-banner.py\"),run_name=\"__main__\")'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
     "UserPromptSubmit": [
       {
         "hooks": [

@@ -26,7 +26,8 @@
     "list-resources.py",
     "semantic-skill-router.py",
     "track-skill-invocation.py",
-    "benchmark-semantic-router.py"
+    "benchmark-semantic-router.py",
+    "session-start-banner.py"
   ],
   "configs_to_sync": [
     "skill-triggers.json"
