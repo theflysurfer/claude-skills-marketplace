@@ -182,20 +182,39 @@ print(status["status"])  # pending, running, completed, failed
 
 ### Special characters in paths (IMPORTANT)
 
-**Problem**: Characters like `!` in file paths get escaped to `\!` causing "file not found" errors.
+**Problem**: Shell escaping issues with special characters in file paths.
+
+| Character | Issue | CLI workaround |
+|-----------|-------|----------------|
+| `!` | Escaped to `\!` | Use API or `--cwd` |
+| `'` (single quote) | Breaks quoting | Use double quotes, escape with `'\''` |
+| `"` (double quote) | Needs escaping | Use `\"` inside double-quoted strings |
+| ` ` (space) | Needs quoting | Always quote paths with spaces |
+| `&` | Shell interprets as background | Quote the entire command |
+| `()` | Shell interprets as subshell | Quote or escape |
+| `$` | Variable expansion | Use single quotes or escape `\$` |
+| Accents (é, ü) | Encoding issues | Ensure UTF-8, use API |
+
+**Recommended approach by complexity:**
 
 ```bash
-# BAD - will fail if path contains !
-qm add "ffmpeg -i \"C:/Movies/What's Up!.mp4\" out.mp4"
+# SIMPLE - paths without special characters
+qm add "ffmpeg -i input.mp4 output.mp4"
 
-# GOOD - use paths without special characters, or use --cwd
-qm add "ffmpeg -i input.mp4 out.mp4" --cwd "C:/Movies/safe-folder"
+# MEDIUM - use --cwd to avoid path issues
+qm add "ffmpeg -i input.mp4 output.mp4" --cwd "C:/Movies/My Folder"
 
-# GOOD - use API instead of CLI for complex paths
-requests.post("http://127.0.0.1:8742/api/jobs", json={
-    "command": "ffmpeg -i \"C:/Movies/What's Up!.mp4\" out.mp4"
+# COMPLEX - use API for any special characters
+python -c "
+import requests
+requests.post('http://127.0.0.1:8742/api/jobs', json={
+    'command': 'ffmpeg -i \"C:/Movies/What\\'s Up!.mp4\" out.mp4',
+    'name': 'Transcode'
 })
+"
 ```
+
+**Why API is safest**: The API receives JSON directly without shell parsing, so special characters are preserved exactly as-is.
 
 ### Service won't start
 ```bash
