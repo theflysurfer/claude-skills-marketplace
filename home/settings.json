@@ -1,5 +1,8 @@
 {
   "spinnerTipsEnabled": false,
+  "env": {
+    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1"
+  },
   "hooks": {
     "SessionStart": [
       {
