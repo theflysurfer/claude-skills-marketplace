@@ -21,8 +21,11 @@ Queue manager that runs jobs at low priority when user is active, and normal pri
 
 ## Quick Start
 
+> **Verified behavior**: When user is active, jobs run at **IDLE priority (4)** - your PC stays responsive.
+> After 5 minutes idle, priority increases for faster execution. Only 1 job runs when active.
+
 ```bash
-# 1. Start the service (first time)
+# 1. Start the service (keep this terminal open)
 qm start --foreground
 
 # 2. In another terminal, add a job
@@ -166,14 +169,33 @@ print(status["status"])  # pending, running, completed, failed
 4. **Config file** at `%APPDATA%\idle-queue\config.yaml`
 5. **Duplicate detection** - Same command+cwd rejected unless `--force-duplicate`
 
-## Priority Behavior
+## Priority Behavior (Verified)
 
 | User State | Max Workers | CPU Priority | I/O Priority |
 |------------|-------------|--------------|--------------|
-| Active | 1 | IDLE | VERY_LOW |
+| Active | 1 | IDLE (4) | VERY_LOW |
 | Idle (5min) | Unlimited | BELOW_NORMAL | NORMAL |
 
+**Tested**: Process shows Priority: 4 (IDLE_PRIORITY_CLASS) when user is active.
+
 ## Troubleshooting
+
+### Special characters in paths (IMPORTANT)
+
+**Problem**: Characters like `!` in file paths get escaped to `\!` causing "file not found" errors.
+
+```bash
+# BAD - will fail if path contains !
+qm add "ffmpeg -i \"C:/Movies/What's Up!.mp4\" out.mp4"
+
+# GOOD - use paths without special characters, or use --cwd
+qm add "ffmpeg -i input.mp4 out.mp4" --cwd "C:/Movies/safe-folder"
+
+# GOOD - use API instead of CLI for complex paths
+requests.post("http://127.0.0.1:8742/api/jobs", json={
+    "command": "ffmpeg -i \"C:/Movies/What's Up!.mp4\" out.mp4"
+})
+```
 
 ### Service won't start
 ```bash
