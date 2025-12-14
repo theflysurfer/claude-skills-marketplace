@@ -37,6 +37,17 @@
           }
         ]
       }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -c 'import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/\".claude/scripts/session-end-delete-reserved.py\"),run_name=\"__main__\")'",
+            "timeout": 30
+          }
+        ]
+      }
     ]
   }
 }

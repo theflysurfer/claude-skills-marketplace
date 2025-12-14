@@ -15,7 +15,31 @@
     "anthropic-office-pdf",
     "anthropic-office-xlsx",
     "anthropic-office-docx",
-    "anthropic-office-pptx"
+    "anthropic-office-pptx",
+    "anthropic-dev-tools-mcp-builder",
+    "julien-mcp-basic-memory",
+    "julien-mcp-brave",
+    "julien-mcp-chrome-devtools",
+    "julien-mcp-codex-cli",
+    "julien-mcp-context7",
+    "julien-mcp-desktop-commander",
+    "julien-mcp-excel-win32com",
+    "julien-mcp-github-http",
+    "julien-mcp-gmail",
+    "julien-mcp-jina",
+    "julien-mcp-notion",
+    "julien-mcp-notion-pro",
+    "julien-mcp-outlook",
+    "julien-mcp-pdf-reader",
+    "julien-mcp-playwright",
+    "julien-mcp-powerpoint",
+    "julien-mcp-puremd",
+    "julien-mcp-serena",
+    "julien-mcp-taskmaster",
+    "julien-mcp-veyrax",
+    "julien-mcp-webmind",
+    "julien-mcp-word",
+    "julien-mcp-youtube-info"
   ],
   "commands_to_sync": [
     "sync.md",
@@ -27,7 +51,9 @@
     "semantic-skill-router.py",
     "track-skill-invocation.py",
     "benchmark-semantic-router.py",
-    "session-start-banner.py"
+    "session-start-banner.py",
+    "session-end-delete-reserved.py",
+    "cleanup-claude-json.py"
   ],
   "configs_to_sync": [
     "skill-triggers.json"
