@@ -9,6 +9,7 @@ Synchronize skills, commands, and scripts from the marketplace to your global `~
 ## What to sync
 
 Read `configs/sync-config.json` for the list of:
+- `home_files_to_sync`: Files to copy to `~/.claude/` root (settings.json)
 - `skills_to_sync`: Skills to copy to `~/.claude/skills/`
 - `commands_to_sync`: Commands to copy to `~/.claude/commands/`
 - `scripts_to_sync`: Scripts to copy to `~/.claude/scripts/`
@@ -41,6 +42,11 @@ done
 # 5. Sync configs
 for cfg in $(cat configs/sync-config.json | jq -r '.configs_to_sync[]'); do
   cp "configs/$cfg" ~/.claude/configs/ 2>/dev/null && echo "✓ config: $cfg"
+done
+
+# 6. Sync home files (settings.json, etc.)
+for file in $(cat configs/sync-config.json | jq -r '.home_files_to_sync[]'); do
+  cp "home/$file" ~/.claude/ 2>/dev/null && echo "✓ home: $file"
 done
 ```
 

@@ -1,5 +1,8 @@
 {
   "description": "Configuration for syncing skills and commands to ~/.claude/",
+  "home_files_to_sync": [
+    "settings.json"
+  ],
   "skills_to_sync": [
     "julien-dev-tools-skill-creator",
     "julien-dev-tools-skill-reviewer",

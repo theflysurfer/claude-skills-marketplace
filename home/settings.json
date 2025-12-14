@@ -1,0 +1,28 @@
+{
+  "spinnerTipsEnabled": false,
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -c 'import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/\".claude/scripts/semantic-skill-router.py\"),run_name=\"__main__\")'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -c 'import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/\".claude/scripts/track-skill-invocation.py\"),run_name=\"__main__\")'",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
