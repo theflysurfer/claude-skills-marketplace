@@ -531,6 +531,76 @@
       "content_summary": "Trigger Conditions | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) | Actions (Scripts prennent arguments positionnels) # OnePiece Workflow Skill"
     },
     {
+      "name": "julien-ref-ahk-v1",
+      "triggers": [
+        "autohotkey v1",
+        "ahk v1",
+        "autohotkey script",
+        "ahk script",
+        "autohotkey best practices",
+        "ahk best practices",
+        "autohotkey gui",
+        "ahk hotkey"
+      ],
+      "description": "Best practices AutoHotkey v1. Use when writing AHK v1 scripts to avoid critical errors like auto-execute section issues, includes order, and COM object handling.",
+      "content_summary": "Structure du Guide | Erreur #0 : Section Auto-Execute - LA RÈGLE LA PLUS CRITIQUE | QU'EST-CE QUE L'AUTO-EXECUTE? | CE QUI TERMINE L'AUTO-EXECUTE | ERREUR FATALE - Code après une fonction # AutoHotkey v1 - Guide de Référence Optimisé LLM"
+    },
+    {
+      "name": "julien-ref-ahk-v2",
+      "triggers": [
+        "autohotkey v2",
+        "ahk v2",
+        "autohotkey 2",
+        "ahk2",
+        "ahk v2 script",
+        "autohotkey v2 best practices"
+      ],
+      "description": "Best practices AutoHotkey v2. Use when writing AHK v2 scripts - covers global variable declarations, SetTimer usage, event handlers, and GUI positioning.",
+      "content_summary": "RÈGLE CRITIQUE - VARIABLES GLOBALES | DÉCLARATION OBLIGATOIRE DANS CHAQUE FONCTION | LISTE COMPLÈTE DES VARIABLES À DÉCLARER | STRUCTURE MODULAIRE AUTOHOTKEY V2 | En-tête Standard # AutoHotkey v2 - Best Practices pour LLM"
+    },
+    {
+      "name": "julien-ref-astro-install",
+      "triggers": [
+        "astro",
+        "astro install",
+        "astro windows",
+        "astro tailwind",
+        "install astro",
+        "create astro project",
+        "astro setup"
+      ],
+      "description": "Guide d'installation Astro + Tailwind sur Windows. Covers Node.js setup, pnpm, project creation, common Windows issues, and troubleshooting.",
+      "content_summary": "Prérequis | 1. Node.js (version 18.20.8+ ou 20.3.0+ ou 22.0.0+) | 2. Gestionnaire de paquets | Méthode 1 : Installation Rapide (Recommandée) | Étape 1 : Créer le projet # Guide d'Installation Astro + Tailwind sur Windows"
+    },
+    {
+      "name": "julien-ref-batch",
+      "triggers": [
+        "batch script",
+        "bat file",
+        "batch file",
+        "windows batch",
+        "cmd script",
+        "batch best practices",
+        ".bat"
+      ],
+      "description": "Best practices for Windows Batch scripts (.bat). Covers encoding, path handling, variables, error management, and common pitfalls.",
+      "content_summary": "STRUCTURE ET ENCODAGE | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS | Variables de Chemin Robustes # Best Practices - Scripts Batch (.bat)"
+    },
+    {
+      "name": "julien-ref-powershell",
+      "triggers": [
+        "powershell",
+        "powershell script",
+        "ps1",
+        "powershell naming",
+        "powershell conventions",
+        "powershell best practices",
+        "powershell module"
+      ],
+      "description": "PowerShell naming conventions and organization best practices. Covers Verb-Noun functions, variable naming, module structure, and documentation standards.",
+      "content_summary": "Vue d'Ensemble | Structure d'Organisation Générique | Structure de Base | Conventions de Nommage | 1. Fichiers PowerShell # PowerShell - Conventions de Nommage et Organisation"
+    },
+    {
       "name": "julien-workflow-advice-codex",
       "triggers": [
         "ask codex",
