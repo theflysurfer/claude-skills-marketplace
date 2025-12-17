@@ -1,6 +1,6 @@
 ---
 name: julien-ref-notion-markdown
-description: Markdown structuring guide for Universal Notion Uploader parser. Covers supported elements (H1-H3, callouts, tables, task lists), rich text formatting, and LLM best practices.
+description: Markdown structuring guide for Universal Notion Uploader parser. Covers pages, databases from YAML frontmatter, internal links, relations, callouts, tables, and rich text formatting.
 triggers:
   - notion markdown
   - notion uploader
@@ -11,6 +11,10 @@ triggers:
   - notion api markdown
   - universal notion uploader
   - notion table
+  - notion database
+  - notion database markdown
+  - notion relation
+  - notion internal links
 ---
 
 # Markdown Structuring Guide for Universal Notion Uploader
@@ -22,11 +26,14 @@ Guide for LLMs generating markdown destined to be uploaded to Notion via the Uni
 ## Parser Architecture
 
 ```
-MarkdownParser
-├── AdmonitionParser    # Multi-standard callouts
-├── RichTextParser      # Inline formatting (bold, italic, code, etc.)
-├── TableParser         # Markdown tables → Notion
-└── ImageParser         # Local and external images
+core/parsers/
+├── MarkdownParser      # Main parser for pages
+│   ├── AdmonitionParser    # Multi-standard callouts
+│   ├── RichTextParser      # Inline formatting + links
+│   ├── TableParser         # Markdown tables → Notion
+│   └── ImageParser         # Local and external images
+└── DatabaseParser      # Databases from YAML frontmatter
+    └── Relations & Property types
 ```
 
 ---
@@ -219,6 +226,94 @@ Rich text supported in quotes.
 - Relative paths resolved from `base_dir` config
 - Local images require upload (slower)
 - Alt text recommended but not displayed in Notion (API limitation)
+
+---
+
+### 9. Internal Links
+
+```markdown
+See [[Other Document]] for details.
+Link to [[Specific Section#heading]].
+```
+
+**Feature**: `resolve_internal_links: true` in config
+
+**Behavior**:
+- `[[Page Name]]` → Resolved to Notion page link after upload
+- Two-pass upload: First upload all pages, then resolve links
+- Unresolved links become plain text
+
+---
+
+### 10. Databases from Markdown
+
+Create Notion databases from markdown files with YAML frontmatter.
+
+#### Database File Structure
+
+```markdown
+---
+type: database
+name: My Database
+icon: 📊
+description: Database description
+
+properties:
+  Name:
+    type: title
+  Status:
+    type: select
+    options:
+      - Todo
+      - In Progress
+      - Done
+  Date:
+    type: date
+  Count:
+    type: number
+  Active:
+    type: checkbox
+  Related:
+    type: relation
+    database: Other Database Name
+---
+
+| Name | Status | Date | Count | Active |
+|------|--------|------|-------|--------|
+| Item 1 | Todo | 2025-01-15 | 42 | true |
+| Item 2 | Done | 2025-01-16 | 0 | false |
+```
+
+#### Supported Property Types
+
+| Type | Description | Example Value |
+|------|-------------|---------------|
+| `title` | Main name column (required) | Item Name |
+| `rich_text` | Formatted text | **bold** text |
+| `number` | Numeric value | 42 |
+| `select` | Single choice | Option A |
+| `multi_select` | Multiple choices | Tag1, Tag2 |
+| `date` | Date or date range | 2025-01-15 |
+| `checkbox` | Boolean | true / false |
+| `url` | Web link | https://... |
+| `email` | Email address | user@example.com |
+| `phone_number` | Phone | +33 6 12... |
+| `relation` | Link to other database | Related Item |
+| `rollup` | Aggregation from relation | (computed) |
+| `formula` | Calculated field | (computed) |
+
+#### Database Relations
+
+Link databases together:
+
+```yaml
+properties:
+  Category:
+    type: relation
+    database: Categories DB    # Name of target database
+```
+
+**Registry**: Parser maintains database registry for relation resolution.
 
 ---
 

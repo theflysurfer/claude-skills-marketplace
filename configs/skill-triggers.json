@@ -632,9 +632,13 @@
         "markdown to notion",
         "notion api markdown",
         "universal notion uploader",
-        "notion table"
+        "notion table",
+        "notion database",
+        "notion database markdown",
+        "notion relation",
+        "notion internal links"
       ],
-      "description": "Markdown structuring guide for Universal Notion Uploader parser. Covers supported elements (H1-H3, callouts, tables, task lists), rich text formatting, and LLM best practices.",
+      "description": "Markdown structuring guide for Universal Notion Uploader parser. Covers pages, databases from YAML frontmatter, internal links, relations, callouts, tables, and rich text formatting.",
       "content_summary": "Parser Architecture | Supported Elements | 1. Headings (H1-H3 Only) | 2. Rich Text (Inline Formatting) | 3. Callouts (4 Syntaxes Supported) # Markdown Structuring Guide for Universal Notion Uploader"
     },
     {
