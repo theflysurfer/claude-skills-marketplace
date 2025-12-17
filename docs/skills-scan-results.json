@@ -1,0 +1,507 @@
+{
+  "total_skills": 62,
+  "results": {
+    "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code": {
+      "2025.09 Notion Uploader": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Notion Uploader",
+        "skills_count": 4,
+        "items": [
+          {
+            "name": "notion-context-hook",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Notion Uploader\\.claude\\skills\\notion-context-hook"
+          },
+          {
+            "name": "zimprobagnais-categories",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Notion Uploader\\.claude\\skills\\zimprobagnais-categories"
+          },
+          {
+            "name": "zimprobagnais-categories-film-quotes",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Notion Uploader\\.claude\\skills\\zimprobagnais-categories-film-quotes"
+          },
+          {
+            "name": "zimprobagnais-echauffements",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Notion Uploader\\.claude\\skills\\zimprobagnais-echauffements"
+          }
+        ]
+      },
+      "2025.10 Delete null files": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Delete null files",
+        "skills_count": 1,
+        "items": [
+          {
+            "name": "delete-reserved-names",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Delete null files\\.claude\\skills\\delete-reserved-names"
+          }
+        ]
+      },
+      "2025.10 Rag perso": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rag perso",
+        "skills_count": 0,
+        "items": [
+          {
+            "name": "deploy-update.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rag perso\\.claude\\skills\\deploy-update.md"
+          },
+          {
+            "name": "test-api.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rag perso\\.claude\\skills\\test-api.md"
+          }
+        ]
+      },
+      "2025.10 Rclone OneDrive": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive",
+        "skills_count": 5,
+        "items": [
+          {
+            "name": "check-missing-files.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\check-missing-files.md"
+          },
+          {
+            "name": "migration-cleanup",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\migration-cleanup"
+          },
+          {
+            "name": "migration-config",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\migration-config"
+          },
+          {
+            "name": "migration-monitor",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\migration-monitor"
+          },
+          {
+            "name": "migration-start",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\migration-start"
+          },
+          {
+            "name": "migration-verify",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\migration-verify"
+          },
+          {
+            "name": "onedrive-sync-check.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\onedrive-sync-check.md"
+          },
+          {
+            "name": "README.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\README.md"
+          },
+          {
+            "name": "storage-analyzer.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\storage-analyzer.md"
+          },
+          {
+            "name": "sync-auto.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\sync-auto.md"
+          },
+          {
+            "name": "sync-doctor.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\sync-doctor.md"
+          },
+          {
+            "name": "upload-missing-files.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive\\.claude\\skills\\upload-missing-files.md"
+          }
+        ]
+      },
+      "2025.10 Site internet Clem": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem",
+        "skills_count": 16,
+        "items": [
+          {
+            "name": "commit-message",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\commit-message"
+          },
+          {
+            "name": "hostinger-docker",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\hostinger-docker"
+          },
+          {
+            "name": "onedrive-git-commit",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\onedrive-git-commit"
+          },
+          {
+            "name": "skill-reviewer",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\skill-reviewer"
+          },
+          {
+            "name": "skill-writer",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\skill-writer"
+          },
+          {
+            "name": "wordpress-structure-validator",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wordpress-structure-validator"
+          },
+          {
+            "name": "wp-block-contract",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-block-contract"
+          },
+          {
+            "name": "wp-build-tools",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-build-tools"
+          },
+          {
+            "name": "wp-clean-css",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-clean-css"
+          },
+          {
+            "name": "wp-clem-hostinger-upload-image",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-clem-hostinger-upload-image"
+          },
+          {
+            "name": "wp-footer-contract",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-footer-contract"
+          },
+          {
+            "name": "wp-header-contract",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-header-contract"
+          },
+          {
+            "name": "wp-pattern-contract",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-pattern-contract"
+          },
+          {
+            "name": "wp-remote-architecture",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-remote-architecture"
+          },
+          {
+            "name": "wp-sync-workflows",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-sync-workflows"
+          },
+          {
+            "name": "wp-tokens.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-tokens.md"
+          },
+          {
+            "name": "wp-wpcli-remote",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-wpcli-remote"
+          }
+        ]
+      },
+      "2025.10 Wake chain": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Wake chain",
+        "skills_count": 1,
+        "items": [
+          {
+            "name": "docker-hostinger",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Wake chain\\.claude\\skills\\docker-hostinger"
+          },
+          {
+            "name": "README.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Wake chain\\.claude\\skills\\README.md"
+          }
+        ]
+      },
+      "2025.11 Calibre": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre",
+        "skills_count": 7,
+        "items": [
+          {
+            "name": "calibre-add-book",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre\\.claude\\skills\\calibre-add-book"
+          },
+          {
+            "name": "calibre-analyze",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre\\.claude\\skills\\calibre-analyze"
+          },
+          {
+            "name": "calibre-cleanup",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre\\.claude\\skills\\calibre-cleanup"
+          },
+          {
+            "name": "calibre-common",
+            "type": "dir_no_skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre\\.claude\\skills\\calibre-common"
+          },
+          {
+            "name": "calibre-convert",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre\\.claude\\skills\\calibre-convert"
+          },
+          {
+            "name": "calibre-metadata",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre\\.claude\\skills\\calibre-metadata"
+          },
+          {
+            "name": "calibre-remove-book",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre\\.claude\\skills\\calibre-remove-book"
+          },
+          {
+            "name": "calibre-sync",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre\\.claude\\skills\\calibre-sync"
+          }
+        ]
+      },
+      "2025.11 Site Web Jokers": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Site Web Jokers",
+        "skills_count": 4,
+        "items": [
+          {
+            "name": "build-check",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Site Web Jokers\\.claude\\skills\\build-check"
+          },
+          {
+            "name": "database-migration",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Site Web Jokers\\.claude\\skills\\database-migration"
+          },
+          {
+            "name": "deploy-jokers",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Site Web Jokers\\.claude\\skills\\deploy-jokers"
+          },
+          {
+            "name": "pm2-management",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Site Web Jokers\\.claude\\skills\\pm2-management"
+          }
+        ]
+      },
+      "2025.11 Voyage en italie [Hostinger]": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]",
+        "skills_count": 15,
+        "items": [
+          {
+            "name": "audioguide-01-synopsis",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-01-synopsis"
+          },
+          {
+            "name": "audioguide-02-research",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-02-research"
+          },
+          {
+            "name": "audioguide-03-academic",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-03-academic"
+          },
+          {
+            "name": "audioguide-03b-academic-papers",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-03b-academic-papers"
+          },
+          {
+            "name": "audioguide-04-sensory",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-04-sensory"
+          },
+          {
+            "name": "audioguide-05-localization",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-05-localization"
+          },
+          {
+            "name": "audioguide-06-cultural-representations",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-06-cultural-representations"
+          },
+          {
+            "name": "audioguide-07-reviewer",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-07-reviewer"
+          },
+          {
+            "name": "audioguide-08-generate-txt",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-08-generate-txt"
+          },
+          {
+            "name": "audioguide-09-review-tts",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-09-review-tts"
+          },
+          {
+            "name": "audioguide-10-generate-html",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-10-generate-html"
+          },
+          {
+            "name": "audioguide-11-generate-audio",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-11-generate-audio"
+          },
+          {
+            "name": "audioguide-12-deploy-web",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-12-deploy-web"
+          },
+          {
+            "name": "audioguide-13-analyze-floorplan",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-13-analyze-floorplan"
+          },
+          {
+            "name": "audioguide-orchestrator-enrichment",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]\\.claude\\skills\\audioguide-orchestrator-enrichment"
+          }
+        ]
+      },
+      "2025.11 Windhawk": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Windhawk",
+        "skills_count": 0,
+        "items": [
+          {
+            "name": "git-commit-push.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Windhawk\\.claude\\skills\\git-commit-push.md"
+          },
+          {
+            "name": "windhawk-config.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Windhawk\\.claude\\skills\\windhawk-config.md"
+          }
+        ]
+      },
+      "2025.12 Civ 1 streaming [Hostinger]": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Civ 1 streaming [Hostinger]",
+        "skills_count": 4,
+        "items": [
+          {
+            "name": "civ1-hostinger-backup",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Civ 1 streaming [Hostinger]\\.claude\\skills\\civ1-hostinger-backup"
+          },
+          {
+            "name": "civ1-hostinger-bootstrap",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Civ 1 streaming [Hostinger]\\.claude\\skills\\civ1-hostinger-bootstrap"
+          },
+          {
+            "name": "civ1-hostinger-deploy",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Civ 1 streaming [Hostinger]\\.claude\\skills\\civ1-hostinger-deploy"
+          },
+          {
+            "name": "civ1-hostinger-reset-auth",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Civ 1 streaming [Hostinger]\\.claude\\skills\\civ1-hostinger-reset-auth"
+          }
+        ]
+      },
+      "2025.12 Fetch GPT chats": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Fetch GPT chats",
+        "skills_count": 1,
+        "items": [
+          {
+            "name": "ai-chat-export-to-markdown",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Fetch GPT chats\\.claude\\skills\\ai-chat-export-to-markdown"
+          }
+        ]
+      },
+      "2025.12 Media streaming server [Hostinger]": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]",
+        "skills_count": 3,
+        "items": [
+          {
+            "name": "backup-status.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]\\.claude\\skills\\backup-status.md"
+          },
+          {
+            "name": "docker-cleanup.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]\\.claude\\skills\\docker-cleanup.md"
+          },
+          {
+            "name": "health-check.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]\\.claude\\skills\\health-check.md"
+          },
+          {
+            "name": "jellyfin-scan",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]\\.claude\\skills\\jellyfin-scan"
+          },
+          {
+            "name": "media-stack-refresh",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]\\.claude\\skills\\media-stack-refresh"
+          },
+          {
+            "name": "rdtclient-status.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]\\.claude\\skills\\rdtclient-status.md"
+          },
+          {
+            "name": "realdebrid-cleanup",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]\\.claude\\skills\\realdebrid-cleanup"
+          },
+          {
+            "name": "server-diagnostics.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]\\.claude\\skills\\server-diagnostics.md"
+          },
+          {
+            "name": "service-logs.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]\\.claude\\skills\\service-logs.md"
+          },
+          {
+            "name": "ssl-check.md",
+            "type": "file",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]\\.claude\\skills\\ssl-check.md"
+          }
+        ]
+      },
+      "2025.12 Queue manager": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Queue manager",
+        "skills_count": 1,
+        "items": [
+          {
+            "name": "queuing-background-tasks",
+            "type": "skill",
+            "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Queue manager\\.claude\\skills\\queuing-background-tasks"
+          }
+        ]
+      }
+    },
+    "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code": {}
+  }
+}

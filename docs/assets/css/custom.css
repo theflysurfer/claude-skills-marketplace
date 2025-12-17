@@ -1,0 +1,95 @@
+/* Custom styles for Claude Code Marketplace Dashboard */
+
+:root {
+  --md-primary-fg-color: #7c3aed;
+  --md-primary-fg-color--light: #a78bfa;
+  --md-primary-fg-color--dark: #5b21b6;
+  --md-accent-fg-color: #f59e0b;
+}
+
+/* Cards grid */
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.grid.cards > * {
+  padding: 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.grid.cards > *:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mermaid diagrams */
+.mermaid {
+  background: transparent !important;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Status badges */
+.status-active {
+  color: #22c55e;
+}
+
+.status-pending {
+  color: #f59e0b;
+}
+
+.status-inactive {
+  color: #ef4444;
+}
+
+/* Skill cards */
+.skill-card {
+  border-left: 4px solid var(--md-primary-fg-color);
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 8px;
+  background: var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar .fill {
+  height: 100%;
+  background: var(--md-primary-fg-color);
+  transition: width 0.3s ease;
+}
+
+/* Tables */
+.md-typeset table:not([class]) {
+  font-size: 0.85rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color);
+  color: white;
+}
+
+/* Code blocks */
+.md-typeset code {
+  background: rgba(124, 58, 237, 0.1);
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+}
+
+/* Navigation improvements */
+.md-nav__link--active {
+  font-weight: 600;
+}
+
+/* Footer */
+.md-footer {
+  margin-top: 2rem;
+}

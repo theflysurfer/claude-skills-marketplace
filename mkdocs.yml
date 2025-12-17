@@ -1,0 +1,89 @@
+site_name: Claude Code Marketplace
+site_description: Centralized skills, MCP servers, and hooks management for Claude Code
+site_author: Julien
+
+theme:
+  name: material
+  language: fr
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Mode clair
+    - scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Mode sombre
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang: fr
+  - macros:
+      module_name: scripts/mkdocs_macros
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - admonition
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+
+extra_css:
+  - assets/css/custom.css
+
+nav:
+  - Accueil: index.md
+  - Skills:
+    - Vue d'ensemble: skills/index.md
+    - Par catégorie: skills/by-category.md
+  - Projets:
+    - Mapping: projects/index.md
+  - Migration:
+    - En attente: migration/pending.md
+    - Progression: migration/progress.md
+  - MCP Servers:
+    - Liste: mcp/index.md
+    - Installation: mcp/installer.md
+  - Intégrations:
+    - claude-mem: integrations/claude-mem.md
+    - Hooks: integrations/hooks.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/julien-music/claude-code-marketplace

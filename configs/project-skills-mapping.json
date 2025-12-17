@@ -1,0 +1,163 @@
+{
+  "version": "1.0.0",
+  "description": "Mapping of skills to projects. Core skills apply to all projects.",
+  "identifiers": {
+    "type": "github_id",
+    "fallback": "relative_path_from_home"
+  },
+  "core": [
+    "anthropic-office-*",
+    "julien-dev-tools-*",
+    "julien-workflow-*"
+  ],
+  "projects": {
+    "julien-music/claude-code-marketplace": {
+      "name": "Claude Code MarketPlace",
+      "skills": [
+        "*"
+      ],
+      "tags": [
+        "marketplace",
+        "dev"
+      ]
+    },
+    "~/_Projets de code/2025.09 Notion Uploader": {
+      "name": "Notion Uploader",
+      "skills": [
+        "notion-*",
+        "julien-workflow-*"
+      ],
+      "tags": [
+        "notion"
+      ]
+    },
+    "~/_Projets de code/2025.10 Site internet Clem": {
+      "name": "Site Clem",
+      "skills": [
+        "julien-wordpress-*",
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "wordpress",
+        "hostinger"
+      ]
+    },
+    "~/_Projets de code/2025.11 Calibre": {
+      "name": "Calibre Manager",
+      "skills": [
+        "julien-calibre-*"
+      ],
+      "tags": [
+        "calibre",
+        "ebooks"
+      ]
+    },
+    "~/_Projets de code/2025.11 Site Web Jokers": {
+      "name": "Site Jokers",
+      "skills": [
+        "julien-deploy-*",
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "deploy",
+        "hostinger"
+      ]
+    },
+    "~/_Projets de code/2025.12 Media streaming server [Hostinger]": {
+      "name": "Media Streaming Server",
+      "skills": [
+        "julien-media-*",
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "media",
+        "hostinger",
+        "streaming"
+      ]
+    }
+  },
+  "skills_inventory": {
+    "migrated": [],
+    "pending": [
+      {
+        "source": "2025.10 Site internet Clem",
+        "skills": [
+          "wp-*",
+          "wordpress-*",
+          "hostinger-docker",
+          "commit-message",
+          "onedrive-git-commit",
+          "skill-reviewer",
+          "skill-writer"
+        ],
+        "count": 16
+      },
+      {
+        "source": "2025.11 Calibre",
+        "skills": [
+          "calibre-*"
+        ],
+        "count": 7
+      },
+      {
+        "source": "2025.10 Rclone OneDrive",
+        "skills": [
+          "migration-*"
+        ],
+        "count": 5
+      },
+      {
+        "source": "2025.11 Site Web Jokers",
+        "skills": [
+          "build-check",
+          "database-migration",
+          "deploy-jokers",
+          "pm2-management"
+        ],
+        "count": 4
+      },
+      {
+        "source": "2025.12 Media streaming server",
+        "skills": [
+          "jellyfin-scan",
+          "media-stack-refresh",
+          "realdebrid-cleanup"
+        ],
+        "count": 3
+      },
+      {
+        "source": "~/.claude/skills (orphelines)",
+        "skills": [
+          "notion-github-enhance-note",
+          "notion-inbox-to-github",
+          "notion-route-entry",
+          "onepiece-workflow",
+          "startup-shortcuts-cleaner"
+        ],
+        "count": 5
+      },
+      {
+        "source": "2025.11 Voyage en italie",
+        "skills": [
+          "audioguide-*"
+        ],
+        "count": 15
+      },
+      {
+        "source": "2025.12 Civ 1 streaming",
+        "skills": [
+          "civ1-*"
+        ],
+        "count": 4
+      },
+      {
+        "source": "2025.09 Notion Uploader",
+        "skills": [
+          "zimprobagnais-*"
+        ],
+        "count": 3
+      }
+    ],
+    "local_only": []
+  }
+}

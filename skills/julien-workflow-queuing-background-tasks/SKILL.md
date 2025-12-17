@@ -2,11 +2,95 @@
 name: julien-workflow-queuing-background-tasks
 description: Queue long-running tasks (transcoding, API calls, batch processing) to run in background at low priority when user is active, normal priority when idle. Use when scripts take minutes/hours and shouldn't impact PC performance during active use.
 triggers:
+  # Core concepts
   - queue task
   - background job
   - idle queue
   - low priority task
   - run when idle
+  - qm add
+  - idle-queue
+  - schedule this task
+  - planifier cette tâche
+  - deferred job
+  # Transcoding/conversion scenarios
+  - transcode video
+  - transcoder vidéo
+  - convert video background
+  - ffmpeg background
+  - ffmpeg en arrière-plan
+  - conversion longue
+  - long conversion
+  - render video
+  - faire le rendu
+  - render vidéo en tâche de fond
+  - encode footage
+  - run blender render
+  - convert mkv
+  # Long-running scripts
+  - script takes long
+  - script prend du temps
+  - long running script
+  - slow script
+  - script lent
+  - batch processing
+  - traitement par lot
+  - this is taking forever
+  - ça prend une éternité
+  - queue heavy python script
+  # Performance concerns
+  - without blocking
+  - sans bloquer
+  - don't block PC
+  - ne pas bloquer le PC
+  - keep PC responsive
+  - garder le PC réactif
+  - run without impact
+  - low priority execution
+  - don't slow down my machine
+  - ne ralentis pas ma machine
+  - keep my system responsive
+  - resource-intensive task
+  - tâche gourmande en ressources
+  - heavy computation
+  - calcul lourd
+  # Background execution intent
+  - run in background
+  - exécuter en arrière-plan
+  - lancer en arrière-plan
+  - background execution
+  - execute when idle
+  - exécuter quand inactif
+  - run this when I'm away
+  - exécute quand je ne suis pas là
+  - process when computer is idle
+  - do this asynchronously
+  - faisons cela de manière asynchrone
+  # Common use cases
+  - bulk API calls
+  - mass translation
+  - batch encode
+  - multiple file conversion
+  - heavy task
+  - tâche lourde
+  - compress files when idle
+  - traiter photos RAW
+  - background ML training
+  - train machine learning model
+  - batch OCR
+  - large file processing
+  - traitement de gros fichiers
+  - process data overnight
+  - large data export
+  - exportation volumineuse
+  - scrape website background
+  - pipeline data nightly
+  - run backup background
+  - compile in background
+  - keep working while this runs
+  - continuer à travailler pendant que ça tourne
+  - encoder des vidéos
+  - encode videos
 ---
 
 # Idle Queue - Background Task Manager

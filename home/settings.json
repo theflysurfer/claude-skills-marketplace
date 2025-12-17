@@ -1,15 +1,12 @@
 {
   "spinnerTipsEnabled": false,
-  "env": {
-    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1"
-  },
-  "hooks": {
+    "hooks": {
     "SessionStart": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "python -c 'import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/\".claude/scripts/session-start-banner.py\"),run_name=\"__main__\")'",
+            "command": "python -c \"import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/'.claude/scripts/session-start-banner.py'),run_name='__main__')\"",
             "timeout": 5
           }
         ]
@@ -20,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python -c 'import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/\".claude/scripts/semantic-skill-router.py\"),run_name=\"__main__\")'",
+            "command": "python -c \"import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/'.claude/scripts/semantic-skill-router.py'),run_name='__main__')\"",
             "timeout": 10
           }
         ]
@@ -32,7 +29,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python -c 'import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/\".claude/scripts/track-skill-invocation.py\"),run_name=\"__main__\")'",
+            "command": "python -c \"import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/'.claude/scripts/track-skill-invocation.py'),run_name='__main__')\"",
             "timeout": 10
           }
         ]
@@ -43,7 +40,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python -c 'import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/\".claude/scripts/session-end-delete-reserved.py\"),run_name=\"__main__\")'",
+            "command": "python -c \"import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/'.claude/scripts/session-end-delete-reserved.py'),run_name='__main__')\"",
             "timeout": 30
           }
         ]
