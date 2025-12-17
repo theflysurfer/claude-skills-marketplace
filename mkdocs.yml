@@ -82,6 +82,8 @@ nav:
   - Intégrations:
     - claude-mem: integrations/claude-mem.md
     - Hooks: integrations/hooks.md
+  - Dev:
+    - Audit Paths: dev/paths-audit.md
 
 extra:
   social:

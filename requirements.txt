@@ -1,0 +1,51 @@
+# Claude Code Marketplace - Consolidated Dependencies
+# Install with: pip install -r requirements.txt
+
+# ===================
+# Core Scripts (required)
+# ===================
+# Note: scripts/*.py use only stdlib - no deps required
+
+# ===================
+# Semantic Skill Router (optional - falls back to keyword matching)
+# ===================
+semantic-router>=0.1.0
+sentence-transformers>=2.2.0
+
+# ===================
+# MkDocs Dashboard (optional)
+# ===================
+# See requirements-docs.txt for MkDocs-specific deps
+
+# ===================
+# Anthropic Skills Dependencies
+# ===================
+# MCP Builder
+anthropic>=0.18.0
+mcp>=0.1.0
+
+# Office Skills (docx, xlsx, pptx)
+openpyxl>=3.1.0          # Excel manipulation
+python-pptx>=0.6.21      # PowerPoint manipulation
+defusedxml>=0.7.1        # Safe XML parsing
+lxml>=4.9.0              # XML validation
+Pillow>=10.0.0           # Image processing (thumbnails)
+
+# Web Testing
+playwright>=1.40.0       # Browser automation
+
+# ===================
+# Julien Custom Skills Dependencies
+# ===================
+# Notion skills
+requests>=2.31.0         # HTTP client
+
+# Skill reviewer
+PyYAML>=6.0              # YAML parsing
+
+# ===================
+# Optional: Development
+# ===================
+# pytest>=7.0.0          # Testing
+# black>=23.0.0          # Formatting
+# ruff>=0.1.0            # Linting
