@@ -80,6 +80,50 @@ def extract_yaml(content: str) -> dict:
         return extract_yaml_manual(content)
 
 
+def extract_content_summary(content: str, max_length: int = 500) -> str:
+    """Extract a summary from SKILL.md content for RAG-style indexing.
+
+    This extracts:
+    - First paragraph after frontmatter
+    - Section headers (## and ###)
+    - Key terms from the content
+    """
+    # Remove frontmatter
+    content_without_fm = re.sub(r'^---\n.*?\n---\n?', '', content, flags=re.DOTALL)
+
+    # Remove code blocks (they add noise)
+    content_clean = re.sub(r'```[\s\S]*?```', '', content_without_fm)
+
+    # Remove inline code
+    content_clean = re.sub(r'`[^`]+`', '', content_clean)
+
+    # Extract section headers as key terms
+    headers = re.findall(r'^##+ (.+)$', content_clean, re.MULTILINE)
+
+    # Get first non-empty paragraph
+    paragraphs = [p.strip() for p in content_clean.split('\n\n') if p.strip()]
+    first_para = paragraphs[0] if paragraphs else ""
+
+    # Build summary: headers + first paragraph
+    summary_parts = []
+
+    if headers:
+        # Include meaningful headers (skip generic ones like "Usage", "Installation")
+        meaningful_headers = [h for h in headers if len(h) > 3 and h.lower() not in
+                           ('usage', 'installation', 'configuration', 'examples', 'notes')]
+        if meaningful_headers:
+            summary_parts.append(' | '.join(meaningful_headers[:5]))
+
+    if first_para:
+        # Clean up the first paragraph
+        first_para = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', first_para)  # Remove links
+        first_para = re.sub(r'[*_]{1,2}([^*_]+)[*_]{1,2}', r'\1', first_para)  # Remove bold/italic
+        summary_parts.append(first_para[:300])
+
+    summary = ' '.join(summary_parts)
+    return summary[:max_length] if summary else ""
+
+
 def find_marketplace_root() -> Path:
     """Find marketplace root from script location or current directory."""
     # Try script directory first
@@ -138,12 +182,19 @@ def main():
             description = data.get("description", "")
             triggers = data.get("triggers", [])
 
+            # Extract content summary for RAG-style indexing
+            content_summary = extract_content_summary(content)
+
             if triggers and isinstance(triggers, list) and len(triggers) > 0:
-                skills_with_triggers.append({
+                skill_entry = {
                     "name": name,
                     "triggers": triggers,
                     "description": description
-                })
+                }
+                # Add content_summary if not empty (for enhanced semantic matching)
+                if content_summary:
+                    skill_entry["content_summary"] = content_summary
+                skills_with_triggers.append(skill_entry)
             else:
                 skills_without_triggers.append(name)
 

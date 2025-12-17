@@ -27,6 +27,8 @@ TRACKING_DIR = CLAUDE_HOME / "routing-tracking"
 # Thresholds and settings
 SIMILARITY_THRESHOLD = 0.4  # Minimum similarity score to suggest
 TOP_K = 3  # Maximum number of suggestions
+# MiniLM: Fast (<100ms) and good accuracy. BGE is more accurate but slower to load.
+# RAG-style improvements (description + content_summary) boost accuracy regardless of model.
 MODEL_NAME = os.environ.get("SEMANTIC_ROUTER_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
 
 # Singleton for encoder/router to avoid reloading
@@ -145,7 +147,12 @@ def keyword_fallback(prompt: str, skills: list) -> list:
     return matches[:TOP_K]
 
 def get_router(skills: list):
-    """Get or create cached semantic router."""
+    """Get or create cached semantic router.
+
+    Uses triggers only for fast routing (<100ms).
+    Note: description and content_summary are available in skill-triggers.json
+    for future RAG-style improvements with pre-computed embeddings.
+    """
     global _router_cache
 
     # Check if we have a cached router
@@ -160,7 +167,7 @@ def get_router(skills: list):
     except ImportError:
         return None
 
-    # Build routes from skills
+    # Build routes from skills (triggers only for speed)
     routes = []
     for skill in skills:
         if skill.get("triggers"):
@@ -174,7 +181,7 @@ def get_router(skills: list):
         return None
 
     try:
-        # Initialize encoder with explicit model and CPU device
+        # Initialize encoder with MiniLM (fast, <100ms)
         encoder = HuggingFaceEncoder(
             name=MODEL_NAME,
             device="cpu"  # Force CPU to avoid GPU issues

@@ -20,7 +20,8 @@
         "design infographic",
         "visual art"
       ],
-      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations."
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "content_summary": "DESIGN PHILOSOPHY CREATION | THE CRITICAL UNDERSTANDING | HOW TO GENERATE A VISUAL PHILOSOPHY | PHILOSOPHY EXAMPLES | ESSENTIAL PRINCIPLES These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files."
     },
     {
       "name": "anthropic-dev-tools-mcp-builder",
@@ -33,7 +34,8 @@
         "create tool server",
         "mcp integration"
       ],
-      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK)."
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "content_summary": "Overview | 🚀 High-Level Workflow | Phase 1: Deep Research and Planning | 1.1 Understand Modern MCP Design | 1.2 Study MCP Protocol Documentation # MCP Server Development Guide"
     },
     {
       "name": "anthropic-office-docx",
@@ -48,7 +50,8 @@
         "edit docx file",
         "modifier fichier word"
       ],
-      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks"
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
+      "content_summary": "Overview | Workflow Decision Tree | Reading/Analyzing Content | Creating New Document | Editing Existing Document # DOCX creation, editing, and analysis"
     },
     {
       "name": "anthropic-office-pdf",
@@ -75,7 +78,8 @@
         "pdf manipulation",
         "convert to pdf"
       ],
-      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale."
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+      "content_summary": "Overview | Quick Start | Python Libraries | pypdf - Basic Operations | Merge PDFs # PDF Processing Guide"
     },
     {
       "name": "anthropic-office-pptx",
@@ -92,7 +96,8 @@
         "ajouter des slides",
         "powerpoint slides"
       ],
-      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks"
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
+      "content_summary": "Overview | Reading and analyzing content | Text extraction | Raw XML access | Unpacking a file # PPTX creation, editing, and analysis"
     },
     {
       "name": "anthropic-office-xlsx",
@@ -116,7 +121,8 @@
         "graphique dans excel",
         "excel formulas"
       ],
-      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas"
+      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas",
+      "content_summary": "All Excel files | Zero Formula Errors | Preserve Existing Templates (when updating templates) | Financial models | Color Coding Standards # Requirements for Outputs"
     },
     {
       "name": "anthropic-web-artifacts-builder",
@@ -129,7 +135,8 @@
         "shadcn artifact",
         "bundle html"
       ],
-      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts."
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "content_summary": "Design & Style Guidelines | Quick Start | Step 1: Initialize Project | Step 2: Develop Your Artifact | Step 3: Bundle to Single HTML File # Web Artifacts Builder"
     },
     {
       "name": "anthropic-web-frontend-design",
@@ -153,7 +160,8 @@
         "ui design for app",
         "build webpage"
       ],
-      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics."
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "content_summary": "Design Thinking | Frontend Aesthetics Guidelines This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic \"AI slop\" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices."
     },
     {
       "name": "anthropic-web-testing",
@@ -166,7 +174,8 @@
         "test frontend",
         "screenshot web"
       ],
-      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs."
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "content_summary": "Decision Tree: Choosing Your Approach | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall | Best Practices # Web Application Testing"
     },
     {
       "name": "julien-dev-tools-claude-md-documenter",
@@ -189,7 +198,8 @@
         "fichier claude.md",
         "add project context"
       ],
-      "description": "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md."
+      "description": "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md.",
+      "content_summary": "What is CLAUDE.md? | Core Principles | 1. Keep It Short | 2. Link, Don't Duplicate | 3. Project-Specific Only # CLAUDE.md Documenter"
     },
     {
       "name": "julien-dev-tools-hook-creator",
@@ -212,7 +222,8 @@
         "claude code hook",
         "automation hook"
       ],
-      "description": "Guide for creating Claude Code hooks - shell commands that execute at specific lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse, etc.). Use when users want to automate actions, add validation, logging, or integrate external tools into Claude Code workflows."
+      "description": "Guide for creating Claude Code hooks - shell commands that execute at specific lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse, etc.). Use when users want to automate actions, add validation, logging, or integrate external tools into Claude Code workflows.",
+      "content_summary": "What Are Hooks? | Available Hook Events | Hook Configuration | Basic Structure | Configuration Fields # Hook Creator"
     },
     {
       "name": "julien-dev-tools-powershell-profile",
@@ -224,7 +235,8 @@
         "powershell alias",
         "ps1 profile"
       ],
-      "description": "Manage PowerShell profile, aliases, functions. Triggers: add alias, update profile, modify claude command, Microsoft.PowerShell_profile.ps1"
+      "description": "Manage PowerShell profile, aliases, functions. Triggers: add alias, update profile, modify claude command, Microsoft.PowerShell_profile.ps1",
+      "content_summary": "Workflow | Reference Files | Skill Chaining | Skills Required Before | Input Expected # PowerShell Profile Manager"
     },
     {
       "name": "julien-dev-tools-skill-creator",
@@ -249,7 +261,8 @@
         "build custom skill",
         "skill development"
       ],
-      "description": "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation."
+      "description": "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation.",
+      "content_summary": "Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure | Naming & Description # Skill Creator"
     },
     {
       "name": "julien-dev-tools-skill-renamer",
@@ -261,7 +274,8 @@
         "changer nom skill",
         "renommer une skill"
       ],
-      "description": "Rename a skill across the marketplace. Use when: user wants to rename a skill, change skill name, or refactor skill naming."
+      "description": "Rename a skill across the marketplace. Use when: user wants to rename a skill, change skill name, or refactor skill naming.",
+      "content_summary": "When to Use | What It Does | After Running | Skill Chaining | Skills Required Before # Skill Renamer"
     },
     {
       "name": "julien-dev-tools-skill-reviewer",
@@ -284,7 +298,8 @@
         "évaluer la qualité de la skill",
         "améliorer ma skill"
       ],
-      "description": "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro."
+      "description": "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro.",
+      "content_summary": "When to Use | Review Process | Step 1: Read and Parse | Step 2: Score Against Rubric | Step 3: Calculate Score # Skill Reviewer"
     },
     {
       "name": "julien-infra-deployment-verifier",
@@ -295,7 +310,8 @@
         "pm2 status",
         "site working"
       ],
-      "description": "Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports."
+      "description": "Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports.",
+      "content_summary": "Server Info | When to Use This Skill | Verification Checklist | ✅ Complete Verification Workflow | 1. PM2 Process Verification # Deployment Verifier - Hostinger srv759970"
     },
     {
       "name": "julien-infra-git-vps-sync",
@@ -306,7 +322,8 @@
         "git sync hostinger",
         "vps github sync"
       ],
-      "description": "Manage Git sync between VPS and GitHub for Hostinger srv759970. Handles unrelated histories, untracked files, diverged branches, and sync conflicts automatically."
+      "description": "Manage Git sync between VPS and GitHub for Hostinger srv759970. Handles unrelated histories, untracked files, diverged branches, and sync conflicts automatically.",
+      "content_summary": "Server Info | When to Use This Skill | Common Scenarios | 1. Unrelated Histories | Option A: Merge with allow-unrelated-histories (preserves VPS changes) # Git VPS Sync - Hostinger srv759970"
     },
     {
       "name": "julien-infra-hostinger-audit",
@@ -318,7 +335,8 @@
         "discover services",
         "list containers"
       ],
-      "description": "Infrastructure audit and discovery for Hostinger VPS srv759970. Inventories all Docker containers, images, scripts, cron jobs, systemd services, portals. Compares actual state vs registry.yml, identifies orphans, duplicates, and undocumented resources. Generates YAML inventory files and HTML dashboard."
+      "description": "Infrastructure audit and discovery for Hostinger VPS srv759970. Inventories all Docker containers, images, scripts, cron jobs, systemd services, portals. Compares actual state vs registry.yml, identifies orphans, duplicates, and undocumented resources. Generates YAML inventory files and HTML dashboard.",
+      "content_summary": "When to Use This Skill | Server Info | Audit Modes | Full Audit (default) | Discovery Only () # Hostinger Infrastructure Audit Skill"
     },
     {
       "name": "julien-infra-hostinger-database",
@@ -330,7 +348,8 @@
         "db backup",
         "database connection"
       ],
-      "description": "Manage shared database instances on Hostinger VPS srv759970 - PostgreSQL, Redis, MongoDB operations. Use for database connections, backups, user management, performance checks, or troubleshooting database issues."
+      "description": "Manage shared database instances on Hostinger VPS srv759970 - PostgreSQL, Redis, MongoDB operations. Use for database connections, backups, user management, performance checks, or troubleshooting database issues.",
+      "content_summary": "Overview | Databases Available | When to Use This Skill | PostgreSQL Operations | Connection # Database Management - Hostinger VPS"
     },
     {
       "name": "julien-infra-hostinger-deployment",
@@ -341,7 +360,8 @@
         "mise en prod",
         "production deployment"
       ],
-      "description": "Complete deployment workflow for INCLUZ'HACT on Hostinger VPS srv759970. Orchestrates Git sync, build, PM2 restart, and verification for production and preview environments."
+      "description": "Complete deployment workflow for INCLUZ'HACT on Hostinger VPS srv759970. Orchestrates Git sync, build, PM2 restart, and verification for production and preview environments.",
+      "content_summary": "Overview | Server Info | Environments | When to Use This Skill | Complete Deployment Workflow # Hostinger Deployment - INCLUZ'HACT"
     },
     {
       "name": "julien-infra-hostinger-docker",
@@ -363,7 +383,8 @@
         "docker compose",
         "container management"
       ],
-      "description": "This skill should be used when managing Docker services on the Hostinger VPS (srv759970, automation@69.62.108.82). It provides workflows for optimizing images, deploying services, troubleshooting errors, and maintaining the Docker infrastructure for Python/FastAPI, Streamlit, Next.js, and ML applications."
+      "description": "This skill should be used when managing Docker services on the Hostinger VPS (srv759970, automation@69.62.108.82). It provides workflows for optimizing images, deploying services, troubleshooting errors, and maintaining the Docker infrastructure for Python/FastAPI, Streamlit, Next.js, and ML applications.",
+      "content_summary": "Server Configuration | Core Workflows | Status Check | Deploy Service | Optimize Image # Docker Hostinger VPS Management"
     },
     {
       "name": "julien-infra-hostinger-fail2ban",
@@ -374,7 +395,8 @@
         "brute force protection",
         "wordpress security"
       ],
-      "description": "Manage Fail2ban jails and IP bans on Hostinger VPS srv759970. Use for WordPress security hardening, IP ban/unban operations, monitoring brute-force attacks, or when security audit shows missing Fail2ban protection."
+      "description": "Manage Fail2ban jails and IP bans on Hostinger VPS srv759970. Use for WordPress security hardening, IP ban/unban operations, monitoring brute-force attacks, or when security audit shows missing Fail2ban protection.",
+      "content_summary": "When to Use This Skill | Server Context | WordPress Jails Overview | Detection Patterns | Quick Commands # Fail2ban Management - Hostinger VPS"
     },
     {
       "name": "julien-infra-hostinger-maintenance",
@@ -385,7 +407,8 @@
         "check ssl",
         "system health"
       ],
-      "description": "Recurring maintenance tasks for Hostinger VPS srv759970 - clean Docker resources, clear system cache, check disk space, verify SSL certificates, update services. Use when performing scheduled maintenance, cleanup operations, or proactive system health checks."
+      "description": "Recurring maintenance tasks for Hostinger VPS srv759970 - clean Docker resources, clear system cache, check disk space, verify SSL certificates, update services. Use when performing scheduled maintenance, cleanup operations, or proactive system health checks.",
+      "content_summary": "When to Use This Skill | Server Info | Weekly Maintenance Tasks | Task 1: Clean Docker Resources | Task 2: Check Disk Space # Hostinger VPS Maintenance Runbooks"
     },
     {
       "name": "julien-infra-hostinger-nginx",
@@ -410,7 +433,8 @@
         "ssl certificate",
         "web server config"
       ],
-      "description": "Manage Nginx reverse proxy on Hostinger VPS srv759970 (automation@69.62.108.82). Use for site configuration, SSL/Let's Encrypt setup, reverse proxy configuration, troubleshooting 502/504 errors, certbot operations, or nginx reload/restart."
+      "description": "Manage Nginx reverse proxy on Hostinger VPS srv759970 (automation@69.62.108.82). Use for site configuration, SSL/Let's Encrypt setup, reverse proxy configuration, troubleshooting 502/504 errors, certbot operations, or nginx reload/restart.",
+      "content_summary": "Server Info | When to Use This Skill | Common Operations | 1. Add New Site | 2. SSL Setup with Let's Encrypt # Nginx Management on Hostinger VPS"
     },
     {
       "name": "julien-infra-hostinger-nginx-audit",
@@ -421,7 +445,8 @@
         "ssl certificate check",
         "nginx config"
       ],
-      "description": "Audit and auto-fix Nginx configurations on Hostinger VPS srv759970 for IPv6 support, SSL issues, and best practices. Detects missing IPv6 listeners, validates SSL certificates, and applies fixes automatically or generates reports."
+      "description": "Audit and auto-fix Nginx configurations on Hostinger VPS srv759970 for IPv6 support, SSL issues, and best practices. Detects missing IPv6 listeners, validates SSL certificates, and applies fixes automatically or generates reports.",
+      "content_summary": "Server Info | When to Use This Skill | Audit Categories | 1. IPv6 Listener Audit (CRITICAL) | 2. SSL Certificate Audit # Nginx Configuration Audit & Auto-Fix"
     },
     {
       "name": "julien-infra-hostinger-space-reclaim",
@@ -433,7 +458,8 @@
         "cleanup docker",
         "disk usage"
       ],
-      "description": "Reclaim disk space on Hostinger VPS (srv759970) through automated analysis and cleanup of Docker images, volumes, logs, and application data. Use when disk space is critical (>90% usage) or for regular maintenance to prevent space issues."
+      "description": "Reclaim disk space on Hostinger VPS (srv759970) through automated analysis and cleanup of Docker images, volumes, logs, and application data. Use when disk space is critical (>90% usage) or for regular maintenance to prevent space issues.",
+      "content_summary": "When to Use | Server Context | Workflow Overview | Phase 1: Analysis (ALWAYS FIRST) | Phase 2: Safe Cleanup (NO USER APPROVAL NEEDED) # Hostinger Space Reclamation"
     },
     {
       "name": "julien-infra-hostinger-ssh",
@@ -456,7 +482,8 @@
         "terminal connection to vps",
         "clé ssh"
       ],
-      "description": "SSH connection and server management for Hostinger VPS srv759970 (automation@69.62.108.82). Use for connecting to server, checking system status, managing users, troubleshooting SSH connection issues, or when Permission denied errors occur."
+      "description": "SSH connection and server management for Hostinger VPS srv759970 (automation@69.62.108.82). Use for connecting to server, checking system status, managing users, troubleshooting SSH connection issues, or when Permission denied errors occur.",
+      "content_summary": "Server Info | When to Use This Skill | Quick Connection | Basic SSH | Quick Status Check # SSH & Server Management - Hostinger VPS"
     },
     {
       "name": "julien-infra-hostinger-wordpress-security",
@@ -467,7 +494,8 @@
         "wordpress hardening",
         "securiser wordpress"
       ],
-      "description": "Audit sécurité WordPress (25+ checks, scoring 0-100%). Use for WordPress security audits, after WordPress deployment, or when security hardening needed. Checks Nginx, files, WP config, users, plugins, database, and Fail2ban."
+      "description": "Audit sécurité WordPress (25+ checks, scoring 0-100%). Use for WordPress security audits, after WordPress deployment, or when security hardening needed. Checks Nginx, files, WP config, users, plugins, database, and Fail2ban.",
+      "content_summary": "When to Use This Skill | Server Context | Security Audit Overview | 7 Audit Categories | Scoring System # WordPress Security Audit - Hostinger VPS"
     },
     {
       "name": "julien-mcp-installer",
@@ -484,7 +512,8 @@
         "available mcp",
         "mcp marketplace"
       ],
-      "description": "Interactive MCP server installer. Lists all available MCPs by category and installs the user's choice into .mcp.json"
+      "description": "Interactive MCP server installer. Lists all available MCPs by category and installs the user's choice into .mcp.json",
+      "content_summary": "Available MCP Servers | Category: Office (5) | Category: Browser (3) | Category: APIs (6) | Category: AI/LLM (4) # MCP Server Installer"
     },
     {
       "name": "julien-media-onepiece-workflow",
@@ -498,7 +527,8 @@
         "nvenc transcode",
         "streaming onepiece"
       ],
-      "description": "Manage OnePiece transcoding pipeline - GPU local transcoding, remux Japanese audio, upload to Dropbox for web streaming app."
+      "description": "Manage OnePiece transcoding pipeline - GPU local transcoding, remux Japanese audio, upload to Dropbox for web streaming app.",
+      "content_summary": "Trigger Conditions | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) | Actions (Scripts prennent arguments positionnels) # OnePiece Workflow Skill"
     },
     {
       "name": "julien-workflow-advice-codex",
@@ -514,7 +544,8 @@
         "codex second opinion",
         "openai codex review"
       ],
-      "description": "Get OpenAI Codex CLI's opinion on code, bugs, or implementation. Use when you want a second AI perspective during coding sessions."
+      "description": "Get OpenAI Codex CLI's opinion on code, bugs, or implementation. Use when you want a second AI perspective during coding sessions.",
+      "content_summary": "Prerequisites | When to Use | How to Invoke | Execution | For file review (non-interactive) # Ask Codex"
     },
     {
       "name": "julien-workflow-advice-gemini",
@@ -530,7 +561,8 @@
         "gemini second opinion",
         "google gemini review"
       ],
-      "description": "Get Gemini CLI's opinion on code, architecture, or implementation. Use when you want a second AI perspective during coding sessions."
+      "description": "Get Gemini CLI's opinion on code, architecture, or implementation. Use when you want a second AI perspective during coding sessions.",
+      "content_summary": "Prerequisites | When to Use | How to Invoke | Execution | For file review # Ask Gemini"
     },
     {
       "name": "julien-workflow-check-loaded-skills",
@@ -548,7 +580,8 @@
         "which skills are loaded",
         "show my skills"
       ],
-      "description": "Check which Claude skills are loaded globally and project-level. Displays loaded skills by category (Hostinger, Anthropic, custom), counts, and helps troubleshoot missing skills."
+      "description": "Check which Claude skills are loaded globally and project-level. Displays loaded skills by category (Hostinger, Anthropic, custom), counts, and helps troubleshoot missing skills.",
+      "content_summary": "When to Use This Skill | What This Skill Does | Via Slash Command (Recommended) | Via Direct Invocation | Output Format # Check Loaded Skills"
     },
     {
       "name": "julien-workflow-queuing-background-tasks",
@@ -637,7 +670,8 @@
         "encoder des vidéos",
         "encode videos"
       ],
-      "description": "Queue long-running tasks (transcoding, API calls, batch processing) to run in background at low priority when user is active, normal priority when idle. Use when scripts take minutes/hours and shouldn't impact PC performance during active use."
+      "description": "Queue long-running tasks (transcoding, API calls, batch processing) to run in background at low priority when user is active, normal priority when idle. Use when scripts take minutes/hours and shouldn't impact PC performance during active use.",
+      "content_summary": "Prerequisites | Quick Start | Service Startup | Manual start | Auto-start at login (Windows) # Idle Queue - Background Task Manager"
     },
     {
       "name": "julien-workflow-skill-router",
@@ -653,7 +687,8 @@
         "what skill should I use",
         "recommend a skill"
       ],
-      "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help."
+      "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help.",
+      "content_summary": "Development Tools | Workflow | Anthropic Office (Documents) | Anthropic Web/Design | Infrastructure Hostinger # Skill Router - Index des Skills Disponibles"
     },
     {
       "name": "subtitle-translation",
@@ -668,7 +703,8 @@
         "series subtitles",
         "translate episodes"
       ],
-      "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation."
+      "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation.",
+      "content_summary": "When to Use | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity | Model Recommendations (December 2024) # Subtitle Translation Skill"
     }
   ]
 }
