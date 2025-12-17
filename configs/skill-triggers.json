@@ -587,6 +587,57 @@
       "content_summary": "STRUCTURE ET ENCODAGE | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS | Variables de Chemin Robustes # Best Practices - Scripts Batch (.bat)"
     },
     {
+      "name": "julien-ref-doc-production",
+      "triggers": [
+        "documentation methodology",
+        "doc production",
+        "create documentation",
+        "document type",
+        "incident report",
+        "session report",
+        "guide template",
+        "audit document",
+        "documentation structure",
+        "yaml metadata",
+        "living docs"
+      ],
+      "description": "Documentation production methodology with DRY principles. Covers 8 document types (GUIDE, INCIDENT, SESSION, AUDIT, RECHERCHE, etc.), naming conventions, and YAML metadata.",
+      "content_summary": "Principles | Structure | Naming Conventions | EVOLVING Docs (living docs) | EVENT-BASED Docs (snapshots) # Documentation Production Methodology"
+    },
+    {
+      "name": "julien-ref-doc-review",
+      "triggers": [
+        "document review",
+        "doc review",
+        "review methodology",
+        "annotation tags",
+        "fix tag",
+        "todo tag",
+        "verify tag",
+        "macro flag",
+        "review comments",
+        "documentation annotation"
+      ],
+      "description": "Simplified document review methodology with 4 core tags (@FIX, @TODO, @VERIFY, @OK) and [MACRO] flag for systemic impact. Use for annotating and reviewing documentation.",
+      "content_summary": "Overview | Tag System | CORE Tags (4 essential) | SPECIAL Tags (particular use) | [MACRO] Impact Flag # Document Review Methodology"
+    },
+    {
+      "name": "julien-ref-notion-markdown",
+      "triggers": [
+        "notion markdown",
+        "notion uploader",
+        "markdown notion",
+        "notion callout",
+        "notion parser",
+        "markdown to notion",
+        "notion api markdown",
+        "universal notion uploader",
+        "notion table"
+      ],
+      "description": "Markdown structuring guide for Universal Notion Uploader parser. Covers supported elements (H1-H3, callouts, tables, task lists), rich text formatting, and LLM best practices.",
+      "content_summary": "Parser Architecture | Supported Elements | 1. Headings (H1-H3 Only) | 2. Rich Text (Inline Formatting) | 3. Callouts (4 Syntaxes Supported) # Markdown Structuring Guide for Universal Notion Uploader"
+    },
+    {
       "name": "julien-ref-powershell",
       "triggers": [
         "powershell",
