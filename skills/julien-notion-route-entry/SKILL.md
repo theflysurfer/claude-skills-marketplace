@@ -1,5 +1,5 @@
 ---
-name: notion-route-entry
+name: julien-notion-route-entry
 description: Route a Notion Inbox entry to the appropriate PKM database (Github, Videos, Articles, Podcasts, Formations, Lieux, Code, or Todos). Use when user wants to triage inbox, route entry, move to appropriate database.
 ---
 

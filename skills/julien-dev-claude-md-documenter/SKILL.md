@@ -1,5 +1,5 @@
 ---
-name: julien-dev-tools-claude-md-documenter
+name: julien-dev-claude-md-documenter
 version: 1.0.0
 description: "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md."
 category: development

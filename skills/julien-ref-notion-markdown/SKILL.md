@@ -1,6 +1,6 @@
 ---
 name: julien-ref-notion-markdown
-description: Markdown structuring guide for Universal Notion Uploader parser. Covers pages, databases from YAML frontmatter, internal links, relations, callouts, tables, and rich text formatting.
+description: Complete markdown guide for Universal Notion Uploader. Covers 14 element types (headings, callouts, highlights, toggles, embeds, columns, databases), upload modes, and API constraints.
 triggers:
   - notion markdown
   - notion uploader
@@ -15,6 +15,10 @@ triggers:
   - notion database markdown
   - notion relation
   - notion internal links
+  - notion toggle
+  - notion embed
+  - notion columns
+  - notion highlight
 ---
 
 # Markdown Structuring Guide for Universal Notion Uploader
@@ -58,6 +62,20 @@ core/parsers/
 Content of the section...
 ```
 
+#### Collapsible Headings
+
+```markdown
+##+ Collapsible Section
+Content under this heading.
+Will collapse/expand in Notion.
+
+## Next Section (stops collapsible)
+```
+
+**Syntax**: `#+`, `##+`, `###+` followed by title
+
+**Notion API**: `heading_X` with `is_toggleable: true` and nested `children`
+
 ---
 
 ### 2. Rich Text (Inline Formatting)
@@ -68,10 +86,26 @@ Content of the section...
 `code inline`
 ~~strikethrough~~
 [links](https://example.com)
+**[bold link](url)**
+*[italic link](url)*
+=={highlighted text}==
+=={colored text}==blue
 ```
 
 - Combine freely: `**bold *and italic***`
 - Parser handles overlaps automatically
+- Auto-chunking if text > 2000 chars (API limit)
+
+#### Highlights (Colored Backgrounds)
+
+```markdown
+=={default yellow}==
+=={blue text}==blue
+=={red warning}==red
+=={green success}==green
+```
+
+**Colors**: yellow (default), blue, red, green, purple, pink, gray, orange, brown
 
 ---
 
@@ -229,7 +263,75 @@ Rich text supported in quotes.
 
 ---
 
-### 9. Internal Links
+### 9. Toggle Blocks (Collapsible Sections)
+
+```markdown
+<details>
+<summary>Click to expand</summary>
+
+Hidden content here.
+Can contain **any markdown**: lists, code, tables.
+
+</details>
+```
+
+**Notion API**: `toggle` block with nested `children`
+
+- Opening tag: `<details>` (case-insensitive)
+- Summary line: `<summary>Title</summary>` (line 2)
+- Closing tag: `</details>`
+- Supports nested markdown including nested toggles
+
+---
+
+### 10. Embeds
+
+```markdown
+<!-- embed: https://www.youtube.com/watch?v=VIDEO_ID -->
+<!-- embed: https://figma.com/file/xxx -->
+```
+
+**Notion API**: `embed` or `video` block
+
+**Supported**: YouTube, Vimeo, Figma, Google Maps, Google Drive, CodePen, GitHub Gist, Miro
+
+---
+
+### 11. Column Layouts
+
+```markdown
+<!-- columns: 2 -->
+**Left Column**
+
+Content here.
+
+---column---
+
+**Right Column**
+
+More content.
+<!-- /columns -->
+```
+
+**Notion API**: `column_list` with `column` children
+
+**Supported**: 2, 3, 4+ columns (Notion auto-sizes equally)
+
+---
+
+### 12. Dividers (Horizontal Rules)
+
+```markdown
+---
+***
+___
+```
+
+**Notion API**: `divider` block
+
+---
+
+### 13. Internal Links
 
 ```markdown
 See [[Other Document]] for details.
@@ -245,7 +347,7 @@ Link to [[Specific Section#heading]].
 
 ---
 
-### 10. Databases from Markdown
+### 14. Databases from Markdown
 
 Create Notion databases from markdown files with YAML frontmatter.
 
@@ -314,6 +416,46 @@ properties:
 ```
 
 **Registry**: Parser maintains database registry for relation resolution.
+
+---
+
+## Upload Modes
+
+Configure in `upload_config.yaml`:
+
+### MIXED (Recommended for docs)
+```yaml
+mode: "mixed"
+```
+- Root page = Index with folder headings
+- Each `.md` file = child page
+- Navigation footers on all pages
+
+### HIERARCHICAL (Folder preservation)
+```yaml
+mode: "hierarchical"
+```
+- Folders → Notion pages
+- Files → Sub-pages
+- Recreates exact folder structure
+
+### SEQUENTIAL (Linear reading)
+```yaml
+mode: "sequential"
+```
+- All files at same level
+- Prev/Next navigation between pages
+- Good for tutorials
+
+### Configuration Features
+```yaml
+features:
+  table_of_contents: true      # Add TOC at top
+  page_navigation: true        # Add prev/next footers
+  image_upload: true           # Upload local images
+  resolve_internal_links: true # Convert [[links]]
+  flush_before_upload: false   # Delete existing content first
+```
 
 ---
 

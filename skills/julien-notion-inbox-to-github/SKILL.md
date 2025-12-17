@@ -1,5 +1,5 @@
 ---
-name: notion-inbox-to-github
+name: julien-notion-inbox-to-github
 description: Move a GitHub repo entry from Notion Inbox [DB] to Github [DB]. Use when user wants to route a GitHub URL from inbox to the dedicated GitHub database, migrate inbox entry to github database, or move github link.
 ---
 

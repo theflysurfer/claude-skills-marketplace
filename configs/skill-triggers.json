@@ -531,6 +531,22 @@
       "content_summary": "Trigger Conditions | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) | Actions (Scripts prennent arguments positionnels) # OnePiece Workflow Skill"
     },
     {
+      "name": "subtitle-translation",
+      "triggers": [
+        "translate subtitles",
+        "translate srt",
+        "subtitle translation",
+        "traduire sous-titres",
+        "batch translate subtitles",
+        "srt file translation",
+        "movie subtitles",
+        "series subtitles",
+        "translate episodes"
+      ],
+      "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation.",
+      "content_summary": "When to Use | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity | Model Recommendations (December 2024) # Subtitle Translation Skill"
+    },
+    {
       "name": "julien-ref-ahk-v1",
       "triggers": [
         "autohotkey v1",
@@ -636,10 +652,14 @@
         "notion database",
         "notion database markdown",
         "notion relation",
-        "notion internal links"
+        "notion internal links",
+        "notion toggle",
+        "notion embed",
+        "notion columns",
+        "notion highlight"
       ],
-      "description": "Markdown structuring guide for Universal Notion Uploader parser. Covers pages, databases from YAML frontmatter, internal links, relations, callouts, tables, and rich text formatting.",
-      "content_summary": "Parser Architecture | Supported Elements | 1. Headings (H1-H3 Only) | 2. Rich Text (Inline Formatting) | 3. Callouts (4 Syntaxes Supported) # Markdown Structuring Guide for Universal Notion Uploader"
+      "description": "Complete markdown guide for Universal Notion Uploader. Covers 14 element types (headings, callouts, highlights, toggles, embeds, columns, databases), upload modes, and API constraints.",
+      "content_summary": "Parser Architecture | Supported Elements | 1. Headings (H1-H3 Only) | Collapsible Headings | 2. Rich Text (Inline Formatting) # Markdown Structuring Guide for Universal Notion Uploader"
     },
     {
       "name": "julien-ref-powershell",
@@ -814,22 +834,6 @@
       ],
       "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help.",
       "content_summary": "Development Tools | Workflow | Anthropic Office (Documents) | Anthropic Web/Design | Infrastructure Hostinger # Skill Router - Index des Skills Disponibles"
-    },
-    {
-      "name": "subtitle-translation",
-      "triggers": [
-        "translate subtitles",
-        "translate srt",
-        "subtitle translation",
-        "traduire sous-titres",
-        "batch translate subtitles",
-        "srt file translation",
-        "movie subtitles",
-        "series subtitles",
-        "translate episodes"
-      ],
-      "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation.",
-      "content_summary": "When to Use | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity | Model Recommendations (December 2024) # Subtitle Translation Skill"
     }
   ]
 }
