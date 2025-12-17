@@ -722,6 +722,20 @@
       "description": "Install YouTube Info MCP for video data. Use when user needs YouTube video information extraction."
     },
     {
+      "name": "julien-media-onepiece-workflow",
+      "triggers": [
+        "onepiece",
+        "one piece",
+        "transcoding pipeline",
+        "remux japanese",
+        "dropbox upload video",
+        "anime transcode",
+        "nvenc transcode",
+        "streaming onepiece"
+      ],
+      "description": "Manage OnePiece transcoding pipeline - GPU local transcoding, remux Japanese audio, upload to Dropbox for web streaming app."
+    },
+    {
       "name": "julien-workflow-advice-codex",
       "triggers": [
         "ask codex",
