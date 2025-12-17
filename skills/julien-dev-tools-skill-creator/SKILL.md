@@ -189,6 +189,36 @@ Match specificity to task fragility:
 - Setup/testing procedures
 - Any auxiliary context about creation process
 
+## Security & Portability
+
+### Security Checklist
+
+- ✓ No hardcoded credentials (passwords, API keys, tokens)
+- ✓ Sensitive data in `.env` file
+- ✓ `.env` added to `.gitignore`
+- ✓ Instructions use environment variables (`$VAR` or `source .env`)
+
+### Portability Checklist
+
+- ✓ Use relative paths (`.env`, `./scripts/`) instead of absolute paths
+- ✓ Use `~/.claude/skills/` for user paths, not hardcoded home directories
+- ✓ Avoid platform-specific paths (e.g., `C:\Users\...` in examples)
+- ✓ Use forward slashes only (not Windows backslashes)
+
+## Anti-Patterns to Avoid
+
+❌ Description >200 chars (breaks progressive disclosure)
+❌ Content >300 lines (too much detail)
+❌ Duplicates existing docs (should reference instead)
+❌ Development notes in content (timestamps, changelog)
+❌ Generic/vague description (doesn't explain when to use)
+❌ Second-person language ("you should...")
+❌ Information in both SKILL.md and references files
+❌ Hardcoded credentials (passwords, API keys, database credentials, tokens)
+❌ Sensitive data in code examples (use placeholders or `.env` variables)
+❌ Absolute paths in examples (`/home/user/...`, `C:\Users\...`)
+❌ Platform-specific paths (Windows-only or Unix-only examples)
+
 ## Skill Chaining
 
 ### Skills Required Before
