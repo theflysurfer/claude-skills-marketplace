@@ -11,6 +11,7 @@ import json
 import os
 import re
 import sys
+import fnmatch
 from pathlib import Path
 
 # Configuration
@@ -22,7 +23,15 @@ TRIGGERS_FILE = CLAUDE_HOME / "configs" / "skill-triggers.json"
 if not TRIGGERS_FILE.exists():
     TRIGGERS_FILE = SCRIPT_DIR / "configs" / "skill-triggers.json"
 
+# Project registry - try marketplace first, then global
+REGISTRY_FILE = SCRIPT_DIR / "configs" / "projects-registry.json"
+if not REGISTRY_FILE.exists():
+    REGISTRY_FILE = CLAUDE_HOME / "configs" / "projects-registry.json"
+
 TRACKING_DIR = CLAUDE_HOME / "routing-tracking"
+
+# Project boost factor for skills matching project type
+PROJECT_SKILL_BOOST = 0.15  # Add 15% to matching skills
 
 # Thresholds and settings
 SIMILARITY_THRESHOLD = 0.4  # Minimum similarity score to suggest
@@ -40,6 +49,76 @@ def load_triggers() -> dict:
         return {"skills": []}
     with open(TRIGGERS_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def load_project_registry() -> dict:
+    """Load project registry from JSON file."""
+    if not REGISTRY_FILE.exists():
+        return {"projects": {}, "project_types": {}}
+    try:
+        with open(REGISTRY_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, IOError):
+        return {"projects": {}, "project_types": {}}
+
+
+def encode_path(path: str) -> str:
+    """Encode a path like Claude Code does."""
+    normalized = os.path.normpath(os.path.abspath(path))
+    encoded = normalized.replace('/', '-').replace('\\', '-').replace(':', '-')
+    while '--' in encoded:
+        encoded = encoded.replace('--', '-')
+    return encoded.strip('-')
+
+
+def get_project_skills() -> list[str]:
+    """Get skill patterns for the current project from registry."""
+    cwd = os.getcwd()
+    encoded = encode_path(cwd)
+
+    registry = load_project_registry()
+
+    # Check if project is registered
+    if encoded in registry.get("projects", {}):
+        return registry["projects"][encoded].get("skills", [])
+
+    # Not registered - try to detect type
+    project_types = registry.get("project_types", {})
+    for type_name, type_info in project_types.items():
+        patterns = type_info.get("detection_patterns", [])
+        for pattern in patterns:
+            from glob import glob as glob_files
+            matches = glob_files(os.path.join(cwd, pattern), recursive=True)
+            if matches:
+                return type_info.get("default_skills", [])
+
+    return []
+
+
+def skill_matches_patterns(skill_name: str, patterns: list[str]) -> bool:
+    """Check if a skill name matches any of the patterns (supports wildcards)."""
+    for pattern in patterns:
+        if fnmatch.fnmatch(skill_name, pattern):
+            return True
+    return False
+
+
+def apply_project_boost(matches: list, project_skills: list[str]) -> list:
+    """Boost scores for skills matching project configuration."""
+    if not project_skills:
+        return matches
+
+    boosted = []
+    for match in matches:
+        new_match = match.copy()
+        if skill_matches_patterns(match["name"], project_skills):
+            new_match["score"] = min(1.0, match.get("score", 0.5) + PROJECT_SKILL_BOOST)
+            new_match["project_boost"] = True
+        boosted.append(new_match)
+
+    # Re-sort by score after boost
+    boosted.sort(key=lambda x: x["score"], reverse=True)
+    return boosted
 
 def get_tracking_files():
     """Get paths to tracking files."""
@@ -266,6 +345,11 @@ def main():
     # Route the prompt
     matches = semantic_route(user_prompt, skills)
 
+    # Apply project-specific boost
+    project_skills = get_project_skills()
+    if project_skills:
+        matches = apply_project_boost(matches, project_skills)
+
     # Output suggestions and save for tracking
     if matches:
         save_suggestion(matches)
@@ -275,7 +359,8 @@ def main():
         for match in matches[:TOP_K]:
             score_pct = f" ({match['score']:.0%})" if match.get('score') else ""
             skill_name = match['name']
-            print(f"- **{skill_name}**: {match['description']}{score_pct}")
+            boost_indicator = " 📍" if match.get('project_boost') else ""
+            print(f"- **{skill_name}**: {match['description']}{score_pct}{boost_indicator}")
 
         # Show invoke command with actual skill name
         if len(matches) == 1:

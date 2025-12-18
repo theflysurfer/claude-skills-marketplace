@@ -43,7 +43,10 @@
   ],
   "commands_to_sync": [
     "sync.md",
-    "list-resources.md"
+    "list-resources.md",
+    "project-scan.md",
+    "project-list.md",
+    "project-info.md"
   ],
   "scripts_to_sync": [
     "generate-triggers.py",
@@ -53,9 +56,11 @@
     "benchmark-semantic-router.py",
     "session-start-banner.py",
     "session-end-delete-reserved.py",
-    "cleanup-claude-json.py"
+    "cleanup-claude-json.py",
+    "project-registry.py"
   ],
   "configs_to_sync": [
-    "skill-triggers.json"
+    "skill-triggers.json",
+    "projects-registry.json"
   ]
 }

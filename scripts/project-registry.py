@@ -22,9 +22,25 @@ from datetime import datetime
 from glob import glob
 from typing import Optional
 
-# Chemin vers le registre
+# Chemins possibles vers le registre (priorité décroissante)
 SCRIPT_DIR = Path(__file__).parent
-REGISTRY_PATH = SCRIPT_DIR.parent / "configs" / "projects-registry.json"
+HOME_DIR = Path.home()
+
+# Emplacements possibles du registre
+REGISTRY_LOCATIONS = [
+    SCRIPT_DIR.parent / "configs" / "projects-registry.json",  # Marketplace
+    HOME_DIR / ".claude" / "configs" / "projects-registry.json",  # Global
+]
+
+def find_registry_path() -> Path:
+    """Trouve le registre dans les emplacements possibles."""
+    for path in REGISTRY_LOCATIONS:
+        if path.exists():
+            return path
+    # Fallback: premier emplacement (sera créé si nécessaire)
+    return REGISTRY_LOCATIONS[0]
+
+REGISTRY_PATH = find_registry_path()
 
 
 # =============================================================================
