@@ -1,5 +1,5 @@
 ---
-name: commit-message
+name: julien-dev-commit-message
 description: Generates semantic commit messages from git diff following conventional commits format. Use when user asks to commit changes, wants help writing a commit message, or needs to create a git commit.
 allowed-tools: Bash, Read
 ---

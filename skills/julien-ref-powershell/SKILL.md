@@ -2,13 +2,15 @@
 name: julien-ref-powershell
 description: PowerShell naming conventions and organization best practices. Covers Verb-Noun functions, variable naming, module structure, and documentation standards.
 triggers:
+  - aide-moi avec mon powershell
+  - mon powershell ne marche pas
+  - help with my powershell script
+  - write powershell function
+  - powershell style guide
   - powershell
   - powershell script
   - ps1
-  - powershell naming
-  - powershell conventions
   - powershell best practices
-  - powershell module
 ---
 
 # PowerShell - Conventions de Nommage et Organisation

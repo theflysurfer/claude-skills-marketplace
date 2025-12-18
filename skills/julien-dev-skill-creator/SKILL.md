@@ -1,5 +1,5 @@
 ---
-name: julien-dev-tools-skill-creator
+name: julien-dev-skill-creator
 description: "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation."
 license: Apache-2.0
 metadata:

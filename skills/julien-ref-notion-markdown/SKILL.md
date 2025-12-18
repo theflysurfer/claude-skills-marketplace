@@ -2,23 +2,20 @@
 name: julien-ref-notion-markdown
 description: Complete markdown guide for Universal Notion Uploader. Covers 14 element types (headings, callouts, highlights, toggles, embeds, columns, databases), upload modes, and API constraints.
 triggers:
+  - importer markdown dans notion
+  - upload to notion
+  - mettre mon README dans Notion
+  - convertir markdown en page notion
+  - push markdown to notion
+  - format for notion
   - notion markdown
   - notion uploader
-  - markdown notion
   - notion callout
-  - notion parser
-  - markdown to notion
-  - notion api markdown
-  - universal notion uploader
   - notion table
   - notion database
-  - notion database markdown
-  - notion relation
-  - notion internal links
   - notion toggle
   - notion embed
   - notion columns
-  - notion highlight
 ---
 
 # Markdown Structuring Guide for Universal Notion Uploader

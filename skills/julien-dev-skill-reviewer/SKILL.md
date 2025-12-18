@@ -1,5 +1,5 @@
 ---
-name: julien-dev-tools-skill-reviewer
+name: julien-dev-skill-reviewer
 description: "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro."
 license: Apache-2.0
 metadata:

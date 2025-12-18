@@ -1,5 +1,5 @@
 ---
-name: onedrive-git-commit
+name: julien-dev-onedrive-git-commit
 description: Create git commits in OneDrive-synced repositories by bypassing mmap errors using git plumbing commands. Use when git commit fails with "fatal mmap failed Invalid argument" error in OneDrive folders.
 ---
 

@@ -178,7 +178,7 @@
       "content_summary": "Decision Tree: Choosing Your Approach | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall | Best Practices # Web Application Testing"
     },
     {
-      "name": "julien-dev-tools-claude-md-documenter",
+      "name": "julien-dev-claude-md-documenter",
       "triggers": [
         "CLAUDE.md",
         "claude.md",
@@ -202,7 +202,7 @@
       "content_summary": "What is CLAUDE.md? | Core Principles | 1. Keep It Short | 2. Link, Don't Duplicate | 3. Project-Specific Only # CLAUDE.md Documenter"
     },
     {
-      "name": "julien-dev-tools-hook-creator",
+      "name": "julien-dev-hook-creator",
       "triggers": [
         "create hook",
         "new hook",
@@ -226,7 +226,7 @@
       "content_summary": "What Are Hooks? | Available Hook Events | Hook Configuration | Basic Structure | Configuration Fields # Hook Creator"
     },
     {
-      "name": "julien-dev-tools-powershell-profile",
+      "name": "julien-dev-powershell-profile",
       "triggers": [
         "powershell profile",
         "add alias",
@@ -239,7 +239,7 @@
       "content_summary": "Workflow | Reference Files | Skill Chaining | Skills Required Before | Input Expected # PowerShell Profile Manager"
     },
     {
-      "name": "julien-dev-tools-skill-creator",
+      "name": "julien-dev-skill-creator",
       "triggers": [
         "SKILL.md",
         "skill.md",
@@ -265,7 +265,7 @@
       "content_summary": "Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure | Naming & Description # Skill Creator"
     },
     {
-      "name": "julien-dev-tools-skill-renamer",
+      "name": "julien-dev-skill-renamer",
       "triggers": [
         "rename skill",
         "change skill name",
@@ -278,7 +278,7 @@
       "content_summary": "When to Use | What It Does | After Running | Skill Chaining | Skills Required Before # Skill Renamer"
     },
     {
-      "name": "julien-dev-tools-skill-reviewer",
+      "name": "julien-dev-skill-reviewer",
       "triggers": [
         "review skill",
         "check skill",
@@ -498,6 +498,21 @@
       "content_summary": "When to Use This Skill | Server Context | Security Audit Overview | 7 Audit Categories | Scoring System # WordPress Security Audit - Hostinger VPS"
     },
     {
+      "name": "julien-infra-jokers",
+      "triggers": [
+        "deploy jokers",
+        "jokers hockey",
+        "push to production",
+        "check jokers logs",
+        "restart jokers",
+        "jokers database",
+        "jokers build",
+        "jokers pm2"
+      ],
+      "description": "Complete management for Jokers Hockey website - deployment, build checks, database migrations (Drizzle ORM), and PM2 process management. Use for any Jokers site operation.",
+      "content_summary": "Quick Reference | 1. Deployment | Quick Deploy (Git) | Pre-Deployment Checks | Verify Deployment # Jokers Hockey - Infrastructure Management"
+    },
+    {
       "name": "julien-mcp-installer",
       "triggers": [
         "install mcp",
@@ -531,7 +546,7 @@
       "content_summary": "Trigger Conditions | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) | Actions (Scripts prennent arguments positionnels) # OnePiece Workflow Skill"
     },
     {
-      "name": "subtitle-translation",
+      "name": "julien-media-subtitle-translation",
       "triggers": [
         "translate subtitles",
         "translate srt",
@@ -564,12 +579,16 @@
     {
       "name": "julien-ref-ahk-v2",
       "triggers": [
+        "raccourci clavier windows",
+        "automatiser une tâche windows",
+        "mon script ahk ne marche pas",
+        "aide pour mon script ahk",
+        "help with my ahk script",
+        "create a hotkey",
         "autohotkey v2",
         "ahk v2",
-        "autohotkey 2",
         "ahk2",
-        "ahk v2 script",
-        "autohotkey v2 best practices"
+        "autohotkey tutorial"
       ],
       "description": "Best practices AutoHotkey v2. Use when writing AHK v2 scripts - covers global variable declarations, SetTimer usage, event handlers, and GUI positioning.",
       "content_summary": "RÈGLE CRITIQUE - VARIABLES GLOBALES | DÉCLARATION OBLIGATOIRE DANS CHAQUE FONCTION | LISTE COMPLÈTE DES VARIABLES À DÉCLARER | STRUCTURE MODULAIRE AUTOHOTKEY V2 | En-tête Standard # AutoHotkey v2 - Best Practices pour LLM"
@@ -577,13 +596,16 @@
     {
       "name": "julien-ref-astro-install",
       "triggers": [
+        "installer astro",
+        "démarrer un projet astro",
+        "astro sur windows",
+        "erreur installation astro",
+        "how to install astro",
+        "getting started with astro",
+        "astro tailwind setup",
         "astro",
         "astro install",
-        "astro windows",
-        "astro tailwind",
-        "install astro",
-        "create astro project",
-        "astro setup"
+        "create astro project"
       ],
       "description": "Guide d'installation Astro + Tailwind sur Windows. Covers Node.js setup, pnpm, project creation, common Windows issues, and troubleshooting.",
       "content_summary": "Prérequis | 1. Node.js (version 18.20.8+ ou 20.3.0+ ou 22.0.0+) | 2. Gestionnaire de paquets | Méthode 1 : Installation Rapide (Recommandée) | Étape 1 : Créer le projet # Guide d'Installation Astro + Tailwind sur Windows"
@@ -591,13 +613,16 @@
     {
       "name": "julien-ref-batch",
       "triggers": [
+        "comment écrire un script batch",
+        "mon bat ne marche pas",
+        "aide pour un fichier bat",
+        "how to write a batch script",
+        "help me make a bat file",
+        "automate tasks with batch",
         "batch script",
         "bat file",
-        "batch file",
         "windows batch",
-        "cmd script",
-        "batch best practices",
-        ".bat"
+        "cmd script"
       ],
       "description": "Best practices for Windows Batch scripts (.bat). Covers encoding, path handling, variables, error management, and common pitfalls.",
       "content_summary": "STRUCTURE ET ENCODAGE | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS | Variables de Chemin Robustes # Best Practices - Scripts Batch (.bat)"
@@ -605,17 +630,18 @@
     {
       "name": "julien-ref-doc-production",
       "triggers": [
-        "documentation methodology",
-        "doc production",
+        "comment documenter mon projet",
+        "aide-moi à structurer ma doc",
+        "je veux écrire la doc",
+        "modèle de document",
+        "écrire un rapport",
+        "how to document my project",
+        "help me write documentation",
+        "project documentation guide",
         "create documentation",
-        "document type",
         "incident report",
         "session report",
-        "guide template",
-        "audit document",
-        "documentation structure",
-        "yaml metadata",
-        "living docs"
+        "guide template"
       ],
       "description": "Documentation production methodology with DRY principles. Covers 8 document types (GUIDE, INCIDENT, SESSION, AUDIT, RECHERCHE, etc.), naming conventions, and YAML metadata.",
       "content_summary": "Principles | Structure | Naming Conventions | EVOLVING Docs (living docs) | EVENT-BASED Docs (snapshots) # Documentation Production Methodology"
@@ -623,16 +649,16 @@
     {
       "name": "julien-ref-doc-review",
       "triggers": [
+        "relire ce document",
+        "annoter un fichier",
+        "marquer ce qui est à corriger",
+        "trouver les TODO",
+        "review this document",
+        "proofread this file",
+        "check my documentation",
+        "flag issues in documentation",
         "document review",
-        "doc review",
-        "review methodology",
-        "annotation tags",
-        "fix tag",
-        "todo tag",
-        "verify tag",
-        "macro flag",
-        "review comments",
-        "documentation annotation"
+        "annotation tags"
       ],
       "description": "Simplified document review methodology with 4 core tags (@FIX, @TODO, @VERIFY, @OK) and [MACRO] flag for systemic impact. Use for annotating and reviewing documentation.",
       "content_summary": "Overview | Tag System | CORE Tags (4 essential) | SPECIAL Tags (particular use) | [MACRO] Impact Flag # Document Review Methodology"
@@ -640,23 +666,20 @@
     {
       "name": "julien-ref-notion-markdown",
       "triggers": [
+        "importer markdown dans notion",
+        "upload to notion",
+        "mettre mon README dans Notion",
+        "convertir markdown en page notion",
+        "push markdown to notion",
+        "format for notion",
         "notion markdown",
         "notion uploader",
-        "markdown notion",
         "notion callout",
-        "notion parser",
-        "markdown to notion",
-        "notion api markdown",
-        "universal notion uploader",
         "notion table",
         "notion database",
-        "notion database markdown",
-        "notion relation",
-        "notion internal links",
         "notion toggle",
         "notion embed",
-        "notion columns",
-        "notion highlight"
+        "notion columns"
       ],
       "description": "Complete markdown guide for Universal Notion Uploader. Covers 14 element types (headings, callouts, highlights, toggles, embeds, columns, databases), upload modes, and API constraints.",
       "content_summary": "Parser Architecture | Supported Elements | 1. Headings (H1-H3 Only) | Collapsible Headings | 2. Rich Text (Inline Formatting) # Markdown Structuring Guide for Universal Notion Uploader"
@@ -664,13 +687,15 @@
     {
       "name": "julien-ref-powershell",
       "triggers": [
+        "aide-moi avec mon powershell",
+        "mon powershell ne marche pas",
+        "help with my powershell script",
+        "write powershell function",
+        "powershell style guide",
         "powershell",
         "powershell script",
         "ps1",
-        "powershell naming",
-        "powershell conventions",
-        "powershell best practices",
-        "powershell module"
+        "powershell best practices"
       ],
       "description": "PowerShell naming conventions and organization best practices. Covers Verb-Noun functions, variable naming, module structure, and documentation standards.",
       "content_summary": "Vue d'Ensemble | Structure d'Organisation Générique | Structure de Base | Conventions de Nommage | 1. Fichiers PowerShell # PowerShell - Conventions de Nommage et Organisation"

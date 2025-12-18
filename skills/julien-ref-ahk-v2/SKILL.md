@@ -2,12 +2,16 @@
 name: julien-ref-ahk-v2
 description: Best practices AutoHotkey v2. Use when writing AHK v2 scripts - covers global variable declarations, SetTimer usage, event handlers, and GUI positioning.
 triggers:
+  - raccourci clavier windows
+  - automatiser une tâche windows
+  - mon script ahk ne marche pas
+  - aide pour mon script ahk
+  - help with my ahk script
+  - create a hotkey
   - autohotkey v2
   - ahk v2
-  - autohotkey 2
   - ahk2
-  - ahk v2 script
-  - autohotkey v2 best practices
+  - autohotkey tutorial
 ---
 
 # AutoHotkey v2 - Best Practices pour LLM

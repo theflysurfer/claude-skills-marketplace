@@ -2,16 +2,16 @@
 name: julien-ref-doc-review
 description: Simplified document review methodology with 4 core tags (@FIX, @TODO, @VERIFY, @OK) and [MACRO] flag for systemic impact. Use for annotating and reviewing documentation.
 triggers:
+  - relire ce document
+  - annoter un fichier
+  - marquer ce qui est à corriger
+  - trouver les TODO
+  - review this document
+  - proofread this file
+  - check my documentation
+  - flag issues in documentation
   - document review
-  - doc review
-  - review methodology
   - annotation tags
-  - fix tag
-  - todo tag
-  - verify tag
-  - macro flag
-  - review comments
-  - documentation annotation
 ---
 
 # Document Review Methodology

@@ -2,17 +2,18 @@
 name: julien-ref-doc-production
 description: Documentation production methodology with DRY principles. Covers 8 document types (GUIDE, INCIDENT, SESSION, AUDIT, RECHERCHE, etc.), naming conventions, and YAML metadata.
 triggers:
-  - documentation methodology
-  - doc production
+  - comment documenter mon projet
+  - aide-moi à structurer ma doc
+  - je veux écrire la doc
+  - modèle de document
+  - écrire un rapport
+  - how to document my project
+  - help me write documentation
+  - project documentation guide
   - create documentation
-  - document type
   - incident report
   - session report
   - guide template
-  - audit document
-  - documentation structure
-  - yaml metadata
-  - living docs
 ---
 
 # Documentation Production Methodology

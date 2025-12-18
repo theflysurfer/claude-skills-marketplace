@@ -1,5 +1,5 @@
 ---
-name: subtitle-translation
+name: julien-media-subtitle-translation
 description: Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation.
 triggers:
   - translate subtitles

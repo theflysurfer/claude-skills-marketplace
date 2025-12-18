@@ -1,5 +1,5 @@
 ---
-name: julien-dev-tools-powershell-profile
+name: julien-dev-powershell-profile
 description: "Manage PowerShell profile, aliases, functions. Triggers: add alias, update profile, modify claude command, Microsoft.PowerShell_profile.ps1"
 triggers:
   - powershell profile

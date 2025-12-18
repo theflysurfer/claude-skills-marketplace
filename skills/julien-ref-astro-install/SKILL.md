@@ -2,13 +2,16 @@
 name: julien-ref-astro-install
 description: Guide d'installation Astro + Tailwind sur Windows. Covers Node.js setup, pnpm, project creation, common Windows issues, and troubleshooting.
 triggers:
+  - installer astro
+  - démarrer un projet astro
+  - astro sur windows
+  - erreur installation astro
+  - how to install astro
+  - getting started with astro
+  - astro tailwind setup
   - astro
   - astro install
-  - astro windows
-  - astro tailwind
-  - install astro
   - create astro project
-  - astro setup
 ---
 
 # Guide d'Installation Astro + Tailwind sur Windows

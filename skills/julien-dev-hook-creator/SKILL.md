@@ -1,5 +1,5 @@
 ---
-name: julien-dev-tools-hook-creator
+name: julien-dev-hook-creator
 description: Guide for creating Claude Code hooks - shell commands that execute at specific lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse, etc.). Use when users want to automate actions, add validation, logging, or integrate external tools into Claude Code workflows.
 license: Apache-2.0
 metadata:

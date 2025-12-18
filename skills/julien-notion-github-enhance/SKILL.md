@@ -1,5 +1,5 @@
 ---
-name: notion-github-enhance-note
+name: julien-notion-github-enhance
 description: Enrich a Github [DB] entry with GitHub API metadata (description, stars, language, cover image). Use when user wants to populate a GitHub repo entry with live metadata, enhance github entry, or add github info.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: julien-dev-tools-skill-renamer
+name: julien-dev-skill-renamer
 description: "Rename a skill across the marketplace. Use when: user wants to rename a skill, change skill name, or refactor skill naming."
 license: Apache-2.0
 metadata:

@@ -2,13 +2,16 @@
 name: julien-ref-batch
 description: Best practices for Windows Batch scripts (.bat). Covers encoding, path handling, variables, error management, and common pitfalls.
 triggers:
+  - comment écrire un script batch
+  - mon bat ne marche pas
+  - aide pour un fichier bat
+  - how to write a batch script
+  - help me make a bat file
+  - automate tasks with batch
   - batch script
   - bat file
-  - batch file
   - windows batch
   - cmd script
-  - batch best practices
-  - .bat
 ---
 
 # Best Practices - Scripts Batch (.bat)
