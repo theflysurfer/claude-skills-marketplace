@@ -1,0 +1,2495 @@
+{
+  "$schema": "./schemas/projects-registry.schema.json",
+  "version": "2.0.0",
+  "last_updated": "2025-12-18T01:37:58.577736",
+  "last_scan": "2025-12-18T01:37:54.271343",
+  "scan_roots": [
+    {
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "depth": 1,
+      "naming_pattern": "YYYY.MM *",
+      "description": "Projets de code principaux",
+      "auto_detect_type": true
+    },
+    {
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger",
+      "depth": 1,
+      "naming_pattern": "*",
+      "description": "Référentiels Hostinger VPS",
+      "default_type": "hostinger-vps"
+    },
+    {
+      "path": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts",
+      "depth": 1,
+      "naming_pattern": "*",
+      "description": "Scripts AutoHotkey",
+      "default_type": "autohotkey",
+      "default_skills": [
+        "julien-dev-tools-*"
+      ]
+    }
+  ],
+  "scan_stats": {
+    "scanned": 158,
+    "new": 0,
+    "updated": 158,
+    "missing": 0
+  },
+  "project_types": {
+    "marketplace": {
+      "description": "Marketplace de skills Claude Code",
+      "default_skills": [
+        "*"
+      ],
+      "detection_patterns": [
+        "**/skills/**/SKILL.md",
+        ".claude-plugin/**"
+      ]
+    },
+    "wordpress-hostinger": {
+      "description": "Site WordPress sur Hostinger VPS",
+      "default_skills": [
+        "julien-wordpress-*",
+        "julien-infra-hostinger-*"
+      ],
+      "detection_patterns": [
+        "**/wp-content/**",
+        "**/wordpress/**"
+      ]
+    },
+    "hostinger-vps": {
+      "description": "Projet déployé sur Hostinger VPS",
+      "default_skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "detection_patterns": [
+        "**/docker-compose*.yml",
+        "**/nginx/**",
+        "**/.hostinger/**"
+      ]
+    },
+    "calibre": {
+      "description": "Gestion de bibliothèque Calibre",
+      "default_skills": [
+        "julien-calibre-*"
+      ],
+      "detection_patterns": [
+        "**/calibre/**",
+        "**/*.opf",
+        "**/metadata.db"
+      ]
+    },
+    "media-server": {
+      "description": "Serveur de streaming media",
+      "default_skills": [
+        "julien-media-*",
+        "onepiece-workflow"
+      ],
+      "detection_patterns": [
+        "**/jellyfin/**",
+        "**/plex/**",
+        "**/transcoding/**"
+      ]
+    },
+    "notion-integration": {
+      "description": "Intégration Notion",
+      "default_skills": [
+        "notion-*"
+      ],
+      "detection_patterns": [
+        "**/*notion*/**",
+        "**/notion-*.py"
+      ]
+    },
+    "autohotkey": {
+      "description": "Scripts AutoHotkey",
+      "default_skills": [
+        "julien-dev-tools-*"
+      ],
+      "detection_patterns": [
+        "**/*.ahk",
+        "**/*.ah2"
+      ]
+    },
+    "nodejs": {
+      "description": "Projet Node.js",
+      "default_skills": [],
+      "detection_patterns": [
+        "package.json",
+        "**/node_modules/**"
+      ]
+    },
+    "python": {
+      "description": "Projet Python",
+      "default_skills": [],
+      "detection_patterns": [
+        "requirements.txt",
+        "pyproject.toml",
+        "setup.py",
+        "**/*.py"
+      ]
+    }
+  },
+  "projects": {
+    "C-Users-julien-OneDrive-Coding-_Projets de code-04_LLM work": {
+      "id": "04_llm-work",
+      "name": "04_LLM work",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\04_LLM work",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": "github.com/ElyseEnergy/sharepoint-dashboards",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.239447",
+      "last_seen": "2025-12-18T01:37:54.274968"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.10 Chess with voice": {
+      "id": "chess-with-voice",
+      "name": "Chess with voice",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.10 Chess with voice",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/chess-with-voice",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.278815",
+      "last_seen": "2025-12-18T01:37:54.303263"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.10 Streamlit": {
+      "id": "streamlit",
+      "name": "Streamlit",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.10 Streamlit",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.305068",
+      "last_seen": "2025-12-18T01:37:54.333428"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.11 Anniversaires": {
+      "id": "anniversaires",
+      "name": "Anniversaires",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.11 Anniversaires",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/Anniversaires",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.374627",
+      "last_seen": "2025-12-18T01:37:54.359299"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.11 Divers scripts non classés": {
+      "id": "divers-scripts-non-classés",
+      "name": "Divers scripts non classés",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.11 Divers scripts non classés",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.406993",
+      "last_seen": "2025-12-18T01:37:54.387012"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.11 Health tracker": {
+      "id": "health-tracker",
+      "name": "Health tracker",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.11 Health tracker",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.508525",
+      "last_seen": "2025-12-18T01:37:54.406800"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.11 Outlook management": {
+      "id": "outlook-management",
+      "name": "Outlook management",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.11 Outlook management",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/outlook-management",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.557378",
+      "last_seen": "2025-12-18T01:37:54.432657"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.11 PPTX to md": {
+      "id": "pptx-to-md",
+      "name": "PPTX to md",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.11 PPTX to md",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/pptx-to-md",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.597027",
+      "last_seen": "2025-12-18T01:37:54.458769"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.11 RSS and other parser": {
+      "id": "rss-and-other-parser",
+      "name": "RSS and other parser",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.11 RSS and other parser",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/rss-parser",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.639696",
+      "last_seen": "2025-12-18T01:37:54.487448"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.11.22 Coaching": {
+      "id": "2024.11.22-coaching",
+      "name": "2024.11.22 Coaching",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.11.22 Coaching",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/Simple-Coaching",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.694147",
+      "last_seen": "2025-12-18T01:37:54.513299"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.11.22 streamLLM with syntax higlighting": {
+      "id": "2024.11.22-streamllm-with-syntax-higlighting",
+      "name": "2024.11.22 streamLLM with syntax higlighting",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.11.22 streamLLM with syntax higlighting",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/Stream-Ollama-with-syntax-higlighting",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.740320",
+      "last_seen": "2025-12-18T01:37:54.539776"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.11.24 emacs writing app": {
+      "id": "2024.11.24-emacs-writing-app",
+      "name": "2024.11.24 emacs writing app",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.11.24 emacs writing app",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/emacs-writing-app",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:17.778835",
+      "last_seen": "2025-12-18T01:37:54.567506"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.11.24 Skills manager": {
+      "id": "2024.11.24-skills-manager",
+      "name": "2024.11.24 Skills manager",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.11.24 Skills manager",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": "github.com/theflysurfer/skills-manager",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:19.178099",
+      "last_seen": "2025-12-18T01:37:54.594758"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.11.28 Blind Chess learning": {
+      "id": "2024.11.28-blind-chess-learning",
+      "name": "2024.11.28 Blind Chess learning",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.11.28 Blind Chess learning",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/blind-chess-learning",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:19.221609",
+      "last_seen": "2025-12-18T01:37:54.623420"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.12.01 Strategic intelligence - chat": {
+      "id": "2024.12.01-strategic-intelligence---chat",
+      "name": "2024.12.01 Strategic intelligence - chat",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.12.01 Strategic intelligence - chat",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/strategic-intelligence-chat",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:19.267526",
+      "last_seen": "2025-12-18T01:37:54.649559"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2024.12.02 LLM master - chat": {
+      "id": "2024.12.02-llm-master---chat",
+      "name": "2024.12.02 LLM master - chat",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2024.12.02 LLM master - chat",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/llm-master-chat",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:19.311959",
+      "last_seen": "2025-12-18T01:37:54.676926"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.01.02 Youtube categorizer -chat": {
+      "id": "2025.01.02-youtube-categorizer--chat",
+      "name": "2025.01.02 Youtube categorizer -chat",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.01.02 Youtube categorizer -chat",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/youtube-categorizer-chat",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:19.360138",
+      "last_seen": "2025-12-18T01:37:54.706039"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.03.01 Nutrition tracker - active": {
+      "id": "2025.03.01-nutrition-tracker---active",
+      "name": "2025.03.01 Nutrition tracker - active",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.03.01 Nutrition tracker - active",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/Nutrition-tracker",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:36.258411",
+      "last_seen": "2025-12-18T01:37:54.736270"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.03.01 Youtube Music Downloader - fonctionnel": {
+      "id": "2025.03.01-youtube-music-downloader---fonctionnel",
+      "name": "2025.03.01 Youtube Music Downloader - fonctionnel",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.03.01 Youtube Music Downloader - fonctionnel",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/Youtube-Music-Downloader",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:44.057418",
+      "last_seen": "2025-12-18T01:37:54.762185"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.03.10 Langage learning - active": {
+      "id": "2025.03.10-langage-learning---active",
+      "name": "2025.03.10 Langage learning - active",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.03.10 Langage learning - active",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:44.096435",
+      "last_seen": "2025-12-18T01:37:54.788211"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.03.18 Recording transcription": {
+      "id": "2025.03.18-recording-transcription",
+      "name": "2025.03.18 Recording transcription",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.03.18 Recording transcription",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:33:58.025860",
+      "last_seen": "2025-12-18T01:37:54.813868"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.03.19 Training finder": {
+      "id": "2025.03.19-training-finder",
+      "name": "2025.03.19 Training finder",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.03.19 Training finder",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:09.047218",
+      "last_seen": "2025-12-18T01:37:54.840510"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.03.20 markdrop": {
+      "id": "2025.03.20-markdrop",
+      "name": "2025.03.20 markdrop",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.03.20 markdrop",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:41.846767",
+      "last_seen": "2025-12-18T01:37:54.869905"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.04 Excel live sync": {
+      "id": "excel-live-sync",
+      "name": "Excel live sync",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.04 Excel live sync",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:44.396250",
+      "last_seen": "2025-12-18T01:37:54.897082"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.05 Develop XLAM": {
+      "id": "develop-xlam",
+      "name": "Develop XLAM",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.05 Develop XLAM",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/2025.05-Develop-XLAM",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:46.774883",
+      "last_seen": "2025-12-18T01:37:54.923844"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.05 New addin EE perso": {
+      "id": "new-addin-ee-perso",
+      "name": "New addin EE perso",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.05 New addin EE perso",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/ElyseEnergy/Addin-EE-New",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:49.263120",
+      "last_seen": "2025-12-18T01:37:54.951892"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.06 Update EE Addin": {
+      "id": "update-ee-addin",
+      "name": "Update EE Addin",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.06 Update EE Addin",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:49.314902",
+      "last_seen": "2025-12-18T01:37:54.979095"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.07 Chess learning app": {
+      "id": "chess-learning-app",
+      "name": "Chess learning app",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.07 Chess learning app",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/chess-learning-app",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:49.364458",
+      "last_seen": "2025-12-18T01:37:55.006134"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.07 Master ByPassPaywall": {
+      "id": "master-bypasspaywall",
+      "name": "Master ByPassPaywall",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.07 Master ByPassPaywall",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:49.396443",
+      "last_seen": "2025-12-18T01:37:55.032639"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.08 WebMind Analyzer MCP": {
+      "id": "webmind-analyzer-mcp",
+      "name": "WebMind Analyzer MCP",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.08 WebMind Analyzer MCP",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/WebMindMCP",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:49.483557",
+      "last_seen": "2025-12-18T01:37:55.059845"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Better voice recognition": {
+      "id": "better-voice-recognition",
+      "name": "Better voice recognition",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Better voice recognition",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:49.543389",
+      "last_seen": "2025-12-18T01:37:55.087376"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Chrome Teams extension": {
+      "id": "chrome-teams-extension",
+      "name": "Chrome Teams extension",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Chrome Teams extension",
+      "type": "notion-integration",
+      "skills": [
+        "notion-*"
+      ],
+      "tags": [
+        "notion-integration"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:50.697927",
+      "last_seen": "2025-12-18T01:37:55.113258"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Claude desktop management": {
+      "id": "claude-desktop-management",
+      "name": "Claude desktop management",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Claude desktop management",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:50.754618",
+      "last_seen": "2025-12-18T01:37:55.140802"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Contracts mapper": {
+      "id": "contracts-mapper",
+      "name": "Contracts mapper",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Contracts mapper",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/contracts-mapper",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:50.805261",
+      "last_seen": "2025-12-18T01:37:55.168836"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Cooking manager": {
+      "id": "cooking-manager",
+      "name": "Cooking manager",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Cooking manager",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": "github.com/theflysurfer/cooking-manager",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:51.100479",
+      "last_seen": "2025-12-18T01:37:55.199510"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Documentation IT Elyse": {
+      "id": "documentation-it-elyse",
+      "name": "Documentation IT Elyse",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Documentation IT Elyse",
+      "type": "notion-integration",
+      "skills": [
+        "notion-*"
+      ],
+      "tags": [
+        "notion-integration"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:52.266407",
+      "last_seen": "2025-12-18T01:37:55.230640"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Documentation Ragic": {
+      "id": "documentation-ragic",
+      "name": "Documentation Ragic",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Documentation Ragic",
+      "type": "notion-integration",
+      "skills": [
+        "notion-*"
+      ],
+      "tags": [
+        "notion-integration"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:53.003290",
+      "last_seen": "2025-12-18T01:37:55.259630"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Excel launcher for LLM": {
+      "id": "excel-launcher-for-llm",
+      "name": "Excel launcher for LLM",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Excel launcher for LLM",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:58.188370",
+      "last_seen": "2025-12-18T01:37:55.289010"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Extension chrome scraping mcp": {
+      "id": "extension-chrome-scraping-mcp",
+      "name": "Extension chrome scraping mcp",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Extension chrome scraping mcp",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/extension-chrome-scraping-mcp",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:58.237325",
+      "last_seen": "2025-12-18T01:37:55.316338"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Extension Notion Outlook web": {
+      "id": "extension-notion-outlook-web",
+      "name": "Extension Notion Outlook web",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Extension Notion Outlook web",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:34:58.308237",
+      "last_seen": "2025-12-18T01:37:55.345927"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Notion Uploader": {
+      "id": "notion-uploader",
+      "name": "Notion Uploader",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Notion Uploader",
+      "type": "notion-integration",
+      "skills": [
+        "notion-*"
+      ],
+      "tags": [
+        "notion-integration"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:00.158359",
+      "last_seen": "2025-12-18T01:37:55.373642"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09.18 Sharepoint parsing": {
+      "id": "2025.09.18-sharepoint-parsing",
+      "name": "2025.09.18 Sharepoint parsing",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09.18 Sharepoint parsing",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:05.324320",
+      "last_seen": "2025-12-18T01:37:55.400069"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09.20 Project portfolio dashboard": {
+      "id": "2025.09.20-project-portfolio-dashboard",
+      "name": "2025.09.20 Project portfolio dashboard",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09.20 Project portfolio dashboard",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:05.509479",
+      "last_seen": "2025-12-18T01:37:55.421457"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 40 euros du MWh": {
+      "id": "40-euros-du-mwh",
+      "name": "40 euros du MWh",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 40 euros du MWh",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": "github.com/theflysurfer/DownTo40",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:05.586187",
+      "last_seen": "2025-12-18T01:37:55.450018"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Analyse des couts API": {
+      "id": "analyse-des-couts-api",
+      "name": "Analyse des couts API",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Analyse des couts API",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/analyse-des-couts-api",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:05.638957",
+      "last_seen": "2025-12-18T01:37:55.474898"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Analyse facture d'eau": {
+      "id": "analyse-facture-d'eau",
+      "name": "Analyse facture d'eau",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Analyse facture d'eau",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/analyse-facture-d-eau",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:05.689298",
+      "last_seen": "2025-12-18T01:37:55.495543"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Analyse repo Python": {
+      "id": "analyse-repo-python",
+      "name": "Analyse repo Python",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Analyse repo Python",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/analyse-repo-python",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:05.931167",
+      "last_seen": "2025-12-18T01:37:55.523215"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Analyse tickets support": {
+      "id": "analyse-tickets-support",
+      "name": "Analyse tickets support",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Analyse tickets support",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:06.008638",
+      "last_seen": "2025-12-18T01:37:55.551130"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 AutoWeb Crawling": {
+      "id": "autoweb-crawling",
+      "name": "AutoWeb Crawling",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 AutoWeb Crawling",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:06.053431",
+      "last_seen": "2025-12-18T01:37:55.578076"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Capex sensi dashboarding": {
+      "id": "capex-sensi-dashboarding",
+      "name": "Capex sensi dashboarding",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Capex sensi dashboarding",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": "github.com/theflysurfer/Capex-sensi-dashboarding",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:14.512237",
+      "last_seen": "2025-12-18T01:37:55.605360"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Chantier sur google drive": {
+      "id": "chantier-sur-google-drive",
+      "name": "Chantier sur google drive",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Chantier sur google drive",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": "github.com/theflysurfer/Photos_On_Google_Drive",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:14.588947",
+      "last_seen": "2025-12-18T01:37:55.632635"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Claude config manager": {
+      "id": "claude-config-manager",
+      "name": "Claude config manager",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Claude config manager",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/claude-config-manager",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:14.634245",
+      "last_seen": "2025-12-18T01:37:55.658445"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Delete null files": {
+      "id": "delete-null-files",
+      "name": "Delete null files",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Delete null files",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": "github.com/theflysurfer/delete-null-files",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:14.692076",
+      "last_seen": "2025-12-18T01:37:55.685613"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Elyse Energy css": {
+      "id": "elyse-energy-css",
+      "name": "Elyse Energy css",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Elyse Energy css",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/elyse-energy-css",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:14.762861",
+      "last_seen": "2025-12-18T01:37:55.712373"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Emacs manager": {
+      "id": "emacs-manager",
+      "name": "Emacs manager",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Emacs manager",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/emacs-manager",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:14.809858",
+      "last_seen": "2025-12-18T01:37:55.738572"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Emploi du temps des enfants [Local]": {
+      "id": "emploi-du-temps-des-enfants-local",
+      "name": "Emploi du temps des enfants [Local]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Emploi du temps des enfants [Local]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:14.857404",
+      "last_seen": "2025-12-18T01:37:55.764416"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Everything to Git": {
+      "id": "everything-to-git",
+      "name": "Everything to Git",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Everything to Git",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:14.905090",
+      "last_seen": "2025-12-18T01:37:55.791790"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Famille Cacahuète": {
+      "id": "famille-cacahuète",
+      "name": "Famille Cacahuète",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Famille Cacahuète",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/famille-cacahuete",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:14.977296",
+      "last_seen": "2025-12-18T01:37:55.819825"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Gantt llm oriented": {
+      "id": "gantt-llm-oriented",
+      "name": "Gantt llm oriented",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Gantt llm oriented",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/gantt-llm",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:15.033796",
+      "last_seen": "2025-12-18T01:37:55.846748"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 human world chain": {
+      "id": "human-world-chain",
+      "name": "human world chain",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 human world chain",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": "github.com/theflysurfer/human-world-chain",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:15.132231",
+      "last_seen": "2025-12-18T01:37:55.874093"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Intranet Elyse": {
+      "id": "intranet-elyse",
+      "name": "Intranet Elyse",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Intranet Elyse",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/intranet-elyse",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:15.193899",
+      "last_seen": "2025-12-18T01:37:55.900458"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Intune": {
+      "id": "intune",
+      "name": "Intune",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Intune",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:15.269477",
+      "last_seen": "2025-12-18T01:37:55.926094"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Migrate to Github": {
+      "id": "migrate-to-github",
+      "name": "Migrate to Github",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Migrate to Github",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/Migrate-to-Github",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:15.359820",
+      "last_seen": "2025-12-18T01:37:55.953071"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Migration PC": {
+      "id": "migration-pc",
+      "name": "Migration PC",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Migration PC",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/migration-pc",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:17.494889",
+      "last_seen": "2025-12-18T01:37:55.979818"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Music Impro chooser": {
+      "id": "music-impro-chooser",
+      "name": "Music Impro chooser",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Music Impro chooser",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:21.690566",
+      "last_seen": "2025-12-18T01:37:56.009735"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 N8N workflows": {
+      "id": "n8n-workflows",
+      "name": "N8N workflows",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 N8N workflows",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": "github.com/theflysurfer/n8n-workflows",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:21.738995",
+      "last_seen": "2025-12-18T01:37:56.036535"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 New Dimmer": {
+      "id": "new-dimmer",
+      "name": "New Dimmer",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 New Dimmer",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": "github.com/theflysurfer/new-dimmer",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:21.784270",
+      "last_seen": "2025-12-18T01:37:56.061957"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Nginx Manager": {
+      "id": "nginx-manager",
+      "name": "Nginx Manager",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Nginx Manager",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": "github.com/theflysurfer/nginx-manager",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:21.848368",
+      "last_seen": "2025-12-18T01:37:56.088307"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Notion Cleaning": {
+      "id": "notion-cleaning",
+      "name": "Notion Cleaning",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Notion Cleaning",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/notion-cleaning",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:21.950000",
+      "last_seen": "2025-12-18T01:37:56.114149"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Notion internal api": {
+      "id": "notion-internal-api",
+      "name": "Notion internal api",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Notion internal api",
+      "type": "notion-integration",
+      "skills": [
+        "notion-*"
+      ],
+      "tags": [
+        "notion-integration"
+      ],
+      "git_remote": "github.com/theflysurfer/notion-internal-api",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:27.895167",
+      "last_seen": "2025-12-18T01:37:56.142441"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Online BP": {
+      "id": "online-bp",
+      "name": "Online BP",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Online BP",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": "github.com/theflysurfer/online-bp",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:30.940542",
+      "last_seen": "2025-12-18T01:37:56.169921"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Outlook Email Generator": {
+      "id": "outlook-email-generator",
+      "name": "Outlook Email Generator",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Outlook Email Generator",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/Email-Generator-from-Markdown",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:31.005930",
+      "last_seen": "2025-12-18T01:37:56.196970"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Paperless": {
+      "id": "paperless",
+      "name": "Paperless",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Paperless",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/paperless",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:31.060627",
+      "last_seen": "2025-12-18T01:37:56.229152"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Rag perso": {
+      "id": "rag-perso",
+      "name": "Rag perso",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rag perso",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": "github.com/theflysurfer/memvid-fork",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:31.275703",
+      "last_seen": "2025-12-18T01:37:56.254070"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Rclone OneDrive": {
+      "id": "rclone-onedrive",
+      "name": "Rclone OneDrive",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Rclone OneDrive",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/rclone-onedrive",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:31.468628",
+      "last_seen": "2025-12-18T01:37:56.281928"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Remote LLM": {
+      "id": "remote-llm",
+      "name": "Remote LLM",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Remote LLM",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": "github.com/theflysurfer/remote-llm",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:31.528636",
+      "last_seen": "2025-12-18T01:37:56.311141"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Restauration sites": {
+      "id": "restauration-sites",
+      "name": "Restauration sites",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Restauration sites",
+      "type": "wordpress-hostinger",
+      "skills": [
+        "julien-wordpress-*",
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "wordpress-hostinger"
+      ],
+      "git_remote": "github.com/theflysurfer/restauration-sites",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:31.602832",
+      "last_seen": "2025-12-18T01:37:56.338912"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Référencement négo": {
+      "id": "référencement-négo",
+      "name": "Référencement négo",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Référencement négo",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:42.734510",
+      "last_seen": "2025-12-18T01:37:56.366019"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Setup coding": {
+      "id": "setup-coding",
+      "name": "Setup coding",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Setup coding",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:47.484584",
+      "last_seen": "2025-12-18T01:37:56.391824"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Sharepoint mapping": {
+      "id": "sharepoint-mapping",
+      "name": "Sharepoint mapping",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Sharepoint mapping",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": "github.com/ElyseEnergy/sharepoint-dashboards",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:47.611911",
+      "last_seen": "2025-12-18T01:37:56.418653"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Site internet Clem": {
+      "id": "site-internet-clem",
+      "name": "Site internet Clem",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": "github.com/theflysurfer/Site-Wordpress-Clemence",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:47.689179",
+      "last_seen": "2025-12-18T01:37:56.445647"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Site internet Cristina": {
+      "id": "site-internet-cristina",
+      "name": "Site internet Cristina",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Cristina",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:57.908498",
+      "last_seen": "2025-12-18T01:37:56.472496"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Site internet Solidarlink": {
+      "id": "site-internet-solidarlink",
+      "name": "Site internet Solidarlink",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Solidarlink",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/site-internet-solidarlink",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:57.945300",
+      "last_seen": "2025-12-18T01:37:56.499097"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Space reclaimer": {
+      "id": "space-reclaimer",
+      "name": "Space reclaimer",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Space reclaimer",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/Space-Reclaimer",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:35:57.986534",
+      "last_seen": "2025-12-18T01:37:56.525412"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Vacances Noël": {
+      "id": "vacances-noël",
+      "name": "Vacances Noël",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Vacances Noël",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": "github.com/theflysurfer/vacances-noel",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:09.824930",
+      "last_seen": "2025-12-18T01:37:56.551647"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Wake chain": {
+      "id": "wake-chain",
+      "name": "Wake chain",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Wake chain",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": "github.com/theflysurfer/wake-chain",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:09.876737",
+      "last_seen": "2025-12-18T01:37:56.577367"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.10 Wordpress Hostinger": {
+      "id": "wordpress-hostinger",
+      "name": "Wordpress Hostinger",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Wordpress Hostinger",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/wordpress-hostinger",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:09.928390",
+      "last_seen": "2025-12-18T01:37:56.604978"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Android on windows": {
+      "id": "android-on-windows",
+      "name": "Android on windows",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Android on windows",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:09.966646",
+      "last_seen": "2025-12-18T01:37:56.630613"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 cal.com": {
+      "id": "cal.com",
+      "name": "cal.com",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 cal.com",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:09.993251",
+      "last_seen": "2025-12-18T01:37:56.657240"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Calibre": {
+      "id": "calibre",
+      "name": "Calibre",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.079438",
+      "last_seen": "2025-12-18T01:37:56.684336"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Christmas website": {
+      "id": "christmas-website",
+      "name": "Christmas website",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Christmas website",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.115091",
+      "last_seen": "2025-12-18T01:37:56.708589"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Claude Code MarketPlace": {
+      "id": "claude-code-marketplace",
+      "name": "Claude Code MarketPlace",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace",
+      "type": "marketplace",
+      "skills": [
+        "*"
+      ],
+      "tags": [
+        "marketplace"
+      ],
+      "git_remote": "github.com/theflysurfer/claude-skills-marketplace",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.188994",
+      "last_seen": "2025-12-18T01:37:56.735937"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Cline CLI": {
+      "id": "cline-cli",
+      "name": "Cline CLI",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Cline CLI",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.227870",
+      "last_seen": "2025-12-18T01:37:56.761074"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Command Line Tools management": {
+      "id": "command-line-tools-management",
+      "name": "Command Line Tools management",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Command Line Tools management",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/cli-tools-config",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.501333",
+      "last_seen": "2025-12-18T01:37:56.786747"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Comptes Google Enfants": {
+      "id": "comptes-google-enfants",
+      "name": "Comptes Google Enfants",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Comptes Google Enfants",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.531767",
+      "last_seen": "2025-12-18T01:37:56.812750"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Iphone and Ipad": {
+      "id": "iphone-and-ipad",
+      "name": "Iphone and Ipad",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Iphone and Ipad",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.602927",
+      "last_seen": "2025-12-18T01:37:56.838098"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 macos vm": {
+      "id": "macos-vm",
+      "name": "macos vm",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 macos vm",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.652103",
+      "last_seen": "2025-12-18T01:37:56.861815"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Migrate to DropBox": {
+      "id": "migrate-to-dropbox",
+      "name": "Migrate to DropBox",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Migrate to DropBox",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.705569",
+      "last_seen": "2025-12-18T01:37:56.887761"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Migration to UV": {
+      "id": "migration-to-uv",
+      "name": "Migration to UV",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Migration to UV",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.738591",
+      "last_seen": "2025-12-18T01:37:56.914260"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Notion Zimprobagnais": {
+      "id": "notion-zimprobagnais",
+      "name": "Notion Zimprobagnais",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Notion Zimprobagnais",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.775394",
+      "last_seen": "2025-12-18T01:37:56.940261"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 PC cleaning": {
+      "id": "pc-cleaning",
+      "name": "PC cleaning",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 PC cleaning",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/pc-cleaner",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.840609",
+      "last_seen": "2025-12-18T01:37:56.966230"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Photomaker": {
+      "id": "photomaker",
+      "name": "Photomaker",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Photomaker",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:10.876834",
+      "last_seen": "2025-12-18T01:37:56.989299"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Professionnal headshot": {
+      "id": "professionnal-headshot",
+      "name": "Professionnal headshot",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Professionnal headshot",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:13.975425",
+      "last_seen": "2025-12-18T01:37:57.010822"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Screenpipe": {
+      "id": "screenpipe",
+      "name": "Screenpipe",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Screenpipe",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:14.302413",
+      "last_seen": "2025-12-18T01:37:57.035169"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Site Web Clem 2": {
+      "id": "site-web-clem-2",
+      "name": "Site Web Clem 2",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Site Web Clem 2",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": "github.com/theflysurfer/Site-web-Clem-2",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:18.219878",
+      "last_seen": "2025-12-18T01:37:57.061333"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Site Web Jokers": {
+      "id": "site-web-jokers",
+      "name": "Site Web Jokers",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Site Web Jokers",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": "github.com/theflysurfer/jokers-hockey",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.091443",
+      "last_seen": "2025-12-18T01:37:57.091233"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 TinyWall": {
+      "id": "tinywall",
+      "name": "TinyWall",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 TinyWall",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.141002",
+      "last_seen": "2025-12-18T01:37:57.119529"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Voyage en italie [Hostinger]": {
+      "id": "voyage-en-italie-hostinger",
+      "name": "Voyage en italie [Hostinger]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Voyage en italie [Hostinger]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.181774",
+      "last_seen": "2025-12-18T01:37:57.146078"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Windhawk": {
+      "id": "windhawk",
+      "name": "Windhawk",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Windhawk",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/windhawk-config",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.216965",
+      "last_seen": "2025-12-18T01:37:57.172502"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Windows Theming": {
+      "id": "windows-theming",
+      "name": "Windows Theming",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Windows Theming",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.245884",
+      "last_seen": "2025-12-18T01:37:57.199859"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 yt-chat": {
+      "id": "yt-chat",
+      "name": "yt-chat",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 yt-chat",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.294753",
+      "last_seen": "2025-12-18T01:37:57.228808"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Atlantis streaming  [Hostinger]": {
+      "id": "atlantis-streaming--hostinger",
+      "name": "Atlantis streaming  [Hostinger]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Atlantis streaming  [Hostinger]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/atlantis-streaming",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.338520",
+      "last_seen": "2025-12-18T01:37:57.258467"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Ca Handi Long [Hostinger]": {
+      "id": "ca-handi-long-hostinger",
+      "name": "Ca Handi Long [Hostinger]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Ca Handi Long [Hostinger]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.381368",
+      "last_seen": "2025-12-18T01:37:57.288806"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Chrome manager": {
+      "id": "chrome-manager",
+      "name": "Chrome manager",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Chrome manager",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.413640",
+      "last_seen": "2025-12-18T01:37:57.319553"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Civ 1 streaming [Hostinger]": {
+      "id": "civ-1-streaming-hostinger",
+      "name": "Civ 1 streaming [Hostinger]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Civ 1 streaming [Hostinger]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/civ1-streaming",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.452224",
+      "last_seen": "2025-12-18T01:37:57.347725"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Civ 2 streaming Gemini": {
+      "id": "civ-2-streaming-gemini",
+      "name": "Civ 2 streaming Gemini",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Civ 2 streaming Gemini",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.487396",
+      "last_seen": "2025-12-18T01:37:57.375447"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Civ 2 streaming [Hostinger]": {
+      "id": "civ-2-streaming-hostinger",
+      "name": "Civ 2 streaming [Hostinger]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Civ 2 streaming [Hostinger]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.528393",
+      "last_seen": "2025-12-18T01:37:57.404119"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Claude code UI": {
+      "id": "claude-code-ui",
+      "name": "Claude code UI",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Claude code UI",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.568137",
+      "last_seen": "2025-12-18T01:37:57.431612"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Claude Mem": {
+      "id": "claude-mem",
+      "name": "Claude Mem",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Claude Mem",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.599655",
+      "last_seen": "2025-12-18T01:37:57.459229"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Clean Windows": {
+      "id": "clean-windows",
+      "name": "Clean Windows",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Clean Windows",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:28.632007",
+      "last_seen": "2025-12-18T01:37:57.487984"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Ebooks and audiobooks": {
+      "id": "ebooks-and-audiobooks",
+      "name": "Ebooks and audiobooks",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Ebooks and audiobooks",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:29.042993",
+      "last_seen": "2025-12-18T01:37:57.514970"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Fetch GPT chats": {
+      "id": "fetch-gpt-chats",
+      "name": "Fetch GPT chats",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Fetch GPT chats",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": "github.com/theflysurfer/ai-chat-export-to-markdown",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:29.818856",
+      "last_seen": "2025-12-18T01:37:57.541888"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Genomincir": {
+      "id": "genomincir",
+      "name": "Genomincir",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Genomincir",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:30.170613",
+      "last_seen": "2025-12-18T01:37:57.569903"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Google services [Skills]": {
+      "id": "google-services-skills",
+      "name": "Google services [Skills]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Google services [Skills]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:30.203583",
+      "last_seen": "2025-12-18T01:37:57.596299"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Groupe de paroles Hommes [Hostinger]": {
+      "id": "groupe-de-paroles-hommes-hostinger",
+      "name": "Groupe de paroles Hommes [Hostinger]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Groupe de paroles Hommes [Hostinger]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:30.259958",
+      "last_seen": "2025-12-18T01:37:57.622737"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Lively": {
+      "id": "lively",
+      "name": "Lively",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Lively",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": "github.com/theflysurfer/lively-wallpaper-automation",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:30.740152",
+      "last_seen": "2025-12-18T01:37:57.646535"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Local Docker images manager": {
+      "id": "local-docker-images-manager",
+      "name": "Local Docker images manager",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Local Docker images manager",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:31.804000",
+      "last_seen": "2025-12-18T01:37:57.673502"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Media streaming server [Hostinger]": {
+      "id": "media-streaming-server-hostinger",
+      "name": "Media streaming server [Hostinger]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/media-streaming-server",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:31.844390",
+      "last_seen": "2025-12-18T01:37:57.700382"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Money Manager": {
+      "id": "money-manager",
+      "name": "Money Manager",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Money Manager",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:31.874949",
+      "last_seen": "2025-12-18T01:37:57.727878"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Mount Cloud Drives": {
+      "id": "mount-cloud-drives",
+      "name": "Mount Cloud Drives",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Mount Cloud Drives",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:31.906468",
+      "last_seen": "2025-12-18T01:37:57.757356"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Powershell tab detection": {
+      "id": "powershell-tab-detection",
+      "name": "Powershell tab detection",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Powershell tab detection",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:31.937371",
+      "last_seen": "2025-12-18T01:37:57.785071"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Queue manager": {
+      "id": "queue-manager",
+      "name": "Queue manager",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Queue manager",
+      "type": "python",
+      "skills": [],
+      "tags": [
+        "python"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:31.987664",
+      "last_seen": "2025-12-18T01:37:57.811806"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Railroad Tycoon streaming [Hostinger]": {
+      "id": "railroad-tycoon-streaming-hostinger",
+      "name": "Railroad Tycoon streaming [Hostinger]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Railroad Tycoon streaming [Hostinger]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": "github.com/theflysurfer/railroad-tycoon-streaming",
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:32.023796",
+      "last_seen": "2025-12-18T01:37:57.839683"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Scratchpad windows": {
+      "id": "scratchpad-windows",
+      "name": "Scratchpad windows",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Scratchpad windows",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:32.051611",
+      "last_seen": "2025-12-18T01:37:57.864961"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Sleeker vscode": {
+      "id": "sleeker-vscode",
+      "name": "Sleeker vscode",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Sleeker vscode",
+      "type": "nodejs",
+      "skills": [],
+      "tags": [
+        "nodejs"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:35.490824",
+      "last_seen": "2025-12-18T01:37:57.892363"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Uninstaller manager [Local]": {
+      "id": "uninstaller-manager-local",
+      "name": "Uninstaller manager [Local]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Uninstaller manager [Local]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:35.531793",
+      "last_seen": "2025-12-18T01:37:57.920168"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Vinted [Local]": {
+      "id": "vinted-local",
+      "name": "Vinted [Local]",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Vinted [Local]",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:35.573631",
+      "last_seen": "2025-12-18T01:37:57.945982"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-Dev-Tools-Local": {
+      "id": "dev-tools-local",
+      "name": "Dev-Tools-Local",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\Dev-Tools-Local",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:35.648052",
+      "last_seen": "2025-12-18T01:37:57.972883"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-MCP servers": {
+      "id": "mcp-servers",
+      "name": "MCP servers",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\MCP servers",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:36.753214",
+      "last_seen": "2025-12-18T01:37:57.999489"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-Media-Stack-Local": {
+      "id": "media-stack-local",
+      "name": "Media-Stack-Local",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\Media-Stack-Local",
+      "type": "media-server",
+      "skills": [
+        "julien-media-*",
+        "onepiece-workflow"
+      ],
+      "tags": [
+        "media-server"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:36.987083",
+      "last_seen": "2025-12-18T01:37:58.027187"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-Paperflow-Local": {
+      "id": "paperflow-local",
+      "name": "Paperflow-Local",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\Paperflow-Local",
+      "type": null,
+      "skills": [],
+      "tags": [],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.023941",
+      "last_seen": "2025-12-18T01:37:58.054439"
+    },
+    "C-Users-julien-OneDrive-Coding-_Projets de code-RAGFlow-Local": {
+      "id": "ragflow-local",
+      "name": "RAGFlow-Local",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\RAGFlow-Local",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.064934",
+      "last_seen": "2025-12-18T01:37:58.081280"
+    },
+    "C-Users-julien-OneDrive-Coding-_référentiels de code-Hostinger-apps": {
+      "id": "apps",
+      "name": "apps",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger\\apps",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.127320",
+      "last_seen": "2025-12-18T01:37:58.108952"
+    },
+    "C-Users-julien-OneDrive-Coding-_référentiels de code-Hostinger-archive": {
+      "id": "archive",
+      "name": "archive",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger\\archive",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.177646",
+      "last_seen": "2025-12-18T01:37:58.137188"
+    },
+    "C-Users-julien-OneDrive-Coding-_référentiels de code-Hostinger-assets": {
+      "id": "assets",
+      "name": "assets",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger\\assets",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.211079",
+      "last_seen": "2025-12-18T01:37:58.165456"
+    },
+    "C-Users-julien-OneDrive-Coding-_référentiels de code-Hostinger-docs": {
+      "id": "docs",
+      "name": "docs",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger\\docs",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.255712",
+      "last_seen": "2025-12-18T01:37:58.192483"
+    },
+    "C-Users-julien-OneDrive-Coding-_référentiels de code-Hostinger-infrastructure": {
+      "id": "infrastructure",
+      "name": "infrastructure",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger\\infrastructure",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.285735",
+      "last_seen": "2025-12-18T01:37:58.219990"
+    },
+    "C-Users-julien-OneDrive-Coding-_référentiels de code-Hostinger-scripts": {
+      "id": "scripts",
+      "name": "scripts",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger\\scripts",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.327931",
+      "last_seen": "2025-12-18T01:37:58.246842"
+    },
+    "C-Users-julien-OneDrive-Coding-_référentiels de code-Hostinger-site": {
+      "id": "site",
+      "name": "site",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger\\site",
+      "type": "hostinger-vps",
+      "skills": [
+        "julien-infra-hostinger-*"
+      ],
+      "tags": [
+        "hostinger-vps"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code\\Hostinger",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.460958",
+      "last_seen": "2025-12-18T01:37:58.275880"
+    },
+    "C-Users-julien-OneDrive-Portable Softwares-Autohotkey scripts-Ahk Wrapper Powershell": {
+      "id": "ahk-wrapper-powershell",
+      "name": "Ahk Wrapper Powershell",
+      "path": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts\\Ahk Wrapper Powershell",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.512505",
+      "last_seen": "2025-12-18T01:37:58.305677"
+    },
+    "C-Users-julien-OneDrive-Portable Softwares-Autohotkey scripts-AhkCommandPicker": {
+      "id": "ahkcommandpicker",
+      "name": "AhkCommandPicker",
+      "path": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts\\AhkCommandPicker",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": "github.com/theflysurfer/AhkCommandPicker",
+      "root": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.578059",
+      "last_seen": "2025-12-18T01:37:58.337807"
+    },
+    "C-Users-julien-OneDrive-Portable Softwares-Autohotkey scripts-ai-text-assistant": {
+      "id": "ai-text-assistant",
+      "name": "ai-text-assistant",
+      "path": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts\\ai-text-assistant",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.617958",
+      "last_seen": "2025-12-18T01:37:58.367356"
+    },
+    "C-Users-julien-OneDrive-Portable Softwares-Autohotkey scripts-AutohotkeyV1": {
+      "id": "autohotkeyv1",
+      "name": "AutohotkeyV1",
+      "path": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts\\AutohotkeyV1",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.652976",
+      "last_seen": "2025-12-18T01:37:58.394313"
+    },
+    "C-Users-julien-OneDrive-Portable Softwares-Autohotkey scripts-AutoHotkeyV2": {
+      "id": "autohotkeyv2",
+      "name": "AutoHotkeyV2",
+      "path": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts\\AutoHotkeyV2",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.694807",
+      "last_seen": "2025-12-18T01:37:58.422470"
+    },
+    "C-Users-julien-OneDrive-Portable Softwares-Autohotkey scripts-Insert Sentences": {
+      "id": "insert-sentences",
+      "name": "Insert Sentences",
+      "path": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts\\Insert Sentences",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.763481",
+      "last_seen": "2025-12-18T01:37:58.450168"
+    },
+    "C-Users-julien-OneDrive-Portable Softwares-Autohotkey scripts-Migration_Tracking": {
+      "id": "migration_tracking",
+      "name": "Migration_Tracking",
+      "path": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts\\Migration_Tracking",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:37.810342",
+      "last_seen": "2025-12-18T01:37:58.478741"
+    },
+    "C-Users-julien-OneDrive-Portable Softwares-Autohotkey scripts-organized_scripts": {
+      "id": "organized_scripts",
+      "name": "organized_scripts",
+      "path": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts\\organized_scripts",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": null,
+      "root": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:38.237137",
+      "last_seen": "2025-12-18T01:37:58.505634"
+    },
+    "C-Users-julien-OneDrive-Portable Softwares-Autohotkey scripts-Script Perso": {
+      "id": "script-perso",
+      "name": "Script Perso",
+      "path": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts\\Script Perso",
+      "type": "autohotkey",
+      "skills": [
+        "julien-dev-tools-*"
+      ],
+      "tags": [
+        "autohotkey"
+      ],
+      "git_remote": "github.com/theflysurfer/Script-Perso",
+      "root": "C:\\Users\\julien\\OneDrive\\Portable Softwares\\Autohotkey scripts",
+      "status": "active",
+      "discovered_at": "2025-12-18T01:36:38.346310",
+      "last_seen": "2025-12-18T01:37:58.531436"
+    }
+  }
+}
