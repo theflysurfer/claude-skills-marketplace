@@ -26,16 +26,8 @@ Guide for LLMs generating markdown destined to be uploaded to Notion via the Uni
 
 ## Parser Architecture
 
-```
-core/parsers/
-├── MarkdownParser      # Main parser for pages
-│   ├── AdmonitionParser    # Multi-standard callouts
-│   ├── RichTextParser      # Inline formatting + links
-│   ├── TableParser         # Markdown tables → Notion
-│   └── ImageParser         # Local and external images
-└── DatabaseParser      # Databases from YAML frontmatter
-    └── Relations & Property types
-```
+**MarkdownParser** (pages): AdmonitionParser, RichTextParser, TableParser, ImageParser
+**DatabaseParser**: YAML frontmatter → Notion databases with relations
 
 ---
 
@@ -385,21 +377,10 @@ properties:
 
 #### Supported Property Types
 
-| Type | Description | Example Value |
-|------|-------------|---------------|
-| `title` | Main name column (required) | Item Name |
-| `rich_text` | Formatted text | **bold** text |
-| `number` | Numeric value | 42 |
-| `select` | Single choice | Option A |
-| `multi_select` | Multiple choices | Tag1, Tag2 |
-| `date` | Date or date range | 2025-01-15 |
-| `checkbox` | Boolean | true / false |
-| `url` | Web link | https://... |
-| `email` | Email address | user@example.com |
-| `phone_number` | Phone | +33 6 12... |
-| `relation` | Link to other database | Related Item |
-| `rollup` | Aggregation from relation | (computed) |
-| `formula` | Calculated field | (computed) |
+**Basic**: `title` (required), `rich_text`, `number`, `checkbox`, `date`
+**Selection**: `select`, `multi_select`
+**Links**: `url`, `email`, `phone_number`
+**Relations**: `relation`, `rollup`, `formula` (computed)
 
 #### Database Relations
 
@@ -473,45 +454,18 @@ features:
 
 ## NOT Supported
 
-### Markdown Features
-- Footnotes (`[^1]`)
-- Definition lists
-- HTML inline
-- Emoji shortcodes (`:smile:`)
-- Headings H4-H6
-- Nested blockquotes (`>> Level 2`)
-- Indented code blocks (use fenced instead)
+Footnotes (`[^1]`), Definition lists, HTML inline, Emoji shortcodes (`:smile:`), H4-H6 headings, Nested blockquotes (`>>`), Indented code blocks
 
 ---
 
 ## Patterns to Avoid
 
-### Heading too deep
-```markdown
-#### H4 Heading  ❌
-```
-→ Use `### H3` or `**Pseudo H4 in bold**`
-
-### Table too wide
-```markdown
-| C1 | C2 | C3 | ... | C12 |  ⚠️ Hard to read
-```
-→ Split into multiple tables
-
-### Malformed callout
-```markdown
-> [!NOTE] Title
-Content without >  ❌
-```
-→ Every line needs `>`
-
-### Code block without language
-```markdown
-```
-code without language  ⚠️ Works but not optimal
-```
-```
-→ Always specify language
+| Pattern | Problem | Solution |
+|---------|---------|----------|
+| `#### H4` | Not supported | Use `### H3` or `**Bold text**` |
+| >12 columns | Hard to read | Split tables |
+| Callout without `>` | Breaks parsing | Every line needs `>` prefix |
+| Code without language | Suboptimal | Always specify language |
 
 ---
 
@@ -529,34 +483,6 @@ code without language  ⚠️ Works but not optimal
 
 ---
 
-## Quick Reference
+## Related Skills
 
-### Inline Formatting
-```markdown
-**bold**  __bold__
-*italic*  _italic_
-`code`
-~~strikethrough~~
-[link](url)
-```
-
-### Blocks
-```markdown
-# H1  ## H2  ### H3
-- [ ] Task unchecked
-- [x] Task checked
-- List  * List  + List
-1. Ordered
-> Blockquote
-> [!NOTE] Callout
-```python
-Code
-```
-| Table | Header |
-![Image](url)
-```
-
-### Callout Types
-```
-NOTE  TIP  IMPORTANT  WARNING  CAUTION  DANGER  INFO  EXAMPLE
-```
+- **julien-ref-doc-production**: Use for documentation structure before uploading to Notion

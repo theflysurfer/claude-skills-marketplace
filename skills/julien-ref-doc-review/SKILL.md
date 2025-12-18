@@ -198,3 +198,9 @@ triggers:
 | `@CHECK-FORMULA` | `@VERIFY: Formula - [description]` |
 | `@CHECK-LINK` | `@VERIFY: Link - [description]` |
 | `@METHODOLOGY` | `@TODO: Methodology - [description]` |
+
+---
+
+## Related Skills
+
+- **julien-ref-doc-production**: Use before reviewing to create documentation with proper structure and templates

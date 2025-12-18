@@ -264,3 +264,9 @@ related: [related files]
 - [ ] Commits mentioned
 - [ ] Files listed
 - [ ] Timeline clear
+
+---
+
+## Related Skills
+
+- **julien-ref-doc-review**: Use after writing to annotate and review documentation with @FIX, @TODO, @VERIFY tags

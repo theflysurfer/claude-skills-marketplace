@@ -178,6 +178,47 @@
       "content_summary": "Decision Tree: Choosing Your Approach | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall | Best Practices # Web Application Testing"
     },
     {
+      "name": "julien-calibre",
+      "triggers": [
+        "calibre",
+        "ebook",
+        "epub",
+        "book library",
+        "add book to calibre",
+        "import ebook",
+        "add pdf to library",
+        "download from gutenberg",
+        "remove book from calibre",
+        "delete duplicates",
+        "convert pdf to epub",
+        "convert to epub",
+        "batch convert pdf",
+        "update metadata",
+        "fix book title",
+        "set cover",
+        "edit book details",
+        "analyze library",
+        "clean up library",
+        "find duplicates",
+        "library maintenance",
+        "sync to e-reader",
+        "send to kindle",
+        "transfer to sony",
+        "bibliotheque calibre",
+        "livre numerique",
+        "ajouter livre calibre",
+        "importer ebook",
+        "convertir pdf en epub",
+        "nettoyer bibliotheque",
+        "supprimer livre",
+        "mettre a jour metadonnees",
+        "synchroniser liseuse",
+        "envoyer sur liseuse"
+      ],
+      "description": "Complete Calibre library management - add/remove books, convert PDF to EPUB, metadata editing, library analysis, cleanup, and e-reader sync (Sony PRS-T1). Use for any ebook or Calibre operation.",
+      "content_summary": "1. Add Books | Add Local File | Add with Metadata | Add Folder Recursively | Download from Project Gutenberg # Calibre Library Management"
+    },
+    {
       "name": "julien-dev-claude-md-documenter",
       "triggers": [
         "CLAUDE.md",
@@ -326,17 +367,18 @@
       "content_summary": "Server Info | When to Use This Skill | Common Scenarios | 1. Unrelated Histories | Option A: Merge with allow-unrelated-histories (preserves VPS changes) # Git VPS Sync - Hostinger srv759970"
     },
     {
-      "name": "julien-infra-hostinger-audit",
+      "name": "julien-infra-hostinger-core",
       "triggers": [
-        "audit vps",
-        "what's running",
-        "inventory hostinger",
-        "server audit",
-        "discover services",
-        "list containers"
+        "ssh hostinger",
+        "connect server",
+        "disk space",
+        "server maintenance",
+        "cleanup vps",
+        "free space",
+        "system status"
       ],
-      "description": "Infrastructure audit and discovery for Hostinger VPS srv759970. Inventories all Docker containers, images, scripts, cron jobs, systemd services, portals. Compares actual state vs registry.yml, identifies orphans, duplicates, and undocumented resources. Generates YAML inventory files and HTML dashboard.",
-      "content_summary": "When to Use This Skill | Server Info | Audit Modes | Full Audit (default) | Discovery Only () # Hostinger Infrastructure Audit Skill"
+      "description": "Core server management for Hostinger VPS srv759970 - SSH access, system status, maintenance tasks, and disk space reclamation. Use for any server operation, connection issues, or maintenance tasks.",
+      "content_summary": "Server Info | 1. SSH Connection | Quick Connect | SSH Config (~/.ssh/config) | Fix Permission Denied (Windows) # Hostinger VPS Core Management"
     },
     {
       "name": "julien-infra-hostinger-database",
@@ -352,150 +394,46 @@
       "content_summary": "Overview | Databases Available | When to Use This Skill | PostgreSQL Operations | Connection # Database Management - Hostinger VPS"
     },
     {
-      "name": "julien-infra-hostinger-deployment",
-      "triggers": [
-        "deploy hostinger",
-        "deploy incluzact",
-        "deploy vps",
-        "mise en prod",
-        "production deployment"
-      ],
-      "description": "Complete deployment workflow for INCLUZ'HACT on Hostinger VPS srv759970. Orchestrates Git sync, build, PM2 restart, and verification for production and preview environments.",
-      "content_summary": "Overview | Server Info | Environments | When to Use This Skill | Complete Deployment Workflow # Hostinger Deployment - INCLUZ'HACT"
-    },
-    {
       "name": "julien-infra-hostinger-docker",
       "triggers": [
         "docker",
         "container",
-        "conteneur",
-        "image docker",
-        "start docker container",
-        "docker compose up",
-        "lancer les conteneurs",
-        "optimize docker images",
-        "nettoyer les images docker",
-        "container keeps crashing",
-        "build docker image",
-        "docker logs command",
-        "restart all containers",
-        "dockerfile optimization",
         "docker compose",
-        "container management"
+        "optimize docker",
+        "container crash",
+        "docker logs"
       ],
-      "description": "This skill should be used when managing Docker services on the Hostinger VPS (srv759970, automation@69.62.108.82). It provides workflows for optimizing images, deploying services, troubleshooting errors, and maintaining the Docker infrastructure for Python/FastAPI, Streamlit, Next.js, and ML applications.",
-      "content_summary": "Server Configuration | Core Workflows | Status Check | Deploy Service | Optimize Image # Docker Hostinger VPS Management"
+      "description": "Docker management for Hostinger VPS srv759970 - container operations, image optimization, WordPress Docker, troubleshooting. Use for any Docker operation, container issues, or image management.",
+      "content_summary": "Server Info | 1. Status & Monitoring | Quick Status | Container Stats | Logs # Hostinger Docker Management"
     },
     {
-      "name": "julien-infra-hostinger-fail2ban",
+      "name": "julien-infra-hostinger-security",
       "triggers": [
         "fail2ban",
         "ban ip",
         "unban ip",
-        "brute force protection",
-        "wordpress security"
+        "wordpress security",
+        "security audit",
+        "audit vps",
+        "brute force"
       ],
-      "description": "Manage Fail2ban jails and IP bans on Hostinger VPS srv759970. Use for WordPress security hardening, IP ban/unban operations, monitoring brute-force attacks, or when security audit shows missing Fail2ban protection.",
-      "content_summary": "When to Use This Skill | Server Context | WordPress Jails Overview | Detection Patterns | Quick Commands # Fail2ban Management - Hostinger VPS"
+      "description": "Security management for Hostinger VPS srv759970 - Fail2ban, WordPress security audits (25+ checks, 0-100% scoring), infrastructure audit. Use for security hardening, IP bans, or security assessments.",
+      "content_summary": "Server Info | 1. Fail2ban Management | WordPress Jails | Status Check | Ban/Unban IP # Hostinger Security Management"
     },
     {
-      "name": "julien-infra-hostinger-maintenance",
-      "triggers": [
-        "maintenance vps",
-        "clean cache",
-        "server cleanup",
-        "check ssl",
-        "system health"
-      ],
-      "description": "Recurring maintenance tasks for Hostinger VPS srv759970 - clean Docker resources, clear system cache, check disk space, verify SSL certificates, update services. Use when performing scheduled maintenance, cleanup operations, or proactive system health checks.",
-      "content_summary": "When to Use This Skill | Server Info | Weekly Maintenance Tasks | Task 1: Clean Docker Resources | Task 2: Check Disk Space # Hostinger VPS Maintenance Runbooks"
-    },
-    {
-      "name": "julien-infra-hostinger-nginx",
+      "name": "julien-infra-hostinger-web",
       "triggers": [
         "nginx",
         "reverse proxy",
-        "ssl",
-        "https",
-        "certbot",
-        "let's encrypt",
-        "certificat ssl",
-        "configure nginx for my website",
-        "setup reverse proxy",
-        "je veux configurer nginx",
-        "SSL certificate renewal",
-        "certificat ssl expiré",
-        "configure https for domain",
-        "nginx 502 bad gateway error",
-        "proxy pass configuration",
-        "ajouter un nouveau site nginx",
-        "nginx configuration",
         "ssl certificate",
-        "web server config"
+        "certbot",
+        "deploy hostinger",
+        "deploy incluzact",
+        "502 error",
+        "504 error"
       ],
-      "description": "Manage Nginx reverse proxy on Hostinger VPS srv759970 (automation@69.62.108.82). Use for site configuration, SSL/Let's Encrypt setup, reverse proxy configuration, troubleshooting 502/504 errors, certbot operations, or nginx reload/restart.",
-      "content_summary": "Server Info | When to Use This Skill | Common Operations | 1. Add New Site | 2. SSL Setup with Let's Encrypt # Nginx Management on Hostinger VPS"
-    },
-    {
-      "name": "julien-infra-hostinger-nginx-audit",
-      "triggers": [
-        "nginx audit",
-        "check nginx",
-        "ipv6 nginx",
-        "ssl certificate check",
-        "nginx config"
-      ],
-      "description": "Audit and auto-fix Nginx configurations on Hostinger VPS srv759970 for IPv6 support, SSL issues, and best practices. Detects missing IPv6 listeners, validates SSL certificates, and applies fixes automatically or generates reports.",
-      "content_summary": "Server Info | When to Use This Skill | Audit Categories | 1. IPv6 Listener Audit (CRITICAL) | 2. SSL Certificate Audit # Nginx Configuration Audit & Auto-Fix"
-    },
-    {
-      "name": "julien-infra-hostinger-space-reclaim",
-      "triggers": [
-        "disk space",
-        "free space",
-        "reclaim space",
-        "disk full",
-        "cleanup docker",
-        "disk usage"
-      ],
-      "description": "Reclaim disk space on Hostinger VPS (srv759970) through automated analysis and cleanup of Docker images, volumes, logs, and application data. Use when disk space is critical (>90% usage) or for regular maintenance to prevent space issues.",
-      "content_summary": "When to Use | Server Context | Workflow Overview | Phase 1: Analysis (ALWAYS FIRST) | Phase 2: Safe Cleanup (NO USER APPROVAL NEEDED) # Hostinger Space Reclamation"
-    },
-    {
-      "name": "julien-infra-hostinger-ssh",
-      "triggers": [
-        "ssh",
-        "server",
-        "vps",
-        "connect server",
-        "hostinger",
-        "serveur",
-        "connexion serveur",
-        "se connecter au serveur",
-        "connect to server via ssh",
-        "connexion ssh au serveur",
-        "hostinger vps access",
-        "server connection",
-        "accéder au vps",
-        "ssh key authentication",
-        "remote server access",
-        "terminal connection to vps",
-        "clé ssh"
-      ],
-      "description": "SSH connection and server management for Hostinger VPS srv759970 (automation@69.62.108.82). Use for connecting to server, checking system status, managing users, troubleshooting SSH connection issues, or when Permission denied errors occur.",
-      "content_summary": "Server Info | When to Use This Skill | Quick Connection | Basic SSH | Quick Status Check # SSH & Server Management - Hostinger VPS"
-    },
-    {
-      "name": "julien-infra-hostinger-wordpress-security",
-      "triggers": [
-        "wordpress security",
-        "audit wordpress",
-        "wp security",
-        "wordpress hardening",
-        "securiser wordpress"
-      ],
-      "description": "Audit sécurité WordPress (25+ checks, scoring 0-100%). Use for WordPress security audits, after WordPress deployment, or when security hardening needed. Checks Nginx, files, WP config, users, plugins, database, and Fail2ban.",
-      "content_summary": "When to Use This Skill | Server Context | Security Audit Overview | 7 Audit Categories | Scoring System # WordPress Security Audit - Hostinger VPS"
+      "description": "Web infrastructure for Hostinger VPS - Nginx reverse proxy, SSL/Let's Encrypt, configuration audit, and application deployment (INCLUZ'HACT). Use for site configuration, SSL setup, 502/504 errors, or deployments.",
+      "content_summary": "Server Info | 1. Nginx Management | Add New Site | SSL with Let's Encrypt | Common Commands # Hostinger Web Infrastructure"
     },
     {
       "name": "julien-infra-jokers",
