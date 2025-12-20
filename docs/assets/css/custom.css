@@ -93,3 +93,124 @@
 .md-footer {
   margin-top: 2rem;
 }
+
+/* ========================================
+   Skill Action Buttons
+   ======================================== */
+
+.skill-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--md-primary-fg-color);
+  color: white !important;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+  margin: 0.25rem;
+}
+
+.skill-action-btn:hover {
+  background: var(--md-primary-fg-color--dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.skill-action-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.skill-action-btn.api-offline {
+  background: var(--md-accent-fg-color);
+}
+
+.skill-action-btn.api-offline::after {
+  content: " (copy)";
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Copy button variant */
+.skill-copy-btn {
+  background: #6b7280;
+}
+
+.skill-copy-btn:hover {
+  background: #4b5563;
+}
+
+/* Button group */
+.skill-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+}
+
+/* Notification toasts */
+.skill-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  z-index: 9999;
+  animation: slideIn 0.3s ease;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-notification-success {
+  background: #22c55e;
+}
+
+.skill-notification-error {
+  background: #ef4444;
+}
+
+.skill-notification-info {
+  background: var(--md-primary-fg-color);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* API status indicator */
+.api-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.api-status.online {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.api-status.offline {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}

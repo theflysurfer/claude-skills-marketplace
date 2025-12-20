@@ -1,5 +1,5 @@
 ---
-name: julien-dev-skill-creator
+name: julien-skill-creator
 description: "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation."
 license: Apache-2.0
 metadata:
@@ -80,22 +80,49 @@ Ask clarifying questions:
 - "Give examples of how it would be used"
 - "What should trigger this skill?"
 
-### Step 2: Plan Reusable Contents
+### Step 2: Choose Destination
+
+**ALWAYS ask the user where to place the skill:**
+
+| Destination | Path | Use Case |
+|-------------|------|----------|
+| **Local (projet)** | `.claude/skills/` | Skill spécifique à ce projet uniquement |
+| **Marketplace** | `~/.../Claude Code MarketPlace/skills/` | Skill réutilisable, à partager/sync |
+
+**Questions to ask:**
+- "Cette skill est-elle spécifique à ce projet ou réutilisable ailleurs?"
+- "Voulez-vous la partager via le marketplace?"
+
+**Naming convention by destination:**
+- Local: simple name (`my-project-deploy`)
+- Marketplace: prefixed (`julien-{category}-{name}`)
+
+### Step 3: Plan Reusable Contents
 
 For each example, identify:
 - Scripts needed (deterministic/repeated code)
 - References needed (schemas, docs, policies)
 - Assets needed (templates, images)
 
-### Step 3: Initialize Skill
+### Step 4: Initialize Skill
 
+**For Local (project):**
 ```bash
-scripts/init_skill.py <skill-name> --path <output-directory>
+mkdir -p .claude/skills/<skill-name>
+# Or copy template
+cp -r ~/.claude/skills/julien-skill-creator/assets/template-skill/ .claude/skills/<skill-name>/
 ```
 
-Or copy template: `cp -r assets/template-skill/ path/to/new-skill/`
+**For Marketplace:**
+```bash
+# Use marketplace path
+MARKETPLACE="$HOME/OneDrive/Coding/_Projets de code/2025.11 Claude Code MarketPlace"
+mkdir -p "$MARKETPLACE/skills/<skill-name>"
+# Or use init script
+python "$MARKETPLACE/scripts/init_skill.py" <skill-name> --path "$MARKETPLACE/skills/"
+```
 
-### Step 4: Edit the Skill
+### Step 5: Edit the Skill
 
 #### YAML Frontmatter
 
@@ -124,7 +151,7 @@ Required subsections:
 7. Visual Workflow
 8. Usage Example
 
-### Step 5: Package Skill
+### Step 6: Package Skill
 
 ```bash
 scripts/package_skill.py <path/to/skill-folder>
@@ -132,28 +159,62 @@ scripts/package_skill.py <path/to/skill-folder>
 
 Validates then creates `.skill` file.
 
-### Step 6: Add Semantic Routing Triggers
+### Step 7: Add Semantic Routing Triggers
 
-Add triggers to `configs/skill-triggers.json` for automatic skill suggestion:
+Add triggers to YAML frontmatter for automatic skill suggestion:
 
-```json
-{
-  "name": "your-skill-name",
-  "triggers": [
-    "keyword1", "keyword2",
-    "full phrase that triggers this skill",
-    "phrase en français aussi"
-  ],
-  "description": "Short description | Description courte"
-}
+```yaml
+---
+name: your-skill-name
+description: What it does. Use when [specific triggers].
+triggers:
+  - "excel"
+  - "créer un fichier excel"
+  - "ajouter des formules"
+---
 ```
 
-**Tips:**
-- Include both keywords AND full phrases
-- Add French and English variants
-- Test with `python scripts/benchmark-semantic-router.py`
+#### Trigger Writing Methodology
 
-### Step 7: Iterate with Self-Assessment
+**Golden Rule**: Write triggers as users naturally speak, not technical jargon.
+
+| Bad (Technical) | Good (Natural Language) |
+|-----------------|------------------------|
+| `xlsx manipulation` | `créer un fichier excel` |
+| `git repository sync` | `mettre à jour le serveur` |
+| `docker container` | `lancer le site` |
+| `pdf extraction` | `lire ce pdf` |
+
+**3 Categories of Triggers (include all 3):**
+
+1. **Keywords** (1-2 words): Core concepts users mention
+   - `excel`, `pdf`, `docker`, `skill`
+
+2. **Action Phrases** (3-5 words): What users want to DO
+   - `créer un fichier excel`
+   - `traduire ces sous-titres`
+   - `déployer sur le serveur`
+
+3. **Problem Phrases**: How users describe their PROBLEM
+   - `mon site ne marche plus`
+   - `je veux automatiser`
+   - `comment faire pour...`
+
+**Bilingual Coverage:**
+- Always include French AND English variants
+- French first (primary user language), then English
+
+**Quantity Guidelines:**
+- Minimum: 5 triggers
+- Optimal: 10-20 triggers
+- Maximum: 50 triggers (diminishing returns)
+
+**Test Your Triggers:**
+```bash
+python scripts/benchmark-semantic-router.py "votre phrase test"
+```
+
+### Step 8: Iterate with Self-Assessment
 
 **Never fix everything at once.** Each iteration focuses on ONE improvement.
 

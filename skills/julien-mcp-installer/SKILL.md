@@ -41,11 +41,12 @@ When user asks to install an MCP or wants to see available options:
 | **powerpoint-uvx** | `mcp-server-pptx` (uvx) | PowerPoint via python-pptx |
 | **pdf-reader** | `@anthropic/mcp-pdf-reader` | PDF text extraction |
 
-### Category: Browser (3)
+### Category: Browser (4)
 
 | MCP | Package | Description |
 |-----|---------|-------------|
-| **playwright** | `@playwright/mcp@latest` | Browser automation |
+| **fast-playwright** | `@tontoko/fast-playwright-mcp` | Browser automation (70-90% token reduction) ⭐ |
+| **playwright** | `@playwright/mcp@latest` | Browser automation (vanilla Microsoft) |
 | **chrome-devtools** | `@anthropic/mcp-chrome-devtools` | Chrome DevTools Protocol |
 | **brave** | `@anthropic/mcp-brave` | Brave Search API |
 
@@ -175,6 +176,11 @@ Based on category choice, present specific MCPs with descriptions.
 ```json
 "playwright": {
   "command": "cmd",
+  "args": ["/c", "npx", "-y", "@tontoko/fast-playwright-mcp@latest", "--headless"]
+}
+
+"playwright-vanilla": {
+  "command": "cmd",
   "args": ["/c", "npx", "-y", "@playwright/mcp@latest"]
 }
 
@@ -190,6 +196,46 @@ Based on category choice, present specific MCPs with descriptions.
     "BRAVE_API_KEY": "${BRAVE_API_KEY}"
   }
 }
+```
+
+## Fast Playwright Token Optimization
+
+Fast Playwright reduces token usage by 70-90% compared to vanilla Microsoft version.
+
+### Why Fast Playwright?
+
+| Feature | Vanilla | Fast |
+|---------|---------|------|
+| Tokens/snapshot | ~12k | ~2-3k |
+| Batch execute | ❌ | ✅ |
+| Diff mode | ❌ | ✅ |
+| Snapshot selector | Basic | Fine-grained |
+
+### Optimization Patterns
+
+**Pattern 1: Batch Execute (90% reduction)**
+```json
+{
+  "name": "browser_batch_execute",
+  "arguments": {
+    "steps": [
+      {"tool": "browser_navigate", "arguments": {"url": "https://example.com"}},
+      {"tool": "browser_type", "arguments": {"selectors": [{"css": "#search"}], "text": "query"}},
+      {"tool": "browser_click", "arguments": {"selectors": [{"css": "#submit"}]}}
+    ],
+    "globalExpectation": {"includeSnapshot": false, "includeConsole": false}
+  }
+}
+```
+
+**Pattern 2: Targeted Snapshots**
+```json
+{"expectation": {"snapshotOptions": {"selector": ".product-list"}, "includeConsole": false}}
+```
+
+**Pattern 3: Diff Mode**
+```json
+{"expectation": {"diffOptions": {"enabled": true, "format": "minimal"}}}
 ```
 
 ### APIs

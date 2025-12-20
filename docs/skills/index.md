@@ -1,8 +1,18 @@
 # Skills
 
-Liste complète des {{ skills_count }} skills disponibles dans le marketplace.
+**{{ skills_count }} skills** dans le marketplace | **{{ deployed_global_count }}** déployées globalement
 
-## Skills par préfixe
+!!! info "Statut de déploiement"
+    - 🌐 **{{ deployed_global_count }}** skills déployées dans `~/.claude/skills/`
+    - 📦 **{{ not_deployed_count }}** skills non déployées ([voir détails](deployment.md))
+
+    Pour synchroniser : `/sync`
+
+## Par catégorie
+
+{{ category_summary() }}
+
+## Toutes les skills
 
 {% for prefix, skills_list in skills_by_prefix.items() %}
 ### {{ prefix }}
@@ -10,7 +20,7 @@ Liste complète des {{ skills_count }} skills disponibles dans le marketplace.
 | Skill | Description | Triggers |
 |-------|-------------|----------|
 {% for skill in skills_list %}
-| [{{ skill.name }}]({{ skill.name }}.md) | {{ skill.description[:60] }}... | {{ skill.triggers_count }} |
+| `{{ skill.name }}` | {{ skill.description[:50] }}... | {{ skill.triggers_count }} |
 {% endfor %}
 
 {% endfor %}
@@ -41,4 +51,14 @@ triggers:
 # Contenu de la skill
 
 Instructions détaillées...
+```
+
+## Invoquer une skill
+
+```bash
+# Dans Claude Code
+Skill("nom-de-la-skill")
+
+# Ou via le routing automatique (UserPromptSubmit hook)
+# Le router suggère la skill appropriée basée sur votre prompt
 ```

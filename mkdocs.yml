@@ -62,27 +62,41 @@ markdown_extensions:
 
 extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - assets/js/skill-actions.js
 
 extra_css:
   - assets/css/custom.css
 
 nav:
   - Accueil: index.md
+  - Référence: reference.md
   - Skills:
     - Vue d'ensemble: skills/index.md
-    - Par catégorie: skills/by-category.md
+    - Déploiement: skills/deployment.md
+    - Par catégorie:
+      - Office (Anthropic): skills/categories/office.md
+      - Web & Design: skills/categories/web-design.md
+      - Dev Tools: skills/categories/dev-tools.md
+      - Workflow: skills/categories/workflow.md
+      - Infrastructure: skills/categories/infrastructure.md
+      - WordPress: skills/categories/wordpress.md
+      - Media: skills/categories/media.md
+      - Notion: skills/categories/notion.md
+      - Références: skills/categories/references.md
+      - Autres: skills/categories/other.md
+  - MCP Servers:
+    - Vue d'ensemble: mcp/index.md
+    - Installation: mcp/installer.md
+    - Idle Queue: mcp/idle-queue.md
+    - Développement: mcp/development.md
   - Projets:
     - Mapping: projects/index.md
-  - Migration:
-    - En attente: migration/pending.md
-    - Progression: migration/progress.md
-  - MCP Servers:
-    - Liste: mcp/index.md
-    - Installation: mcp/installer.md
-  - Intégrations:
-    - Hooks: integrations/hooks.md
   - Dev:
-    - Audit Paths: dev/paths-audit.md
+    - Architecture: dev/architecture.md
+    - Scopes (Global vs Projet): dev/scopes.md
+    - Semantic Routing: dev/semantic-routing.md
+    - Hooks: dev/hooks.md
+    - Maintenance: dev/paths-audit.md
 
 extra:
   social:

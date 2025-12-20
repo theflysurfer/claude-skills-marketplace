@@ -1,0 +1,1905 @@
+{
+  "version": "1.0.0",
+  "description": "Hybrid skill registry - indexes skills from multiple physical locations",
+  "last_indexed": "2025-12-20T09:47:31.696760",
+  "sources": [
+    {
+      "id": "marketplace",
+      "type": "marketplace",
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills",
+      "priority": 0,
+      "skills_pattern": "*/SKILL.md",
+      "description": "Central marketplace - source of truth for shared skills"
+    },
+    {
+      "id": "global",
+      "type": "global",
+      "path": "~/.claude/skills",
+      "priority": 1,
+      "skills_pattern": "*/SKILL.md",
+      "description": "Global user skills - synced subset from marketplace"
+    }
+  ],
+  "skills": {
+    "anthropic-design-canvas": {
+      "name": "anthropic-design-canvas",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "triggers": [
+        "poster",
+        "art",
+        "visual",
+        "infographic",
+        "design image",
+        "create image",
+        "affiche",
+        "visuel",
+        "infographie",
+        "créer image",
+        "create poster",
+        "design infographic",
+        "visual art"
+      ],
+      "content_summary": "DESIGN PHILOSOPHY CREATION | THE CRITICAL UNDERSTANDING | HOW TO GENERATE A VISUAL PHILOSOPHY | PHILOSOPHY EXAMPLES | ESSENTIAL PRINCIPLES These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files.",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "anthropic-design-canvas\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-design-canvas\\SKILL.md",
+          "hash": "d1d2181e37f6a542",
+          "mtime": "2025-12-12T19:54:51.946372"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "anthropic-dev-tools-mcp-builder": {
+      "name": "anthropic-dev-tools-mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "triggers": [
+        "create mcp server",
+        "build mcp",
+        "mcp development",
+        "fastmcp",
+        "model context protocol",
+        "create tool server",
+        "mcp integration"
+      ],
+      "content_summary": "Overview | 🚀 High-Level Workflow | Phase 1: Deep Research and Planning | 1.1 Understand Modern MCP Design | 1.2 Study MCP Protocol Documentation # MCP Server Development Guide",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "anthropic-dev-tools-mcp-builder\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-dev-tools-mcp-builder\\SKILL.md",
+          "hash": "5f96527349a34962",
+          "mtime": "2025-12-14T09:46:25.284426"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "anthropic-office-docx": {
+      "name": "anthropic-office-docx",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
+      "triggers": [
+        "word",
+        "docx",
+        "document word",
+        "word document",
+        "doc file",
+        "create word document",
+        "créer un document word",
+        "edit docx file",
+        "modifier fichier word"
+      ],
+      "content_summary": "Overview | Workflow Decision Tree | Reading/Analyzing Content | Creating New Document | Editing Existing Document # DOCX creation, editing, and analysis",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "anthropic-office-docx\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-docx\\SKILL.md",
+          "hash": "47443506fba1121e",
+          "mtime": "2025-12-12T19:53:11.757257"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": [
+          "scripts/pack.py",
+          "scripts/unpack.py"
+        ]
+      },
+      "scope": "global"
+    },
+    "anthropic-office-pdf": {
+      "name": "anthropic-office-pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+      "triggers": [
+        "pdf",
+        "PDF",
+        "fill form",
+        "pdf form",
+        "merge pdf",
+        "split pdf",
+        "extract pdf",
+        "remplir formulaire",
+        "formulaire pdf",
+        "fusionner pdf",
+        "diviser pdf",
+        "extract text from pdf",
+        "extraire le texte du pdf",
+        "merge pdf files",
+        "fusionner des fichiers pdf",
+        "fill pdf form",
+        "remplir formulaire pdf",
+        "split pdf document",
+        "diviser le pdf en pages",
+        "pdf manipulation",
+        "convert to pdf"
+      ],
+      "content_summary": "Overview | Quick Start | Python Libraries | pypdf - Basic Operations | Merge PDFs # PDF Processing Guide",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "anthropic-office-pdf\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-pdf\\SKILL.md",
+          "hash": "53db46222b139f3e",
+          "mtime": "2025-12-12T19:53:05.832006"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "anthropic-office-pptx": {
+      "name": "anthropic-office-pptx",
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
+      "triggers": [
+        "powerpoint",
+        "pptx",
+        "presentation",
+        "slides",
+        "présentation",
+        "diaporama",
+        "create presentation",
+        "créer une présentation",
+        "add slides",
+        "ajouter des slides",
+        "powerpoint slides"
+      ],
+      "content_summary": "Overview | Reading and analyzing content | Text extraction | Raw XML access | Unpacking a file # PPTX creation, editing, and analysis",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "anthropic-office-pptx\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-pptx\\SKILL.md",
+          "hash": "ef2bf546034ccb70",
+          "mtime": "2025-12-12T19:53:14.700858"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": [
+          "scripts/pack.py",
+          "scripts/rearrange.py",
+          "scripts/replace.py",
+          "scripts/thumbnail.py",
+          "scripts/unpack.py",
+          "scripts/inventory.py",
+          "scripts/validate.py"
+        ]
+      },
+      "scope": "global"
+    },
+    "anthropic-office-xlsx": {
+      "name": "anthropic-office-xlsx",
+      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas",
+      "triggers": [
+        "excel",
+        "xlsx",
+        "spreadsheet",
+        "xls",
+        "tableur",
+        "feuille de calcul",
+        "classeur",
+        "create excel spreadsheet",
+        "créer un fichier excel",
+        "add formulas to spreadsheet",
+        "formules excel",
+        "analyze data in xlsx",
+        "analyser les données excel",
+        "pivot table creation",
+        "tableau croisé dynamique",
+        "excel chart creation",
+        "graphique dans excel",
+        "excel formulas"
+      ],
+      "content_summary": "All Excel files | Zero Formula Errors | Preserve Existing Templates (when updating templates) | Financial models | Color Coding Standards # Requirements for Outputs",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "anthropic-office-xlsx\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-xlsx\\SKILL.md",
+          "hash": "546ec373cda256e3",
+          "mtime": "2025-12-12T19:53:08.589421"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "anthropic-web-artifacts-builder": {
+      "name": "anthropic-web-artifacts-builder",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "triggers": [
+        "create artifact",
+        "build artifact",
+        "web artifact",
+        "react artifact",
+        "complex artifact",
+        "shadcn artifact",
+        "bundle html"
+      ],
+      "content_summary": "Design & Style Guidelines | Quick Start | Step 1: Initialize Project | Step 2: Develop Your Artifact | Step 3: Bundle to Single HTML File # Web Artifacts Builder",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "anthropic-web-artifacts-builder\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-web-artifacts-builder\\SKILL.md",
+          "hash": "db5c641fc1901c99",
+          "mtime": "2025-12-14T09:46:28.171257"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "anthropic-web-frontend-design": {
+      "name": "anthropic-web-frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "triggers": [
+        "frontend",
+        "ui design",
+        "web design",
+        "interface",
+        "react component",
+        "html css",
+        "design web",
+        "interface utilisateur",
+        "composant react",
+        "create landing page",
+        "créer une page d'accueil",
+        "design dashboard ui",
+        "react component design",
+        "html css website",
+        "design web moderne",
+        "frontend interface",
+        "ui design for app",
+        "build webpage"
+      ],
+      "content_summary": "Design Thinking | Frontend Aesthetics Guidelines This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic \"AI slop\" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "anthropic-web-frontend-design\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-web-frontend-design\\SKILL.md",
+          "hash": "6d12b967985ac0bc",
+          "mtime": "2025-12-12T19:54:48.529052"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "anthropic-web-testing": {
+      "name": "anthropic-web-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "triggers": [
+        "test web app",
+        "playwright test",
+        "browser testing",
+        "ui testing",
+        "web testing",
+        "test frontend",
+        "screenshot web"
+      ],
+      "content_summary": "Decision Tree: Choosing Your Approach | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall | Best Practices # Web Application Testing",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "anthropic-web-testing\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-web-testing\\SKILL.md",
+          "hash": "f34a4b81c8cd2927",
+          "mtime": "2025-12-14T09:46:30.977787"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": [
+          "scripts/with_server.py"
+        ]
+      },
+      "scope": "global"
+    },
+    "julien-calibre": {
+      "name": "julien-calibre",
+      "description": "Complete Calibre library management - add/remove books, convert PDF to EPUB, metadata editing, library analysis, cleanup, and e-reader sync (Sony PRS-T1). Use for any ebook or Calibre operation.",
+      "triggers": [
+        "calibre",
+        "ebook",
+        "epub",
+        "book library",
+        "add book to calibre",
+        "import ebook",
+        "add pdf to library",
+        "download from gutenberg",
+        "remove book from calibre",
+        "delete duplicates",
+        "convert pdf to epub",
+        "convert to epub",
+        "batch convert pdf",
+        "update metadata",
+        "fix book title",
+        "set cover",
+        "edit book details",
+        "analyze library",
+        "clean up library",
+        "find duplicates",
+        "library maintenance",
+        "sync to e-reader",
+        "send to kindle",
+        "transfer to sony",
+        "bibliotheque calibre",
+        "livre numerique",
+        "ajouter livre calibre",
+        "importer ebook",
+        "convertir pdf en epub",
+        "nettoyer bibliotheque",
+        "supprimer livre",
+        "mettre a jour metadonnees",
+        "synchroniser liseuse",
+        "envoyer sur liseuse"
+      ],
+      "content_summary": "1. Add Books | Add Local File | Add with Metadata | Add Folder Recursively | Download from Project Gutenberg # Calibre Library Management",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-calibre\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-calibre\\SKILL.md",
+          "hash": "d4356250f659838c",
+          "mtime": "2025-12-18T01:24:38.120959"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": [
+          "scripts/analyze/find_books_without_epub.py",
+          "scripts/convert/batch_convert.py",
+          "scripts/analyze/find_english_books.py",
+          "scripts/analyze/analyze_library.py",
+          "scripts/analyze/find_empty_books.py",
+          "scripts/manage/remove_books.py",
+          "scripts/force_delete_orphans.py"
+        ]
+      },
+      "scope": "global"
+    },
+    "julien-dev-claude-md-documenter": {
+      "name": "julien-dev-claude-md-documenter",
+      "description": "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md.",
+      "triggers": [
+        "CLAUDE.md",
+        "claude.md",
+        "create CLAUDE.md file",
+        "créer un CLAUDE.md",
+        "document project",
+        "project documentation",
+        "project context",
+        "project instructions",
+        "documenter projet",
+        "documentation projet",
+        "contexte projet",
+        "instructions projet",
+        "create claude",
+        "créer claude",
+        "setup project documentation",
+        "fichier claude.md",
+        "add project context"
+      ],
+      "content_summary": "What is CLAUDE.md? | Core Principles | 1. Keep It Short | 2. Link, Don't Duplicate | 3. Project-Specific Only # CLAUDE.md Documenter",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-dev-claude-md-documenter\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-claude-md-documenter\\SKILL.md",
+          "hash": "041f70fca9122fc6",
+          "mtime": "2025-12-18T00:31:03.156378"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-dev-hook-creator": {
+      "name": "julien-dev-hook-creator",
+      "description": "Guide for creating Claude Code hooks - shell commands that execute at specific lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse, etc.). Use when users want to automate actions, add validation, logging, or integrate external tools into Claude Code workflows.",
+      "triggers": [
+        "create hook",
+        "new hook",
+        "add hook",
+        "hook template",
+        "write hook",
+        "build hook",
+        "créer hook",
+        "nouveau hook",
+        "ajouter hook",
+        "écrire hook",
+        "SessionStart",
+        "SessionEnd",
+        "PreToolUse",
+        "PostToolUse",
+        "UserPromptSubmit",
+        "claude code hook",
+        "automation hook"
+      ],
+      "content_summary": "What Are Hooks? | Available Hook Events | Hook Configuration | Basic Structure | Configuration Fields # Hook Creator",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-dev-hook-creator\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-hook-creator\\SKILL.md",
+          "hash": "1fd78b56ca8a1907",
+          "mtime": "2025-12-18T00:31:53.706051"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-dev-powershell-profile": {
+      "name": "julien-dev-powershell-profile",
+      "description": "Manage PowerShell profile, aliases, functions. Triggers: add alias, update profile, modify claude command, Microsoft.PowerShell_profile.ps1",
+      "triggers": [
+        "powershell profile",
+        "add alias",
+        "update profile",
+        "modify claude command",
+        "powershell alias",
+        "ps1 profile"
+      ],
+      "content_summary": "Workflow | Reference Files | Skill Chaining | Skills Required Before | Input Expected # PowerShell Profile Manager",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-dev-powershell-profile\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-powershell-profile\\SKILL.md",
+          "hash": "dcf270ee49b1841d",
+          "mtime": "2025-12-18T00:36:49.661796"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-infra-deployment-verifier": {
+      "name": "julien-infra-deployment-verifier",
+      "description": "Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports.",
+      "triggers": [
+        "verify deployment",
+        "check deployment",
+        "deployment status",
+        "pm2 status",
+        "site working"
+      ],
+      "content_summary": "Server Info | When to Use This Skill | Verification Checklist | ✅ Complete Verification Workflow | 1. PM2 Process Verification # Deployment Verifier - Hostinger srv759970",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-infra-deployment-verifier\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-deployment-verifier\\SKILL.md",
+          "hash": "ddc4ec92a35a6ce3",
+          "mtime": "2025-12-14T09:47:26.041122"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-infra-git-vps-sync": {
+      "name": "julien-infra-git-vps-sync",
+      "description": "Manage Git sync between VPS and GitHub for Hostinger srv759970. Handles unrelated histories, untracked files, diverged branches, and sync conflicts automatically.",
+      "triggers": [
+        "sync vps git",
+        "git pull vps",
+        "update server code",
+        "git sync hostinger",
+        "vps github sync"
+      ],
+      "content_summary": "Server Info | When to Use This Skill | Common Scenarios | 1. Unrelated Histories | Option A: Merge with allow-unrelated-histories (preserves VPS changes) # Git VPS Sync - Hostinger srv759970",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-infra-git-vps-sync\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-git-vps-sync\\SKILL.md",
+          "hash": "5a2f73378e3b5f1c",
+          "mtime": "2025-12-14T09:47:29.758260"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-infra-hostinger-core": {
+      "name": "julien-infra-hostinger-core",
+      "description": "Core server management for Hostinger VPS srv759970 - SSH access, system status, maintenance tasks, and disk space reclamation. Use for any server operation, connection issues, or maintenance tasks.",
+      "triggers": [
+        "ssh hostinger",
+        "connect server",
+        "disk space",
+        "server maintenance",
+        "cleanup vps",
+        "free space",
+        "system status"
+      ],
+      "content_summary": "Server Info | 1. SSH Connection | Quick Connect | SSH Config (~/.ssh/config) | Fix Permission Denied (Windows) # Hostinger VPS Core Management",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-infra-hostinger-core\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-hostinger-core\\SKILL.md",
+          "hash": "f6524fc87d5373d6",
+          "mtime": "2025-12-18T01:05:17.029909"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-infra-hostinger-database": {
+      "name": "julien-infra-hostinger-database",
+      "description": "Manage shared database instances on Hostinger VPS srv759970 - PostgreSQL, Redis, MongoDB operations. Use for database connections, backups, user management, performance checks, or troubleshooting database issues.",
+      "triggers": [
+        "database hostinger",
+        "postgresql vps",
+        "redis server",
+        "mongodb hostinger",
+        "db backup",
+        "database connection"
+      ],
+      "content_summary": "Overview | Databases Available | When to Use This Skill | PostgreSQL Operations | Connection # Database Management - Hostinger VPS",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-infra-hostinger-database\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-hostinger-database\\SKILL.md",
+          "hash": "bd1aab3f5d8fdc66",
+          "mtime": "2025-12-14T09:47:35.759137"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-infra-hostinger-docker": {
+      "name": "julien-infra-hostinger-docker",
+      "description": "Docker management for Hostinger VPS srv759970 - container operations, image optimization, WordPress Docker, troubleshooting. Use for any Docker operation, container issues, or image management.",
+      "triggers": [
+        "docker",
+        "container",
+        "docker compose",
+        "optimize docker",
+        "container crash",
+        "docker logs"
+      ],
+      "content_summary": "Server Info | 1. Status & Monitoring | Quick Status | Container Stats | Logs # Hostinger Docker Management",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-infra-hostinger-docker\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-hostinger-docker\\SKILL.md",
+          "hash": "115b1f01ef821b4e",
+          "mtime": "2025-12-18T01:06:10.148692"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-infra-hostinger-security": {
+      "name": "julien-infra-hostinger-security",
+      "description": "Security management for Hostinger VPS srv759970 - Fail2ban, WordPress security audits (25+ checks, 0-100% scoring), infrastructure audit. Use for security hardening, IP bans, or security assessments.",
+      "triggers": [
+        "fail2ban",
+        "ban ip",
+        "unban ip",
+        "wordpress security",
+        "security audit",
+        "audit vps",
+        "brute force"
+      ],
+      "content_summary": "Server Info | 1. Fail2ban Management | WordPress Jails | Status Check | Ban/Unban IP # Hostinger Security Management",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-infra-hostinger-security\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-hostinger-security\\SKILL.md",
+          "hash": "3dfd1c5a20eecbe2",
+          "mtime": "2025-12-18T01:06:13.841067"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-infra-hostinger-web": {
+      "name": "julien-infra-hostinger-web",
+      "description": "Web infrastructure for Hostinger VPS - Nginx reverse proxy, SSL/Let's Encrypt, configuration audit, and application deployment (INCLUZ'HACT). Use for site configuration, SSL setup, 502/504 errors, or deployments.",
+      "triggers": [
+        "nginx",
+        "reverse proxy",
+        "ssl certificate",
+        "certbot",
+        "deploy hostinger",
+        "deploy incluzact",
+        "502 error",
+        "504 error"
+      ],
+      "content_summary": "Server Info | 1. Nginx Management | Add New Site | SSL with Let's Encrypt | Common Commands # Hostinger Web Infrastructure",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-infra-hostinger-web\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-hostinger-web\\SKILL.md",
+          "hash": "4b5263aff6f2ab5f",
+          "mtime": "2025-12-18T01:05:19.857653"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-infra-jokers": {
+      "name": "julien-infra-jokers",
+      "description": "Complete management for Jokers Hockey website - deployment, build checks, database migrations (Drizzle ORM), and PM2 process management. Use for any Jokers site operation.",
+      "triggers": [
+        "deploy jokers",
+        "jokers hockey",
+        "push to production",
+        "check jokers logs",
+        "restart jokers",
+        "jokers database",
+        "jokers build",
+        "jokers pm2"
+      ],
+      "content_summary": "Quick Reference | 1. Deployment | Quick Deploy (Git) | Pre-Deployment Checks | Verify Deployment # Jokers Hockey - Infrastructure Management",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-infra-jokers\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-jokers\\SKILL.md",
+          "hash": "832f1e8e13a4310e",
+          "mtime": "2025-12-18T00:59:22.921635"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-mcp-installer": {
+      "name": "julien-mcp-installer",
+      "description": "Interactive MCP server installer. Lists all available MCPs by category and installs the user's choice into .mcp.json",
+      "triggers": [
+        "install mcp",
+        "add mcp server",
+        "mcp installer",
+        "setup mcp",
+        "configure mcp",
+        "ajouter mcp",
+        "installer mcp",
+        "which mcp",
+        "list mcp servers",
+        "available mcp",
+        "mcp marketplace"
+      ],
+      "content_summary": "Available MCP Servers | Category: Office (5) | Category: Browser (4) | Category: APIs (6) | Category: AI/LLM (4) # MCP Server Installer",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-mcp-installer\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-mcp-installer\\SKILL.md",
+          "hash": "b7571c9b758c1a97",
+          "mtime": "2025-12-18T03:18:50.629721"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-media-onepiece-workflow": {
+      "name": "julien-media-onepiece-workflow",
+      "description": "Manage OnePiece transcoding pipeline - GPU local transcoding, remux Japanese audio, upload to Dropbox for web streaming app.",
+      "triggers": [
+        "onepiece",
+        "one piece",
+        "transcoding pipeline",
+        "remux japanese",
+        "dropbox upload video",
+        "anime transcode",
+        "nvenc transcode",
+        "streaming onepiece"
+      ],
+      "content_summary": "Trigger Conditions | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) | Actions (Scripts prennent arguments positionnels) # OnePiece Workflow Skill",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-media-onepiece-workflow\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-media-onepiece-workflow\\SKILL.md",
+          "hash": "af4224c48dd3a4bb",
+          "mtime": "2025-12-17T23:13:57.358955"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-media-subtitle-translation": {
+      "name": "julien-media-subtitle-translation",
+      "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation.",
+      "triggers": [
+        "translate subtitles",
+        "translate srt",
+        "subtitle translation",
+        "traduire sous-titres",
+        "batch translate subtitles",
+        "srt file translation",
+        "movie subtitles",
+        "series subtitles",
+        "translate episodes"
+      ],
+      "content_summary": "When to Use | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity | Model Recommendations (December 2024) # Subtitle Translation Skill",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-media-subtitle-translation\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-media-subtitle-translation\\SKILL.md",
+          "hash": "ea8c90dea7277ff0",
+          "mtime": "2025-12-18T00:35:42.975149"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-ref-ahk-v1": {
+      "name": "julien-ref-ahk-v1",
+      "description": "Best practices AutoHotkey v1. Use when writing AHK v1 scripts to avoid critical errors like auto-execute section issues, includes order, and COM object handling.",
+      "triggers": [
+        "autohotkey v1",
+        "ahk v1",
+        "autohotkey script",
+        "ahk script",
+        "autohotkey best practices",
+        "ahk best practices",
+        "autohotkey gui",
+        "ahk hotkey"
+      ],
+      "content_summary": "Structure du Guide | Erreur #0 : Section Auto-Execute - LA RÈGLE LA PLUS CRITIQUE | QU'EST-CE QUE L'AUTO-EXECUTE? | CE QUI TERMINE L'AUTO-EXECUTE | ERREUR FATALE - Code après une fonction # AutoHotkey v1 - Guide de Référence Optimisé LLM",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-ref-ahk-v1\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-ahk-v1\\SKILL.md",
+          "hash": "77059242ea15d2ef",
+          "mtime": "2025-12-17T23:24:41.416342"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-ref-ahk-v2": {
+      "name": "julien-ref-ahk-v2",
+      "description": "Best practices AutoHotkey v2. Use when writing AHK v2 scripts - covers global variable declarations, SetTimer usage, event handlers, and GUI positioning.",
+      "triggers": [
+        "raccourci clavier windows",
+        "automatiser une tâche windows",
+        "mon script ahk ne marche pas",
+        "aide pour mon script ahk",
+        "help with my ahk script",
+        "create a hotkey",
+        "autohotkey v2",
+        "ahk v2",
+        "ahk2",
+        "autohotkey tutorial"
+      ],
+      "content_summary": "RÈGLE CRITIQUE - VARIABLES GLOBALES | DÉCLARATION OBLIGATOIRE DANS CHAQUE FONCTION | LISTE COMPLÈTE DES VARIABLES À DÉCLARER | STRUCTURE MODULAIRE AUTOHOTKEY V2 | En-tête Standard # AutoHotkey v2 - Best Practices pour LLM",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-ref-ahk-v2\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-ahk-v2\\SKILL.md",
+          "hash": "ec4b6fc6bd1fc9e8",
+          "mtime": "2025-12-18T00:59:37.187769"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-ref-astro-install": {
+      "name": "julien-ref-astro-install",
+      "description": "Guide d'installation Astro + Tailwind sur Windows. Covers Node.js setup, pnpm, project creation, common Windows issues, and troubleshooting.",
+      "triggers": [
+        "installer astro",
+        "démarrer un projet astro",
+        "astro sur windows",
+        "erreur installation astro",
+        "how to install astro",
+        "getting started with astro",
+        "astro tailwind setup",
+        "astro",
+        "astro install",
+        "create astro project"
+      ],
+      "content_summary": "Prérequis | 1. Node.js (version 18.20.8+ ou 20.3.0+ ou 22.0.0+) | 2. Gestionnaire de paquets | Méthode 1 : Installation Rapide (Recommandée) | Étape 1 : Créer le projet # Guide d'Installation Astro + Tailwind sur Windows",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-ref-astro-install\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-astro-install\\SKILL.md",
+          "hash": "18e8073354ce4cc8",
+          "mtime": "2025-12-18T01:01:09.167201"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [
+          "../styles/global.css",
+          "../layouts/Layout.astro"
+        ],
+        "requires_project_context": true,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-ref-batch": {
+      "name": "julien-ref-batch",
+      "description": "Best practices for Windows Batch scripts (.bat). Covers encoding, path handling, variables, error management, and common pitfalls.",
+      "triggers": [
+        "comment écrire un script batch",
+        "mon bat ne marche pas",
+        "aide pour un fichier bat",
+        "how to write a batch script",
+        "help me make a bat file",
+        "automate tasks with batch",
+        "batch script",
+        "bat file",
+        "windows batch",
+        "cmd script"
+      ],
+      "content_summary": "STRUCTURE ET ENCODAGE | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS | Variables de Chemin Robustes # Best Practices - Scripts Batch (.bat)",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-ref-batch\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-batch\\SKILL.md",
+          "hash": "62bd033473bd02cc",
+          "mtime": "2025-12-18T00:59:59.140044"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-ref-doc-production": {
+      "name": "julien-ref-doc-production",
+      "description": "Documentation production methodology with DRY principles. Covers 8 document types (GUIDE, INCIDENT, SESSION, AUDIT, RECHERCHE, etc.), naming conventions, and YAML metadata.",
+      "triggers": [
+        "comment documenter mon projet",
+        "aide-moi à structurer ma doc",
+        "je veux écrire la doc",
+        "modèle de document",
+        "écrire un rapport",
+        "how to document my project",
+        "help me write documentation",
+        "project documentation guide",
+        "create documentation",
+        "incident report",
+        "session report",
+        "guide template"
+      ],
+      "content_summary": "Principles | Structure | Naming Conventions | EVOLVING Docs (living docs) | EVENT-BASED Docs (snapshots) # Documentation Production Methodology",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-ref-doc-production\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-doc-production\\SKILL.md",
+          "hash": "52bbb64423629ea7",
+          "mtime": "2025-12-18T01:24:12.123392"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-ref-doc-review": {
+      "name": "julien-ref-doc-review",
+      "description": "Simplified document review methodology with 4 core tags (@FIX, @TODO, @VERIFY, @OK) and [MACRO] flag for systemic impact. Use for annotating and reviewing documentation.",
+      "triggers": [
+        "relire ce document",
+        "annoter un fichier",
+        "marquer ce qui est à corriger",
+        "trouver les TODO",
+        "review this document",
+        "proofread this file",
+        "check my documentation",
+        "flag issues in documentation",
+        "document review",
+        "annotation tags"
+      ],
+      "content_summary": "Overview | Tag System | CORE Tags (4 essential) | SPECIAL Tags (particular use) | [MACRO] Impact Flag # Document Review Methodology",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-ref-doc-review\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-doc-review\\SKILL.md",
+          "hash": "5d0f01400305c304",
+          "mtime": "2025-12-18T01:24:20.150237"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-ref-notion-markdown": {
+      "name": "julien-ref-notion-markdown",
+      "description": "Complete markdown guide for Universal Notion Uploader. Covers 14 element types (headings, callouts, highlights, toggles, embeds, columns, databases), upload modes, and API constraints.",
+      "triggers": [
+        "importer markdown dans notion",
+        "upload to notion",
+        "mettre mon README dans Notion",
+        "convertir markdown en page notion",
+        "push markdown to notion",
+        "format for notion",
+        "notion markdown",
+        "notion uploader",
+        "notion callout",
+        "notion table",
+        "notion database",
+        "notion toggle",
+        "notion embed",
+        "notion columns"
+      ],
+      "content_summary": "Parser Architecture | Supported Elements | 1. Headings (H1-H3 Only) | Collapsible Headings | 2. Rich Text (Inline Formatting) # Markdown Structuring Guide for Universal Notion Uploader",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-ref-notion-markdown\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-notion-markdown\\SKILL.md",
+          "hash": "ea1c002fdd259e88",
+          "mtime": "2025-12-18T01:25:39.991265"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-ref-powershell": {
+      "name": "julien-ref-powershell",
+      "description": "PowerShell naming conventions and organization best practices. Covers Verb-Noun functions, variable naming, module structure, and documentation standards.",
+      "triggers": [
+        "aide-moi avec mon powershell",
+        "mon powershell ne marche pas",
+        "help with my powershell script",
+        "write powershell function",
+        "powershell style guide",
+        "powershell",
+        "powershell script",
+        "ps1",
+        "powershell best practices"
+      ],
+      "content_summary": "Vue d'Ensemble | Structure d'Organisation Générique | Structure de Base | Conventions de Nommage | 1. Fichiers PowerShell # PowerShell - Conventions de Nommage et Organisation",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-ref-powershell\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-powershell\\SKILL.md",
+          "hash": "d268620360d6c1f4",
+          "mtime": "2025-12-18T01:00:31.523875"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-skill-creator": {
+      "name": "julien-skill-creator",
+      "description": "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation.",
+      "triggers": [
+        "SKILL.md",
+        "skill.md",
+        "create skill",
+        "new skill",
+        "add skill",
+        "build skill",
+        "skill template",
+        "write skill",
+        "créer skill",
+        "nouvelle skill",
+        "ajouter skill",
+        "construire skill",
+        "écrire skill",
+        "créer une skill",
+        "faire une skill",
+        "développer une skill",
+        "create a new skill",
+        "build custom skill",
+        "skill development"
+      ],
+      "content_summary": "Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure | Naming & Description # Skill Creator",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-skill-creator\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-creator\\SKILL.md",
+          "hash": "5e10467ce25a615e",
+          "mtime": "2025-12-20T00:45:43.503496"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [
+          "../Claude"
+        ],
+        "requires_project_context": true,
+        "external_scripts": [
+          "scripts/init_skill.py",
+          "scripts/benchmark-semantic-router.py",
+          "scripts/package_skill.py"
+        ]
+      },
+      "scope": "global"
+    },
+    "julien-skill-migration": {
+      "name": "julien-skill-migration",
+      "description": "Intelligently migrate skills from local to marketplace with dependency analysis, path verification, and venv detection. Use when: migrate skill, publish skill, move to marketplace.",
+      "triggers": [
+        "migrate skill",
+        "move skill to marketplace",
+        "publish skill",
+        "share skill",
+        "skill migration",
+        "local to marketplace",
+        "migrer skill",
+        "déplacer skill",
+        "publier skill"
+      ],
+      "content_summary": "Prerequisites | Migration Process | Phase 1: Deep Analysis | Phase 2: Migration Report | Phase 3: User Decision # Intelligent Skill Migration (Local → Marketplace)",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-skill-migration\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-migration\\SKILL.md",
+          "hash": "a9745142033d5fce",
+          "mtime": "2025-12-19T18:47:39.987213"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": [
+          "scripts/generate-triggers.py",
+          "scripts/migrate-skill.py"
+        ]
+      },
+      "scope": "global"
+    },
+    "julien-skill-move-to-core": {
+      "name": "julien-skill-move-to-core",
+      "description": "Add a skill to core sync config for global availability. Use when: move to core, add to sync, make skill global, sync skill.",
+      "triggers": [
+        "move to core",
+        "add to core",
+        "add to sync",
+        "sync skill",
+        "make global",
+        "ajouter au core",
+        "synchroniser skill",
+        "rendre global"
+      ],
+      "content_summary": "What is \"Core\"? | Process | Step 1: Identify the skill | Step 2: Verify skill exists | Step 3: Check current sync-config # Move Skill to Core",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-skill-move-to-core\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-move-to-core\\SKILL.md",
+          "hash": "5080b958f13e7945",
+          "mtime": "2025-12-19T07:01:37.614490"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": [
+          "scripts/generate-triggers.py"
+        ]
+      },
+      "scope": "global"
+    },
+    "julien-skill-renamer": {
+      "name": "julien-skill-renamer",
+      "description": "Rename a skill across the marketplace. Use when: user wants to rename a skill, change skill name, or refactor skill naming.",
+      "triggers": [
+        "rename skill",
+        "change skill name",
+        "refactor skill",
+        "renommer skill",
+        "changer nom skill",
+        "renommer une skill"
+      ],
+      "content_summary": "When to Use | What It Does | After Running | Skill Chaining | Skills Required Before # Skill Renamer",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-skill-renamer\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-renamer\\SKILL.md",
+          "hash": "a9fd578d7b83980f",
+          "mtime": "2025-12-19T07:01:13.848764"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": [
+          "scripts/*.py",
+          "scripts/rename-skill.py"
+        ]
+      },
+      "scope": "global"
+    },
+    "julien-skill-reviewer": {
+      "name": "julien-skill-reviewer",
+      "description": "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro.",
+      "triggers": [
+        "review skill",
+        "check skill",
+        "improve skill",
+        "skill quality",
+        "audit skill",
+        "score skill",
+        "évaluer skill",
+        "vérifier skill",
+        "améliorer skill",
+        "qualité skill",
+        "auditer skill",
+        "revoir skill",
+        "relire skill",
+        "review my skill quality",
+        "check skill score",
+        "évaluer la qualité de la skill",
+        "améliorer ma skill"
+      ],
+      "content_summary": "When to Use | Review Process | Step 1: Read and Parse | Step 2: Score Against Rubric | Step 3: Calculate Score # Skill Reviewer",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-skill-reviewer\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-reviewer\\SKILL.md",
+          "hash": "2a9a0692ba3d3be4",
+          "mtime": "2025-12-20T00:46:32.329019"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-skill-router": {
+      "name": "julien-skill-router",
+      "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help.",
+      "triggers": [
+        "which skill",
+        "find skill",
+        "skill for",
+        "right skill",
+        "quelle skill",
+        "trouver skill",
+        "skill pour",
+        "bonne skill",
+        "what skill should I use",
+        "recommend a skill"
+      ],
+      "content_summary": "Development Tools | Workflow | Anthropic Office (Documents) | Anthropic Web/Design | Infrastructure Hostinger # Skill Router - Index des Skills Disponibles",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-skill-router\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-router\\SKILL.md",
+          "hash": "1f1b5833c1567d9c",
+          "mtime": "2025-12-19T07:01:33.210338"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-workflow-advice-codex": {
+      "name": "julien-workflow-advice-codex",
+      "description": "Get OpenAI Codex CLI's opinion on code, bugs, or implementation. Use when you want a second AI perspective during coding sessions.",
+      "triggers": [
+        "ask codex",
+        "codex opinion",
+        "codex review",
+        "what does codex think",
+        "demande à codex",
+        "avis de codex",
+        "codex pense quoi",
+        "get codex feedback",
+        "codex second opinion",
+        "openai codex review"
+      ],
+      "content_summary": "Prerequisites | When to Use | How to Invoke | Execution | For file review (non-interactive) # Ask Codex",
+      "locations": [
+        {
+          "source": "global",
+          "path": "julien-workflow-advice-codex\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-workflow-advice-codex\\SKILL.md",
+          "hash": "584fff2c049a8788",
+          "mtime": "2025-12-14T15:18:16.347656"
+        },
+        {
+          "source": "marketplace",
+          "path": "julien-workflow-advice-codex\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-workflow-advice-codex\\SKILL.md",
+          "hash": "584fff2c049a8788",
+          "mtime": "2025-12-12T19:52:19.100064"
+        }
+      ],
+      "resolved_source": "global",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": [
+          "scripts/semantic-skill-router.py",
+          "scripts/benchmark-semantic-router.py"
+        ]
+      },
+      "scope": "global"
+    },
+    "julien-workflow-advice-gemini": {
+      "name": "julien-workflow-advice-gemini",
+      "description": "Get Gemini CLI's opinion on code, architecture, or implementation. Use when you want a second AI perspective during coding sessions.",
+      "triggers": [
+        "ask gemini",
+        "gemini opinion",
+        "gemini review",
+        "what does gemini think",
+        "demande à gemini",
+        "avis de gemini",
+        "gemini pense quoi",
+        "get gemini feedback",
+        "gemini second opinion",
+        "google gemini review"
+      ],
+      "content_summary": "Prerequisites | When to Use | How to Invoke | Execution | For file review # Ask Gemini",
+      "locations": [
+        {
+          "source": "global",
+          "path": "julien-workflow-advice-gemini\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-workflow-advice-gemini\\SKILL.md",
+          "hash": "fff080ec618e0834",
+          "mtime": "2025-12-14T15:18:16.279780"
+        },
+        {
+          "source": "marketplace",
+          "path": "julien-workflow-advice-gemini\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-workflow-advice-gemini\\SKILL.md",
+          "hash": "fff080ec618e0834",
+          "mtime": "2025-12-12T19:52:15.871511"
+        }
+      ],
+      "resolved_source": "global",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": [
+          "scripts/semantic-skill-router.py"
+        ]
+      },
+      "scope": "global"
+    },
+    "julien-workflow-check-loaded-skills": {
+      "name": "julien-workflow-check-loaded-skills",
+      "description": "Check which Claude skills are loaded globally and project-level. Displays loaded skills by category (Hostinger, Anthropic, custom), counts, and helps troubleshoot missing skills.",
+      "triggers": [
+        "loaded skills",
+        "check skills",
+        "list skills",
+        "available skills",
+        "what skills",
+        "skills chargées",
+        "vérifier skills",
+        "lister skills",
+        "skills disponibles",
+        "quelles skills",
+        "which skills are loaded",
+        "show my skills"
+      ],
+      "content_summary": "When to Use This Skill | What This Skill Does | Via Slash Command (Recommended) | Via Direct Invocation | Output Format # Check Loaded Skills",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-workflow-check-loaded-skills\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-workflow-check-loaded-skills\\SKILL.md",
+          "hash": "afe7e829b5ff0fa0",
+          "mtime": "2025-12-12T19:52:09.715111"
+        }
+      ],
+      "resolved_source": "marketplace",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-workflow-queuing-background-tasks": {
+      "name": "julien-workflow-queuing-background-tasks",
+      "description": "Queue long-running tasks (transcoding, API calls, batch processing) to run in background at low priority when user is active, normal priority when idle. Use when scripts take minutes/hours and shouldn't impact PC performance during active use.",
+      "triggers": [
+        "queue task",
+        "background job",
+        "idle queue",
+        "low priority task",
+        "run when idle"
+      ],
+      "content_summary": "Prerequisites | Quick Start | Service Startup | Manual control (optional) | Windows auto-start at login # Idle Queue - Background Task Manager",
+      "locations": [
+        {
+          "source": "global",
+          "path": "julien-workflow-queuing-background-tasks\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-workflow-queuing-background-tasks\\SKILL.md",
+          "hash": "b4ceb25eb1e37a3c",
+          "mtime": "2025-12-20T00:24:53.337720"
+        },
+        {
+          "source": "marketplace",
+          "path": "julien-workflow-queuing-background-tasks\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-workflow-queuing-background-tasks\\SKILL.md",
+          "hash": "70a7aab9ca7bb85d",
+          "mtime": "2025-12-17T23:13:56.974919"
+        }
+      ],
+      "resolved_source": "global",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "commit-message": {
+      "name": "commit-message",
+      "description": "Generates semantic commit messages from git diff following conventional commits format. Use when user asks to commit changes, wants help writing a commit message, or needs to create a git commit.",
+      "triggers": [
+        "faire un commit",
+        "écrire un message de commit",
+        "git commit",
+        "committer les changements",
+        "message de commit",
+        "semantic commit",
+        "conventional commit"
+      ],
+      "content_summary": "🎯 What This Does | 📝 Commit Message Format | Type | Scope (clemencefouquet.fr specific) | Description # Commit Message Generator Skill",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "commit-message\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\commit-message\\SKILL.md",
+          "hash": "c185d0f7ec01e486",
+          "mtime": "2025-12-20T00:49:50.466914"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "project"
+    },
+    "wordpress-structure-validator": {
+      "name": "wordpress-structure-validator",
+      "description": "This skill validates WordPress FSE (Full Site Editing) theme structure including templates hierarchy, page associations, theme.json configuration, block styles, featured images usage, file permissions, and UpdraftPlus backup configuration. Use when auditing a WordPress site, after creating/modifying templates, before production deployment, or when troubleshooting backup issues.",
+      "triggers": [
+        "valider la structure",
+        "valider structure wordpress",
+        "wordpress validator",
+        "auditer le site",
+        "vérifier les templates",
+        "problème de backup",
+        "updraftplus",
+        "permissions fichiers",
+        "avant mise en prod",
+        "vérifier le thème",
+        "validate wordpress",
+        "check wordpress structure"
+      ],
+      "content_summary": "When to Use This Skill | What This Skill Validates | Validation Workflow | Step 1: Template Validation | Step 2: Theme.json Validation # WordPress Structure Validator",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "wordpress-structure-validator\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wordpress-structure-validator\\SKILL.md",
+          "hash": "904774ab02a88ad3",
+          "mtime": "2025-12-20T09:47:06.535381"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": [
+          "scripts/check_theme_json.py"
+        ]
+      },
+      "scope": "project"
+    },
+    "wp-block-contract": {
+      "name": "wp-block-contract",
+      "description": "This skill enforces Gutenberg block development structure, metadata, and styling rules. Use when creating or modifying custom blocks for the WordPress theme.",
+      "triggers": [
+        "créer un bloc gutenberg",
+        "nouveau bloc wordpress",
+        "block.json",
+        "gutenberg block",
+        "bloc custom",
+        "ajouter un bloc",
+        "modifier le bloc",
+        "edit.js",
+        "composant éditeur",
+        "bloc react"
+      ],
+      "content_summary": "Objectif | Structure obligatoire d'un bloc | Règles fondamentales | 1. block.json obligatoire | 2. Attributs typés avec défauts # WordPress Block Development Contract",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "wp-block-contract\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-block-contract\\SKILL.md",
+          "hash": "9f80ed0c5e0cf1b4",
+          "mtime": "2025-12-20T00:48:21.954122"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [
+          "../wp-tokens.md`",
+          "../wp-clean-css/SKILL.md`",
+          "../wp-checklists.md`"
+        ],
+        "requires_project_context": true,
+        "external_scripts": []
+      },
+      "scope": "project"
+    },
+    "wp-build-tools": {
+      "name": "wp-build-tools",
+      "description": "This skill enforces build tooling, linting, and quality checks for WordPress theme development. Use when setting up project, configuring linters, or running quality checks.",
+      "triggers": [
+        "lancer le build",
+        "npm run build",
+        "erreur eslint",
+        "erreur stylelint",
+        "configurer le linter",
+        "qualité du code",
+        "vérifier le code",
+        "wordpress scripts",
+        "phpcs"
+      ],
+      "content_summary": "Objectif | Stack recommandée | 1. @wordpress/scripts | 2. Stylelint | 3. ESLint # WordPress Build Tools & Quality",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "wp-build-tools\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-build-tools\\SKILL.md",
+          "hash": "435adedd835d8dab",
+          "mtime": "2025-12-20T00:49:03.717490"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "project"
+    },
+    "wp-clean-css": {
+      "name": "wp-clean-css",
+      "description": "This skill enforces CSS architecture with @layer, prohibits !important, and validates theme.json token usage. Use when writing, reviewing, or modifying any CSS file in the WordPress theme.",
+      "triggers": [
+        "écrire du css",
+        "modifier le style",
+        "css propre",
+        "@layer",
+        "theme.json",
+        "tokens css",
+        "important interdit",
+        "architecture css",
+        "variables css"
+      ],
+      "content_summary": "Objectif | Règles NON NÉGOCIABLES | 1. Interdiction de  | 2. Spécificité maximale : 2 niveaux | 3. Tokens theme.json obligatoires # WordPress Clean CSS Architecture",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "wp-clean-css\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-clean-css\\SKILL.md",
+          "hash": "307a519e57a3ab6e",
+          "mtime": "2025-12-20T00:49:05.315926"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [
+          "../wp-checklists.md#accessibilité-checklist-wcag-aa`",
+          "../wp-tokens.md`",
+          "../wp-checklists.md`"
+        ],
+        "requires_project_context": true,
+        "external_scripts": []
+      },
+      "scope": "project"
+    },
+    "wp-clem-hostinger-upload-image": {
+      "name": "wp-clem-hostinger-upload-image",
+      "description": "Upload images to clemencefouquet.fr WordPress on Hostinger VPS via Docker. Specific to wordpress-clemence container. Use when user asks to upload images to Clémence's site.",
+      "triggers": [
+        "upload une image",
+        "ajouter une image au site",
+        "envoyer une photo",
+        "médiathèque wordpress",
+        "image sur le site clem",
+        "téléverser image"
+      ],
+      "content_summary": "Required Input | Complete Workflow | 1. Upload to Server | 2. Copy to WordPress with Correct Permissions | 3. Verify Upload # WordPress Image Upload - Clemencefouquet.fr (Hostinger VPS)",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "wp-clem-hostinger-upload-image\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-clem-hostinger-upload-image\\SKILL.md",
+          "hash": "6975db4b24b1b8a6",
+          "mtime": "2025-12-20T00:49:47.621958"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "project"
+    },
+    "wp-footer-contract": {
+      "name": "wp-footer-contract",
+      "description": "This skill enforces footer structure and styling rules for clemencefouquet.fr. Use when creating or modifying the site footer, including links, contact info, and legal mentions.",
+      "triggers": [
+        "modifier le footer",
+        "pied de page",
+        "mentions légales",
+        "contact footer",
+        "liens footer",
+        "l-footer",
+        "footer wordpress",
+        "bas de page"
+      ],
+      "content_summary": "Objectif | Structure HTML obligatoire | Classes CSS | Layout principal | Règles CSS # WordPress Footer Contract",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "wp-footer-contract\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-footer-contract\\SKILL.md",
+          "hash": "328d739bee404de6",
+          "mtime": "2025-12-20T00:48:27.629662"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "project"
+    },
+    "wp-header-contract": {
+      "name": "wp-header-contract",
+      "description": "This skill enforces header structure, accessibility, and styling rules for clemencefouquet.fr. Use when creating or modifying the site header, navigation, logo, or mobile menu.",
+      "triggers": [
+        "modifier le header",
+        "changer le menu",
+        "navigation du site",
+        "menu mobile",
+        "logo du site",
+        "l-header",
+        "header wordpress",
+        "glassmorphisme header",
+        "menu responsive"
+      ],
+      "content_summary": "Objectif | Structure HTML obligatoire | Classes CSS | Layout principal | États # WordPress Header Contract",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "wp-header-contract\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-header-contract\\SKILL.md",
+          "hash": "d6cbfdb26455f163",
+          "mtime": "2025-12-20T00:48:25.608915"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "project"
+    },
+    "wp-pattern-contract": {
+      "name": "wp-pattern-contract",
+      "description": "This skill enforces Gutenberg block pattern development rules. Use when creating or modifying patterns that compose multiple blocks into reusable sections.",
+      "triggers": [
+        "créer un pattern",
+        "nouveau pattern gutenberg",
+        "pattern wordpress",
+        "block pattern",
+        "composition de blocs",
+        "section réutilisable",
+        "template de blocs",
+        "ajouter un pattern",
+        "modifier le pattern"
+      ],
+      "content_summary": "Objectif | Règle fondamentale | Structure d'un pattern | Fichier PHP | Header du pattern (OBLIGATOIRE) # WordPress Pattern Development Contract",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "wp-pattern-contract\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-pattern-contract\\SKILL.md",
+          "hash": "59535546b9558b0b",
+          "mtime": "2025-12-20T00:48:23.711236"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [
+          "../wp-tokens.md`",
+          "../wp-clean-css/SKILL.md`",
+          "../wp-checklists.md`",
+          "../wp-block-contract/SKILL.md`"
+        ],
+        "requires_project_context": true,
+        "external_scripts": []
+      },
+      "scope": "project"
+    },
+    "wp-remote-architecture": {
+      "name": "wp-remote-architecture",
+      "description": "This skill describes the remote WordPress site structure, page hierarchy, templates, and global configuration. Use when referencing site architecture, page structure, or templates on production.",
+      "triggers": [
+        "architecture du site",
+        "structure des pages",
+        "hiérarchie des templates",
+        "pages en prod",
+        "navigation du site clem",
+        "template wordpress",
+        "config theme.json"
+      ],
+      "content_summary": "Objectif | Structure des pages | Pages actuelles | Créer une nouvelle page | Assigner un template # WordPress Site Architecture",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "wp-remote-architecture\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-remote-architecture\\SKILL.md",
+          "hash": "db25b5c4dc513b53",
+          "mtime": "2025-12-20T00:49:45.771451"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "project"
+    },
+    "wp-sync-workflows": {
+      "name": "wp-sync-workflows",
+      "description": "This skill manages sync workflows between local development (Laragon), Git, and production VPS. Use for commits, deployments, and syncing content changes made by Clémence via Gutenberg.",
+      "triggers": [
+        "déployer sur le serveur",
+        "mettre en prod",
+        "récupérer les modifs de clem",
+        "sync git vps",
+        "push en production",
+        "pull depuis prod",
+        "synchroniser le site",
+        "synchroniser le thème",
+        "sync thème",
+        "sync theme",
+        "laragon vers vps",
+        "deploy wordpress"
+      ],
+      "content_summary": "Objectif | Variables d'environnement | Workflow 1 : Développement Local → Production | Flux | Étape 1 : Développer dans Laragon # WordPress Git Workflow",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "wp-sync-workflows\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-sync-workflows\\SKILL.md",
+          "hash": "417de83d29874e19",
+          "mtime": "2025-12-20T09:47:07.889653"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "project"
+    },
+    "wp-wpcli-remote": {
+      "name": "wp-wpcli-remote",
+      "description": "This skill provides WP-CLI commands for remote WordPress management on VPS. Use when modifying content, pages, menus, options, or running maintenance tasks directly on production.",
+      "triggers": [
+        "commande wp-cli",
+        "modifier une page en prod",
+        "changer le menu",
+        "options wordpress",
+        "maintenance wp",
+        "wp cli docker",
+        "modifier le contenu distant"
+      ],
+      "content_summary": "Objectif | Pattern d'exécution | Commandes fréquentes | Pages et Posts | Menus # WP-CLI Remote Commands",
+      "locations": [
+        {
+          "source": "project:Site internet Clem",
+          "path": "wp-wpcli-remote\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem\\.claude\\skills\\wp-wpcli-remote\\SKILL.md",
+          "hash": "df552c11c5cc8b29",
+          "mtime": "2025-12-20T00:49:08.671983"
+        }
+      ],
+      "resolved_source": "project:Site internet Clem",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "project"
+    }
+  }
+}

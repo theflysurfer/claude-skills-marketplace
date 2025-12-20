@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 """
-Generate skill-triggers.json from SKILL.md YAML frontmatter.
+Generate skill-triggers.json from hybrid-registry.json or SKILL.md files.
 
-Scans all skills/*/SKILL.md files and extracts the 'triggers' field
-from the YAML frontmatter to generate a centralized triggers file.
+Primary mode: Uses hybrid-registry.json if available and up-to-date.
+Fallback mode: Scans all skills/*/SKILL.md files directly.
 
 Usage:
-    python generate-triggers.py [--marketplace-path PATH]
+    python generate-triggers.py [--marketplace-path PATH] [--from-registry]
 """
 
 import json
 import re
 import sys
 from pathlib import Path
+
+# Configuration
+CLAUDE_HOME = Path.home() / ".claude"
 
 # Try to import yaml, fall back to manual parsing if not available
 try:
@@ -144,10 +147,86 @@ def find_marketplace_root() -> Path:
     raise FileNotFoundError("Could not find marketplace root (directory with skills/ folder)")
 
 
+def generate_from_hybrid_registry(root: Path) -> bool:
+    """
+    Generate skill-triggers.json from hybrid-registry.json.
+
+    Returns True if successful, False if registry not available.
+    """
+    registry_file = root / "configs" / "hybrid-registry.json"
+    if not registry_file.exists():
+        registry_file = CLAUDE_HOME / "configs" / "hybrid-registry.json"
+
+    if not registry_file.exists():
+        return False
+
+    try:
+        with open(registry_file, "r", encoding="utf-8") as f:
+            registry = json.load(f)
+    except (json.JSONDecodeError, IOError):
+        return False
+
+    skills = registry.get("skills", {})
+    if not skills:
+        return False
+
+    output_file = root / "configs" / "skill-triggers.json"
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+
+    skills_list = []
+    for name, skill in skills.items():
+        triggers = skill.get("triggers", [])
+        if not triggers:
+            continue
+
+        skill_entry = {
+            "name": name,
+            "triggers": triggers,
+            "description": skill.get("description", ""),
+            "source": skill.get("resolved_source", "marketplace")
+        }
+
+        content_summary = skill.get("content_summary", "")
+        if content_summary:
+            skill_entry["content_summary"] = content_summary
+
+        skills_list.append(skill_entry)
+
+    # Sort by name for consistency
+    skills_list.sort(key=lambda s: s["name"])
+
+    result = {
+        "generated": True,
+        "version": "4.0.0",
+        "description": "Auto-generated from hybrid-registry.json. DO NOT EDIT MANUALLY.",
+        "source": "hybrid-registry",
+        "skills": skills_list
+    }
+
+    output_file.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    print(f"Generated from hybrid registry: {output_file}")
+    print(f"  Skills included: {len(skills_list)}")
+
+    # Count by source
+    sources = {}
+    for s in skills_list:
+        src = s.get("source", "unknown")
+        sources[src] = sources.get(src, 0) + 1
+
+    print("\n  By source:")
+    for src, count in sorted(sources.items()):
+        print(f"    - {src}: {count}")
+
+    return True
+
+
 def main():
     # Parse arguments
     marketplace_path = None
+    from_registry = "--from-registry" in sys.argv
     args = sys.argv[1:]
+
     if "--marketplace-path" in args:
         idx = args.index("--marketplace-path")
         if idx + 1 < len(args):
@@ -158,6 +237,15 @@ def main():
         root = marketplace_path
     else:
         root = find_marketplace_root()
+
+    # Try hybrid registry first (if --from-registry or registry exists and is recent)
+    registry_file = root / "configs" / "hybrid-registry.json"
+    if from_registry or registry_file.exists():
+        if generate_from_hybrid_registry(root):
+            return
+
+    # Fallback: scan SKILL.md files directly
+    print("Falling back to SKILL.md scan...")
 
     skills_dir = root / "skills"
     output_file = root / "configs" / "skill-triggers.json"

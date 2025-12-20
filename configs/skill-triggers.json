@@ -1,7 +1,8 @@
 {
   "generated": true,
-  "version": "3.0.0",
-  "description": "Auto-generated from SKILL.md frontmatter. DO NOT EDIT MANUALLY.",
+  "version": "4.0.0",
+  "description": "Auto-generated from hybrid-registry.json. DO NOT EDIT MANUALLY.",
+  "source": "hybrid-registry",
   "skills": [
     {
       "name": "anthropic-design-canvas",
@@ -21,6 +22,7 @@
         "visual art"
       ],
       "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "source": "marketplace",
       "content_summary": "DESIGN PHILOSOPHY CREATION | THE CRITICAL UNDERSTANDING | HOW TO GENERATE A VISUAL PHILOSOPHY | PHILOSOPHY EXAMPLES | ESSENTIAL PRINCIPLES These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files."
     },
     {
@@ -35,6 +37,7 @@
         "mcp integration"
       ],
       "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "source": "marketplace",
       "content_summary": "Overview | 🚀 High-Level Workflow | Phase 1: Deep Research and Planning | 1.1 Understand Modern MCP Design | 1.2 Study MCP Protocol Documentation # MCP Server Development Guide"
     },
     {
@@ -51,6 +54,7 @@
         "modifier fichier word"
       ],
       "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
+      "source": "marketplace",
       "content_summary": "Overview | Workflow Decision Tree | Reading/Analyzing Content | Creating New Document | Editing Existing Document # DOCX creation, editing, and analysis"
     },
     {
@@ -79,6 +83,7 @@
         "convert to pdf"
       ],
       "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+      "source": "marketplace",
       "content_summary": "Overview | Quick Start | Python Libraries | pypdf - Basic Operations | Merge PDFs # PDF Processing Guide"
     },
     {
@@ -97,6 +102,7 @@
         "powerpoint slides"
       ],
       "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
+      "source": "marketplace",
       "content_summary": "Overview | Reading and analyzing content | Text extraction | Raw XML access | Unpacking a file # PPTX creation, editing, and analysis"
     },
     {
@@ -122,6 +128,7 @@
         "excel formulas"
       ],
       "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas",
+      "source": "marketplace",
       "content_summary": "All Excel files | Zero Formula Errors | Preserve Existing Templates (when updating templates) | Financial models | Color Coding Standards # Requirements for Outputs"
     },
     {
@@ -136,6 +143,7 @@
         "bundle html"
       ],
       "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "source": "marketplace",
       "content_summary": "Design & Style Guidelines | Quick Start | Step 1: Initialize Project | Step 2: Develop Your Artifact | Step 3: Bundle to Single HTML File # Web Artifacts Builder"
     },
     {
@@ -161,6 +169,7 @@
         "build webpage"
       ],
       "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "source": "marketplace",
       "content_summary": "Design Thinking | Frontend Aesthetics Guidelines This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic \"AI slop\" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices."
     },
     {
@@ -175,7 +184,23 @@
         "screenshot web"
       ],
       "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "source": "marketplace",
       "content_summary": "Decision Tree: Choosing Your Approach | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall | Best Practices # Web Application Testing"
+    },
+    {
+      "name": "commit-message",
+      "triggers": [
+        "faire un commit",
+        "écrire un message de commit",
+        "git commit",
+        "committer les changements",
+        "message de commit",
+        "semantic commit",
+        "conventional commit"
+      ],
+      "description": "Generates semantic commit messages from git diff following conventional commits format. Use when user asks to commit changes, wants help writing a commit message, or needs to create a git commit.",
+      "source": "project:Site internet Clem",
+      "content_summary": "🎯 What This Does | 📝 Commit Message Format | Type | Scope (clemencefouquet.fr specific) | Description # Commit Message Generator Skill"
     },
     {
       "name": "julien-calibre",
@@ -216,6 +241,7 @@
         "envoyer sur liseuse"
       ],
       "description": "Complete Calibre library management - add/remove books, convert PDF to EPUB, metadata editing, library analysis, cleanup, and e-reader sync (Sony PRS-T1). Use for any ebook or Calibre operation.",
+      "source": "marketplace",
       "content_summary": "1. Add Books | Add Local File | Add with Metadata | Add Folder Recursively | Download from Project Gutenberg # Calibre Library Management"
     },
     {
@@ -240,6 +266,7 @@
         "add project context"
       ],
       "description": "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md.",
+      "source": "marketplace",
       "content_summary": "What is CLAUDE.md? | Core Principles | 1. Keep It Short | 2. Link, Don't Duplicate | 3. Project-Specific Only # CLAUDE.md Documenter"
     },
     {
@@ -264,6 +291,7 @@
         "automation hook"
       ],
       "description": "Guide for creating Claude Code hooks - shell commands that execute at specific lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse, etc.). Use when users want to automate actions, add validation, logging, or integrate external tools into Claude Code workflows.",
+      "source": "marketplace",
       "content_summary": "What Are Hooks? | Available Hook Events | Hook Configuration | Basic Structure | Configuration Fields # Hook Creator"
     },
     {
@@ -277,10 +305,326 @@
         "ps1 profile"
       ],
       "description": "Manage PowerShell profile, aliases, functions. Triggers: add alias, update profile, modify claude command, Microsoft.PowerShell_profile.ps1",
+      "source": "marketplace",
       "content_summary": "Workflow | Reference Files | Skill Chaining | Skills Required Before | Input Expected # PowerShell Profile Manager"
     },
     {
-      "name": "julien-dev-skill-creator",
+      "name": "julien-infra-deployment-verifier",
+      "triggers": [
+        "verify deployment",
+        "check deployment",
+        "deployment status",
+        "pm2 status",
+        "site working"
+      ],
+      "description": "Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports.",
+      "source": "marketplace",
+      "content_summary": "Server Info | When to Use This Skill | Verification Checklist | ✅ Complete Verification Workflow | 1. PM2 Process Verification # Deployment Verifier - Hostinger srv759970"
+    },
+    {
+      "name": "julien-infra-git-vps-sync",
+      "triggers": [
+        "sync vps git",
+        "git pull vps",
+        "update server code",
+        "git sync hostinger",
+        "vps github sync"
+      ],
+      "description": "Manage Git sync between VPS and GitHub for Hostinger srv759970. Handles unrelated histories, untracked files, diverged branches, and sync conflicts automatically.",
+      "source": "marketplace",
+      "content_summary": "Server Info | When to Use This Skill | Common Scenarios | 1. Unrelated Histories | Option A: Merge with allow-unrelated-histories (preserves VPS changes) # Git VPS Sync - Hostinger srv759970"
+    },
+    {
+      "name": "julien-infra-hostinger-core",
+      "triggers": [
+        "ssh hostinger",
+        "connect server",
+        "disk space",
+        "server maintenance",
+        "cleanup vps",
+        "free space",
+        "system status"
+      ],
+      "description": "Core server management for Hostinger VPS srv759970 - SSH access, system status, maintenance tasks, and disk space reclamation. Use for any server operation, connection issues, or maintenance tasks.",
+      "source": "marketplace",
+      "content_summary": "Server Info | 1. SSH Connection | Quick Connect | SSH Config (~/.ssh/config) | Fix Permission Denied (Windows) # Hostinger VPS Core Management"
+    },
+    {
+      "name": "julien-infra-hostinger-database",
+      "triggers": [
+        "database hostinger",
+        "postgresql vps",
+        "redis server",
+        "mongodb hostinger",
+        "db backup",
+        "database connection"
+      ],
+      "description": "Manage shared database instances on Hostinger VPS srv759970 - PostgreSQL, Redis, MongoDB operations. Use for database connections, backups, user management, performance checks, or troubleshooting database issues.",
+      "source": "marketplace",
+      "content_summary": "Overview | Databases Available | When to Use This Skill | PostgreSQL Operations | Connection # Database Management - Hostinger VPS"
+    },
+    {
+      "name": "julien-infra-hostinger-docker",
+      "triggers": [
+        "docker",
+        "container",
+        "docker compose",
+        "optimize docker",
+        "container crash",
+        "docker logs"
+      ],
+      "description": "Docker management for Hostinger VPS srv759970 - container operations, image optimization, WordPress Docker, troubleshooting. Use for any Docker operation, container issues, or image management.",
+      "source": "marketplace",
+      "content_summary": "Server Info | 1. Status & Monitoring | Quick Status | Container Stats | Logs # Hostinger Docker Management"
+    },
+    {
+      "name": "julien-infra-hostinger-security",
+      "triggers": [
+        "fail2ban",
+        "ban ip",
+        "unban ip",
+        "wordpress security",
+        "security audit",
+        "audit vps",
+        "brute force"
+      ],
+      "description": "Security management for Hostinger VPS srv759970 - Fail2ban, WordPress security audits (25+ checks, 0-100% scoring), infrastructure audit. Use for security hardening, IP bans, or security assessments.",
+      "source": "marketplace",
+      "content_summary": "Server Info | 1. Fail2ban Management | WordPress Jails | Status Check | Ban/Unban IP # Hostinger Security Management"
+    },
+    {
+      "name": "julien-infra-hostinger-web",
+      "triggers": [
+        "nginx",
+        "reverse proxy",
+        "ssl certificate",
+        "certbot",
+        "deploy hostinger",
+        "deploy incluzact",
+        "502 error",
+        "504 error"
+      ],
+      "description": "Web infrastructure for Hostinger VPS - Nginx reverse proxy, SSL/Let's Encrypt, configuration audit, and application deployment (INCLUZ'HACT). Use for site configuration, SSL setup, 502/504 errors, or deployments.",
+      "source": "marketplace",
+      "content_summary": "Server Info | 1. Nginx Management | Add New Site | SSL with Let's Encrypt | Common Commands # Hostinger Web Infrastructure"
+    },
+    {
+      "name": "julien-infra-jokers",
+      "triggers": [
+        "deploy jokers",
+        "jokers hockey",
+        "push to production",
+        "check jokers logs",
+        "restart jokers",
+        "jokers database",
+        "jokers build",
+        "jokers pm2"
+      ],
+      "description": "Complete management for Jokers Hockey website - deployment, build checks, database migrations (Drizzle ORM), and PM2 process management. Use for any Jokers site operation.",
+      "source": "marketplace",
+      "content_summary": "Quick Reference | 1. Deployment | Quick Deploy (Git) | Pre-Deployment Checks | Verify Deployment # Jokers Hockey - Infrastructure Management"
+    },
+    {
+      "name": "julien-mcp-installer",
+      "triggers": [
+        "install mcp",
+        "add mcp server",
+        "mcp installer",
+        "setup mcp",
+        "configure mcp",
+        "ajouter mcp",
+        "installer mcp",
+        "which mcp",
+        "list mcp servers",
+        "available mcp",
+        "mcp marketplace"
+      ],
+      "description": "Interactive MCP server installer. Lists all available MCPs by category and installs the user's choice into .mcp.json",
+      "source": "marketplace",
+      "content_summary": "Available MCP Servers | Category: Office (5) | Category: Browser (4) | Category: APIs (6) | Category: AI/LLM (4) # MCP Server Installer"
+    },
+    {
+      "name": "julien-media-onepiece-workflow",
+      "triggers": [
+        "onepiece",
+        "one piece",
+        "transcoding pipeline",
+        "remux japanese",
+        "dropbox upload video",
+        "anime transcode",
+        "nvenc transcode",
+        "streaming onepiece"
+      ],
+      "description": "Manage OnePiece transcoding pipeline - GPU local transcoding, remux Japanese audio, upload to Dropbox for web streaming app.",
+      "source": "marketplace",
+      "content_summary": "Trigger Conditions | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) | Actions (Scripts prennent arguments positionnels) # OnePiece Workflow Skill"
+    },
+    {
+      "name": "julien-media-subtitle-translation",
+      "triggers": [
+        "translate subtitles",
+        "translate srt",
+        "subtitle translation",
+        "traduire sous-titres",
+        "batch translate subtitles",
+        "srt file translation",
+        "movie subtitles",
+        "series subtitles",
+        "translate episodes"
+      ],
+      "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation.",
+      "source": "marketplace",
+      "content_summary": "When to Use | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity | Model Recommendations (December 2024) # Subtitle Translation Skill"
+    },
+    {
+      "name": "julien-ref-ahk-v1",
+      "triggers": [
+        "autohotkey v1",
+        "ahk v1",
+        "autohotkey script",
+        "ahk script",
+        "autohotkey best practices",
+        "ahk best practices",
+        "autohotkey gui",
+        "ahk hotkey"
+      ],
+      "description": "Best practices AutoHotkey v1. Use when writing AHK v1 scripts to avoid critical errors like auto-execute section issues, includes order, and COM object handling.",
+      "source": "marketplace",
+      "content_summary": "Structure du Guide | Erreur #0 : Section Auto-Execute - LA RÈGLE LA PLUS CRITIQUE | QU'EST-CE QUE L'AUTO-EXECUTE? | CE QUI TERMINE L'AUTO-EXECUTE | ERREUR FATALE - Code après une fonction # AutoHotkey v1 - Guide de Référence Optimisé LLM"
+    },
+    {
+      "name": "julien-ref-ahk-v2",
+      "triggers": [
+        "raccourci clavier windows",
+        "automatiser une tâche windows",
+        "mon script ahk ne marche pas",
+        "aide pour mon script ahk",
+        "help with my ahk script",
+        "create a hotkey",
+        "autohotkey v2",
+        "ahk v2",
+        "ahk2",
+        "autohotkey tutorial"
+      ],
+      "description": "Best practices AutoHotkey v2. Use when writing AHK v2 scripts - covers global variable declarations, SetTimer usage, event handlers, and GUI positioning.",
+      "source": "marketplace",
+      "content_summary": "RÈGLE CRITIQUE - VARIABLES GLOBALES | DÉCLARATION OBLIGATOIRE DANS CHAQUE FONCTION | LISTE COMPLÈTE DES VARIABLES À DÉCLARER | STRUCTURE MODULAIRE AUTOHOTKEY V2 | En-tête Standard # AutoHotkey v2 - Best Practices pour LLM"
+    },
+    {
+      "name": "julien-ref-astro-install",
+      "triggers": [
+        "installer astro",
+        "démarrer un projet astro",
+        "astro sur windows",
+        "erreur installation astro",
+        "how to install astro",
+        "getting started with astro",
+        "astro tailwind setup",
+        "astro",
+        "astro install",
+        "create astro project"
+      ],
+      "description": "Guide d'installation Astro + Tailwind sur Windows. Covers Node.js setup, pnpm, project creation, common Windows issues, and troubleshooting.",
+      "source": "marketplace",
+      "content_summary": "Prérequis | 1. Node.js (version 18.20.8+ ou 20.3.0+ ou 22.0.0+) | 2. Gestionnaire de paquets | Méthode 1 : Installation Rapide (Recommandée) | Étape 1 : Créer le projet # Guide d'Installation Astro + Tailwind sur Windows"
+    },
+    {
+      "name": "julien-ref-batch",
+      "triggers": [
+        "comment écrire un script batch",
+        "mon bat ne marche pas",
+        "aide pour un fichier bat",
+        "how to write a batch script",
+        "help me make a bat file",
+        "automate tasks with batch",
+        "batch script",
+        "bat file",
+        "windows batch",
+        "cmd script"
+      ],
+      "description": "Best practices for Windows Batch scripts (.bat). Covers encoding, path handling, variables, error management, and common pitfalls.",
+      "source": "marketplace",
+      "content_summary": "STRUCTURE ET ENCODAGE | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS | Variables de Chemin Robustes # Best Practices - Scripts Batch (.bat)"
+    },
+    {
+      "name": "julien-ref-doc-production",
+      "triggers": [
+        "comment documenter mon projet",
+        "aide-moi à structurer ma doc",
+        "je veux écrire la doc",
+        "modèle de document",
+        "écrire un rapport",
+        "how to document my project",
+        "help me write documentation",
+        "project documentation guide",
+        "create documentation",
+        "incident report",
+        "session report",
+        "guide template"
+      ],
+      "description": "Documentation production methodology with DRY principles. Covers 8 document types (GUIDE, INCIDENT, SESSION, AUDIT, RECHERCHE, etc.), naming conventions, and YAML metadata.",
+      "source": "marketplace",
+      "content_summary": "Principles | Structure | Naming Conventions | EVOLVING Docs (living docs) | EVENT-BASED Docs (snapshots) # Documentation Production Methodology"
+    },
+    {
+      "name": "julien-ref-doc-review",
+      "triggers": [
+        "relire ce document",
+        "annoter un fichier",
+        "marquer ce qui est à corriger",
+        "trouver les TODO",
+        "review this document",
+        "proofread this file",
+        "check my documentation",
+        "flag issues in documentation",
+        "document review",
+        "annotation tags"
+      ],
+      "description": "Simplified document review methodology with 4 core tags (@FIX, @TODO, @VERIFY, @OK) and [MACRO] flag for systemic impact. Use for annotating and reviewing documentation.",
+      "source": "marketplace",
+      "content_summary": "Overview | Tag System | CORE Tags (4 essential) | SPECIAL Tags (particular use) | [MACRO] Impact Flag # Document Review Methodology"
+    },
+    {
+      "name": "julien-ref-notion-markdown",
+      "triggers": [
+        "importer markdown dans notion",
+        "upload to notion",
+        "mettre mon README dans Notion",
+        "convertir markdown en page notion",
+        "push markdown to notion",
+        "format for notion",
+        "notion markdown",
+        "notion uploader",
+        "notion callout",
+        "notion table",
+        "notion database",
+        "notion toggle",
+        "notion embed",
+        "notion columns"
+      ],
+      "description": "Complete markdown guide for Universal Notion Uploader. Covers 14 element types (headings, callouts, highlights, toggles, embeds, columns, databases), upload modes, and API constraints.",
+      "source": "marketplace",
+      "content_summary": "Parser Architecture | Supported Elements | 1. Headings (H1-H3 Only) | Collapsible Headings | 2. Rich Text (Inline Formatting) # Markdown Structuring Guide for Universal Notion Uploader"
+    },
+    {
+      "name": "julien-ref-powershell",
+      "triggers": [
+        "aide-moi avec mon powershell",
+        "mon powershell ne marche pas",
+        "help with my powershell script",
+        "write powershell function",
+        "powershell style guide",
+        "powershell",
+        "powershell script",
+        "ps1",
+        "powershell best practices"
+      ],
+      "description": "PowerShell naming conventions and organization best practices. Covers Verb-Noun functions, variable naming, module structure, and documentation standards.",
+      "source": "marketplace",
+      "content_summary": "Vue d'Ensemble | Structure d'Organisation Générique | Structure de Base | Conventions de Nommage | 1. Fichiers PowerShell # PowerShell - Conventions de Nommage et Organisation"
+    },
+    {
+      "name": "julien-skill-creator",
       "triggers": [
         "SKILL.md",
         "skill.md",
@@ -303,10 +647,44 @@
         "skill development"
       ],
       "description": "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation.",
+      "source": "marketplace",
       "content_summary": "Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure | Naming & Description # Skill Creator"
     },
     {
-      "name": "julien-dev-skill-renamer",
+      "name": "julien-skill-migration",
+      "triggers": [
+        "migrate skill",
+        "move skill to marketplace",
+        "publish skill",
+        "share skill",
+        "skill migration",
+        "local to marketplace",
+        "migrer skill",
+        "déplacer skill",
+        "publier skill"
+      ],
+      "description": "Intelligently migrate skills from local to marketplace with dependency analysis, path verification, and venv detection. Use when: migrate skill, publish skill, move to marketplace.",
+      "source": "marketplace",
+      "content_summary": "Prerequisites | Migration Process | Phase 1: Deep Analysis | Phase 2: Migration Report | Phase 3: User Decision # Intelligent Skill Migration (Local → Marketplace)"
+    },
+    {
+      "name": "julien-skill-move-to-core",
+      "triggers": [
+        "move to core",
+        "add to core",
+        "add to sync",
+        "sync skill",
+        "make global",
+        "ajouter au core",
+        "synchroniser skill",
+        "rendre global"
+      ],
+      "description": "Add a skill to core sync config for global availability. Use when: move to core, add to sync, make skill global, sync skill.",
+      "source": "marketplace",
+      "content_summary": "What is \"Core\"? | Process | Step 1: Identify the skill | Step 2: Verify skill exists | Step 3: Check current sync-config # Move Skill to Core"
+    },
+    {
+      "name": "julien-skill-renamer",
       "triggers": [
         "rename skill",
         "change skill name",
@@ -316,10 +694,11 @@
         "renommer une skill"
       ],
       "description": "Rename a skill across the marketplace. Use when: user wants to rename a skill, change skill name, or refactor skill naming.",
+      "source": "marketplace",
       "content_summary": "When to Use | What It Does | After Running | Skill Chaining | Skills Required Before # Skill Renamer"
     },
     {
-      "name": "julien-dev-skill-reviewer",
+      "name": "julien-skill-reviewer",
       "triggers": [
         "review skill",
         "check skill",
@@ -340,303 +719,26 @@
         "améliorer ma skill"
       ],
       "description": "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro.",
+      "source": "marketplace",
       "content_summary": "When to Use | Review Process | Step 1: Read and Parse | Step 2: Score Against Rubric | Step 3: Calculate Score # Skill Reviewer"
     },
     {
-      "name": "julien-infra-deployment-verifier",
+      "name": "julien-skill-router",
       "triggers": [
-        "verify deployment",
-        "check deployment",
-        "deployment status",
-        "pm2 status",
-        "site working"
+        "which skill",
+        "find skill",
+        "skill for",
+        "right skill",
+        "quelle skill",
+        "trouver skill",
+        "skill pour",
+        "bonne skill",
+        "what skill should I use",
+        "recommend a skill"
       ],
-      "description": "Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports.",
-      "content_summary": "Server Info | When to Use This Skill | Verification Checklist | ✅ Complete Verification Workflow | 1. PM2 Process Verification # Deployment Verifier - Hostinger srv759970"
-    },
-    {
-      "name": "julien-infra-git-vps-sync",
-      "triggers": [
-        "sync vps git",
-        "git pull vps",
-        "update server code",
-        "git sync hostinger",
-        "vps github sync"
-      ],
-      "description": "Manage Git sync between VPS and GitHub for Hostinger srv759970. Handles unrelated histories, untracked files, diverged branches, and sync conflicts automatically.",
-      "content_summary": "Server Info | When to Use This Skill | Common Scenarios | 1. Unrelated Histories | Option A: Merge with allow-unrelated-histories (preserves VPS changes) # Git VPS Sync - Hostinger srv759970"
-    },
-    {
-      "name": "julien-infra-hostinger-core",
-      "triggers": [
-        "ssh hostinger",
-        "connect server",
-        "disk space",
-        "server maintenance",
-        "cleanup vps",
-        "free space",
-        "system status"
-      ],
-      "description": "Core server management for Hostinger VPS srv759970 - SSH access, system status, maintenance tasks, and disk space reclamation. Use for any server operation, connection issues, or maintenance tasks.",
-      "content_summary": "Server Info | 1. SSH Connection | Quick Connect | SSH Config (~/.ssh/config) | Fix Permission Denied (Windows) # Hostinger VPS Core Management"
-    },
-    {
-      "name": "julien-infra-hostinger-database",
-      "triggers": [
-        "database hostinger",
-        "postgresql vps",
-        "redis server",
-        "mongodb hostinger",
-        "db backup",
-        "database connection"
-      ],
-      "description": "Manage shared database instances on Hostinger VPS srv759970 - PostgreSQL, Redis, MongoDB operations. Use for database connections, backups, user management, performance checks, or troubleshooting database issues.",
-      "content_summary": "Overview | Databases Available | When to Use This Skill | PostgreSQL Operations | Connection # Database Management - Hostinger VPS"
-    },
-    {
-      "name": "julien-infra-hostinger-docker",
-      "triggers": [
-        "docker",
-        "container",
-        "docker compose",
-        "optimize docker",
-        "container crash",
-        "docker logs"
-      ],
-      "description": "Docker management for Hostinger VPS srv759970 - container operations, image optimization, WordPress Docker, troubleshooting. Use for any Docker operation, container issues, or image management.",
-      "content_summary": "Server Info | 1. Status & Monitoring | Quick Status | Container Stats | Logs # Hostinger Docker Management"
-    },
-    {
-      "name": "julien-infra-hostinger-security",
-      "triggers": [
-        "fail2ban",
-        "ban ip",
-        "unban ip",
-        "wordpress security",
-        "security audit",
-        "audit vps",
-        "brute force"
-      ],
-      "description": "Security management for Hostinger VPS srv759970 - Fail2ban, WordPress security audits (25+ checks, 0-100% scoring), infrastructure audit. Use for security hardening, IP bans, or security assessments.",
-      "content_summary": "Server Info | 1. Fail2ban Management | WordPress Jails | Status Check | Ban/Unban IP # Hostinger Security Management"
-    },
-    {
-      "name": "julien-infra-hostinger-web",
-      "triggers": [
-        "nginx",
-        "reverse proxy",
-        "ssl certificate",
-        "certbot",
-        "deploy hostinger",
-        "deploy incluzact",
-        "502 error",
-        "504 error"
-      ],
-      "description": "Web infrastructure for Hostinger VPS - Nginx reverse proxy, SSL/Let's Encrypt, configuration audit, and application deployment (INCLUZ'HACT). Use for site configuration, SSL setup, 502/504 errors, or deployments.",
-      "content_summary": "Server Info | 1. Nginx Management | Add New Site | SSL with Let's Encrypt | Common Commands # Hostinger Web Infrastructure"
-    },
-    {
-      "name": "julien-infra-jokers",
-      "triggers": [
-        "deploy jokers",
-        "jokers hockey",
-        "push to production",
-        "check jokers logs",
-        "restart jokers",
-        "jokers database",
-        "jokers build",
-        "jokers pm2"
-      ],
-      "description": "Complete management for Jokers Hockey website - deployment, build checks, database migrations (Drizzle ORM), and PM2 process management. Use for any Jokers site operation.",
-      "content_summary": "Quick Reference | 1. Deployment | Quick Deploy (Git) | Pre-Deployment Checks | Verify Deployment # Jokers Hockey - Infrastructure Management"
-    },
-    {
-      "name": "julien-mcp-installer",
-      "triggers": [
-        "install mcp",
-        "add mcp server",
-        "mcp installer",
-        "setup mcp",
-        "configure mcp",
-        "ajouter mcp",
-        "installer mcp",
-        "which mcp",
-        "list mcp servers",
-        "available mcp",
-        "mcp marketplace"
-      ],
-      "description": "Interactive MCP server installer. Lists all available MCPs by category and installs the user's choice into .mcp.json",
-      "content_summary": "Available MCP Servers | Category: Office (5) | Category: Browser (3) | Category: APIs (6) | Category: AI/LLM (4) # MCP Server Installer"
-    },
-    {
-      "name": "julien-media-onepiece-workflow",
-      "triggers": [
-        "onepiece",
-        "one piece",
-        "transcoding pipeline",
-        "remux japanese",
-        "dropbox upload video",
-        "anime transcode",
-        "nvenc transcode",
-        "streaming onepiece"
-      ],
-      "description": "Manage OnePiece transcoding pipeline - GPU local transcoding, remux Japanese audio, upload to Dropbox for web streaming app.",
-      "content_summary": "Trigger Conditions | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) | Actions (Scripts prennent arguments positionnels) # OnePiece Workflow Skill"
-    },
-    {
-      "name": "julien-media-subtitle-translation",
-      "triggers": [
-        "translate subtitles",
-        "translate srt",
-        "subtitle translation",
-        "traduire sous-titres",
-        "batch translate subtitles",
-        "srt file translation",
-        "movie subtitles",
-        "series subtitles",
-        "translate episodes"
-      ],
-      "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation.",
-      "content_summary": "When to Use | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity | Model Recommendations (December 2024) # Subtitle Translation Skill"
-    },
-    {
-      "name": "julien-ref-ahk-v1",
-      "triggers": [
-        "autohotkey v1",
-        "ahk v1",
-        "autohotkey script",
-        "ahk script",
-        "autohotkey best practices",
-        "ahk best practices",
-        "autohotkey gui",
-        "ahk hotkey"
-      ],
-      "description": "Best practices AutoHotkey v1. Use when writing AHK v1 scripts to avoid critical errors like auto-execute section issues, includes order, and COM object handling.",
-      "content_summary": "Structure du Guide | Erreur #0 : Section Auto-Execute - LA RÈGLE LA PLUS CRITIQUE | QU'EST-CE QUE L'AUTO-EXECUTE? | CE QUI TERMINE L'AUTO-EXECUTE | ERREUR FATALE - Code après une fonction # AutoHotkey v1 - Guide de Référence Optimisé LLM"
-    },
-    {
-      "name": "julien-ref-ahk-v2",
-      "triggers": [
-        "raccourci clavier windows",
-        "automatiser une tâche windows",
-        "mon script ahk ne marche pas",
-        "aide pour mon script ahk",
-        "help with my ahk script",
-        "create a hotkey",
-        "autohotkey v2",
-        "ahk v2",
-        "ahk2",
-        "autohotkey tutorial"
-      ],
-      "description": "Best practices AutoHotkey v2. Use when writing AHK v2 scripts - covers global variable declarations, SetTimer usage, event handlers, and GUI positioning.",
-      "content_summary": "RÈGLE CRITIQUE - VARIABLES GLOBALES | DÉCLARATION OBLIGATOIRE DANS CHAQUE FONCTION | LISTE COMPLÈTE DES VARIABLES À DÉCLARER | STRUCTURE MODULAIRE AUTOHOTKEY V2 | En-tête Standard # AutoHotkey v2 - Best Practices pour LLM"
-    },
-    {
-      "name": "julien-ref-astro-install",
-      "triggers": [
-        "installer astro",
-        "démarrer un projet astro",
-        "astro sur windows",
-        "erreur installation astro",
-        "how to install astro",
-        "getting started with astro",
-        "astro tailwind setup",
-        "astro",
-        "astro install",
-        "create astro project"
-      ],
-      "description": "Guide d'installation Astro + Tailwind sur Windows. Covers Node.js setup, pnpm, project creation, common Windows issues, and troubleshooting.",
-      "content_summary": "Prérequis | 1. Node.js (version 18.20.8+ ou 20.3.0+ ou 22.0.0+) | 2. Gestionnaire de paquets | Méthode 1 : Installation Rapide (Recommandée) | Étape 1 : Créer le projet # Guide d'Installation Astro + Tailwind sur Windows"
-    },
-    {
-      "name": "julien-ref-batch",
-      "triggers": [
-        "comment écrire un script batch",
-        "mon bat ne marche pas",
-        "aide pour un fichier bat",
-        "how to write a batch script",
-        "help me make a bat file",
-        "automate tasks with batch",
-        "batch script",
-        "bat file",
-        "windows batch",
-        "cmd script"
-      ],
-      "description": "Best practices for Windows Batch scripts (.bat). Covers encoding, path handling, variables, error management, and common pitfalls.",
-      "content_summary": "STRUCTURE ET ENCODAGE | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS | Variables de Chemin Robustes # Best Practices - Scripts Batch (.bat)"
-    },
-    {
-      "name": "julien-ref-doc-production",
-      "triggers": [
-        "comment documenter mon projet",
-        "aide-moi à structurer ma doc",
-        "je veux écrire la doc",
-        "modèle de document",
-        "écrire un rapport",
-        "how to document my project",
-        "help me write documentation",
-        "project documentation guide",
-        "create documentation",
-        "incident report",
-        "session report",
-        "guide template"
-      ],
-      "description": "Documentation production methodology with DRY principles. Covers 8 document types (GUIDE, INCIDENT, SESSION, AUDIT, RECHERCHE, etc.), naming conventions, and YAML metadata.",
-      "content_summary": "Principles | Structure | Naming Conventions | EVOLVING Docs (living docs) | EVENT-BASED Docs (snapshots) # Documentation Production Methodology"
-    },
-    {
-      "name": "julien-ref-doc-review",
-      "triggers": [
-        "relire ce document",
-        "annoter un fichier",
-        "marquer ce qui est à corriger",
-        "trouver les TODO",
-        "review this document",
-        "proofread this file",
-        "check my documentation",
-        "flag issues in documentation",
-        "document review",
-        "annotation tags"
-      ],
-      "description": "Simplified document review methodology with 4 core tags (@FIX, @TODO, @VERIFY, @OK) and [MACRO] flag for systemic impact. Use for annotating and reviewing documentation.",
-      "content_summary": "Overview | Tag System | CORE Tags (4 essential) | SPECIAL Tags (particular use) | [MACRO] Impact Flag # Document Review Methodology"
-    },
-    {
-      "name": "julien-ref-notion-markdown",
-      "triggers": [
-        "importer markdown dans notion",
-        "upload to notion",
-        "mettre mon README dans Notion",
-        "convertir markdown en page notion",
-        "push markdown to notion",
-        "format for notion",
-        "notion markdown",
-        "notion uploader",
-        "notion callout",
-        "notion table",
-        "notion database",
-        "notion toggle",
-        "notion embed",
-        "notion columns"
-      ],
-      "description": "Complete markdown guide for Universal Notion Uploader. Covers 14 element types (headings, callouts, highlights, toggles, embeds, columns, databases), upload modes, and API constraints.",
-      "content_summary": "Parser Architecture | Supported Elements | 1. Headings (H1-H3 Only) | Collapsible Headings | 2. Rich Text (Inline Formatting) # Markdown Structuring Guide for Universal Notion Uploader"
-    },
-    {
-      "name": "julien-ref-powershell",
-      "triggers": [
-        "aide-moi avec mon powershell",
-        "mon powershell ne marche pas",
-        "help with my powershell script",
-        "write powershell function",
-        "powershell style guide",
-        "powershell",
-        "powershell script",
-        "ps1",
-        "powershell best practices"
-      ],
-      "description": "PowerShell naming conventions and organization best practices. Covers Verb-Noun functions, variable naming, module structure, and documentation standards.",
-      "content_summary": "Vue d'Ensemble | Structure d'Organisation Générique | Structure de Base | Conventions de Nommage | 1. Fichiers PowerShell # PowerShell - Conventions de Nommage et Organisation"
+      "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help.",
+      "source": "marketplace",
+      "content_summary": "Development Tools | Workflow | Anthropic Office (Documents) | Anthropic Web/Design | Infrastructure Hostinger # Skill Router - Index des Skills Disponibles"
     },
     {
       "name": "julien-workflow-advice-codex",
@@ -653,6 +755,7 @@
         "openai codex review"
       ],
       "description": "Get OpenAI Codex CLI's opinion on code, bugs, or implementation. Use when you want a second AI perspective during coding sessions.",
+      "source": "global",
       "content_summary": "Prerequisites | When to Use | How to Invoke | Execution | For file review (non-interactive) # Ask Codex"
     },
     {
@@ -670,6 +773,7 @@
         "google gemini review"
       ],
       "description": "Get Gemini CLI's opinion on code, architecture, or implementation. Use when you want a second AI perspective during coding sessions.",
+      "source": "global",
       "content_summary": "Prerequisites | When to Use | How to Invoke | Execution | For file review # Ask Gemini"
     },
     {
@@ -689,6 +793,7 @@
         "show my skills"
       ],
       "description": "Check which Claude skills are loaded globally and project-level. Displays loaded skills by category (Hostinger, Anthropic, custom), counts, and helps troubleshoot missing skills.",
+      "source": "marketplace",
       "content_summary": "When to Use This Skill | What This Skill Does | Via Slash Command (Recommended) | Via Direct Invocation | Output Format # Check Loaded Skills"
     },
     {
@@ -698,105 +803,197 @@
         "background job",
         "idle queue",
         "low priority task",
-        "run when idle",
-        "qm add",
-        "idle-queue",
-        "schedule this task",
-        "planifier cette tâche",
-        "deferred job",
-        "transcode video",
-        "transcoder vidéo",
-        "convert video background",
-        "ffmpeg background",
-        "ffmpeg en arrière-plan",
-        "conversion longue",
-        "long conversion",
-        "render video",
-        "faire le rendu",
-        "render vidéo en tâche de fond",
-        "encode footage",
-        "run blender render",
-        "convert mkv",
-        "script takes long",
-        "script prend du temps",
-        "long running script",
-        "slow script",
-        "script lent",
-        "batch processing",
-        "traitement par lot",
-        "this is taking forever",
-        "ça prend une éternité",
-        "queue heavy python script",
-        "without blocking",
-        "sans bloquer",
-        "don't block PC",
-        "ne pas bloquer le PC",
-        "keep PC responsive",
-        "garder le PC réactif",
-        "run without impact",
-        "low priority execution",
-        "don't slow down my machine",
-        "ne ralentis pas ma machine",
-        "keep my system responsive",
-        "resource-intensive task",
-        "tâche gourmande en ressources",
-        "heavy computation",
-        "calcul lourd",
-        "run in background",
-        "exécuter en arrière-plan",
-        "lancer en arrière-plan",
-        "background execution",
-        "execute when idle",
-        "exécuter quand inactif",
-        "run this when I'm away",
-        "exécute quand je ne suis pas là",
-        "process when computer is idle",
-        "do this asynchronously",
-        "faisons cela de manière asynchrone",
-        "bulk API calls",
-        "mass translation",
-        "batch encode",
-        "multiple file conversion",
-        "heavy task",
-        "tâche lourde",
-        "compress files when idle",
-        "traiter photos RAW",
-        "background ML training",
-        "train machine learning model",
-        "batch OCR",
-        "large file processing",
-        "traitement de gros fichiers",
-        "process data overnight",
-        "large data export",
-        "exportation volumineuse",
-        "scrape website background",
-        "pipeline data nightly",
-        "run backup background",
-        "compile in background",
-        "keep working while this runs",
-        "continuer à travailler pendant que ça tourne",
-        "encoder des vidéos",
-        "encode videos"
+        "run when idle"
       ],
       "description": "Queue long-running tasks (transcoding, API calls, batch processing) to run in background at low priority when user is active, normal priority when idle. Use when scripts take minutes/hours and shouldn't impact PC performance during active use.",
-      "content_summary": "Prerequisites | Quick Start | Service Startup | Manual start | Auto-start at login (Windows) # Idle Queue - Background Task Manager"
+      "source": "global",
+      "content_summary": "Prerequisites | Quick Start | Service Startup | Manual control (optional) | Windows auto-start at login # Idle Queue - Background Task Manager"
     },
     {
-      "name": "julien-workflow-skill-router",
+      "name": "wordpress-structure-validator",
       "triggers": [
-        "which skill",
-        "find skill",
-        "skill for",
-        "right skill",
-        "quelle skill",
-        "trouver skill",
-        "skill pour",
-        "bonne skill",
-        "what skill should I use",
-        "recommend a skill"
+        "valider la structure",
+        "valider structure wordpress",
+        "wordpress validator",
+        "auditer le site",
+        "vérifier les templates",
+        "problème de backup",
+        "updraftplus",
+        "permissions fichiers",
+        "avant mise en prod",
+        "vérifier le thème",
+        "validate wordpress",
+        "check wordpress structure"
       ],
-      "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help.",
-      "content_summary": "Development Tools | Workflow | Anthropic Office (Documents) | Anthropic Web/Design | Infrastructure Hostinger # Skill Router - Index des Skills Disponibles"
+      "description": "This skill validates WordPress FSE (Full Site Editing) theme structure including templates hierarchy, page associations, theme.json configuration, block styles, featured images usage, file permissions, and UpdraftPlus backup configuration. Use when auditing a WordPress site, after creating/modifying templates, before production deployment, or when troubleshooting backup issues.",
+      "source": "project:Site internet Clem",
+      "content_summary": "When to Use This Skill | What This Skill Validates | Validation Workflow | Step 1: Template Validation | Step 2: Theme.json Validation # WordPress Structure Validator"
+    },
+    {
+      "name": "wp-block-contract",
+      "triggers": [
+        "créer un bloc gutenberg",
+        "nouveau bloc wordpress",
+        "block.json",
+        "gutenberg block",
+        "bloc custom",
+        "ajouter un bloc",
+        "modifier le bloc",
+        "edit.js",
+        "composant éditeur",
+        "bloc react"
+      ],
+      "description": "This skill enforces Gutenberg block development structure, metadata, and styling rules. Use when creating or modifying custom blocks for the WordPress theme.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Structure obligatoire d'un bloc | Règles fondamentales | 1. block.json obligatoire | 2. Attributs typés avec défauts # WordPress Block Development Contract"
+    },
+    {
+      "name": "wp-build-tools",
+      "triggers": [
+        "lancer le build",
+        "npm run build",
+        "erreur eslint",
+        "erreur stylelint",
+        "configurer le linter",
+        "qualité du code",
+        "vérifier le code",
+        "wordpress scripts",
+        "phpcs"
+      ],
+      "description": "This skill enforces build tooling, linting, and quality checks for WordPress theme development. Use when setting up project, configuring linters, or running quality checks.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Stack recommandée | 1. @wordpress/scripts | 2. Stylelint | 3. ESLint # WordPress Build Tools & Quality"
+    },
+    {
+      "name": "wp-clean-css",
+      "triggers": [
+        "écrire du css",
+        "modifier le style",
+        "css propre",
+        "@layer",
+        "theme.json",
+        "tokens css",
+        "important interdit",
+        "architecture css",
+        "variables css"
+      ],
+      "description": "This skill enforces CSS architecture with @layer, prohibits !important, and validates theme.json token usage. Use when writing, reviewing, or modifying any CSS file in the WordPress theme.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Règles NON NÉGOCIABLES | 1. Interdiction de  | 2. Spécificité maximale : 2 niveaux | 3. Tokens theme.json obligatoires # WordPress Clean CSS Architecture"
+    },
+    {
+      "name": "wp-clem-hostinger-upload-image",
+      "triggers": [
+        "upload une image",
+        "ajouter une image au site",
+        "envoyer une photo",
+        "médiathèque wordpress",
+        "image sur le site clem",
+        "téléverser image"
+      ],
+      "description": "Upload images to clemencefouquet.fr WordPress on Hostinger VPS via Docker. Specific to wordpress-clemence container. Use when user asks to upload images to Clémence's site.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Required Input | Complete Workflow | 1. Upload to Server | 2. Copy to WordPress with Correct Permissions | 3. Verify Upload # WordPress Image Upload - Clemencefouquet.fr (Hostinger VPS)"
+    },
+    {
+      "name": "wp-footer-contract",
+      "triggers": [
+        "modifier le footer",
+        "pied de page",
+        "mentions légales",
+        "contact footer",
+        "liens footer",
+        "l-footer",
+        "footer wordpress",
+        "bas de page"
+      ],
+      "description": "This skill enforces footer structure and styling rules for clemencefouquet.fr. Use when creating or modifying the site footer, including links, contact info, and legal mentions.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Structure HTML obligatoire | Classes CSS | Layout principal | Règles CSS # WordPress Footer Contract"
+    },
+    {
+      "name": "wp-header-contract",
+      "triggers": [
+        "modifier le header",
+        "changer le menu",
+        "navigation du site",
+        "menu mobile",
+        "logo du site",
+        "l-header",
+        "header wordpress",
+        "glassmorphisme header",
+        "menu responsive"
+      ],
+      "description": "This skill enforces header structure, accessibility, and styling rules for clemencefouquet.fr. Use when creating or modifying the site header, navigation, logo, or mobile menu.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Structure HTML obligatoire | Classes CSS | Layout principal | États # WordPress Header Contract"
+    },
+    {
+      "name": "wp-pattern-contract",
+      "triggers": [
+        "créer un pattern",
+        "nouveau pattern gutenberg",
+        "pattern wordpress",
+        "block pattern",
+        "composition de blocs",
+        "section réutilisable",
+        "template de blocs",
+        "ajouter un pattern",
+        "modifier le pattern"
+      ],
+      "description": "This skill enforces Gutenberg block pattern development rules. Use when creating or modifying patterns that compose multiple blocks into reusable sections.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Règle fondamentale | Structure d'un pattern | Fichier PHP | Header du pattern (OBLIGATOIRE) # WordPress Pattern Development Contract"
+    },
+    {
+      "name": "wp-remote-architecture",
+      "triggers": [
+        "architecture du site",
+        "structure des pages",
+        "hiérarchie des templates",
+        "pages en prod",
+        "navigation du site clem",
+        "template wordpress",
+        "config theme.json"
+      ],
+      "description": "This skill describes the remote WordPress site structure, page hierarchy, templates, and global configuration. Use when referencing site architecture, page structure, or templates on production.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Structure des pages | Pages actuelles | Créer une nouvelle page | Assigner un template # WordPress Site Architecture"
+    },
+    {
+      "name": "wp-sync-workflows",
+      "triggers": [
+        "déployer sur le serveur",
+        "mettre en prod",
+        "récupérer les modifs de clem",
+        "sync git vps",
+        "push en production",
+        "pull depuis prod",
+        "synchroniser le site",
+        "synchroniser le thème",
+        "sync thème",
+        "sync theme",
+        "laragon vers vps",
+        "deploy wordpress"
+      ],
+      "description": "This skill manages sync workflows between local development (Laragon), Git, and production VPS. Use for commits, deployments, and syncing content changes made by Clémence via Gutenberg.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Variables d'environnement | Workflow 1 : Développement Local → Production | Flux | Étape 1 : Développer dans Laragon # WordPress Git Workflow"
+    },
+    {
+      "name": "wp-wpcli-remote",
+      "triggers": [
+        "commande wp-cli",
+        "modifier une page en prod",
+        "changer le menu",
+        "options wordpress",
+        "maintenance wp",
+        "wp cli docker",
+        "modifier le contenu distant"
+      ],
+      "description": "This skill provides WP-CLI commands for remote WordPress management on VPS. Use when modifying content, pages, menus, options, or running maintenance tasks directly on production.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Pattern d'exécution | Commandes fréquentes | Pages et Posts | Menus # WP-CLI Remote Commands"
     }
   ]
 }

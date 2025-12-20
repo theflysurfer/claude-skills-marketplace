@@ -55,3 +55,25 @@ done
 - Skills available globally in all projects
 - Commands available with `/sync` and `/list-resources`
 - Scripts available for hooks (semantic-router, tracking)
+- MCP registry available for `discover-mcps.py` and `mcp-auto-install.py`
+
+## MCP Management
+
+After syncing, you can use these MCP tools:
+
+```bash
+# Discover installed vs available MCPs
+python ~/.claude/scripts/discover-mcps.py
+
+# Install a specific MCP globally
+python ~/.claude/scripts/mcp-auto-install.py notion
+
+# Install in project only
+python ~/.claude/scripts/mcp-auto-install.py playwright --project
+
+# Install all recommended MCPs
+python ~/.claude/scripts/mcp-auto-install.py --recommended
+
+# List available MCPs
+python ~/.claude/scripts/mcp-auto-install.py --list
+```

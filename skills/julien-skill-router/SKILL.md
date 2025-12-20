@@ -1,5 +1,5 @@
 ---
-name: julien-workflow-skill-router
+name: julien-skill-router
 description: "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help."
 license: Apache-2.0
 allowed-tools: [Skill]

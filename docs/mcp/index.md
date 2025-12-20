@@ -61,17 +61,39 @@ flowchart TB
 
 ## Configuration
 
-Les serveurs MCP sont configurés dans `~/.claude/settings.json` :
+!!! warning "Emplacement correct"
+    Les serveurs MCP vont dans **`.mcp.json`**, PAS dans `settings.json` !
+
+### Fichiers de configuration
+
+| Fichier | Scope | Usage |
+|---------|-------|-------|
+| `~/.claude/.mcp.json` | 🌐 Global | MCPs disponibles partout |
+| `projet/.claude/.mcp.json` | 📁 Projet | MCPs spécifiques au projet |
+
+### Format .mcp.json
 
 ```json
 {
-  "mcpServers": {
-    "nom-serveur": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-server-nom"]
-    }
+  "nom-serveur": {
+    "command": "npx",
+    "args": ["-y", "@anthropic/mcp-server-nom"]
+  },
+  "autre-serveur": {
+    "command": "python",
+    "args": ["-m", "mon_module.mcp_server"]
   }
 }
+```
+
+### Vérifier les MCPs actifs
+
+```bash
+# Dans Claude Code
+/mcp
+
+# Ou via CLI
+claude mcp list
 ```
 
 ## Voir aussi

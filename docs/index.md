@@ -69,9 +69,21 @@ Le marketplace utilise une architecture **symlinks** pour la distribution :
 ## Démarrage rapide
 
 ```bash
-# Synchroniser les skills
+# Synchroniser skills, hooks et configs
 /sync
 
-# Lancer le dashboard
-mkdocs serve
+# Voir les skills chargées
+/check-loaded-skills
+
+# Lister toutes les ressources
+/list-resources
 ```
+
+## Référence Rapide
+
+Voir la [page de référence](reference.md) pour :
+- Toutes les commandes slash disponibles
+- Scripts utilitaires
+- Skills principales par catégorie
+- Hooks actifs et templates
+- MCPs configurés

@@ -7,8 +7,9 @@
   },
   "core": [
     "anthropic-office-*",
-    "julien-dev-tools-*",
-    "julien-workflow-*"
+    "julien-dev-*",
+    "julien-workflow-*",
+    "julien-mcp-installer"
   ],
   "projects": {
     "julien-music/claude-code-marketplace": {
@@ -24,7 +25,7 @@
     "~/_Projets de code/2025.09 Notion Uploader": {
       "name": "Notion Uploader",
       "skills": [
-        "notion-*",
+        "julien-notion-*",
         "julien-workflow-*"
       ],
       "tags": [
@@ -34,7 +35,7 @@
     "~/_Projets de code/2025.10 Site internet Clem": {
       "name": "Site Clem",
       "skills": [
-        "julien-wordpress-*",
+        "julien-clemence-wordpress-*",
         "julien-infra-hostinger-*"
       ],
       "tags": [
@@ -45,7 +46,7 @@
     "~/_Projets de code/2025.11 Calibre": {
       "name": "Calibre Manager",
       "skills": [
-        "julien-calibre-*"
+        "julien-calibre"
       ],
       "tags": [
         "calibre",
@@ -55,7 +56,7 @@
     "~/_Projets de code/2025.11 Site Web Jokers": {
       "name": "Site Jokers",
       "skills": [
-        "julien-deploy-*",
+        "julien-infra-jokers",
         "julien-infra-hostinger-*"
       ],
       "tags": [

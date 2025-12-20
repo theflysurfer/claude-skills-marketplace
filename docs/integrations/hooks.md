@@ -103,5 +103,7 @@ python scripts/semantic-skill-router.py --test "mon prompt"
 
 ## Voir aussi
 
-- [claude-mem](claude-mem.md)
 - [Documentation hooks Claude Code](https://docs.claude.ai/claude-code/hooks)
+- [Semantic Routing](../dev/semantic-routing.md) - Détails du système de routing automatique
+- [Architecture](../dev/architecture.md) - Vue globale du système
+- [Scopes](../dev/scopes.md) - Global vs Projet

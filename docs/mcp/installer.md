@@ -20,21 +20,22 @@ npx -y @anthropic/mcp-server-filesystem
 
 ## Configuration manuelle
 
-1. Ouvrir `~/.claude/settings.json`
+!!! warning "Emplacement correct"
+    Les serveurs MCP vont dans **`.mcp.json`**, PAS dans `settings.json` !
+
+1. Créer ou éditer `~/.claude/.mcp.json`
 2. Ajouter la configuration du serveur :
 
 ```json
 {
-  "mcpServers": {
-    "filesystem": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-server-filesystem", "/chemin/autorisé"]
-    }
+  "filesystem": {
+    "command": "npx",
+    "args": ["-y", "@anthropic/mcp-server-filesystem", "/chemin/autorisé"]
   }
 }
 ```
 
-3. Redémarrer Claude Code
+3. Redémarrer Claude Code ou exécuter `/mcp` pour vérifier
 
 ## Serveurs recommandés
 
@@ -42,11 +43,9 @@ npx -y @anthropic/mcp-server-filesystem
 
 ```json
 {
-  "mcpServers": {
-    "office": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-office"]
-    }
+  "office": {
+    "command": "npx",
+    "args": ["-y", "@anthropic/mcp-office"]
   }
 }
 ```
@@ -55,11 +54,9 @@ npx -y @anthropic/mcp-server-filesystem
 
 ```json
 {
-  "mcpServers": {
-    "puppeteer": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-server-puppeteer"]
-    }
+  "puppeteer": {
+    "command": "npx",
+    "args": ["-y", "@anthropic/mcp-server-puppeteer"]
   }
 }
 ```
@@ -68,14 +65,23 @@ npx -y @anthropic/mcp-server-filesystem
 
 ```json
 {
-  "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-server-github"],
-      "env": {
-        "GITHUB_TOKEN": "ghp_xxx"
-      }
+  "github": {
+    "command": "npx",
+    "args": ["-y", "@anthropic/mcp-server-github"],
+    "env": {
+      "GITHUB_TOKEN": "ghp_xxx"
     }
+  }
+}
+```
+
+### Serveur Python (exemple: idle-queue)
+
+```json
+{
+  "idle-queue": {
+    "command": "python",
+    "args": ["-m", "idle_queue.mcp_server"]
   }
 }
 ```

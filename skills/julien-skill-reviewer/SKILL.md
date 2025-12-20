@@ -1,5 +1,5 @@
 ---
-name: julien-dev-skill-reviewer
+name: julien-skill-reviewer
 description: "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro."
 license: Apache-2.0
 metadata:
@@ -64,7 +64,7 @@ Parse YAML frontmatter: `name`, `description`, `license`, `allowed-tools`.
 
 ### Step 2: Score Against Rubric
 
-Evaluate 9 dimensions (1-5 scale). See [references/quality-rubric.md](references/quality-rubric.md) for detailed criteria.
+Evaluate 10 dimensions (1-5 scale). See [references/quality-rubric.md](references/quality-rubric.md) for detailed criteria.
 
 | Dimension | Check |
 |-----------|-------|
@@ -77,11 +77,12 @@ Evaluate 9 dimensions (1-5 scale). See [references/quality-rubric.md](references
 | Examples | Concrete, realistic |
 | Skill Chaining | I/O/Dependencies documented |
 | Error Handling | Troubleshooting provided |
+| **Trigger Quality** | Natural language, bilingual, 10-20 triggers |
 
 ### Step 3: Calculate Score
 
 ```
-Average = Sum of 9 scores / 9
+Average = Sum of 10 scores / 10
 ```
 
 | Score | Status |
@@ -143,6 +144,7 @@ See [references/validation-checks.md](references/validation-checks.md) for compl
 | References | One level deep |
 | Long files | TOC if > 100 lines |
 | No duplicates | Content in one place only |
+| **Triggers** | 5-50 in YAML frontmatter, natural language |
 
 ## Reference Files
 
@@ -167,6 +169,7 @@ Before marking production-ready:
 - [ ] Error handling documented
 - [ ] YAML frontmatter valid
 - [ ] All references linked from SKILL.md
+- [ ] **Triggers**: 10-20 natural language triggers in frontmatter
 
 ## Skill Chaining
 
