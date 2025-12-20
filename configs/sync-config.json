@@ -50,7 +50,8 @@
     "list-resources.md",
     "project-scan.md",
     "project-list.md",
-    "project-info.md"
+    "project-info.md",
+    "active-folder.md"
   ],
   "scripts_to_sync": [
     "generate-triggers.py",
