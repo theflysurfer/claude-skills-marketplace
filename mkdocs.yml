@@ -96,6 +96,7 @@ nav:
     - Scopes (Global vs Projet): dev/scopes.md
     - Semantic Routing: dev/semantic-routing.md
     - Hooks: dev/hooks.md
+    - Serveurs: dev/servers.md
     - Maintenance: dev/paths-audit.md
 
 extra:

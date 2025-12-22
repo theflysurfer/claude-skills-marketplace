@@ -13,7 +13,13 @@ Gestion centralisée des hooks Claude Code.
 
 {{ hooks_summary() }}
 
-## Tous les Hooks
+## Tous les Hooks (toutes sources)
+
+{{ all_hooks() }}
+
+---
+
+## Hooks Marketplace
 
 {{ hooks_table() }}
 
@@ -32,6 +38,7 @@ Hooks exécutés directement depuis le marketplace. Toujours à jour.
 - `fast-skill-router` - Routing vers skills
 - `track-skill-invocation` - Analytics
 - `session-end-cleanup` - Nettoyage
+- `protect-claude-process` - Bloque kill Claude
 
 ### Templates (📋)
 

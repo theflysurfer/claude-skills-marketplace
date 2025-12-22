@@ -1,6 +1,11 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Registre centralisé des hooks Claude Code",
+  "external_sources": {
+    "global": "~/.claude/settings.json",
+    "projects": "auto-discovered from projects-registry.json",
+    "inventory": "configs/hooks-inventory.json"
+  },
   "categories": {
     "display": {
       "name": "Affichage",
@@ -126,6 +131,17 @@
       "scope": "template",
       "timeout": 10,
       "template": true
+    },
+    "protect-claude-process": {
+      "name": "Protect Claude Process",
+      "event": "PreToolUse",
+      "matcher": "Bash",
+      "description": "Bloque les commandes qui tueraient les instances Claude Code",
+      "script": "hooks/templates/protect-claude-process.py",
+      "category": "security",
+      "scope": "global",
+      "timeout": 3,
+      "template": false
     }
   },
   "deployment": {
@@ -133,7 +149,8 @@
       "session-start-banner",
       "fast-skill-router",
       "track-skill-invocation",
-      "session-end-cleanup"
+      "session-end-cleanup",
+      "protect-claude-process"
     ],
     "optional_hooks": [
       "idle-queue-check"

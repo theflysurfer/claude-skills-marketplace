@@ -51,7 +51,8 @@
     "project-scan.md",
     "project-list.md",
     "project-info.md",
-    "active-folder.md"
+    "active-folder.md",
+    "servers.md"
   ],
   "scripts_to_sync": [
     "generate-triggers.py",
@@ -70,7 +71,9 @@
     "preload-router.py",
     "migrate-skill.py",
     "build-keyword-index.py",
-    "fast-skill-router.js"
+    "fast-skill-router.js",
+    "discover-hooks.py",
+    "server-manager.py"
   ],
   "configs_to_sync": [
     "skill-triggers.json",
@@ -78,7 +81,8 @@
     "projects-registry.json",
     "project-skills-mapping.json",
     "mcp-registry.json",
-    "hooks-registry.json"
+    "hooks-registry.json",
+    "servers-registry.json"
   ],
   "hooks_to_sync": {
     "description": "Hooks to configure in ~/.claude/settings.json",
@@ -86,7 +90,8 @@
       "session-start-banner",
       "fast-skill-router",
       "track-skill-invocation",
-      "session-end-cleanup"
+      "session-end-cleanup",
+      "protect-claude-process"
     ],
     "optional": [
       "idle-queue-check"

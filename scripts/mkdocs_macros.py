@@ -506,6 +506,188 @@ def define_env(env):
 
         return "\n".join(lines)
 
+    # ========================================
+    # SERVERS MACROS
+    # ========================================
+
+    @env.macro
+    def servers_table(category: str = None) -> str:
+        """Generate a table of servers from servers-registry.json."""
+        servers_file = config_dir / "servers-registry.json"
+        if not servers_file.exists():
+            return "*Registre serveurs non trouvé*"
+
+        try:
+            with open(servers_file, "r", encoding="utf-8") as f:
+                servers_data = json.load(f)
+        except Exception:
+            return "*Erreur lecture servers-registry.json*"
+
+        servers = servers_data.get("servers", {})
+        if not servers:
+            return "*Aucun serveur enregistré*"
+
+        lines = ["| Serveur | Description | Port | Startup | Catégorie |",
+                 "|---------|-------------|------|---------|-----------|"]
+
+        for server_id, info in sorted(servers.items()):
+            if category and info.get("category") != category:
+                continue
+
+            name = info.get("name", server_id)
+            desc = info.get("description", "")[:35]
+            if len(info.get("description", "")) > 35:
+                desc += "..."
+            port = info.get("port", "-")
+            startup = "✅" if info.get("startup") else "❌"
+            cat = info.get("category", "other")
+
+            lines.append(f"| `{server_id}` | {desc} | {port} | {startup} | {cat} |")
+
+        return "\n".join(lines) if len(lines) > 2 else "*Aucun serveur dans cette catégorie*"
+
+    @env.macro
+    def utilities_table() -> str:
+        """Generate a table of startup utilities."""
+        servers_file = config_dir / "servers-registry.json"
+        if not servers_file.exists():
+            return "*Registre serveurs non trouvé*"
+
+        try:
+            with open(servers_file, "r", encoding="utf-8") as f:
+                servers_data = json.load(f)
+        except Exception:
+            return "*Erreur lecture servers-registry.json*"
+
+        utilities = servers_data.get("utilities", {})
+        if not utilities:
+            return "*Aucun utilitaire enregistré*"
+
+        lines = ["| Utilitaire | Description | Fichier Startup |",
+                 "|------------|-------------|-----------------|"]
+
+        for util_id, info in sorted(utilities.items()):
+            name = info.get("name", util_id)
+            desc = info.get("description", "")[:40]
+            startup_file = info.get("startup_file", "-")
+
+            lines.append(f"| {name} | {desc} | `{startup_file}` |")
+
+        return "\n".join(lines)
+
+    @env.macro
+    def all_hooks() -> str:
+        """Generate a comprehensive view of hooks from all sources."""
+        inventory_file = config_dir / "hooks-inventory.json"
+        hooks_file = config_dir / "hooks-registry.json"
+
+        lines = []
+
+        # Load inventory if exists
+        inventory = {}
+        if inventory_file.exists():
+            try:
+                with open(inventory_file, "r", encoding="utf-8") as f:
+                    inventory = json.load(f)
+            except Exception:
+                pass
+
+        # Load registry
+        registry = {}
+        if hooks_file.exists():
+            try:
+                with open(hooks_file, "r", encoding="utf-8") as f:
+                    registry = json.load(f)
+            except Exception:
+                pass
+
+        # Summary
+        if inventory:
+            summary = inventory.get("summary", {})
+            lines.append("## Résumé des hooks")
+            lines.append("")
+            lines.append("| Source | Count |")
+            lines.append("|--------|-------|")
+            lines.append(f"| 📦 Marketplace | **{summary.get('marketplace', 0)}** |")
+            lines.append(f"| 🌐 Global | **{summary.get('global', 0)}** |")
+            lines.append(f"| 📁 Projets | **{summary.get('projects', 0)}** |")
+            lines.append(f"| **Total** | **{summary.get('total', 0)}** |")
+            lines.append("")
+            lines.append(f"*Dernière mise à jour: {inventory.get('generated', 'N/A')[:10]}*")
+            lines.append("")
+
+        # Marketplace hooks
+        lines.append("## 📦 Hooks Marketplace")
+        lines.append("")
+        if registry:
+            hooks = registry.get("hooks", {})
+            categories = registry.get("categories", {})
+
+            lines.append("| Hook | Event | Category | Scope |")
+            lines.append("|------|-------|----------|-------|")
+            for hook_id, info in sorted(hooks.items()):
+                event = info.get("event", "?")
+                matcher = info.get("matcher", "")
+                if matcher:
+                    event = f"{event}({matcher})"
+                cat = info.get("category", "other")
+                cat_name = categories.get(cat, {}).get("name", cat)
+                scope = "📋 template" if info.get("template") else "🌐 global"
+                lines.append(f"| `{hook_id}` | {event} | {cat_name} | {scope} |")
+            lines.append("")
+        else:
+            lines.append("*Registre non disponible*")
+            lines.append("")
+
+        # Global hooks (from inventory)
+        if inventory:
+            global_hooks = inventory.get("sources", {}).get("global", {}).get("hooks", [])
+            if global_hooks:
+                lines.append("## 🌐 Hooks Globaux (~/.claude/settings.json)")
+                lines.append("")
+                lines.append("| Event | Type | Command |")
+                lines.append("|-------|------|---------|")
+                for h in global_hooks:
+                    event = h.get("event", "?")
+                    matcher = h.get("matcher", "")
+                    if matcher:
+                        event = f"{event}({matcher})"
+                    cmd = h.get("command", "")[:40]
+                    if len(h.get("command", "")) > 40:
+                        cmd += "..."
+                    lines.append(f"| {event} | {h.get('type', 'command')} | `{cmd}` |")
+                lines.append("")
+
+            # Project hooks
+            project_hooks = inventory.get("sources", {}).get("projects", {})
+            if project_hooks:
+                lines.append("## 📁 Hooks par Projet")
+                lines.append("")
+                for project_name, project_data in project_hooks.items():
+                    hooks = project_data.get("hooks", [])
+                    if hooks:
+                        lines.append(f"### {project_name}")
+                        lines.append("")
+                        lines.append(f"*Path: `{project_data.get('path', '')}`*")
+                        lines.append("")
+                        lines.append("| Event | Type | Command |")
+                        lines.append("|-------|------|---------|")
+                        for h in hooks:
+                            event = h.get("event", "?")
+                            cmd = h.get("command", "")[:35]
+                            if len(h.get("command", "")) > 35:
+                                cmd += "..."
+                            lines.append(f"| {event} | {h.get('type', 'command')} | `{cmd}` |")
+                        lines.append("")
+
+        if not inventory:
+            lines.append("## Hooks externes")
+            lines.append("")
+            lines.append("> Exécutez `python scripts/discover-hooks.py` pour scanner tous les hooks.")
+            lines.append("")
+
+        return "\n".join(lines)
+
 
 def parse_skill_frontmatter(skill_file: Path) -> dict:
     """Parse YAML frontmatter from a SKILL.md file."""
