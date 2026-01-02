@@ -1,1 +1,0 @@
-{"mcpServers": {"gmail": {"command": "node", "args": ["${ONEDRIVE_MCP_PATH}/Gmail-MCP-Server/dist/index.js"]}}}

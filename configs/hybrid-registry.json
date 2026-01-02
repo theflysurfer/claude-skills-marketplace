@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "description": "Hybrid skill registry - indexes skills from multiple physical locations",
-  "last_indexed": "2025-12-20T09:47:31.696760",
+  "last_indexed": "2026-01-02T11:33:21.496507",
   "sources": [
     {
       "id": "marketplace",
@@ -72,6 +72,13 @@
       "content_summary": "Overview | 🚀 High-Level Workflow | Phase 1: Deep Research and Planning | 1.1 Understand Modern MCP Design | 1.2 Study MCP Protocol Documentation # MCP Server Development Guide",
       "locations": [
         {
+          "source": "global",
+          "path": "anthropic-dev-tools-mcp-builder\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\anthropic-dev-tools-mcp-builder\\SKILL.md",
+          "hash": "5f96527349a34962",
+          "mtime": "2025-12-20T15:37:59.179897"
+        },
+        {
           "source": "marketplace",
           "path": "anthropic-dev-tools-mcp-builder\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-dev-tools-mcp-builder\\SKILL.md",
@@ -79,7 +86,7 @@
           "mtime": "2025-12-14T09:46:25.284426"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -104,6 +111,13 @@
       "content_summary": "Overview | Workflow Decision Tree | Reading/Analyzing Content | Creating New Document | Editing Existing Document # DOCX creation, editing, and analysis",
       "locations": [
         {
+          "source": "global",
+          "path": "anthropic-office-docx\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\anthropic-office-docx\\SKILL.md",
+          "hash": "47443506fba1121e",
+          "mtime": "2025-12-20T15:37:55.807522"
+        },
+        {
           "source": "marketplace",
           "path": "anthropic-office-docx\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-docx\\SKILL.md",
@@ -111,7 +125,7 @@
           "mtime": "2025-12-12T19:53:11.757257"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -151,6 +165,13 @@
       "content_summary": "Overview | Quick Start | Python Libraries | pypdf - Basic Operations | Merge PDFs # PDF Processing Guide",
       "locations": [
         {
+          "source": "global",
+          "path": "anthropic-office-pdf\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\anthropic-office-pdf\\SKILL.md",
+          "hash": "53db46222b139f3e",
+          "mtime": "2025-12-20T15:37:52.658841"
+        },
+        {
           "source": "marketplace",
           "path": "anthropic-office-pdf\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-pdf\\SKILL.md",
@@ -158,7 +179,7 @@
           "mtime": "2025-12-12T19:53:05.832006"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -185,6 +206,13 @@
       "content_summary": "Overview | Reading and analyzing content | Text extraction | Raw XML access | Unpacking a file # PPTX creation, editing, and analysis",
       "locations": [
         {
+          "source": "global",
+          "path": "anthropic-office-pptx\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\anthropic-office-pptx\\SKILL.md",
+          "hash": "ef2bf546034ccb70",
+          "mtime": "2025-12-20T15:37:58.687315"
+        },
+        {
           "source": "marketplace",
           "path": "anthropic-office-pptx\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-pptx\\SKILL.md",
@@ -192,18 +220,18 @@
           "mtime": "2025-12-12T19:53:14.700858"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
         "external_scripts": [
-          "scripts/pack.py",
-          "scripts/rearrange.py",
-          "scripts/replace.py",
-          "scripts/thumbnail.py",
-          "scripts/unpack.py",
           "scripts/inventory.py",
-          "scripts/validate.py"
+          "scripts/validate.py",
+          "scripts/replace.py",
+          "scripts/unpack.py",
+          "scripts/rearrange.py",
+          "scripts/thumbnail.py",
+          "scripts/pack.py"
         ]
       },
       "scope": "global"
@@ -234,6 +262,13 @@
       "content_summary": "All Excel files | Zero Formula Errors | Preserve Existing Templates (when updating templates) | Financial models | Color Coding Standards # Requirements for Outputs",
       "locations": [
         {
+          "source": "global",
+          "path": "anthropic-office-xlsx\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\anthropic-office-xlsx\\SKILL.md",
+          "hash": "546ec373cda256e3",
+          "mtime": "2025-12-20T15:37:53.273477"
+        },
+        {
           "source": "marketplace",
           "path": "anthropic-office-xlsx\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-xlsx\\SKILL.md",
@@ -241,7 +276,7 @@
           "mtime": "2025-12-12T19:53:08.589421"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -352,71 +387,6 @@
       },
       "scope": "global"
     },
-    "julien-calibre": {
-      "name": "julien-calibre",
-      "description": "Complete Calibre library management - add/remove books, convert PDF to EPUB, metadata editing, library analysis, cleanup, and e-reader sync (Sony PRS-T1). Use for any ebook or Calibre operation.",
-      "triggers": [
-        "calibre",
-        "ebook",
-        "epub",
-        "book library",
-        "add book to calibre",
-        "import ebook",
-        "add pdf to library",
-        "download from gutenberg",
-        "remove book from calibre",
-        "delete duplicates",
-        "convert pdf to epub",
-        "convert to epub",
-        "batch convert pdf",
-        "update metadata",
-        "fix book title",
-        "set cover",
-        "edit book details",
-        "analyze library",
-        "clean up library",
-        "find duplicates",
-        "library maintenance",
-        "sync to e-reader",
-        "send to kindle",
-        "transfer to sony",
-        "bibliotheque calibre",
-        "livre numerique",
-        "ajouter livre calibre",
-        "importer ebook",
-        "convertir pdf en epub",
-        "nettoyer bibliotheque",
-        "supprimer livre",
-        "mettre a jour metadonnees",
-        "synchroniser liseuse",
-        "envoyer sur liseuse"
-      ],
-      "content_summary": "1. Add Books | Add Local File | Add with Metadata | Add Folder Recursively | Download from Project Gutenberg # Calibre Library Management",
-      "locations": [
-        {
-          "source": "marketplace",
-          "path": "julien-calibre\\SKILL.md",
-          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-calibre\\SKILL.md",
-          "hash": "d4356250f659838c",
-          "mtime": "2025-12-18T01:24:38.120959"
-        }
-      ],
-      "resolved_source": "marketplace",
-      "dependencies": {
-        "local_files": [],
-        "requires_project_context": false,
-        "external_scripts": [
-          "scripts/analyze/find_books_without_epub.py",
-          "scripts/convert/batch_convert.py",
-          "scripts/analyze/find_english_books.py",
-          "scripts/analyze/analyze_library.py",
-          "scripts/analyze/find_empty_books.py",
-          "scripts/manage/remove_books.py",
-          "scripts/force_delete_orphans.py"
-        ]
-      },
-      "scope": "global"
-    },
     "julien-dev-claude-md-documenter": {
       "name": "julien-dev-claude-md-documenter",
       "description": "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md.",
@@ -442,6 +412,13 @@
       "content_summary": "What is CLAUDE.md? | Core Principles | 1. Keep It Short | 2. Link, Don't Duplicate | 3. Project-Specific Only # CLAUDE.md Documenter",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-dev-claude-md-documenter\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-dev-claude-md-documenter\\SKILL.md",
+          "hash": "041f70fca9122fc6",
+          "mtime": "2025-12-20T15:37:45.193252"
+        },
+        {
           "source": "marketplace",
           "path": "julien-dev-claude-md-documenter\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-claude-md-documenter\\SKILL.md",
@@ -449,7 +426,7 @@
           "mtime": "2025-12-18T00:31:03.156378"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -482,6 +459,13 @@
       "content_summary": "What Are Hooks? | Available Hook Events | Hook Configuration | Basic Structure | Configuration Fields # Hook Creator",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-dev-hook-creator\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-dev-hook-creator\\SKILL.md",
+          "hash": "1fd78b56ca8a1907",
+          "mtime": "2025-12-20T15:37:46.491410"
+        },
+        {
           "source": "marketplace",
           "path": "julien-dev-hook-creator\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-hook-creator\\SKILL.md",
@@ -489,7 +473,7 @@
           "mtime": "2025-12-18T00:31:53.706051"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -511,11 +495,54 @@
       "content_summary": "Workflow | Reference Files | Skill Chaining | Skills Required Before | Input Expected # PowerShell Profile Manager",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-dev-powershell-profile\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-dev-powershell-profile\\SKILL.md",
+          "hash": "dcf270ee49b1841d",
+          "mtime": "2025-12-20T15:37:45.468097"
+        },
+        {
           "source": "marketplace",
           "path": "julien-dev-powershell-profile\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-powershell-profile\\SKILL.md",
           "hash": "dcf270ee49b1841d",
           "mtime": "2025-12-18T00:36:49.661796"
+        }
+      ],
+      "resolved_source": "global",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "fastmcp-quality-review": {
+      "name": "fastmcp-quality-review",
+      "description": "Review and score FastMCP MCP server quality. Use when creating/auditing MCP servers, before publishing to MCP directory, or to improve existing servers.",
+      "triggers": [
+        "is my MCP server good?",
+        "check my server quality",
+        "review my MCP",
+        "how can I improve my MCP server?",
+        "analyze the quality of this server",
+        "give me feedback on my MCP",
+        "how well-written is this server?",
+        "mon serveur MCP est-il bon ?",
+        "vérifie la qualité de mon serveur",
+        "analyse mon MCP",
+        "comment puis-je améliorer mon serveur MCP ?",
+        "donne-moi ton avis sur mon MCP",
+        "ce serveur est-il bien écrit ?"
+      ],
+      "content_summary": "Quick Start | Review Process | Step 1: Load Server Code | Step 2: Run Quality Checks | Step 3: Generate Report # FastMCP Quality Review",
+      "locations": [
+        {
+          "source": "marketplace",
+          "path": "julien-dev-tools-fastmcp-quality-review\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-tools-fastmcp-quality-review\\SKILL.md",
+          "hash": "df6750bfbe62ab2f",
+          "mtime": "2025-12-20T14:06:35.714336"
         }
       ],
       "resolved_source": "marketplace",
@@ -682,14 +709,14 @@
         "audit vps",
         "brute force"
       ],
-      "content_summary": "Server Info | 1. Fail2ban Management | WordPress Jails | Status Check | Ban/Unban IP # Hostinger Security Management",
+      "content_summary": "Server Info | 1. Fail2ban Management | Tous les Jails Actifs | Status Check | Ban/Unban IP (via fail2ban) # Hostinger Security Management",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-infra-hostinger-security\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-hostinger-security\\SKILL.md",
-          "hash": "3dfd1c5a20eecbe2",
-          "mtime": "2025-12-18T01:06:13.841067"
+          "hash": "428a2af544c0d8e4",
+          "mtime": "2025-12-22T22:13:10.118217"
         }
       ],
       "resolved_source": "marketplace",
@@ -781,6 +808,13 @@
       "content_summary": "Available MCP Servers | Category: Office (5) | Category: Browser (4) | Category: APIs (6) | Category: AI/LLM (4) # MCP Server Installer",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-mcp-installer\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-mcp-installer\\SKILL.md",
+          "hash": "b7571c9b758c1a97",
+          "mtime": "2025-12-20T15:37:59.323006"
+        },
+        {
           "source": "marketplace",
           "path": "julien-mcp-installer\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-mcp-installer\\SKILL.md",
@@ -788,7 +822,7 @@
           "mtime": "2025-12-18T03:18:50.629721"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -875,6 +909,13 @@
       "content_summary": "Structure du Guide | Erreur #0 : Section Auto-Execute - LA RÈGLE LA PLUS CRITIQUE | QU'EST-CE QUE L'AUTO-EXECUTE? | CE QUI TERMINE L'AUTO-EXECUTE | ERREUR FATALE - Code après une fonction # AutoHotkey v1 - Guide de Référence Optimisé LLM",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-ref-ahk-v1\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-ref-ahk-v1\\SKILL.md",
+          "hash": "77059242ea15d2ef",
+          "mtime": "2025-12-20T15:37:49.494853"
+        },
+        {
           "source": "marketplace",
           "path": "julien-ref-ahk-v1\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-ahk-v1\\SKILL.md",
@@ -882,7 +923,7 @@
           "mtime": "2025-12-17T23:24:41.416342"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -908,6 +949,13 @@
       "content_summary": "RÈGLE CRITIQUE - VARIABLES GLOBALES | DÉCLARATION OBLIGATOIRE DANS CHAQUE FONCTION | LISTE COMPLÈTE DES VARIABLES À DÉCLARER | STRUCTURE MODULAIRE AUTOHOTKEY V2 | En-tête Standard # AutoHotkey v2 - Best Practices pour LLM",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-ref-ahk-v2\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-ref-ahk-v2\\SKILL.md",
+          "hash": "ec4b6fc6bd1fc9e8",
+          "mtime": "2025-12-20T15:37:49.935655"
+        },
+        {
           "source": "marketplace",
           "path": "julien-ref-ahk-v2\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-ahk-v2\\SKILL.md",
@@ -915,7 +963,7 @@
           "mtime": "2025-12-18T00:59:37.187769"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -941,6 +989,13 @@
       "content_summary": "Prérequis | 1. Node.js (version 18.20.8+ ou 20.3.0+ ou 22.0.0+) | 2. Gestionnaire de paquets | Méthode 1 : Installation Rapide (Recommandée) | Étape 1 : Créer le projet # Guide d'Installation Astro + Tailwind sur Windows",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-ref-astro-install\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-ref-astro-install\\SKILL.md",
+          "hash": "18e8073354ce4cc8",
+          "mtime": "2025-12-20T15:37:50.161481"
+        },
+        {
           "source": "marketplace",
           "path": "julien-ref-astro-install\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-astro-install\\SKILL.md",
@@ -948,11 +1003,11 @@
           "mtime": "2025-12-18T01:01:09.167201"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [
-          "../styles/global.css",
-          "../layouts/Layout.astro"
+          "../layouts/Layout.astro",
+          "../styles/global.css"
         ],
         "requires_project_context": true,
         "external_scripts": []
@@ -977,6 +1032,13 @@
       "content_summary": "STRUCTURE ET ENCODAGE | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS | Variables de Chemin Robustes # Best Practices - Scripts Batch (.bat)",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-ref-batch\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-ref-batch\\SKILL.md",
+          "hash": "62bd033473bd02cc",
+          "mtime": "2025-12-20T15:37:50.490624"
+        },
+        {
           "source": "marketplace",
           "path": "julien-ref-batch\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-batch\\SKILL.md",
@@ -984,7 +1046,7 @@
           "mtime": "2025-12-18T00:59:59.140044"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -1012,6 +1074,13 @@
       "content_summary": "Principles | Structure | Naming Conventions | EVOLVING Docs (living docs) | EVENT-BASED Docs (snapshots) # Documentation Production Methodology",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-ref-doc-production\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-ref-doc-production\\SKILL.md",
+          "hash": "52bbb64423629ea7",
+          "mtime": "2025-12-20T15:37:50.933501"
+        },
+        {
           "source": "marketplace",
           "path": "julien-ref-doc-production\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-doc-production\\SKILL.md",
@@ -1019,7 +1088,7 @@
           "mtime": "2025-12-18T01:24:12.123392"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -1045,6 +1114,13 @@
       "content_summary": "Overview | Tag System | CORE Tags (4 essential) | SPECIAL Tags (particular use) | [MACRO] Impact Flag # Document Review Methodology",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-ref-doc-review\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-ref-doc-review\\SKILL.md",
+          "hash": "5d0f01400305c304",
+          "mtime": "2025-12-20T15:37:51.092014"
+        },
+        {
           "source": "marketplace",
           "path": "julien-ref-doc-review\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-doc-review\\SKILL.md",
@@ -1052,7 +1128,7 @@
           "mtime": "2025-12-18T01:24:20.150237"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -1082,6 +1158,13 @@
       "content_summary": "Parser Architecture | Supported Elements | 1. Headings (H1-H3 Only) | Collapsible Headings | 2. Rich Text (Inline Formatting) # Markdown Structuring Guide for Universal Notion Uploader",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-ref-notion-markdown\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-ref-notion-markdown\\SKILL.md",
+          "hash": "ea1c002fdd259e88",
+          "mtime": "2025-12-20T15:37:51.247466"
+        },
+        {
           "source": "marketplace",
           "path": "julien-ref-notion-markdown\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-notion-markdown\\SKILL.md",
@@ -1089,7 +1172,7 @@
           "mtime": "2025-12-18T01:25:39.991265"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -1114,6 +1197,13 @@
       "content_summary": "Vue d'Ensemble | Structure d'Organisation Générique | Structure de Base | Conventions de Nommage | 1. Fichiers PowerShell # PowerShell - Conventions de Nommage et Organisation",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-ref-powershell\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-ref-powershell\\SKILL.md",
+          "hash": "d268620360d6c1f4",
+          "mtime": "2025-12-20T15:37:51.540788"
+        },
+        {
           "source": "marketplace",
           "path": "julien-ref-powershell\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-powershell\\SKILL.md",
@@ -1121,7 +1211,7 @@
           "mtime": "2025-12-18T01:00:31.523875"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -1156,6 +1246,13 @@
       "content_summary": "Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure | Naming & Description # Skill Creator",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-skill-creator\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-skill-creator\\SKILL.md",
+          "hash": "5e10467ce25a615e",
+          "mtime": "2025-12-20T15:37:42.997589"
+        },
+        {
           "source": "marketplace",
           "path": "julien-skill-creator\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-creator\\SKILL.md",
@@ -1163,16 +1260,16 @@
           "mtime": "2025-12-20T00:45:43.503496"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [
           "../Claude"
         ],
         "requires_project_context": true,
         "external_scripts": [
+          "scripts/package_skill.py",
           "scripts/init_skill.py",
-          "scripts/benchmark-semantic-router.py",
-          "scripts/package_skill.py"
+          "scripts/benchmark-semantic-router.py"
         ]
       },
       "scope": "global"
@@ -1194,6 +1291,13 @@
       "content_summary": "Prerequisites | Migration Process | Phase 1: Deep Analysis | Phase 2: Migration Report | Phase 3: User Decision # Intelligent Skill Migration (Local → Marketplace)",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-skill-migration\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-skill-migration\\SKILL.md",
+          "hash": "a9745142033d5fce",
+          "mtime": "2025-12-20T15:37:48.584941"
+        },
+        {
           "source": "marketplace",
           "path": "julien-skill-migration\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-migration\\SKILL.md",
@@ -1201,7 +1305,7 @@
           "mtime": "2025-12-19T18:47:39.987213"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -1228,6 +1332,13 @@
       "content_summary": "What is \"Core\"? | Process | Step 1: Identify the skill | Step 2: Verify skill exists | Step 3: Check current sync-config # Move Skill to Core",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-skill-move-to-core\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-skill-move-to-core\\SKILL.md",
+          "hash": "5080b958f13e7945",
+          "mtime": "2025-12-20T15:37:48.959832"
+        },
+        {
           "source": "marketplace",
           "path": "julien-skill-move-to-core\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-move-to-core\\SKILL.md",
@@ -1235,7 +1346,7 @@
           "mtime": "2025-12-19T07:01:37.614490"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -1259,6 +1370,13 @@
       "content_summary": "When to Use | What It Does | After Running | Skill Chaining | Skills Required Before # Skill Renamer",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-skill-renamer\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-skill-renamer\\SKILL.md",
+          "hash": "a9fd578d7b83980f",
+          "mtime": "2025-12-20T15:37:44.496190"
+        },
+        {
           "source": "marketplace",
           "path": "julien-skill-renamer\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-renamer\\SKILL.md",
@@ -1266,13 +1384,13 @@
           "mtime": "2025-12-19T07:01:13.848764"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
         "external_scripts": [
-          "scripts/*.py",
-          "scripts/rename-skill.py"
+          "scripts/rename-skill.py",
+          "scripts/*.py"
         ]
       },
       "scope": "global"
@@ -1302,6 +1420,13 @@
       "content_summary": "When to Use | Review Process | Step 1: Read and Parse | Step 2: Score Against Rubric | Step 3: Calculate Score # Skill Reviewer",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-skill-reviewer\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-skill-reviewer\\SKILL.md",
+          "hash": "2a9a0692ba3d3be4",
+          "mtime": "2025-12-20T15:37:44.059029"
+        },
+        {
           "source": "marketplace",
           "path": "julien-skill-reviewer\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-reviewer\\SKILL.md",
@@ -1309,7 +1434,7 @@
           "mtime": "2025-12-20T00:46:32.329019"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -1335,6 +1460,13 @@
       "content_summary": "Development Tools | Workflow | Anthropic Office (Documents) | Anthropic Web/Design | Infrastructure Hostinger # Skill Router - Index des Skills Disponibles",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-skill-router\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-skill-router\\SKILL.md",
+          "hash": "1f1b5833c1567d9c",
+          "mtime": "2025-12-20T15:37:48.800324"
+        },
+        {
           "source": "marketplace",
           "path": "julien-skill-router\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-router\\SKILL.md",
@@ -1342,7 +1474,7 @@
           "mtime": "2025-12-19T07:01:33.210338"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -1372,7 +1504,7 @@
           "path": "julien-workflow-advice-codex\\SKILL.md",
           "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-workflow-advice-codex\\SKILL.md",
           "hash": "584fff2c049a8788",
-          "mtime": "2025-12-14T15:18:16.347656"
+          "mtime": "2025-12-20T15:37:48.192983"
         },
         {
           "source": "marketplace",
@@ -1387,8 +1519,8 @@
         "local_files": [],
         "requires_project_context": false,
         "external_scripts": [
-          "scripts/semantic-skill-router.py",
-          "scripts/benchmark-semantic-router.py"
+          "scripts/benchmark-semantic-router.py",
+          "scripts/semantic-skill-router.py"
         ]
       },
       "scope": "global"
@@ -1415,7 +1547,7 @@
           "path": "julien-workflow-advice-gemini\\SKILL.md",
           "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-workflow-advice-gemini\\SKILL.md",
           "hash": "fff080ec618e0834",
-          "mtime": "2025-12-14T15:18:16.279780"
+          "mtime": "2025-12-20T15:37:47.651672"
         },
         {
           "source": "marketplace",
@@ -1455,6 +1587,13 @@
       "content_summary": "When to Use This Skill | What This Skill Does | Via Slash Command (Recommended) | Via Direct Invocation | Output Format # Check Loaded Skills",
       "locations": [
         {
+          "source": "global",
+          "path": "julien-workflow-check-loaded-skills\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-workflow-check-loaded-skills\\SKILL.md",
+          "hash": "afe7e829b5ff0fa0",
+          "mtime": "2025-12-20T15:37:46.631304"
+        },
+        {
           "source": "marketplace",
           "path": "julien-workflow-check-loaded-skills\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-workflow-check-loaded-skills\\SKILL.md",
@@ -1462,7 +1601,7 @@
           "mtime": "2025-12-12T19:52:09.715111"
         }
       ],
-      "resolved_source": "marketplace",
+      "resolved_source": "global",
       "dependencies": {
         "local_files": [],
         "requires_project_context": false,
@@ -1478,16 +1617,94 @@
         "background job",
         "idle queue",
         "low priority task",
-        "run when idle"
+        "run when idle",
+        "qm add",
+        "idle-queue",
+        "schedule this task",
+        "planifier cette tâche",
+        "deferred job",
+        "transcode video",
+        "transcoder vidéo",
+        "convert video background",
+        "ffmpeg background",
+        "ffmpeg en arrière-plan",
+        "conversion longue",
+        "long conversion",
+        "render video",
+        "faire le rendu",
+        "render vidéo en tâche de fond",
+        "encode footage",
+        "run blender render",
+        "convert mkv",
+        "script takes long",
+        "script prend du temps",
+        "long running script",
+        "slow script",
+        "script lent",
+        "batch processing",
+        "traitement par lot",
+        "this is taking forever",
+        "ça prend une éternité",
+        "queue heavy python script",
+        "without blocking",
+        "sans bloquer",
+        "don't block PC",
+        "ne pas bloquer le PC",
+        "keep PC responsive",
+        "garder le PC réactif",
+        "run without impact",
+        "low priority execution",
+        "don't slow down my machine",
+        "ne ralentis pas ma machine",
+        "keep my system responsive",
+        "resource-intensive task",
+        "tâche gourmande en ressources",
+        "heavy computation",
+        "calcul lourd",
+        "run in background",
+        "exécuter en arrière-plan",
+        "lancer en arrière-plan",
+        "background execution",
+        "execute when idle",
+        "exécuter quand inactif",
+        "run this when I'm away",
+        "exécute quand je ne suis pas là",
+        "process when computer is idle",
+        "do this asynchronously",
+        "faisons cela de manière asynchrone",
+        "bulk API calls",
+        "mass translation",
+        "batch encode",
+        "multiple file conversion",
+        "heavy task",
+        "tâche lourde",
+        "compress files when idle",
+        "traiter photos RAW",
+        "background ML training",
+        "train machine learning model",
+        "batch OCR",
+        "large file processing",
+        "traitement de gros fichiers",
+        "process data overnight",
+        "large data export",
+        "exportation volumineuse",
+        "scrape website background",
+        "pipeline data nightly",
+        "run backup background",
+        "compile in background",
+        "keep working while this runs",
+        "continuer à travailler pendant que ça tourne",
+        "encoder des vidéos",
+        "encode videos"
       ],
-      "content_summary": "Prerequisites | Quick Start | Service Startup | Manual control (optional) | Windows auto-start at login # Idle Queue - Background Task Manager",
+      "content_summary": "Prerequisites | Quick Start | Service Startup | Manual start | Auto-start at login (Windows) # Idle Queue - Background Task Manager",
       "locations": [
         {
           "source": "global",
           "path": "julien-workflow-queuing-background-tasks\\SKILL.md",
           "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-workflow-queuing-background-tasks\\SKILL.md",
-          "hash": "b4ceb25eb1e37a3c",
-          "mtime": "2025-12-20T00:24:53.337720"
+          "hash": "70a7aab9ca7bb85d",
+          "mtime": "2025-12-20T15:37:47.339028"
         },
         {
           "source": "marketplace",
@@ -1600,8 +1817,8 @@
       "resolved_source": "project:Site internet Clem",
       "dependencies": {
         "local_files": [
-          "../wp-tokens.md`",
           "../wp-clean-css/SKILL.md`",
+          "../wp-tokens.md`",
           "../wp-checklists.md`"
         ],
         "requires_project_context": true,
@@ -1796,10 +2013,10 @@
       "resolved_source": "project:Site internet Clem",
       "dependencies": {
         "local_files": [
-          "../wp-tokens.md`",
           "../wp-clean-css/SKILL.md`",
-          "../wp-checklists.md`",
-          "../wp-block-contract/SKILL.md`"
+          "../wp-block-contract/SKILL.md`",
+          "../wp-tokens.md`",
+          "../wp-checklists.md`"
         ],
         "requires_project_context": true,
         "external_scripts": []

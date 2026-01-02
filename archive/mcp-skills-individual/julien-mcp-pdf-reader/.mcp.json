@@ -1,1 +1,0 @@
-{"mcpServers": {"pdf-reader": {"command": "cmd", "args": ["/c", "npx", "-y", "@sylphlab/pdf-reader-mcp"]}}}

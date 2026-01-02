@@ -28,23 +28,28 @@ Security infrastructure for srv759970.hstgr.cloud.
 
 ## 1. Fail2ban Management
 
-### WordPress Jails
+### Tous les Jails Actifs
 
-| Jail | Purpose | Max Retry | Ban Time |
-|------|---------|-----------|----------|
-| wordpress-auth | Login brute-force | 5 | 1 hour |
-| wordpress-hard | Recon attacks | 3 | 2 hours |
-| wordpress-xmlrpc | XML-RPC abuse | 2 | 1 hour |
+| Jail | Filter | Ports | Max Retry | Ban Time | Purpose |
+|------|--------|-------|-----------|----------|---------|
+| sshd | sshd | 22 | 5 | 10min | SSH brute-force |
+| nginx-http-auth | nginx-401 | 80,443 | 5 | 1h | Nginx basic auth failures |
+| **opcode-auth** | nginx-401 | 80,443 | 5 | 1h | 401 responses (API/sites protégés) |
+| wordpress-auth | wordpress-auth | 80,443 | 5 | 1h | WP login brute-force |
+| wordpress-hard | wordpress-hard | 80,443 | 3 | 2h | WP recon attacks |
+| wordpress-xmlrpc | wordpress-xmlrpc | 80,443 | 2 | 1h | XML-RPC abuse |
+
+> **ATTENTION**: Le jail `opcode-auth` bannit les IPs qui recoivent trop de 401. Si tu accèdes à un site protégé sans credentials, tu peux te faire bannir !
 
 ### Status Check
 
 ```bash
 ssh srv759970 'sudo fail2ban-client status'
 ssh srv759970 'sudo fail2ban-client status wordpress-auth'
-ssh srv759970 'sudo fail2ban-client status wordpress-auth | grep "Banned IP"'
+ssh srv759970 'sudo fail2ban-client status opcode-auth'
 ```
 
-### Ban/Unban IP
+### Ban/Unban IP (via fail2ban)
 
 ```bash
 # Ban
@@ -65,7 +70,97 @@ ssh srv759970 'sudo grep "Ban" /var/log/fail2ban.log | tail -20'
 
 ---
 
-## 2. WordPress Security Audit
+## 2. nftables (Mécanisme de ban réel)
+
+> **IMPORTANT**: Fail2ban utilise **nftables** (pas iptables). Les bans sont stockés dans nftables !
+
+### Voir toutes les IPs bannies
+
+```bash
+# Voir la structure complète
+ssh srv759970 'nft list ruleset | head -40'
+
+# Voir les IPs bannies par jail spécifique
+ssh srv759970 'nft list set inet f2b-table addr-set-opcode-auth'
+ssh srv759970 'nft list set inet f2b-table addr-set-sshd'
+```
+
+### Débannir une IP manuellement (nftables)
+
+```bash
+# Débannir de opcode-auth
+ssh srv759970 'nft delete element inet f2b-table addr-set-opcode-auth { 1.2.3.4 }'
+
+# Débannir de sshd
+ssh srv759970 'nft delete element inet f2b-table addr-set-sshd { 1.2.3.4 }'
+```
+
+---
+
+## 3. Whitelist (ignoreip)
+
+### Voir la whitelist actuelle
+
+```bash
+ssh srv759970 'grep ignoreip /etc/fail2ban/jail.local'
+```
+
+### Ajouter une IP à la whitelist
+
+```bash
+# 1. Éditer le fichier
+ssh srv759970 'sudo nano /etc/fail2ban/jail.local'
+# Modifier la ligne ignoreip = ... en ajoutant l'IP
+
+# 2. Recharger fail2ban
+ssh srv759970 'sudo fail2ban-client reload'
+```
+
+---
+
+## 4. Troubleshooting: Port 443 bloqué intermittent
+
+**Symptômes**: Le site fonctionne quelques minutes puis devient inaccessible (timeout).
+
+**Cause probable**: Ton IP est bannie par fail2ban (trop de 401).
+
+### Diagnostic rapide
+
+```bash
+# 1. Test port local vs externe
+ssh srv759970 'curl -sk https://localhost -o /dev/null -w "%{http_code}"'  # Doit retourner 200/401
+curl -sk https://69.62.108.82 -o /dev/null -w "%{http_code}"               # Si timeout = banni
+
+# 2. Vérifier si ton IP est dans nftables
+ssh srv759970 'nft list ruleset | grep -E "91\.164|TON_IP"'
+
+# 3. Si trouvée, débannir
+ssh srv759970 'nft delete element inet f2b-table addr-set-opcode-auth { TON_IP }'
+
+# 4. Ajouter à whitelist (permanent)
+# Éditer /etc/fail2ban/jail.local, ajouter IP à ignoreip
+ssh srv759970 'sudo fail2ban-client reload'
+```
+
+### Checklist diagnostic complet
+
+```bash
+# UFW status (devrait être inactif ou autoriser 443)
+ssh srv759970 'ufw status'
+
+# Nginx écoute sur 443 ?
+ssh srv759970 'ss -tulpn | grep :443'
+
+# Règles nftables (chercher DROP/REJECT)
+ssh srv759970 'nft list ruleset | grep -E "reject|drop"'
+
+# Fail2ban jails actifs
+ssh srv759970 'fail2ban-client status'
+```
+
+---
+
+## 5. WordPress Security Audit
 
 ### Scoring System
 
@@ -107,7 +202,7 @@ ssh srv759970 'docker exec wp-cli-site wp plugin list --update=available'
 
 ---
 
-## 3. Infrastructure Audit
+## 6. Infrastructure Audit
 
 ### What It Discovers
 
@@ -142,7 +237,7 @@ ssh srv759970 'pm2 list'
 
 ---
 
-## 4. Security Hardening
+## 7. Security Hardening
 
 ### Nginx Security Headers
 
@@ -174,7 +269,7 @@ ssh srv759970 'docker exec -u root wordpress-site chmod 640 /var/www/html/wp-con
 
 ---
 
-## 5. Emergency Response
+## 8. Emergency Response
 
 ### Under Attack
 
@@ -208,24 +303,26 @@ ssh srv759970 'find /opt/wordpress-site -mtime -1 -type f | head -50'
 ## Quick Reference
 
 ```bash
-# Fail2ban status
-ssh srv759970 'sudo fail2ban-client status'
+# === FAIL2BAN ===
+ssh srv759970 'sudo fail2ban-client status'                    # Status tous jails
+ssh srv759970 'sudo fail2ban-client status opcode-auth'        # Status jail spécifique
+ssh srv759970 'sudo fail2ban-client set wordpress-auth banip X.X.X.X'   # Ban IP
+ssh srv759970 'sudo fail2ban-client unban X.X.X.X'             # Unban de tous les jails
 
-# Ban IP
-ssh srv759970 'sudo fail2ban-client set wordpress-auth banip X.X.X.X'
+# === NFTABLES (bans réels) ===
+ssh srv759970 'nft list set inet f2b-table addr-set-opcode-auth'  # Voir IPs bannies
+ssh srv759970 'nft delete element inet f2b-table addr-set-opcode-auth { X.X.X.X }'  # Débannir
 
-# Unban IP
-ssh srv759970 'sudo fail2ban-client set wordpress-auth unbanip X.X.X.X'
+# === WHITELIST ===
+ssh srv759970 'grep ignoreip /etc/fail2ban/jail.local'         # Voir whitelist
+# Pour ajouter: éditer jail.local puis fail2ban-client reload
 
-# Security headers check
-ssh srv759970 'curl -sI https://site.com | grep -iE "x-frame|x-content|strict"'
+# === DIAGNOSTIC PORT 443 ===
+ssh srv759970 'curl -sk https://localhost -w "%{http_code}"'   # Test local (doit marcher)
+curl -sk https://69.62.108.82 -w "%{http_code}"                # Test externe (si timeout = banni)
+ssh srv759970 'nft list ruleset | grep -E "91\.164|TON_IP"'    # Chercher ton IP dans bans
 
-# WordPress admin users
-ssh srv759970 'docker exec wp-cli-site wp user list --role=administrator'
-
-# Orphan volumes
-ssh srv759970 'docker volume ls -f dangling=true'
-
-# Recent attacks
-ssh srv759970 'sudo grep "Ban" /var/log/fail2ban.log | tail -20'
+# === AUTRES ===
+ssh srv759970 'curl -sI https://site.com | grep -iE "x-frame|x-content|strict"'  # Headers
+ssh srv759970 'sudo grep "Ban" /var/log/fail2ban.log | tail -20'                 # Attaques récentes
 ```

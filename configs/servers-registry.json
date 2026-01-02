@@ -10,7 +10,7 @@
       "start_command": "pythonw -m idle_queue.cli start",
       "stop_command": "pythonw -m idle_queue.cli stop",
       "health_check": "http://localhost:8742/health",
-      "startup_file": "idle-queue.vbs",
+      "startup_file": "idle-queue.bat",
       "startup": true,
       "category": "core"
     },

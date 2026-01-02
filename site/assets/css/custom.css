@@ -1,0 +1,216 @@
+/* Custom styles for Claude Code Marketplace Dashboard */
+
+:root {
+  --md-primary-fg-color: #7c3aed;
+  --md-primary-fg-color--light: #a78bfa;
+  --md-primary-fg-color--dark: #5b21b6;
+  --md-accent-fg-color: #f59e0b;
+}
+
+/* Cards grid */
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.grid.cards > * {
+  padding: 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.grid.cards > *:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mermaid diagrams */
+.mermaid {
+  background: transparent !important;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Status badges */
+.status-active {
+  color: #22c55e;
+}
+
+.status-pending {
+  color: #f59e0b;
+}
+
+.status-inactive {
+  color: #ef4444;
+}
+
+/* Skill cards */
+.skill-card {
+  border-left: 4px solid var(--md-primary-fg-color);
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 8px;
+  background: var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar .fill {
+  height: 100%;
+  background: var(--md-primary-fg-color);
+  transition: width 0.3s ease;
+}
+
+/* Tables */
+.md-typeset table:not([class]) {
+  font-size: 0.85rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color);
+  color: white;
+}
+
+/* Code blocks */
+.md-typeset code {
+  background: rgba(124, 58, 237, 0.1);
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+}
+
+/* Navigation improvements */
+.md-nav__link--active {
+  font-weight: 600;
+}
+
+/* Footer */
+.md-footer {
+  margin-top: 2rem;
+}
+
+/* ========================================
+   Skill Action Buttons
+   ======================================== */
+
+.skill-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--md-primary-fg-color);
+  color: white !important;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+  margin: 0.25rem;
+}
+
+.skill-action-btn:hover {
+  background: var(--md-primary-fg-color--dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.skill-action-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.skill-action-btn.api-offline {
+  background: var(--md-accent-fg-color);
+}
+
+.skill-action-btn.api-offline::after {
+  content: " (copy)";
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Copy button variant */
+.skill-copy-btn {
+  background: #6b7280;
+}
+
+.skill-copy-btn:hover {
+  background: #4b5563;
+}
+
+/* Button group */
+.skill-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+}
+
+/* Notification toasts */
+.skill-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  z-index: 9999;
+  animation: slideIn 0.3s ease;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-notification-success {
+  background: #22c55e;
+}
+
+.skill-notification-error {
+  background: #ef4444;
+}
+
+.skill-notification-info {
+  background: var(--md-primary-fg-color);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* API status indicator */
+.api-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.api-status.online {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.api-status.offline {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}

@@ -28,11 +28,12 @@ def main():
             cwd = re.sub(r'^([A-Za-z]):', lambda m: '/' + m.group(1).lower(), cwd)
 
         # Delete Windows reserved names using fd (ultra-fast)
-        reserved_cmd = f'fd -t f -i "^(nul|null|con|prn|aux)$" "{cwd}" -0 2>/dev/null | xargs -0 -I{{}} rm -f "{{}}"'
+        # -H = include hidden, -I = no-ignore (include .gitignore'd files)
+        reserved_cmd = f'fd -H -I -t f -i "^(nul|null|con|prn|aux)$" "{cwd}" --exec rm -f {{}} 2>/dev/null'
         subprocess.run(['bash', '-c', reserved_cmd], capture_output=True, timeout=15)
 
         # Delete files with 0-1 character filenames
-        short_cmd = f'fd -t f "^.$" "{cwd}" -0 2>/dev/null | xargs -0 -I{{}} rm -f "{{}}"'
+        short_cmd = f'fd -H -I -t f "^.$" "{cwd}" --exec rm -f {{}} 2>/dev/null'
         subprocess.run(['bash', '-c', short_cmd], capture_output=True, timeout=15)
 
     except Exception:

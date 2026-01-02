@@ -1,1 +1,0 @@
-{"mcpServers": {"webmind": {"command": "node", "args": ["${ONEDRIVE_MCP_PATH}/webmind-analyzer-mcp/webmind-mcp-server/server.js"]}}}

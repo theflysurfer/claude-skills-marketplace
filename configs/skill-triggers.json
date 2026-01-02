@@ -37,7 +37,7 @@
         "mcp integration"
       ],
       "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Overview | 🚀 High-Level Workflow | Phase 1: Deep Research and Planning | 1.1 Understand Modern MCP Design | 1.2 Study MCP Protocol Documentation # MCP Server Development Guide"
     },
     {
@@ -54,7 +54,7 @@
         "modifier fichier word"
       ],
       "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Overview | Workflow Decision Tree | Reading/Analyzing Content | Creating New Document | Editing Existing Document # DOCX creation, editing, and analysis"
     },
     {
@@ -83,7 +83,7 @@
         "convert to pdf"
       ],
       "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Overview | Quick Start | Python Libraries | pypdf - Basic Operations | Merge PDFs # PDF Processing Guide"
     },
     {
@@ -102,7 +102,7 @@
         "powerpoint slides"
       ],
       "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Overview | Reading and analyzing content | Text extraction | Raw XML access | Unpacking a file # PPTX creation, editing, and analysis"
     },
     {
@@ -128,7 +128,7 @@
         "excel formulas"
       ],
       "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "All Excel files | Zero Formula Errors | Preserve Existing Templates (when updating templates) | Financial models | Color Coding Standards # Requirements for Outputs"
     },
     {
@@ -203,46 +203,25 @@
       "content_summary": "🎯 What This Does | 📝 Commit Message Format | Type | Scope (clemencefouquet.fr specific) | Description # Commit Message Generator Skill"
     },
     {
-      "name": "julien-calibre",
+      "name": "fastmcp-quality-review",
       "triggers": [
-        "calibre",
-        "ebook",
-        "epub",
-        "book library",
-        "add book to calibre",
-        "import ebook",
-        "add pdf to library",
-        "download from gutenberg",
-        "remove book from calibre",
-        "delete duplicates",
-        "convert pdf to epub",
-        "convert to epub",
-        "batch convert pdf",
-        "update metadata",
-        "fix book title",
-        "set cover",
-        "edit book details",
-        "analyze library",
-        "clean up library",
-        "find duplicates",
-        "library maintenance",
-        "sync to e-reader",
-        "send to kindle",
-        "transfer to sony",
-        "bibliotheque calibre",
-        "livre numerique",
-        "ajouter livre calibre",
-        "importer ebook",
-        "convertir pdf en epub",
-        "nettoyer bibliotheque",
-        "supprimer livre",
-        "mettre a jour metadonnees",
-        "synchroniser liseuse",
-        "envoyer sur liseuse"
+        "is my MCP server good?",
+        "check my server quality",
+        "review my MCP",
+        "how can I improve my MCP server?",
+        "analyze the quality of this server",
+        "give me feedback on my MCP",
+        "how well-written is this server?",
+        "mon serveur MCP est-il bon ?",
+        "vérifie la qualité de mon serveur",
+        "analyse mon MCP",
+        "comment puis-je améliorer mon serveur MCP ?",
+        "donne-moi ton avis sur mon MCP",
+        "ce serveur est-il bien écrit ?"
       ],
-      "description": "Complete Calibre library management - add/remove books, convert PDF to EPUB, metadata editing, library analysis, cleanup, and e-reader sync (Sony PRS-T1). Use for any ebook or Calibre operation.",
+      "description": "Review and score FastMCP MCP server quality. Use when creating/auditing MCP servers, before publishing to MCP directory, or to improve existing servers.",
       "source": "marketplace",
-      "content_summary": "1. Add Books | Add Local File | Add with Metadata | Add Folder Recursively | Download from Project Gutenberg # Calibre Library Management"
+      "content_summary": "Quick Start | Review Process | Step 1: Load Server Code | Step 2: Run Quality Checks | Step 3: Generate Report # FastMCP Quality Review"
     },
     {
       "name": "julien-dev-claude-md-documenter",
@@ -266,7 +245,7 @@
         "add project context"
       ],
       "description": "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "What is CLAUDE.md? | Core Principles | 1. Keep It Short | 2. Link, Don't Duplicate | 3. Project-Specific Only # CLAUDE.md Documenter"
     },
     {
@@ -291,7 +270,7 @@
         "automation hook"
       ],
       "description": "Guide for creating Claude Code hooks - shell commands that execute at specific lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse, etc.). Use when users want to automate actions, add validation, logging, or integrate external tools into Claude Code workflows.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "What Are Hooks? | Available Hook Events | Hook Configuration | Basic Structure | Configuration Fields # Hook Creator"
     },
     {
@@ -305,7 +284,7 @@
         "ps1 profile"
       ],
       "description": "Manage PowerShell profile, aliases, functions. Triggers: add alias, update profile, modify claude command, Microsoft.PowerShell_profile.ps1",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Workflow | Reference Files | Skill Chaining | Skills Required Before | Input Expected # PowerShell Profile Manager"
     },
     {
@@ -390,7 +369,7 @@
       ],
       "description": "Security management for Hostinger VPS srv759970 - Fail2ban, WordPress security audits (25+ checks, 0-100% scoring), infrastructure audit. Use for security hardening, IP bans, or security assessments.",
       "source": "marketplace",
-      "content_summary": "Server Info | 1. Fail2ban Management | WordPress Jails | Status Check | Ban/Unban IP # Hostinger Security Management"
+      "content_summary": "Server Info | 1. Fail2ban Management | Tous les Jails Actifs | Status Check | Ban/Unban IP (via fail2ban) # Hostinger Security Management"
     },
     {
       "name": "julien-infra-hostinger-web",
@@ -440,7 +419,7 @@
         "mcp marketplace"
       ],
       "description": "Interactive MCP server installer. Lists all available MCPs by category and installs the user's choice into .mcp.json",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Available MCP Servers | Category: Office (5) | Category: Browser (4) | Category: APIs (6) | Category: AI/LLM (4) # MCP Server Installer"
     },
     {
@@ -489,7 +468,7 @@
         "ahk hotkey"
       ],
       "description": "Best practices AutoHotkey v1. Use when writing AHK v1 scripts to avoid critical errors like auto-execute section issues, includes order, and COM object handling.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Structure du Guide | Erreur #0 : Section Auto-Execute - LA RÈGLE LA PLUS CRITIQUE | QU'EST-CE QUE L'AUTO-EXECUTE? | CE QUI TERMINE L'AUTO-EXECUTE | ERREUR FATALE - Code après une fonction # AutoHotkey v1 - Guide de Référence Optimisé LLM"
     },
     {
@@ -507,7 +486,7 @@
         "autohotkey tutorial"
       ],
       "description": "Best practices AutoHotkey v2. Use when writing AHK v2 scripts - covers global variable declarations, SetTimer usage, event handlers, and GUI positioning.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "RÈGLE CRITIQUE - VARIABLES GLOBALES | DÉCLARATION OBLIGATOIRE DANS CHAQUE FONCTION | LISTE COMPLÈTE DES VARIABLES À DÉCLARER | STRUCTURE MODULAIRE AUTOHOTKEY V2 | En-tête Standard # AutoHotkey v2 - Best Practices pour LLM"
     },
     {
@@ -525,7 +504,7 @@
         "create astro project"
       ],
       "description": "Guide d'installation Astro + Tailwind sur Windows. Covers Node.js setup, pnpm, project creation, common Windows issues, and troubleshooting.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Prérequis | 1. Node.js (version 18.20.8+ ou 20.3.0+ ou 22.0.0+) | 2. Gestionnaire de paquets | Méthode 1 : Installation Rapide (Recommandée) | Étape 1 : Créer le projet # Guide d'Installation Astro + Tailwind sur Windows"
     },
     {
@@ -543,7 +522,7 @@
         "cmd script"
       ],
       "description": "Best practices for Windows Batch scripts (.bat). Covers encoding, path handling, variables, error management, and common pitfalls.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "STRUCTURE ET ENCODAGE | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS | Variables de Chemin Robustes # Best Practices - Scripts Batch (.bat)"
     },
     {
@@ -563,7 +542,7 @@
         "guide template"
       ],
       "description": "Documentation production methodology with DRY principles. Covers 8 document types (GUIDE, INCIDENT, SESSION, AUDIT, RECHERCHE, etc.), naming conventions, and YAML metadata.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Principles | Structure | Naming Conventions | EVOLVING Docs (living docs) | EVENT-BASED Docs (snapshots) # Documentation Production Methodology"
     },
     {
@@ -581,7 +560,7 @@
         "annotation tags"
       ],
       "description": "Simplified document review methodology with 4 core tags (@FIX, @TODO, @VERIFY, @OK) and [MACRO] flag for systemic impact. Use for annotating and reviewing documentation.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Overview | Tag System | CORE Tags (4 essential) | SPECIAL Tags (particular use) | [MACRO] Impact Flag # Document Review Methodology"
     },
     {
@@ -603,7 +582,7 @@
         "notion columns"
       ],
       "description": "Complete markdown guide for Universal Notion Uploader. Covers 14 element types (headings, callouts, highlights, toggles, embeds, columns, databases), upload modes, and API constraints.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Parser Architecture | Supported Elements | 1. Headings (H1-H3 Only) | Collapsible Headings | 2. Rich Text (Inline Formatting) # Markdown Structuring Guide for Universal Notion Uploader"
     },
     {
@@ -620,7 +599,7 @@
         "powershell best practices"
       ],
       "description": "PowerShell naming conventions and organization best practices. Covers Verb-Noun functions, variable naming, module structure, and documentation standards.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Vue d'Ensemble | Structure d'Organisation Générique | Structure de Base | Conventions de Nommage | 1. Fichiers PowerShell # PowerShell - Conventions de Nommage et Organisation"
     },
     {
@@ -647,7 +626,7 @@
         "skill development"
       ],
       "description": "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure | Naming & Description # Skill Creator"
     },
     {
@@ -664,7 +643,7 @@
         "publier skill"
       ],
       "description": "Intelligently migrate skills from local to marketplace with dependency analysis, path verification, and venv detection. Use when: migrate skill, publish skill, move to marketplace.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Prerequisites | Migration Process | Phase 1: Deep Analysis | Phase 2: Migration Report | Phase 3: User Decision # Intelligent Skill Migration (Local → Marketplace)"
     },
     {
@@ -680,7 +659,7 @@
         "rendre global"
       ],
       "description": "Add a skill to core sync config for global availability. Use when: move to core, add to sync, make skill global, sync skill.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "What is \"Core\"? | Process | Step 1: Identify the skill | Step 2: Verify skill exists | Step 3: Check current sync-config # Move Skill to Core"
     },
     {
@@ -694,7 +673,7 @@
         "renommer une skill"
       ],
       "description": "Rename a skill across the marketplace. Use when: user wants to rename a skill, change skill name, or refactor skill naming.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "When to Use | What It Does | After Running | Skill Chaining | Skills Required Before # Skill Renamer"
     },
     {
@@ -719,7 +698,7 @@
         "améliorer ma skill"
       ],
       "description": "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "When to Use | Review Process | Step 1: Read and Parse | Step 2: Score Against Rubric | Step 3: Calculate Score # Skill Reviewer"
     },
     {
@@ -737,7 +716,7 @@
         "recommend a skill"
       ],
       "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Development Tools | Workflow | Anthropic Office (Documents) | Anthropic Web/Design | Infrastructure Hostinger # Skill Router - Index des Skills Disponibles"
     },
     {
@@ -793,7 +772,7 @@
         "show my skills"
       ],
       "description": "Check which Claude skills are loaded globally and project-level. Displays loaded skills by category (Hostinger, Anthropic, custom), counts, and helps troubleshoot missing skills.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "When to Use This Skill | What This Skill Does | Via Slash Command (Recommended) | Via Direct Invocation | Output Format # Check Loaded Skills"
     },
     {
@@ -803,11 +782,89 @@
         "background job",
         "idle queue",
         "low priority task",
-        "run when idle"
+        "run when idle",
+        "qm add",
+        "idle-queue",
+        "schedule this task",
+        "planifier cette tâche",
+        "deferred job",
+        "transcode video",
+        "transcoder vidéo",
+        "convert video background",
+        "ffmpeg background",
+        "ffmpeg en arrière-plan",
+        "conversion longue",
+        "long conversion",
+        "render video",
+        "faire le rendu",
+        "render vidéo en tâche de fond",
+        "encode footage",
+        "run blender render",
+        "convert mkv",
+        "script takes long",
+        "script prend du temps",
+        "long running script",
+        "slow script",
+        "script lent",
+        "batch processing",
+        "traitement par lot",
+        "this is taking forever",
+        "ça prend une éternité",
+        "queue heavy python script",
+        "without blocking",
+        "sans bloquer",
+        "don't block PC",
+        "ne pas bloquer le PC",
+        "keep PC responsive",
+        "garder le PC réactif",
+        "run without impact",
+        "low priority execution",
+        "don't slow down my machine",
+        "ne ralentis pas ma machine",
+        "keep my system responsive",
+        "resource-intensive task",
+        "tâche gourmande en ressources",
+        "heavy computation",
+        "calcul lourd",
+        "run in background",
+        "exécuter en arrière-plan",
+        "lancer en arrière-plan",
+        "background execution",
+        "execute when idle",
+        "exécuter quand inactif",
+        "run this when I'm away",
+        "exécute quand je ne suis pas là",
+        "process when computer is idle",
+        "do this asynchronously",
+        "faisons cela de manière asynchrone",
+        "bulk API calls",
+        "mass translation",
+        "batch encode",
+        "multiple file conversion",
+        "heavy task",
+        "tâche lourde",
+        "compress files when idle",
+        "traiter photos RAW",
+        "background ML training",
+        "train machine learning model",
+        "batch OCR",
+        "large file processing",
+        "traitement de gros fichiers",
+        "process data overnight",
+        "large data export",
+        "exportation volumineuse",
+        "scrape website background",
+        "pipeline data nightly",
+        "run backup background",
+        "compile in background",
+        "keep working while this runs",
+        "continuer à travailler pendant que ça tourne",
+        "encoder des vidéos",
+        "encode videos"
       ],
       "description": "Queue long-running tasks (transcoding, API calls, batch processing) to run in background at low priority when user is active, normal priority when idle. Use when scripts take minutes/hours and shouldn't impact PC performance during active use.",
       "source": "global",
-      "content_summary": "Prerequisites | Quick Start | Service Startup | Manual control (optional) | Windows auto-start at login # Idle Queue - Background Task Manager"
+      "content_summary": "Prerequisites | Quick Start | Service Startup | Manual start | Auto-start at login (Windows) # Idle Queue - Background Task Manager"
     },
     {
       "name": "wordpress-structure-validator",

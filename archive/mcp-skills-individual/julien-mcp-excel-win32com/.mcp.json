@@ -1,1 +1,0 @@
-{"mcpServers": {"excel-win32com": {"command": "${ONEDRIVE_MCP_PATH}/excel-mcp-server-win32com/venv/Scripts/python.exe", "args": ["${ONEDRIVE_MCP_PATH}/excel-mcp-server-win32com/main.py"]}}}

@@ -1,1 +1,0 @@
-{"mcpServers": {"notion": {"command": "cmd", "args": ["/c", "npx", "-y", "@suekou/mcp-notion-server"], "env": {"NOTION_API_TOKEN": "${NOTION_API_TOKEN}", "NOTION_MARKDOWN_CONVERSION": "${NOTION_MARKDOWN_CONVERSION}"}}}}

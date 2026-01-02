@@ -10,7 +10,17 @@
       "priority": 2
     },
     {
-      "project_pattern": "**/2025.06 Jokers Hockey",
+      "project_pattern": "**/2025.11 Site Web Jokers",
+      "skills_path": ".claude/skills",
+      "priority": 2
+    },
+    {
+      "project_pattern": "**/2025.11 Calibre",
+      "skills_path": ".claude/skills",
+      "priority": 2
+    },
+    {
+      "project_pattern": "**/2025.09 Notion Uploader",
       "skills_path": ".claude/skills",
       "priority": 2
     }
@@ -46,13 +56,14 @@
     "julien-mcp-installer"
   ],
   "commands_to_sync": [
-    "sync.md",
-    "list-resources.md",
-    "project-scan.md",
-    "project-list.md",
-    "project-info.md",
-    "active-folder.md",
-    "servers.md"
+    "julien-sync.md",
+    "julien-list-resources.md",
+    "julien-project-scan.md",
+    "julien-project-list.md",
+    "julien-project-info.md",
+    "julien-active-folder.md",
+    "julien-servers.md",
+    "julien-check-loaded-skills.md"
   ],
   "scripts_to_sync": [
     "generate-triggers.py",
@@ -73,7 +84,8 @@
     "build-keyword-index.py",
     "fast-skill-router.js",
     "discover-hooks.py",
-    "server-manager.py"
+    "server-manager.py",
+    "generate-status-tables.py"
   ],
   "configs_to_sync": [
     "skill-triggers.json",

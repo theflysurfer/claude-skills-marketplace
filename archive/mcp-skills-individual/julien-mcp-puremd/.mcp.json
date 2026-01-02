@@ -1,1 +1,0 @@
-{"mcpServers": {"puremd": {"command": "cmd", "args": ["/c", "npx", "-y", "puremd-mcp"], "env": {"PUREMD_API_KEY": "${PUREMD_API_KEY}"}}}}

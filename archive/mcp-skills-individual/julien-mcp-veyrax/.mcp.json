@@ -1,1 +1,0 @@
-{"mcpServers": {"veyrax": {"command": "cmd", "args": ["/c", "npx", "-y", "@smithery/cli@latest", "run", "@VeyraX/veyrax-mcp", "--key", "${JINA_API_KEY}"]}}}
