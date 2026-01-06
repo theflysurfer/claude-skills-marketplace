@@ -161,11 +161,27 @@ function main() {
             saveRoutingLog(userPrompt, matches, elapsed);
 
             // Output PLAIN TEXT to stdout (Claude sees non-JSON text as context)
-            // Score >= 1.0 required to reduce false positives (score is accumulated, not normalized)
-            if (matches.length > 0 && matches[0].score >= 1.0) {
-                const confidence = Math.min(100, Math.round(matches[0].score * 20));
-                // Plain text instruction, NOT JSON (JSON is not added to context!)
-                console.log(`INSTRUCTION: Use Skill("${matches[0].name}") to handle this request (confidence: ${confidence}%).`);
+            if (matches.length > 0) {
+                const topMatch = matches[0];
+                const confidence = Math.min(100, Math.round(topMatch.score * 20));
+
+                // Strong match (>= 1.0): Direct instruction
+                if (topMatch.score >= 1.0) {
+                    console.log(`\n🎯 SKILL ROUTING: Use Skill("${topMatch.name}") to handle this request (confidence: ${confidence}%).\n`);
+                }
+                // Medium match (0.5-1.0): Suggestion
+                else if (topMatch.score >= 0.5) {
+                    console.log(`\n💡 Skill suggestion: Skill("${topMatch.name}") might help (confidence: ${confidence}%).\n`);
+                }
+                // Weak matches: Show for awareness
+                else if (topMatch.score >= 0.2) {
+                    console.log(`\n📋 Related skills found (low confidence ${confidence}%):`);
+                    matches.slice(0, 3).forEach(m => {
+                        const conf = Math.min(100, Math.round(m.score * 20));
+                        console.log(`   - ${m.name} (${conf}%)`);
+                    });
+                    console.log('');
+                }
             }
 
             // Debug output to stderr (gray text, for debugging only)
