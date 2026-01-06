@@ -14,6 +14,7 @@ const os = require('os');
 const CLAUDE_HOME = path.join(os.homedir(), '.claude');
 const INDEX_FILE = path.join(CLAUDE_HOME, 'cache', 'keyword-index.json');
 const TRIGGERS_FILE = path.join(CLAUDE_HOME, 'configs', 'skill-triggers.json');
+const ROUTING_LOG_FILE = path.join(CLAUDE_HOME, 'cache', 'last-routing.json');
 
 // Thresholds
 const MIN_SCORE = 0.2;
@@ -49,6 +50,25 @@ function loadIndex() {
 
 function tokenize(text) {
     return (text.toLowerCase().match(/\b\w{2,}\b/g) || []);
+}
+
+function saveRoutingLog(prompt, matches, elapsed) {
+    try {
+        const logData = {
+            timestamp: new Date().toISOString(),
+            prompt: prompt.substring(0, 200), // Truncate for privacy
+            matches: matches.map(m => ({
+                name: m.name,
+                score: Math.round(m.score * 100),
+                source: m.source
+            })),
+            elapsed_ms: elapsed,
+            match_count: matches.length
+        };
+        fs.writeFileSync(ROUTING_LOG_FILE, JSON.stringify(logData, null, 2), 'utf-8');
+    } catch (e) {
+        // Silent fail - logging should not break routing
+    }
 }
 
 function route(prompt) {
@@ -137,20 +157,20 @@ function main() {
             const matches = route(userPrompt);
             const elapsed = Date.now() - start;
 
-            // Output to stderr (visible in gray in Claude)
+            // Save routing log for /show-routing command
+            saveRoutingLog(userPrompt, matches, elapsed);
+
+            // Output PLAIN TEXT to stdout (Claude sees non-JSON text as context)
+            // Score >= 1.0 required to reduce false positives (score is accumulated, not normalized)
+            if (matches.length > 0 && matches[0].score >= 1.0) {
+                const confidence = Math.min(100, Math.round(matches[0].score * 20));
+                // Plain text instruction, NOT JSON (JSON is not added to context!)
+                console.log(`INSTRUCTION: Use Skill("${matches[0].name}") to handle this request (confidence: ${confidence}%).`);
+            }
+
+            // Debug output to stderr (gray text, for debugging only)
             if (matches.length > 0) {
-                console.error(`🎯 Skill routing (${elapsed}ms):`);
-                for (const match of matches) {
-                    const scorePct = match.score ? ` ${Math.round(match.score * 100)}%` : '';
-                    let sourceTag = '';
-                    if (match.source.startsWith('project:')) {
-                        sourceTag = ' 📁';
-                    } else if (match.source === 'global') {
-                        sourceTag = ' 🌐';
-                    }
-                    console.error(`  → ${match.name}${scorePct}${sourceTag}`);
-                }
-                console.error(`  💡 Invoke: Skill("${matches[0].name}")`);
+                console.error(`[routing: ${matches[0].name} ${Math.round(matches[0].score * 100)}% (${elapsed}ms)]`);
             } else {
                 console.error(`[routing: no match (${elapsed}ms)]`);
             }
