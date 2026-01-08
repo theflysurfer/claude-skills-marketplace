@@ -24,11 +24,35 @@ triggers:
   - "diviser le pdf en pages"
   - "pdf manipulation"
   - "convert to pdf"
+  - "read pdf"
+  - "lire pdf"
+  - "analyze pdf"
+  - "analyser pdf"
+  - "parse pdf"
+  - "parser pdf"
+  - "examine pdf"
+  - "examiner pdf"
+  - "review pdf"
+  - "check pdf"
+  - "process pdf"
+  - "traiter pdf"
+  - "parser"
+  - "lire"
+  - "lis"
+  - "analyser"
+  - "extraire"
 ---
 
 # PDF Processing Guide
 
 ## Overview
+
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "anthropic-office-pdf" activated
+```
 
 This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.
 

@@ -12,11 +12,32 @@ triggers:
   - "créer un document word"
   - "edit docx file"
   - "modifier fichier word"
+  - "read document"
+  - "lire document"
+  - "read word"
+  - "lire word"
+  - "analyze document"
+  - "analyser document"
+  - "parse docx"
+  - "parser docx"
+  - "examine document"
+  - "examiner document"
+  - "review document"
+  - "check document"
+  - "process document"
+  - "traiter document"
 ---
 
 # DOCX creation, editing, and analysis
 
 ## Overview
+
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "anthropic-office-docx" activated
+```
 
 A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.
 

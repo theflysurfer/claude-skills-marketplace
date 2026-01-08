@@ -1,0 +1,121 @@
+{
+  "version": "1.0.0",
+  "test_suites": {
+    "phase1_explicit_mentions": [
+      {
+        "prompt": "parser pdf et extraire les données",
+        "expected_skill": "anthropic-office-pdf",
+        "min_confidence": 80,
+        "result": "PASS - 100% confidence"
+      },
+      {
+        "prompt": "lire pdf et analyser le contenu",
+        "expected_skill": "anthropic-office-pdf",
+        "min_confidence": 80,
+        "result": "PASS - 100% confidence"
+      },
+      {
+        "prompt": "analyze excel spreadsheet data",
+        "expected_skill": "anthropic-office-xlsx",
+        "min_confidence": 80,
+        "result": "PASS - 100% confidence"
+      }
+    ],
+    "phase2_implicit_context": [
+      {
+        "prompt": "parser les recettes",
+        "cwd_context": "9 PDF files",
+        "expected_skill": "anthropic-office-pdf",
+        "min_confidence": 10,
+        "result": "PASS - 14% confidence (70% score)"
+      },
+      {
+        "prompt": "parser les recettes",
+        "cwd_context": "no PDF files",
+        "expected_skill_not": "anthropic-office-pdf",
+        "result": "PASS - routes to julien-workflow-queuing-background-tasks"
+      }
+    ],
+    "phase3_fuzzy_matching": [
+      {
+        "prompt": "parseur pdf données",
+        "typo": "parseur → parser",
+        "expected_skill": "anthropic-office-pdf",
+        "min_confidence": 80,
+        "result": "PASS - 100% confidence"
+      },
+      {
+        "prompt": "analize excel spreadsheet",
+        "typo": "analize → analyze",
+        "expected_skill": "anthropic-office-xlsx",
+        "min_confidence": 80,
+        "result": "PASS - 100% confidence"
+      },
+      {
+        "prompt": "fusioner des fichiers pdf",
+        "typo": "fusioner → fusionner",
+        "expected_skill": "anthropic-office-pdf",
+        "min_confidence": 80,
+        "result": "PASS - 100% confidence"
+      },
+      {
+        "prompt": "lir document word",
+        "typo": "lir → lire",
+        "expected_skill": "anthropic-office-docx",
+        "min_confidence": 80,
+        "result": "PASS - 100% confidence"
+      }
+    ],
+    "false_positives": [
+      {
+        "prompt": "read documentation",
+        "should_not_match": "anthropic-office-*",
+        "result": "PASS - routes to julien-ref-doc-production (56%)"
+      },
+      {
+        "prompt": "parse JSON config",
+        "should_not_match": "anthropic-office-*",
+        "result": "PASS - suggestion only (18%)"
+      },
+      {
+        "prompt": "analyze code structure",
+        "should_not_match": "anthropic-office-*",
+        "result": "PASS - routes to wordpress-structure-validator"
+      }
+    ],
+    "performance": [
+      {
+        "test": "Phase 1 routing",
+        "avg_time_ms": 10,
+        "p95_time_ms": 15,
+        "target_ms": 50,
+        "result": "PASS"
+      },
+      {
+        "test": "Phase 2 with context awareness",
+        "avg_time_ms": 9,
+        "p95_time_ms": 17,
+        "target_ms": 50,
+        "result": "PASS"
+      },
+      {
+        "test": "Phase 3 with fuzzy matching",
+        "avg_time_ms": 9,
+        "p95_time_ms": 14,
+        "target_ms": 50,
+        "result": "PASS"
+      }
+    ]
+  },
+  "summary": {
+    "total_tests": 15,
+    "passed": 15,
+    "failed": 0,
+    "pass_rate": "100%",
+    "avg_routing_time_ms": 9.3,
+    "phase1_success": "100% - Analytical verbs route correctly",
+    "phase2_success": "100% - Context awareness works with PDF files",
+    "phase3_success": "100% - Fuzzy matching handles typos",
+    "false_positive_rate": "0%"
+  }
+}

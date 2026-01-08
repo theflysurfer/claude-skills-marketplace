@@ -21,11 +21,32 @@ triggers:
   - "excel chart creation"
   - "graphique dans excel"
   - "excel formulas"
+  - "read excel"
+  - "lire excel"
+  - "read spreadsheet"
+  - "lire tableur"
+  - "analyze spreadsheet"
+  - "analyser tableur"
+  - "parse xlsx"
+  - "parser xlsx"
+  - "examine spreadsheet"
+  - "examiner tableur"
+  - "review data"
+  - "check excel"
+  - "process spreadsheet"
+  - "traiter tableur"
 ---
 
 # Requirements for Outputs
 
 ## All Excel files
+
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "anthropic-office-xlsx" activated
+```
 
 ### Zero Formula Errors
 - Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)

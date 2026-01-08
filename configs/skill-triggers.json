@@ -23,7 +23,7 @@
       ],
       "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
       "source": "marketplace",
-      "content_summary": "DESIGN PHILOSOPHY CREATION | THE CRITICAL UNDERSTANDING | HOW TO GENERATE A VISUAL PHILOSOPHY | PHILOSOPHY EXAMPLES | ESSENTIAL PRINCIPLES These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files."
+      "content_summary": "DESIGN PHILOSOPHY CREATION | Observability | THE CRITICAL UNDERSTANDING | HOW TO GENERATE A VISUAL PHILOSOPHY | PHILOSOPHY EXAMPLES These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files."
     },
     {
       "name": "anthropic-dev-tools-mcp-builder",
@@ -144,7 +144,7 @@
       ],
       "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
       "source": "marketplace",
-      "content_summary": "Design & Style Guidelines | Quick Start | Step 1: Initialize Project | Step 2: Develop Your Artifact | Step 3: Bundle to Single HTML File # Web Artifacts Builder"
+      "content_summary": "Design & Style Guidelines | Observability | Quick Start | Step 1: Initialize Project | Step 2: Develop Your Artifact # Web Artifacts Builder"
     },
     {
       "name": "anthropic-web-frontend-design",
@@ -170,7 +170,7 @@
       ],
       "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
       "source": "marketplace",
-      "content_summary": "Design Thinking | Frontend Aesthetics Guidelines This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic \"AI slop\" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices."
+      "content_summary": "Design Thinking | Observability | Frontend Aesthetics Guidelines This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic \"AI slop\" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices."
     },
     {
       "name": "anthropic-web-testing",
@@ -185,7 +185,7 @@
       ],
       "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
       "source": "marketplace",
-      "content_summary": "Decision Tree: Choosing Your Approach | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall | Best Practices # Web Application Testing"
+      "content_summary": "Decision Tree: Choosing Your Approach | Observability | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall # Web Application Testing"
     },
     {
       "name": "commit-message",
@@ -221,7 +221,19 @@
       ],
       "description": "Review and score FastMCP MCP server quality. Use when creating/auditing MCP servers, before publishing to MCP directory, or to improve existing servers.",
       "source": "marketplace",
-      "content_summary": "Quick Start | Review Process | Step 1: Load Server Code | Step 2: Run Quality Checks | Step 3: Generate Report # FastMCP Quality Review"
+      "content_summary": "Quick Start | Observability | Review Process | Step 1: Load Server Code | Step 2: Run Quality Checks # FastMCP Quality Review"
+    },
+    {
+      "name": "julien-debug-echo",
+      "triggers": [
+        "debug-echo",
+        "echo context",
+        "show context",
+        "test injection"
+      ],
+      "description": "Debug skill that echoes received context. Use with 'debug-echo' keyword to test stdout injection.",
+      "source": "global",
+      "content_summary": "Observability | Execution | Purpose # Debug Echo Skill"
     },
     {
       "name": "julien-dev-claude-md-documenter",
@@ -247,6 +259,41 @@
       "description": "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md.",
       "source": "global",
       "content_summary": "What is CLAUDE.md? | Core Principles | 1. Keep It Short | 2. Link, Don't Duplicate | 3. Project-Specific Only # CLAUDE.md Documenter"
+    },
+    {
+      "name": "julien-dev-commit-message",
+      "triggers": [
+        "commit",
+        "git commit",
+        "commit message",
+        "commit changes",
+        "make a commit",
+        "create a commit",
+        "write commit message",
+        "generate commit",
+        "help me commit",
+        "commit my changes",
+        "commit this",
+        "commit these changes",
+        "stage and commit",
+        "commiter",
+        "committer",
+        "message de commit",
+        "faire un commit",
+        "créer un commit",
+        "écrire un message de commit",
+        "committer les changements",
+        "commiter mes changements",
+        "aide moi à commiter",
+        "génère un commit",
+        "mmap failed",
+        "git error",
+        "commit failed",
+        "onedrive git"
+      ],
+      "description": "Generate semantic commit messages and create git commits. Handles OneDrive mmap errors automatically. Use when user wants to commit, needs a commit message, or git commit fails.",
+      "source": "global",
+      "content_summary": "Observability | Quick Reference | Commit Types | Execution Process | Step 1: Analyze Changes # Commit Message Generator"
     },
     {
       "name": "julien-dev-hook-creator",
@@ -298,7 +345,7 @@
       ],
       "description": "Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports.",
       "source": "marketplace",
-      "content_summary": "Server Info | When to Use This Skill | Verification Checklist | ✅ Complete Verification Workflow | 1. PM2 Process Verification # Deployment Verifier - Hostinger srv759970"
+      "content_summary": "Server Info | Observability | When to Use This Skill | Verification Checklist | ✅ Complete Verification Workflow # Deployment Verifier - Hostinger srv759970"
     },
     {
       "name": "julien-infra-git-vps-sync",
@@ -311,7 +358,7 @@
       ],
       "description": "Manage Git sync between VPS and GitHub for Hostinger srv759970. Handles unrelated histories, untracked files, diverged branches, and sync conflicts automatically.",
       "source": "marketplace",
-      "content_summary": "Server Info | When to Use This Skill | Common Scenarios | 1. Unrelated Histories | Option A: Merge with allow-unrelated-histories (preserves VPS changes) # Git VPS Sync - Hostinger srv759970"
+      "content_summary": "Server Info | Observability | When to Use This Skill | Common Scenarios | 1. Unrelated Histories # Git VPS Sync - Hostinger srv759970"
     },
     {
       "name": "julien-infra-hostinger-core",
@@ -326,7 +373,7 @@
       ],
       "description": "Core server management for Hostinger VPS srv759970 - SSH access, system status, maintenance tasks, and disk space reclamation. Use for any server operation, connection issues, or maintenance tasks.",
       "source": "marketplace",
-      "content_summary": "Server Info | 1. SSH Connection | Quick Connect | SSH Config (~/.ssh/config) | Fix Permission Denied (Windows) # Hostinger VPS Core Management"
+      "content_summary": "Server Info | Observability | 1. SSH Connection | Quick Connect | SSH Config (~/.ssh/config) # Hostinger VPS Core Management"
     },
     {
       "name": "julien-infra-hostinger-database",
@@ -340,7 +387,7 @@
       ],
       "description": "Manage shared database instances on Hostinger VPS srv759970 - PostgreSQL, Redis, MongoDB operations. Use for database connections, backups, user management, performance checks, or troubleshooting database issues.",
       "source": "marketplace",
-      "content_summary": "Overview | Databases Available | When to Use This Skill | PostgreSQL Operations | Connection # Database Management - Hostinger VPS"
+      "content_summary": "Overview | Observability | Databases Available | When to Use This Skill | PostgreSQL Operations # Database Management - Hostinger VPS"
     },
     {
       "name": "julien-infra-hostinger-docker",
@@ -354,7 +401,7 @@
       ],
       "description": "Docker management for Hostinger VPS srv759970 - container operations, image optimization, WordPress Docker, troubleshooting. Use for any Docker operation, container issues, or image management.",
       "source": "marketplace",
-      "content_summary": "Server Info | 1. Status & Monitoring | Quick Status | Container Stats | Logs # Hostinger Docker Management"
+      "content_summary": "Server Info | Observability | 1. Status & Monitoring | Quick Status | Container Stats # Hostinger Docker Management"
     },
     {
       "name": "julien-infra-hostinger-security",
@@ -369,7 +416,7 @@
       ],
       "description": "Security management for Hostinger VPS srv759970 - Fail2ban, WordPress security audits (25+ checks, 0-100% scoring), infrastructure audit. Use for security hardening, IP bans, or security assessments.",
       "source": "marketplace",
-      "content_summary": "Server Info | 1. Fail2ban Management | Tous les Jails Actifs | Status Check | Ban/Unban IP (via fail2ban) # Hostinger Security Management"
+      "content_summary": "Server Info | Observability | 1. Fail2ban Management | Tous les Jails Actifs | Status Check # Hostinger Security Management"
     },
     {
       "name": "julien-infra-hostinger-web",
@@ -385,7 +432,7 @@
       ],
       "description": "Web infrastructure for Hostinger VPS - Nginx reverse proxy, SSL/Let's Encrypt, configuration audit, and application deployment (INCLUZ'HACT). Use for site configuration, SSL setup, 502/504 errors, or deployments.",
       "source": "marketplace",
-      "content_summary": "Server Info | 1. Nginx Management | Add New Site | SSL with Let's Encrypt | Common Commands # Hostinger Web Infrastructure"
+      "content_summary": "Server Info | Observability | 1. Nginx Management | Add New Site | SSL with Let's Encrypt # Hostinger Web Infrastructure"
     },
     {
       "name": "julien-infra-jokers",
@@ -401,7 +448,7 @@
       ],
       "description": "Complete management for Jokers Hockey website - deployment, build checks, database migrations (Drizzle ORM), and PM2 process management. Use for any Jokers site operation.",
       "source": "marketplace",
-      "content_summary": "Quick Reference | 1. Deployment | Quick Deploy (Git) | Pre-Deployment Checks | Verify Deployment # Jokers Hockey - Infrastructure Management"
+      "content_summary": "Quick Reference | Observability | 1. Deployment | Quick Deploy (Git) | Pre-Deployment Checks # Jokers Hockey - Infrastructure Management"
     },
     {
       "name": "julien-mcp-installer",
@@ -436,7 +483,7 @@
       ],
       "description": "Manage OnePiece transcoding pipeline - GPU local transcoding, remux Japanese audio, upload to Dropbox for web streaming app.",
       "source": "marketplace",
-      "content_summary": "Trigger Conditions | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) | Actions (Scripts prennent arguments positionnels) # OnePiece Workflow Skill"
+      "content_summary": "Trigger Conditions | Observability | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) # OnePiece Workflow Skill"
     },
     {
       "name": "julien-media-subtitle-translation",
@@ -453,7 +500,7 @@
       ],
       "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation.",
       "source": "marketplace",
-      "content_summary": "When to Use | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity | Model Recommendations (December 2024) # Subtitle Translation Skill"
+      "content_summary": "When to Use | Observability | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity # Subtitle Translation Skill"
     },
     {
       "name": "julien-ref-ahk-v1",
@@ -628,6 +675,28 @@
       "description": "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation.",
       "source": "global",
       "content_summary": "Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure | Naming & Description # Skill Creator"
+    },
+    {
+      "name": "julien-skill-help",
+      "triggers": [
+        "help",
+        "aide",
+        "skills",
+        "list skills",
+        "what can you do",
+        "qu'est-ce que tu sais faire",
+        "show skills",
+        "available skills",
+        "skill catalog",
+        "catalogue skills",
+        "discover skills",
+        "decouvrir skills",
+        "montre les skills",
+        "liste des skills"
+      ],
+      "description": "Interactive catalog of all available skills. Use when: user asks for help, wants to discover skills, or asks what you can do.",
+      "source": "global",
+      "content_summary": "Observability | Execution | Step 1: Load the Registry | Step 2: Display Skills by Category | Step 3: Show Summary # Skill Help"
     },
     {
       "name": "julien-skill-migration",

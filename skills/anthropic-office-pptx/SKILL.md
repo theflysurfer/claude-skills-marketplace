@@ -14,11 +14,30 @@ triggers:
   - "add slides"
   - "ajouter des slides"
   - "powerpoint slides"
+  - "read presentation"
+  - "lire présentation"
+  - "analyze slides"
+  - "analyser slides"
+  - "examine presentation"
+  - "examiner présentation"
+  - "parse pptx"
+  - "parser pptx"
+  - "review presentation"
+  - "check slides"
+  - "process presentation"
+  - "traiter présentation"
 ---
 
 # PPTX creation, editing, and analysis
 
 ## Overview
+
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "anthropic-office-pptx" activated
+```
 
 A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.
 

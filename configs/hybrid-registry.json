@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "description": "Hybrid skill registry - indexes skills from multiple physical locations",
-  "last_indexed": "2026-01-02T11:33:21.496507",
+  "last_indexed": "2026-01-08T22:11:47.635532",
   "sources": [
     {
       "id": "marketplace",
@@ -39,14 +39,14 @@
         "design infographic",
         "visual art"
       ],
-      "content_summary": "DESIGN PHILOSOPHY CREATION | THE CRITICAL UNDERSTANDING | HOW TO GENERATE A VISUAL PHILOSOPHY | PHILOSOPHY EXAMPLES | ESSENTIAL PRINCIPLES These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files.",
+      "content_summary": "DESIGN PHILOSOPHY CREATION | Observability | THE CRITICAL UNDERSTANDING | HOW TO GENERATE A VISUAL PHILOSOPHY | PHILOSOPHY EXAMPLES These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files.",
       "locations": [
         {
           "source": "marketplace",
           "path": "anthropic-design-canvas\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-design-canvas\\SKILL.md",
-          "hash": "d1d2181e37f6a542",
-          "mtime": "2025-12-12T19:54:51.946372"
+          "hash": "83db9190ff515451",
+          "mtime": "2026-01-06T17:07:57.325157"
         }
       ],
       "resolved_source": "marketplace",
@@ -82,8 +82,8 @@
           "source": "marketplace",
           "path": "anthropic-dev-tools-mcp-builder\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-dev-tools-mcp-builder\\SKILL.md",
-          "hash": "5f96527349a34962",
-          "mtime": "2025-12-14T09:46:25.284426"
+          "hash": "c24c037838e0a8d1",
+          "mtime": "2026-01-06T17:07:57.327671"
         }
       ],
       "resolved_source": "global",
@@ -121,8 +121,8 @@
           "source": "marketplace",
           "path": "anthropic-office-docx\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-docx\\SKILL.md",
-          "hash": "47443506fba1121e",
-          "mtime": "2025-12-12T19:53:11.757257"
+          "hash": "a920c417ec4b40bf",
+          "mtime": "2026-01-08T18:21:57.536940"
         }
       ],
       "resolved_source": "global",
@@ -130,8 +130,8 @@
         "local_files": [],
         "requires_project_context": false,
         "external_scripts": [
-          "scripts/pack.py",
-          "scripts/unpack.py"
+          "scripts/unpack.py",
+          "scripts/pack.py"
         ]
       },
       "scope": "global"
@@ -175,8 +175,8 @@
           "source": "marketplace",
           "path": "anthropic-office-pdf\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-pdf\\SKILL.md",
-          "hash": "53db46222b139f3e",
-          "mtime": "2025-12-12T19:53:05.832006"
+          "hash": "536702196d780e62",
+          "mtime": "2026-01-08T18:32:33.531347"
         }
       ],
       "resolved_source": "global",
@@ -216,8 +216,8 @@
           "source": "marketplace",
           "path": "anthropic-office-pptx\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-pptx\\SKILL.md",
-          "hash": "ef2bf546034ccb70",
-          "mtime": "2025-12-12T19:53:14.700858"
+          "hash": "e2726662c77d61c3",
+          "mtime": "2026-01-08T18:21:59.200052"
         }
       ],
       "resolved_source": "global",
@@ -225,13 +225,13 @@
         "local_files": [],
         "requires_project_context": false,
         "external_scripts": [
-          "scripts/inventory.py",
-          "scripts/validate.py",
-          "scripts/replace.py",
           "scripts/unpack.py",
-          "scripts/rearrange.py",
+          "scripts/validate.py",
           "scripts/thumbnail.py",
-          "scripts/pack.py"
+          "scripts/rearrange.py",
+          "scripts/pack.py",
+          "scripts/inventory.py",
+          "scripts/replace.py"
         ]
       },
       "scope": "global"
@@ -272,8 +272,8 @@
           "source": "marketplace",
           "path": "anthropic-office-xlsx\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-office-xlsx\\SKILL.md",
-          "hash": "546ec373cda256e3",
-          "mtime": "2025-12-12T19:53:08.589421"
+          "hash": "cb284949ff4203d8",
+          "mtime": "2026-01-08T18:21:55.923287"
         }
       ],
       "resolved_source": "global",
@@ -296,14 +296,14 @@
         "shadcn artifact",
         "bundle html"
       ],
-      "content_summary": "Design & Style Guidelines | Quick Start | Step 1: Initialize Project | Step 2: Develop Your Artifact | Step 3: Bundle to Single HTML File # Web Artifacts Builder",
+      "content_summary": "Design & Style Guidelines | Observability | Quick Start | Step 1: Initialize Project | Step 2: Develop Your Artifact # Web Artifacts Builder",
       "locations": [
         {
           "source": "marketplace",
           "path": "anthropic-web-artifacts-builder\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-web-artifacts-builder\\SKILL.md",
-          "hash": "db5c641fc1901c99",
-          "mtime": "2025-12-14T09:46:28.171257"
+          "hash": "a76c1aef263fe5c4",
+          "mtime": "2026-01-06T17:07:57.339000"
         }
       ],
       "resolved_source": "marketplace",
@@ -337,14 +337,14 @@
         "ui design for app",
         "build webpage"
       ],
-      "content_summary": "Design Thinking | Frontend Aesthetics Guidelines This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic \"AI slop\" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.",
+      "content_summary": "Design Thinking | Observability | Frontend Aesthetics Guidelines This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic \"AI slop\" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.",
       "locations": [
         {
           "source": "marketplace",
           "path": "anthropic-web-frontend-design\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-web-frontend-design\\SKILL.md",
-          "hash": "6d12b967985ac0bc",
-          "mtime": "2025-12-12T19:54:48.529052"
+          "hash": "d408bcfcfb3d562c",
+          "mtime": "2026-01-06T17:07:57.340579"
         }
       ],
       "resolved_source": "marketplace",
@@ -367,14 +367,14 @@
         "test frontend",
         "screenshot web"
       ],
-      "content_summary": "Decision Tree: Choosing Your Approach | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall | Best Practices # Web Application Testing",
+      "content_summary": "Decision Tree: Choosing Your Approach | Observability | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall # Web Application Testing",
       "locations": [
         {
           "source": "marketplace",
           "path": "anthropic-web-testing\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\anthropic-web-testing\\SKILL.md",
-          "hash": "f34a4b81c8cd2927",
-          "mtime": "2025-12-14T09:46:30.977787"
+          "hash": "eec9530865d0477a",
+          "mtime": "2026-01-06T17:07:57.342591"
         }
       ],
       "resolved_source": "marketplace",
@@ -422,8 +422,65 @@
           "source": "marketplace",
           "path": "julien-dev-claude-md-documenter\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-claude-md-documenter\\SKILL.md",
-          "hash": "041f70fca9122fc6",
-          "mtime": "2025-12-18T00:31:03.156378"
+          "hash": "65ad847d5b330863",
+          "mtime": "2026-01-06T17:07:57.344594"
+        }
+      ],
+      "resolved_source": "global",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-dev-commit-message": {
+      "name": "julien-dev-commit-message",
+      "description": "Generate semantic commit messages and create git commits. Handles OneDrive mmap errors automatically. Use when user wants to commit, needs a commit message, or git commit fails.",
+      "triggers": [
+        "commit",
+        "git commit",
+        "commit message",
+        "commit changes",
+        "make a commit",
+        "create a commit",
+        "write commit message",
+        "generate commit",
+        "help me commit",
+        "commit my changes",
+        "commit this",
+        "commit these changes",
+        "stage and commit",
+        "commiter",
+        "committer",
+        "message de commit",
+        "faire un commit",
+        "créer un commit",
+        "écrire un message de commit",
+        "committer les changements",
+        "commiter mes changements",
+        "aide moi à commiter",
+        "génère un commit",
+        "mmap failed",
+        "git error",
+        "commit failed",
+        "onedrive git"
+      ],
+      "content_summary": "Observability | Quick Reference | Commit Types | Execution Process | Step 1: Analyze Changes # Commit Message Generator",
+      "locations": [
+        {
+          "source": "global",
+          "path": "julien-dev-commit-message\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-dev-commit-message\\SKILL.md",
+          "hash": "ea2247619e8aff7d",
+          "mtime": "2026-01-06T17:37:34.544197"
+        },
+        {
+          "source": "marketplace",
+          "path": "julien-dev-commit-message\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-commit-message\\SKILL.md",
+          "hash": "ea2247619e8aff7d",
+          "mtime": "2026-01-06T17:36:29.911435"
         }
       ],
       "resolved_source": "global",
@@ -469,8 +526,8 @@
           "source": "marketplace",
           "path": "julien-dev-hook-creator\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-hook-creator\\SKILL.md",
-          "hash": "1fd78b56ca8a1907",
-          "mtime": "2025-12-18T00:31:53.706051"
+          "hash": "0dc5f0551adb3670",
+          "mtime": "2026-01-06T17:07:57.351178"
         }
       ],
       "resolved_source": "global",
@@ -505,8 +562,8 @@
           "source": "marketplace",
           "path": "julien-dev-powershell-profile\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-powershell-profile\\SKILL.md",
-          "hash": "dcf270ee49b1841d",
-          "mtime": "2025-12-18T00:36:49.661796"
+          "hash": "59ebaf0018cc8e1e",
+          "mtime": "2026-01-06T17:07:57.354121"
         }
       ],
       "resolved_source": "global",
@@ -535,14 +592,14 @@
         "donne-moi ton avis sur mon MCP",
         "ce serveur est-il bien écrit ?"
       ],
-      "content_summary": "Quick Start | Review Process | Step 1: Load Server Code | Step 2: Run Quality Checks | Step 3: Generate Report # FastMCP Quality Review",
+      "content_summary": "Quick Start | Observability | Review Process | Step 1: Load Server Code | Step 2: Run Quality Checks # FastMCP Quality Review",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-dev-tools-fastmcp-quality-review\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-dev-tools-fastmcp-quality-review\\SKILL.md",
-          "hash": "df6750bfbe62ab2f",
-          "mtime": "2025-12-20T14:06:35.714336"
+          "hash": "682ad426e9877997",
+          "mtime": "2026-01-06T17:07:57.355125"
         }
       ],
       "resolved_source": "marketplace",
@@ -563,14 +620,14 @@
         "pm2 status",
         "site working"
       ],
-      "content_summary": "Server Info | When to Use This Skill | Verification Checklist | ✅ Complete Verification Workflow | 1. PM2 Process Verification # Deployment Verifier - Hostinger srv759970",
+      "content_summary": "Server Info | Observability | When to Use This Skill | Verification Checklist | ✅ Complete Verification Workflow # Deployment Verifier - Hostinger srv759970",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-infra-deployment-verifier\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-deployment-verifier\\SKILL.md",
-          "hash": "ddc4ec92a35a6ce3",
-          "mtime": "2025-12-14T09:47:26.041122"
+          "hash": "e4ac4387a6e046e4",
+          "mtime": "2026-01-06T17:07:57.357638"
         }
       ],
       "resolved_source": "marketplace",
@@ -591,14 +648,14 @@
         "git sync hostinger",
         "vps github sync"
       ],
-      "content_summary": "Server Info | When to Use This Skill | Common Scenarios | 1. Unrelated Histories | Option A: Merge with allow-unrelated-histories (preserves VPS changes) # Git VPS Sync - Hostinger srv759970",
+      "content_summary": "Server Info | Observability | When to Use This Skill | Common Scenarios | 1. Unrelated Histories # Git VPS Sync - Hostinger srv759970",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-infra-git-vps-sync\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-git-vps-sync\\SKILL.md",
-          "hash": "5a2f73378e3b5f1c",
-          "mtime": "2025-12-14T09:47:29.758260"
+          "hash": "cff7d6a27e82165a",
+          "mtime": "2026-01-06T17:07:57.360674"
         }
       ],
       "resolved_source": "marketplace",
@@ -621,14 +678,14 @@
         "free space",
         "system status"
       ],
-      "content_summary": "Server Info | 1. SSH Connection | Quick Connect | SSH Config (~/.ssh/config) | Fix Permission Denied (Windows) # Hostinger VPS Core Management",
+      "content_summary": "Server Info | Observability | 1. SSH Connection | Quick Connect | SSH Config (~/.ssh/config) # Hostinger VPS Core Management",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-infra-hostinger-core\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-hostinger-core\\SKILL.md",
-          "hash": "f6524fc87d5373d6",
-          "mtime": "2025-12-18T01:05:17.029909"
+          "hash": "753adececc28f0ac",
+          "mtime": "2026-01-06T17:07:57.363670"
         }
       ],
       "resolved_source": "marketplace",
@@ -650,14 +707,14 @@
         "db backup",
         "database connection"
       ],
-      "content_summary": "Overview | Databases Available | When to Use This Skill | PostgreSQL Operations | Connection # Database Management - Hostinger VPS",
+      "content_summary": "Overview | Observability | Databases Available | When to Use This Skill | PostgreSQL Operations # Database Management - Hostinger VPS",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-infra-hostinger-database\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-hostinger-database\\SKILL.md",
-          "hash": "bd1aab3f5d8fdc66",
-          "mtime": "2025-12-14T09:47:35.759137"
+          "hash": "e9dbb7cba0a463eb",
+          "mtime": "2026-01-06T17:07:57.366720"
         }
       ],
       "resolved_source": "marketplace",
@@ -679,14 +736,14 @@
         "container crash",
         "docker logs"
       ],
-      "content_summary": "Server Info | 1. Status & Monitoring | Quick Status | Container Stats | Logs # Hostinger Docker Management",
+      "content_summary": "Server Info | Observability | 1. Status & Monitoring | Quick Status | Container Stats # Hostinger Docker Management",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-infra-hostinger-docker\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-hostinger-docker\\SKILL.md",
-          "hash": "115b1f01ef821b4e",
-          "mtime": "2025-12-18T01:06:10.148692"
+          "hash": "9eafa8846914ae00",
+          "mtime": "2026-01-06T17:07:57.368253"
         }
       ],
       "resolved_source": "marketplace",
@@ -709,14 +766,14 @@
         "audit vps",
         "brute force"
       ],
-      "content_summary": "Server Info | 1. Fail2ban Management | Tous les Jails Actifs | Status Check | Ban/Unban IP (via fail2ban) # Hostinger Security Management",
+      "content_summary": "Server Info | Observability | 1. Fail2ban Management | Tous les Jails Actifs | Status Check # Hostinger Security Management",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-infra-hostinger-security\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-hostinger-security\\SKILL.md",
-          "hash": "428a2af544c0d8e4",
-          "mtime": "2025-12-22T22:13:10.118217"
+          "hash": "4238e9a667174ce7",
+          "mtime": "2026-01-06T17:07:57.369254"
         }
       ],
       "resolved_source": "marketplace",
@@ -740,14 +797,14 @@
         "502 error",
         "504 error"
       ],
-      "content_summary": "Server Info | 1. Nginx Management | Add New Site | SSL with Let's Encrypt | Common Commands # Hostinger Web Infrastructure",
+      "content_summary": "Server Info | Observability | 1. Nginx Management | Add New Site | SSL with Let's Encrypt # Hostinger Web Infrastructure",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-infra-hostinger-web\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-hostinger-web\\SKILL.md",
-          "hash": "4b5263aff6f2ab5f",
-          "mtime": "2025-12-18T01:05:19.857653"
+          "hash": "e8fb5a388cf3c04f",
+          "mtime": "2026-01-06T17:07:57.371307"
         }
       ],
       "resolved_source": "marketplace",
@@ -771,14 +828,14 @@
         "jokers build",
         "jokers pm2"
       ],
-      "content_summary": "Quick Reference | 1. Deployment | Quick Deploy (Git) | Pre-Deployment Checks | Verify Deployment # Jokers Hockey - Infrastructure Management",
+      "content_summary": "Quick Reference | Observability | 1. Deployment | Quick Deploy (Git) | Pre-Deployment Checks # Jokers Hockey - Infrastructure Management",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-infra-jokers\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-infra-jokers\\SKILL.md",
-          "hash": "832f1e8e13a4310e",
-          "mtime": "2025-12-18T00:59:22.921635"
+          "hash": "9e8299410fed36ed",
+          "mtime": "2026-01-06T17:07:57.372859"
         }
       ],
       "resolved_source": "marketplace",
@@ -818,8 +875,8 @@
           "source": "marketplace",
           "path": "julien-mcp-installer\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-mcp-installer\\SKILL.md",
-          "hash": "b7571c9b758c1a97",
-          "mtime": "2025-12-18T03:18:50.629721"
+          "hash": "61110f802728bd2a",
+          "mtime": "2026-01-06T17:07:57.375916"
         }
       ],
       "resolved_source": "global",
@@ -843,14 +900,14 @@
         "nvenc transcode",
         "streaming onepiece"
       ],
-      "content_summary": "Trigger Conditions | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) | Actions (Scripts prennent arguments positionnels) # OnePiece Workflow Skill",
+      "content_summary": "Trigger Conditions | Observability | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) # OnePiece Workflow Skill",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-media-onepiece-workflow\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-media-onepiece-workflow\\SKILL.md",
-          "hash": "af4224c48dd3a4bb",
-          "mtime": "2025-12-17T23:13:57.358955"
+          "hash": "2396883590891a1a",
+          "mtime": "2026-01-06T17:07:57.379449"
         }
       ],
       "resolved_source": "marketplace",
@@ -875,14 +932,14 @@
         "series subtitles",
         "translate episodes"
       ],
-      "content_summary": "When to Use | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity | Model Recommendations (December 2024) # Subtitle Translation Skill",
+      "content_summary": "When to Use | Observability | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity # Subtitle Translation Skill",
       "locations": [
         {
           "source": "marketplace",
           "path": "julien-media-subtitle-translation\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-media-subtitle-translation\\SKILL.md",
-          "hash": "ea8c90dea7277ff0",
-          "mtime": "2025-12-18T00:35:42.975149"
+          "hash": "bf95317cad860aac",
+          "mtime": "2026-01-06T17:07:57.384049"
         }
       ],
       "resolved_source": "marketplace",
@@ -919,8 +976,8 @@
           "source": "marketplace",
           "path": "julien-ref-ahk-v1\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-ahk-v1\\SKILL.md",
-          "hash": "77059242ea15d2ef",
-          "mtime": "2025-12-17T23:24:41.416342"
+          "hash": "8f363b303d7f7bdb",
+          "mtime": "2026-01-06T17:07:57.387744"
         }
       ],
       "resolved_source": "global",
@@ -959,8 +1016,8 @@
           "source": "marketplace",
           "path": "julien-ref-ahk-v2\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-ahk-v2\\SKILL.md",
-          "hash": "ec4b6fc6bd1fc9e8",
-          "mtime": "2025-12-18T00:59:37.187769"
+          "hash": "d7300b27a3fdfb21",
+          "mtime": "2026-01-06T17:07:57.388761"
         }
       ],
       "resolved_source": "global",
@@ -999,15 +1056,15 @@
           "source": "marketplace",
           "path": "julien-ref-astro-install\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-astro-install\\SKILL.md",
-          "hash": "18e8073354ce4cc8",
-          "mtime": "2025-12-18T01:01:09.167201"
+          "hash": "d83740f1c249ccb8",
+          "mtime": "2026-01-06T17:07:57.390780"
         }
       ],
       "resolved_source": "global",
       "dependencies": {
         "local_files": [
-          "../layouts/Layout.astro",
-          "../styles/global.css"
+          "../styles/global.css",
+          "../layouts/Layout.astro"
         ],
         "requires_project_context": true,
         "external_scripts": []
@@ -1042,8 +1099,8 @@
           "source": "marketplace",
           "path": "julien-ref-batch\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-batch\\SKILL.md",
-          "hash": "62bd033473bd02cc",
-          "mtime": "2025-12-18T00:59:59.140044"
+          "hash": "d7960d1ef09bbc33",
+          "mtime": "2026-01-06T17:07:57.391777"
         }
       ],
       "resolved_source": "global",
@@ -1084,8 +1141,8 @@
           "source": "marketplace",
           "path": "julien-ref-doc-production\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-doc-production\\SKILL.md",
-          "hash": "52bbb64423629ea7",
-          "mtime": "2025-12-18T01:24:12.123392"
+          "hash": "668c152e592b7952",
+          "mtime": "2026-01-06T17:07:57.393775"
         }
       ],
       "resolved_source": "global",
@@ -1124,8 +1181,8 @@
           "source": "marketplace",
           "path": "julien-ref-doc-review\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-doc-review\\SKILL.md",
-          "hash": "5d0f01400305c304",
-          "mtime": "2025-12-18T01:24:20.150237"
+          "hash": "1362125a4fdff487",
+          "mtime": "2026-01-06T17:07:57.397292"
         }
       ],
       "resolved_source": "global",
@@ -1168,8 +1225,8 @@
           "source": "marketplace",
           "path": "julien-ref-notion-markdown\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-notion-markdown\\SKILL.md",
-          "hash": "ea1c002fdd259e88",
-          "mtime": "2025-12-18T01:25:39.991265"
+          "hash": "b879d76ba37cd7bb",
+          "mtime": "2026-01-06T17:07:57.399311"
         }
       ],
       "resolved_source": "global",
@@ -1207,8 +1264,8 @@
           "source": "marketplace",
           "path": "julien-ref-powershell\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-ref-powershell\\SKILL.md",
-          "hash": "d268620360d6c1f4",
-          "mtime": "2025-12-18T01:00:31.523875"
+          "hash": "10525fda7a3c58b5",
+          "mtime": "2026-01-06T17:07:57.401313"
         }
       ],
       "resolved_source": "global",
@@ -1256,8 +1313,8 @@
           "source": "marketplace",
           "path": "julien-skill-creator\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-creator\\SKILL.md",
-          "hash": "5e10467ce25a615e",
-          "mtime": "2025-12-20T00:45:43.503496"
+          "hash": "0bf07d89d40167e5",
+          "mtime": "2026-01-06T17:03:58.532012"
         }
       ],
       "resolved_source": "global",
@@ -1267,10 +1324,54 @@
         ],
         "requires_project_context": true,
         "external_scripts": [
-          "scripts/package_skill.py",
+          "scripts/benchmark-semantic-router.py",
           "scripts/init_skill.py",
-          "scripts/benchmark-semantic-router.py"
+          "scripts/package_skill.py"
         ]
+      },
+      "scope": "global"
+    },
+    "julien-skill-help": {
+      "name": "julien-skill-help",
+      "description": "Interactive catalog of all available skills. Use when: user asks for help, wants to discover skills, or asks what you can do.",
+      "triggers": [
+        "help",
+        "aide",
+        "skills",
+        "list skills",
+        "what can you do",
+        "qu'est-ce que tu sais faire",
+        "show skills",
+        "available skills",
+        "skill catalog",
+        "catalogue skills",
+        "discover skills",
+        "decouvrir skills",
+        "montre les skills",
+        "liste des skills"
+      ],
+      "content_summary": "Observability | Execution | Step 1: Load the Registry | Step 2: Display Skills by Category | Step 3: Show Summary # Skill Help",
+      "locations": [
+        {
+          "source": "global",
+          "path": "julien-skill-help\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-skill-help\\SKILL.md",
+          "hash": "f8d699bc36ab27a5",
+          "mtime": "2026-01-06T17:09:05.760490"
+        },
+        {
+          "source": "marketplace",
+          "path": "julien-skill-help\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-help\\SKILL.md",
+          "hash": "f8d699bc36ab27a5",
+          "mtime": "2026-01-06T17:01:49.358913"
+        }
+      ],
+      "resolved_source": "global",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
       },
       "scope": "global"
     },
@@ -1301,8 +1402,8 @@
           "source": "marketplace",
           "path": "julien-skill-migration\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-migration\\SKILL.md",
-          "hash": "a9745142033d5fce",
-          "mtime": "2025-12-19T18:47:39.987213"
+          "hash": "31c176b53278cf39",
+          "mtime": "2026-01-06T17:07:57.404313"
         }
       ],
       "resolved_source": "global",
@@ -1342,8 +1443,8 @@
           "source": "marketplace",
           "path": "julien-skill-move-to-core\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-move-to-core\\SKILL.md",
-          "hash": "5080b958f13e7945",
-          "mtime": "2025-12-19T07:01:37.614490"
+          "hash": "29f39d281d1a76ce",
+          "mtime": "2026-01-06T17:07:57.405308"
         }
       ],
       "resolved_source": "global",
@@ -1380,8 +1481,8 @@
           "source": "marketplace",
           "path": "julien-skill-renamer\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-renamer\\SKILL.md",
-          "hash": "a9fd578d7b83980f",
-          "mtime": "2025-12-19T07:01:13.848764"
+          "hash": "5e3d6b67fd1847b4",
+          "mtime": "2026-01-06T17:07:57.407313"
         }
       ],
       "resolved_source": "global",
@@ -1389,8 +1490,8 @@
         "local_files": [],
         "requires_project_context": false,
         "external_scripts": [
-          "scripts/rename-skill.py",
-          "scripts/*.py"
+          "scripts/*.py",
+          "scripts/rename-skill.py"
         ]
       },
       "scope": "global"
@@ -1430,8 +1531,8 @@
           "source": "marketplace",
           "path": "julien-skill-reviewer\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-reviewer\\SKILL.md",
-          "hash": "2a9a0692ba3d3be4",
-          "mtime": "2025-12-20T00:46:32.329019"
+          "hash": "3c467e4404db5a90",
+          "mtime": "2026-01-06T17:07:57.408837"
         }
       ],
       "resolved_source": "global",
@@ -1470,8 +1571,8 @@
           "source": "marketplace",
           "path": "julien-skill-router\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-skill-router\\SKILL.md",
-          "hash": "1f1b5833c1567d9c",
-          "mtime": "2025-12-19T07:01:33.210338"
+          "hash": "e13cde534b8cc6ee",
+          "mtime": "2026-01-06T17:07:57.410854"
         }
       ],
       "resolved_source": "global",
@@ -1510,8 +1611,8 @@
           "source": "marketplace",
           "path": "julien-workflow-advice-codex\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-workflow-advice-codex\\SKILL.md",
-          "hash": "584fff2c049a8788",
-          "mtime": "2025-12-12T19:52:19.100064"
+          "hash": "e91ae9a8e31ef5f4",
+          "mtime": "2026-01-06T17:07:57.413848"
         }
       ],
       "resolved_source": "global",
@@ -1553,8 +1654,8 @@
           "source": "marketplace",
           "path": "julien-workflow-advice-gemini\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-workflow-advice-gemini\\SKILL.md",
-          "hash": "fff080ec618e0834",
-          "mtime": "2025-12-12T19:52:15.871511"
+          "hash": "faea2cabc41c3b1f",
+          "mtime": "2026-01-06T17:07:57.414853"
         }
       ],
       "resolved_source": "global",
@@ -1597,8 +1698,8 @@
           "source": "marketplace",
           "path": "julien-workflow-check-loaded-skills\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-workflow-check-loaded-skills\\SKILL.md",
-          "hash": "afe7e829b5ff0fa0",
-          "mtime": "2025-12-12T19:52:09.715111"
+          "hash": "b80ec506e7ee750b",
+          "mtime": "2026-01-06T17:07:57.415852"
         }
       ],
       "resolved_source": "global",
@@ -1710,8 +1811,35 @@
           "source": "marketplace",
           "path": "julien-workflow-queuing-background-tasks\\SKILL.md",
           "full_path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\skills\\julien-workflow-queuing-background-tasks\\SKILL.md",
-          "hash": "70a7aab9ca7bb85d",
-          "mtime": "2025-12-17T23:13:56.974919"
+          "hash": "a7c977a52bab06ad",
+          "mtime": "2026-01-06T17:07:57.418386"
+        }
+      ],
+      "resolved_source": "global",
+      "dependencies": {
+        "local_files": [],
+        "requires_project_context": false,
+        "external_scripts": []
+      },
+      "scope": "global"
+    },
+    "julien-debug-echo": {
+      "name": "julien-debug-echo",
+      "description": "Debug skill that echoes received context. Use with 'debug-echo' keyword to test stdout injection.",
+      "triggers": [
+        "debug-echo",
+        "echo context",
+        "show context",
+        "test injection"
+      ],
+      "content_summary": "Observability | Execution | Purpose # Debug Echo Skill",
+      "locations": [
+        {
+          "source": "global",
+          "path": "julien-debug-echo\\SKILL.md",
+          "full_path": "C:\\Users\\julien\\.claude\\skills\\julien-debug-echo\\SKILL.md",
+          "hash": "bbbbf51a8fb9db0c",
+          "mtime": "2026-01-06T19:11:44.900360"
         }
       ],
       "resolved_source": "global",
@@ -1817,9 +1945,9 @@
       "resolved_source": "project:Site internet Clem",
       "dependencies": {
         "local_files": [
-          "../wp-clean-css/SKILL.md`",
+          "../wp-checklists.md`",
           "../wp-tokens.md`",
-          "../wp-checklists.md`"
+          "../wp-clean-css/SKILL.md`"
         ],
         "requires_project_context": true,
         "external_scripts": []
@@ -1886,8 +2014,8 @@
       "dependencies": {
         "local_files": [
           "../wp-checklists.md#accessibilité-checklist-wcag-aa`",
-          "../wp-tokens.md`",
-          "../wp-checklists.md`"
+          "../wp-checklists.md`",
+          "../wp-tokens.md`"
         ],
         "requires_project_context": true,
         "external_scripts": []
@@ -2013,10 +2141,10 @@
       "resolved_source": "project:Site internet Clem",
       "dependencies": {
         "local_files": [
-          "../wp-clean-css/SKILL.md`",
           "../wp-block-contract/SKILL.md`",
+          "../wp-checklists.md`",
           "../wp-tokens.md`",
-          "../wp-checklists.md`"
+          "../wp-clean-css/SKILL.md`"
         ],
         "requires_project_context": true,
         "external_scripts": []
