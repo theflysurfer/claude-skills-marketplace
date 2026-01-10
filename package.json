@@ -1,0 +1,56 @@
+{
+  "name": "claude-code-marketplace",
+  "version": "1.0.0",
+  "description": "Claude Code ecosystem with hooks, skills, and commands",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:verbose": "jest --verbose",
+    "test:single": "jest --testNamePattern",
+    "test:verify-100": "npm run test:coverage && node -e \"const cov = require('./coverage/coverage-summary.json'); const pct = cov.total.lines.pct; if (pct < 100) { console.error('❌ Coverage is ' + pct + '%, expected 100%'); process.exit(1); } else { console.log('✅ 100% coverage achieved!'); }\""
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "@types/jest": "^29.5.11"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/scripts/__tests__/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "scripts/track-skill-invocation.js",
+      "scripts/session-start-banner.js",
+      "scripts/session-stats-dashboard.js",
+      "scripts/precompact-save-chunk.js",
+      "scripts/save-session-for-memory.js",
+      "scripts/session-end-delete-reserved.js",
+      "scripts/fast-skill-router.js",
+      "!scripts/lib/**",
+      "!scripts/__tests__/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "coverageReporters": [
+      "text",
+      "text-summary",
+      "html",
+      "lcov"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/",
+      "/scripts/lib/"
+    ],
+    "testTimeout": 10000,
+    "maxWorkers": 1,
+    "setupFilesAfterEnv": ["<rootDir>/scripts/__tests__/setup.js"]
+  }
+}
