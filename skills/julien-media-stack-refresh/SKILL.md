@@ -13,6 +13,13 @@ Complete end-to-end refresh workflow for the entire media infrastructure.
 
 ## What This Does
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "media-stack-full-refresh" activated
+```
+
 Orchestrates the full refresh chain:
 1. **Restart Zurg** - Rebuild torrent database from Real-Debrid
 2. **Restart Rclone** - Clear mount cache

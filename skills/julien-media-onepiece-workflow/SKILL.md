@@ -15,6 +15,14 @@ triggers:
 # OnePiece Workflow Skill
 
 ## Trigger Conditions
+
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-media-onepiece-workflow" activated
+```
+
 Use when user mentions: "onepiece", "one piece", "japonais", "transcoding", "streaming"
 
 ## Context

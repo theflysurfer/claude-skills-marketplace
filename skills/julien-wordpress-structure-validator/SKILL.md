@@ -9,6 +9,13 @@ Comprehensive validation tool for WordPress Full Site Editing (FSE) themes.
 
 ## When to Use This Skill
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "WordPress Structure Validator" activated
+```
+
 Use this skill to validate WordPress site structure in these scenarios:
 
 - After creating or modifying WordPress templates

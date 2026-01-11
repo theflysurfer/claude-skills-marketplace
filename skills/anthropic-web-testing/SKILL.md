@@ -23,6 +23,13 @@ To test local web applications, write native Python Playwright scripts.
 
 ## Decision Tree: Choosing Your Approach
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "anthropic-web-testing" activated
+```
+
 ```
 User task → Is it static HTML?
     ├─ Yes → Read HTML file directly to identify selectors

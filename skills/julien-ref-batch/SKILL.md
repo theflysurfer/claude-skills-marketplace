@@ -18,6 +18,13 @@ triggers:
 
 ## STRUCTURE ET ENCODAGE
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-ref-batch" activated
+```
+
 ### Encodage et Affichage
 ```batch
 @echo off

@@ -17,6 +17,13 @@ triggers:
 
 ## Vue d'Ensemble
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-ref-powershell" activated
+```
+
 Ce document définit les conventions de nommage et d'organisation pour les projets PowerShell, garantissant cohérence, maintenabilité et scalabilité.
 
 ## Structure d'Organisation Générique

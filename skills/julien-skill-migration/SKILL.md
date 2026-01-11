@@ -24,6 +24,13 @@ Migrate skills with deep analysis of dependencies, paths, scripts, and requireme
 
 ## Prerequisites
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-skill-migration" activated
+```
+
 - Source skill in `.claude/skills/<name>/SKILL.md`
 - Marketplace: `~/OneDrive/Coding/_Projets de code/2025.11 Claude Code MarketPlace`
 - Python 3.10+ for analysis script
@@ -106,7 +113,7 @@ cp -r .claude/skills/<local>/ "$MARKETPLACE/skills/julien-<category>-<name>/"
 Edit SKILL.md: name: julien-<category>-<name>
 
 # 3. Add to sync config
-Edit configs/sync-config.json: add to skills_to_sync
+Edit registry/sync-config.json: add to skills_to_sync
 
 # 4. Regenerate triggers
 python "$MARKETPLACE/scripts/generate-triggers.py"

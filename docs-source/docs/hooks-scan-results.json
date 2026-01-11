@@ -1,0 +1,194 @@
+{
+  "total_projects": 5,
+  "results": {
+    "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code": {
+      "2025.09 Notion Uploader": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Notion Uploader",
+        "settings_files": [
+          {
+            "file": "settings.json",
+            "hooks": {
+              "UserPromptSubmit": 1
+            },
+            "full_hooks": {
+              "UserPromptSubmit": [
+                {
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": "python .claude/hooks/load-notion-context.py"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "2025.10 Site internet Clem": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.10 Site internet Clem",
+        "settings_files": [
+          {
+            "file": "settings.local.json",
+            "hooks": {
+              "PreToolUse": 1,
+              "PostToolUse": 1
+            },
+            "full_hooks": {
+              "PreToolUse": [
+                {
+                  "matcher": "Write|Edit",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": ".claude/hooks/pre-write-validate.sh"
+                    }
+                  ]
+                }
+              ],
+              "PostToolUse": [
+                {
+                  "matcher": "Write|Edit",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": ".claude/hooks/post-write-lint.sh"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "2025.11 Calibre": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre",
+        "settings_files": [
+          {
+            "file": "settings.json",
+            "hooks": {
+              "UserPromptSubmit": 1
+            },
+            "full_hooks": {
+              "UserPromptSubmit": [
+                {
+                  "matcher": "*",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": "python \"./.claude/hooks/detect-calibre-skills.py\"",
+                      "timeout": 5
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "2025.11 Site Web Jokers": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Site Web Jokers",
+        "settings_files": [
+          {
+            "file": "settings.json",
+            "hooks": {
+              "PostToolUse": 2,
+              "PreToolUse": 1,
+              "UserPromptSubmit": 1
+            },
+            "full_hooks": {
+              "PostToolUse": [
+                {
+                  "matcher": "Write",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": "echo '✓ File written: $TOOL_INPUT' | jq -r '.file_path'"
+                    }
+                  ]
+                },
+                {
+                  "matcher": "Edit",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": "echo '✓ File edited: $TOOL_INPUT' | jq -r '.file_path'"
+                    }
+                  ]
+                }
+              ],
+              "PreToolUse": [
+                {
+                  "matcher": "Bash",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": "echo '[AUDIT] Running bash command' >> .claude/audit.log"
+                    }
+                  ]
+                }
+              ],
+              "UserPromptSubmit": [
+                {
+                  "matcher": "*",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": "echo \"[$(date)] User prompt submitted\" >> .claude/session.log"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "2025.12 Media streaming server [Hostinger]": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]",
+        "settings_files": [
+          {
+            "file": "settings.json",
+            "hooks": {
+              "PreToolUse": 2,
+              "SessionEnd": 1
+            },
+            "full_hooks": {
+              "PreToolUse": [
+                {
+                  "matcher": "Edit|Write",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": "python3 << 'EOF'\nimport json\nimport sys\nimport os\n\ntry:\n    # Read tool input from stdin\n    data = json.load(sys.stdin)\n    file_path = data.get('tool_input', {}).get('file_path', '')\n    \n    if not file_path:\n        sys.exit(0)\n    \n    # Normalize path to handle different separators\n    normalized_path = os.path.normpath(file_path)\n    path_parts = normalized_path.split(os.sep)\n    \n    # Check for path traversal attempts\n    if '..' in path_parts:\n        print('⚠️ SECURITY: Path traversal attempt detected')\n        print(f'Blocked path: {file_path}')\n        sys.exit(2)\n    \n    # Get basename for exact filename matching\n    basename = os.path.basename(normalized_path)\n    \n    # Critical files that should never be modified\n    critical_files = [\n        'docker-compose.yml',\n        'SECRETS.md',\n        '.gitignore',\n        'claude.md'\n    ]\n    \n    # Check if modifying a critical file\n    if basename in critical_files:\n        print(f'⚠️ CRITICAL FILE: {basename}')\n        print('This file requires manual review before modification.')\n        print('To edit: open the file manually outside Claude Code.')\n        sys.exit(2)\n    \n    # Check if modifying .git directory\n    if '/.git/' in normalized_path.replace(os.sep, '/') or normalized_path.startswith('.git'):\n        print('⚠️ CRITICAL: Attempting to modify .git directory')\n        print('Git internals should not be modified directly.')\n        sys.exit(2)\n    \n    # Auto-backup for server-configs changes\n    if 'server-configs' in normalized_path:\n        import subprocess\n        import os\n        \n        print('🔄 Auto-backup: Committing server-configs changes...')\n        \n        # Use CLAUDE_PROJECT_DIR if available, otherwise current directory\n        project_dir = os.environ.get('CLAUDE_PROJECT_DIR', os.getcwd())\n        \n        try:\n            # Git add the server-configs directory\n            result_add = subprocess.run(\n                ['git', 'add', 'server-registry/'],\n                cwd=project_dir,\n                capture_output=True,\n                text=True,\n                timeout=10\n            )\n            \n            # Git commit (will fail silently if nothing to commit)\n            result_commit = subprocess.run(\n                ['git', 'commit', '-m', 'Auto-backup before infrastructure change'],\n                cwd=project_dir,\n                capture_output=True,\n                text=True,\n                timeout=10\n            )\n            \n            if result_commit.returncode == 0:\n                print('✓ Auto-backup: Changes committed successfully')\n            elif 'nothing to commit' in result_commit.stdout.lower():\n                print('✓ Auto-backup: No changes to commit')\n            \n        except subprocess.TimeoutExpired:\n            print('⚠️ Auto-backup: Git command timed out (non-blocking)')\n        except Exception as e:\n            print(f'⚠️ Auto-backup: Failed (non-blocking): {e}')\n    \n    # Allow the operation\n    sys.exit(0)\n    \nexcept json.JSONDecodeError:\n    print('Hook error: Invalid JSON input (non-blocking)')\n    sys.exit(0)\nexcept Exception as e:\n    print(f'Hook error (non-blocking): {e}')\n    sys.exit(0)\nEOF"
+                    }
+                  ]
+                },
+                {
+                  "matcher": "Bash",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": "python3 << 'EOF'\nimport json\nimport sys\nimport os\nfrom datetime import datetime\n\ntry:\n    # Read command from stdin\n    data = json.load(sys.stdin)\n    command = data.get('tool_input', {}).get('command', '')\n    \n    if not command:\n        sys.exit(0)\n    \n    # Create log directory if it doesn't exist\n    log_dir = os.path.expanduser('~/.claude')\n    os.makedirs(log_dir, exist_ok=True)\n    \n    log_file = os.path.join(log_dir, 'media-server-commands.log')\n    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')\n    \n    # Log the command\n    with open(log_file, 'a', encoding='utf-8') as f:\n        f.write(f'[{timestamp}] {command}\\n')\n    \n    sys.exit(0)\n    \nexcept Exception:\n    # Silently fail - logging is not critical\n    sys.exit(0)\nEOF"
+                    }
+                  ]
+                }
+              ],
+              "SessionEnd": [
+                {
+                  "matcher": "*",
+                  "hooks": [
+                    {
+                      "type": "command",
+                      "command": "python3 << 'EOF'\nimport os\nfrom datetime import datetime\n\ntry:\n    log_dir = os.path.expanduser('~/.claude')\n    os.makedirs(log_dir, exist_ok=True)\n    \n    command_log = os.path.join(log_dir, 'media-server-commands.log')\n    summary_log = os.path.join(log_dir, 'session-summary.log')\n    \n    # Count commands if log exists\n    command_count = 0\n    if os.path.exists(command_log):\n        with open(command_log, 'r') as f:\n            command_count = len(f.readlines())\n    \n    # Write session summary\n    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')\n    with open(summary_log, 'a', encoding='utf-8') as f:\n        f.write(f'[{timestamp}] Session ended - {command_count} total commands logged\\n')\n    \nexcept Exception:\n    # Silently fail\n    pass\nEOF"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "C:\\Users\\julien\\OneDrive\\Coding\\_référentiels de code": {}
+  }
+}

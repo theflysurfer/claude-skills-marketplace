@@ -16,6 +16,13 @@ triggers:
 
 ## Workflow
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-dev-powershell-profile" activated
+```
+
 1. Read profile to identify correct section (11 numbered sections)
 2. Edit profile (or use Python if OneDrive sync fails)
 3. User runs `rup` to reload

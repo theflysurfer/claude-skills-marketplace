@@ -10,6 +10,13 @@ Clean and optimize `~/.claude.json` when it becomes too large for Claude to read
 
 ## When to Use
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-maintenance-claude-json" activated
+```
+
 - Claude Code shows error: "File content exceeds maximum allowed tokens"
 - User reports claude.json is too big
 - Periodic maintenance to keep config lean

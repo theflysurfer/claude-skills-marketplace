@@ -30,4 +30,4 @@ Où `$MARKETPLACE_ROOT` est le chemin du marketplace (généralement `~/_Projets
 
 ## Résultat
 
-Le registre `configs/projects-registry.json` est mis à jour avec tous les projets découverts.
+Le registre `registry/projects-registry.json` est mis à jour avec tous les projets découverts.

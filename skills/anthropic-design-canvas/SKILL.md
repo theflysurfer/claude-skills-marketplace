@@ -28,6 +28,13 @@ First, undertake this task:
 
 ## DESIGN PHILOSOPHY CREATION
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "anthropic-design-canvas" activated
+```
+
 To begin, create a VISUAL PHILOSOPHY (not layouts or templates) that will be interpreted through:
 - Form, space, color, composition
 - Images, graphics, shapes, patterns

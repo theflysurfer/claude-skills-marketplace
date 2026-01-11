@@ -28,6 +28,13 @@ Automate post-deployment verification for INCLUZ'HACT sites on Hostinger VPS.
 
 ## Server Info
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-infra-deployment-verifier" activated
+```
+
 - **Host**: 69.62.108.82
 - **Production**: https://incluzhact.fr (port 5173, PM2: incluzhact)
 - **Preview**: https://preview.incluzhact.fr (port 5174, PM2: incluzhact-preview)

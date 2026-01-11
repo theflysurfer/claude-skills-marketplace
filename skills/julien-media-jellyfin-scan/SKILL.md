@@ -12,6 +12,13 @@ Force library scan and monitor indexing progress.
 
 ## What This Does
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "jellyfin-library-scan" activated
+```
+
 1. **Triggers library scan**: Forces immediate refresh of all libraries
 2. **Monitors progress**: Shows scan status in real-time
 3. **Displays new content**: Lists recently added movies/shows

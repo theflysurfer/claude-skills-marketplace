@@ -25,6 +25,13 @@ Automate Git synchronization between VPS and GitHub, handling common edge cases 
 
 ## Server Info
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-infra-git-vps-sync" activated
+```
+
 - **Host**: 69.62.108.82
 - **User**: automation
 - **Primary Repo**: `/var/www/incluzhact`

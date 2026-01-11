@@ -30,6 +30,13 @@ Create effective CLAUDE.md files that give Claude project context without over-d
 
 ## What is CLAUDE.md?
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-dev-claude-md-documenter" activated
+```
+
 A markdown file that Claude automatically loads at the start of every conversation. It provides project context so you don't have to repeat yourself.
 
 **Location:** `./CLAUDE.md` (project root) or `~/.claude/CLAUDE.md` (global)

@@ -25,6 +25,13 @@ To build powerful frontend claude.ai artifacts, follow these steps:
 
 ## Design & Style Guidelines
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "anthropic-web-artifacts-builder" activated
+```
+
 VERY IMPORTANT: To avoid what is often referred to as "AI slop", avoid using excessive centered layouts, purple gradients, uniform rounded corners, and Inter font.
 
 ## Quick Start

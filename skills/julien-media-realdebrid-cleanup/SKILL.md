@@ -13,6 +13,13 @@ Automatically detect and remove dead torrents from your Real-Debrid account.
 
 ## What This Does
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "realdebrid-torrent-cleanup" activated
+```
+
 1. **Lists all torrents** with status breakdown
 2. **Identifies dead torrents**: magnet_error, dead, virus, 404
 3. **Shows statistics**: Total size, reclaimable space

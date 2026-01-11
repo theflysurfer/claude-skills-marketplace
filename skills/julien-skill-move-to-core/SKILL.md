@@ -23,10 +23,17 @@ Add a skill to `sync-config.json` to make it globally available across all proje
 
 ## What is "Core"?
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-skill-move-to-core" activated
+```
+
 Core skills are:
 - Synced to `~/.claude/skills/` via `/sync` command
 - Available in ALL projects automatically
-- Listed in `configs/sync-config.json`
+- Listed in `registry/sync-config.json`
 
 ## Process
 
@@ -50,7 +57,7 @@ If not found:
 ### Step 3: Check current sync-config
 
 ```bash
-Read configs/sync-config.json
+Read registry/sync-config.json
 ```
 
 Verify skill is not already in `skills_to_sync`.
@@ -58,7 +65,7 @@ Verify skill is not already in `skills_to_sync`.
 ### Step 4: Add to sync-config.json
 
 ```bash
-Edit configs/sync-config.json
+Edit registry/sync-config.json
 # Add skill name to skills_to_sync array (alphabetically sorted by category)
 ```
 
@@ -89,7 +96,7 @@ Pour déployer: /sync
 python -c "
 import json
 skill = '<skill-name>'
-with open('configs/sync-config.json', 'r+') as f:
+with open('registry/sync-config.json', 'r+') as f:
     config = json.load(f)
     if skill not in config['skills_to_sync']:
         config['skills_to_sync'].append(skill)
@@ -120,7 +127,7 @@ skills_to_add = [
 ## Show Current Core Skills
 
 ```bash
-grep -A 50 '"skills_to_sync"' configs/sync-config.json | grep '"julien-' | wc -l
+grep -A 50 '"skills_to_sync"' registry/sync-config.json | grep '"julien-' | wc -l
 ```
 
 ## Skill Chaining
@@ -133,8 +140,8 @@ grep -A 50 '"skills_to_sync"' configs/sync-config.json | grep '"julien-' | wc -l
 - Skill name to add to core
 
 ### Output Produced
-- Updated `configs/sync-config.json`
-- Regenerated `configs/skill-triggers.json`
+- Updated `registry/sync-config.json`
+- Regenerated `registry/skill-triggers.json`
 
 ### Compatible Skills After
 - **/sync**: Deploy skills to `~/.claude/`

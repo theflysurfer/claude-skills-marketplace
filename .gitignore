@@ -51,3 +51,5 @@ credentials.json
 
 # Auto-generated files
 RESOURCES.md
+site/
+tests/coverage/

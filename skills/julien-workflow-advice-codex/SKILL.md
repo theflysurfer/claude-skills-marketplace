@@ -20,6 +20,13 @@ Get feedback from OpenAI's Codex CLI on code, bugs, or implementation approaches
 
 ## Prerequisites
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-workflow-advice-codex" activated
+```
+
 - Codex CLI installed: `npm install -g @openai/codex`
 - Authenticated: `codex login` or sign in with ChatGPT account
 - Verify: `codex --version`

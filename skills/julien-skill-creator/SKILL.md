@@ -151,7 +151,27 @@ Required subsections:
 7. Visual Workflow
 8. Usage Example
 
-### Step 6: Package Skill
+### Step 6: Add Activation Announcement (REQUIRED)
+
+**Every skill MUST announce its activation for observability.**
+
+Add this instruction at the beginning of the skill's execution section:
+
+```markdown
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "your-skill-name" activated
+```
+```
+
+This:
+- Confirms which skill is running
+- Provides feedback to users
+- Contourns Issue #4084 (hooks can't display in UI)
+
+### Step 7: Package Skill
 
 ```bash
 scripts/package_skill.py <path/to/skill-folder>
@@ -159,7 +179,7 @@ scripts/package_skill.py <path/to/skill-folder>
 
 Validates then creates `.skill` file.
 
-### Step 7: Add Semantic Routing Triggers
+### Step 8: Add Semantic Routing Triggers
 
 Add triggers to YAML frontmatter for automatic skill suggestion:
 
@@ -214,7 +234,7 @@ triggers:
 python scripts/benchmark-semantic-router.py "votre phrase test"
 ```
 
-### Step 8: Iterate with Self-Assessment
+### Step 9: Iterate with Self-Assessment
 
 **Never fix everything at once.** Each iteration focuses on ONE improvement.
 

@@ -25,6 +25,13 @@ Automated quality review for FastMCP MCP servers based on Anthropic MCP Director
 
 ## Quick Start
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "fastmcp-quality-review" activated
+```
+
 1. Locate the MCP server file (usually `mcp_server.py` or similar)
 2. Run the review process below
 3. Get a score out of 100 with actionable recommendations

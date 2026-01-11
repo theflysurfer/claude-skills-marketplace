@@ -35,7 +35,7 @@ python scripts/generate-triggers.py
 
 ```
 skills/                        # All marketplace skills
-configs/
+registry/
 ├── hybrid-registry.json       # Unified skill index (auto-generated)
 ├── skill-triggers.json        # Semantic routing triggers (auto-generated)
 ├── sync-config.json           # What to sync + project sources
@@ -63,7 +63,7 @@ Skills can live in multiple locations:
 
 ### Adding Project Sources
 
-Edit `configs/sync-config.json`:
+Edit `registry/sync-config.json`:
 
 ```json
 {

@@ -18,6 +18,13 @@ Core infrastructure management for srv759970.hstgr.cloud.
 
 ## Server Info
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-infra-hostinger-core" activated
+```
+
 | Property | Value |
 |----------|-------|
 | **Host** | 69.62.108.82 |

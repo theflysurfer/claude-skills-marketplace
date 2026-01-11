@@ -20,6 +20,13 @@ triggers:
 
 ## Structure du Guide
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-ref-ahk-v1" activated
+```
+
 **PARTIE I - RÈGLES CRITIQUES** : Erreurs fatales à éviter absolument
 **PARTIE II - STANDARDS FONDAMENTAUX** : Encodage, nommage, architecture
 **PARTIE III - DÉVELOPPEMENT** : Patterns, GUI, performance

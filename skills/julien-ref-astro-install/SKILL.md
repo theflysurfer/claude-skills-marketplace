@@ -22,6 +22,13 @@ triggers:
 
 ## Prérequis
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-ref-astro-install" activated
+```
+
 ### 1. Node.js (version 18.20.8+ ou 20.3.0+ ou 22.0.0+)
 - Télécharger depuis : https://nodejs.org/
 - Installer la version **LTS** (Long Term Support)

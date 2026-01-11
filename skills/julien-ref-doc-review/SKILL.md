@@ -22,6 +22,13 @@ triggers:
 
 ## Overview
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-ref-doc-review" activated
+```
+
 - Annotate documentation with **4 simple tags**
 - Parse comments automatically with Claude
 - Distinguish micro (local) vs macro (systemic) changes

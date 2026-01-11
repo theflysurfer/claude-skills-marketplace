@@ -41,7 +41,7 @@ Interactive catalog of all available Claude Code skills.
 Read the hybrid registry to get all available skills:
 
 ```bash
-cat ~/.claude/configs/hybrid-registry.json
+cat ~/.claude/registry/hybrid-registry.json
 ```
 
 If the file doesn't exist, inform the user to run `/sync` first.

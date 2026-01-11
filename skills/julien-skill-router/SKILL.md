@@ -27,6 +27,13 @@ Consulte cette skill au début de chaque tâche pour identifier si une skill exi
 
 ## Development Tools
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-skill-router" activated
+```
+
 | Skill | Triggers | Description |
 |-------|----------|-------------|
 | `julien-dev-tools-claude-md-documenter` | CLAUDE.md, document project, project instructions | Créer/améliorer CLAUDE.md |

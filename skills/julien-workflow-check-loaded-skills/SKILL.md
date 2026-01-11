@@ -31,6 +31,13 @@ This skill helps you verify which Claude Code skills are currently loaded in you
 
 ## When to Use This Skill
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-workflow-check-loaded-skills" activated
+```
+
 Use this skill when you need to:
 - **Verify loaded skills** before invoking infrastructure or workflow skills
 - **Debug missing skills** when a skill you expect isn't available

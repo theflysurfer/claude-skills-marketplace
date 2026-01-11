@@ -19,6 +19,13 @@ Translate SRT subtitle files efficiently using LLM APIs with proper cost managem
 
 ## When to Use
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-media-subtitle-translation" activated
+```
+
 - User wants to translate `.srt` subtitle files
 - Batch translation of multiple episodes/movies
 - Translation between any language pair (default: EN→FR)

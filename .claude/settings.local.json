@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Skill(julien-workflow-advice-gemini)",
+      "Bash(gemini \"J''ai un problème avec Claude Code v2.0.76. Mon hook UserPromptSubmit \\(fast-skill-router.js\\) s''exécute correctement \\(le fichier last-routing.json se met à jour\\) et output du JSON sur stdout avec console.log\\(\\), mais ce stdout n''apparaît PAS dans le contexte de Claude. La documentation dit que stdout des hooks UserPromptSubmit est ajouté au contexte, mais ça ne fonctionne pas. Est-ce un bug connu dans Claude Code v2.0.76 ? Y a-t-il une configuration spéciale nécessaire pour que stdout soit injecté ?\")",
+      "Bash(git add:*)"
+    ]
+  }
+}

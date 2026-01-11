@@ -39,6 +39,13 @@ Systematically evaluate and improve skill quality through scoring, refactoring, 
 
 ## When to Use
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-skill-reviewer" activated
+```
+
 - After creating a skill with skill-creator-pro
 - When SKILL.md exceeds 500 lines
 - Before packaging for distribution
@@ -64,7 +71,7 @@ Parse YAML frontmatter: `name`, `description`, `license`, `allowed-tools`.
 
 ### Step 2: Score Against Rubric
 
-Evaluate 10 dimensions (1-5 scale). See [references/quality-rubric.md](references/quality-rubric.md) for detailed criteria.
+Evaluate 11 dimensions (1-5 scale). See [references/quality-rubric.md](references/quality-rubric.md) for detailed criteria.
 
 | Dimension | Check |
 |-----------|-------|
@@ -78,11 +85,12 @@ Evaluate 10 dimensions (1-5 scale). See [references/quality-rubric.md](reference
 | Skill Chaining | I/O/Dependencies documented |
 | Error Handling | Troubleshooting provided |
 | **Trigger Quality** | Natural language, bilingual, 10-20 triggers |
+| **Observability** | Announces activation, clear output markers |
 
 ### Step 3: Calculate Score
 
 ```
-Average = Sum of 10 scores / 10
+Average = Sum of 11 scores / 11
 ```
 
 | Score | Status |
@@ -170,6 +178,7 @@ Before marking production-ready:
 - [ ] YAML frontmatter valid
 - [ ] All references linked from SKILL.md
 - [ ] **Triggers**: 10-20 natural language triggers in frontmatter
+- [ ] **Observability**: Skill announces activation at start
 
 ## Skill Chaining
 

@@ -99,6 +99,13 @@ Queue manager that runs jobs at low priority when user is active, and normal pri
 
 ## Prerequisites
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-workflow-queuing-background-tasks" activated
+```
+
 - Python 3.10+
 - Service must be running before adding jobs
 - Windows only (uses Windows API for idle detection)

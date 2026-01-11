@@ -24,6 +24,13 @@ triggers:
 
 ## Principles
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-ref-doc-production" activated
+```
+
 1. **DRY**: Avoid duplication, use cross-references
 2. **Living docs**: Update rather than create, archive obsolete
 3. **Targeted audience**: Humans | LLM | All + level (1-10)

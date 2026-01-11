@@ -17,6 +17,13 @@ Docker infrastructure for srv759970.hstgr.cloud (30+ containers).
 
 ## Server Info
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-infra-hostinger-docker" activated
+```
+
 | Property | Value |
 |----------|-------|
 | **Host** | automation@69.62.108.82 |

@@ -77,7 +77,7 @@ function execScript(scriptName, options = {}) {
  *
  * @param {object} structure - File paths mapped to contents
  *   Example: {
- *     'configs/hybrid-registry.json': '{"skills": {}}',
+ *     'registry/hybrid-registry.json': '{"skills": {}}',
  *     'logs/hooks-debug.log': ''
  *   }
  */

@@ -20,6 +20,13 @@ Get feedback from Google's Gemini CLI on code, architecture decisions, or implem
 
 ## Prerequisites
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-workflow-advice-gemini" activated
+```
+
 - Gemini CLI installed: `npm install -g @google/gemini-cli`
 - Authenticated: run `gemini` once to login with Google account
 - Verify: `gemini --version`

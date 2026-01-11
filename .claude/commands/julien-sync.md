@@ -8,12 +8,12 @@ Synchronize skills, commands, and scripts from the marketplace to your global `~
 
 ## What to sync
 
-Read `configs/sync-config.json` for the list of:
+Read `registry/sync-config.json` for the list of:
 - `home_files_to_sync`: Files to copy to `~/.claude/` root (settings.json)
 - `skills_to_sync`: Skills to copy to `~/.claude/skills/`
 - `commands_to_sync`: Commands to copy to `~/.claude/commands/`
 - `scripts_to_sync`: Scripts to copy to `~/.claude/scripts/`
-- `configs_to_sync`: Configs to copy to `~/.claude/configs/`
+- `configs_to_sync`: Configs to copy to `~/.claude/registry/`
 
 ## Execute
 
@@ -25,27 +25,27 @@ python scripts/generate-triggers.py && echo "✓ triggers regenerated"
 mkdir -p ~/.claude/skills ~/.claude/commands ~/.claude/scripts ~/.claude/configs
 
 # 2. Sync skills
-for skill in $(cat configs/sync-config.json | jq -r '.skills_to_sync[]'); do
+for skill in $(cat registry/sync-config.json | jq -r '.skills_to_sync[]'); do
   cp -r "skills/$skill" ~/.claude/skills/ 2>/dev/null && echo "✓ skill: $skill"
 done
 
 # 3. Sync commands
-for cmd in $(cat configs/sync-config.json | jq -r '.commands_to_sync[]'); do
+for cmd in $(cat registry/sync-config.json | jq -r '.commands_to_sync[]'); do
   cp ".claude/commands/$cmd" ~/.claude/commands/ 2>/dev/null && echo "✓ cmd: $cmd"
 done
 
 # 4. Sync scripts
-for script in $(cat configs/sync-config.json | jq -r '.scripts_to_sync[]'); do
+for script in $(cat registry/sync-config.json | jq -r '.scripts_to_sync[]'); do
   cp "scripts/$script" ~/.claude/scripts/ 2>/dev/null && echo "✓ script: $script"
 done
 
 # 5. Sync configs
-for cfg in $(cat configs/sync-config.json | jq -r '.configs_to_sync[]'); do
-  cp "configs/$cfg" ~/.claude/configs/ 2>/dev/null && echo "✓ config: $cfg"
+for cfg in $(cat registry/sync-config.json | jq -r '.configs_to_sync[]'); do
+  cp "registry/$cfg" ~/.claude/registry/ 2>/dev/null && echo "✓ config: $cfg"
 done
 
 # 6. Sync home files (settings.json, etc.)
-for file in $(cat configs/sync-config.json | jq -r '.home_files_to_sync[]'); do
+for file in $(cat registry/sync-config.json | jq -r '.home_files_to_sync[]'); do
   cp "home/$file" ~/.claude/ 2>/dev/null && echo "✓ home: $file"
 done
 ```

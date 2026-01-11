@@ -18,6 +18,13 @@ triggers:
 
 ## RÈGLE CRITIQUE - VARIABLES GLOBALES
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-ref-ahk-v2" activated
+```
+
 ### DÉCLARATION OBLIGATOIRE DANS CHAQUE FONCTION
 ```autohotkey
 ; INCORRECT - Cause erreur "variable not assigned"

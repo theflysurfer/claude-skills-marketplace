@@ -21,6 +21,13 @@ Rename a skill and update all references across the marketplace.
 
 ## When to Use
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-skill-renamer" activated
+```
+
 - Renaming a skill (e.g., `skill-creator-pro` → `skill-creator`)
 - Refactoring skill naming conventions
 - Fixing typos in skill names
@@ -50,7 +57,7 @@ python skills/julien-dev-tools-skill-renamer/scripts/rename-skill.py old-name ne
 2. Updates `name:` in SKILL.md
 3. Replaces all references in:
    - `skills/**/*.md`
-   - `configs/*.json`
+   - `registry/*.json`
    - `.claude-plugin/*.json`
    - `scripts/*.py`
 4. Renames the folder

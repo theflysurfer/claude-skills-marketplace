@@ -26,6 +26,13 @@ Guide for LLMs generating markdown destined to be uploaded to Notion via the Uni
 
 ## Parser Architecture
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-ref-notion-markdown" activated
+```
+
 **MarkdownParser** (pages): AdmonitionParser, RichTextParser, TableParser, ImageParser
 **DatabaseParser**: YAML frontmatter → Notion databases with relations
 

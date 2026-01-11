@@ -21,6 +21,13 @@ Interactive installer for MCP (Model Context Protocol) servers. Browse by catego
 
 ## Usage
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-mcp-installer" activated
+```
+
 When user asks to install an MCP or wants to see available options:
 
 1. **Use AskUserQuestion** to let user select category

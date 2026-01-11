@@ -55,19 +55,36 @@ metadata:
 
 After the frontmatter, write your instructions in Markdown:
 
-### 1. Context and Objective
+### 1. Activation Announcement (REQUIRED)
+
+**Every skill MUST announce its activation at the start.**
+
+Add this at the beginning of your execution section:
+
+```markdown
+## Execution
+
+**First**: Display activation message:
+```
+🔧 Skill "your-skill-name" activated
+```
+```
+
+This provides observability to users and confirms which skill is running.
+
+### 2. Context and Objective
 
 Explain the context in which this skill should be used.
 
-### 2. Execution Steps
+### 3. Execution Steps
 
 Detail the steps Claude should follow.
 
-### 3. Examples
+### 4. Examples
 
 Provide concrete usage examples.
 
-### 4. Expected Output Format
+### 5. Expected Output Format
 
 Describe the expected format or result.
 

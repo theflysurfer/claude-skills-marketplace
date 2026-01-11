@@ -32,6 +32,13 @@ This skill guides the creation of Claude Code hooks - deterministic shell comman
 
 ## What Are Hooks?
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-dev-hook-creator" activated
+```
+
 Hooks provide **deterministic control** over Claude's behavior. Unlike skills (which Claude chooses to use), hooks **always execute** at their designated lifecycle event.
 
 ```

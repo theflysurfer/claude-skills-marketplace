@@ -1,0 +1,111 @@
+{
+  "description": "Configuration for syncing skills and commands to ~/.claude/",
+  "project_sources": [
+    {
+      "project_pattern": "**/2025.10 Site internet Clem",
+      "skills_path": ".claude/skills",
+      "priority": 2
+    },
+    {
+      "project_pattern": "**/2025.11 Site Web Jokers",
+      "skills_path": ".claude/skills",
+      "priority": 2
+    },
+    {
+      "project_pattern": "**/2025.11 Calibre",
+      "skills_path": ".claude/skills",
+      "priority": 2
+    },
+    {
+      "project_pattern": "**/2025.09 Notion Uploader",
+      "skills_path": ".claude/skills",
+      "priority": 2
+    }
+  ],
+  "skills_to_sync": [
+    "julien-cmd-sync",
+    "julien-cmd-list-resources",
+    "julien-cmd-project-scan",
+    "julien-cmd-project-list",
+    "julien-cmd-project-info",
+    "julien-cmd-active-folder",
+    "julien-cmd-servers",
+    "julien-cmd-check-loaded-skills",
+    "julien-skill-creator",
+    "julien-skill-reviewer",
+    "julien-skill-renamer",
+    "julien-dev-claude-md-documenter",
+    "julien-dev-powershell-profile",
+    "julien-dev-commit-message",
+    "julien-dev-hook-creator",
+    "julien-workflow-check-loaded-skills",
+    "julien-workflow-queuing-background-tasks",
+    "julien-workflow-advice-gemini",
+    "julien-workflow-advice-codex",
+    "julien-skill-migration",
+    "julien-skill-router",
+    "julien-skill-move-to-core",
+    "julien-ref-ahk-v1",
+    "julien-ref-ahk-v2",
+    "julien-ref-astro-install",
+    "julien-ref-batch",
+    "julien-ref-doc-production",
+    "julien-ref-doc-review",
+    "julien-ref-notion-markdown",
+    "julien-ref-powershell",
+    "anthropic-office-pdf",
+    "anthropic-office-xlsx",
+    "anthropic-office-docx",
+    "anthropic-office-pptx",
+    "anthropic-dev-tools-mcp-builder",
+    "julien-mcp-installer"
+  ],
+  "scripts_to_sync": [
+    "generate-triggers.py",
+    "discover-skills.py",
+    "discover-mcps.py",
+    "mcp-auto-install.py",
+    "list-resources.py",
+    "semantic-skill-router.py",
+    "benchmark-semantic-router.py",
+    "project-registry.py",
+    "check-project-setup.py",
+    "preload-router.py",
+    "migrate-skill.py",
+    "build-keyword-index.py",
+    "discover-hooks.py",
+    "server-manager.py",
+    "generate-status-tables.py",
+    "cleanup-claude-json.py",
+    "lib/unified-logger.js",
+    "session-start-banner.js",
+    "fast-skill-router.js",
+    "track-skill-invocation.js",
+    "cleanup-null-files.ps1",
+    "session-stats-dashboard.py",
+    "session-end-delete-reserved.py",
+    "set-terminal-title.py"
+  ],
+  "configs_to_sync": [
+    "skill-triggers.json",
+    "hybrid-registry.json",
+    "projects-registry.json",
+    "project-skills-mapping.json",
+    "mcp-registry.json",
+    "hooks-registry.json",
+    "servers-registry.json"
+  ],
+  "hooks_to_sync": {
+    "description": "Hooks to configure in ~/.claude/settings.json",
+    "global": [
+      "session-start-banner",
+      "fast-skill-router",
+      "track-skill-invocation",
+      "session-end-cleanup",
+      "protect-claude-process"
+    ],
+    "optional": [
+      "idle-queue-check"
+    ]
+  }
+}

@@ -25,6 +25,13 @@ Manage shared database instances (PostgreSQL, Redis, MongoDB) on srv759970.
 
 ## Overview
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-infra-hostinger-database" activated
+```
+
 The server runs **shared database instances** used by multiple applications.
 
 ### Databases Available

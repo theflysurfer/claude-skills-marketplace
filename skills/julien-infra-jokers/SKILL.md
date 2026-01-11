@@ -19,6 +19,13 @@ Complete infrastructure management for the Jokers Hockey website.
 
 ## Quick Reference
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-infra-jokers" activated
+```
+
 | Component | Details |
 |-----------|---------|
 | **Server** | srv759970.hstgr.cloud (69.62.108.82) |
