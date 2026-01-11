@@ -165,11 +165,16 @@ function logSkillInvocation(skillName, args = {}, source = 'unknown') {
  * Log router decision
  * @param {string} prompt - User prompt (truncated to 200 chars)
  * @param {array} matches - Array of matched skills with scores
- * @param {object} cwdContext - CWD extensions detected {ext: count}
+ * @param {object} context - Context object with cwd_extensions and top_10_scores
  * @param {number} elapsed - Routing time in milliseconds
  */
-function logRouterDecision(prompt, matches, cwdContext = {}, elapsed = 0) {
+function logRouterDecision(prompt, matches, contextData = {}, elapsed = 0) {
     const context = getSessionContext();
+
+    // Extract cwd_extensions and top_10_scores from contextData
+    const cwdExtensions = contextData.cwd_extensions || {};
+    const top10Scores = contextData.top_10_scores || [];
+
     const entry = {
         timestamp: new Date().toISOString(),
         ...context,
@@ -180,9 +185,10 @@ function logRouterDecision(prompt, matches, cwdContext = {}, elapsed = 0) {
             score: Math.round(m.score * 100) / 100,
             source: m.source
         })),
-        cwd_extensions: Object.keys(cwdContext).length > 0 ?
-            Array.from(Object.entries(cwdContext)).map(([ext, count]) => `${count}×${ext}`) :
+        cwd_extensions: Object.keys(cwdExtensions).length > 0 ?
+            Array.from(Object.entries(cwdExtensions)).map(([ext, count]) => `${count}×${ext}`) :
             [],
+        top_10_scores: top10Scores,
         duration_ms: elapsed,
         match_count: matches.length
     };

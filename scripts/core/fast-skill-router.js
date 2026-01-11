@@ -13,7 +13,7 @@ const os = require('os');
 // Import debug logger
 let logDebug, logHookStartOld, logHookEndOld;
 try {
-    const debugLogger = require('./lib/debug-logger.js');
+    const debugLogger = require('../lib/debug-logger.js');
     logDebug = debugLogger.logDebug;
     logHookStartOld = debugLogger.logHookStart;
     logHookEndOld = debugLogger.logHookEnd;
@@ -27,7 +27,7 @@ try {
 // Import unified logger (NEW)
 let unifiedLogger;
 try {
-    unifiedLogger = require('./lib/unified-logger.js');
+    unifiedLogger = require('../lib/unified-logger.js');
 } catch (e) {
     // Fallback no-op if not available
     unifiedLogger = {
@@ -608,11 +608,23 @@ function main() {
                 logDebug('UserPromptSubmit', 'fast-skill-router.js', 'No matches found', 'ROUTE');
             }
 
-            // NEW: Log router decision to unified logger
+            // NEW: Log router decision to unified logger with top 10 scores
+            const top10Scores = Object.entries(allScores)
+                .sort(([,a], [,b]) => b - a)
+                .slice(0, 10)
+                .map(([skill, score]) => ({
+                    skill,
+                    score: Math.round(score * 100) / 100,
+                    confidence: Math.min(100, Math.round(score * 20))
+                }));
+
             unifiedLogger.logRouterDecision(
                 userPrompt,
                 matches,
-                Object.fromEntries(cwdExtensions),
+                {
+                    cwd_extensions: Object.fromEntries(cwdExtensions),
+                    top_10_scores: top10Scores
+                },
                 elapsed
             );
 
@@ -675,6 +687,30 @@ function main() {
                         const conf = Math.min(100, Math.round(m.score * 20));
                         console.log(`   • ${m.name} (${conf}%)`);
                     });
+                }
+
+                // Show top 10 skills ranking (verbose mode)
+                if (process.env.VERBOSE_ROUTING !== 'false') {
+                    console.log('\n📊 Top 10 Skills Ranking:');
+                    console.log('─'.repeat(70));
+
+                    // Sort all skills by score and take top 10
+                    const allSkills = Object.entries(allScores)
+                        .sort(([,a], [,b]) => b - a)
+                        .slice(0, 10);
+
+                    allSkills.forEach(([skill, score], index) => {
+                        const confidence = Math.min(100, Math.round(score * 20));
+                        const barLength = Math.floor(confidence / 5);
+                        const bar = '█'.repeat(barLength);
+                        const status = score >= MIN_SCORE ? '✓' :
+                                      score >= 0.10 ? '~' : '✗';
+
+                        console.log(`  ${status} ${(index+1).toString().padStart(2)}. ${skill.padEnd(40)} ${bar} ${confidence}%`);
+                    });
+
+                    console.log('─'.repeat(70));
+                    console.log('  ✓ Above threshold (≥0.25) | ~ Near-miss (0.10-0.24) | ✗ Below threshold');
                 }
 
                 // Show performance
