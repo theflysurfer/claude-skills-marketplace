@@ -7,6 +7,83 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-01-11
+
+### Added
+- **Unified Logging System** - JSONL structured logging with session tracking
+  - `scripts/lib/unified-logger.js` - Centralized logging library
+  - `scripts/core/log-monitor.js` - Real-time monitoring dashboard
+  - Session ID tracking for event correlation
+  - Rolling buffer (5000 lines, auto-rotation)
+  - Performance: SessionStart 17ms avg, Router 5ms avg
+
+- **Fast Skill Router Optimizations**
+  - 30-second CWD cache (avoids repeated disk I/O)
+  - Performance threshold: skip scan if >200 files
+  - File limit reduced from 50 to 30
+  - TOP_K reduced from 3 to 2 for better precision
+  - MIN_SCORE increased from 0.2 to 0.25
+
+- **8 New Command Skills** - `/julien-cmd-*` namespace
+  - julien-cmd-sync, julien-cmd-list-resources
+  - julien-cmd-project-scan, julien-cmd-project-list, julien-cmd-project-info
+  - julien-cmd-active-folder, julien-cmd-servers, julien-cmd-check-loaded-skills
+
+### Changed - BREAKING
+- **Architecture Reorganization** (Claude Code 2.1.0 compatible)
+  - Renamed `/configs` → `/registry` (200+ file references updated)
+  - Isolated MkDocs: `/docs` → `/docs-source/`, `/site` gitignored
+  - Removed obsolete `/home` directory
+  - Moved `/coverage` → `/tests/coverage` and gitignored
+  - Reorganized `/scripts` into 6 categories:
+    - `core/` - Session hooks (session-start, router, tracking)
+    - `discovery/` - Skill/hook/MCP discovery scripts
+    - `sync/` - Migration utilities
+    - `servers/` - Server management
+    - `utils/` - Cleanup and maintenance
+    - `lib/` - Shared libraries (unified-logger, debug-logger)
+
+- **Hook Migration to Unified Logger**
+  - session-start-banner.js - 17ms avg (removed Claude Mem, was 3000ms timeout)
+  - fast-skill-router.js - 5ms avg with context awareness
+  - track-skill-invocation.js - <1ms avg
+
+### Removed
+- **Claude Mem Integration** - Completely removed (99.4% performance improvement)
+  - Removed PreCompact hook (precompact-save-chunk)
+  - Removed SessionEnd memory hook (save-session-for-memory)
+  - Deleted 410 MB of memory-chunks/
+  - Eliminated 3000ms SessionStart timeout
+
+- **Deprecated Scripts Cleanup** - 25 files deleted (4,234 lines, 184KB)
+  - Claude Mem scripts: precompact-save-chunk, save-session-for-memory (4 files)
+  - Old Python hook versions (4 files)
+  - Benchmark tools (3 files)
+  - Old routing implementations (3 files)
+  - Validation utilities (5 files)
+  - Test files (2 files)
+  - Misc utilities (4 files)
+
+### Performance
+- **SessionStart**: 3000ms timeout → 17ms avg (99.4% improvement)
+- **Router**: ~10ms → 5ms avg (50% improvement)
+- **Error rate**: 1.5% (target <5%)
+- **Zero timeouts**: Claude Mem completely removed
+
+### Documentation
+- Updated README.md with new architecture, performance metrics, Claude Code 2.1.0 features
+- Added unified logging documentation with format examples
+- Added fast skill router features (context-aware, fuzzy matching, caching)
+- Updated all command references to new `/julien-cmd-*` namespace
+
+### Migration Notes
+For existing installations:
+1. Update all references from `configs/` to `registry/`
+2. Update script paths: `scripts/discover-skills.py` → `scripts/discovery/discover-skills.py`
+3. Remove Claude Mem hooks from `~/.claude/settings.json` if present
+4. Run `/julien-sync` to deploy updated hooks globally
+5. Logs now in `~/.claude/logs/unified.jsonl` (JSONL format)
+
 ### Added - Skills (Nginx Manager Migration)
 - **julien-infra-hostinger-wordpress-security** v1.0.0 - WordPress security audit with 25+ checks
   - 7 audit categories: Nginx, Files, WP Config, Users, Plugins, Database, Fail2ban
