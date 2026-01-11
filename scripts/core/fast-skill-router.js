@@ -46,8 +46,8 @@ const ROUTING_HISTORY_FILE = path.join(CLAUDE_HOME, 'cache', 'routing-history.js
 const NEAR_MISS_LOG_FILE = path.join(CLAUDE_HOME, 'cache', 'near-misses.jsonl');
 
 // Thresholds
-const MIN_SCORE = 0.2;
-const TOP_K = 3;
+const MIN_SCORE = 0.25;  // Increased from 0.2 for better precision
+const TOP_K = 2;         // Reduced from 3 to focus on top matches
 
 // Context Awareness Configuration
 const ENABLE_CWD_CONTEXT = process.env.ROUTER_CWD_CONTEXT !== 'false'; // Enabled by default
@@ -108,6 +108,10 @@ const TYPO_MAP = {
 // Cache
 let indexCache = null;
 
+// CWD scan cache (30 second TTL)
+let cwdCache = { extensions: new Map(), timestamp: 0, cwd: '' };
+const CWD_CACHE_TTL = 30000; // 30 seconds
+
 function loadIndex() {
     if (indexCache) return indexCache;
 
@@ -140,6 +144,7 @@ function tokenize(text) {
 /**
  * Scan CWD for file extensions to provide context awareness.
  * Returns a Map of extension -> count.
+ * Cached for 30 seconds to avoid repeated disk I/O.
  */
 function scanCWD() {
     if (!ENABLE_CWD_CONTEXT) {
@@ -148,12 +153,25 @@ function scanCWD() {
 
     try {
         const cwd = process.env.CWD || process.cwd();
+        const now = Date.now();
+
+        // Return cached result if still fresh
+        if (cwdCache.cwd === cwd && (now - cwdCache.timestamp) < CWD_CACHE_TTL) {
+            return cwdCache.extensions;
+        }
+
         const files = fs.readdirSync(cwd, { withFileTypes: true });
+
+        // Skip scanning if too many files (performance threshold)
+        if (files.length > 200) {
+            cwdCache = { extensions: new Map(), timestamp: now, cwd };
+            return new Map();
+        }
 
         const extensions = new Map();
 
-        // Limit to first 50 files for performance
-        for (const file of files.slice(0, 50)) {
+        // Limit to first 30 files for performance (reduced from 50)
+        for (const file of files.slice(0, 30)) {
             if (file.isFile()) {
                 const ext = path.extname(file.name).toLowerCase();
                 if (ext) {
@@ -161,6 +179,9 @@ function scanCWD() {
                 }
             }
         }
+
+        // Update cache
+        cwdCache = { extensions, timestamp: now, cwd };
 
         return extensions;
     } catch (e) {
