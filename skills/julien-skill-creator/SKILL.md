@@ -126,12 +126,154 @@ python "$MARKETPLACE/scripts/init_skill.py" <skill-name> --path "$MARKETPLACE/sk
 
 #### YAML Frontmatter
 
+**Required Fields:**
+
 ```yaml
 ---
-name: skill-name
-description: What it does. Use when [specific triggers].
+name: skill-name                      # Required: max 64 chars, lowercase + hyphens
+description: What it does and when to use it  # Required: max 1024 chars, third person
 ---
 ```
+
+**2026 Optional Fields** (see [references/2026-yaml-fields.md](references/2026-yaml-fields.md) for complete guide):
+
+##### Version Tracking & Licensing
+
+```yaml
+version: "1.0.0"           # Semantic versioning (recommended for hot-reload)
+license: Apache-2.0        # Apache-2.0, MIT, or proprietary
+```
+
+**When to use**: Always include `version` for tracking updates with Claude Code v2.1.0+ hot-reload.
+
+##### Tool Restrictions (Security)
+
+```yaml
+allowed-tools:             # Whitelist tools Claude can use
+  - Read
+  - Write
+  - Bash
+```
+
+**When to use**: Security-sensitive operations (deployment, admin tasks). Limits exposure if skill is compromised.
+
+##### Invocation Control
+
+```yaml
+user-invocable: true                # Can users call directly via /skill-name? (default: true)
+disable-model-invocation: false     # Prevent auto-trigger? (default: false)
+```
+
+**When to use**:
+- `user-invocable: false` for internal helper skills (only called by other skills)
+- `disable-model-invocation: true` for destructive ops (production deploy, data deletion)
+
+##### Execution Mode
+
+```yaml
+mode: interactive          # Options: interactive | batch | autonomous
+```
+
+**When to use**:
+- `interactive`: Workflows requiring user approval at steps (deploy, migrations)
+- `batch`: Bulk processing without interruption
+- `autonomous`: Background tasks, monitoring
+
+##### Lifecycle Hooks (Claude Code v2.1.0+)
+
+```yaml
+hooks:
+  - event: PreToolUse      # Before any tool execution
+    action: validate_environment
+  - event: PostToolUse     # After tool execution
+    action: log_results
+  - event: Stop            # On skill termination
+    action: cleanup_temp_files
+```
+
+**When to use**: Environment validation, audit logging, cleanup operations.
+
+##### Triggers (CRITICAL for Discovery)
+
+```yaml
+triggers:
+  # Keywords (1-2 words)
+  - "keyword"
+  - "mot-clé"
+
+  # Action phrases (FR + EN)
+  - "créer un fichier"
+  - "create a file"
+
+  # Problem phrases
+  - "I need to..."
+  - "comment faire pour..."
+```
+
+**ALWAYS include** 10-20 natural language triggers. See Step 8 below for full methodology.
+
+##### Metadata (Optional)
+
+```yaml
+metadata:
+  author: "Your Name"
+  category: "development"
+  keywords: ["keyword1", "keyword2"]
+```
+
+##### Complete Example
+
+```yaml
+---
+name: excel-report-generator
+description: >
+  Generates monthly Excel reports with charts and pivot tables from CSV data.
+  Use when creating reports, analyzing sales data, or generating spreadsheets.
+version: "1.2.0"
+license: Apache-2.0
+user-invocable: true
+mode: interactive
+allowed-tools:
+  - Read
+  - Write
+  - Bash
+triggers:
+  - "excel"
+  - "report"
+  - "créer un rapport"
+  - "generate spreadsheet"
+  - "analyze sales data"
+  - "monthly report"
+  - "graphique excel"
+  - "pivot table"
+  - "I need a report"
+  - "comment créer un tableau"
+metadata:
+  author: "Julien"
+  category: "analysis"
+  keywords: ["excel", "reporting", "data-analysis"]
+---
+```
+
+**When to Use Each Field:**
+
+| Field | Use Case | Example Scenario |
+|-------|----------|------------------|
+| `version` | Always (recommended) | Track updates, enable hot-reload in v2.1.0+ |
+| `allowed-tools` | Security-sensitive ops | Limit to [Read, Bash] for deployment skill |
+| `user-invocable: false` | Internal helper skills | Validation skill called only by other skills |
+| `disable-model-invocation: true` | Manual-only workflows | Production deploy requiring explicit approval |
+| `mode: interactive` | Multi-step with approvals | Database migration with checkpoints |
+| `mode: batch` | Bulk processing | Batch image conversion |
+| `mode: autonomous` | Background monitoring | Server health checks |
+| `hooks` | Environment validation | Check SSH connection before deploy |
+| `triggers` | **ALWAYS** | Enable semantic skill routing (10-20 triggers) |
+| `metadata` | Organization/attribution | Track authorship, categorize skills |
+
+**Hot-Reload Support** (Claude Code v2.1.0+):
+- Trigger changes reload automatically (no session restart needed)
+- Version bumps detected and logged
+- Skills in `~/.claude/skills/` or `.claude/skills/` are immediately available
 
 #### Body Instructions
 
@@ -278,6 +420,9 @@ Match specificity to task fragility:
 - ✓ Sensitive data in `.env` file
 - ✓ `.env` added to `.gitignore`
 - ✓ Instructions use environment variables (`$VAR` or `source .env`)
+- ✓ Use `allowed-tools` to restrict tool access for sensitive operations
+- ✓ Set `disable-model-invocation: true` for admin-only/destructive skills
+- ✓ Add `version` field for hot-reload tracking (Claude Code v2.1.0+)
 
 ### Portability Checklist
 

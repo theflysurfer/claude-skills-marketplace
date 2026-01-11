@@ -87,6 +87,42 @@ Evaluate 11 dimensions (1-5 scale). See [references/quality-rubric.md](reference
 | **Trigger Quality** | Natural language, bilingual, 10-20 triggers |
 | **Observability** | Announces activation, clear output markers |
 
+### Step 2.5: Auto-Fix Mode (Optional)
+
+Before manual review, optionally run auto-fix for common issues.
+
+**Ask user:**
+```
+🔧 Auto-fix mode available:
+A) Run safe auto-fixes (non-destructive)
+B) Interactive fix (approve each change)
+C) Skip auto-fix, manual review only
+```
+
+**Safe Auto-Fixes** (automatic, no approval):
+1. Add missing YAML fields (`version: 1.0.0`, `license: Apache-2.0`)
+2. Convert Windows paths (`\` → `/`)
+3. Generate TOC for files > 100 lines
+4. Warn if triggers < 5
+
+**Interactive Auto-Fixes** (require approval):
+1. Detect hardcoded credentials → suggest `.env`
+2. Split files > 500 lines → suggest `references/`
+3. Check description quality → suggest "what + when" format
+
+**Execution:**
+```bash
+# Run auto-fix script (integrated)
+python skills/julien-skill-reviewer/scripts/auto-fix.py path/to/skill/ --mode safe
+python skills/julien-skill-reviewer/scripts/auto-fix.py path/to/skill/ --mode interactive
+python skills/julien-skill-reviewer/scripts/auto-fix.py path/to/skill/ --dry-run
+```
+
+**Safety:**
+- Always creates backup: `SKILL.md.backup-YYYYMMDD-HHMMSS`
+- Dry-run mode available for preview
+- All changes logged to console
+
 ### Step 3: Calculate Score
 
 ```

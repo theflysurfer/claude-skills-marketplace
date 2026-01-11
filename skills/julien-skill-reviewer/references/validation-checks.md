@@ -2,6 +2,42 @@
 
 ## Automated Checks
 
+### 0. Auto-Fix Capability (New in 2026)
+
+Quick fixes for common issues before manual review.
+
+**Usage:**
+```bash
+# Safe auto-fixes (non-destructive)
+python skills/julien-skill-reviewer/scripts/auto-fix.py path/to/skill/ --mode safe
+
+# Interactive (requires approval)
+python skills/julien-skill-reviewer/scripts/auto-fix.py path/to/skill/ --mode interactive
+
+# Preview only
+python skills/julien-skill-reviewer/scripts/auto-fix.py path/to/skill/ --dry-run
+```
+
+**What Gets Auto-Fixed:**
+
+| Issue | Fix | Mode | Backup? |
+|-------|-----|------|---------|
+| Missing version | Add `version: 1.0.0` | Safe | Yes |
+| Missing license | Add `license: Apache-2.0` | Safe | Yes |
+| Windows paths | Convert `\` to `/` | Safe | Yes |
+| No TOC (>100 lines) | Generate from headings | Safe | Yes |
+| < 5 triggers | Warning only | Safe | No |
+| Hardcoded credentials | Detection + suggestion | Interactive | Yes |
+| SKILL.md > 500 lines | Suggest splits | Interactive | Yes |
+| Description vague | Suggest "what+when" | Interactive | Yes |
+
+**Safety Features:**
+- Always creates timestamped backup before changes
+- Dry-run mode shows preview without modifying files
+- All changes logged to console
+- Safe mode requires no user input
+- Interactive mode prompts for each fix
+
 ### 1. Line Count Check
 
 ```bash

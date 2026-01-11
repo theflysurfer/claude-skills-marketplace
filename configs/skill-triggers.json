@@ -1,0 +1,1044 @@
+{
+  "generated": true,
+  "version": "3.0.0",
+  "description": "Auto-generated from SKILL.md frontmatter. DO NOT EDIT MANUALLY.",
+  "skills": [
+    {
+      "name": "anthropic-design-canvas",
+      "triggers": [
+        "poster",
+        "art",
+        "visual",
+        "infographic",
+        "design image",
+        "create image",
+        "affiche",
+        "visuel",
+        "infographie",
+        "créer image",
+        "create poster",
+        "design infographic",
+        "visual art"
+      ],
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "content_summary": "DESIGN PHILOSOPHY CREATION | Observability | THE CRITICAL UNDERSTANDING | HOW TO GENERATE A VISUAL PHILOSOPHY | PHILOSOPHY EXAMPLES These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files."
+    },
+    {
+      "name": "anthropic-dev-tools-mcp-builder",
+      "triggers": [
+        "create mcp server",
+        "build mcp",
+        "mcp development",
+        "fastmcp",
+        "model context protocol",
+        "create tool server",
+        "mcp integration"
+      ],
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "content_summary": "Overview | Observability | 🚀 High-Level Workflow | Phase 1: Deep Research and Planning | 1.1 Understand Modern MCP Design # MCP Server Development Guide"
+    },
+    {
+      "name": "anthropic-office-docx",
+      "triggers": [
+        "word",
+        "docx",
+        "document word",
+        "word document",
+        "doc file",
+        "create word document",
+        "créer un document word",
+        "edit docx file",
+        "modifier fichier word",
+        "read document",
+        "lire document",
+        "read word",
+        "lire word",
+        "analyze document",
+        "analyser document",
+        "parse docx",
+        "parser docx",
+        "examine document",
+        "examiner document",
+        "review document",
+        "check document",
+        "process document",
+        "traiter document"
+      ],
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
+      "content_summary": "Overview | Observability | Workflow Decision Tree | Reading/Analyzing Content | Creating New Document # DOCX creation, editing, and analysis"
+    },
+    {
+      "name": "anthropic-office-pdf",
+      "triggers": [
+        "pdf",
+        "PDF",
+        "fill form",
+        "pdf form",
+        "merge pdf",
+        "split pdf",
+        "extract pdf",
+        "remplir formulaire",
+        "formulaire pdf",
+        "fusionner pdf",
+        "diviser pdf",
+        "extract text from pdf",
+        "extraire le texte du pdf",
+        "merge pdf files",
+        "fusionner des fichiers pdf",
+        "fill pdf form",
+        "remplir formulaire pdf",
+        "split pdf document",
+        "diviser le pdf en pages",
+        "pdf manipulation",
+        "convert to pdf",
+        "read pdf",
+        "lire pdf",
+        "analyze pdf",
+        "analyser pdf",
+        "parse pdf",
+        "parser pdf",
+        "examine pdf",
+        "examiner pdf",
+        "review pdf",
+        "check pdf",
+        "process pdf",
+        "traiter pdf",
+        "parser",
+        "lire",
+        "lis",
+        "analyser",
+        "extraire"
+      ],
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+      "content_summary": "Overview | Observability | Quick Start | Python Libraries | pypdf - Basic Operations # PDF Processing Guide"
+    },
+    {
+      "name": "anthropic-office-pptx",
+      "triggers": [
+        "powerpoint",
+        "pptx",
+        "presentation",
+        "slides",
+        "présentation",
+        "diaporama",
+        "create presentation",
+        "créer une présentation",
+        "add slides",
+        "ajouter des slides",
+        "powerpoint slides",
+        "read presentation",
+        "lire présentation",
+        "analyze slides",
+        "analyser slides",
+        "examine presentation",
+        "examiner présentation",
+        "parse pptx",
+        "parser pptx",
+        "review presentation",
+        "check slides",
+        "process presentation",
+        "traiter présentation"
+      ],
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
+      "content_summary": "Overview | Observability | Reading and analyzing content | Text extraction | Raw XML access # PPTX creation, editing, and analysis"
+    },
+    {
+      "name": "anthropic-office-xlsx",
+      "triggers": [
+        "excel",
+        "xlsx",
+        "spreadsheet",
+        "xls",
+        "tableur",
+        "feuille de calcul",
+        "classeur",
+        "create excel spreadsheet",
+        "créer un fichier excel",
+        "add formulas to spreadsheet",
+        "formules excel",
+        "analyze data in xlsx",
+        "analyser les données excel",
+        "pivot table creation",
+        "tableau croisé dynamique",
+        "excel chart creation",
+        "graphique dans excel",
+        "excel formulas",
+        "read excel",
+        "lire excel",
+        "read spreadsheet",
+        "lire tableur",
+        "analyze spreadsheet",
+        "analyser tableur",
+        "parse xlsx",
+        "parser xlsx",
+        "examine spreadsheet",
+        "examiner tableur",
+        "review data",
+        "check excel",
+        "process spreadsheet",
+        "traiter tableur"
+      ],
+      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas",
+      "content_summary": "All Excel files | Observability | Zero Formula Errors | Preserve Existing Templates (when updating templates) | Financial models # Requirements for Outputs"
+    },
+    {
+      "name": "anthropic-web-artifacts-builder",
+      "triggers": [
+        "create artifact",
+        "build artifact",
+        "web artifact",
+        "react artifact",
+        "complex artifact",
+        "shadcn artifact",
+        "bundle html"
+      ],
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "content_summary": "Design & Style Guidelines | Observability | Quick Start | Step 1: Initialize Project | Step 2: Develop Your Artifact # Web Artifacts Builder"
+    },
+    {
+      "name": "anthropic-web-frontend-design",
+      "triggers": [
+        "frontend",
+        "ui design",
+        "web design",
+        "interface",
+        "react component",
+        "html css",
+        "design web",
+        "interface utilisateur",
+        "composant react",
+        "create landing page",
+        "créer une page d'accueil",
+        "design dashboard ui",
+        "react component design",
+        "html css website",
+        "design web moderne",
+        "frontend interface",
+        "ui design for app",
+        "build webpage"
+      ],
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "content_summary": "Design Thinking | Observability | Frontend Aesthetics Guidelines This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic \"AI slop\" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices."
+    },
+    {
+      "name": "anthropic-web-testing",
+      "triggers": [
+        "test web app",
+        "playwright test",
+        "browser testing",
+        "ui testing",
+        "web testing",
+        "test frontend",
+        "screenshot web"
+      ],
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "content_summary": "Decision Tree: Choosing Your Approach | Observability | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall # Web Application Testing"
+    },
+    {
+      "name": "julien-cmd-active-folder",
+      "triggers": [
+        "current folder",
+        "working directory",
+        "show folder",
+        "dossier courant",
+        "répertoire actuel",
+        "afficher dossier",
+        "where am i",
+        "pwd"
+      ],
+      "description": "Display the current working directory",
+      "content_summary": "Exécution # Active Folder"
+    },
+    {
+      "name": "julien-cmd-check-loaded-skills",
+      "triggers": [
+        "check loaded skills",
+        "show loaded skills",
+        "loaded skills",
+        "skills actifs",
+        "vérifier les skills",
+        "afficher les skills chargés",
+        "which skills are loaded"
+      ],
+      "description": "Display all loaded Claude Code skills by category with counts and paths",
+      "content_summary": "# Check Loaded Skills"
+    },
+    {
+      "name": "julien-cmd-list-resources",
+      "triggers": [
+        "list skills",
+        "show skills",
+        "available skills",
+        "list resources",
+        "show resources",
+        "lister les skills",
+        "afficher les skills",
+        "skills disponibles",
+        "liste des ressources"
+      ],
+      "description": "List all skills, agents, and plugins available in this repository or marketplace",
+      "content_summary": "# List Resources Command"
+    },
+    {
+      "name": "julien-cmd-project-info",
+      "triggers": [
+        "project info",
+        "current project",
+        "show project",
+        "info projet",
+        "projet courant",
+        "afficher projet",
+        "project details"
+      ],
+      "description": "Display information about the current project or a specified path",
+      "content_summary": "Exécution | Informations affichées | Si le projet n'est pas enregistré # Project Information"
+    },
+    {
+      "name": "julien-cmd-project-list",
+      "triggers": [
+        "list projects",
+        "show projects",
+        "all projects",
+        "lister les projets",
+        "afficher les projets",
+        "projets enregistrés",
+        "registered projects"
+      ],
+      "description": "List all registered projects from the registry",
+      "content_summary": "Exécution | Affichage | Exemple de sortie | Commandes associées # List Registered Projects"
+    },
+    {
+      "name": "julien-cmd-project-scan",
+      "triggers": [
+        "scan projects",
+        "update project registry",
+        "refresh projects",
+        "scanner les projets",
+        "mettre à jour le registre",
+        "rafraîchir les projets",
+        "discover projects"
+      ],
+      "description": "Scan all configured project roots and update the registry",
+      "content_summary": "Exécution | Ce que fait cette commande | Résultat # Scan Project Roots"
+    },
+    {
+      "name": "julien-cmd-servers",
+      "triggers": [
+        "server status",
+        "list servers",
+        "manage servers",
+        "start server",
+        "stop server",
+        "statut serveurs",
+        "lister serveurs",
+        "gérer serveurs",
+        "démarrer serveur",
+        "arrêter serveur"
+      ],
+      "description": "Display server status and manage servers (start/stop)",
+      "content_summary": "Exécution | Actions disponibles | Serveurs disponibles # Server Manager"
+    },
+    {
+      "name": "julien-cmd-sync",
+      "triggers": [
+        "sync skills",
+        "synchronize marketplace",
+        "update global skills",
+        "sync core",
+        "mettre à jour les skills",
+        "synchroniser le marketplace",
+        "sync commands",
+        "sync scripts",
+        "marketplace sync"
+      ],
+      "description": "Sync core skills, commands, and scripts from marketplace to ~/.claude/",
+      "content_summary": "What to sync | Execute | After sync | MCP Management # Sync Marketplace to Global"
+    },
+    {
+      "name": "julien-dev-claude-md-documenter",
+      "triggers": [
+        "CLAUDE.md",
+        "claude.md",
+        "create CLAUDE.md file",
+        "créer un CLAUDE.md",
+        "document project",
+        "project documentation",
+        "project context",
+        "project instructions",
+        "documenter projet",
+        "documentation projet",
+        "contexte projet",
+        "instructions projet",
+        "create claude",
+        "créer claude",
+        "setup project documentation",
+        "fichier claude.md",
+        "add project context"
+      ],
+      "description": "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md.",
+      "content_summary": "What is CLAUDE.md? | Observability | Core Principles | 1. Keep It Short | 2. Link, Don't Duplicate # CLAUDE.md Documenter"
+    },
+    {
+      "name": "julien-dev-commit-message",
+      "triggers": [
+        "commit",
+        "git commit",
+        "commit message",
+        "commit changes",
+        "make a commit",
+        "create a commit",
+        "write commit message",
+        "generate commit",
+        "help me commit",
+        "commit my changes",
+        "commit this",
+        "commit these changes",
+        "stage and commit",
+        "commiter",
+        "committer",
+        "message de commit",
+        "faire un commit",
+        "créer un commit",
+        "écrire un message de commit",
+        "committer les changements",
+        "commiter mes changements",
+        "aide moi à commiter",
+        "génère un commit",
+        "mmap failed",
+        "git error",
+        "commit failed",
+        "onedrive git"
+      ],
+      "description": "Generate semantic commit messages and create git commits. Handles OneDrive mmap errors automatically. Use when user wants to commit, needs a commit message, or git commit fails.",
+      "content_summary": "Observability | Quick Reference | Commit Types | Execution Process | Step 1: Analyze Changes # Commit Message Generator"
+    },
+    {
+      "name": "julien-dev-hook-creator",
+      "triggers": [
+        "create hook",
+        "new hook",
+        "add hook",
+        "hook template",
+        "write hook",
+        "build hook",
+        "créer hook",
+        "nouveau hook",
+        "ajouter hook",
+        "écrire hook",
+        "SessionStart",
+        "SessionEnd",
+        "PreToolUse",
+        "PostToolUse",
+        "UserPromptSubmit",
+        "claude code hook",
+        "automation hook"
+      ],
+      "description": "Guide for creating Claude Code hooks - shell commands that execute at specific lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse, etc.). Use when users want to automate actions, add validation, logging, or integrate external tools into Claude Code workflows.",
+      "content_summary": "What Are Hooks? | Observability | Available Hook Events | Hook Configuration | Basic Structure # Hook Creator"
+    },
+    {
+      "name": "julien-dev-powershell-profile",
+      "triggers": [
+        "powershell profile",
+        "add alias",
+        "update profile",
+        "modify claude command",
+        "powershell alias",
+        "ps1 profile"
+      ],
+      "description": "Manage PowerShell profile, aliases, functions. Triggers: add alias, update profile, modify claude command, Microsoft.PowerShell_profile.ps1",
+      "content_summary": "Workflow | Observability | Reference Files | Skill Chaining | Skills Required Before # PowerShell Profile Manager"
+    },
+    {
+      "name": "fastmcp-quality-review",
+      "triggers": [
+        "is my MCP server good?",
+        "check my server quality",
+        "review my MCP",
+        "how can I improve my MCP server?",
+        "analyze the quality of this server",
+        "give me feedback on my MCP",
+        "how well-written is this server?",
+        "mon serveur MCP est-il bon ?",
+        "vérifie la qualité de mon serveur",
+        "analyse mon MCP",
+        "comment puis-je améliorer mon serveur MCP ?",
+        "donne-moi ton avis sur mon MCP",
+        "ce serveur est-il bien écrit ?"
+      ],
+      "description": "Review and score FastMCP MCP server quality. Use when creating/auditing MCP servers, before publishing to MCP directory, or to improve existing servers.",
+      "content_summary": "Quick Start | Observability | Review Process | Step 1: Load Server Code | Step 2: Run Quality Checks # FastMCP Quality Review"
+    },
+    {
+      "name": "julien-infra-deployment-verifier",
+      "triggers": [
+        "verify deployment",
+        "check deployment",
+        "deployment status",
+        "pm2 status",
+        "site working"
+      ],
+      "description": "Verify deployments on Hostinger VPS srv759970 after code changes. Checks HTTP status, PM2 processes, takes screenshots, and generates deployment reports.",
+      "content_summary": "Server Info | Observability | When to Use This Skill | Verification Checklist | ✅ Complete Verification Workflow # Deployment Verifier - Hostinger srv759970"
+    },
+    {
+      "name": "julien-infra-git-vps-sync",
+      "triggers": [
+        "sync vps git",
+        "git pull vps",
+        "update server code",
+        "git sync hostinger",
+        "vps github sync"
+      ],
+      "description": "Manage Git sync between VPS and GitHub for Hostinger srv759970. Handles unrelated histories, untracked files, diverged branches, and sync conflicts automatically.",
+      "content_summary": "Server Info | Observability | When to Use This Skill | Common Scenarios | 1. Unrelated Histories # Git VPS Sync - Hostinger srv759970"
+    },
+    {
+      "name": "julien-infra-hostinger-core",
+      "triggers": [
+        "ssh hostinger",
+        "connect server",
+        "disk space",
+        "server maintenance",
+        "cleanup vps",
+        "free space",
+        "system status"
+      ],
+      "description": "Core server management for Hostinger VPS srv759970 - SSH access, system status, maintenance tasks, and disk space reclamation. Use for any server operation, connection issues, or maintenance tasks.",
+      "content_summary": "Server Info | Observability | 1. SSH Connection | Quick Connect | SSH Config (~/.ssh/config) # Hostinger VPS Core Management"
+    },
+    {
+      "name": "julien-infra-hostinger-database",
+      "triggers": [
+        "database hostinger",
+        "postgresql vps",
+        "redis server",
+        "mongodb hostinger",
+        "db backup",
+        "database connection"
+      ],
+      "description": "Manage shared database instances on Hostinger VPS srv759970 - PostgreSQL, Redis, MongoDB operations. Use for database connections, backups, user management, performance checks, or troubleshooting database issues.",
+      "content_summary": "Overview | Observability | Databases Available | When to Use This Skill | PostgreSQL Operations # Database Management - Hostinger VPS"
+    },
+    {
+      "name": "julien-infra-hostinger-docker",
+      "triggers": [
+        "docker",
+        "container",
+        "docker compose",
+        "optimize docker",
+        "container crash",
+        "docker logs"
+      ],
+      "description": "Docker management for Hostinger VPS srv759970 - container operations, image optimization, WordPress Docker, troubleshooting. Use for any Docker operation, container issues, or image management.",
+      "content_summary": "Server Info | Observability | 1. Status & Monitoring | Quick Status | Container Stats # Hostinger Docker Management"
+    },
+    {
+      "name": "julien-infra-hostinger-security",
+      "triggers": [
+        "fail2ban",
+        "ban ip",
+        "unban ip",
+        "wordpress security",
+        "security audit",
+        "audit vps",
+        "brute force"
+      ],
+      "description": "Security management for Hostinger VPS srv759970 - Fail2ban, WordPress security audits (25+ checks, 0-100% scoring), infrastructure audit. Use for security hardening, IP bans, or security assessments.",
+      "content_summary": "Server Info | Observability | 1. Fail2ban Management | Tous les Jails Actifs | Status Check # Hostinger Security Management"
+    },
+    {
+      "name": "julien-infra-hostinger-web",
+      "triggers": [
+        "nginx",
+        "reverse proxy",
+        "ssl certificate",
+        "certbot",
+        "deploy hostinger",
+        "deploy incluzact",
+        "502 error",
+        "504 error"
+      ],
+      "description": "Web infrastructure for Hostinger VPS - Nginx reverse proxy, SSL/Let's Encrypt, configuration audit, and application deployment (INCLUZ'HACT). Use for site configuration, SSL setup, 502/504 errors, or deployments.",
+      "content_summary": "Server Info | Observability | 1. Nginx Management | Add New Site | SSL with Let's Encrypt # Hostinger Web Infrastructure"
+    },
+    {
+      "name": "julien-infra-jokers",
+      "triggers": [
+        "deploy jokers",
+        "jokers hockey",
+        "push to production",
+        "check jokers logs",
+        "restart jokers",
+        "jokers database",
+        "jokers build",
+        "jokers pm2"
+      ],
+      "description": "Complete management for Jokers Hockey website - deployment, build checks, database migrations (Drizzle ORM), and PM2 process management. Use for any Jokers site operation.",
+      "content_summary": "Quick Reference | Observability | 1. Deployment | Quick Deploy (Git) | Pre-Deployment Checks # Jokers Hockey - Infrastructure Management"
+    },
+    {
+      "name": "julien-mcp-installer",
+      "triggers": [
+        "install mcp",
+        "add mcp server",
+        "mcp installer",
+        "setup mcp",
+        "configure mcp",
+        "ajouter mcp",
+        "installer mcp",
+        "which mcp",
+        "list mcp servers",
+        "available mcp",
+        "mcp marketplace"
+      ],
+      "description": "Interactive MCP server installer. Lists all available MCPs by category and installs the user's choice into .mcp.json",
+      "content_summary": "Observability | Available MCP Servers | Category: Office (5) | Category: Browser (4) | Category: APIs (6) # MCP Server Installer"
+    },
+    {
+      "name": "julien-media-onepiece-workflow",
+      "triggers": [
+        "onepiece",
+        "one piece",
+        "transcoding pipeline",
+        "remux japanese",
+        "dropbox upload video",
+        "anime transcode",
+        "nvenc transcode",
+        "streaming onepiece"
+      ],
+      "description": "Manage OnePiece transcoding pipeline - GPU local transcoding, remux Japanese audio, upload to Dropbox for web streaming app.",
+      "content_summary": "Trigger Conditions | Observability | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) # OnePiece Workflow Skill"
+    },
+    {
+      "name": "julien-media-subtitle-translation",
+      "triggers": [
+        "translate subtitles",
+        "translate srt",
+        "subtitle translation",
+        "traduire sous-titres",
+        "batch translate subtitles",
+        "srt file translation",
+        "movie subtitles",
+        "series subtitles",
+        "translate episodes"
+      ],
+      "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation.",
+      "content_summary": "When to Use | Observability | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity # Subtitle Translation Skill"
+    },
+    {
+      "name": "julien-ref-ahk-v1",
+      "triggers": [
+        "autohotkey v1",
+        "ahk v1",
+        "autohotkey script",
+        "ahk script",
+        "autohotkey best practices",
+        "ahk best practices",
+        "autohotkey gui",
+        "ahk hotkey"
+      ],
+      "description": "Best practices AutoHotkey v1. Use when writing AHK v1 scripts to avoid critical errors like auto-execute section issues, includes order, and COM object handling.",
+      "content_summary": "Structure du Guide | Observability | Erreur #0 : Section Auto-Execute - LA RÈGLE LA PLUS CRITIQUE | QU'EST-CE QUE L'AUTO-EXECUTE? | CE QUI TERMINE L'AUTO-EXECUTE # AutoHotkey v1 - Guide de Référence Optimisé LLM"
+    },
+    {
+      "name": "julien-ref-ahk-v2",
+      "triggers": [
+        "raccourci clavier windows",
+        "automatiser une tâche windows",
+        "mon script ahk ne marche pas",
+        "aide pour mon script ahk",
+        "help with my ahk script",
+        "create a hotkey",
+        "autohotkey v2",
+        "ahk v2",
+        "ahk2",
+        "autohotkey tutorial"
+      ],
+      "description": "Best practices AutoHotkey v2. Use when writing AHK v2 scripts - covers global variable declarations, SetTimer usage, event handlers, and GUI positioning.",
+      "content_summary": "RÈGLE CRITIQUE - VARIABLES GLOBALES | Observability | DÉCLARATION OBLIGATOIRE DANS CHAQUE FONCTION | LISTE COMPLÈTE DES VARIABLES À DÉCLARER | STRUCTURE MODULAIRE AUTOHOTKEY V2 # AutoHotkey v2 - Best Practices pour LLM"
+    },
+    {
+      "name": "julien-ref-astro-install",
+      "triggers": [
+        "installer astro",
+        "démarrer un projet astro",
+        "astro sur windows",
+        "erreur installation astro",
+        "how to install astro",
+        "getting started with astro",
+        "astro tailwind setup",
+        "astro",
+        "astro install",
+        "create astro project"
+      ],
+      "description": "Guide d'installation Astro + Tailwind sur Windows. Covers Node.js setup, pnpm, project creation, common Windows issues, and troubleshooting.",
+      "content_summary": "Prérequis | Observability | 1. Node.js (version 18.20.8+ ou 20.3.0+ ou 22.0.0+) | 2. Gestionnaire de paquets | Méthode 1 : Installation Rapide (Recommandée) # Guide d'Installation Astro + Tailwind sur Windows"
+    },
+    {
+      "name": "julien-ref-batch",
+      "triggers": [
+        "comment écrire un script batch",
+        "mon bat ne marche pas",
+        "aide pour un fichier bat",
+        "how to write a batch script",
+        "help me make a bat file",
+        "automate tasks with batch",
+        "batch script",
+        "bat file",
+        "windows batch",
+        "cmd script"
+      ],
+      "description": "Best practices for Windows Batch scripts (.bat). Covers encoding, path handling, variables, error management, and common pitfalls.",
+      "content_summary": "STRUCTURE ET ENCODAGE | Observability | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS # Best Practices - Scripts Batch (.bat)"
+    },
+    {
+      "name": "julien-ref-doc-production",
+      "triggers": [
+        "comment documenter mon projet",
+        "aide-moi à structurer ma doc",
+        "je veux écrire la doc",
+        "modèle de document",
+        "écrire un rapport",
+        "how to document my project",
+        "help me write documentation",
+        "project documentation guide",
+        "create documentation",
+        "incident report",
+        "session report",
+        "guide template"
+      ],
+      "description": "Documentation production methodology with DRY principles. Covers 8 document types (GUIDE, INCIDENT, SESSION, AUDIT, RECHERCHE, etc.), naming conventions, and YAML metadata.",
+      "content_summary": "Principles | Observability | Structure | Naming Conventions | EVOLVING Docs (living docs) # Documentation Production Methodology"
+    },
+    {
+      "name": "julien-ref-doc-review",
+      "triggers": [
+        "relire ce document",
+        "annoter un fichier",
+        "marquer ce qui est à corriger",
+        "trouver les TODO",
+        "review this document",
+        "proofread this file",
+        "check my documentation",
+        "flag issues in documentation",
+        "document review",
+        "annotation tags"
+      ],
+      "description": "Simplified document review methodology with 4 core tags (@FIX, @TODO, @VERIFY, @OK) and [MACRO] flag for systemic impact. Use for annotating and reviewing documentation.",
+      "content_summary": "Overview | Observability | Tag System | CORE Tags (4 essential) | SPECIAL Tags (particular use) # Document Review Methodology"
+    },
+    {
+      "name": "julien-ref-notion-markdown",
+      "triggers": [
+        "importer markdown dans notion",
+        "upload to notion",
+        "mettre mon README dans Notion",
+        "convertir markdown en page notion",
+        "push markdown to notion",
+        "format for notion",
+        "notion markdown",
+        "notion uploader",
+        "notion callout",
+        "notion table",
+        "notion database",
+        "notion toggle",
+        "notion embed",
+        "notion columns"
+      ],
+      "description": "Complete markdown guide for Universal Notion Uploader. Covers 14 element types (headings, callouts, highlights, toggles, embeds, columns, databases), upload modes, and API constraints.",
+      "content_summary": "Parser Architecture | Observability | Supported Elements | 1. Headings (H1-H3 Only) | Collapsible Headings # Markdown Structuring Guide for Universal Notion Uploader"
+    },
+    {
+      "name": "julien-ref-powershell",
+      "triggers": [
+        "aide-moi avec mon powershell",
+        "mon powershell ne marche pas",
+        "help with my powershell script",
+        "write powershell function",
+        "powershell style guide",
+        "powershell",
+        "powershell script",
+        "ps1",
+        "powershell best practices"
+      ],
+      "description": "PowerShell naming conventions and organization best practices. Covers Verb-Noun functions, variable naming, module structure, and documentation standards.",
+      "content_summary": "Vue d'Ensemble | Observability | Structure d'Organisation Générique | Structure de Base | Conventions de Nommage # PowerShell - Conventions de Nommage et Organisation"
+    },
+    {
+      "name": "julien-skill-creator",
+      "triggers": [
+        "SKILL.md",
+        "skill.md",
+        "create skill",
+        "new skill",
+        "add skill",
+        "build skill",
+        "skill template",
+        "write skill",
+        "créer skill",
+        "nouvelle skill",
+        "ajouter skill",
+        "construire skill",
+        "écrire skill",
+        "créer une skill",
+        "faire une skill",
+        "développer une skill",
+        "create a new skill",
+        "build custom skill",
+        "skill development"
+      ],
+      "description": "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation.",
+      "content_summary": "Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure | Naming & Description # Skill Creator"
+    },
+    {
+      "name": "julien-skill-help",
+      "triggers": [
+        "help",
+        "aide",
+        "skills",
+        "list skills",
+        "what can you do",
+        "qu'est-ce que tu sais faire",
+        "show skills",
+        "available skills",
+        "skill catalog",
+        "catalogue skills",
+        "discover skills",
+        "decouvrir skills",
+        "montre les skills",
+        "liste des skills"
+      ],
+      "description": "Interactive catalog of all available skills. Use when: user asks for help, wants to discover skills, or asks what you can do.",
+      "content_summary": "Observability | Execution | Step 1: Load the Registry | Step 2: Display Skills by Category | Step 3: Show Summary # Skill Help"
+    },
+    {
+      "name": "julien-skill-migration",
+      "triggers": [
+        "migrate skill",
+        "move skill to marketplace",
+        "publish skill",
+        "share skill",
+        "skill migration",
+        "local to marketplace",
+        "migrer skill",
+        "déplacer skill",
+        "publier skill"
+      ],
+      "description": "Intelligently migrate skills from local to marketplace with dependency analysis, path verification, and venv detection. Use when: migrate skill, publish skill, move to marketplace.",
+      "content_summary": "Prerequisites | Observability | Migration Process | Phase 1: Deep Analysis | Phase 2: Migration Report # Intelligent Skill Migration (Local → Marketplace)"
+    },
+    {
+      "name": "julien-skill-move-to-core",
+      "triggers": [
+        "move to core",
+        "add to core",
+        "add to sync",
+        "sync skill",
+        "make global",
+        "ajouter au core",
+        "synchroniser skill",
+        "rendre global"
+      ],
+      "description": "Add a skill to core sync config for global availability. Use when: move to core, add to sync, make skill global, sync skill.",
+      "content_summary": "What is \"Core\"? | Observability | Process | Step 1: Identify the skill | Step 2: Verify skill exists # Move Skill to Core"
+    },
+    {
+      "name": "julien-skill-renamer",
+      "triggers": [
+        "rename skill",
+        "change skill name",
+        "refactor skill",
+        "renommer skill",
+        "changer nom skill",
+        "renommer une skill"
+      ],
+      "description": "Rename a skill across the marketplace. Use when: user wants to rename a skill, change skill name, or refactor skill naming.",
+      "content_summary": "When to Use | Observability | What It Does | After Running | Skill Chaining # Skill Renamer"
+    },
+    {
+      "name": "julien-skill-reviewer",
+      "triggers": [
+        "review skill",
+        "check skill",
+        "improve skill",
+        "skill quality",
+        "audit skill",
+        "score skill",
+        "évaluer skill",
+        "vérifier skill",
+        "améliorer skill",
+        "qualité skill",
+        "auditer skill",
+        "revoir skill",
+        "relire skill",
+        "review my skill quality",
+        "check skill score",
+        "évaluer la qualité de la skill",
+        "améliorer ma skill"
+      ],
+      "description": "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro.",
+      "content_summary": "When to Use | Observability | Review Process | Step 1: Read and Parse | Step 2: Score Against Rubric # Skill Reviewer"
+    },
+    {
+      "name": "julien-skill-router",
+      "triggers": [
+        "which skill",
+        "find skill",
+        "skill for",
+        "right skill",
+        "quelle skill",
+        "trouver skill",
+        "skill pour",
+        "bonne skill",
+        "what skill should I use",
+        "recommend a skill"
+      ],
+      "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help.",
+      "content_summary": "Development Tools | Observability | Workflow | Anthropic Office (Documents) | Anthropic Web/Design # Skill Router - Index des Skills Disponibles"
+    },
+    {
+      "name": "julien-workflow-advice-codex",
+      "triggers": [
+        "ask codex",
+        "codex opinion",
+        "codex review",
+        "what does codex think",
+        "demande à codex",
+        "avis de codex",
+        "codex pense quoi",
+        "get codex feedback",
+        "codex second opinion",
+        "openai codex review"
+      ],
+      "description": "Get OpenAI Codex CLI's opinion on code, bugs, or implementation. Use when you want a second AI perspective during coding sessions.",
+      "content_summary": "Prerequisites | Observability | When to Use | How to Invoke | Execution # Ask Codex"
+    },
+    {
+      "name": "julien-workflow-advice-gemini",
+      "triggers": [
+        "ask gemini",
+        "gemini opinion",
+        "gemini review",
+        "what does gemini think",
+        "demande à gemini",
+        "avis de gemini",
+        "gemini pense quoi",
+        "get gemini feedback",
+        "gemini second opinion",
+        "google gemini review"
+      ],
+      "description": "Get Gemini CLI's opinion on code, architecture, or implementation. Use when you want a second AI perspective during coding sessions.",
+      "content_summary": "Prerequisites | Observability | When to Use | How to Invoke | Execution # Ask Gemini"
+    },
+    {
+      "name": "julien-workflow-check-loaded-skills",
+      "triggers": [
+        "loaded skills",
+        "check skills",
+        "list skills",
+        "available skills",
+        "what skills",
+        "skills chargées",
+        "vérifier skills",
+        "lister skills",
+        "skills disponibles",
+        "quelles skills",
+        "which skills are loaded",
+        "show my skills"
+      ],
+      "description": "Check which Claude skills are loaded globally and project-level. Displays loaded skills by category (Hostinger, Anthropic, custom), counts, and helps troubleshoot missing skills.",
+      "content_summary": "When to Use This Skill | Observability | What This Skill Does | Via Slash Command (Recommended) | Via Direct Invocation # Check Loaded Skills"
+    },
+    {
+      "name": "julien-workflow-queuing-background-tasks",
+      "triggers": [
+        "queue task",
+        "background job",
+        "idle queue",
+        "low priority task",
+        "run when idle",
+        "qm add",
+        "idle-queue",
+        "schedule this task",
+        "planifier cette tâche",
+        "deferred job",
+        "transcode video",
+        "transcoder vidéo",
+        "convert video background",
+        "ffmpeg background",
+        "ffmpeg en arrière-plan",
+        "conversion longue",
+        "long conversion",
+        "render video",
+        "faire le rendu",
+        "render vidéo en tâche de fond",
+        "encode footage",
+        "run blender render",
+        "convert mkv",
+        "script takes long",
+        "script prend du temps",
+        "long running script",
+        "slow script",
+        "script lent",
+        "batch processing",
+        "traitement par lot",
+        "this is taking forever",
+        "ça prend une éternité",
+        "queue heavy python script",
+        "without blocking",
+        "sans bloquer",
+        "don't block PC",
+        "ne pas bloquer le PC",
+        "keep PC responsive",
+        "garder le PC réactif",
+        "run without impact",
+        "low priority execution",
+        "don't slow down my machine",
+        "ne ralentis pas ma machine",
+        "keep my system responsive",
+        "resource-intensive task",
+        "tâche gourmande en ressources",
+        "heavy computation",
+        "calcul lourd",
+        "run in background",
+        "exécuter en arrière-plan",
+        "lancer en arrière-plan",
+        "background execution",
+        "execute when idle",
+        "exécuter quand inactif",
+        "run this when I'm away",
+        "exécute quand je ne suis pas là",
+        "process when computer is idle",
+        "do this asynchronously",
+        "faisons cela de manière asynchrone",
+        "bulk API calls",
+        "mass translation",
+        "batch encode",
+        "multiple file conversion",
+        "heavy task",
+        "tâche lourde",
+        "compress files when idle",
+        "traiter photos RAW",
+        "background ML training",
+        "train machine learning model",
+        "batch OCR",
+        "large file processing",
+        "traitement de gros fichiers",
+        "process data overnight",
+        "large data export",
+        "exportation volumineuse",
+        "scrape website background",
+        "pipeline data nightly",
+        "run backup background",
+        "compile in background",
+        "keep working while this runs",
+        "continuer à travailler pendant que ça tourne",
+        "encoder des vidéos",
+        "encode videos"
+      ],
+      "description": "Queue long-running tasks (transcoding, API calls, batch processing) to run in background at low priority when user is active, normal priority when idle. Use when scripts take minutes/hours and shouldn't impact PC performance during active use.",
+      "content_summary": "Prerequisites | Observability | Quick Start | Service Startup | Manual start # Idle Queue - Background Task Manager"
+    }
+  ]
+}
