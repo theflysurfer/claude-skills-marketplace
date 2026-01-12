@@ -40,7 +40,7 @@ try {
 // Configuration
 const CLAUDE_HOME = path.join(os.homedir(), '.claude');
 const INDEX_FILE = path.join(CLAUDE_HOME, 'cache', 'keyword-index.json');
-const TRIGGERS_FILE = path.join(CLAUDE_HOME, 'configs', 'skill-triggers.json');
+const TRIGGERS_FILE = path.join(CLAUDE_HOME, 'registry', 'skill-triggers.json');
 const ROUTING_LOG_FILE = path.join(CLAUDE_HOME, 'cache', 'last-routing.json');
 const ROUTING_HISTORY_FILE = path.join(CLAUDE_HOME, 'cache', 'routing-history.jsonl');
 const NEAR_MISS_LOG_FILE = path.join(CLAUDE_HOME, 'cache', 'near-misses.jsonl');
@@ -54,16 +54,59 @@ const ENABLE_CWD_CONTEXT = process.env.ROUTER_CWD_CONTEXT !== 'false'; // Enable
 const CONTEXT_BOOST = 0.7; // Boost value when file extensions match (strong enough to beat generic matches)
 const MIN_FILES_FOR_BOOST = 3; // Minimum files of same type to trigger boost
 
-// Extension to Skill Mapping
+// Extension to Skill Mapping (Tier 2 - BOOST)
 const EXTENSION_SKILL_MAP = {
+    // Office files
     '.pdf': ['anthropic-office-pdf'],
     '.docx': ['anthropic-office-docx'],
     '.doc': ['anthropic-office-docx'],
     '.xlsx': ['anthropic-office-xlsx'],
     '.xls': ['anthropic-office-xlsx'],
     '.xlsm': ['anthropic-office-xlsx'],
+    '.csv': ['anthropic-office-xlsx'],
+    '.tsv': ['anthropic-office-xlsx'],
     '.pptx': ['anthropic-office-pptx'],
-    '.ppt': ['anthropic-office-pptx']
+    '.ppt': ['anthropic-office-pptx'],
+    // Scripting languages
+    '.ahk': ['julien-ref-ahk-v2', 'julien-ref-ahk-v1'],
+    '.ahk2': ['julien-ref-ahk-v2'],
+    '.ah2': ['julien-ref-ahk-v2'],
+    '.ps1': ['julien-ref-powershell'],
+    '.bat': ['julien-ref-batch'],
+    '.cmd': ['julien-ref-batch'],
+    // Subtitles
+    '.srt': ['subtitle-translation'],
+    '.vtt': ['subtitle-translation'],
+    // Documentation
+    '.md': ['julien-ref-doc-production', 'julien-ref-notion-markdown']
+};
+
+// Context Pattern Detection (Tier 1 - AUTO-ACTIVATE)
+// These patterns trigger immediate skill activation when detected
+const CONTEXT_AUTO_ACTIVATE = {
+    // File-based detection
+    files: {
+        'astro.config.mjs': 'julien-ref-astro-install',
+        'astro.config.ts': 'julien-ref-astro-install',
+        'theme.json': 'julien-wordpress-structure-validator',
+        'mcp_server.py': 'anthropic-dev-tools-mcp-builder',
+        'docker-compose.yml': 'julien-infra-hostinger-docker',
+        'docker-compose.yaml': 'julien-infra-hostinger-docker'
+    },
+    // Folder-based detection
+    folders: {
+        'wp-content': 'julien-wordpress-structure-validator',
+        'wp-admin': 'julien-wordpress-structure-validator',
+        'wp-includes': 'julien-wordpress-structure-validator'
+    }
+};
+
+// Context Hints (Tier 3 - HINT only, shown in suggestions)
+const CONTEXT_HINTS = {
+    '.git': ['julien-dev-commit-message'],
+    '.github': ['julien-dev-commit-message'],
+    'package.json': ['anthropic-web-frontend-design'],
+    'tsconfig.json': ['anthropic-web-frontend-design']
 };
 
 // Analytical Verbs Weighting (Tier 1 verbs get 1.5x boost)
@@ -142,13 +185,14 @@ function tokenize(text) {
 }
 
 /**
- * Scan CWD for file extensions to provide context awareness.
- * Returns a Map of extension -> count.
+ * Scan current working directory for context patterns.
+ * Detects: file extensions, specific files, folders, and special patterns.
+ * Returns comprehensive context object for intelligent routing.
  * Cached for 30 seconds to avoid repeated disk I/O.
  */
-function scanCWD() {
+function scanContext() {
     if (!ENABLE_CWD_CONTEXT) {
-        return new Map();
+        return { extensions: new Map(), files: new Set(), folders: new Set(), autoActivate: null, hints: [] };
     }
 
     try {
@@ -157,37 +201,148 @@ function scanCWD() {
 
         // Return cached result if still fresh
         if (cwdCache.cwd === cwd && (now - cwdCache.timestamp) < CWD_CACHE_TTL) {
-            return cwdCache.extensions;
+            return cwdCache.context || { extensions: cwdCache.extensions, files: new Set(), folders: new Set(), autoActivate: null, hints: [] };
         }
 
-        const files = fs.readdirSync(cwd, { withFileTypes: true });
+        const entries = fs.readdirSync(cwd, { withFileTypes: true });
 
-        // Skip scanning if too many files (performance threshold)
-        if (files.length > 200) {
-            cwdCache = { extensions: new Map(), timestamp: now, cwd };
-            return new Map();
+        // Skip scanning if too many entries (performance threshold)
+        if (entries.length > 200) {
+            const emptyContext = { extensions: new Map(), files: new Set(), folders: new Set(), autoActivate: null, hints: [] };
+            cwdCache = { context: emptyContext, extensions: new Map(), timestamp: now, cwd };
+            return emptyContext;
         }
 
-        const extensions = new Map();
+        const context = {
+            extensions: new Map(),
+            files: new Set(),
+            folders: new Set(),
+            autoActivate: null,  // Tier 1 skill to auto-activate
+            autoActivateReason: null,
+            hints: []  // Tier 3 suggestions
+        };
 
-        // Limit to first 30 files for performance (reduced from 50)
-        for (const file of files.slice(0, 30)) {
-            if (file.isFile()) {
-                const ext = path.extname(file.name).toLowerCase();
+        // Scan all entries (limit to 50 for performance)
+        for (const entry of entries.slice(0, 50)) {
+            const name = entry.name.toLowerCase();
+
+            if (entry.isFile()) {
+                // Track file name for pattern matching
+                context.files.add(name);
+
+                // Track extension
+                const ext = path.extname(name).toLowerCase();
                 if (ext) {
-                    extensions.set(ext, (extensions.get(ext) || 0) + 1);
+                    context.extensions.set(ext, (context.extensions.get(ext) || 0) + 1);
+                }
+
+                // Check for Tier 1 auto-activation files
+                if (!context.autoActivate && CONTEXT_AUTO_ACTIVATE.files[name]) {
+                    context.autoActivate = CONTEXT_AUTO_ACTIVATE.files[name];
+                    context.autoActivateReason = `File detected: ${entry.name}`;
+                }
+
+                // Check for Tier 3 hints
+                if (CONTEXT_HINTS[name]) {
+                    context.hints.push(...CONTEXT_HINTS[name]);
+                }
+            } else if (entry.isDirectory()) {
+                // Track folder name
+                context.folders.add(name);
+
+                // Check for Tier 1 auto-activation folders
+                if (!context.autoActivate && CONTEXT_AUTO_ACTIVATE.folders[name]) {
+                    context.autoActivate = CONTEXT_AUTO_ACTIVATE.folders[name];
+                    context.autoActivateReason = `Folder detected: ${entry.name}/`;
+                }
+
+                // Check for Tier 3 hints (folders like .git)
+                if (CONTEXT_HINTS[name]) {
+                    context.hints.push(...CONTEXT_HINTS[name]);
                 }
             }
         }
 
-        // Update cache
-        cwdCache = { extensions, timestamp: now, cwd };
+        // Special AHK version detection
+        // .ahk2 / .ah2 extension = ALWAYS v2 (no ambiguity)
+        // .ahk extension = could be v1 OR v2, need syntax detection
+        const ahk2Count = (context.extensions.get('.ahk2') || 0) + (context.extensions.get('.ah2') || 0);
+        const ahkCount = context.extensions.get('.ahk') || 0;
 
-        return extensions;
+        if (ahk2Count >= MIN_FILES_FOR_BOOST) {
+            // .ahk2 / .ah2 files = definitely v2
+            context.autoActivate = 'julien-ref-ahk-v2';
+            context.autoActivateReason = `AutoHotkey v2 project (${ahk2Count} .ahk2/.ah2 files)`;
+        } else if (ahkCount >= MIN_FILES_FOR_BOOST) {
+            // .ahk files need syntax detection (could be v1 or v2)
+            const ahkVersion = detectAHKVersion(cwd);
+            if (ahkVersion === 2) {
+                context.autoActivate = 'julien-ref-ahk-v2';
+                context.autoActivateReason = `AutoHotkey v2 syntax detected (${ahkCount} .ahk files)`;
+            } else if (ahkVersion === 1) {
+                context.autoActivate = 'julien-ref-ahk-v1';
+                context.autoActivateReason = `AutoHotkey v1 syntax detected (${ahkCount} .ahk files)`;
+            }
+            // If version undetermined, don't auto-activate (let keyword routing handle it)
+        }
+
+        // Update cache
+        cwdCache = { context, extensions: context.extensions, timestamp: now, cwd };
+
+        return context;
     } catch (e) {
         // Fail silently - context is optional
-        return new Map();
+        return { extensions: new Map(), files: new Set(), folders: new Set(), autoActivate: null, hints: [] };
     }
+}
+
+/**
+ * Detect AutoHotkey version from .ahk files in directory.
+ * Returns 1, 2, or null if undetermined.
+ */
+function detectAHKVersion(dir) {
+    try {
+        const files = fs.readdirSync(dir).filter(f => f.toLowerCase().endsWith('.ahk'));
+        if (files.length === 0) return null;
+
+        // Read first AHK file (up to 2KB)
+        const firstFile = path.join(dir, files[0]);
+        const content = fs.readFileSync(firstFile, 'utf-8').slice(0, 2048);
+
+        // v2 indicators
+        const v2Patterns = [
+            /^#Requires\s+AutoHotkey\s+v?2/im,
+            /\bglobal\s+\w+\s*:=/,
+            /\bclass\s+\w+\s*\{/,
+            /\(\)\s*=>/,
+            /\.Push\(/,
+            /\.Length\b/
+        ];
+
+        // v1 indicators
+        const v1Patterns = [
+            /^#NoEnv\b/m,
+            /\bSetBatchLines\b/,
+            /:=\s*Object\(\)/,
+            /\bIfEqual\b/,
+            /\bStringReplace\b/
+        ];
+
+        const v2Score = v2Patterns.filter(p => p.test(content)).length;
+        const v1Score = v1Patterns.filter(p => p.test(content)).length;
+
+        if (v2Score > v1Score) return 2;
+        if (v1Score > v2Score) return 1;
+        return null;
+    } catch (e) {
+        return null;
+    }
+}
+
+// Legacy alias for backward compatibility
+function scanCWD() {
+    const context = scanContext();
+    return context.extensions;
 }
 
 /**
@@ -395,13 +550,54 @@ function saveNearMisses(prompt, allScores, elapsed) {
 
 function route(prompt) {
     const index = loadIndex();
-    if (!index) return { results: [], allScores: {}, cwdExtensions: new Map() };
+    if (!index) return { results: [], allScores: {}, context: { extensions: new Map() }, autoActivated: false };
 
     const keywords = index.keywords || {};
     const skillsInfo = index.skills || {};
 
-    // Scan CWD for context awareness
-    const cwdExtensions = scanCWD();
+    // Scan CWD for context awareness (extended version)
+    const context = scanContext();
+    const cwdExtensions = context.extensions;
+
+    // Check for Tier 1 auto-activation FIRST
+    if (context.autoActivate) {
+        const info = skillsInfo[context.autoActivate] || {};
+        const autoResult = {
+            name: context.autoActivate,
+            description: info.description || '',
+            source: info.source || 'context-auto',
+            score: 1.0,
+            autoActivated: true,
+            autoReason: context.autoActivateReason
+        };
+
+        // Still calculate other scores for Top 10 display, but auto-activated skill wins
+        const skillScores = {};
+        skillScores[context.autoActivate] = 1.0;
+
+        // Run normal scoring for other skills (for display purposes)
+        const words = tokenize(prompt);
+        const promptLower = prompt.toLowerCase();
+        for (const [keyword, matches] of Object.entries(keywords)) {
+            if (promptLower.includes(keyword)) {
+                for (const [skillName, weight] of matches) {
+                    if (skillName !== context.autoActivate) {
+                        const boost = keyword.includes(' ') ? 1.5 : 1.0;
+                        skillScores[skillName] = (skillScores[skillName] || 0) + weight * boost;
+                    }
+                }
+            }
+        }
+
+        return {
+            results: [autoResult],
+            allScores: skillScores,
+            context,
+            cwdExtensions,
+            autoActivated: true,
+            autoReason: context.autoActivateReason
+        };
+    }
 
     // Tokenize prompt
     const words = tokenize(prompt);
@@ -439,7 +635,7 @@ function route(prompt) {
     // Apply fuzzy matching for typos (Tier 2 matching)
     applyFuzzyMatching(skillScores, words, keywords);
 
-    // Apply context awareness boost
+    // Apply context awareness boost (Tier 2)
     applyContextBoost(skillScores, cwdExtensions, hasAnalyticalVerb);
 
     // Build results
@@ -457,21 +653,41 @@ function route(prompt) {
             };
         });
 
-    return { results, allScores: skillScores, cwdExtensions };
+    return { results, allScores: skillScores, context, cwdExtensions, autoActivated: false, hints: context.hints };
 }
 
 /**
  * Build human-readable explanation of routing decision.
  */
-function buildRoutingExplanation(prompt, matches, cwdExtensions, allScores, elapsed) {
+function buildRoutingExplanation(prompt, routingResult, elapsed) {
+    const { results: matches, cwdExtensions, allScores, autoActivated, autoReason, context, hints } = routingResult;
     const explanation = {};
 
+    // Auto-activation detection (Tier 1 - highest priority)
+    if (autoActivated) {
+        explanation.autoActivated = true;
+        explanation.autoReason = autoReason;
+        explanation.autoActivationDisplay = [
+            '',
+            '🎯 AUTO-ACTIVATION (Context Detection):',
+            '─'.repeat(60),
+            `  ✅ ${autoReason}`,
+            `  🔧 Auto-activated: ${matches[0]?.name || 'unknown'}`,
+            '─'.repeat(60)
+        ].join('\n');
+    }
+
     // Context detection
-    if (cwdExtensions.size > 0) {
+    if (cwdExtensions && cwdExtensions.size > 0) {
         const fileTypes = Array.from(cwdExtensions.entries())
             .map(([ext, count]) => `${count} ${ext} file${count > 1 ? 's' : ''}`)
             .join(', ');
         explanation.contextInfo = `   Working directory contains: ${fileTypes}`;
+    }
+
+    // Context hints (Tier 3)
+    if (hints && hints.length > 0) {
+        explanation.hints = [...new Set(hints)]; // Dedupe
     }
 
     // Query enhancements (typos, fuzzy matches)
@@ -495,8 +711,8 @@ function buildRoutingExplanation(prompt, matches, cwdExtensions, allScores, elap
         explanation.enhancements = enhancements.map(e => `   • ${e}`).join('\n');
     }
 
-    // Reasoning for top match
-    if (matches.length > 0) {
+    // Reasoning for top match (skip if auto-activated)
+    if (!autoActivated && matches.length > 0) {
         const topMatch = matches[0];
         const reasons = [];
 
@@ -515,7 +731,7 @@ function buildRoutingExplanation(prompt, matches, cwdExtensions, allScores, elap
         }
 
         // Check for context boost
-        if (cwdExtensions.size > 0 && topMatch.name.includes('office')) {
+        if (cwdExtensions && cwdExtensions.size > 0 && topMatch.name.includes('office')) {
             const relevantExt = Array.from(cwdExtensions.keys()).find(ext => {
                 if (ext === '.pdf' && topMatch.name.includes('pdf')) return true;
                 if (['.xlsx', '.xls'].includes(ext) && topMatch.name.includes('xlsx')) return true;
@@ -598,11 +814,14 @@ function main() {
 
             // Route
             const start = Date.now();
-            const { results: matches, allScores, cwdExtensions } = route(userPrompt);
+            const routingResult = route(userPrompt);
+            const { results: matches, allScores, cwdExtensions, autoActivated, autoReason, context, hints } = routingResult;
             const elapsed = Date.now() - start;
 
             logDebug('UserPromptSubmit', 'fast-skill-router.js', `Routing completed in ${elapsed}ms`, 'INFO');
-            if (matches.length > 0) {
+            if (autoActivated) {
+                logDebug('UserPromptSubmit', 'fast-skill-router.js', `AUTO-ACTIVATED: ${matches[0]?.name} (${autoReason})`, 'ROUTE');
+            } else if (matches.length > 0) {
                 logDebug('UserPromptSubmit', 'fast-skill-router.js', `Top match: ${matches[0].name} (score: ${matches[0].score})`, 'ROUTE');
             } else {
                 logDebug('UserPromptSubmit', 'fast-skill-router.js', 'No matches found', 'ROUTE');
@@ -638,7 +857,7 @@ function main() {
             saveNearMisses(userPrompt, allScores, elapsed);
 
             // Build detailed routing explanation
-            const explanation = buildRoutingExplanation(userPrompt, matches, cwdExtensions, allScores, elapsed);
+            const explanation = buildRoutingExplanation(userPrompt, routingResult, elapsed);
 
             // Output PLAIN TEXT to stdout (Claude sees non-JSON text as context)
             if (matches.length > 0) {
@@ -648,6 +867,11 @@ function main() {
                 console.log('\n' + '='.repeat(70));
                 console.log('🔍 SKILL ROUTING ANALYSIS');
                 console.log('='.repeat(70));
+
+                // Show AUTO-ACTIVATION first (Tier 1 - highest priority)
+                if (explanation.autoActivated && explanation.autoActivationDisplay) {
+                    console.log(explanation.autoActivationDisplay);
+                }
 
                 // Show context detection
                 if (explanation.contextInfo) {
@@ -661,32 +885,34 @@ function main() {
                     console.log(explanation.enhancements);
                 }
 
-                // Show main routing result
-                console.log('\n🎯 Routing Result:');
+                // Show main routing result (skip if auto-activated, already shown above)
+                if (!explanation.autoActivated) {
+                    console.log('\n🎯 Routing Result:');
 
-                // Strong match (>= 1.0): Direct instruction
-                if (topMatch.score >= 1.0) {
-                    console.log(`   ✅ STRONG MATCH (${confidence}% confidence)`);
-                    console.log(`   → Use Skill("${topMatch.name}")`);
-                    if (explanation.reasoning) {
-                        console.log(`   📝 Why: ${explanation.reasoning}`);
+                    // Strong match (>= 1.0): Direct instruction
+                    if (topMatch.score >= 1.0) {
+                        console.log(`   ✅ STRONG MATCH (${confidence}% confidence)`);
+                        console.log(`   → Use Skill("${topMatch.name}")`);
+                        if (explanation.reasoning) {
+                            console.log(`   📝 Why: ${explanation.reasoning}`);
+                        }
                     }
-                }
-                // Medium match (0.5-1.0): Suggestion
-                else if (topMatch.score >= 0.5) {
-                    console.log(`   💡 SUGGESTED (${confidence}% confidence)`);
-                    console.log(`   → Skill("${topMatch.name}") might help`);
-                    if (explanation.reasoning) {
-                        console.log(`   📝 Why: ${explanation.reasoning}`);
+                    // Medium match (0.5-1.0): Suggestion
+                    else if (topMatch.score >= 0.5) {
+                        console.log(`   💡 SUGGESTED (${confidence}% confidence)`);
+                        console.log(`   → Skill("${topMatch.name}") might help`);
+                        if (explanation.reasoning) {
+                            console.log(`   📝 Why: ${explanation.reasoning}`);
+                        }
                     }
-                }
-                // Weak matches: Show for awareness
-                else if (topMatch.score >= 0.2) {
-                    console.log(`   📋 RELATED SKILLS (low confidence)`);
-                    matches.slice(0, 3).forEach(m => {
-                        const conf = Math.min(100, Math.round(m.score * 20));
-                        console.log(`   • ${m.name} (${conf}%)`);
-                    });
+                    // Weak matches: Show for awareness
+                    else if (topMatch.score >= 0.2) {
+                        console.log(`   📋 RELATED SKILLS (low confidence)`);
+                        matches.slice(0, 3).forEach(m => {
+                            const conf = Math.min(100, Math.round(m.score * 20));
+                            console.log(`   • ${m.name} (${conf}%)`);
+                        });
+                    }
                 }
 
                 // Show top 10 skills ranking (verbose mode)
