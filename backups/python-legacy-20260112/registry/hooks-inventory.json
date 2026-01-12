@@ -1,0 +1,266 @@
+{
+  "version": "1.0.0",
+  "generated": "2025-12-22T22:08:03.930358",
+  "summary": {
+    "marketplace": 9,
+    "global": 6,
+    "projects": 9,
+    "total": 24
+  },
+  "sources": {
+    "marketplace": {
+      "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Claude Code MarketPlace\\configs\\hooks-registry.json",
+      "hooks": [
+        {
+          "id": "session-start-banner",
+          "name": "Session Start Banner",
+          "event": "SessionStart",
+          "matcher": null,
+          "description": "Affiche une bannière avec le nom du projet au démarrage",
+          "category": "display",
+          "scope": "global",
+          "template": false,
+          "script": "scripts/session-start-banner.py",
+          "command": null,
+          "external": false
+        },
+        {
+          "id": "fast-skill-router",
+          "name": "Fast Skill Router",
+          "event": "UserPromptSubmit",
+          "matcher": null,
+          "description": "Route les prompts vers les skills appropriées (~3ms)",
+          "category": "routing",
+          "scope": "global",
+          "template": false,
+          "script": "scripts/fast-skill-router.js",
+          "command": null,
+          "external": false
+        },
+        {
+          "id": "track-skill-invocation",
+          "name": "Track Skill Invocation",
+          "event": "PostToolUse",
+          "matcher": "Skill",
+          "description": "Enregistre les invocations de skills pour analytics",
+          "category": "tracking",
+          "scope": "global",
+          "template": false,
+          "script": "scripts/track-skill-invocation.py",
+          "command": null,
+          "external": false
+        },
+        {
+          "id": "session-end-cleanup",
+          "name": "Session End Cleanup",
+          "event": "SessionEnd",
+          "matcher": null,
+          "description": "Nettoie les fichiers temporaires à la fin de session",
+          "category": "cleanup",
+          "scope": "global",
+          "template": false,
+          "script": "scripts/session-end-delete-reserved.py",
+          "command": null,
+          "external": false
+        },
+        {
+          "id": "idle-queue-check",
+          "name": "Idle Queue Check",
+          "event": "SessionEnd",
+          "matcher": null,
+          "description": "Vérifie les jobs en attente avant fermeture",
+          "category": "tracking",
+          "scope": "global",
+          "template": false,
+          "script": null,
+          "command": "python -m idle_queue.hooks.check_pending_jobs",
+          "external": true
+        },
+        {
+          "id": "pre-write-validate",
+          "name": "Pre-Write Validation",
+          "event": "PreToolUse",
+          "matcher": "Write|Edit",
+          "description": "Valide les écritures (paths interdits, fichiers critiques)",
+          "category": "security",
+          "scope": "template",
+          "template": true,
+          "script": "hooks/templates/pre-write-validate.py",
+          "command": null,
+          "external": false
+        },
+        {
+          "id": "audit-logging",
+          "name": "Audit Logging",
+          "event": "PostToolUse",
+          "matcher": "*",
+          "description": "Log toutes les actions pour audit",
+          "category": "logging",
+          "scope": "template",
+          "template": true,
+          "script": "hooks/templates/audit-logging.py",
+          "command": null,
+          "external": false
+        },
+        {
+          "id": "session-summary",
+          "name": "Session Summary",
+          "event": "SessionEnd",
+          "matcher": null,
+          "description": "Génère un résumé de la session (fichiers modifiés, etc.)",
+          "category": "logging",
+          "scope": "template",
+          "template": true,
+          "script": "hooks/templates/session-summary.py",
+          "command": null,
+          "external": false
+        },
+        {
+          "id": "protect-claude-process",
+          "name": "Protect Claude Process",
+          "event": "PreToolUse",
+          "matcher": "Bash",
+          "description": "Bloque les commandes qui tueraient les instances Claude Code",
+          "category": "security",
+          "scope": "global",
+          "template": false,
+          "script": "hooks/templates/protect-claude-process.py",
+          "command": null,
+          "external": false
+        }
+      ]
+    },
+    "global": {
+      "path": "C:\\Users\\julien\\.claude\\settings.json",
+      "hooks": [
+        {
+          "event": "SessionStart",
+          "matcher": "*",
+          "type": "command",
+          "command": "python -c \"import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/'.claude/scripts/session-start-banner.py'),run_name='__main__')\"",
+          "timeout": 5
+        },
+        {
+          "event": "UserPromptSubmit",
+          "matcher": "*",
+          "type": "command",
+          "command": "node \"%USERPROFILE%\\.claude\\scripts\\fast-skill-router.js\"",
+          "timeout": 5
+        },
+        {
+          "event": "PostToolUse",
+          "matcher": "Skill",
+          "type": "command",
+          "command": "python -c \"import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/'.claude/scripts/track-skill-invocation.py'),run_name='__main__')\"",
+          "timeout": 10
+        },
+        {
+          "event": "SessionEnd",
+          "matcher": "*",
+          "type": "command",
+          "command": "python -c \"import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/'.claude/scripts/session-end-delete-reserved.py'),run_name='__main__')\"",
+          "timeout": 30
+        },
+        {
+          "event": "SessionEnd",
+          "matcher": "*",
+          "type": "command",
+          "command": "python -m idle_queue.hooks.check_pending_jobs",
+          "timeout": 5
+        },
+        {
+          "event": "Stop",
+          "matcher": "*",
+          "type": "command",
+          "command": "python -c \"import runpy;from pathlib import Path;runpy.run_path(str(Path.home()/'.claude/scripts/set-terminal-title.py'),run_name='__main__')\"",
+          "timeout": 2
+        }
+      ]
+    },
+    "projects": {
+      "C-Users-julien-OneDrive-Coding-_Projets de code-2025.09 Notion Uploader": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.09 Notion Uploader",
+        "hooks": [
+          {
+            "event": "UserPromptSubmit",
+            "matcher": "*",
+            "type": "command",
+            "command": "python .claude/hooks/load-notion-context.py",
+            "timeout": 10
+          }
+        ]
+      },
+      "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Calibre": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Calibre",
+        "hooks": [
+          {
+            "event": "UserPromptSubmit",
+            "matcher": "*",
+            "type": "command",
+            "command": "python \"./.claude/hooks/detect-calibre-skills.py\"",
+            "timeout": 5
+          }
+        ]
+      },
+      "C-Users-julien-OneDrive-Coding-_Projets de code-2025.11 Site Web Jokers": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.11 Site Web Jokers",
+        "hooks": [
+          {
+            "event": "PostToolUse",
+            "matcher": "Write",
+            "type": "command",
+            "command": "echo '✓ File written: $TOOL_INPUT' | jq -r '.file_path'",
+            "timeout": 10
+          },
+          {
+            "event": "PostToolUse",
+            "matcher": "Edit",
+            "type": "command",
+            "command": "echo '✓ File edited: $TOOL_INPUT' | jq -r '.file_path'",
+            "timeout": 10
+          },
+          {
+            "event": "PreToolUse",
+            "matcher": "Bash",
+            "type": "command",
+            "command": "echo '[AUDIT] Running bash command' >> .claude/audit.log",
+            "timeout": 10
+          },
+          {
+            "event": "UserPromptSubmit",
+            "matcher": "*",
+            "type": "command",
+            "command": "echo \"[$(date)] User prompt submitted\" >> .claude/session.log",
+            "timeout": 10
+          }
+        ]
+      },
+      "C-Users-julien-OneDrive-Coding-_Projets de code-2025.12 Media streaming server [Hostinger]": {
+        "path": "C:\\Users\\julien\\OneDrive\\Coding\\_Projets de code\\2025.12 Media streaming server [Hostinger]",
+        "hooks": [
+          {
+            "event": "PreToolUse",
+            "matcher": "Edit|Write",
+            "type": "command",
+            "command": "python3 << 'EOF'\nimport json\nimport sys\nimport os\n\ntry:\n    # Read tool input from stdin\n    data = json.load(sys.stdin)\n    file_path = data.get('tool_input', {}).get('file_path', '')\n    \n    if not file_path:\n        sys.exit(0)\n    \n    # Normalize path to handle different separators\n    normalized_path = os.path.normpath(file_path)\n    path_parts = normalized_path.split(os.sep)\n    \n    # Check for path traversal attempts\n    if '..' in path_parts:\n        print('⚠️ SECURITY: Path traversal attempt detected')\n        print(f'Blocked path: {file_path}')\n        sys.exit(2)\n    \n    # Get basename for exact filename matching\n    basename = os.path.basename(normalized_path)\n    \n    # Critical files that should never be modified\n    critical_files = [\n        'docker-compose.yml',\n        'SECRETS.md',\n        '.gitignore',\n        'claude.md'\n    ]\n    \n    # Check if modifying a critical file\n    if basename in critical_files:\n        print(f'⚠️ CRITICAL FILE: {basename}')\n        print('This file requires manual review before modification.')\n        print('To edit: open the file manually outside Claude Code.')\n        sys.exit(2)\n    \n    # Check if modifying .git directory\n    if '/.git/' in normalized_path.replace(os.sep, '/') or normalized_path.startswith('.git'):\n        print('⚠️ CRITICAL: Attempting to modify .git directory')\n        print('Git internals should not be modified directly.')\n        sys.exit(2)\n    \n    # Auto-backup for server-configs changes\n    if 'server-configs' in normalized_path:\n        import subprocess\n        import os\n        \n        print('🔄 Auto-backup: Committing server-configs changes...')\n        \n        # Use CLAUDE_PROJECT_DIR if available, otherwise current directory\n        project_dir = os.environ.get('CLAUDE_PROJECT_DIR', os.getcwd())\n        \n        try:\n            # Git add the server-configs directory\n            result_add = subprocess.run(\n                ['git', 'add', 'server-configs/'],\n                cwd=project_dir,\n                capture_output=True,\n                text=True,\n                timeout=10\n            )\n            \n            # Git commit (will fail silently if nothing to commit)\n            result_commit = subprocess.run(\n                ['git', 'commit', '-m', 'Auto-backup before infrastructure change'],\n                cwd=project_dir,\n                capture_output=True,\n                text=True,\n                timeout=10\n            )\n            \n            if result_commit.returncode == 0:\n                print('✓ Auto-backup: Changes committed successfully')\n            elif 'nothing to commit' in result_commit.stdout.lower():\n                print('✓ Auto-backup: No changes to commit')\n            \n        except subprocess.TimeoutExpired:\n            print('⚠️ Auto-backup: Git command timed out (non-blocking)')\n        except Exception as e:\n            print(f'⚠️ Auto-backup: Failed (non-blocking): {e}')\n    \n    # Allow the operation\n    sys.exit(0)\n    \nexcept json.JSONDecodeError:\n    print('Hook error: Invalid JSON input (non-blocking)')\n    sys.exit(0)\nexcept Exception as e:\n    print(f'Hook error (non-blocking): {e}')\n    sys.exit(0)\nEOF",
+            "timeout": 10
+          },
+          {
+            "event": "PreToolUse",
+            "matcher": "Bash",
+            "type": "command",
+            "command": "python3 << 'EOF'\nimport json\nimport sys\nimport os\nfrom datetime import datetime\n\ntry:\n    # Read command from stdin\n    data = json.load(sys.stdin)\n    command = data.get('tool_input', {}).get('command', '')\n    \n    if not command:\n        sys.exit(0)\n    \n    # Create log directory if it doesn't exist\n    log_dir = os.path.expanduser('~/.claude')\n    os.makedirs(log_dir, exist_ok=True)\n    \n    log_file = os.path.join(log_dir, 'media-server-commands.log')\n    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')\n    \n    # Log the command\n    with open(log_file, 'a', encoding='utf-8') as f:\n        f.write(f'[{timestamp}] {command}\\n')\n    \n    sys.exit(0)\n    \nexcept Exception:\n    # Silently fail - logging is not critical\n    sys.exit(0)\nEOF",
+            "timeout": 10
+          },
+          {
+            "event": "SessionEnd",
+            "matcher": "*",
+            "type": "command",
+            "command": "python3 << 'EOF'\nimport os\nfrom datetime import datetime\n\ntry:\n    log_dir = os.path.expanduser('~/.claude')\n    os.makedirs(log_dir, exist_ok=True)\n    \n    command_log = os.path.join(log_dir, 'media-server-commands.log')\n    summary_log = os.path.join(log_dir, 'session-summary.log')\n    \n    # Count commands if log exists\n    command_count = 0\n    if os.path.exists(command_log):\n        with open(command_log, 'r') as f:\n            command_count = len(f.readlines())\n    \n    # Write session summary\n    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')\n    with open(summary_log, 'a', encoding='utf-8') as f:\n        f.write(f'[{timestamp}] Session ended - {command_count} total commands logged\\n')\n    \nexcept Exception:\n    # Silently fail\n    pass\nEOF",
+            "timeout": 10
+          }
+        ]
+      }
+    }
+  }
+}

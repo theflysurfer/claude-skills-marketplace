@@ -37,8 +37,8 @@
         "mcp integration"
       ],
       "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
-      "source": "marketplace",
-      "content_summary": "Overview | Observability | 🚀 High-Level Workflow | Phase 1: Deep Research and Planning | 1.1 Understand Modern MCP Design # MCP Server Development Guide"
+      "source": "global",
+      "content_summary": "Overview | 🚀 High-Level Workflow | Phase 1: Deep Research and Planning | 1.1 Understand Modern MCP Design | 1.2 Study MCP Protocol Documentation # MCP Server Development Guide"
     },
     {
       "name": "anthropic-office-docx",
@@ -51,25 +51,11 @@
         "create word document",
         "créer un document word",
         "edit docx file",
-        "modifier fichier word",
-        "read document",
-        "lire document",
-        "read word",
-        "lire word",
-        "analyze document",
-        "analyser document",
-        "parse docx",
-        "parser docx",
-        "examine document",
-        "examiner document",
-        "review document",
-        "check document",
-        "process document",
-        "traiter document"
+        "modifier fichier word"
       ],
       "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
-      "source": "marketplace",
-      "content_summary": "Overview | Observability | Workflow Decision Tree | Reading/Analyzing Content | Creating New Document # DOCX creation, editing, and analysis"
+      "source": "global",
+      "content_summary": "Overview | Workflow Decision Tree | Reading/Analyzing Content | Creating New Document | Editing Existing Document # DOCX creation, editing, and analysis"
     },
     {
       "name": "anthropic-office-pdf",
@@ -94,28 +80,11 @@
         "split pdf document",
         "diviser le pdf en pages",
         "pdf manipulation",
-        "convert to pdf",
-        "read pdf",
-        "lire pdf",
-        "analyze pdf",
-        "analyser pdf",
-        "parse pdf",
-        "parser pdf",
-        "examine pdf",
-        "examiner pdf",
-        "review pdf",
-        "check pdf",
-        "process pdf",
-        "traiter pdf",
-        "parser",
-        "lire",
-        "lis",
-        "analyser",
-        "extraire"
+        "convert to pdf"
       ],
       "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
-      "source": "marketplace",
-      "content_summary": "Overview | Observability | Quick Start | Python Libraries | pypdf - Basic Operations # PDF Processing Guide"
+      "source": "global",
+      "content_summary": "Overview | Quick Start | Python Libraries | pypdf - Basic Operations | Merge PDFs # PDF Processing Guide"
     },
     {
       "name": "anthropic-office-pptx",
@@ -130,23 +99,11 @@
         "créer une présentation",
         "add slides",
         "ajouter des slides",
-        "powerpoint slides",
-        "read presentation",
-        "lire présentation",
-        "analyze slides",
-        "analyser slides",
-        "examine presentation",
-        "examiner présentation",
-        "parse pptx",
-        "parser pptx",
-        "review presentation",
-        "check slides",
-        "process presentation",
-        "traiter présentation"
+        "powerpoint slides"
       ],
       "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
-      "source": "marketplace",
-      "content_summary": "Overview | Observability | Reading and analyzing content | Text extraction | Raw XML access # PPTX creation, editing, and analysis"
+      "source": "global",
+      "content_summary": "Overview | Reading and analyzing content | Text extraction | Raw XML access | Unpacking a file # PPTX creation, editing, and analysis"
     },
     {
       "name": "anthropic-office-xlsx",
@@ -168,25 +125,11 @@
         "tableau croisé dynamique",
         "excel chart creation",
         "graphique dans excel",
-        "excel formulas",
-        "read excel",
-        "lire excel",
-        "read spreadsheet",
-        "lire tableur",
-        "analyze spreadsheet",
-        "analyser tableur",
-        "parse xlsx",
-        "parser xlsx",
-        "examine spreadsheet",
-        "examiner tableur",
-        "review data",
-        "check excel",
-        "process spreadsheet",
-        "traiter tableur"
+        "excel formulas"
       ],
       "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas",
-      "source": "marketplace",
-      "content_summary": "All Excel files | Observability | Zero Formula Errors | Preserve Existing Templates (when updating templates) | Financial models # Requirements for Outputs"
+      "source": "global",
+      "content_summary": "All Excel files | Zero Formula Errors | Preserve Existing Templates (when updating templates) | Financial models | Color Coding Standards # Requirements for Outputs"
     },
     {
       "name": "anthropic-web-artifacts-builder",
@@ -243,6 +186,21 @@
       "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
       "source": "marketplace",
       "content_summary": "Decision Tree: Choosing Your Approach | Observability | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall # Web Application Testing"
+    },
+    {
+      "name": "commit-message",
+      "triggers": [
+        "faire un commit",
+        "écrire un message de commit",
+        "git commit",
+        "committer les changements",
+        "message de commit",
+        "semantic commit",
+        "conventional commit"
+      ],
+      "description": "Generates semantic commit messages from git diff following conventional commits format. Use when user asks to commit changes, wants help writing a commit message, or needs to create a git commit.",
+      "source": "project:Site internet Clem",
+      "content_summary": "🎯 What This Does | 📝 Commit Message Format | Type | Scope (clemencefouquet.fr specific) | Description # Commit Message Generator Skill"
     },
     {
       "name": "fastmcp-quality-review",
@@ -394,6 +352,18 @@
       "content_summary": "What to sync | Execute | After sync | MCP Management # Sync Marketplace to Global"
     },
     {
+      "name": "julien-debug-echo",
+      "triggers": [
+        "debug-echo",
+        "echo context",
+        "show context",
+        "test injection"
+      ],
+      "description": "Debug skill that echoes received context. Use with 'debug-echo' keyword to test stdout injection.",
+      "source": "global",
+      "content_summary": "Observability | Execution | Purpose # Debug Echo Skill"
+    },
+    {
       "name": "julien-dev-claude-md-documenter",
       "triggers": [
         "CLAUDE.md",
@@ -415,8 +385,8 @@
         "add project context"
       ],
       "description": "Guide for creating CLAUDE.md files. Use when: user asks to create CLAUDE.md, document project, add project instructions, or mentions CLAUDE.md.",
-      "source": "marketplace",
-      "content_summary": "What is CLAUDE.md? | Observability | Core Principles | 1. Keep It Short | 2. Link, Don't Duplicate # CLAUDE.md Documenter"
+      "source": "global",
+      "content_summary": "What is CLAUDE.md? | Core Principles | 1. Keep It Short | 2. Link, Don't Duplicate | 3. Project-Specific Only # CLAUDE.md Documenter"
     },
     {
       "name": "julien-dev-commit-message",
@@ -450,7 +420,7 @@
         "onedrive git"
       ],
       "description": "Generate semantic commit messages and create git commits. Handles OneDrive mmap errors automatically. Use when user wants to commit, needs a commit message, or git commit fails.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Observability | Quick Reference | Commit Types | Execution Process | Step 1: Analyze Changes # Commit Message Generator"
     },
     {
@@ -475,8 +445,8 @@
         "automation hook"
       ],
       "description": "Guide for creating Claude Code hooks - shell commands that execute at specific lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse, etc.). Use when users want to automate actions, add validation, logging, or integrate external tools into Claude Code workflows.",
-      "source": "marketplace",
-      "content_summary": "What Are Hooks? | Observability | Available Hook Events | Hook Configuration | Basic Structure # Hook Creator"
+      "source": "global",
+      "content_summary": "What Are Hooks? | Available Hook Events | Hook Configuration | Basic Structure | Configuration Fields # Hook Creator"
     },
     {
       "name": "julien-dev-powershell-profile",
@@ -489,8 +459,21 @@
         "ps1 profile"
       ],
       "description": "Manage PowerShell profile, aliases, functions. Triggers: add alias, update profile, modify claude command, Microsoft.PowerShell_profile.ps1",
-      "source": "marketplace",
-      "content_summary": "Workflow | Observability | Reference Files | Skill Chaining | Skills Required Before # PowerShell Profile Manager"
+      "source": "global",
+      "content_summary": "Workflow | Reference Files | Skill Chaining | Skills Required Before | Input Expected # PowerShell Profile Manager"
+    },
+    {
+      "name": "julien-dev-profile-test",
+      "triggers": [
+        "test profile",
+        "verify profile",
+        "profile regression",
+        "check profile",
+        "profile test"
+      ],
+      "description": "Test PowerShell profile for non-regression. Verifies dynamic tab title, critical functions, and no YASB remnants. Use after profile modifications.",
+      "source": "global",
+      "content_summary": "Observability | Test Suite | Test 1: Dynamic Tab Title Management ✅ | Test 2: No YASB Remnants ✅ | Test 3: Critical Sections Present ✅ # PowerShell Profile Non-Regression Test"
     },
     {
       "name": "julien-infra-deployment-verifier",
@@ -624,8 +607,8 @@
         "mcp marketplace"
       ],
       "description": "Interactive MCP server installer. Lists all available MCPs by category and installs the user's choice into .mcp.json",
-      "source": "marketplace",
-      "content_summary": "Observability | Available MCP Servers | Category: Office (5) | Category: Browser (4) | Category: APIs (6) # MCP Server Installer"
+      "source": "global",
+      "content_summary": "Available MCP Servers | Category: Office (5) | Category: Browser (4) | Category: APIs (6) | Category: AI/LLM (4) # MCP Server Installer"
     },
     {
       "name": "julien-media-onepiece-workflow",
@@ -673,8 +656,8 @@
         "ahk hotkey"
       ],
       "description": "Best practices AutoHotkey v1. Use when writing AHK v1 scripts to avoid critical errors like auto-execute section issues, includes order, and COM object handling.",
-      "source": "marketplace",
-      "content_summary": "Structure du Guide | Observability | Erreur #0 : Section Auto-Execute - LA RÈGLE LA PLUS CRITIQUE | QU'EST-CE QUE L'AUTO-EXECUTE? | CE QUI TERMINE L'AUTO-EXECUTE # AutoHotkey v1 - Guide de Référence Optimisé LLM"
+      "source": "global",
+      "content_summary": "Structure du Guide | Erreur #0 : Section Auto-Execute - LA RÈGLE LA PLUS CRITIQUE | QU'EST-CE QUE L'AUTO-EXECUTE? | CE QUI TERMINE L'AUTO-EXECUTE | ERREUR FATALE - Code après une fonction # AutoHotkey v1 - Guide de Référence Optimisé LLM"
     },
     {
       "name": "julien-ref-ahk-v2",
@@ -691,8 +674,8 @@
         "autohotkey tutorial"
       ],
       "description": "Best practices AutoHotkey v2. Use when writing AHK v2 scripts - covers global variable declarations, SetTimer usage, event handlers, and GUI positioning.",
-      "source": "marketplace",
-      "content_summary": "RÈGLE CRITIQUE - VARIABLES GLOBALES | Observability | DÉCLARATION OBLIGATOIRE DANS CHAQUE FONCTION | LISTE COMPLÈTE DES VARIABLES À DÉCLARER | STRUCTURE MODULAIRE AUTOHOTKEY V2 # AutoHotkey v2 - Best Practices pour LLM"
+      "source": "global",
+      "content_summary": "RÈGLE CRITIQUE - VARIABLES GLOBALES | DÉCLARATION OBLIGATOIRE DANS CHAQUE FONCTION | LISTE COMPLÈTE DES VARIABLES À DÉCLARER | STRUCTURE MODULAIRE AUTOHOTKEY V2 | En-tête Standard # AutoHotkey v2 - Best Practices pour LLM"
     },
     {
       "name": "julien-ref-astro-install",
@@ -709,8 +692,8 @@
         "create astro project"
       ],
       "description": "Guide d'installation Astro + Tailwind sur Windows. Covers Node.js setup, pnpm, project creation, common Windows issues, and troubleshooting.",
-      "source": "marketplace",
-      "content_summary": "Prérequis | Observability | 1. Node.js (version 18.20.8+ ou 20.3.0+ ou 22.0.0+) | 2. Gestionnaire de paquets | Méthode 1 : Installation Rapide (Recommandée) # Guide d'Installation Astro + Tailwind sur Windows"
+      "source": "global",
+      "content_summary": "Prérequis | 1. Node.js (version 18.20.8+ ou 20.3.0+ ou 22.0.0+) | 2. Gestionnaire de paquets | Méthode 1 : Installation Rapide (Recommandée) | Étape 1 : Créer le projet # Guide d'Installation Astro + Tailwind sur Windows"
     },
     {
       "name": "julien-ref-batch",
@@ -727,8 +710,8 @@
         "cmd script"
       ],
       "description": "Best practices for Windows Batch scripts (.bat). Covers encoding, path handling, variables, error management, and common pitfalls.",
-      "source": "marketplace",
-      "content_summary": "STRUCTURE ET ENCODAGE | Observability | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS # Best Practices - Scripts Batch (.bat)"
+      "source": "global",
+      "content_summary": "STRUCTURE ET ENCODAGE | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS | Variables de Chemin Robustes # Best Practices - Scripts Batch (.bat)"
     },
     {
       "name": "julien-ref-doc-production",
@@ -747,8 +730,8 @@
         "guide template"
       ],
       "description": "Documentation production methodology with DRY principles. Covers 8 document types (GUIDE, INCIDENT, SESSION, AUDIT, RECHERCHE, etc.), naming conventions, and YAML metadata.",
-      "source": "marketplace",
-      "content_summary": "Principles | Observability | Structure | Naming Conventions | EVOLVING Docs (living docs) # Documentation Production Methodology"
+      "source": "global",
+      "content_summary": "Principles | Structure | Naming Conventions | EVOLVING Docs (living docs) | EVENT-BASED Docs (snapshots) # Documentation Production Methodology"
     },
     {
       "name": "julien-ref-doc-review",
@@ -765,8 +748,8 @@
         "annotation tags"
       ],
       "description": "Simplified document review methodology with 4 core tags (@FIX, @TODO, @VERIFY, @OK) and [MACRO] flag for systemic impact. Use for annotating and reviewing documentation.",
-      "source": "marketplace",
-      "content_summary": "Overview | Observability | Tag System | CORE Tags (4 essential) | SPECIAL Tags (particular use) # Document Review Methodology"
+      "source": "global",
+      "content_summary": "Overview | Tag System | CORE Tags (4 essential) | SPECIAL Tags (particular use) | [MACRO] Impact Flag # Document Review Methodology"
     },
     {
       "name": "julien-ref-notion-markdown",
@@ -787,8 +770,8 @@
         "notion columns"
       ],
       "description": "Complete markdown guide for Universal Notion Uploader. Covers 14 element types (headings, callouts, highlights, toggles, embeds, columns, databases), upload modes, and API constraints.",
-      "source": "marketplace",
-      "content_summary": "Parser Architecture | Observability | Supported Elements | 1. Headings (H1-H3 Only) | Collapsible Headings # Markdown Structuring Guide for Universal Notion Uploader"
+      "source": "global",
+      "content_summary": "Parser Architecture | Supported Elements | 1. Headings (H1-H3 Only) | Collapsible Headings | 2. Rich Text (Inline Formatting) # Markdown Structuring Guide for Universal Notion Uploader"
     },
     {
       "name": "julien-ref-powershell",
@@ -804,8 +787,8 @@
         "powershell best practices"
       ],
       "description": "PowerShell naming conventions and organization best practices. Covers Verb-Noun functions, variable naming, module structure, and documentation standards.",
-      "source": "marketplace",
-      "content_summary": "Vue d'Ensemble | Observability | Structure d'Organisation Générique | Structure de Base | Conventions de Nommage # PowerShell - Conventions de Nommage et Organisation"
+      "source": "global",
+      "content_summary": "Vue d'Ensemble | Structure d'Organisation Générique | Structure de Base | Conventions de Nommage | 1. Fichiers PowerShell # PowerShell - Conventions de Nommage et Organisation"
     },
     {
       "name": "julien-skill-creator",
@@ -831,8 +814,8 @@
         "skill development"
       ],
       "description": "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation.",
-      "source": "marketplace",
-      "content_summary": "Observability | Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure # Skill Creator"
+      "source": "global",
+      "content_summary": "Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure | Naming & Description # Skill Creator"
     },
     {
       "name": "julien-skill-help",
@@ -853,7 +836,7 @@
         "liste des skills"
       ],
       "description": "Interactive catalog of all available skills. Use when: user asks for help, wants to discover skills, or asks what you can do.",
-      "source": "marketplace",
+      "source": "global",
       "content_summary": "Observability | Execution | Step 1: Load the Registry | Step 2: Display Skills by Category | Step 3: Show Summary # Skill Help"
     },
     {
@@ -870,8 +853,8 @@
         "publier skill"
       ],
       "description": "Intelligently migrate skills from local to marketplace with dependency analysis, path verification, and venv detection. Use when: migrate skill, publish skill, move to marketplace.",
-      "source": "marketplace",
-      "content_summary": "Prerequisites | Observability | Migration Process | Phase 1: Deep Analysis | Phase 2: Migration Report # Intelligent Skill Migration (Local → Marketplace)"
+      "source": "global",
+      "content_summary": "Prerequisites | Migration Process | Phase 1: Deep Analysis | Phase 2: Migration Report | Phase 3: User Decision # Intelligent Skill Migration (Local → Marketplace)"
     },
     {
       "name": "julien-skill-move-to-core",
@@ -886,8 +869,8 @@
         "rendre global"
       ],
       "description": "Add a skill to core sync config for global availability. Use when: move to core, add to sync, make skill global, sync skill.",
-      "source": "marketplace",
-      "content_summary": "What is \"Core\"? | Observability | Process | Step 1: Identify the skill | Step 2: Verify skill exists # Move Skill to Core"
+      "source": "global",
+      "content_summary": "What is \"Core\"? | Process | Step 1: Identify the skill | Step 2: Verify skill exists | Step 3: Check current sync-config # Move Skill to Core"
     },
     {
       "name": "julien-skill-renamer",
@@ -900,8 +883,8 @@
         "renommer une skill"
       ],
       "description": "Rename a skill across the marketplace. Use when: user wants to rename a skill, change skill name, or refactor skill naming.",
-      "source": "marketplace",
-      "content_summary": "When to Use | Observability | What It Does | After Running | Skill Chaining # Skill Renamer"
+      "source": "global",
+      "content_summary": "When to Use | What It Does | After Running | Skill Chaining | Skills Required Before # Skill Renamer"
     },
     {
       "name": "julien-skill-reviewer",
@@ -925,8 +908,8 @@
         "améliorer ma skill"
       ],
       "description": "Review and improve skill quality. Use when: user asks to review skill, check skill quality, improve skill, or after creating a skill with skill-creator-pro.",
-      "source": "marketplace",
-      "content_summary": "When to Use | Observability | Review Process | Step 1: Read and Parse | Step 2: Score Against Rubric # Skill Reviewer"
+      "source": "global",
+      "content_summary": "When to Use | Review Process | Step 1: Read and Parse | Step 2: Score Against Rubric | Step 3: Calculate Score # Skill Reviewer"
     },
     {
       "name": "julien-skill-router",
@@ -943,8 +926,8 @@
         "recommend a skill"
       ],
       "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help.",
-      "source": "marketplace",
-      "content_summary": "Development Tools | Observability | Workflow | Anthropic Office (Documents) | Anthropic Web/Design # Skill Router - Index des Skills Disponibles"
+      "source": "global",
+      "content_summary": "Development Tools | Workflow | Anthropic Office (Documents) | Anthropic Web/Design | Infrastructure Hostinger # Skill Router - Index des Skills Disponibles"
     },
     {
       "name": "julien-workflow-advice-codex",
@@ -961,8 +944,8 @@
         "openai codex review"
       ],
       "description": "Get OpenAI Codex CLI's opinion on code, bugs, or implementation. Use when you want a second AI perspective during coding sessions.",
-      "source": "marketplace",
-      "content_summary": "Prerequisites | Observability | When to Use | How to Invoke | Execution # Ask Codex"
+      "source": "global",
+      "content_summary": "Prerequisites | When to Use | How to Invoke | Execution | For file review (non-interactive) # Ask Codex"
     },
     {
       "name": "julien-workflow-advice-gemini",
@@ -979,8 +962,8 @@
         "google gemini review"
       ],
       "description": "Get Gemini CLI's opinion on code, architecture, or implementation. Use when you want a second AI perspective during coding sessions.",
-      "source": "marketplace",
-      "content_summary": "Prerequisites | Observability | When to Use | How to Invoke | Execution # Ask Gemini"
+      "source": "global",
+      "content_summary": "Prerequisites | When to Use | How to Invoke | Execution | For file review # Ask Gemini"
     },
     {
       "name": "julien-workflow-check-loaded-skills",
@@ -999,8 +982,8 @@
         "show my skills"
       ],
       "description": "Check which Claude skills are loaded globally and project-level. Displays loaded skills by category (Hostinger, Anthropic, custom), counts, and helps troubleshoot missing skills.",
-      "source": "marketplace",
-      "content_summary": "When to Use This Skill | Observability | What This Skill Does | Via Slash Command (Recommended) | Via Direct Invocation # Check Loaded Skills"
+      "source": "global",
+      "content_summary": "When to Use This Skill | What This Skill Does | Via Slash Command (Recommended) | Via Direct Invocation | Output Format # Check Loaded Skills"
     },
     {
       "name": "julien-workflow-queuing-background-tasks",
@@ -1090,27 +1073,194 @@
         "encode videos"
       ],
       "description": "Queue long-running tasks (transcoding, API calls, batch processing) to run in background at low priority when user is active, normal priority when idle. Use when scripts take minutes/hours and shouldn't impact PC performance during active use.",
-      "source": "marketplace",
-      "content_summary": "Prerequisites | Observability | Quick Start | Service Startup | Manual start # Idle Queue - Background Task Manager"
+      "source": "global",
+      "content_summary": "Prerequisites | Quick Start | Service Startup | Manual start | Auto-start at login (Windows) # Idle Queue - Background Task Manager"
     },
     {
-      "name": "your-skill-name",
+      "name": "wordpress-structure-validator",
       "triggers": [
-        "keyword",
-        "mot-clé",
-        "concept",
-        "créer quelque chose",
-        "create something",
-        "faire une action",
-        "do an action",
-        "j'ai besoin de...",
-        "I need to...",
-        "comment faire pour...",
-        "how do I..."
+        "valider la structure",
+        "valider structure wordpress",
+        "wordpress validator",
+        "auditer le site",
+        "vérifier les templates",
+        "problème de backup",
+        "updraftplus",
+        "permissions fichiers",
+        "avant mise en prod",
+        "vérifier le thème",
+        "validate wordpress",
+        "check wordpress structure"
       ],
-      "description": "Concise description of what this skill does (the \"what\") and when to use it (the \"when\"). Include trigger keywords naturally. Max 1024 chars, third person voice. Example: \"Processes Excel files to generate monthly reports with charts. Use when analyzing sales data, creating spreadsheets, or generating reports.\"\n",
-      "source": "marketplace",
-      "content_summary": "When to Use | Observability | Prerequisites | Execution Steps | Step 1: Preparation # Your Skill Name"
+      "description": "This skill validates WordPress FSE (Full Site Editing) theme structure including templates hierarchy, page associations, theme.json configuration, block styles, featured images usage, file permissions, and UpdraftPlus backup configuration. Use when auditing a WordPress site, after creating/modifying templates, before production deployment, or when troubleshooting backup issues.",
+      "source": "project:Site internet Clem",
+      "content_summary": "When to Use This Skill | What This Skill Validates | Validation Workflow | Step 1: Template Validation | Step 2: Theme.json Validation # WordPress Structure Validator"
+    },
+    {
+      "name": "wp-block-contract",
+      "triggers": [
+        "créer un bloc gutenberg",
+        "nouveau bloc wordpress",
+        "block.json",
+        "gutenberg block",
+        "bloc custom",
+        "ajouter un bloc",
+        "modifier le bloc",
+        "edit.js",
+        "composant éditeur",
+        "bloc react"
+      ],
+      "description": "This skill enforces Gutenberg block development structure, metadata, and styling rules. Use when creating or modifying custom blocks for the WordPress theme.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Structure obligatoire d'un bloc | Règles fondamentales | 1. block.json obligatoire | 2. Attributs typés avec défauts # WordPress Block Development Contract"
+    },
+    {
+      "name": "wp-build-tools",
+      "triggers": [
+        "lancer le build",
+        "npm run build",
+        "erreur eslint",
+        "erreur stylelint",
+        "configurer le linter",
+        "qualité du code",
+        "vérifier le code",
+        "wordpress scripts",
+        "phpcs"
+      ],
+      "description": "This skill enforces build tooling, linting, and quality checks for WordPress theme development. Use when setting up project, configuring linters, or running quality checks.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Stack recommandée | 1. @wordpress/scripts | 2. Stylelint | 3. ESLint # WordPress Build Tools & Quality"
+    },
+    {
+      "name": "wp-clean-css",
+      "triggers": [
+        "écrire du css",
+        "modifier le style",
+        "css propre",
+        "@layer",
+        "theme.json",
+        "tokens css",
+        "important interdit",
+        "architecture css",
+        "variables css"
+      ],
+      "description": "This skill enforces CSS architecture with @layer, prohibits !important, and validates theme.json token usage. Use when writing, reviewing, or modifying any CSS file in the WordPress theme.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Règles NON NÉGOCIABLES | 1. Interdiction de  | 2. Spécificité maximale : 2 niveaux | 3. Tokens theme.json obligatoires # WordPress Clean CSS Architecture"
+    },
+    {
+      "name": "wp-clem-hostinger-upload-image",
+      "triggers": [
+        "upload une image",
+        "ajouter une image au site",
+        "envoyer une photo",
+        "médiathèque wordpress",
+        "image sur le site clem",
+        "téléverser image"
+      ],
+      "description": "Upload images to clemencefouquet.fr WordPress on Hostinger VPS via Docker. Specific to wordpress-clemence container. Use when user asks to upload images to Clémence's site.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Required Input | Complete Workflow | 1. Upload to Server | 2. Copy to WordPress with Correct Permissions | 3. Verify Upload # WordPress Image Upload - Clemencefouquet.fr (Hostinger VPS)"
+    },
+    {
+      "name": "wp-footer-contract",
+      "triggers": [
+        "modifier le footer",
+        "pied de page",
+        "mentions légales",
+        "contact footer",
+        "liens footer",
+        "l-footer",
+        "footer wordpress",
+        "bas de page"
+      ],
+      "description": "This skill enforces footer structure and styling rules for clemencefouquet.fr. Use when creating or modifying the site footer, including links, contact info, and legal mentions.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Structure HTML obligatoire | Classes CSS | Layout principal | Règles CSS # WordPress Footer Contract"
+    },
+    {
+      "name": "wp-header-contract",
+      "triggers": [
+        "modifier le header",
+        "changer le menu",
+        "navigation du site",
+        "menu mobile",
+        "logo du site",
+        "l-header",
+        "header wordpress",
+        "glassmorphisme header",
+        "menu responsive"
+      ],
+      "description": "This skill enforces header structure, accessibility, and styling rules for clemencefouquet.fr. Use when creating or modifying the site header, navigation, logo, or mobile menu.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Structure HTML obligatoire | Classes CSS | Layout principal | États # WordPress Header Contract"
+    },
+    {
+      "name": "wp-pattern-contract",
+      "triggers": [
+        "créer un pattern",
+        "nouveau pattern gutenberg",
+        "pattern wordpress",
+        "block pattern",
+        "composition de blocs",
+        "section réutilisable",
+        "template de blocs",
+        "ajouter un pattern",
+        "modifier le pattern"
+      ],
+      "description": "This skill enforces Gutenberg block pattern development rules. Use when creating or modifying patterns that compose multiple blocks into reusable sections.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Règle fondamentale | Structure d'un pattern | Fichier PHP | Header du pattern (OBLIGATOIRE) # WordPress Pattern Development Contract"
+    },
+    {
+      "name": "wp-remote-architecture",
+      "triggers": [
+        "architecture du site",
+        "structure des pages",
+        "hiérarchie des templates",
+        "pages en prod",
+        "navigation du site clem",
+        "template wordpress",
+        "config theme.json"
+      ],
+      "description": "This skill describes the remote WordPress site structure, page hierarchy, templates, and global configuration. Use when referencing site architecture, page structure, or templates on production.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Structure des pages | Pages actuelles | Créer une nouvelle page | Assigner un template # WordPress Site Architecture"
+    },
+    {
+      "name": "wp-sync-workflows",
+      "triggers": [
+        "déployer sur le serveur",
+        "mettre en prod",
+        "récupérer les modifs de clem",
+        "sync git vps",
+        "push en production",
+        "pull depuis prod",
+        "synchroniser le site",
+        "synchroniser le thème",
+        "sync thème",
+        "sync theme",
+        "laragon vers vps",
+        "deploy wordpress"
+      ],
+      "description": "This skill manages sync workflows between local development (Laragon), Git, and production VPS. Use for commits, deployments, and syncing content changes made by Clémence via Gutenberg.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Variables d'environnement | Workflow 1 : Développement Local → Production | Flux | Étape 1 : Développer dans Laragon # WordPress Git Workflow"
+    },
+    {
+      "name": "wp-wpcli-remote",
+      "triggers": [
+        "commande wp-cli",
+        "modifier une page en prod",
+        "changer le menu",
+        "options wordpress",
+        "maintenance wp",
+        "wp cli docker",
+        "modifier le contenu distant"
+      ],
+      "description": "This skill provides WP-CLI commands for remote WordPress management on VPS. Use when modifying content, pages, menus, options, or running maintenance tasks directly on production.",
+      "source": "project:Site internet Clem",
+      "content_summary": "Objectif | Pattern d'exécution | Commandes fréquentes | Pages et Posts | Menus # WP-CLI Remote Commands"
     }
   ]
 }

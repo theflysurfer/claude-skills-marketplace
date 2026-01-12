@@ -1,0 +1,466 @@
+{
+  "version": "1.0.0",
+  "description": "Centralized MCP (Model Context Protocol) server registry",
+  "last_updated": "2025-12-20",
+  "credential_manager": {
+    "type": "wcm",
+    "description": "Windows Credential Manager for secure API key storage",
+    "prefix": "MCP_",
+    "loader_script": "~/.claude/scripts/load-secrets-wcm.sh",
+    "credentials": {
+      "NOTION_API_TOKEN": {
+        "wcm_name": "MCP_NOTION_API_TOKEN",
+        "env_var": "NOTION_API_TOKEN",
+        "description": "Notion API integration token",
+        "how_to_get": "https://www.notion.so/my-integrations"
+      },
+      "NOTION_PRO_API_TOKEN": {
+        "wcm_name": "MCP_NOTION_PRO_API_TOKEN",
+        "env_var": "NOTION_PRO_API_TOKEN",
+        "description": "Notion Pro API token (for notion-pro MCP)",
+        "how_to_get": "https://www.notion.so/my-integrations"
+      },
+      "GITHUB_PERSONAL_ACCESS_TOKEN2": {
+        "wcm_name": "MCP_GITHUB_PERSONAL_ACCESS_TOKEN2",
+        "env_var": "GITHUB_PERSONAL_ACCESS_TOKEN2",
+        "description": "GitHub Personal Access Token",
+        "how_to_get": "https://github.com/settings/tokens"
+      },
+      "BRAVE_API_KEY": {
+        "wcm_name": "MCP_BRAVE_API_KEY",
+        "env_var": "BRAVE_API_KEY",
+        "description": "Brave Search API Key",
+        "how_to_get": "https://brave.com/search/api/"
+      },
+      "JINA_API_KEY": {
+        "wcm_name": "MCP_JINA_API_KEY",
+        "env_var": "JINA_API_KEY",
+        "description": "Jina AI API Key for embeddings",
+        "how_to_get": "https://jina.ai/"
+      },
+      "CONTEXT_7_API_KEY": {
+        "wcm_name": "MCP_CONTEXT_7_API_KEY",
+        "env_var": "CONTEXT_7_API_KEY",
+        "description": "Context7 API Key",
+        "how_to_get": "https://context7.ai/"
+      },
+      "ANTHROPIC_API_KEY": {
+        "wcm_name": "MCP_ANTHROPIC_API_KEY",
+        "env_var": "ANTHROPIC_API_KEY",
+        "description": "Anthropic API Key (for AI MCPs)",
+        "how_to_get": "https://console.anthropic.com/"
+      },
+      "GOOGLE_API_KEY": {
+        "wcm_name": "MCP_GOOGLE_API_KEY",
+        "env_var": "GOOGLE_API_KEY",
+        "description": "Google API Key (for Gmail, etc)",
+        "how_to_get": "https://console.cloud.google.com/apis/credentials"
+      }
+    }
+  },
+  "mcps": {
+    "excel": {
+      "name": "excel",
+      "category": "office",
+      "description": "Excel spreadsheet manipulation",
+      "package": "@anthropic/mcp-excel",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-excel"]
+      },
+      "env_required": [],
+      "triggers": ["excel", "spreadsheet", "xlsx", "tableur", "créer fichier excel"]
+    },
+    "excel-win32com": {
+      "name": "excel-win32com",
+      "category": "office",
+      "description": "Excel via Win32COM (Windows native)",
+      "package": "mcp-server-excel",
+      "install_type": "uvx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "uvx", "mcp-server-excel"]
+      },
+      "env_required": [],
+      "triggers": ["excel win32", "excel natif", "excel windows"]
+    },
+    "word": {
+      "name": "word",
+      "category": "office",
+      "description": "Word document manipulation",
+      "package": "@anthropic/mcp-word",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-word"]
+      },
+      "env_required": [],
+      "triggers": ["word", "docx", "document word", "créer document word"]
+    },
+    "word-uvx": {
+      "name": "word-uvx",
+      "category": "office",
+      "description": "Word via python-docx",
+      "package": "mcp-server-word",
+      "install_type": "uvx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "uvx", "mcp-server-word"]
+      },
+      "env_required": [],
+      "triggers": ["word python", "python-docx"]
+    },
+    "powerpoint": {
+      "name": "powerpoint",
+      "category": "office",
+      "description": "PowerPoint presentation manipulation",
+      "package": "@anthropic/mcp-powerpoint",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-powerpoint"]
+      },
+      "env_required": [],
+      "triggers": ["powerpoint", "pptx", "présentation", "slides", "créer présentation"]
+    },
+    "powerpoint-uvx": {
+      "name": "powerpoint-uvx",
+      "category": "office",
+      "description": "PowerPoint via python-pptx",
+      "package": "mcp-server-pptx",
+      "install_type": "uvx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "uvx", "mcp-server-pptx"]
+      },
+      "env_required": [],
+      "triggers": ["powerpoint python", "python-pptx"]
+    },
+    "pdf-reader": {
+      "name": "pdf-reader",
+      "category": "office",
+      "description": "PDF text extraction",
+      "package": "@anthropic/mcp-pdf-reader",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-pdf-reader"]
+      },
+      "env_required": [],
+      "triggers": ["pdf", "lire pdf", "extraire pdf", "read pdf"]
+    },
+    "playwright": {
+      "name": "playwright",
+      "category": "browser",
+      "description": "Browser automation with Fast Playwright (70-90% token reduction)",
+      "package": "@tontoko/fast-playwright-mcp",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@tontoko/fast-playwright-mcp@latest", "--headless"]
+      },
+      "env_required": [],
+      "triggers": ["playwright", "browser", "navigateur", "web scraping", "automation web"],
+      "recommended": true
+    },
+    "playwright-vanilla": {
+      "name": "playwright-vanilla",
+      "category": "browser",
+      "description": "Browser automation (vanilla Microsoft version)",
+      "package": "@playwright/mcp@latest",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@playwright/mcp@latest"]
+      },
+      "env_required": [],
+      "triggers": ["playwright vanilla", "playwright microsoft"]
+    },
+    "chrome-devtools": {
+      "name": "chrome-devtools",
+      "category": "browser",
+      "description": "Chrome DevTools Protocol integration",
+      "package": "@anthropic/mcp-chrome-devtools",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-chrome-devtools"]
+      },
+      "env_required": [],
+      "triggers": ["chrome devtools", "devtools", "debug chrome"]
+    },
+    "brave": {
+      "name": "brave",
+      "category": "browser",
+      "description": "Brave Search API",
+      "package": "@anthropic/mcp-brave",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-brave"],
+        "env": {
+          "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+        }
+      },
+      "env_required": ["BRAVE_API_KEY"],
+      "wcm_keys": ["MCP_BRAVE_API_KEY"],
+      "triggers": ["brave search", "recherche brave"]
+    },
+    "notion": {
+      "name": "notion",
+      "category": "apis",
+      "description": "Notion workspace integration",
+      "package": "@suekou/mcp-notion-server",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@suekou/mcp-notion-server"],
+        "env": {
+          "NOTION_API_TOKEN": "${NOTION_API_TOKEN}",
+          "NOTION_MARKDOWN_CONVERSION": "true"
+        }
+      },
+      "env_required": ["NOTION_API_TOKEN"],
+      "wcm_keys": ["MCP_NOTION_API_TOKEN"],
+      "triggers": ["notion", "base notion", "workspace notion"],
+      "recommended": true
+    },
+    "notion-pro": {
+      "name": "notion-pro",
+      "category": "apis",
+      "description": "Advanced Notion features via uvx",
+      "package": "notion-mcp",
+      "install_type": "uvx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "uvx", "notion-mcp"],
+        "env": {
+          "NOTION_API_TOKEN": "${NOTION_API_TOKEN}"
+        }
+      },
+      "env_required": ["NOTION_API_TOKEN"],
+      "triggers": ["notion pro", "notion avancé"]
+    },
+    "github": {
+      "name": "github",
+      "category": "apis",
+      "description": "GitHub API integration",
+      "package": "@anthropic/mcp-github",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-github"],
+        "env": {
+          "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+        }
+      },
+      "env_required": ["GITHUB_PERSONAL_ACCESS_TOKEN2"],
+      "wcm_keys": ["MCP_GITHUB_PERSONAL_ACCESS_TOKEN2"],
+      "triggers": ["github", "github api", "repos github"],
+      "recommended": true
+    },
+    "gmail": {
+      "name": "gmail",
+      "category": "apis",
+      "description": "Gmail email integration",
+      "package": "@anthropic/mcp-gmail",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-gmail"],
+        "env": {
+          "GMAIL_CREDENTIALS": "${GMAIL_CREDENTIALS}"
+        }
+      },
+      "env_required": ["GMAIL_CREDENTIALS"],
+      "triggers": ["gmail", "email gmail", "mail google"]
+    },
+    "outlook": {
+      "name": "outlook",
+      "category": "apis",
+      "description": "Outlook email integration",
+      "package": "@anthropic/mcp-outlook",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-outlook"],
+        "env": {
+          "OUTLOOK_CREDENTIALS": "${OUTLOOK_CREDENTIALS}"
+        }
+      },
+      "env_required": ["OUTLOOK_CREDENTIALS"],
+      "triggers": ["outlook", "email outlook", "mail microsoft"]
+    },
+    "codex-cli": {
+      "name": "codex-cli",
+      "category": "ai",
+      "description": "OpenAI Codex CLI integration",
+      "package": "@anthropic/mcp-codex",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-codex"]
+      },
+      "env_required": [],
+      "triggers": ["codex", "openai codex", "code generation"]
+    },
+    "context7": {
+      "name": "context7",
+      "category": "ai",
+      "description": "Context management for AI",
+      "package": "@anthropic/mcp-context7",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-context7"]
+      },
+      "env_required": [],
+      "triggers": ["context7", "context management"]
+    },
+    "taskmaster": {
+      "name": "taskmaster",
+      "category": "ai",
+      "description": "Task orchestration for AI",
+      "package": "@anthropic/mcp-taskmaster",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-taskmaster"]
+      },
+      "env_required": [],
+      "triggers": ["taskmaster", "task orchestration", "tasks ai"]
+    },
+    "serena": {
+      "name": "serena",
+      "category": "ai",
+      "description": "Serena AI assistant",
+      "package": "serena-mcp",
+      "install_type": "uvx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "uvx", "serena-mcp"]
+      },
+      "env_required": [],
+      "triggers": ["serena", "serena ai"]
+    },
+    "basic-memory": {
+      "name": "basic-memory",
+      "category": "utilities",
+      "description": "Persistent memory storage",
+      "package": "@anthropic/mcp-memory",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-memory"]
+      },
+      "env_required": [],
+      "triggers": ["memory", "mémoire", "persistent memory"]
+    },
+    "desktop-commander": {
+      "name": "desktop-commander",
+      "category": "utilities",
+      "description": "Desktop automation",
+      "package": "@anthropic/mcp-desktop",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-desktop"]
+      },
+      "env_required": [],
+      "triggers": ["desktop", "desktop automation", "contrôle bureau"]
+    },
+    "jina": {
+      "name": "jina",
+      "category": "utilities",
+      "description": "Jina AI embeddings",
+      "package": "@anthropic/mcp-jina",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-jina"]
+      },
+      "env_required": [],
+      "triggers": ["jina", "embeddings", "vector search"]
+    },
+    "puremd": {
+      "name": "puremd",
+      "category": "utilities",
+      "description": "Markdown processing",
+      "package": "@anthropic/mcp-puremd",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-puremd"]
+      },
+      "env_required": [],
+      "triggers": ["markdown", "puremd", "md processing"]
+    },
+    "veyrax": {
+      "name": "veyrax",
+      "category": "utilities",
+      "description": "Veyrax integration",
+      "package": "veyrax-mcp",
+      "install_type": "uvx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "uvx", "veyrax-mcp"]
+      },
+      "env_required": [],
+      "triggers": ["veyrax"]
+    },
+    "webmind": {
+      "name": "webmind",
+      "category": "utilities",
+      "description": "Web intelligence",
+      "package": "webmind-mcp",
+      "install_type": "uvx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "uvx", "webmind-mcp"]
+      },
+      "env_required": [],
+      "triggers": ["webmind", "web intelligence"]
+    },
+    "youtube-info": {
+      "name": "youtube-info",
+      "category": "utilities",
+      "description": "YouTube video metadata",
+      "package": "@anthropic/mcp-youtube",
+      "install_type": "npx",
+      "config": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "@anthropic/mcp-youtube"]
+      },
+      "env_required": [],
+      "triggers": ["youtube", "video youtube", "youtube info"]
+    }
+  },
+  "categories": {
+    "office": {
+      "name": "Office",
+      "description": "Microsoft Office integration (Excel, Word, PowerPoint, PDF)",
+      "icon": "📊"
+    },
+    "browser": {
+      "name": "Browser",
+      "description": "Browser automation and web scraping",
+      "icon": "🌐"
+    },
+    "apis": {
+      "name": "APIs",
+      "description": "External service integrations (Notion, GitHub, Gmail)",
+      "icon": "🔌"
+    },
+    "ai": {
+      "name": "AI/LLM",
+      "description": "AI and LLM integrations",
+      "icon": "🤖"
+    },
+    "utilities": {
+      "name": "Utilities",
+      "description": "General purpose utilities",
+      "icon": "🛠️"
+    }
+  }
+}

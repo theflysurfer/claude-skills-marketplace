@@ -1,0 +1,164 @@
+{
+  "version": "1.1.0",
+  "description": "Registre centralisé des hooks Claude Code",
+  "external_sources": {
+    "global": "~/.claude/settings.json",
+    "projects": "auto-discovered from projects-registry.json",
+    "inventory": "configs/hooks-inventory.json"
+  },
+  "categories": {
+    "display": {
+      "name": "Affichage",
+      "description": "Hooks d'affichage et UX",
+      "icon": "monitor"
+    },
+    "routing": {
+      "name": "Routing",
+      "description": "Routing et suggestions de skills",
+      "icon": "git-branch"
+    },
+    "tracking": {
+      "name": "Tracking",
+      "description": "Suivi des invocations et analytics",
+      "icon": "activity"
+    },
+    "security": {
+      "name": "Sécurité",
+      "description": "Validation et protection des fichiers",
+      "icon": "shield"
+    },
+    "cleanup": {
+      "name": "Nettoyage",
+      "description": "Nettoyage et fin de session",
+      "icon": "trash-2"
+    },
+    "logging": {
+      "name": "Logging",
+      "description": "Audit et logs des actions",
+      "icon": "file-text"
+    }
+  },
+  "hooks": {
+    "session-start-banner": {
+      "name": "Session Start Banner",
+      "event": "SessionStart",
+      "description": "Affiche une bannière avec le nom du projet au démarrage",
+      "script": "scripts/session-start-banner.py",
+      "category": "display",
+      "scope": "global",
+      "timeout": 5,
+      "template": false
+    },
+    "fast-skill-router": {
+      "name": "Fast Skill Router",
+      "event": "UserPromptSubmit",
+      "description": "Route les prompts vers les skills appropriées (~3ms)",
+      "script": "scripts/fast-skill-router.js",
+      "category": "routing",
+      "scope": "global",
+      "timeout": 5,
+      "template": false,
+      "dependencies": ["keyword-index.json"]
+    },
+    "track-skill-invocation": {
+      "name": "Track Skill Invocation",
+      "event": "PostToolUse",
+      "matcher": "Skill",
+      "description": "Enregistre les invocations de skills pour analytics",
+      "script": "scripts/track-skill-invocation.py",
+      "category": "tracking",
+      "scope": "global",
+      "timeout": 10,
+      "template": false
+    },
+    "session-end-cleanup": {
+      "name": "Session End Cleanup",
+      "event": "SessionEnd",
+      "description": "Nettoie les fichiers temporaires à la fin de session",
+      "script": "scripts/session-end-delete-reserved.py",
+      "category": "cleanup",
+      "scope": "global",
+      "timeout": 30,
+      "template": false
+    },
+    "idle-queue-check": {
+      "name": "Idle Queue Check",
+      "event": "SessionEnd",
+      "description": "Vérifie les jobs en attente avant fermeture",
+      "command": "python -m idle_queue.hooks.check_pending_jobs",
+      "category": "tracking",
+      "scope": "global",
+      "timeout": 5,
+      "template": false,
+      "external": true
+    },
+    "pre-write-validate": {
+      "name": "Pre-Write Validation",
+      "event": "PreToolUse",
+      "matcher": "Write|Edit",
+      "description": "Valide les écritures (paths interdits, fichiers critiques)",
+      "script": "hooks/templates/pre-write-validate.py",
+      "category": "security",
+      "scope": "template",
+      "timeout": 5,
+      "template": true,
+      "config": {
+        "blocked_paths": [".env", "credentials.json", "*.key"],
+        "protected_dirs": ["node_modules", ".git"]
+      }
+    },
+    "audit-logging": {
+      "name": "Audit Logging",
+      "event": "PostToolUse",
+      "matcher": "*",
+      "description": "Log toutes les actions pour audit",
+      "script": "hooks/templates/audit-logging.py",
+      "category": "logging",
+      "scope": "template",
+      "timeout": 5,
+      "template": true,
+      "config": {
+        "log_file": "~/.claude/logs/audit.log",
+        "log_level": "INFO"
+      }
+    },
+    "session-summary": {
+      "name": "Session Summary",
+      "event": "SessionEnd",
+      "description": "Génère un résumé de la session (fichiers modifiés, etc.)",
+      "script": "hooks/templates/session-summary.py",
+      "category": "logging",
+      "scope": "template",
+      "timeout": 10,
+      "template": true
+    },
+    "protect-claude-process": {
+      "name": "Protect Claude Process",
+      "event": "PreToolUse",
+      "matcher": "Bash",
+      "description": "Bloque les commandes qui tueraient les instances Claude Code",
+      "script": "hooks/templates/protect-claude-process.py",
+      "category": "security",
+      "scope": "global",
+      "timeout": 3,
+      "template": false
+    }
+  },
+  "deployment": {
+    "global_hooks": [
+      "session-start-banner",
+      "fast-skill-router",
+      "track-skill-invocation",
+      "session-end-cleanup",
+      "protect-claude-process"
+    ],
+    "optional_hooks": [
+      "idle-queue-check"
+    ],
+    "templates": [
+      "pre-write-validate",
+      "audit-logging",
+      "session-summary"
+    ]
+  }
+}
