@@ -11,8 +11,8 @@
     "test:verify-100": "npm run test:coverage && node -e \"const cov = require('./coverage/coverage-summary.json'); const pct = cov.total.lines.pct; if (pct < 100) { console.error('❌ Coverage is ' + pct + '%, expected 100%'); process.exit(1); } else { console.log('✅ 100% coverage achieved!'); }\""
   },
   "devDependencies": {
-    "jest": "^29.7.0",
-    "@types/jest": "^29.5.11"
+    "@types/jest": "^29.5.11",
+    "jest": "^29.7.0"
   },
   "jest": {
     "testEnvironment": "node",
@@ -51,6 +51,15 @@
     ],
     "testTimeout": 10000,
     "maxWorkers": 1,
-    "setupFilesAfterEnv": ["<rootDir>/scripts/__tests__/setup.js"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/scripts/__tests__/setup.js"
+    ]
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.2",
+    "fast-glob": "^3.3.3",
+    "glob": "^13.0.0",
+    "js-yaml": "^4.1.1"
   }
 }
