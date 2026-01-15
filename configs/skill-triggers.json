@@ -322,6 +322,22 @@
       "content_summary": "Exécution | Ce que fait cette commande | Résultat # Scan Project Roots"
     },
     {
+      "name": "julien-cmd-routing-stats",
+      "triggers": [
+        "routing stats",
+        "routing statistics",
+        "show routing stats",
+        "correlation stats",
+        "routing accuracy",
+        "skill routing stats",
+        "analyse routing",
+        "statistiques routing",
+        "router performance"
+      ],
+      "description": "Display routing correlation statistics - how well the skill router predicts actual skill usage",
+      "content_summary": "Action | What It Shows | Verbose Output | Options | Example # Routing Statistics"
+    },
+    {
       "name": "julien-cmd-servers",
       "triggers": [
         "server status",
@@ -494,6 +510,34 @@
       "content_summary": "Server Info | Observability | When to Use This Skill | Common Scenarios | 1. Unrelated Histories # Git VPS Sync - Hostinger srv759970"
     },
     {
+      "name": "julien-infra-google-cloud-setup",
+      "triggers": [
+        "google cloud",
+        "google api",
+        "oauth",
+        "credentials.json",
+        "google console",
+        "gcp",
+        "créer projet google",
+        "configurer google api",
+        "setup oauth google",
+        "créer credentials google",
+        "activer api google",
+        "télécharger credentials",
+        "create google cloud project",
+        "setup google oauth",
+        "configure google api",
+        "enable google api",
+        "download credentials",
+        "j'ai besoin d'accéder à google calendar",
+        "comment créer un projet google cloud",
+        "google api authentication",
+        "token google expiré"
+      ],
+      "description": "Guide automatisé pour créer un projet Google Cloud de bout en bout avec OAuth. Inclut création projet, activation APIs (Calendar, Drive, Sheets, YouTube), configuration OAuth consent screen, credentials, test users et publication. Use when setting up Google API access, creating OAuth credentials, or configuring Google Cloud projects.\n",
+      "content_summary": "When to Use | Observability | Prerequisites | Execution Steps | Step 1: Création du projet # Google Cloud Project Setup"
+    },
+    {
       "name": "julien-infra-hostinger-core",
       "triggers": [
         "ssh hostinger",
@@ -554,12 +598,30 @@
         "reverse proxy",
         "ssl certificate",
         "certbot",
+        "502 error",
+        "504 error",
         "deploy hostinger",
         "deploy incluzact",
-        "502 error",
-        "504 error"
+        "deploy sur le vps",
+        "deployer sur hostinger",
+        "mettre en ligne hostinger",
+        "upload hostinger",
+        "deploy static site",
+        "deploy slidev",
+        "deploy astro",
+        "deploy vite",
+        "site statique",
+        "déployer site statique",
+        "héberger site",
+        "mettre en ligne slides",
+        "servir fichiers statiques",
+        "nginx static files",
+        "ipv6 nginx",
+        "certbot unauthorized",
+        "certbot 401",
+        "ssl ipv6"
       ],
-      "description": "Web infrastructure for Hostinger VPS - Nginx reverse proxy, SSL/Let's Encrypt, configuration audit, and application deployment (INCLUZ'HACT). Use for site configuration, SSL setup, 502/504 errors, or deployments.",
+      "description": "Web infrastructure for Hostinger VPS - Nginx, SSL/Let's Encrypt, static site deployment (Slidev/Astro/Vite), reverse proxy, and 502/504 troubleshooting.",
       "content_summary": "Server Info | Observability | 1. Nginx Management | Add New Site | SSL with Let's Encrypt # Hostinger Web Infrastructure"
     },
     {
@@ -576,6 +638,20 @@
       ],
       "description": "Complete management for Jokers Hockey website - deployment, build checks, database migrations (Drizzle ORM), and PM2 process management. Use for any Jokers site operation.",
       "content_summary": "Quick Reference | Observability | 1. Deployment | Quick Deploy (Git) | Pre-Deployment Checks # Jokers Hockey - Infrastructure Management"
+    },
+    {
+      "name": "julien-maintenance-claude-json",
+      "triggers": [
+        "claude.json trop gros",
+        "nettoyer claude.json",
+        "cleanup claude.json",
+        "claude.json too large",
+        "clean claude config",
+        "maintenance claude",
+        "file exceeds maximum tokens"
+      ],
+      "description": "Clean ~/.claude.json when it becomes too large (>25K tokens). Use when Claude cannot read the file, user mentions \"claude.json trop gros\", \"nettoyer claude.json\", or \"cleanup claude.json\".",
+      "content_summary": "When to Use | Observability | Workflow | Step 1: Diagnose | Step 2: Clean (Interactive) # Claude.json Maintenance"
     },
     {
       "name": "julien-mcp-installer",
@@ -625,6 +701,111 @@
       ],
       "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation.",
       "content_summary": "When to Use | Observability | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity # Subtitle Translation Skill"
+    },
+    {
+      "name": "julien-notion-debug-corrupted-database",
+      "triggers": [
+        "database corrompue",
+        "base de données cassée",
+        "notion erreur",
+        "réparer database",
+        "debug database notion",
+        "entrée ne s'ouvre pas",
+        "queryCollection échoue",
+        "corrupted database",
+        "broken database",
+        "notion error",
+        "oops something went wrong",
+        "can't open database entry",
+        "queryCollection fails",
+        "MCP validation_error",
+        "database 400 error",
+        "fix notion database",
+        "debug notion collection"
+      ],
+      "description": "Diagnoses and repairs corrupted Notion databases. Use when database entries show \"Oops! Something went wrong\", queryCollection returns 400, or MCP validation errors occur.",
+      "content_summary": "Observability | Description | Symptômes de Corruption | 1. Erreur \"Oops! Something went wrong\" | 2. Erreur MCP/API \"validation_error\" # Notion Database Corruption Debugger"
+    },
+    {
+      "name": "julien-notion-github-enricher",
+      "triggers": [
+        "enrich github",
+        "enrichir github",
+        "github metadata",
+        "sync github",
+        "update github",
+        "github info",
+        "refresh github",
+        "rafraîchir github",
+        "outdated repos",
+        "repos obsolètes",
+        "find videos for repo",
+        "find articles for repo"
+      ],
+      "description": "Enrichit une page Github [DB] avec métadonnées GitHub API, README, vidéos YouTube et articles liés. Crée des entrées dans Youtube [DB] et Ressources Web [DB] avec relations bidirectionnelles. Gère le tracking de fraîcheur (Last Sync, Sync Status).\n",
+      "content_summary": "Observability | Databases impliquées | Données récupérées | Depuis GitHub API | Depuis README.md # GitHub Enricher pour Notion (v3)"
+    },
+    {
+      "name": "julien-notion-template-apply",
+      "triggers": [
+        "apply template",
+        "appliquer template",
+        "générer contenu",
+        "generate content",
+        "use template",
+        "utiliser template",
+        "create from template",
+        "créer depuis template"
+      ],
+      "description": "Applique un template Notion sur une page, générant le contenu dynamique via LLM. Parse les blocs {{ llm_generate }} et {{ inline_database }}. Use when creating pages from templates or regenerating template content.\n",
+      "content_summary": "Observability | Prerequisites | Execution Steps | Step 1: Identifier la page cible et le template | Step 2: Fetch le template depuis Templates [DB] # Apply Notion Template"
+    },
+    {
+      "name": "julien-notion-template-audit",
+      "triggers": [
+        "audit database",
+        "audit base",
+        "template audit",
+        "audit templates",
+        "conformity report",
+        "rapport conformité",
+        "database health",
+        "santé base",
+        "orphan pages",
+        "pages orphelines"
+      ],
+      "description": "Audit de conformité d'une database Notion entière. Calcule le % de pages conformes, identifie les pages orphelines. Use when auditing databases or planning template migrations.\n",
+      "content_summary": "Observability | Prerequisites | Execution Steps | Step 1: Identifier la database et les templates applicables | Step 2: Analyser chaque page # Audit Notion Templates"
+    },
+    {
+      "name": "julien-notion-template-validate",
+      "triggers": [
+        "validate template",
+        "valider template",
+        "check conformity",
+        "vérifier conformité",
+        "template compliance",
+        "conformité template",
+        "is page valid",
+        "page conforme"
+      ],
+      "description": "Valide la conformité d'une page Notion par rapport à son template. Vérifie les properties requises et la structure du contenu. Use when checking template compliance or auditing pages.\n",
+      "content_summary": "Observability | Prerequisites | Execution Steps | Step 1: Identifier la page et son template | Step 2: Valider les properties # Validate Notion Template"
+    },
+    {
+      "name": "julien-notion-todoDB-delete-done",
+      "triggers": [
+        "supprimer les tâches terminées",
+        "delete done todos",
+        "clean up todos",
+        "nettoyer les todos",
+        "purger les tâches faites",
+        "supprimer done",
+        "archiver les tâches terminées",
+        "vider les todos complétés"
+      ],
+      "description": "Deletes all completed tasks (Done=true) from Notion Todos [DB]. Use when user wants to clean up finished todos, archive completed tasks, or purge done items from the todo database.",
+      "content_summary": "Prérequis | Exécution | Options | Exemples | Skill Chaining # Delete Done Todos from Notion"
     },
     {
       "name": "julien-ref-ahk-v1",
@@ -693,42 +874,6 @@
       "content_summary": "STRUCTURE ET ENCODAGE | Observability | Encodage et Affichage | En-tête Standard | GESTION DES CHEMINS # Best Practices - Scripts Batch (.bat)"
     },
     {
-      "name": "julien-ref-doc-production",
-      "triggers": [
-        "comment documenter mon projet",
-        "aide-moi à structurer ma doc",
-        "je veux écrire la doc",
-        "modèle de document",
-        "écrire un rapport",
-        "how to document my project",
-        "help me write documentation",
-        "project documentation guide",
-        "create documentation",
-        "incident report",
-        "session report",
-        "guide template"
-      ],
-      "description": "Documentation production methodology with DRY principles. Covers 8 document types (GUIDE, INCIDENT, SESSION, AUDIT, RECHERCHE, etc.), naming conventions, and YAML metadata.",
-      "content_summary": "Principles | Observability | Structure | Naming Conventions | EVOLVING Docs (living docs) # Documentation Production Methodology"
-    },
-    {
-      "name": "julien-ref-doc-review",
-      "triggers": [
-        "relire ce document",
-        "annoter un fichier",
-        "marquer ce qui est à corriger",
-        "trouver les TODO",
-        "review this document",
-        "proofread this file",
-        "check my documentation",
-        "flag issues in documentation",
-        "document review",
-        "annotation tags"
-      ],
-      "description": "Simplified document review methodology with 4 core tags (@FIX, @TODO, @VERIFY, @OK) and [MACRO] flag for systemic impact. Use for annotating and reviewing documentation.",
-      "content_summary": "Overview | Observability | Tag System | CORE Tags (4 essential) | SPECIAL Tags (particular use) # Document Review Methodology"
-    },
-    {
       "name": "julien-ref-notion-markdown",
       "triggers": [
         "importer markdown dans notion",
@@ -789,7 +934,7 @@
         "skill development"
       ],
       "description": "Create or update Claude Code skills. Use when: user wants to create a skill, add a new skill, update skill, or mentions SKILL.md. Includes Skill Chaining documentation.",
-      "content_summary": "Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure | Naming & Description # Skill Creator"
+      "content_summary": "Observability | Core Principles | Concise is Key | Progressive Disclosure (3 Levels) | Skill Structure # Skill Creator"
     },
     {
       "name": "julien-skill-help",
@@ -896,6 +1041,24 @@
       ],
       "description": "Index of available skills with triggers. Use FIRST when starting any task to check which skill might help.",
       "content_summary": "Development Tools | Observability | Workflow | Anthropic Office (Documents) | Anthropic Web/Design # Skill Router - Index des Skills Disponibles"
+    },
+    {
+      "name": "julien-wordpress-structure-validator",
+      "triggers": [
+        "wordpress validation",
+        "validate wordpress",
+        "wordpress audit",
+        "wordpress fse",
+        "theme.json validation",
+        "wordpress templates",
+        "wp structure",
+        "updraftplus",
+        "wordpress backup",
+        "valider wordpress",
+        "audit wordpress"
+      ],
+      "description": "This skill validates WordPress FSE (Full Site Editing) theme structure including templates hierarchy, page associations, theme.json configuration, block styles, featured images usage, file permissions, and UpdraftPlus backup configuration. Use when auditing a WordPress site, after creating/modifying templates, before production deployment, or when troubleshooting backup issues.",
+      "content_summary": "When to Use This Skill | Observability | What This Skill Validates | Validation Workflow | Step 1: Template Validation # WordPress Structure Validator"
     },
     {
       "name": "julien-workflow-advice-codex",

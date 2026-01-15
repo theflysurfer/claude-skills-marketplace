@@ -49,8 +49,6 @@
     "julien-ref-ahk-v2",
     "julien-ref-astro-install",
     "julien-ref-batch",
-    "julien-ref-doc-production",
-    "julien-ref-doc-review",
     "julien-ref-notion-markdown",
     "julien-ref-powershell",
     "anthropic-office-pdf",
@@ -58,7 +56,17 @@
     "anthropic-office-docx",
     "anthropic-office-pptx",
     "anthropic-dev-tools-mcp-builder",
-    "julien-mcp-installer"
+    "julien-mcp-installer",
+    "julien-infra-google-cloud-setup",
+    "julien-infra-hostinger-web",
+    "julien-infra-hostinger-core",
+    "julien-infra-hostinger-docker",
+    "julien-infra-hostinger-database",
+    "julien-infra-hostinger-security",
+    "julien-notion-template-apply",
+    "julien-notion-template-validate",
+    "julien-notion-template-audit",
+    "julien-notion-github-enricher"
   ],
   "scripts_to_sync": [
     "generate-triggers.py",
