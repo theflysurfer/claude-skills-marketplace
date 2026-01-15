@@ -10,10 +10,17 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-// Import debug logger
+// Import debug logger - use dynamic path resolution for both marketplace and deployed locations
 let logDebug, logHookStartOld, logHookEndOld;
 try {
-    const debugLogger = require('../lib/debug-logger.js');
+    // Try ./lib first (deployed to ~/.claude/scripts/)
+    let debugLogger;
+    try {
+        debugLogger = require('./lib/debug-logger.js');
+    } catch {
+        // Fallback to ../lib (marketplace scripts/core/)
+        debugLogger = require('../lib/debug-logger.js');
+    }
     logDebug = debugLogger.logDebug;
     logHookStartOld = debugLogger.logHookStart;
     logHookEndOld = debugLogger.logHookEnd;
@@ -24,10 +31,14 @@ try {
     logHookEndOld = () => {};
 }
 
-// Import unified logger (NEW)
+// Import unified logger (NEW) - same dynamic path resolution
 let unifiedLogger;
 try {
-    unifiedLogger = require('../lib/unified-logger.js');
+    try {
+        unifiedLogger = require('./lib/unified-logger.js');
+    } catch {
+        unifiedLogger = require('../lib/unified-logger.js');
+    }
 } catch (e) {
     // Fallback no-op if not available
     unifiedLogger = {
@@ -41,6 +52,7 @@ try {
 const CLAUDE_HOME = path.join(os.homedir(), '.claude');
 const INDEX_FILE = path.join(CLAUDE_HOME, 'cache', 'keyword-index.json');
 const TRIGGERS_FILE = path.join(CLAUDE_HOME, 'registry', 'skill-triggers.json');
+const REGISTRY_FILE = path.join(CLAUDE_HOME, 'configs', 'hybrid-registry.json');
 const ROUTING_LOG_FILE = path.join(CLAUDE_HOME, 'cache', 'last-routing.json');
 const ROUTING_HISTORY_FILE = path.join(CLAUDE_HOME, 'cache', 'routing-history.jsonl');
 const NEAR_MISS_LOG_FILE = path.join(CLAUDE_HOME, 'cache', 'near-misses.jsonl');
@@ -51,6 +63,7 @@ const TOP_K = 2;         // Reduced from 3 to focus on top matches
 
 // Context Awareness Configuration
 const ENABLE_CWD_CONTEXT = process.env.ROUTER_CWD_CONTEXT !== 'false'; // Enabled by default
+const ENABLE_CONTEXT_AUTO_ACTIVATE = false; // DISABLED - was causing false positives (e.g., .ahk files triggering AHK skill in unrelated projects)
 const CONTEXT_BOOST = 0.7; // Boost value when file extensions match (strong enough to beat generic matches)
 const MIN_FILES_FOR_BOOST = 3; // Minimum files of same type to trigger boost
 
@@ -78,35 +91,84 @@ const EXTENSION_SKILL_MAP = {
     '.srt': ['subtitle-translation'],
     '.vtt': ['subtitle-translation'],
     // Documentation
-    '.md': ['julien-ref-doc-production', 'julien-ref-notion-markdown']
+    '.md': ['julien-ref-doc-production', 'julien-ref-notion-markdown'],
+    '.mdx': ['anthropic-web-frontend-design'],
+    // Frontend frameworks
+    '.tsx': ['anthropic-web-frontend-design'],
+    '.jsx': ['anthropic-web-frontend-design'],
+    '.vue': ['anthropic-web-frontend-design'],
+    '.svelte': ['anthropic-web-frontend-design'],
+    // Python (MCP development)
+    '.py': ['anthropic-dev-tools-mcp-builder']
 };
+
+// Test file patterns (matched by filename, not extension)
+const TEST_FILE_PATTERNS = [
+    /\.test\.[jt]sx?$/,   // .test.js, .test.ts, .test.jsx, .test.tsx
+    /\.spec\.[jt]sx?$/,   // .spec.js, .spec.ts, .spec.jsx, .spec.tsx
+    /_test\.py$/,         // _test.py
+    /^test_.*\.py$/       // test_*.py
+];
 
 // Context Pattern Detection (Tier 1 - AUTO-ACTIVATE)
 // These patterns trigger immediate skill activation when detected
 const CONTEXT_AUTO_ACTIVATE = {
     // File-based detection
     files: {
+        // Frameworks & Config
         'astro.config.mjs': 'julien-ref-astro-install',
         'astro.config.ts': 'julien-ref-astro-install',
         'theme.json': 'julien-wordpress-structure-validator',
         'mcp_server.py': 'anthropic-dev-tools-mcp-builder',
         'docker-compose.yml': 'julien-infra-hostinger-docker',
-        'docker-compose.yaml': 'julien-infra-hostinger-docker'
+        'docker-compose.yaml': 'julien-infra-hostinger-docker',
+        // Claude Code ecosystem
+        '.mcp.json': 'julien-mcp-installer',
+        'claude.md': 'julien-dev-claude-md-documenter',
+        'skill.md': 'julien-skill-reviewer',
+        'microsoft.powershell_profile.ps1': 'julien-dev-powershell-profile',
+        // Documentation
+        'readme.md': null,  // Handled by docs/ folder detection
+        'changelog.md': null  // Handled by docs/ folder detection
     },
     // Folder-based detection
     folders: {
+        // WordPress
         'wp-content': 'julien-wordpress-structure-validator',
         'wp-admin': 'julien-wordpress-structure-validator',
-        'wp-includes': 'julien-wordpress-structure-validator'
+        'wp-includes': 'julien-wordpress-structure-validator',
+        // Claude Code ecosystem
+        'skills': 'julien-skill-creator',
+        // Documentation (Tier 1 for docs folders)
+        'docs': 'julien-ref-doc-production',
+        'documentation': 'julien-ref-doc-production'
     }
+};
+
+// Path-based detection (Tier 1 - checks CWD path for patterns)
+const PATH_PATTERNS = {
+    'srv759970': 'julien-infra-hostinger-core',
+    'hostinger': 'julien-infra-hostinger-core',
+    'notion': 'julien-ref-notion-markdown'
 };
 
 // Context Hints (Tier 3 - HINT only, shown in suggestions)
 const CONTEXT_HINTS = {
+    // Git integration
     '.git': ['julien-dev-commit-message'],
     '.github': ['julien-dev-commit-message'],
+    // Node.js/Frontend
     'package.json': ['anthropic-web-frontend-design'],
-    'tsconfig.json': ['anthropic-web-frontend-design']
+    'tsconfig.json': ['anthropic-web-frontend-design'],
+    // Claude Code ecosystem
+    '.claude': ['julien-maintenance-claude-json'],
+    'settings.json': ['julien-dev-hook-creator'],
+    // Deployment
+    'dockerfile': ['julien-infra-deployment-verifier'],
+    'deploy': ['julien-infra-deployment-verifier'],
+    '.github/workflows': ['julien-dev-commit-message'],
+    // Security warning (no skill, just awareness)
+    '.env': null  // Security reminder in output
 };
 
 // Analytical Verbs Weighting (Tier 1 verbs get 1.5x boost)
@@ -219,8 +281,20 @@ function scanContext() {
             folders: new Set(),
             autoActivate: null,  // Tier 1 skill to auto-activate
             autoActivateReason: null,
-            hints: []  // Tier 3 suggestions
+            hints: [],  // Tier 3 suggestions
+            testFilesCount: 0,  // Test files counter
+            mdFilesCount: 0     // Markdown files counter
         };
+
+        // Check PATH_PATTERNS first (highest priority for specific paths)
+        const cwdLower = cwd.toLowerCase();
+        for (const [pattern, skill] of Object.entries(PATH_PATTERNS)) {
+            if (cwdLower.includes(pattern)) {
+                context.autoActivate = skill;
+                context.autoActivateReason = `Path contains "${pattern}"`;
+                break;  // First match wins
+            }
+        }
 
         // Scan all entries (limit to 50 for performance)
         for (const entry of entries.slice(0, 50)) {
@@ -234,6 +308,16 @@ function scanContext() {
                 const ext = path.extname(name).toLowerCase();
                 if (ext) {
                     context.extensions.set(ext, (context.extensions.get(ext) || 0) + 1);
+                }
+
+                // Count markdown files for documentation boost
+                if (ext === '.md') {
+                    context.mdFilesCount++;
+                }
+
+                // Count test files for testing skill boost
+                if (TEST_FILE_PATTERNS.some(pattern => pattern.test(name))) {
+                    context.testFilesCount++;
                 }
 
                 // Check for Tier 1 auto-activation files
@@ -284,6 +368,17 @@ function scanContext() {
                 context.autoActivateReason = `AutoHotkey v1 syntax detected (${ahkCount} .ahk files)`;
             }
             // If version undetermined, don't auto-activate (let keyword routing handle it)
+        }
+
+        // Heavy documentation project detection (5+ .md files)
+        if (!context.autoActivate && context.mdFilesCount >= 5) {
+            context.autoActivate = 'julien-ref-doc-production';
+            context.autoActivateReason = `Documentation project (${context.mdFilesCount} markdown files)`;
+        }
+
+        // Add test skill hint if test files detected (don't auto-activate, just hint)
+        if (context.testFilesCount >= MIN_FILES_FOR_BOOST) {
+            context.hints.push('anthropic-web-testing');
         }
 
         // Update cache
@@ -349,9 +444,11 @@ function scanCWD() {
  * Apply context boost based on file extensions in CWD.
  * Boosts skills if 3+ files of relevant type are detected.
  */
-function applyContextBoost(skillScores, cwdExtensions, hasAnalyticalVerb) {
-    if (cwdExtensions.size === 0) return;
+function applyContextBoost(skillScores, context, hasAnalyticalVerb) {
+    const cwdExtensions = context.extensions || new Map();
+    if (cwdExtensions.size === 0 && !context.testFilesCount) return;
 
+    // Extension-based boost
     for (const [ext, count] of cwdExtensions) {
         const skills = EXTENSION_SKILL_MAP[ext];
 
@@ -368,6 +465,22 @@ function applyContextBoost(skillScores, cwdExtensions, hasAnalyticalVerb) {
                     skillScores[skillName] = CONTEXT_BOOST;
                 }
             }
+        }
+    }
+
+    // Test files boost (if 3+ test files detected)
+    if (context.testFilesCount >= MIN_FILES_FOR_BOOST) {
+        if (skillScores['anthropic-web-testing'] > 0) {
+            skillScores['anthropic-web-testing'] += CONTEXT_BOOST;
+        } else if (hasAnalyticalVerb) {
+            skillScores['anthropic-web-testing'] = CONTEXT_BOOST;
+        }
+    }
+
+    // Heavy markdown boost (if 5+ .md files)
+    if (context.mdFilesCount >= 5) {
+        if (skillScores['julien-ref-doc-production'] > 0) {
+            skillScores['julien-ref-doc-production'] += CONTEXT_BOOST;
         }
     }
 }
@@ -461,6 +574,52 @@ function applyFuzzyMatching(skillScores, words, keywords) {
 }
 
 /**
+ * Load skill content from SKILL.md file.
+ * Returns the full content or null if not found.
+ */
+function loadSkillContent(skillName) {
+    try {
+        // Load registry to get skill path
+        if (!fs.existsSync(REGISTRY_FILE)) {
+            logDebug('UserPromptSubmit', 'fast-skill-router.js', 'Registry file not found', 'WARN');
+            return null;
+        }
+
+        const registry = JSON.parse(fs.readFileSync(REGISTRY_FILE, 'utf-8'));
+        const skillInfo = registry.skills && registry.skills[skillName];
+
+        if (!skillInfo || !skillInfo.locations || skillInfo.locations.length === 0) {
+            logDebug('UserPromptSubmit', 'fast-skill-router.js', `Skill ${skillName} not found in registry`, 'WARN');
+            return null;
+        }
+
+        // Get the resolved path (prefer global > marketplace)
+        const location = skillInfo.locations.find(l => l.source === skillInfo.resolved_source)
+                      || skillInfo.locations[0];
+
+        const skillPath = location.full_path;
+
+        if (!fs.existsSync(skillPath)) {
+            logDebug('UserPromptSubmit', 'fast-skill-router.js', `Skill file not found: ${skillPath}`, 'WARN');
+            return null;
+        }
+
+        const content = fs.readFileSync(skillPath, 'utf-8');
+        logDebug('UserPromptSubmit', 'fast-skill-router.js', `Loaded skill content: ${skillName} (${content.length} bytes)`, 'INFO');
+
+        return {
+            name: skillName,
+            content: content,
+            path: skillPath,
+            source: location.source
+        };
+    } catch (e) {
+        logDebug('UserPromptSubmit', 'fast-skill-router.js', `Error loading skill: ${e.message}`, 'ERROR');
+        return null;
+    }
+}
+
+/**
  * Save routing log for debugging (last routing only).
  */
 function saveRoutingLog(prompt, matches, elapsed) {
@@ -501,8 +660,8 @@ function saveRoutingHistory(prompt, matches, allScores, cwdExtensions, elapsed) 
                 confidence: Math.min(100, Math.round(m.score * 20))
             })),
             context: {
-                has_office_files: cwdExtensions.size > 0,
-                file_extensions: Array.from(cwdExtensions.keys())
+                has_office_files: cwdExtensions?.size > 0 || false,
+                file_extensions: cwdExtensions ? Array.from(cwdExtensions.keys()) : []
             },
             elapsed_ms: elapsed,
             top_match_confidence: matches.length > 0 ? Math.min(100, Math.round(matches[0].score * 20)) : 0
@@ -557,10 +716,10 @@ function route(prompt) {
 
     // Scan CWD for context awareness (extended version)
     const context = scanContext();
-    const cwdExtensions = context.extensions;
+    const cwdExtensions = context.extensions || new Map();
 
-    // Check for Tier 1 auto-activation FIRST
-    if (context.autoActivate) {
+    // Check for Tier 1 auto-activation FIRST (if enabled)
+    if (ENABLE_CONTEXT_AUTO_ACTIVATE && context.autoActivate) {
         const info = skillsInfo[context.autoActivate] || {};
         const autoResult = {
             name: context.autoActivate,
@@ -636,7 +795,7 @@ function route(prompt) {
     applyFuzzyMatching(skillScores, words, keywords);
 
     // Apply context awareness boost (Tier 2)
-    applyContextBoost(skillScores, cwdExtensions, hasAnalyticalVerb);
+    applyContextBoost(skillScores, context, hasAnalyticalVerb);
 
     // Build results
     const results = Object.entries(skillScores)
@@ -782,7 +941,8 @@ function main() {
             logDebug('UserPromptSubmit', 'fast-skill-router.js', `Stdin received: ${inputData.length} bytes`, 'INPUT');
 
             const data = JSON.parse(inputData);
-            const userPrompt = data.user_prompt || '';
+            // Claude Code sends "prompt", not "user_prompt"
+            const userPrompt = data.prompt || data.user_prompt || '';
 
             logDebug('UserPromptSubmit', 'fast-skill-router.js', `Prompt: "${userPrompt}"`, 'PROMPT');
 
@@ -841,7 +1001,7 @@ function main() {
                 userPrompt,
                 matches,
                 {
-                    cwd_extensions: Object.fromEntries(cwdExtensions),
+                    cwd_extensions: cwdExtensions ? Object.fromEntries(cwdExtensions) : {},
                     top_10_scores: top10Scores
                 },
                 elapsed
@@ -887,18 +1047,34 @@ function main() {
 
                 // Show main routing result (skip if auto-activated, already shown above)
                 if (!explanation.autoActivated) {
-                    console.log('\n🎯 Routing Result:');
-
-                    // Strong match (>= 1.0): Direct instruction
+                    // Strong match (>= 1.0): INJECT SKILL CONTENT DIRECTLY
                     if (topMatch.score >= 1.0) {
-                        console.log(`   ✅ STRONG MATCH (${confidence}% confidence)`);
-                        console.log(`   → Use Skill("${topMatch.name}")`);
-                        if (explanation.reasoning) {
-                            console.log(`   📝 Why: ${explanation.reasoning}`);
+                        const skillData = loadSkillContent(topMatch.name);
+
+                        if (skillData) {
+                            // Direct injection - Claude receives skill instructions immediately
+                            console.log(`\n🎯 SKILL AUTO-LOADED: ${topMatch.name} (${confidence}% confidence)`);
+                            console.log('='.repeat(70));
+                            console.log(`<skill name="${topMatch.name}" source="${skillData.source}">`);
+                            console.log(skillData.content);
+                            console.log('</skill>');
+                            console.log('='.repeat(70));
+                            console.log(`⚡ Follow the skill instructions above to handle this request.`);
+
+                            logDebug('UserPromptSubmit', 'fast-skill-router.js', `INJECTED skill: ${topMatch.name}`, 'INJECT');
+                        } else {
+                            // Fallback to suggestion if content can't be loaded
+                            console.log('\n🎯 Routing Result:');
+                            console.log(`   ✅ STRONG MATCH (${confidence}% confidence)`);
+                            console.log(`   → Use Skill("${topMatch.name}")`);
+                            if (explanation.reasoning) {
+                                console.log(`   📝 Why: ${explanation.reasoning}`);
+                            }
                         }
                     }
-                    // Medium match (0.5-1.0): Suggestion
+                    // Medium match (0.5-1.0): Suggestion only
                     else if (topMatch.score >= 0.5) {
+                        console.log('\n🎯 Routing Result:');
                         console.log(`   💡 SUGGESTED (${confidence}% confidence)`);
                         console.log(`   → Skill("${topMatch.name}") might help`);
                         if (explanation.reasoning) {
@@ -907,6 +1083,7 @@ function main() {
                     }
                     // Weak matches: Show for awareness
                     else if (topMatch.score >= 0.2) {
+                        console.log('\n🎯 Routing Result:');
                         console.log(`   📋 RELATED SKILLS (low confidence)`);
                         matches.slice(0, 3).forEach(m => {
                             const conf = Math.min(100, Math.round(m.score * 20));

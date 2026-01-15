@@ -32,6 +32,12 @@ Central marketplace for Claude Code ecosystem management:
 | `session-end-cleanup` | SessionEnd | Clean temporary files |
 | `protect-claude-process` | PreToolUse | Block dangerous process commands |
 
+### Router Configuration
+
+The `fast-skill-router` now injects skill content directly for high-confidence matches (score ≥1.0).
+
+**Context matching is currently disabled** - only keyword-based routing is active. Context detection (file extensions in cwd) was causing false positives. To re-enable, modify `fast-skill-router.js` and set `ENABLE_CONTEXT_MATCHING = true`.
+
 ## Key Scripts
 
 | Script | Purpose |
