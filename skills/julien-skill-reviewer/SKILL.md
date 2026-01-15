@@ -166,7 +166,7 @@ D) Focus on specific dimension
 
 After refactoring:
 1. Re-read modified files
-2. Re-score all 9 dimensions
+2. Re-score all 11 dimensions
 3. Compare before/after
 4. Report improvement
 
@@ -194,7 +194,7 @@ See [references/validation-checks.md](references/validation-checks.md) for compl
 
 | File | Content |
 |------|---------|
-| [references/quality-rubric.md](references/quality-rubric.md) | 9-dimension scoring details |
+| [references/quality-rubric.md](references/quality-rubric.md) | 11-dimension scoring details |
 | [references/dry-patterns.md](references/dry-patterns.md) | DRY violations and fixes |
 | [references/refactoring-templates.md](references/refactoring-templates.md) | Report and plan templates |
 | [references/validation-checks.md](references/validation-checks.md) | Automated and manual checks |

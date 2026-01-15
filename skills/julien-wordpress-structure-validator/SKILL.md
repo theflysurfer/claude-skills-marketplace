@@ -1,6 +1,18 @@
 ---
-name: WordPress Structure Validator
+name: julien-wordpress-structure-validator
 description: This skill validates WordPress FSE (Full Site Editing) theme structure including templates hierarchy, page associations, theme.json configuration, block styles, featured images usage, file permissions, and UpdraftPlus backup configuration. Use when auditing a WordPress site, after creating/modifying templates, before production deployment, or when troubleshooting backup issues.
+triggers:
+  - wordpress validation
+  - validate wordpress
+  - wordpress audit
+  - wordpress fse
+  - theme.json validation
+  - wordpress templates
+  - wp structure
+  - updraftplus
+  - wordpress backup
+  - valider wordpress
+  - audit wordpress
 ---
 
 # WordPress Structure Validator

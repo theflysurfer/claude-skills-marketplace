@@ -2,6 +2,14 @@
 name: julien-maintenance-claude-json
 description: Clean ~/.claude.json when it becomes too large (>25K tokens). Use when Claude cannot read the file, user mentions "claude.json trop gros", "nettoyer claude.json", or "cleanup claude.json".
 category: maintenance
+triggers:
+  - claude.json trop gros
+  - nettoyer claude.json
+  - cleanup claude.json
+  - claude.json too large
+  - clean claude config
+  - maintenance claude
+  - file exceeds maximum tokens
 ---
 
 # Claude.json Maintenance

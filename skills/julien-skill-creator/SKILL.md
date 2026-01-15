@@ -32,6 +32,13 @@ triggers:
 
 Enhanced guidance for creating effective skills with proper structure and documentation.
 
+## Observability
+
+**First**: At the start of execution, display:
+```
+🔧 Skill "julien-skill-creator" activated
+```
+
 ## Core Principles
 
 ### Concise is Key
@@ -135,145 +142,23 @@ description: What it does and when to use it  # Required: max 1024 chars, third 
 ---
 ```
 
-**2026 Optional Fields** (see [references/2026-yaml-fields.md](references/2026-yaml-fields.md) for complete guide):
+**2026 Optional Fields**:
 
-##### Version Tracking & Licensing
+See [references/2026-yaml-fields-usage.md](references/2026-yaml-fields-usage.md) for complete documentation on all optional fields (version, license, allowed-tools, user-invocable, disable-model-invocation, mode, hooks, triggers, metadata).
 
-```yaml
-version: "1.0.0"           # Semantic versioning (recommended for hot-reload)
-license: Apache-2.0        # Apache-2.0, MIT, or proprietary
-```
+**Quick Reference - When to Use Each Field:**
 
-**When to use**: Always include `version` for tracking updates with Claude Code v2.1.0+ hot-reload.
-
-##### Tool Restrictions (Security)
-
-```yaml
-allowed-tools:             # Whitelist tools Claude can use
-  - Read
-  - Write
-  - Bash
-```
-
-**When to use**: Security-sensitive operations (deployment, admin tasks). Limits exposure if skill is compromised.
-
-##### Invocation Control
-
-```yaml
-user-invocable: true                # Can users call directly via /skill-name? (default: true)
-disable-model-invocation: false     # Prevent auto-trigger? (default: false)
-```
-
-**When to use**:
-- `user-invocable: false` for internal helper skills (only called by other skills)
-- `disable-model-invocation: true` for destructive ops (production deploy, data deletion)
-
-##### Execution Mode
-
-```yaml
-mode: interactive          # Options: interactive | batch | autonomous
-```
-
-**When to use**:
-- `interactive`: Workflows requiring user approval at steps (deploy, migrations)
-- `batch`: Bulk processing without interruption
-- `autonomous`: Background tasks, monitoring
-
-##### Lifecycle Hooks (Claude Code v2.1.0+)
-
-```yaml
-hooks:
-  - event: PreToolUse      # Before any tool execution
-    action: validate_environment
-  - event: PostToolUse     # After tool execution
-    action: log_results
-  - event: Stop            # On skill termination
-    action: cleanup_temp_files
-```
-
-**When to use**: Environment validation, audit logging, cleanup operations.
-
-##### Triggers (CRITICAL for Discovery)
-
-```yaml
-triggers:
-  # Keywords (1-2 words)
-  - "keyword"
-  - "mot-clé"
-
-  # Action phrases (FR + EN)
-  - "créer un fichier"
-  - "create a file"
-
-  # Problem phrases
-  - "I need to..."
-  - "comment faire pour..."
-```
-
-**ALWAYS include** 10-20 natural language triggers. See Step 8 below for full methodology.
-
-##### Metadata (Optional)
-
-```yaml
-metadata:
-  author: "Your Name"
-  category: "development"
-  keywords: ["keyword1", "keyword2"]
-```
-
-##### Complete Example
-
-```yaml
----
-name: excel-report-generator
-description: >
-  Generates monthly Excel reports with charts and pivot tables from CSV data.
-  Use when creating reports, analyzing sales data, or generating spreadsheets.
-version: "1.2.0"
-license: Apache-2.0
-user-invocable: true
-mode: interactive
-allowed-tools:
-  - Read
-  - Write
-  - Bash
-triggers:
-  - "excel"
-  - "report"
-  - "créer un rapport"
-  - "generate spreadsheet"
-  - "analyze sales data"
-  - "monthly report"
-  - "graphique excel"
-  - "pivot table"
-  - "I need a report"
-  - "comment créer un tableau"
-metadata:
-  author: "Julien"
-  category: "analysis"
-  keywords: ["excel", "reporting", "data-analysis"]
----
-```
-
-**When to Use Each Field:**
-
-| Field | Use Case | Example Scenario |
-|-------|----------|------------------|
-| `version` | Always (recommended) | Track updates, enable hot-reload in v2.1.0+ |
-| `allowed-tools` | Security-sensitive ops | Limit to [Read, Bash] for deployment skill |
-| `user-invocable: false` | Internal helper skills | Validation skill called only by other skills |
-| `disable-model-invocation: true` | Manual-only workflows | Production deploy requiring explicit approval |
-| `mode: interactive` | Multi-step with approvals | Database migration with checkpoints |
-| `mode: batch` | Bulk processing | Batch image conversion |
-| `mode: autonomous` | Background monitoring | Server health checks |
-| `hooks` | Environment validation | Check SSH connection before deploy |
-| `triggers` | **ALWAYS** | Enable semantic skill routing (10-20 triggers) |
-| `metadata` | Organization/attribution | Track authorship, categorize skills |
-
-**Hot-Reload Support** (Claude Code v2.1.0+):
-- Trigger changes reload automatically (no session restart needed)
-- Version bumps detected and logged
-- Skills in `~/.claude/skills/` or `.claude/skills/` are immediately available
+| Field | Use Case |
+|-------|----------|
+| `version` | Always (recommended for hot-reload tracking) |
+| `license` | Always (Apache-2.0, MIT, or proprietary) |
+| `allowed-tools` | Security-sensitive operations (restrict tool access) |
+| `user-invocable: false` | Internal helper skills (not in /slash menu) |
+| `disable-model-invocation: true` | Manual-only destructive operations |
+| `mode: interactive/batch/autonomous` | Define workflow interaction pattern |
+| `hooks` | Environment validation, logging, cleanup |
+| `triggers` | **ALWAYS** (10-20 natural language triggers) |
+| `metadata` | Organization, attribution, categorization |
 
 #### Body Instructions
 
@@ -389,7 +274,7 @@ python scripts/benchmark-semantic-router.py "votre phrase test"
 
 | File | Content |
 |------|---------|
-| [references/quality-rubric.md](references/quality-rubric.md) | 9-dimension scoring (1-5 scale) |
+| [references/quality-rubric.md](references/quality-rubric.md) | 11-dimension scoring (1-5 scale) |
 | [references/skill-chaining-template.md](references/skill-chaining-template.md) | Complete chaining documentation format |
 | [references/naming-conventions.md](references/naming-conventions.md) | Official Anthropic naming rules |
 | [references/advanced-patterns.md](references/advanced-patterns.md) | Feedback loops, plan-validate-execute, templates |

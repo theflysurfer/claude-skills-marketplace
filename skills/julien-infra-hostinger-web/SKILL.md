@@ -1,16 +1,38 @@
 ---
 name: julien-infra-hostinger-web
-description: Web infrastructure for Hostinger VPS - Nginx reverse proxy, SSL/Let's Encrypt, configuration audit, and application deployment (INCLUZ'HACT). Use for site configuration, SSL setup, 502/504 errors, or deployments.
+description: Web infrastructure for Hostinger VPS - Nginx, SSL/Let's Encrypt, static site deployment (Slidev/Astro/Vite), reverse proxy, and 502/504 troubleshooting.
 license: Apache-2.0
 triggers:
+  # Core
   - nginx
   - reverse proxy
   - ssl certificate
   - certbot
-  - deploy hostinger
-  - deploy incluzact
   - 502 error
   - 504 error
+  # Hostinger deploy
+  - deploy hostinger
+  - deploy incluzact
+  - deploy sur le vps
+  - deployer sur hostinger
+  - mettre en ligne hostinger
+  - upload hostinger
+  # Static site deploy
+  - deploy static site
+  - deploy slidev
+  - deploy astro
+  - deploy vite
+  - site statique
+  - déployer site statique
+  - héberger site
+  - mettre en ligne slides
+  - servir fichiers statiques
+  - nginx static files
+  # IPv6 / SSL issues
+  - ipv6 nginx
+  - certbot unauthorized
+  - certbot 401
+  - ssl ipv6
 ---
 
 # Hostinger Web Infrastructure
@@ -231,6 +253,145 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
+```
+
+---
+
+## 6. Static Site Deployment (Slidev, Astro, Vite, etc.)
+
+### Workflow Complet
+
+```bash
+# 1. Build localement
+cd /path/to/project
+npm run build  # ou pnpm build
+
+# 2. Créer le dossier sur le serveur
+ssh srv759970 "sudo mkdir -p /opt/PROJET_NAME && sudo chown automation:automation /opt/PROJET_NAME"
+
+# 3. Uploader les fichiers
+scp -r dist/* srv759970:/opt/PROJET_NAME/
+
+# 4. Créer la config Nginx
+ssh srv759970 "sudo tee /etc/nginx/sites-available/PROJET_NAME << 'EOF'
+server {
+    listen 80;
+    listen [::]:80;  # IPv6 REQUIS pour certbot!
+    server_name PROJET_NAME.srv759970.hstgr.cloud;
+    root /opt/PROJET_NAME;
+    index index.html;
+
+    location / {
+        try_files \$uri \$uri/ /index.html;
+    }
+
+    # Cache pour assets
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
+        expires 30d;
+        add_header Cache-Control \"public, immutable\";
+    }
+}
+EOF"
+
+# 5. Activer le site
+ssh srv759970 "sudo ln -sf /etc/nginx/sites-available/PROJET_NAME /etc/nginx/sites-enabled/ && sudo nginx -t && sudo systemctl reload nginx"
+
+# 6. Obtenir SSL
+ssh srv759970 "sudo certbot --nginx -d PROJET_NAME.srv759970.hstgr.cloud --non-interactive --agree-tos --email julien@geneste.dev"
+```
+
+### One-Liners par Framework
+
+**Slidev**:
+```bash
+npm run build && scp -r dist/* srv759970:/opt/slides/
+```
+
+**Astro**:
+```bash
+npm run build && scp -r dist/* srv759970:/opt/astro-site/
+```
+
+**Vite/React/Vue**:
+```bash
+npm run build && scp -r dist/* srv759970:/opt/app-name/
+```
+
+### Template Nginx pour Site Statique
+
+```nginx
+server {
+    listen 80;
+    listen [::]:80;  # CRITIQUE: IPv6 requis pour certbot
+    server_name PROJET.srv759970.hstgr.cloud;
+    root /opt/PROJET;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;  # SPA fallback
+    }
+
+    # Compression gzip
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml;
+
+    # Cache assets statiques
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
+        expires 30d;
+        add_header Cache-Control "public, immutable";
+    }
+}
+```
+
+### Dépannage Certbot
+
+**Erreur "unauthorized" / 401**:
+```bash
+# Vérifier que IPv6 retourne 200 (pas 301 redirect)
+ssh srv759970 "curl -6 -I http://PROJET.srv759970.hstgr.cloud"
+
+# Si 301 → Ajouter listen [::]:80 à la config
+ssh srv759970 "sudo sed -i 's/listen 80;/listen 80;\n    listen [::]:80;/' /etc/nginx/sites-available/PROJET"
+ssh srv759970 "sudo nginx -t && sudo systemctl reload nginx"
+
+# Relancer certbot
+ssh srv759970 "sudo certbot --nginx -d PROJET.srv759970.hstgr.cloud"
+```
+
+**Vérification DNS**:
+```bash
+# Le wildcard DNS *.srv759970.hstgr.cloud existe
+dig +short monsite.srv759970.hstgr.cloud  # Doit retourner 69.62.108.82
+```
+
+### Script Automatisé
+
+```bash
+# deploy-static.sh <nom-projet> <dossier-local>
+PROJECT_NAME=$1
+LOCAL_DIR=${2:-dist}
+
+# Upload
+scp -r "$LOCAL_DIR"/* srv759970:/opt/"$PROJECT_NAME"/
+
+# Config + SSL si nouveau site
+ssh srv759970 "[ ! -f /etc/nginx/sites-available/$PROJECT_NAME ] && {
+    sudo tee /etc/nginx/sites-available/$PROJECT_NAME << EOF
+server {
+    listen 80;
+    listen [::]:80;
+    server_name $PROJECT_NAME.srv759970.hstgr.cloud;
+    root /opt/$PROJECT_NAME;
+    index index.html;
+    location / { try_files \\\$uri \\\$uri/ /index.html; }
+}
+EOF
+    sudo ln -sf /etc/nginx/sites-available/$PROJECT_NAME /etc/nginx/sites-enabled/
+    sudo nginx -t && sudo systemctl reload nginx
+    sudo certbot --nginx -d $PROJECT_NAME.srv759970.hstgr.cloud --non-interactive --agree-tos --email julien@geneste.dev
+}"
+
+echo "✅ Déployé: https://$PROJECT_NAME.srv759970.hstgr.cloud"
 ```
 
 ---
