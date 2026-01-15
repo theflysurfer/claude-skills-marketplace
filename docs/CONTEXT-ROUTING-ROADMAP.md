@@ -35,6 +35,119 @@
 
 ---
 
+## Proposed Additional Patterns (Phase 5)
+
+Based on analysis of all 54 skills, these additional patterns could significantly improve routing:
+
+### New Tier 1 - Auto-Activation (High Confidence)
+
+| Pattern | Skill | Reason |
+|---------|-------|--------|
+| `.mcp.json` | julien-mcp-installer | MCP configuration file |
+| `CLAUDE.md` | julien-dev-claude-md-documenter | Project instructions file |
+| `.claude/settings.json` | julien-dev-hook-creator | Hook configuration |
+| `skills/` folder | julien-skill-creator | Skill development context |
+| `SKILL.md` | julien-skill-reviewer | Skill editing context |
+| `Microsoft.PowerShell_profile.ps1` | julien-dev-powershell-profile | Profile management |
+| `srv759970` in path | julien-infra-hostinger-core | Hostinger VPS context |
+| `pyproject.toml` + `mcp` content | anthropic-dev-tools-mcp-builder | Python MCP project |
+| `Dockerfile` + `hostinger` | julien-infra-hostinger-docker | Hostinger Docker context |
+
+### New Tier 2 - Boost (Extension-Based)
+
+| Extensions | Skills | Count Required |
+|------------|--------|----------------|
+| `.test.js`, `.spec.ts`, `.test.tsx` | anthropic-web-testing | 3+ |
+| `_test.py`, `test_*.py` | anthropic-web-testing | 3+ |
+| `.py` (general) | anthropic-dev-tools-mcp-builder | 5+ |
+| `.tsx`, `.jsx` | anthropic-web-frontend-design | 3+ |
+| `.vue` | anthropic-web-frontend-design | 3+ |
+| `.svelte` | anthropic-web-frontend-design | 3+ |
+
+### New Tier 2 - Documentation Boost (IMPORTANT)
+
+Pour les fichiers markdown et documentation, boost systématique:
+
+| Context | Skills | Priority |
+|---------|--------|----------|
+| `docs/` folder exists | julien-ref-doc-production | High |
+| 5+ `.md` files | julien-ref-doc-production | High |
+| `README.md` present | julien-ref-doc-production | Medium |
+| `CHANGELOG.md` present | julien-ref-doc-production | Medium |
+| `notion` in path | julien-ref-notion-markdown | High |
+| `.mdx` files | anthropic-web-frontend-design | Medium |
+
+### New Tier 3 - Hints (Contextual Suggestions)
+
+| Pattern | Skills | Shown When |
+|---------|--------|------------|
+| `.claude/` folder | julien-maintenance-claude-json | Folder exists |
+| `.env` file | (warning) | Security reminder |
+| `Dockerfile` | julien-infra-deployment-verifier | File exists |
+| `deploy/` folder | julien-infra-deployment-verifier | Folder exists |
+| `.github/workflows/` | julien-dev-commit-message | CI/CD context |
+
+### Implementation Code Changes
+
+```javascript
+// Add to EXTENSION_SKILL_MAP
+const EXTENSION_SKILL_MAP = {
+    // ... existing ...
+
+    // Testing files
+    '.test.js': ['anthropic-web-testing'],
+    '.spec.js': ['anthropic-web-testing'],
+    '.test.ts': ['anthropic-web-testing'],
+    '.spec.ts': ['anthropic-web-testing'],
+    '.test.tsx': ['anthropic-web-testing'],
+
+    // Frontend frameworks
+    '.tsx': ['anthropic-web-frontend-design'],
+    '.jsx': ['anthropic-web-frontend-design'],
+    '.vue': ['anthropic-web-frontend-design'],
+    '.svelte': ['anthropic-web-frontend-design'],
+
+    // Python
+    '.py': ['anthropic-dev-tools-mcp-builder'],
+};
+
+// Add to CONTEXT_AUTO_ACTIVATE
+const CONTEXT_AUTO_ACTIVATE = {
+    files: {
+        // ... existing ...
+        '.mcp.json': 'julien-mcp-installer',
+        'CLAUDE.md': 'julien-dev-claude-md-documenter',
+        'SKILL.md': 'julien-skill-reviewer',
+        'Microsoft.PowerShell_profile.ps1': 'julien-dev-powershell-profile',
+        'pyproject.toml': null,  // Needs content check for MCP
+    },
+    folders: {
+        // ... existing ...
+        'skills': 'julien-skill-creator',
+        '.claude': 'julien-maintenance-claude-json',
+        'docs': 'julien-ref-doc-production',
+    }
+};
+
+// NEW: Path-based detection
+const PATH_PATTERNS = {
+    'srv759970': 'julien-infra-hostinger-core',
+    'notion': 'julien-ref-notion-markdown',
+    'hostinger': 'julien-infra-hostinger-core',
+};
+
+function checkPathPatterns(cwd) {
+    for (const [pattern, skill] of Object.entries(PATH_PATTERNS)) {
+        if (cwd.toLowerCase().includes(pattern)) {
+            return { skill, reason: `Path contains "${pattern}"` };
+        }
+    }
+    return null;
+}
+```
+
+---
+
 ## Future Improvements
 
 ### Phase 4: SKILL.md Context Patterns
