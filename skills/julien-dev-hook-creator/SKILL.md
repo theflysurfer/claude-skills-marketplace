@@ -226,6 +226,145 @@ echo '{"tool_name":"Write","tool_input":{"file_path":"/test/.env"}}' | bash ~/.c
 echo "Exit code: $?"
 ```
 
+## Real-World Example: Terminal Title Restoration
+
+**Problem**: `happy.cmd` and `claude.cmd` contain `title %COMSPEC%` which overwrites terminal title to "C:\WINDOWS\system32\cmd.exe"
+
+**Solution**: SessionStart hook that restores the title after launch
+
+**Script**: `~/.claude/scripts/restore-terminal-title-on-start.ps1`
+```powershell
+# Restore terminal title on Claude Code SessionStart
+# This runs AFTER Claude has potentially overwritten the title
+try {
+    # Get current directory name
+    $dirName = if ($PWD.Path -eq $HOME) {
+        "~"
+    } else {
+        Split-Path $PWD -Leaf
+    }
+
+    # Restore title using multiple methods for maximum compatibility
+
+    # Method 1: PowerShell native
+    $Host.UI.RawUI.WindowTitle = $dirName
+
+    # Method 2: ANSI escape sequence (more reliable with Windows Terminal)
+    Write-Host "$([char]27)]0;$dirName$([char]7)" -NoNewline
+
+    # Exit with success
+    exit 0
+} catch {
+    # Silent fail - don't break Claude startup
+    exit 0
+}
+```
+
+**Configuration**: `~/.claude/settings.json` (NOT repo `.claude/settings.json`)
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"%USERPROFILE%\\.claude\\scripts\\session-start-banner.js\"",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -File \"%USERPROFILE%\\.claude\\scripts\\restore-terminal-title-on-start.ps1\"",
+            "timeout": 2
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+**Timeline**:
+1. `happy.cmd` executes → title becomes "C:\WINDOWS\system32\cmd.exe"
+2. Happy/Claude starts
+3. SessionStart hook: `session-start-banner.js` displays banner
+4. SessionStart hook: **`restore-terminal-title-on-start.ps1` fixes the title**
+
+**Result**: Title restored to directory name despite npm CLI wrapper interference
+
+**Lesson**: Hooks can fix issues caused by external tools (npm wrappers, shell scripts)!
+
+## Hook Languages: JavaScript vs Python vs PowerShell
+
+### JavaScript Hooks (Fastest Startup)
+
+**Pros**:
+- Node.js already loaded by Claude Code
+- No interpreter startup cost
+- Faster execution (~50-200ms faster than Python)
+- Great async support
+
+**Cons**:
+- Limited system integration compared to PowerShell
+- JSON parsing requires external library or built-in JSON
+
+**Examples**:
+- `session-start-banner.js` - Fast banner display
+- `track-skill-invocation.js` - Performance-critical tracking
+- `fast-skill-router.js` - Routing must be instant
+
+**When to use**: Performance-critical hooks (SessionStart, UserPromptSubmit)
+
+### Python Hooks (Rich Ecosystem)
+
+**Pros**:
+- Rich libraries (json, pathlib, subprocess)
+- Better for complex data processing
+- Easier multiline string handling
+- Great for ML/data tasks
+
+**Cons**:
+- Python interpreter startup cost (~100-300ms)
+- May not be installed on all systems
+
+**Examples**:
+- `session-end-delete-reserved.py` - Complex file operations
+- `save-session-for-memory.py` - Data processing
+- `cleanup-null-files.py` - File system traversal
+
+**When to use**: Complex logic, data processing, non-time-critical tasks
+
+### PowerShell Hooks (Windows Native)
+
+**Pros**:
+- Native Windows API access
+- Can modify environment directly
+- Better integration with Windows Terminal
+- Access to .NET framework
+
+**Cons**:
+- Windows-only
+- Slower than JavaScript (~50-150ms startup)
+- CRLF line ending issues
+
+**Examples**:
+- `restore-terminal-title-on-start.ps1` - Terminal manipulation
+- `cleanup-null-files.ps1` - Windows file operations
+- `set-terminal-title.ps1` - Environment modification
+
+**When to use**: Windows-specific tasks, terminal manipulation, .NET integration
+
+### Choosing the Right Language
+
+```
+Need speed? → JavaScript
+Need Python libraries? → Python
+Need Windows integration? → PowerShell
+Need to modify terminal? → PowerShell
+Need to call .NET APIs? → PowerShell
+Need async operations? → JavaScript
+```
+
 ## Common Hook Patterns
 
 ### 1. File Protection (PreToolUse)
@@ -370,15 +509,38 @@ Available in hooks:
 - `CLAUDE_CODE_REMOTE` - Remote mode indicator
 - `CLAUDE_ENV_FILE` - (SessionStart only) File path for persisting env vars
 
-## File Locations
+## File Locations - CRITICAL INFORMATION
 
-| Location | Scope |
-|----------|-------|
-| `~/.claude/settings.json` | Global (all projects) |
-| `.claude/settings.json` | Project-specific |
-| `.claude/settings.local.json` | Local overrides (not committed) |
-| `~/.claude/scripts/` | Global scripts |
-| `.claude/scripts/` | Project scripts |
+| Location | Scope | Usage |
+|----------|-------|-------|
+| **`~/.claude/settings.json`** | **Global (REAL FILE)** | **File USED by Claude Code** |
+| `.claude/settings.json` | Project (versioning) | Committed to repo, NOT used directly |
+| `.claude/settings.local.json` | Local overrides | Not committed |
+| `~/.claude/scripts/` | Global scripts | Used by hooks |
+| `.claude/scripts/` | Project scripts | Versioned with repo |
+
+### ⚠️ CRITICAL WARNING
+
+**Claude Code uses `~/.claude/settings.json` (home directory)**
+**NOT the repo `.claude/settings.json`**
+
+These files are DIFFERENT and must be synchronized manually!
+
+**Best Practice**:
+1. Modify `~/.claude/settings.json` first (real file)
+2. Copy changes to `.claude/settings.json` (for versioning)
+3. Commit repo version for documentation
+
+**Never assume** the repo version is active!
+
+**Verification**:
+```bash
+# Check what Claude Code actually uses
+cat ~/.claude/settings.json | grep -A 5 "SessionStart"
+
+# Compare with repo version
+diff ~/.claude/settings.json .claude/settings.json
+```
 
 ## Quick Reference
 

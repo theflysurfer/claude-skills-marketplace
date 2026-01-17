@@ -67,7 +67,7 @@ Glob skills/skill-name/**/*
 wc -l skills/skill-name/SKILL.md
 ```
 
-Parse YAML frontmatter: `name`, `description`, `license`, `allowed-tools`.
+Parse YAML frontmatter and validate all fields. See [references/yaml-validation.md](references/yaml-validation.md) for complete field specifications.
 
 ### Step 2: Score Against Rubric
 
@@ -179,16 +179,38 @@ If score < 3.5/5, continue iterations.
 
 See [references/validation-checks.md](references/validation-checks.md) for complete list.
 
+### Required Fields
+
+| Check | Requirement |
+|-------|-------------|
+| `name` | ≤ 64 chars, lowercase + hyphens only |
+| `description` | Third person, ≤ 1024 chars, includes trigger keywords |
+
+### Structure Checks
+
 | Check | Requirement |
 |-------|-------------|
 | Line count | SKILL.md < 500 lines |
-| Name | ≤ 64 chars, lowercase + hyphens |
-| Description | Third person, ≤ 1024 chars |
-| Paths | Forward slashes only |
-| References | One level deep |
+| Paths | Forward slashes only (not Windows backslashes) |
+| References | One level deep from SKILL.md |
 | Long files | TOC if > 100 lines |
 | No duplicates | Content in one place only |
-| **Triggers** | 5-50 in YAML frontmatter, natural language |
+
+### Optional Fields
+
+| Field | Validation |
+|-------|------------|
+| `version` | Semantic versioning (X.Y.Z) |
+| `license` | Valid SPDX identifier (Apache-2.0, MIT, etc.) |
+| `allowed-tools` | Only valid tool names (Read, Write, Edit, Bash, etc.) |
+| `user-invocable` | Boolean only (true/false) |
+| `disable-model-invocation` | Boolean only (true/false) |
+| `mode` | Boolean only (`true` for mode commands, NOT interactive/batch/autonomous) |
+| `context` | `fork` only (for isolated subagent execution) |
+| `agent` | Valid agent type (Explore, Plan, Bash) |
+| `model` | Valid model (haiku, sonnet, opus, or full model ID) |
+| `hooks` | Correct syntax: `event`, `matcher`, `command`, optional `once` |
+| `triggers` | 5-50 natural language phrases (marketplace extension) |
 
 ## Reference Files
 
@@ -198,22 +220,40 @@ See [references/validation-checks.md](references/validation-checks.md) for compl
 | [references/dry-patterns.md](references/dry-patterns.md) | DRY violations and fixes |
 | [references/refactoring-templates.md](references/refactoring-templates.md) | Report and plan templates |
 | [references/validation-checks.md](references/validation-checks.md) | Automated and manual checks |
+| [references/yaml-validation.md](references/yaml-validation.md) | YAML frontmatter field validation |
 
 ## Quality Assurance Checklist
 
 Before marking production-ready:
 
+### Score Requirements
 - [ ] Average score ≥ 3.5/5
 - [ ] No dimension < 3/5
+
+### Structure Requirements
 - [ ] SKILL.md ≤ 500 lines
 - [ ] Proper progressive disclosure
 - [ ] No DRY violations
 - [ ] Skill Chaining documented
 - [ ] Examples are concrete
 - [ ] Error handling documented
-- [ ] YAML frontmatter valid
 - [ ] All references linked from SKILL.md
-- [ ] **Triggers**: 10-20 natural language triggers in frontmatter
+
+### YAML Frontmatter Validation
+- [ ] `name`: max 64 chars, lowercase + hyphens only
+- [ ] `description`: non-empty, max 1024 chars, includes trigger keywords
+- [ ] `version`: follows semantic versioning (X.Y.Z) if present
+- [ ] `license`: valid SPDX identifier if present (Apache-2.0, MIT)
+- [ ] `allowed-tools`: contains only valid tool names if present
+- [ ] `mode`: is boolean (`true`/`false`) if present, NOT string
+- [ ] `context`: is `fork` if present
+- [ ] `agent`: is valid type (Explore, Plan, Bash) if present
+- [ ] `model`: is valid (haiku, sonnet, opus, or full ID) if present
+- [ ] `hooks`: uses correct syntax with `matcher` and `command` if present
+- [ ] YAML syntax is valid (no parse errors)
+
+### Marketplace Requirements
+- [ ] **Triggers**: 10-20 natural language phrases in frontmatter
 - [ ] **Observability**: Skill announces activation at start
 
 ## Skill Chaining

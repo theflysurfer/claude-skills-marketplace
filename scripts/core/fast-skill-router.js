@@ -586,18 +586,32 @@ function loadSkillContent(skillName) {
         }
 
         const registry = JSON.parse(fs.readFileSync(REGISTRY_FILE, 'utf-8'));
-        const skillInfo = registry.skills && registry.skills[skillName];
 
-        if (!skillInfo || !skillInfo.locations || skillInfo.locations.length === 0) {
+        // Registry.skills can be an array or object depending on version
+        let skillInfo;
+        if (Array.isArray(registry.skills)) {
+            skillInfo = registry.skills.find(s => s.name === skillName);
+        } else {
+            skillInfo = registry.skills && registry.skills[skillName];
+        }
+
+        if (!skillInfo) {
             logDebug('UserPromptSubmit', 'fast-skill-router.js', `Skill ${skillName} not found in registry`, 'WARN');
             return null;
         }
 
-        // Get the resolved path (prefer global > marketplace)
-        const location = skillInfo.locations.find(l => l.source === skillInfo.resolved_source)
-                      || skillInfo.locations[0];
-
-        const skillPath = location.full_path;
+        // Get skill path - handle both old format (locations array) and new format (skill_file)
+        let skillPath;
+        if (skillInfo.skill_file) {
+            skillPath = skillInfo.skill_file;
+        } else if (skillInfo.locations && skillInfo.locations.length > 0) {
+            const location = skillInfo.locations.find(l => l.source === skillInfo.resolved_source)
+                          || skillInfo.locations[0];
+            skillPath = location.full_path;
+        } else {
+            logDebug('UserPromptSubmit', 'fast-skill-router.js', `Skill ${skillName} has no path`, 'WARN');
+            return null;
+        }
 
         if (!fs.existsSync(skillPath)) {
             logDebug('UserPromptSubmit', 'fast-skill-router.js', `Skill file not found: ${skillPath}`, 'WARN');
@@ -611,7 +625,7 @@ function loadSkillContent(skillName) {
             name: skillName,
             content: content,
             path: skillPath,
-            source: location.source
+            source: skillInfo.source || 'unknown'
         };
     } catch (e) {
         logDebug('UserPromptSubmit', 'fast-skill-router.js', `Error loading skill: ${e.message}`, 'ERROR');

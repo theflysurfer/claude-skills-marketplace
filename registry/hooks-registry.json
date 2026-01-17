@@ -142,6 +142,20 @@
       "scope": "global",
       "timeout": 3,
       "template": false
+    },
+    "plannotator": {
+      "name": "Plannotator Code Review",
+      "event": "PermissionRequest",
+      "matcher": "ExitPlanMode",
+      "description": "Ouvre une interface interactive de code review lors de l'approbation d'un plan",
+      "command": "plannotator",
+      "category": "display",
+      "scope": "global",
+      "timeout": 1800,
+      "template": false,
+      "external": true,
+      "install": "npm install -g plannotator",
+      "repository": "https://github.com/backnotprop/plannotator"
     }
   },
   "deployment": {
@@ -153,7 +167,8 @@
       "protect-claude-process"
     ],
     "optional_hooks": [
-      "idle-queue-check"
+      "idle-queue-check",
+      "plannotator"
     ],
     "templates": [
       "pre-write-validate",

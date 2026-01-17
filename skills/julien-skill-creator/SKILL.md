@@ -142,9 +142,9 @@ description: What it does and when to use it  # Required: max 1024 chars, third 
 ---
 ```
 
-**2026 Optional Fields**:
+**Optional Fields**:
 
-See [references/2026-yaml-fields-usage.md](references/2026-yaml-fields-usage.md) for complete documentation on all optional fields (version, license, allowed-tools, user-invocable, disable-model-invocation, mode, hooks, triggers, metadata).
+See [references/yaml-frontmatter-guide.md](references/yaml-frontmatter-guide.md) for complete documentation on all optional fields.
 
 **Quick Reference - When to Use Each Field:**
 
@@ -155,10 +155,15 @@ See [references/2026-yaml-fields-usage.md](references/2026-yaml-fields-usage.md)
 | `allowed-tools` | Security-sensitive operations (restrict tool access) |
 | `user-invocable: false` | Internal helper skills (not in /slash menu) |
 | `disable-model-invocation: true` | Manual-only destructive operations |
-| `mode: interactive/batch/autonomous` | Define workflow interaction pattern |
-| `hooks` | Environment validation, logging, cleanup |
-| `triggers` | **ALWAYS** (10-20 natural language triggers) |
+| `mode: true` | Mode commands (modify Claude's global behavior) |
+| `context: fork` | Isolated execution in subagent (exploration, research) |
+| `agent` | Specify agent type (Explore, Plan, Bash) |
+| `model` | Cost optimization (haiku for exploration, opus for complex) |
+| `hooks` | Lifecycle automation (lint on write, cleanup on stop) |
+| `triggers` | **ALWAYS** for marketplace (10-20 natural language triggers) |
 | `metadata` | Organization, attribution, categorization |
+
+> **Note**: `triggers` is our marketplace extension, not official Anthropic. Official approach uses keywords in `description`.
 
 #### Body Instructions
 

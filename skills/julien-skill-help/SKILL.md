@@ -7,20 +7,28 @@ metadata:
   version: "1.0.0"
   category: "discovery"
 triggers:
-  - "help"
-  - "aide"
-  - "skills"
+  # Discovery questions (specific)
   - "list skills"
-  - "what can you do"
-  - "qu'est-ce que tu sais faire"
   - "show skills"
+  - "what skills"
+  - "which skills"
   - "available skills"
   - "skill catalog"
-  - "catalogue skills"
   - "discover skills"
-  - "decouvrir skills"
-  - "montre les skills"
+  # French equivalents
   - "liste des skills"
+  - "quels skills"
+  - "montre les skills"
+  - "catalogue skills"
+  - "decouvrir skills"
+  # Capability questions
+  - "what can you do"
+  - "qu'est-ce que tu sais faire"
+  - "que sais-tu faire"
+  # Help with skills (not generic help)
+  - "help with skills"
+  - "aide sur les skills"
+  - "skill help"
 ---
 
 # Skill Help
@@ -41,7 +49,7 @@ Interactive catalog of all available Claude Code skills.
 Read the hybrid registry to get all available skills:
 
 ```bash
-cat ~/.claude/registry/hybrid-registry.json
+cat ~/.claude/configs/hybrid-registry.json
 ```
 
 If the file doesn't exist, inform the user to run `/sync` first.

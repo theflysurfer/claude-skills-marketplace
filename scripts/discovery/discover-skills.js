@@ -161,15 +161,32 @@ async function findProjectSkillSources(syncConfig, projectsRegistry) {
                 ? 2
                 : (sourceConfig.priority || 2);
 
-            // Expand and glob project pattern
-            const expandedPattern = expandPath(projectPattern);
+            // DON'T use expandPath on glob patterns - it breaks them!
+            // expandPath('**/foo') => 'C:\...\**\foo' which is invalid
 
             // Use glob to find directories matching pattern
-            const matches = await fg(expandedPattern, {
-                onlyDirectories: true,
-                absolute: true,
-                ignore: ['**/node_modules/**', '**/.git/**']
-            });
+            // Search from common project roots, not just CWD
+            const searchRoots = [
+                path.join(os.homedir(), 'OneDrive', 'Coding', '_Projets de code'),
+                path.join(os.homedir(), 'Projects'),
+                path.join(os.homedir(), 'Code'),
+                process.cwd()
+            ];
+
+            let matches = [];
+            for (const root of searchRoots) {
+                if (await fileExists(root)) {
+                    const found = await fg(projectPattern, {
+                        onlyDirectories: true,
+                        absolute: true,
+                        ignore: ['**/node_modules/**', '**/.git/**'],
+                        cwd: root
+                    });
+                    matches.push(...found);
+                }
+            }
+            // Dedupe matches
+            matches = [...new Set(matches)];
 
             for (const matchPath of matches) {
                 // Build skills directory path
@@ -214,7 +231,7 @@ async function scanSource(source) {
     const skillFiles = await fg('**/SKILL.md', {
         cwd: sourcePath,
         absolute: true,
-        ignore: ['**/node_modules/**', '**/.git/**', '**/deprecated/**']
+        ignore: ['**/node_modules/**', '**/.git/**', '**/deprecated/**', '**/assets/**', '**/templates/**', '**/examples/**', '**/backups/**']
     });
 
     console.log(`Found ${skillFiles.length} SKILL.md files in ${type} source`);

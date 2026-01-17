@@ -245,6 +245,39 @@
       "content_summary": "Decision Tree: Choosing Your Approach | Observability | Example: Using with_server.py | Reconnaissance-Then-Action Pattern | Common Pitfall # Web Application Testing"
     },
     {
+      "name": "build-check",
+      "triggers": [
+        "check build jokers",
+        "verify build",
+        "test build",
+        "build quality check",
+        "pre-deployment check",
+        "is build ready",
+        "build verification",
+        "check before deploy",
+        "validate build",
+        "jokers build check"
+      ],
+      "description": "Verify build integrity and run pre-deployment checks for the Jokers Hockey project. Use this when preparing to deploy, testing the build, or ensuring code quality before production.",
+      "source": "project",
+      "content_summary": "When to Use This Skill | Build Verification Process | 1. TypeScript Compilation Check | 2. Full Build Test | 3. Verify Build Output # Build Check and Quality Assurance"
+    },
+    {
+      "name": "commit-message",
+      "triggers": [
+        "faire un commit",
+        "écrire un message de commit",
+        "git commit",
+        "committer les changements",
+        "message de commit",
+        "semantic commit",
+        "conventional commit"
+      ],
+      "description": "Generates semantic commit messages from git diff following conventional commits format. Use when user asks to commit changes, wants help writing a commit message, or needs to create a git commit.",
+      "source": "project",
+      "content_summary": "🎯 What This Does | 📝 Commit Message Format | Type | Scope (clemencefouquet.fr specific) | Description # Commit Message Generator Skill"
+    },
+    {
       "name": "cooking-manager-auchan-drive",
       "triggers": [
         "auchan drive",
@@ -259,6 +292,42 @@
       "description": "Automatise les courses sur Auchan Drive via Playwright. Utiliser quand l'utilisateur veut ajouter des produits au panier Auchan, importer une liste de courses, ou rechercher des produits sur Auchan Drive.",
       "source": "global",
       "content_summary": "Workflow Principal | 1. Initialisation de session | 2. Connexion (si nécessaire) | Commandes disponibles | Rechercher un produit # Auchan Drive - Automatisation des courses"
+    },
+    {
+      "name": "database-migration",
+      "triggers": [
+        "migrate database jokers",
+        "update database schema",
+        "push database changes",
+        "add table jokers",
+        "modify jokers schema",
+        "drizzle migration",
+        "database migration",
+        "sync database jokers",
+        "update schema jokers",
+        "jokers database changes"
+      ],
+      "description": "Manage Drizzle ORM database schema and migrations for the Jokers Hockey project. Use this when the user wants to modify the database schema, add tables, update columns, or sync database changes.",
+      "source": "project",
+      "content_summary": "When to Use This Skill | Database Configuration | Current Setup | Drizzle Config | Schema Management Workflow # Database Migration with Drizzle ORM"
+    },
+    {
+      "name": "deploy-jokers",
+      "triggers": [
+        "deploy jokers",
+        "push to production jokers",
+        "deploy jokers site",
+        "publish jokers",
+        "update live jokers",
+        "deploy to server jokers",
+        "push jokers changes",
+        "jokers deployment",
+        "release jokers",
+        "go live jokers"
+      ],
+      "description": "Deploy the Jokers Hockey website to production server. Use this skill when the user asks to deploy, push to production, update the live site, or publish changes to jokers.srv759970.hstgr.cloud.",
+      "source": "project",
+      "content_summary": "When to Use This Skill | Deployment Steps | 1. Pre-Deployment Checks | 2. Connect to Server | 3. Deploy Code # Deploy Jokers to Production"
     },
     {
       "name": "fastmcp-quality-review",
@@ -327,6 +396,26 @@
       "content_summary": "# Check Loaded Skills"
     },
     {
+      "name": "julien-cmd-claude-json-cleanup",
+      "triggers": [
+        "claude.json",
+        "claude json",
+        "cleanup claude",
+        "nettoyer claude",
+        "token limit",
+        "exceeds maximum",
+        "file too large",
+        "fichier trop gros",
+        "clean config",
+        "reduce config size",
+        "claude config cleanup",
+        "settings cleanup"
+      ],
+      "description": "Clean up oversized ~/.claude.json file to prevent token limit errors. Use when Read tool fails with 'exceeds maximum allowed tokens' or to maintain Claude config performance.",
+      "source": "marketplace",
+      "content_summary": "Observability | Problem | Solution | Step 1: Analyze File Size | Step 2: Identify Large Sections # Claude JSON Cleanup"
+    },
+    {
       "name": "julien-cmd-list-resources",
       "triggers": [
         "list skills",
@@ -387,6 +476,23 @@
       "description": "Scan all configured project roots and update the registry",
       "source": "global",
       "content_summary": "Exécution | Ce que fait cette commande | Résultat # Scan Project Roots"
+    },
+    {
+      "name": "julien-cmd-routing-stats",
+      "triggers": [
+        "routing stats",
+        "routing statistics",
+        "show routing stats",
+        "correlation stats",
+        "routing accuracy",
+        "skill routing stats",
+        "analyse routing",
+        "statistiques routing",
+        "router performance"
+      ],
+      "description": "Display routing correlation statistics - how well the skill router predicts actual skill usage",
+      "source": "marketplace",
+      "content_summary": "Action | What It Shows | Verbose Output | Options | Example # Routing Statistics"
     },
     {
       "name": "julien-cmd-servers",
@@ -532,7 +638,7 @@
       ],
       "description": "Manage PowerShell profile, aliases, functions. Triggers: add alias, update profile, modify claude command, Microsoft.PowerShell_profile.ps1",
       "source": "global",
-      "content_summary": "Workflow | Observability | Reference Files | Skill Chaining | Skills Required Before # PowerShell Profile Manager"
+      "content_summary": "Workflow | Observability | Performance Optimizations | Lazy Loading MCP Secrets | Get-ClaudeArgs - DRY Common Logic # PowerShell Profile Manager"
     },
     {
       "name": "julien-dev-profile-test",
@@ -545,7 +651,7 @@
       ],
       "description": "Test PowerShell profile for non-regression. Verifies dynamic tab title, critical functions, and no YASB remnants. Use after profile modifications.",
       "source": "global",
-      "content_summary": "Observability | Test Suite | Test 1: Dynamic Tab Title Management ✅ | Test 2: No YASB Remnants ✅ | Test 3: Critical Sections Present ✅ # PowerShell Profile Non-Regression Test"
+      "content_summary": "Observability | Test Suite | Test 1: Prompt Wrapper After Zoxide ✅ # PowerShell Profile Non-Regression Test"
     },
     {
       "name": "julien-infra-deployment-verifier",
@@ -778,6 +884,99 @@
       "content_summary": "When to Use | Observability | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity # Subtitle Translation Skill"
     },
     {
+      "name": "julien-notion-debug-corrupted-database",
+      "triggers": [
+        "database corrompue",
+        "base de données cassée",
+        "notion erreur",
+        "réparer database",
+        "debug database notion",
+        "entrée ne s'ouvre pas",
+        "queryCollection échoue",
+        "corrupted database",
+        "broken database",
+        "notion error",
+        "oops something went wrong",
+        "can't open database entry",
+        "queryCollection fails",
+        "MCP validation_error",
+        "database 400 error",
+        "fix notion database",
+        "debug notion collection"
+      ],
+      "description": "Diagnoses and repairs corrupted Notion databases. Use when database entries show \"Oops! Something went wrong\", queryCollection returns 400, or MCP validation errors occur.",
+      "source": "marketplace",
+      "content_summary": "Observability | Description | Symptômes de Corruption | 1. Erreur \"Oops! Something went wrong\" | 2. Erreur MCP/API \"validation_error\" # Notion Database Corruption Debugger"
+    },
+    {
+      "name": "julien-notion-github-enricher",
+      "triggers": [
+        "enrich github",
+        "enrichir github",
+        "github metadata",
+        "sync github",
+        "update github",
+        "github info",
+        "refresh github",
+        "rafraîchir github",
+        "outdated repos",
+        "repos obsolètes"
+      ],
+      "description": "Enrichit une page Github [DB] avec les métadonnées GitHub API (description, stars, language, topics, last commit). Gère le tracking de fraîcheur (Last Sync, Sync Status), applique cover image et filtre les vues liées. Use when enriching github entries, syncing repo data, or checking outdated entries.\n",
+      "source": "global",
+      "content_summary": "Observability | Données récupérées | Logique de Sync Status | Execution Steps | Step 1: Identifier la page # GitHub Enricher pour Notion"
+    },
+    {
+      "name": "julien-notion-template-apply",
+      "triggers": [
+        "apply template",
+        "appliquer template",
+        "générer contenu",
+        "generate content",
+        "use template",
+        "utiliser template",
+        "create from template",
+        "créer depuis template"
+      ],
+      "description": "Applique un template Notion sur une page, générant le contenu dynamique via LLM. Parse les blocs {{ llm_generate }} et {{ inline_database }}. Use when creating pages from templates or regenerating template content.\n",
+      "source": "global",
+      "content_summary": "Observability | Prerequisites | Execution Steps | Step 1: Identifier la page cible et le template | Step 2: Fetch le template depuis Templates [DB] # Apply Notion Template"
+    },
+    {
+      "name": "julien-notion-template-audit",
+      "triggers": [
+        "audit database",
+        "audit base",
+        "template audit",
+        "audit templates",
+        "conformity report",
+        "rapport conformité",
+        "database health",
+        "santé base",
+        "orphan pages",
+        "pages orphelines"
+      ],
+      "description": "Audit de conformité d'une database Notion entière. Calcule le % de pages conformes, identifie les pages orphelines. Use when auditing databases or planning template migrations.\n",
+      "source": "global",
+      "content_summary": "Observability | Prerequisites | Execution Steps | Step 1: Identifier la database et les templates applicables | Step 2: Analyser chaque page # Audit Notion Templates"
+    },
+    {
+      "name": "julien-notion-template-validate",
+      "triggers": [
+        "validate template",
+        "valider template",
+        "check conformity",
+        "vérifier conformité",
+        "template compliance",
+        "conformité template",
+        "is page valid",
+        "page conforme"
+      ],
+      "description": "Valide la conformité d'une page Notion par rapport à son template. Vérifie les properties requises et la structure du contenu. Use when checking template compliance or auditing pages.\n",
+      "source": "global",
+      "content_summary": "Observability | Prerequisites | Execution Steps | Step 1: Identifier la page et son template | Step 2: Valider les properties # Validate Notion Template"
+    },
+    {
       "name": "julien-notion-todoDB-delete-done",
       "triggers": [
         "supprimer les tâches terminées",
@@ -792,6 +991,28 @@
       "description": "Deletes all completed tasks (Done=true) from Notion Todos [DB]. Use when user wants to clean up finished todos, archive completed tasks, or purge done items from the todo database.",
       "source": "marketplace",
       "content_summary": "Prérequis | Exécution | Options | Exemples | Skill Chaining # Delete Done Todos from Notion"
+    },
+    {
+      "name": "julien-notion-upload-validator",
+      "triggers": [
+        "validate notion upload",
+        "validate notion page",
+        "verify notion upload",
+        "check notion page",
+        "notion quality check",
+        "test notion upload",
+        "ralph validation",
+        "ralph validator",
+        "false positive notion",
+        "faux positif notion",
+        "links not converted",
+        "liens non convertis",
+        "check table structure",
+        "verify mentions"
+      ],
+      "description": "Real validation for Notion uploads with HydraSpecter - prevents false positives. Use when testing upload results or debugging formatting issues.",
+      "source": "global",
+      "content_summary": "The Problem This Skill Solves | What Makes This Different | Old Validation (3/10) | Ralph Validation (10/10) | Features # Ralph Notion Validator"
     },
     {
       "name": "julien-ref-ahk-v1",
@@ -932,20 +1153,24 @@
     {
       "name": "julien-skill-help",
       "triggers": [
-        "help",
-        "aide",
-        "skills",
         "list skills",
-        "what can you do",
-        "qu'est-ce que tu sais faire",
         "show skills",
+        "what skills",
+        "which skills",
         "available skills",
         "skill catalog",
-        "catalogue skills",
         "discover skills",
-        "decouvrir skills",
+        "liste des skills",
+        "quels skills",
         "montre les skills",
-        "liste des skills"
+        "catalogue skills",
+        "decouvrir skills",
+        "what can you do",
+        "qu'est-ce que tu sais faire",
+        "que sais-tu faire",
+        "help with skills",
+        "aide sur les skills",
+        "skill help"
       ],
       "description": "Interactive catalog of all available skills. Use when: user asks for help, wants to discover skills, or asks what you can do.",
       "source": "global",
@@ -1208,26 +1433,126 @@
       "content_summary": "Prerequisites | Observability | Quick Start | Service Startup | Manual start # Idle Queue - Background Task Manager"
     },
     {
-      "name": "notion-upload-validator",
+      "name": "notion-context-hook",
       "triggers": [
-        "validate notion upload",
-        "validate notion page",
-        "verify notion upload",
-        "check notion page",
-        "notion quality check",
-        "test notion upload",
-        "ralph validation",
-        "ralph validator",
-        "false positive notion",
-        "faux positif notion",
-        "links not converted",
-        "liens non convertis",
-        "check table structure",
-        "verify mentions"
+        "notion context",
+        "hook",
+        "add domain",
+        "context detection"
       ],
-      "description": "Real validation for Notion uploads with HydraSpecter - prevents false positives",
-      "source": "global",
-      "content_summary": "The Problem This Skill Solves | What Makes This Different | Old Validation (3/10) | Ralph Validation (10/10) | Features # Ralph Notion Validator"
+      "description": "Mise à jour du hook de contexte Notion. Utilise cette skill quand l'utilisateur veut ajouter un nouveau domaine (projets, films, livres...) au hook de détection de contexte, ou modifier les bases de données existantes.",
+      "source": "project",
+      "content_summary": "Fichier Hook | Architecture Actuelle | Domaines Configurés | Ajouter un Nouveau Domaine | 1. Créer la skill avec son script # Notion Context Hook Manager"
+    },
+    {
+      "name": "notion-e2e-visual-tests",
+      "triggers": [
+        "test e2e",
+        "test visual",
+        "validate notion upload",
+        "test formatting"
+      ],
+      "description": "Tests E2E automatiques avec validation visuelle HydraSpecter. Upload vers Notion, ouvre dans browser, vérifie le rendu, détecte les bugs de formatting. Ne laisse pas passer les problèmes de bold/italic/code.",
+      "source": "project",
+      "content_summary": "Pourquoi ce skill ? | Architecture | Checklist de Validation | Rich Text Formatting (CRITIQUE) # Notion E2E Visual Tests"
+    },
+    {
+      "name": "notion-endpoint-discovery",
+      "triggers": [
+        "discover endpoint",
+        "notion api",
+        "find endpoint",
+        "network traffic"
+      ],
+      "description": "Discover Notion Internal API endpoints by scraping browser network traffic. Use this skill when you need to find the correct endpoint and payload for a Notion feature not yet implemented in the SDK.",
+      "source": "project",
+      "content_summary": "Purpose | Prerequisites | Workflow | Step 1: Create Browser with Network Monitoring | Step 2: Navigate to Feature Location # Notion Endpoint Discovery"
+    },
+    {
+      "name": "notion-fetch-url",
+      "triggers": [
+        "notion url",
+        "fetch notion",
+        "read notion",
+        "www.notion.so",
+        "analyze notion"
+      ],
+      "description": "Fetch and analyze any Notion page or database directly from its URL. Auto-detects page vs database, handles collection_id vs block_id confusion automatically.",
+      "source": "project",
+      "content_summary": "Triggers | Keywords | What This Skill Does | Instructions | Step 1: Validate URL # Notion Fetch URL Skill"
+    },
+    {
+      "name": "notion-github-enhance-note",
+      "triggers": [
+        "enhance github",
+        "github metadata",
+        "enrich github",
+        "github info"
+      ],
+      "description": "Enrich a Github [DB] entry with GitHub API metadata (description, stars, language, cover image). Use when user wants to populate a GitHub repo entry with live metadata, enhance github entry, or add github info.",
+      "source": "project",
+      "content_summary": "Prerequisites | Output | Data Retrieved | Rate Limits | Error Handling # Notion GitHub Enhance"
+    },
+    {
+      "name": "notion-inbox-to-github",
+      "triggers": [
+        "inbox to github",
+        "migrate github",
+        "move github link"
+      ],
+      "description": "Move a GitHub repo entry from Notion Inbox [DB] to Github [DB]. Use when user wants to route a GitHub URL from inbox to the dedicated GitHub database, migrate inbox entry to github database, or move github link.",
+      "source": "project",
+      "content_summary": "Prerequisites | Output | Workflow | Error Handling | Database IDs # Notion Inbox to GitHub"
+    },
+    {
+      "name": "notion-internal-api-guide",
+      "triggers": [
+        "notion api",
+        "internal api",
+        "notion sdk development",
+        "debug notion",
+        "how to debug notion",
+        "notion api help",
+        "rich text format",
+        "saveTransactionsFanout",
+        "syncRecordValuesMain",
+        "notion block operations",
+        "notion table api",
+        "api interne",
+        "api notion interne",
+        "développement sdk notion",
+        "débugger notion",
+        "aide api notion",
+        "opérations bloc notion"
+      ],
+      "description": "Guide for developing with Notion Internal API v3. Use when adding features to the SDK, debugging API issues, or understanding Internal vs Official API differences.",
+      "source": "project",
+      "content_summary": "Critical Rule | API Format Differences | Key Endpoints | syncRecordValuesMain (READ) | saveTransactionsFanout (WRITE) # Notion Internal API v3 Development Guide"
+    },
+    {
+      "name": "notion-route-entry",
+      "triggers": [
+        "route entry",
+        "triage inbox",
+        "move to database",
+        "notion inbox"
+      ],
+      "description": "Route a Notion Inbox entry to the appropriate PKM database (Github, Videos, Articles, Podcasts, Formations, Lieux, Code, or Todos). Use when user wants to triage inbox, route entry, move to appropriate database.",
+      "source": "project",
+      "content_summary": "Prerequisites | Output | Routing Rules | Destinations # Notion Route Entry"
+    },
+    {
+      "name": "notion-sdk",
+      "triggers": [
+        "notion",
+        "upload markdown",
+        "create database",
+        "sync notion",
+        "deduplicate"
+      ],
+      "description": "Complete Notion integration: upload markdown, create databases from folders, bidirectional sync, CRUD pages/blocks/databases, search, deduplicate. Use when working with Notion, uploading content, syncing databases, or any Notion-related operation.\n",
+      "source": "project",
+      "content_summary": "Key Capabilities (Read [reference.md](reference.md) for full details) | Folder Database Format | Quick Start | Read a page | Query database # Notion SDK"
     },
     {
       "name": "onepiece-workflow",
@@ -1244,6 +1569,24 @@
       "description": "Manage OnePiece transcoding pipeline - GPU local transcoding, remux Japanese audio, upload to Dropbox for web streaming app.",
       "source": "global",
       "content_summary": "Trigger Conditions | Context | Structure des Dossiers | État Actuel (TOUJOURS VÉRIFIER CES FICHIERS) | Actions (Scripts prennent arguments positionnels) # OnePiece Workflow Skill"
+    },
+    {
+      "name": "pm2-management",
+      "triggers": [
+        "check jokers logs",
+        "restart jokers app",
+        "jokers pm2 status",
+        "monitor jokers",
+        "view jokers logs",
+        "jokers server status",
+        "pm2 logs jokers",
+        "is jokers running",
+        "check jokers performance",
+        "jokers process status"
+      ],
+      "description": "Manage the PM2 process for Jokers Hockey production server. Use this when the user wants to check logs, restart the app, monitor performance, or troubleshoot the live application.",
+      "source": "project",
+      "content_summary": "When to Use This Skill | Application Details | Common PM2 Commands | Status and Monitoring | Log Management # PM2 Process Management"
     },
     {
       "name": "startup-shortcuts-cleaner",
@@ -1278,23 +1621,243 @@
       "content_summary": "When to Use | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity | Model Recommendations (December 2024) # Subtitle Translation Skill"
     },
     {
-      "name": "your-skill-name",
+      "name": "wordpress-structure-validator",
       "triggers": [
-        "keyword",
-        "mot-clé",
-        "concept",
-        "créer quelque chose",
-        "create something",
-        "faire une action",
-        "do an action",
-        "j'ai besoin de...",
-        "I need to...",
-        "comment faire pour...",
-        "how do I..."
+        "valider la structure",
+        "valider structure wordpress",
+        "wordpress validator",
+        "auditer le site",
+        "vérifier les templates",
+        "problème de backup",
+        "updraftplus",
+        "permissions fichiers",
+        "avant mise en prod",
+        "vérifier le thème",
+        "validate wordpress",
+        "check wordpress structure"
       ],
-      "description": "Concise description of what this skill does (the \"what\") and when to use it (the \"when\"). Include trigger keywords naturally. Max 1024 chars, third person voice. Example: \"Processes Excel files to generate monthly reports with charts. Use when analyzing sales data, creating spreadsheets, or generating reports.\"\n",
-      "source": "global",
-      "content_summary": "When to Use | Observability | Prerequisites | Execution Steps | Step 1: Preparation # Your Skill Name"
+      "description": "This skill validates WordPress FSE (Full Site Editing) theme structure including templates hierarchy, page associations, theme.json configuration, block styles, featured images usage, file permissions, and UpdraftPlus backup configuration. Use when auditing a WordPress site, after creating/modifying templates, before production deployment, or when troubleshooting backup issues.",
+      "source": "project",
+      "content_summary": "When to Use This Skill | What This Skill Validates | Validation Workflow | Step 1: Template Validation | Step 2: Theme.json Validation # WordPress Structure Validator"
+    },
+    {
+      "name": "workspace-databases",
+      "triggers": [
+        "liste les databases",
+        "list databases",
+        "scan workspace",
+        "database stats",
+        "assign domain",
+        "workspace databases"
+      ],
+      "description": "Gestion centralisée de toutes les databases Notion du workspace. Scanner, lister, assigner domaines, nettoyer les databases de test.",
+      "source": "project",
+      "content_summary": "Déclencheurs | Fichiers Clés | Commandes CLI | Usage Python | Structure databases.yaml # Workspace Databases"
+    },
+    {
+      "name": "wp-block-contract",
+      "triggers": [
+        "créer un bloc gutenberg",
+        "nouveau bloc wordpress",
+        "block.json",
+        "gutenberg block",
+        "bloc custom",
+        "ajouter un bloc",
+        "modifier le bloc",
+        "edit.js",
+        "composant éditeur",
+        "bloc react"
+      ],
+      "description": "This skill enforces Gutenberg block development structure, metadata, and styling rules. Use when creating or modifying custom blocks for the WordPress theme.",
+      "source": "project",
+      "content_summary": "Objectif | Structure obligatoire d'un bloc | Règles fondamentales | 1. block.json obligatoire | 2. Attributs typés avec défauts # WordPress Block Development Contract"
+    },
+    {
+      "name": "wp-build-tools",
+      "triggers": [
+        "lancer le build",
+        "npm run build",
+        "erreur eslint",
+        "erreur stylelint",
+        "configurer le linter",
+        "qualité du code",
+        "vérifier le code",
+        "wordpress scripts",
+        "phpcs"
+      ],
+      "description": "This skill enforces build tooling, linting, and quality checks for WordPress theme development. Use when setting up project, configuring linters, or running quality checks.",
+      "source": "project",
+      "content_summary": "Objectif | Stack recommandée | 1. @wordpress/scripts | 2. Stylelint | 3. ESLint # WordPress Build Tools & Quality"
+    },
+    {
+      "name": "wp-clean-css",
+      "triggers": [
+        "écrire du css",
+        "modifier le style",
+        "css propre",
+        "@layer",
+        "theme.json",
+        "tokens css",
+        "important interdit",
+        "architecture css",
+        "variables css"
+      ],
+      "description": "This skill enforces CSS architecture with @layer, prohibits !important, and validates theme.json token usage. Use when writing, reviewing, or modifying any CSS file in the WordPress theme.",
+      "source": "project",
+      "content_summary": "Objectif | Règles NON NÉGOCIABLES | 1. Interdiction de  | 2. Spécificité maximale : 2 niveaux | 3. Tokens theme.json obligatoires # WordPress Clean CSS Architecture"
+    },
+    {
+      "name": "wp-clem-hostinger-upload-image",
+      "triggers": [
+        "upload une image",
+        "ajouter une image au site",
+        "envoyer une photo",
+        "médiathèque wordpress",
+        "image sur le site clem",
+        "téléverser image"
+      ],
+      "description": "Upload images to clemencefouquet.fr WordPress on Hostinger VPS via Docker. Specific to wordpress-clemence container. Use when user asks to upload images to Clémence's site.",
+      "source": "project",
+      "content_summary": "Required Input | Complete Workflow | 1. Upload to Server | 2. Copy to WordPress with Correct Permissions | 3. Verify Upload # WordPress Image Upload - Clemencefouquet.fr (Hostinger VPS)"
+    },
+    {
+      "name": "wp-footer-contract",
+      "triggers": [
+        "modifier le footer",
+        "pied de page",
+        "mentions légales",
+        "contact footer",
+        "liens footer",
+        "l-footer",
+        "footer wordpress",
+        "bas de page"
+      ],
+      "description": "This skill enforces footer structure and styling rules for clemencefouquet.fr. Use when creating or modifying the site footer, including links, contact info, and legal mentions.",
+      "source": "project",
+      "content_summary": "Objectif | Structure HTML obligatoire | Classes CSS | Layout principal | Règles CSS # WordPress Footer Contract"
+    },
+    {
+      "name": "wp-header-contract",
+      "triggers": [
+        "modifier le header",
+        "changer le menu",
+        "navigation du site",
+        "menu mobile",
+        "logo du site",
+        "l-header",
+        "header wordpress",
+        "glassmorphisme header",
+        "menu responsive"
+      ],
+      "description": "This skill enforces header structure, accessibility, and styling rules for clemencefouquet.fr. Use when creating or modifying the site header, navigation, logo, or mobile menu.",
+      "source": "project",
+      "content_summary": "Objectif | Structure HTML obligatoire | Classes CSS | Layout principal | États # WordPress Header Contract"
+    },
+    {
+      "name": "wp-pattern-contract",
+      "triggers": [
+        "créer un pattern",
+        "nouveau pattern gutenberg",
+        "pattern wordpress",
+        "block pattern",
+        "composition de blocs",
+        "section réutilisable",
+        "template de blocs",
+        "ajouter un pattern",
+        "modifier le pattern"
+      ],
+      "description": "This skill enforces Gutenberg block pattern development rules. Use when creating or modifying patterns that compose multiple blocks into reusable sections.",
+      "source": "project",
+      "content_summary": "Objectif | Règle fondamentale | Structure d'un pattern | Fichier PHP | Header du pattern (OBLIGATOIRE) # WordPress Pattern Development Contract"
+    },
+    {
+      "name": "wp-remote-architecture",
+      "triggers": [
+        "architecture du site",
+        "structure des pages",
+        "hiérarchie des templates",
+        "pages en prod",
+        "navigation du site clem",
+        "template wordpress",
+        "config theme.json"
+      ],
+      "description": "This skill describes the remote WordPress site structure, page hierarchy, templates, and global configuration. Use when referencing site architecture, page structure, or templates on production.",
+      "source": "project",
+      "content_summary": "Objectif | Structure des pages | Pages actuelles | Créer une nouvelle page | Assigner un template # WordPress Site Architecture"
+    },
+    {
+      "name": "wp-sync-workflows",
+      "triggers": [
+        "déployer sur le serveur",
+        "mettre en prod",
+        "récupérer les modifs de clem",
+        "sync git vps",
+        "push en production",
+        "pull depuis prod",
+        "synchroniser le site",
+        "synchroniser le thème",
+        "sync thème",
+        "sync theme",
+        "laragon vers vps",
+        "deploy wordpress"
+      ],
+      "description": "This skill manages sync workflows between local development (Laragon), Git, and production VPS. Use for commits, deployments, and syncing content changes made by Clémence via Gutenberg.",
+      "source": "project",
+      "content_summary": "Objectif | Variables d'environnement | Workflow 1 : Développement Local → Production | Flux | Étape 1 : Développer dans Laragon # WordPress Git Workflow"
+    },
+    {
+      "name": "wp-wpcli-remote",
+      "triggers": [
+        "commande wp-cli",
+        "modifier une page en prod",
+        "changer le menu",
+        "options wordpress",
+        "maintenance wp",
+        "wp cli docker",
+        "modifier le contenu distant"
+      ],
+      "description": "This skill provides WP-CLI commands for remote WordPress management on VPS. Use when modifying content, pages, menus, options, or running maintenance tasks directly on production.",
+      "source": "project",
+      "content_summary": "Objectif | Pattern d'exécution | Commandes fréquentes | Pages et Posts | Menus # WP-CLI Remote Commands"
+    },
+    {
+      "name": "zimprobagnais-categories",
+      "triggers": [
+        "catégorie",
+        "impro",
+        "zimprobagnais",
+        "emotions",
+        "lieux",
+        "metiers",
+        "lexique"
+      ],
+      "description": "Gestion des catégories d'improvisation Zimprobagnais dans Notion. Utilise cette skill quand l'utilisateur veut créer, mettre à jour, synchroniser ou lister des catégories d'impro et leurs éléments (émotions, lieux, métiers, lexique, etc.). Utilise les outils MCP Notion pour toutes les opérations.",
+      "source": "project",
+      "content_summary": "Prerequisites | Architecture | Opérations Clés | Créer une entrée dans une base fille | Lister les éléments d'une catégorie # Zimprobagnais Categories Manager"
+    },
+    {
+      "name": "zimprobagnais-categories-film-quotes",
+      "triggers": [
+        "répliques",
+        "citations",
+        "film quotes",
+        "zimprobagnais"
+      ],
+      "description": "Recherche des répliques cultes de films sur internet et les ajoute à la base Idées/Répliques Zimprobagnais. Utilise cette skill quand l'utilisateur veut enrichir une catégorie avec des citations de films célèbres.",
+      "source": "project",
+      "content_summary": "Prerequisites | Description | Workflow | Commande manuelle | Via Claude # Zimprobagnais Film Quotes Finder"
+    },
+    {
+      "name": "zimprobagnais-echauffements",
+      "triggers": [
+        "echauffement",
+        "warmup",
+        "zimprobagnais",
+        "export pdf"
+      ],
+      "description": "Gestion des échauffements d'improvisation Zimprobagnais dans Notion. Utilise cette skill quand l'utilisateur veut créer, lister, modifier ou exporter en PDF des échauffements d'impro. Chaque échauffement a un nom, une configuration (groupe entier, 1 colonne, etc.), un temps et des instructions détaillées.",
+      "source": "project",
+      "content_summary": "Prerequisites | Base de données | Propriétés | Configurations disponibles | Script Principal # Zimprobagnais Échauffements Manager"
     }
   ]
 }

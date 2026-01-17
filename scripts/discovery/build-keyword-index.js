@@ -19,11 +19,12 @@ const MARKETPLACE_ROOT = path.resolve(__dirname, '../..');
 const CLAUDE_HOME = path.join(os.homedir(), '.claude');
 const INDEX_FILE = path.join(CLAUDE_HOME, 'cache', 'keyword-index.json');
 
-// Try multiple locations for skill-triggers.json (marketplace registry, global registry)
+// Try multiple locations for skill-triggers.json (deployed first, then marketplace)
+// IMPORTANT: Must match the order in fast-skill-router.js which checks ~/.claude/registry/
 const TRIGGERS_FILE_LOCATIONS = [
-    path.join(MARKETPLACE_ROOT, 'registry', 'skill-triggers.json'),
     path.join(CLAUDE_HOME, 'registry', 'skill-triggers.json'),
-    path.join(CLAUDE_HOME, 'configs', 'skill-triggers.json')
+    path.join(CLAUDE_HOME, 'configs', 'skill-triggers.json'),
+    path.join(MARKETPLACE_ROOT, 'registry', 'skill-triggers.json')
 ];
 
 /**
