@@ -67,9 +67,11 @@
     "julien-notion-template-apply",
     "julien-notion-template-validate",
     "julien-notion-template-audit",
-    "julien-notion-github-enricher"
+    "julien-notion-github-enricher",
+    "julien-mcp-windows-manager"
   ],
   "scripts_to_sync": [
+    "mcp-manager.js",
     "discover-mcps.py",
     "mcp-auto-install.py",
     "project-registry.py",
