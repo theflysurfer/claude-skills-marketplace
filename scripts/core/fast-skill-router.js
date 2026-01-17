@@ -247,6 +247,92 @@ function tokenize(text) {
 }
 
 /**
+ * Detect if prompt is a meta-question (asking ABOUT skills, not TO USE them).
+ * Meta-questions should not trigger skill routing.
+ *
+ * Examples of meta-questions:
+ * - "pourquoi la skill n'a pas trigger?"
+ * - "why doesn't the skill work?"
+ * - "the skill-creator is broken"
+ */
+function isMetaQuestion(prompt) {
+    const lower = prompt.toLowerCase();
+
+    // Question patterns about skills/routing
+    const questionPatterns = [
+        /pourquoi.*(skill|trigger|router|routing)/i,
+        /why.*(skill|trigger|router|routing|doesn't|does not)/i,
+        /comment.*(skill|trigger|router|routing).*(marche|fonctionne|work)/i,
+        /how.*(skill|trigger|router|routing).*(work|function)/i,
+        /(skill|trigger|router|routing).*(ne marche|doesn't work|broken|bug|error|problem|is broken)/i,
+        /(skill|trigger).*(pas|not).*(trigger|déclenché|activated|fired|working)/i,
+        /(skill|trigger|routing).*(not working|ne fonctionne pas)/i,
+        /n'a pas trigger/i,
+        /hasn't triggered/i,
+        /didn't trigger/i,
+        /not triggering/i,
+    ];
+
+    for (const pattern of questionPatterns) {
+        if (pattern.test(lower)) {
+            return true;
+        }
+    }
+
+    // Short prompts with "?" and skill-related words are likely meta-questions
+    if (prompt.includes('?') && prompt.length < 100) {
+        if (/\b(skill|trigger|router|routing)\b/i.test(lower)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * Clean prompt before routing to avoid false positives from:
+ * - Quoted content (user citing previous output)
+ * - Previously injected skill content
+ * - Code blocks
+ * - Skill names and activation messages
+ */
+function cleanPromptForRouting(prompt) {
+    let cleaned = prompt;
+
+    // Remove skill activation messages and everything after them
+    // Pattern: 🔧 Skill "xxx" activated (can appear anywhere)
+    cleaned = cleaned.replace(/🔧\s*Skill\s*"[^"]+"\s*activated/gi, '');
+
+    // Remove skill names in quotes (julien-xxx, anthropic-xxx patterns)
+    cleaned = cleaned.replace(/"(julien|anthropic|cooking|subtitle|startup|onepiece)-[a-z0-9-]+"/gi, '');
+
+    // Remove <skill> tags and their content (injected skill content)
+    cleaned = cleaned.replace(/<skill[^>]*>[\s\S]*?<\/skill>/gi, '');
+
+    // Remove content in triple quotes (large quoted blocks)
+    cleaned = cleaned.replace(/"""[\s\S]*?"""/g, '');
+
+    // Remove code blocks (```...```)
+    cleaned = cleaned.replace(/```[\s\S]*?```/g, '');
+
+    // Remove content between regular double quotes if it's a substantial block
+    // Only remove if quoted content is > 50 chars (likely copied output)
+    cleaned = cleaned.replace(/"([^"]{50,})"/g, '');
+
+    // Remove YAML frontmatter blocks (---...---)
+    cleaned = cleaned.replace(/---[\s\S]*?---/g, '');
+
+    // Remove markdown headers that look like skill documentation
+    cleaned = cleaned.replace(/^#+ .*(?:Quick Start|Prerequisites|Usage|Commands|API).*$/gm, '');
+
+    // Remove words commonly found in skill docs but not natural speech
+    // These are trigger-like words that appear in skill outputs
+    cleaned = cleaned.replace(/\b(queue_task|background_job|idle[-_]queue)\b/gi, '');
+
+    return cleaned.trim();
+}
+
+/**
  * Scan current working directory for context patterns.
  * Detects: file extensions, specific files, folders, and special patterns.
  * Returns comprehensive context object for intelligent routing.
@@ -725,8 +811,17 @@ function route(prompt) {
     const index = loadIndex();
     if (!index) return { results: [], allScores: {}, context: { extensions: new Map() }, autoActivated: false };
 
+    // Check for meta-questions FIRST (questions about skills, not requests to use them)
+    if (isMetaQuestion(prompt)) {
+        logDebug('router', 'Meta-question detected, skipping routing');
+        return { results: [], allScores: {}, context: { extensions: new Map() }, autoActivated: false, metaQuestion: true };
+    }
+
     const keywords = index.keywords || {};
     const skillsInfo = index.skills || {};
+
+    // Clean prompt to avoid false positives from quoted/injected content
+    const cleanedPrompt = cleanPromptForRouting(prompt);
 
     // Scan CWD for context awareness (extended version)
     const context = scanContext();
@@ -749,8 +844,8 @@ function route(prompt) {
         skillScores[context.autoActivate] = 1.0;
 
         // Run normal scoring for other skills (for display purposes)
-        const words = tokenize(prompt);
-        const promptLower = prompt.toLowerCase();
+        const words = tokenize(cleanedPrompt);
+        const promptLower = cleanedPrompt.toLowerCase();
         for (const [keyword, matches] of Object.entries(keywords)) {
             if (promptLower.includes(keyword)) {
                 for (const [skillName, weight] of matches) {
@@ -772,9 +867,9 @@ function route(prompt) {
         };
     }
 
-    // Tokenize prompt
-    const words = tokenize(prompt);
-    const promptLower = prompt.toLowerCase();
+    // Tokenize cleaned prompt
+    const words = tokenize(cleanedPrompt);
+    const promptLower = cleanedPrompt.toLowerCase();
 
     // Score each skill
     const skillScores = {};
