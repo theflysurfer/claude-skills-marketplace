@@ -2,22 +2,8 @@
   "description": "Configuration for syncing skills and commands to ~/.claude/",
   "project_sources": [
     {
-      "project_pattern": "**/2025.10 Site internet Clem",
-      "skills_path": ".claude/skills",
-      "priority": 2
-    },
-    {
-      "project_pattern": "**/2025.11 Site Web Jokers",
-      "skills_path": ".claude/skills",
-      "priority": 2
-    },
-    {
-      "project_pattern": "**/2025.11 Calibre",
-      "skills_path": ".claude/skills",
-      "priority": 2
-    },
-    {
-      "project_pattern": "**/2025.09 Notion Uploader",
+      "comment": "All projects in main coding folder with .claude/skills",
+      "project_pattern": "**/*",
       "skills_path": ".claude/skills",
       "priority": 2
     }

@@ -5,6 +5,31 @@
   "source": "hybrid-registry",
   "skills": [
     {
+      "name": "ai-chat-export-to-markdown",
+      "triggers": [
+        "chatgpt",
+        "gpt conversations",
+        "claude conversations",
+        "export chat",
+        "download chatgpt",
+        "télécharger chatgpt",
+        "export conversations",
+        "exporter les conversations",
+        "backup chatgpt",
+        "sauvegarder chatgpt",
+        "sync chatgpt",
+        "convert to markdown",
+        "chat to markdown",
+        "récupérer mes conversations",
+        "download all chats",
+        "export all conversations",
+        "télécharger toutes les conversations"
+      ],
+      "description": "Complete workflow for exporting and converting ChatGPT/Claude conversations to Markdown.\n4 phases: (1) Request export via Playwright, (2) Get download link from Gmail,\n(3) Download and extract ZIP, (4) Convert JSON to Markdown with smart incremental updates.\nUse this skill when user wants to backup, export, or sync their AI chat history.\n",
+      "source": "project",
+      "content_summary": "Workflow Overview | Quick Commands | NEW: API-Based Export (Faster, No Browser Required) | ChatGPT API Export | Claude API Export # AI Chat Export to Markdown"
+    },
+    {
       "name": "anthropic-design-canvas",
       "triggers": [
         "poster",
@@ -351,6 +376,24 @@
       "content_summary": "Quick Start | Observability | Review Process | Step 1: Load Server Code | Step 2: Run Quality Checks # FastMCP Quality Review"
     },
     {
+      "name": "jellyfin-library-scan",
+      "triggers": [
+        "scan jellyfin library",
+        "refresh jellyfin",
+        "jellyfin scan",
+        "trigger library scan",
+        "scan media library",
+        "jellyfin doesn't show content",
+        "content missing in jellyfin",
+        "force jellyfin refresh",
+        "monitor jellyfin scan",
+        "jellyfin library statistics"
+      ],
+      "description": "Triggers and monitors Jellyfin library scans, shows scan progress, displays newly added content, and verifies library statistics. Use this after adding new media, when content doesn't appear in Jellyfin, or when investigating indexing issues.",
+      "source": "project",
+      "content_summary": "What This Does | When To Use This | Quick Start | Option 1: Automated Monitoring (Recommended) | Option 2: Manual Trigger # Jellyfin Library Scan"
+    },
+    {
       "name": "julien-audit-seo",
       "triggers": [
         "seo audit",
@@ -400,20 +443,27 @@
       "triggers": [
         "claude.json",
         "claude json",
+        "token limit",
         "cleanup claude",
         "nettoyer claude",
-        "token limit",
-        "exceeds maximum",
-        "file too large",
-        "fichier trop gros",
         "clean config",
         "reduce config size",
         "claude config cleanup",
-        "settings cleanup"
+        "settings cleanup",
+        "shrink claude config",
+        "réduire la taille de claude",
+        "exceeds maximum",
+        "file too large",
+        "fichier trop gros",
+        "claude.json trop gros",
+        "can't read claude.json",
+        "token limit exceeded",
+        "25000 tokens",
+        "config file too big"
       ],
       "description": "Clean up oversized ~/.claude.json file to prevent token limit errors. Use when Read tool fails with 'exceeds maximum allowed tokens' or to maintain Claude config performance.",
       "source": "marketplace",
-      "content_summary": "Observability | Problem | Solution | Step 1: Analyze File Size | Step 2: Identify Large Sections # Claude JSON Cleanup"
+      "content_summary": "Observability | Problem | Quick Command | What It Does | Manual Analysis # Claude JSON Cleanup"
     },
     {
       "name": "julien-cmd-list-resources",
@@ -849,6 +899,32 @@
       "description": "Interactive MCP server installer. Lists all available MCPs by category and installs the user's choice into .mcp.json",
       "source": "global",
       "content_summary": "Observability | Available MCP Servers | Category: Office (5) | Category: Browser (4) | Category: APIs (6) # MCP Server Installer"
+    },
+    {
+      "name": "julien-mcp-windows-manager",
+      "triggers": [
+        "mcp",
+        "mcp server",
+        "mcp windows",
+        "add mcp",
+        "ajouter mcp",
+        "remove mcp",
+        "supprimer mcp",
+        "install mcp",
+        "installer mcp",
+        "configure mcp",
+        "configurer mcp",
+        "list mcp",
+        "lister mcp",
+        "mcp connection closed",
+        "mcp doesn't work",
+        "mcp ne marche pas",
+        "npx mcp error",
+        "cmd /c mcp"
+      ],
+      "description": "Manage MCP servers on Windows. Add, remove, list MCPs with proper cmd /c wrapper. Handles both global (~/.claude.json) and project (.mcp.json) configs.",
+      "source": "marketplace",
+      "content_summary": "Observability | Windows Specificity | Configuration Files | Quick Commands | List MCPs # MCP Windows Manager"
     },
     {
       "name": "julien-media-onepiece-workflow",
@@ -1433,6 +1509,24 @@
       "content_summary": "Prerequisites | Observability | Quick Start | Service Startup | Manual start # Idle Queue - Background Task Manager"
     },
     {
+      "name": "media-stack-full-refresh",
+      "triggers": [
+        "refresh media stack",
+        "restart zurg rclone",
+        "media stack refresh",
+        "full media refresh",
+        "clear media cache",
+        "sync realdebrid jellyfin",
+        "mount shows stale data",
+        "content not syncing",
+        "deleted torrents still show",
+        "refresh after rd cleanup"
+      ],
+      "description": "Complete workflow to refresh the entire media stack after changes - cleanup Real-Debrid, restart Zurg/Rclone mounts, clear caches, verify mount health, and trigger Jellyfin library scan. Use this after deleting torrents, when mount shows stale data, after configuration changes, or when content doesn't sync between RD and Jellyfin.",
+      "source": "project",
+      "content_summary": "What This Does | When To Use This | Primary Use Cases | Symptoms That Need This | Quick Start # Media Stack Full Refresh"
+    },
+    {
       "name": "notion-context-hook",
       "triggers": [
         "notion context",
@@ -1589,6 +1683,54 @@
       "content_summary": "When to Use This Skill | Application Details | Common PM2 Commands | Status and Monitoring | Log Management # PM2 Process Management"
     },
     {
+      "name": "queuing-background-tasks",
+      "triggers": [
+        "run this when I'm away",
+        "run this when the PC is idle",
+        "run this when I'm not using the computer",
+        "do this overnight",
+        "do this later",
+        "run this in the background",
+        "schedule this for later",
+        "when I leave start this",
+        "run this when the computer is free",
+        "can you do this while I'm AFK",
+        "process this when I'm not here",
+        "queue this up for later",
+        "lance ça quand je suis pas là",
+        "fais ça quand l'ordi est libre",
+        "exécute ça plus tard",
+        "mets ça en file d'attente",
+        "fais ça pendant la nuit",
+        "lance ça en arrière-plan",
+        "quand je pars tu lances ça",
+        "traite ça quand je suis inactif",
+        "programme cette tâche pour plus tard",
+        "fais-le quand le PC est au repos"
+      ],
+      "description": "Queue long-running tasks (transcoding, API calls, batch processing) to run in background at low priority when user is active, normal priority when idle. Use when scripts take minutes/hours and shouldn't impact PC performance during active use.",
+      "source": "project",
+      "content_summary": "When to Use This Skill | Decision Flow | MCP Tools Available | Prerequisites | Quick Start # Idle Queue - Background Task Manager"
+    },
+    {
+      "name": "realdebrid-torrent-cleanup",
+      "triggers": [
+        "cleanup realdebrid",
+        "remove dead torrents",
+        "realdebrid cleanup",
+        "delete dead torrents",
+        "clean rd account",
+        "purge dead files",
+        "realdebrid maintenance",
+        "free up rd storage",
+        "remove magnet errors",
+        "jellyfin scan slow"
+      ],
+      "description": "Identifies and removes dead, unavailable, or error torrents from Real-Debrid account using the API. Shows torrent status, filters by health, and safely deletes torrents with missing files. Use this when Jellyfin scans are slow, when troubleshooting 404 errors, to clean account storage, or before major library refreshes.",
+      "source": "project",
+      "content_summary": "What This Does | When To Use This | Quick Start | 1. Install Script on Server | 2. Dry-Run (See What Would Be Deleted) # Real-Debrid Torrent Cleanup"
+    },
+    {
       "name": "startup-shortcuts-cleaner",
       "triggers": [
         "startup shortcuts",
@@ -1619,6 +1761,31 @@
       "description": "Translates SRT subtitle files using LLM APIs (OpenRouter/Llama). Use when user wants to translate subtitles, SRT files, or needs batch subtitle translation for movies/series. Handles HTML tags, batch processing, retries, and cost estimation.",
       "source": "global",
       "content_summary": "When to Use | Step 0: Ask User for API Provider | Provider Configuration | Step 1: Choose Model Based on Complexity | Model Recommendations (December 2024) # Subtitle Translation Skill"
+    },
+    {
+      "name": "temu-extractor",
+      "triggers": [
+        "temu",
+        "temu.com",
+        "extraire temu",
+        "panier temu",
+        "commandes temu",
+        "récupérer mon panier temu",
+        "exporter mes commandes temu",
+        "lister les produits temu",
+        "extraire les urls temu",
+        "scraper temu",
+        "temu cart",
+        "temu orders",
+        "extract temu data",
+        "scrape temu products",
+        "j'ai besoin de mes produits temu",
+        "comment récupérer mon historique temu",
+        "exporter mon panier"
+      ],
+      "description": "Extracts cart and order data from Temu.com via Playwriter MCP. Use when extracting product URLs, goods_ids from Temu cart or order history. Handles SPA navigation, extension disconnects, and multi-pass extraction.",
+      "source": "project",
+      "content_summary": "Prerequisites | Endpoints | Extraction Selectors | Cart Items | Order Items # Temu Data Extractor"
     },
     {
       "name": "wordpress-structure-validator",
