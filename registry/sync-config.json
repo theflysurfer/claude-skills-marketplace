@@ -25,6 +25,7 @@
     "julien-dev-powershell-profile",
     "julien-dev-commit-message",
     "julien-dev-hook-creator",
+    "julien-dev-modify-claude-alias",
     "julien-workflow-check-loaded-skills",
     "julien-workflow-queuing-background-tasks",
     "julien-workflow-advice-gemini",
@@ -54,7 +55,9 @@
     "julien-notion-template-validate",
     "julien-notion-template-audit",
     "julien-notion-github-enricher",
-    "julien-mcp-windows-manager"
+    "julien-mcp-windows-manager",
+    "julien-troubleshooting-onedrive-reserved",
+    "julien-skill-help"
   ],
   "scripts_to_sync": [
     "mcp-manager.js",
@@ -78,7 +81,26 @@
     "test-router.js",
     "discover-skills.js",
     "generate-triggers.js",
-    "build-keyword-index.js"
+    "build-keyword-index.js",
+    "notify-toast-voice.ps1",
+    "notify-voice.ps1"
+  ],
+  "commands_to_sync": [
+    "active-folder.md",
+    "list-resources.md",
+    "plannotator-review.md",
+    "project-info.md",
+    "project-list.md",
+    "project-scan.md",
+    "servers.md",
+    "show-routing.md",
+    "sync.md"
+  ],
+  "references_to_sync": [
+    "GUIDE_markdown_for_notion.md",
+    "GUIDE_testing_before_delivery.md",
+    "METHODOLOGY_doc_production.md",
+    "METHODOLOGY_doc_review.md"
   ],
   "configs_to_sync": [
     "skill-triggers.json",
@@ -96,7 +118,8 @@
       "fast-skill-router",
       "track-skill-invocation",
       "session-end-cleanup",
-      "protect-claude-process"
+      "protect-claude-process",
+      "notify-toast-voice"
     ],
     "optional": [
       "idle-queue-check"
