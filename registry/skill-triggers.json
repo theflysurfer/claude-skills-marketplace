@@ -319,6 +319,124 @@
       "content_summary": "Workflow Principal | 1. Initialisation de session | 2. Connexion (si nécessaire) | Commandes disponibles | Rechercher un produit # Auchan Drive - Automatisation des courses"
     },
     {
+      "name": "cooking-manager-hellofresh-cooking-adjust",
+      "triggers": [
+        "ajuster temps cuisson",
+        "adapter cuisson",
+        "temps de cuisson modifié",
+        "adjust cooking time",
+        "cooking adjustments"
+      ],
+      "description": "Ajuster les temps et instructions de cuisson en fonction des modifications de portions et substitutions IG bas.\nRecalcule les temps quand les quantités changent ou quand des ingrédients sont substitués.\n",
+      "source": "project",
+      "content_summary": "Triggers | Description | Règles de cuisson | Temps de base par ingrédient | Ajustements pour substitutions IG bas # Skill: hellofresh-cooking-adjust"
+    },
+    {
+      "name": "cooking-manager-hellofresh-display-cards",
+      "triggers": [
+        "afficher les encarts",
+        "générer les cards",
+        "montrer les adaptations",
+        "display recipe cards",
+        "hellofresh cards"
+      ],
+      "description": "Générer les données structurées pour l'affichage des encarts UI sous les recettes HelloFresh.\nConsolide les adaptations famille, substitutions IG bas et ajustements cuisson en JSON pour React.\n",
+      "source": "project",
+      "content_summary": "Triggers | Description | Encarts générés | 1. Encart \"Portions famille\" | 2. Encart \"Compléments à acheter\" # Skill: hellofresh-display-cards"
+    },
+    {
+      "name": "cooking-manager-hellofresh-family-adapter",
+      "triggers": [
+        "adapter les portions",
+        "adapter pour la famille",
+        "calculer les compléments",
+        "portions famille",
+        "family portions"
+      ],
+      "description": "Adapter les recettes HelloFresh aux profils de portion de chaque membre de la famille.\nCalcule les portions personnalisées selon le format (211, 221, normal, enfant) et la taille de poing.\n",
+      "source": "project",
+      "content_summary": "Triggers | Workflow | 1. Récupérer les données | 2. Comprendre la logique | 3. Gérer les substitutions IG bas # Skill: hellofresh-family-adapter"
+    },
+    {
+      "name": "cooking-manager-hellofresh-low-gi",
+      "triggers": [
+        "transformer en IG bas",
+        "version IG bas",
+        "alternatives IG bas",
+        "low glycemic",
+        "substitutions IG bas"
+      ],
+      "description": "Proposer des substitutions à indice glycémique (IG) bas pour les recettes HelloFresh.\nInclut des compensations gustatives pour préserver le plaisir de manger.\n",
+      "source": "project",
+      "content_summary": "Triggers | Principe Fondamental | Description | Matrice de Substitutions | Féculents # Skill: hellofresh-low-gi"
+    },
+    {
+      "name": "cooking-manager-house-supplies",
+      "triggers": [
+        "produits maison",
+        "courses habituelles",
+        "ajouter oranges fromage blanc",
+        "house supplies",
+        "household items"
+      ],
+      "description": "Ajouter les produits récurrents de la maison au panier Auchan Drive.\nGère les achats habituels: fruits, produits laitiers, entretien, café.\n",
+      "source": "project",
+      "content_summary": "Triggers | Description | Produits par défaut | Workflow | 1. Recevoir la liste des produits # Skill: house-supplies"
+    },
+    {
+      "name": "cooking-manager-pdf-recipe-scraper",
+      "triggers": [
+        "extraire recettes depuis PDF",
+        "scraper recettes PDF",
+        "importer recettes PDF",
+        "parser PDF recettes",
+        "extract recipes from PDF"
+      ],
+      "description": "Extrait automatiquement des recettes structurées depuis des fichiers PDF.\nPipeline complet: extraction images, texte, insertion DB avec liaison automatique.\n",
+      "source": "project",
+      "content_summary": "Déclencheurs | Objectif | Prérequis | Workflow | 1. Configuration # PDF Recipe Scraper"
+    },
+    {
+      "name": "cooking-manager-pre-delivery-check",
+      "triggers": [
+        "pre-delivery",
+        "livraison",
+        "ready to ship",
+        "validation finale",
+        "test exhaustif"
+      ],
+      "description": "Exécute une checklist exhaustive de validation avant livraison de code.\nTests TypeScript, unitaires, intégration, E2E et vérifications manuelles.\n",
+      "source": "project",
+      "content_summary": "Triggers | Purpose | Workflow | 1. Compilation TypeScript | 2. Tests Unitaires (Vitest) # Skill: Pre-Delivery Check"
+    },
+    {
+      "name": "cooking-manager-recipe-low-gi-transform",
+      "triggers": [
+        "transformer en IG bas",
+        "version IG bas de cette recette",
+        "adapter pour diabétique",
+        "réduire indice glycémique",
+        "low glycemic version"
+      ],
+      "description": "Transformer une recette en version à indice glycémique (IG) bas.\nPréserve les saveurs avec des compensations gustatives pour chaque substitution.\n",
+      "source": "project",
+      "content_summary": "Déclencheurs | Principe Fondamental | Profils Gustatifs à Préserver | Matrice de Substitutions | Féculents # Transformation Recette IG Bas"
+    },
+    {
+      "name": "cooking-manager-skill-orchestrator",
+      "triggers": [
+        "orchestrate",
+        "lancer le pipeline",
+        "exécuter weekly-shopping",
+        "courses de la semaine",
+        "préparer les recettes",
+        "run pipeline"
+      ],
+      "description": "Orchestrateur de skills pour exécuter des pipelines de tâches configurés en JSON.\nGère les dépendances entre skills, le mapping inputs/outputs et les points d'arrêt utilisateur.\n",
+      "source": "project",
+      "content_summary": "Triggers | Description | Pipelines disponibles | Workflow | 1. Initialisation # Skill: skill-orchestrator"
+    },
+    {
       "name": "database-migration",
       "triggers": [
         "migrate database jokers",
@@ -675,6 +793,19 @@
       "description": "Guide for creating Claude Code hooks - shell commands that execute at specific lifecycle events (SessionStart, SessionEnd, PreToolUse, PostToolUse, etc.). Use when users want to automate actions, add validation, logging, or integrate external tools into Claude Code workflows.",
       "source": "global",
       "content_summary": "What Are Hooks? | Observability | Available Hook Events | Hook Configuration | Basic Structure # Hook Creator"
+    },
+    {
+      "name": "julien-dev-modify-claude-alias",
+      "triggers": [
+        "modifier l'alias claude",
+        "changer la fonction claude",
+        "update claude alias",
+        "modifier le comportement de claude",
+        "powershell claude function"
+      ],
+      "description": "Modifie l'alias PowerShell `claude` en préservant toutes les fonctionnalités existantes.\nGère les bypass permissions, MCP auto-détection, titre d'onglet et recherche d'exécutable.\n",
+      "source": "marketplace",
+      "content_summary": "Description | Triggers | Instructions | Fonctionnalités à TOUJOURS préserver | Processus de modification # modify-claude-alias"
     },
     {
       "name": "julien-dev-powershell-profile",
@@ -1525,6 +1656,21 @@
       "description": "Complete workflow to refresh the entire media stack after changes - cleanup Real-Debrid, restart Zurg/Rclone mounts, clear caches, verify mount health, and trigger Jellyfin library scan. Use this after deleting torrents, when mount shows stale data, after configuration changes, or when content doesn't sync between RD and Jellyfin.",
       "source": "project",
       "content_summary": "What This Does | When To Use This | Primary Use Cases | Symptoms That Need This | Quick Start # Media Stack Full Refresh"
+    },
+    {
+      "name": "money-manager-categorize",
+      "triggers": [
+        "categorize transactions",
+        "categorise transactions",
+        "catégoriser transactions",
+        "classer transactions",
+        "classify transactions",
+        "transactions non catégorisées",
+        "uncategorized transactions"
+      ],
+      "description": "Categorize uncategorized transactions in Money Manager using AI.\nAnalyzes transaction descriptions and suggests categories based on patterns.\n",
+      "source": "project",
+      "content_summary": "Trigger | Prerequisites | Execution | Step 1: Fetch uncategorized transactions | Step 2: Fetch categories # Categorize Transactions"
     },
     {
       "name": "notion-context-hook",
