@@ -87,20 +87,11 @@ async function main() {
         process.exit(1);
     }
 
-    // Step 3: Build keyword index
-    console.log('\n=== 3. Build keyword index ===');
-    const indexScript = path.join(SCRIPTS_DISCOVERY, 'build-keyword-index.js');
-    if (!runCommand(`node "${indexScript}"`, { cwd: MARKETPLACE })) {
-        console.error('Failed to build keyword index. Aborting.');
-        process.exit(1);
-    }
-
-    // Step 4: Sync to global ~/.claude/
+    // Step 3: Sync triggers to global ~/.claude/ (BEFORE building index)
+    // Important: build-keyword-index reads from ~/.claude/registry/skill-triggers.json
     if (!skipSync) {
-        console.log('\n=== 4. Sync to global ~/.claude/ ===');
+        console.log('\n=== 3. Sync registries to ~/.claude/ ===');
 
-        // Copy registries
-        // Note: keyword-index.json is written directly to ~/.claude/cache/ by build-keyword-index.js
         const filesToSync = [
             { src: 'hybrid-registry.json', dest: path.join(CLAUDE_HOME, 'configs', 'hybrid-registry.json') },
             { src: 'skill-triggers.json', dest: path.join(CLAUDE_HOME, 'registry', 'skill-triggers.json') }
@@ -114,6 +105,14 @@ async function main() {
                 console.warn(`  Warning: ${file.src} not found, skipping`);
             }
         }
+    }
+
+    // Step 4: Build keyword index (AFTER sync so mtime matches)
+    console.log('\n=== 4. Build keyword index ===');
+    const indexScript = path.join(SCRIPTS_DISCOVERY, 'build-keyword-index.js');
+    if (!runCommand(`node "${indexScript}"`, { cwd: MARKETPLACE })) {
+        console.error('Failed to build keyword index. Aborting.');
+        process.exit(1);
     }
 
     // Step 5: Build/serve docs (optional)
@@ -158,11 +157,11 @@ async function main() {
         console.log('\n  Files updated:');
         console.log('  - registry/hybrid-registry.json');
         console.log('  - registry/skill-triggers.json');
-        console.log('  - ~/.claude/cache/keyword-index.json');
         if (!skipSync) {
             console.log('  - ~/.claude/configs/hybrid-registry.json');
             console.log('  - ~/.claude/registry/skill-triggers.json');
         }
+        console.log('  - ~/.claude/cache/keyword-index.json');
     }
 }
 
