@@ -53,3 +53,10 @@ credentials.json
 RESOURCES.md
 site/
 tests/coverage/
+coverage/
+
+# Project-specific MCP config (contains local paths)
+.mcp.json
+
+# Skill backups
+*.backup-*
