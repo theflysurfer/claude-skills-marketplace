@@ -1,5 +1,20 @@
 # Claude Code Marketplace
 
+## Source of Truth
+
+**Ce repo est la source de vérité** pour tous les fichiers Claude Code:
+- Hooks → `hooks/`
+- Skills → `skills/`
+- Scripts → `scripts/`
+- Commands → déployés via `/julien-sync`
+
+**Workflow obligatoire:**
+1. Modifier les fichiers ICI (dans ce repo)
+2. Commit + push
+3. Synchroniser vers `~/.claude/` avec `/julien-sync` ou manuellement
+
+**Ne JAMAIS modifier directement dans `~/.claude/`** - les changements seront écrasés au prochain sync.
+
 ## Project Purpose
 
 Central marketplace for Claude Code ecosystem management:
@@ -31,6 +46,7 @@ Central marketplace for Claude Code ecosystem management:
 | `track-skill-invocation` | PostToolUse | Record skill usage for analytics |
 | `session-end-cleanup` | SessionEnd | Clean temporary files |
 | `protect-claude-process` | PreToolUse | Block dangerous process commands |
+| `voice-stop` | Stop | TTS announcement when Claude finishes |
 
 ### Router Configuration
 
