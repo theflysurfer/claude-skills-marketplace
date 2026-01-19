@@ -10,6 +10,7 @@
         "chatgpt",
         "gpt conversations",
         "claude conversations",
+        "perplexity",
         "export chat",
         "download chatgpt",
         "télécharger chatgpt",
@@ -20,14 +21,15 @@
         "sync chatgpt",
         "convert to markdown",
         "chat to markdown",
+        "export perplexity",
         "récupérer mes conversations",
         "download all chats",
         "export all conversations",
         "télécharger toutes les conversations"
       ],
-      "description": "Complete workflow for exporting and converting ChatGPT/Claude conversations to Markdown.\n4 phases: (1) Request export via Playwright, (2) Get download link from Gmail,\n(3) Download and extract ZIP, (4) Convert JSON to Markdown with smart incremental updates.\nUse this skill when user wants to backup, export, or sync their AI chat history.\n",
+      "description": "Complete workflow for exporting ChatGPT/Claude/Perplexity conversations to Markdown.\nUses HydraSpecter MCP with auto-backend selection (SeleniumBase for protected sites).\n3 phases: (1) Request export via HydraSpecter, (2) Auto-download from Gmail,\n(3) Extract and convert to Markdown. Use when user wants to backup or sync AI chat history.\n",
       "source": "project",
-      "content_summary": "Workflow Overview | Quick Commands | NEW: API-Based Export (Faster, No Browser Required) | ChatGPT API Export | Claude API Export # AI Chat Export to Markdown"
+      "content_summary": "Observability | Workflow Overview | Quick Start | Export ChatGPT (Full Automation) | Export Claude (Full Automation) # AI Chat Export to Markdown"
     },
     {
       "name": "anthropic-design-canvas",
@@ -303,6 +305,19 @@
       "content_summary": "🎯 What This Does | 📝 Commit Message Format | Type | Scope (clemencefouquet.fr specific) | Description # Commit Message Generator Skill"
     },
     {
+      "name": "cooking-manager-auchan-add-to-cart",
+      "triggers": [
+        "ajouter auchan",
+        "panier auchan",
+        "courses auchan",
+        "acheter auchan",
+        "auchan drive"
+      ],
+      "description": "Ajoute des produits au panier Auchan Drive. Utiliser quand l'utilisateur veut ajouter un produit, faire ses courses, ou remplir son panier Auchan.",
+      "source": "project",
+      "content_summary": "Prérequis | Workflow | 1. Vérifier la connexion Playwriter | 2. Naviguer vers Auchan | 3. Extraire les produits # Auchan Drive - Ajouter au panier"
+    },
+    {
       "name": "cooking-manager-auchan-drive",
       "triggers": [
         "auchan drive",
@@ -317,6 +332,37 @@
       "description": "Automatise les courses sur Auchan Drive via Playwright. Utiliser quand l'utilisateur veut ajouter des produits au panier Auchan, importer une liste de courses, ou rechercher des produits sur Auchan Drive.",
       "source": "global",
       "content_summary": "Workflow Principal | 1. Initialisation de session | 2. Connexion (si nécessaire) | Commandes disponibles | Rechercher un produit # Auchan Drive - Automatisation des courses"
+    },
+    {
+      "name": "cooking-manager-chronodrive-cart",
+      "triggers": [
+        "ajouter chronodrive",
+        "panier chronodrive",
+        "courses chronodrive",
+        "acheter chronodrive",
+        "chrono drive"
+      ],
+      "description": "Gère le panier Chronodrive via Playwright. Utiliser pour ajouter des produits, faire des courses, rechercher des produits, ou vider le panier Chronodrive.",
+      "source": "project",
+      "content_summary": "Prérequis | URLs importantes | Workflow | 1. Vérifier la connexion Playwriter | 2. Naviguer vers la recherche # Chronodrive - Gestion du panier"
+    },
+    {
+      "name": "cooking-manager-hellofresh-audit",
+      "triggers": [
+        "audit hellofresh",
+        "recettes incomplètes",
+        "vérifier recettes",
+        "recettes à rescraper",
+        "qualité recettes",
+        "données manquantes",
+        "check recipes",
+        "incomplete recipes",
+        "audit recettes",
+        "recettes cassées"
+      ],
+      "description": "Auditer les recettes HelloFresh pour identifier les données manquantes (image, instructions, nutrition). Utiliser pour vérifier la complétude des recettes, trouver celles à rescraper, ou avant une livraison.",
+      "source": "project",
+      "content_summary": "Observability | Workflow | Étape 1 : Récupérer le rapport de complétude | Étape 2 : Analyser et catégoriser | Étape 3 : Présenter le rapport # HelloFresh Recipe Audit"
     },
     {
       "name": "cooking-manager-hellofresh-cooking-adjust",
@@ -421,6 +467,19 @@
       "description": "Transformer une recette en version à indice glycémique (IG) bas.\nPréserve les saveurs avec des compensations gustatives pour chaque substitution.\n",
       "source": "project",
       "content_summary": "Déclencheurs | Principe Fondamental | Profils Gustatifs à Préserver | Matrice de Substitutions | Féculents # Transformation Recette IG Bas"
+    },
+    {
+      "name": "cooking-manager-scrape-hellofresh-recipes",
+      "triggers": [
+        "scrape hellofresh",
+        "récupérer recettes hellofresh",
+        "mes recettes de la semaine",
+        "ma livraison hellofresh",
+        "importer recettes"
+      ],
+      "description": "Scraper les recettes HelloFresh de la semaine via Playwriter. Guide pas à pas avec URLs, sélecteurs CSS et code d'extraction. Utiliser pour récupérer les recettes, ingrédients et valeurs nutritionnelles.",
+      "source": "project",
+      "content_summary": "Prérequis | Workflow Complet Pas à Pas | Étape 1 : Vérifier si les recettes sont déjà en base | Étape 2 : Naviguer vers HelloFresh Menu | Étape 3 : Sélectionner la bonne semaine # HelloFresh - Scraping des Recettes (Guide Complet)"
     },
     {
       "name": "cooking-manager-skill-orchestrator",
@@ -1034,9 +1093,10 @@
     {
       "name": "julien-mcp-windows-manager",
       "triggers": [
-        "mcp",
-        "mcp server",
+        "mcp server config",
         "mcp windows",
+        "mcp.json",
+        ".mcp.json",
         "add mcp",
         "ajouter mcp",
         "remove mcp",
@@ -1743,31 +1803,6 @@
       "description": "Move a GitHub repo entry from Notion Inbox [DB] to Github [DB]. Use when user wants to route a GitHub URL from inbox to the dedicated GitHub database, migrate inbox entry to github database, or move github link.",
       "source": "project",
       "content_summary": "Prerequisites | Output | Workflow | Error Handling | Database IDs # Notion Inbox to GitHub"
-    },
-    {
-      "name": "notion-internal-api-guide",
-      "triggers": [
-        "notion api",
-        "internal api",
-        "notion sdk development",
-        "debug notion",
-        "how to debug notion",
-        "notion api help",
-        "rich text format",
-        "saveTransactionsFanout",
-        "syncRecordValuesMain",
-        "notion block operations",
-        "notion table api",
-        "api interne",
-        "api notion interne",
-        "développement sdk notion",
-        "débugger notion",
-        "aide api notion",
-        "opérations bloc notion"
-      ],
-      "description": "Guide for developing with Notion Internal API v3. Use when adding features to the SDK, debugging API issues, or understanding Internal vs Official API differences.",
-      "source": "project",
-      "content_summary": "Critical Rule | API Format Differences | Key Endpoints | syncRecordValuesMain (READ) | saveTransactionsFanout (WRITE) # Notion Internal API v3 Development Guide"
     },
     {
       "name": "notion-route-entry",

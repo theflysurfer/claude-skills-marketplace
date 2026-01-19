@@ -171,6 +171,21 @@ const CONTEXT_HINTS = {
     '.env': null  // Security reminder in output
 };
 
+// Known MCP Server Names - When these appear with "mcp", user is likely
+// USING the MCP, not trying to MANAGE/CONFIGURE MCPs
+const KNOWN_MCP_NAMES = [
+    'playwriter', 'playwright', 'filesystem', 'memory', 'brave', 'puppeteer',
+    'github', 'gitlab', 'postgres', 'sqlite', 'slack', 'discord', 'notion',
+    'google', 'calendar', 'drive', 'sheets', 'desktop-automation', 'idle-queue',
+    'happy', 'fetch', 'browserbase', 'sequential', 'exa', 'stripe'
+];
+
+// Skills that manage MCPs (should be penalized when talking ABOUT a specific MCP)
+const MCP_MANAGEMENT_SKILLS = [
+    'julien-mcp-windows-manager',
+    'julien-mcp-installer'
+];
+
 // Analytical Verbs Weighting (Tier 1 verbs get 1.5x boost)
 const ANALYTICAL_VERBS = {
     // English Tier 1
@@ -905,6 +920,21 @@ function route(prompt) {
 
     // Apply context awareness boost (Tier 2)
     applyContextBoost(skillScores, context, hasAnalyticalVerb);
+
+    // Penalize MCP management skills when user mentions a specific MCP by name
+    // e.g., "use mcp playwriter" → user wants to USE it, not configure MCPs
+    if (promptLower.includes('mcp')) {
+        const mentionsKnownMcp = KNOWN_MCP_NAMES.some(name => promptLower.includes(name));
+        if (mentionsKnownMcp) {
+            for (const skill of MCP_MANAGEMENT_SKILLS) {
+                if (skillScores[skill]) {
+                    // Reduce score by 90% - this is likely a false positive
+                    skillScores[skill] *= 0.1;
+                    logDebug('router', `Penalized ${skill} (known MCP name detected in prompt)`);
+                }
+            }
+        }
+    }
 
     // Build results
     const results = Object.entries(skillScores)

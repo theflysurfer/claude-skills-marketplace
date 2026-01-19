@@ -7,10 +7,11 @@ metadata:
   author: "Julien"
   category: "infrastructure"
 triggers:
-  # Keywords
-  - "mcp"
-  - "mcp server"
+  # Keywords (removed generic "mcp" - causes false positives when mentioning any MCP server by name)
+  - "mcp server config"
   - "mcp windows"
+  - "mcp.json"
+  - ".mcp.json"
   # Action phrases
   - "add mcp"
   - "ajouter mcp"
