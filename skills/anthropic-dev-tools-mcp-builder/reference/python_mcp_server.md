@@ -717,3 +717,107 @@ Before finalizing your Python MCP server implementation, ensure:
 - [ ] All imports resolve correctly
 - [ ] Sample tool calls work as expected
 - [ ] Error scenarios handled gracefully
+
+---
+
+## Claude Code Integration
+
+### Configuration in ~/.claude.json
+
+For Python MCP servers, **always use absolute paths** in the configuration:
+
+```json
+{
+  "mcpServers": {
+    "my_service_mcp": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["C:\\path\\to\\run_server.py"],
+      "env": {"PYTHONUNBUFFERED": "1"}
+    }
+  }
+}
+```
+
+### Troubleshooting: MCP Fails at Claude Code Startup
+
+**Symptom:** MCP shows "failed" at Claude Code startup but works after `restart_server`.
+
+**Cause:** The `cwd` option in MCP config is not reliably applied at Claude Code startup. MCPs using `python -m module` with `cwd` fail silently.
+
+**Pattern that FAILS:**
+```json
+{
+  "command": "python",
+  "args": ["-m", "my_mcp_module"],
+  "cwd": "C:\\path\\to\\project"  // NOT applied at startup!
+}
+```
+
+**Pattern that WORKS:**
+```json
+{
+  "command": "python",
+  "args": ["C:\\path\\to\\project\\run_server.py"]
+  // NO cwd - script handles its own path
+}
+```
+
+**Solution:** Create a standalone entry point script that sets up PYTHONPATH:
+
+```python
+#!/usr/bin/env python3
+"""Standalone entry point - works with absolute path, no cwd needed."""
+import sys
+from pathlib import Path
+
+# Add project root to Python path
+PROJECT_ROOT = Path(__file__).parent.resolve()
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+# Now import and run
+from my_mcp_module.server import main
+main()
+```
+
+### With reloaderoo (Hot Reload)
+
+For development with hot reload:
+
+```json
+{
+  "command": "reloaderoo",
+  "args": ["proxy", "--", "python", "C:\\path\\to\\run_server.py"],
+  "env": {"PYTHONUNBUFFERED": "1"}
+}
+```
+
+### Logging for Debugging
+
+Add early logging to catch startup failures:
+
+```python
+import logging
+from logging.handlers import RotatingFileHandler
+from pathlib import Path
+
+def setup_early_logging():
+    log_dir = Path(__file__).parent / "logs"
+    log_dir.mkdir(exist_ok=True)
+
+    handler = RotatingFileHandler(
+        log_dir / "mcp-server.log",
+        maxBytes=2*1024*1024,  # 2MB
+        backupCount=5
+    )
+    handler.setFormatter(logging.Formatter('[%(asctime)s] %(levelname)s: %(message)s'))
+
+    root = logging.getLogger()
+    root.setLevel(logging.DEBUG)
+    root.addHandler(handler)
+
+# Call at module import time (before FastMCP)
+setup_early_logging()
+logging.info("MCP server starting...")
+```
