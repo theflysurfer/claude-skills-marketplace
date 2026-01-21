@@ -177,7 +177,8 @@ const KNOWN_MCP_NAMES = [
     'playwriter', 'playwright', 'filesystem', 'memory', 'brave', 'puppeteer',
     'github', 'gitlab', 'postgres', 'sqlite', 'slack', 'discord', 'notion',
     'google', 'calendar', 'drive', 'sheets', 'desktop-automation', 'idle-queue',
-    'happy', 'fetch', 'browserbase', 'sequential', 'exa', 'stripe'
+    'happy', 'fetch', 'browserbase', 'sequential', 'exa', 'stripe',
+    'ahk', 'ahk-mcp', 'hydraspecter', 'hydra'
 ];
 
 // Skills that manage MCPs (should be penalized when talking ABOUT a specific MCP)
