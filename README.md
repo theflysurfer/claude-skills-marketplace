@@ -81,6 +81,9 @@ scripts/
 └── lib/                          # Shared libraries
     ├── unified-logger.js         # JSONL structured logging (NEW)
     └── debug-logger.js
+docs/                             # Project documentation
+├── guides/                       # Evolving docs (GUIDE_, METHODOLOGIE_)
+└── rapports/                     # Event-based reports (dated, with commit)
 docs-source/                      # MkDocs sources (isolated from build)
 └── mkdocs.yml
 tests/                            # Unit tests with coverage
